@@ -1,132 +1,203 @@
 /**
- * DatoCMS API Configuration
+ * DatoCMS API Client
  * 
- * Provides cached fetch functionality for GraphQL queries to DatoCMS API.
- * Supports draft mode, content validation, visual editing, and environment-specific queries.
- * 
- * Features:
- * - Cached requests using React's cache function
- * - Draft content support for preview mode
- * - Visual editing capabilities
- * - Environment-specific content
- * - Type-safe GraphQL query execution
+ * Utility functions for making GraphQL requests to DatoCMS API.
+ * Handles blog post queries and content fetching.
  */
 
-import { cache } from 'react';
+import { BlogPost } from '@/types/blog';
 
-interface RequestConfig {
-  query: string;
-  variables?: Record<string, any>;
-  includeDrafts?: boolean;
-  excludeInvalid?: boolean;
-  visualEditingBaseUrl?: string | null;
-  revalidate?: number | null;
+const API_URL = 'https://graphql.datocms.com/';
+const API_TOKEN = process.env.DATOCMS_API_TOKEN;
+
+if (!API_TOKEN) {
+  throw new Error('DatoCMS API token is required. Please set DATOCMS_API_TOKEN in your environment variables.');
 }
 
-interface DatoCMSResponse<T = any> {
-  data: T;
-  errors?: Array<{
-    message: string;
-    locations?: Array<{ line: number; column: number }>;
-    path?: Array<string | number>;
-  }>;
+interface GraphQLError {
+  message: string;
+  locations?: Array<{ line: number; column: number }>;
+  path?: string[];
 }
 
-const dedupedFetch = cache(
-  async (
-    body: string,
-    includeDrafts = false,
-    excludeInvalid = false,
-    visualEditingBaseUrl: string | null = null,
-    revalidate: number | null = null,
-  ): Promise<DatoCMSResponse> => {
-    const headers: Record<string, string> = {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
-      ...(includeDrafts ? { 'X-Include-Drafts': 'true' } : {}),
-      ...(excludeInvalid ? { 'X-Exclude-Invalid': 'true' } : {}),
-      ...(visualEditingBaseUrl
-        ? {
-            'X-Visual-Editing': 'vercel-v1',
-            'X-Base-Editing-Url': visualEditingBaseUrl,
-          }
-        : {}),
-      ...(process.env.NEXT_DATOCMS_ENVIRONMENT
-        ? { 'X-Environment': process.env.NEXT_DATOCMS_ENVIRONMENT }
-        : {}),
-    };
-
-    const fetchOptions: RequestInit = {
-      method: 'POST',
-      headers,
-      body,
-    };
-
-    // Add revalidate only if provided and we're in a Next.js environment
-    if (revalidate !== null && typeof revalidate === 'number') {
-      (fetchOptions as any).next = { revalidate };
-    }
-
-    const response = await fetch('https://graphql.datocms.com/', fetchOptions);
-
-    const responseBody: DatoCMSResponse = await response.json();
-
-    if (!response.ok) {
-      throw new Error(
-        `${response.status} ${response.statusText}: ${JSON.stringify(
-          responseBody,
-        )}`,
-      );
-    }
-
-    if (responseBody.errors) {
-      throw new Error(
-        `GraphQL errors: ${JSON.stringify(responseBody.errors)}`,
-      );
-    }
-
-    return responseBody;
-  },
-);
-
-/**
- * Performs a GraphQL request to DatoCMS API
- * 
- * @param config - Request configuration object
- * @returns Promise resolving to the data from DatoCMS
- */
-export async function performRequest<T = any>({
-  query,
-  variables = {},
-  includeDrafts = false,
-  excludeInvalid = false,
-  visualEditingBaseUrl = null,
-  revalidate = null,
-}: RequestConfig): Promise<T> {
-  const { data } = await dedupedFetch(
-    JSON.stringify({ query, variables }),
-    includeDrafts,
-    excludeInvalid,
-    visualEditingBaseUrl,
-    revalidate,
-  );
-
-  return data;
+interface GraphQLResponse<T> {
+  data?: T;
+  errors?: GraphQLError[];
 }
 
 /**
- * Performs a request with draft content included (for preview mode)
+ * Makes a GraphQL request to DatoCMS API
+ * @param query - GraphQL query string
+ * @param variables - Query variables
+ * @param includeDrafts - Whether to include draft content
+ * @returns Promise with the response data
  */
-export async function performDraftRequest<T = any>(config: Omit<RequestConfig, 'includeDrafts'>): Promise<T> {
-  return performRequest<T>({ ...config, includeDrafts: true });
-}
-
-/**
- * Performs a request with content revalidation
- */
-export async function performRequestWithRevalidation<T = any>(
-  config: RequestConfig,
-  revalidateTime: number
+async function request<T>(
+  query: string,
+  variables: Record<string, any> = {},
+  includeDrafts = false
 ): Promise<T> {
-  return performRequest<T>({ ...config, revalidate: revalidateTime });
+  const response = await fetch(API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${API_TOKEN}`,
+      ...(includeDrafts ? { 'X-Include-Drafts': 'true' } : {}),
+    },
+    body: JSON.stringify({
+      query,
+      variables,
+    }),
+    next: {
+      // Cache for 60 seconds in production, always fresh in development
+      revalidate: process.env.NODE_ENV === 'development' ? 0 : 60,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  const json: GraphQLResponse<T> = await response.json();
+
+  if (json.errors) {
+    console.error('GraphQL errors:', json.errors);
+    throw new Error(json.errors[0]?.message || 'GraphQL request failed');
+  }
+
+  if (!json.data) {
+    throw new Error('No data returned from GraphQL request');
+  }
+
+  return json.data;
+}
+
+/**
+ * Fetches all blog posts for the listing page
+ * @param includeDrafts - Whether to include draft posts
+ * @returns Promise with array of blog posts
+ */
+export async function getAllBlogPosts(includeDrafts = false) {
+  const query = `
+    query AllBlogPosts {
+      allBlogPosts(orderBy: publishedDate_DESC) {
+        id
+        title
+        slug
+        excerpt
+        publishedDate
+        author {
+          name
+          picture {
+            url
+            alt
+          }
+        }
+        featuredImage {
+          url
+          alt
+          width
+          height
+        }
+        tags {
+          name
+          slug
+        }
+      }
+    }
+  `;
+
+  return request<{ allBlogPosts: BlogPost[] }>(query, {}, includeDrafts);
+}
+
+/**
+ * Fetches a single blog post by slug
+ * @param slug - Blog post slug
+ * @param includeDrafts - Whether to include draft posts
+ * @returns Promise with blog post data
+ */
+export async function getBlogPostBySlug(slug: string, includeDrafts = false) {
+  const query = `
+    query BlogPostBySlug($slug: String!) {
+      blogPost(filter: { slug: { eq: $slug } }) {
+        id
+        title
+        slug
+        content {
+          value
+          blocks {
+            __typename
+            ... on ImageBlockRecord {
+              id
+              image {
+                url
+                alt
+                width
+                height
+              }
+            }
+            ... on VideoBlockRecord {
+              id
+              video {
+                url
+                title
+                width
+                height
+              }
+            }
+          }
+        }
+        excerpt
+        publishedDate
+        updatedAt
+        author {
+          name
+          bio
+          picture {
+            url
+            alt
+            width
+            height
+          }
+        }
+        featuredImage {
+          url
+          alt
+          width
+          height
+        }
+        tags {
+          name
+          slug
+        }
+        seo {
+          title
+          description
+          image {
+            url
+            alt
+          }
+        }
+      }
+    }
+  `;
+
+  return request<{ blogPost: BlogPost | null }>(query, { slug }, includeDrafts);
+}
+
+/**
+ * Fetches all blog post slugs for static generation
+ * @returns Promise with array of blog post slugs
+ */
+export async function getAllBlogPostSlugs() {
+  const query = `
+    query AllBlogPostSlugs {
+      allBlogPosts {
+        slug
+      }
+    }
+  `;
+
+  const data = await request<{ allBlogPosts: Array<{ slug: string }> }>(query);
+  return data.allBlogPosts.map(post => post.slug);
 } 
