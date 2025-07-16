@@ -6,7 +6,6 @@
  */
 
 import { getBlogPostBySlug, getAllBlogPostSlugs } from '@/lib/datocms';
-import { BlogPost } from '@/types/blog';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -17,14 +16,15 @@ import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
 import React from 'react';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   try {
-    const { blogPost } = await getBlogPostBySlug(params.slug);
+    const { slug } = await params;
+    const { blogPost } = await getBlogPostBySlug(slug);
 
     if (!blogPost) {
       notFound();
@@ -138,7 +138,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {blogPost.content && (
             <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-blockquote:border-blue-500">
               <StructuredText
-                data={blogPost.content as any}
+                data={blogPost.content as unknown as any}
                 customNodeRules={[
                   // Custom styling for headings
                   renderNodeRule(isHeading, ({ node, children, key }) => {
@@ -190,7 +190,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   ))
                 ]}
                 renderBlock={({ record }) => {
-                  const blockRecord = record as any;
+                  const blockRecord = record as {
+                    __typename?: string;
+                    image?: { url?: string; alt?: string; width?: number; height?: number };
+                    video?: { url?: string; title?: string; width?: number; height?: number };
+                  };
                   switch (blockRecord.__typename) {
                     case 'ImageBlockRecord':
                       return (
@@ -258,7 +262,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 export async function generateStaticParams() {
   try {
     const slugs = await getAllBlogPostSlugs();
-    return slugs.map((slug) => ({
+    return slugs.map((slug: string) => ({
       slug,
     }));
   } catch (error) {
@@ -270,7 +274,8 @@ export async function generateStaticParams() {
 // Generate metadata for SEO
 export async function generateMetadata({ params }: BlogPostPageProps) {
   try {
-    const { blogPost } = await getBlogPostBySlug(params.slug);
+    const { slug } = await params;
+    const { blogPost } = await getBlogPostBySlug(slug);
 
     if (!blogPost) {
       return {
