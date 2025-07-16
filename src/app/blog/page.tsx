@@ -54,97 +54,15 @@ export default async function BlogPage() {
     );
   } catch (error) {
     console.error('Error fetching blog posts:', error);
-    
-    // Show setup instructions if content models don't exist
-    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-    const isContentModelError = errorMessage.includes("doesn't exist on type 'Query'");
-    
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-        {/* Header */}
-        <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                Probe Analytics Blog
-              </h1>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Insights, analysis, and thought leadership in data analytics and business intelligence.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Setup Instructions */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {isContentModelError ? (
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-8">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                  Blog Setup Required
-                </h2>
-                <p className="text-gray-600 mb-6">
-                  To start using the blog, you need to create content models in your DatoCMS project.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 mb-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Setup Steps:</h3>
-                <ol className="list-decimal list-inside space-y-3 text-gray-700">
-                  <li>
-                    Go to your DatoCMS admin panel: 
-                    <a href="https://probe-9594.admin.datocms.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">
-                      probe-9594.admin.datocms.com
-                    </a>
-                  </li>
-                  <li>Navigate to <strong>Settings → Models</strong></li>
-                  <li>Create a new model called <strong>&quot;Blog Post&quot;</strong> with API key <code className="bg-gray-100 px-1 rounded">blog_post</code></li>
-                  <li>Add the required fields as outlined in the documentation</li>
-                  <li>Create some sample blog posts and publish them</li>
-                  <li>Refresh this page to see your content</li>
-                </ol>
-              </div>
-
-              <div className="text-center">
-                <a 
-                  href="https://probe-9594.admin.datocms.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
-                >
-                  Open DatoCMS Admin
-                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              </div>
-
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                <p className="text-sm text-gray-600">
-                  <strong>Need help?</strong> Check the <code>BLOG_SETUP.md</code> file in your project for detailed setup instructions.
-                </p>
-              </div>
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Unable to load blog posts
-              </h2>
-              <p className="text-gray-600 mb-4">
-                There was an error connecting to the blog content.
-              </p>
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4 max-w-2xl mx-auto">
-                <p className="text-sm text-red-700">
-                  <strong>Error:</strong> {errorMessage}
-                </p>
-              </div>
-            </div>
-          )}
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">
+            Unable to load blog posts
+          </h1>
+          <p className="text-gray-600">
+            Please try again later or contact support if the problem persists.
+          </p>
         </div>
       </div>
     );

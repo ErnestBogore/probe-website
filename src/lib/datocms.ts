@@ -34,7 +34,7 @@ interface GraphQLResponse<T> {
  */
 async function request<T>(
   query: string,
-  variables: Record<string, unknown> = {},
+  variables: Record<string, any> = {},
   includeDrafts = false
 ): Promise<T> {
   const response = await fetch(API_URL, {
