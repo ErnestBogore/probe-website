@@ -34,10 +34,10 @@ function extractHeadings(content: unknown): TOCItem[] {
     !content ||
     typeof content !== 'object' ||
     !('value' in content) ||
-    typeof (content as any).value !== 'object' ||
-    !('document' in (content as any).value) ||
-    typeof (content as any).value.document !== 'object' ||
-    !('children' in (content as any).value.document)
+    typeof (content as { value: unknown }).value !== 'object' ||
+    !('document' in (content as { value: { document: unknown } }).value) ||
+    typeof (content as { value: { document: unknown } }).value.document !== 'object' ||
+    !('children' in (content as { value: { document: { children: unknown } } }).value.document)
   )
     return [];
 
@@ -49,11 +49,11 @@ function extractHeadings(content: unknown): TOCItem[] {
         node &&
         typeof node === 'object' &&
         'type' in node &&
-        (node as any).type === 'heading' &&
+        (node as { type: string }).type === 'heading' &&
         'level' in node &&
-        typeof (node as any).level === 'number' &&
-        (node as any).level >= 2 &&
-        (node as any).level <= 4
+        typeof (node as { level: number }).level === 'number' &&
+        (node as { level: number }).level >= 2 &&
+        (node as { level: number }).level <= 4
       ) {
         // Extract text from heading children
         const text = extractTextFromNode(node);
@@ -62,18 +62,18 @@ function extractHeadings(content: unknown): TOCItem[] {
           headings.push({
             id,
             text,
-            level: (node as any).level
+            level: (node as { level: number }).level
           });
         }
       }
       // Recursively traverse children
       if (node && typeof node === 'object' && 'children' in node) {
-        traverseNodes((node as any).children);
+        traverseNodes((node as { children: unknown[] }).children);
       }
     });
   }
 
-  traverseNodes((content as any).value.document.children);
+  traverseNodes((content as { value: { document: { children: unknown[] } } }).value.document.children);
   return headings;
 }
 
@@ -82,11 +82,11 @@ function extractHeadings(content: unknown): TOCItem[] {
  */
 function extractTextFromNode(node: unknown): string {
   if (!node || typeof node !== 'object' || !('children' in node)) return '';
-  return ((node as any).children as unknown[])
+  return ((node as { children: unknown[] }).children as unknown[])
     .map((child: unknown) => {
-      if (child && typeof child === 'object' && 'type' in child && (child as any).type === 'span') {
-        return (child as any).value || '';
-      }
+              if (child && typeof child === 'object' && 'type' in child && (child as { type: string }).type === 'span') {
+          return (child as { value?: string }).value || '';
+        }
       if (child && typeof child === 'object' && 'children' in child) {
         return extractTextFromNode(child);
       }

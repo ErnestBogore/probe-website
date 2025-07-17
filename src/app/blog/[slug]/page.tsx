@@ -6,29 +6,29 @@
  */
 
 import { getBlogPostBySlug, getAllBlogPostSlugs } from '@/lib/datocms';
-import { BlogPost } from '@/types/blog';
+
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { format } from 'date-fns';
 import { StructuredText, renderNodeRule } from 'react-datocms/structured-text';
 import { isHeading, isParagraph, isLink, isList, isListItem } from 'datocms-structured-text-utils';
-import { ArrowLeft, Calendar, User, Tag, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ChevronRight } from 'lucide-react';
 import React from 'react';
 import { RelatedPosts } from '@/components/related-posts';
 import { TableOfContents } from '@/components/table-of-contents';
 import { generateAnchorId } from '@/lib/anchor-utils';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 /**
  * Extracts plain text from React children for generating anchor IDs
  */
-function extractTextFromChildren(children: any): string {
+function extractTextFromChildren(children: unknown): string {
   if (typeof children === 'string') {
     return children;
   }
@@ -37,8 +37,8 @@ function extractTextFromChildren(children: any): string {
     return children.map(child => extractTextFromChildren(child)).join('');
   }
   
-  if (children?.props?.children) {
-    return extractTextFromChildren(children.props.children);
+  if (children && typeof children === 'object' && 'props' in children && children.props && typeof children.props === 'object' && 'children' in children.props) {
+    return extractTextFromChildren((children.props as { children: unknown }).children);
   }
   
   return '';
@@ -47,7 +47,7 @@ function extractTextFromChildren(children: any): string {
 /**
  * Custom StructuredText component that inserts TOC before first H2
  */
-function StructuredTextWithTOC({ content }: { content: any }) {
+function StructuredTextWithTOC({ content }: { content: unknown }) {
   let firstH2Encountered = false;
 
   const customNodeRules = [
@@ -163,10 +163,10 @@ function StructuredTextWithTOC({ content }: { content: any }) {
 
   return (
     <StructuredText
-      data={content as any}
+      data={content as { value: { document: { children: unknown[] } } }}
       customNodeRules={customNodeRules}
       renderBlock={({ record }) => {
-        const blockRecord = record as any;
+        const blockRecord = record as { id?: string; __typename?: string; image?: { url: string; alt?: string; width?: number; height?: number }; video?: { url: string; title?: string; width?: number; height?: number } };
         const blockKey = `block-${blockRecord.id || blockRecord.__typename}-${Date.now()}`;
         
         switch (blockRecord.__typename) {
@@ -203,7 +203,7 @@ function StructuredTextWithTOC({ content }: { content: any }) {
       }}
       renderInlineRecord={({ record }) => {
         if (record.__typename === 'ImageBlockRecord') {
-          const imageRecord = record as any;
+          const imageRecord = record as { id?: string; image?: { url: string; alt?: string; width?: number; height?: number } };
           const inlineKey = `inline-${imageRecord.id || 'image'}-${Date.now()}`;
           return (
             <span key={inlineKey} className="inline-block my-2 mx-1">
