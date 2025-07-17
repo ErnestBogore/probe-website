@@ -20,9 +20,10 @@ export interface Video {
 }
 
 export interface Author {
+  id: string;
   name: string;
-  bio?: string;
-  picture?: Image;
+  title?: string;
+  image?: Image;
 }
 
 export interface Tag {
@@ -66,13 +67,17 @@ export interface BlogPost {
   title: string;
   slug: string;
   excerpt?: string;
-  content?: StructuredText;
+  body?: StructuredText;
   publishedDate?: string;
   updatedAt?: string;
   author?: Author;
+  reviewer?: Author;
   featuredImage?: Image;
+  relatedPosts?: BlogPostSummary[];
   tags?: Tag[];
   seo?: SEO;
+  _publishedAt?: string;
+  _updatedAt?: string;
 }
 
 export interface BlogPostSummary {
@@ -81,7 +86,9 @@ export interface BlogPostSummary {
   slug: string;
   excerpt?: string;
   publishedDate?: string;
-  author?: Pick<Author, 'name' | 'picture'>;
+  author?: Pick<Author, 'name' | 'image'>;
+  reviewer?: Pick<Author, 'name' | 'image'>;
   featuredImage?: Image;
+  seo?: Pick<SEO, 'image'>;
   tags?: Tag[];
 } 

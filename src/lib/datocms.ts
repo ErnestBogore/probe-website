@@ -84,25 +84,44 @@ export async function getAllBlogPosts(includeDrafts = false) {
         id
         title
         slug
-        excerpt
         publishedDate
-        author {
-          name
-          picture {
-            url
-            alt
-          }
-        }
         featuredImage {
           url
           alt
           width
           height
         }
-        tags {
+        author {
+          id
           name
-          slug
+          title
+          image {
+            url
+            alt
+            width
+            height
+          }
         }
+        reviewer {
+          id
+          name
+          title
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+        seo {
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+        _publishedAt
       }
     }
   `;
@@ -123,7 +142,7 @@ export async function getBlogPostBySlug(slug: string, includeDrafts = false) {
         id
         title
         slug
-        content {
+        body {
           value
           blocks {
             __typename
@@ -136,39 +155,66 @@ export async function getBlogPostBySlug(slug: string, includeDrafts = false) {
                 height
               }
             }
-            ... on VideoBlockRecord {
-              id
-              video {
-                url
-                title
-                width
-                height
-              }
-            }
           }
         }
-        excerpt
         publishedDate
-        updatedAt
-        author {
-          name
-          bio
-          picture {
-            url
-            alt
-            width
-            height
-          }
-        }
         featuredImage {
           url
           alt
           width
           height
         }
-        tags {
+        author {
+          id
           name
+          title
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+        reviewer {
+          id
+          name
+          title
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+        relatedPosts {
+          id
+          title
           slug
+          publishedDate
+          featuredImage {
+            url
+            alt
+            width
+            height
+          }
+          author {
+            id
+            name
+            image {
+              url
+              alt
+              width
+              height
+            }
+          }
+          seo {
+            image {
+              url
+              alt
+              width
+              height
+            }
+          }
         }
         seo {
           title
@@ -176,8 +222,12 @@ export async function getBlogPostBySlug(slug: string, includeDrafts = false) {
           image {
             url
             alt
+            width
+            height
           }
         }
+        _publishedAt
+        _updatedAt
       }
     }
   `;

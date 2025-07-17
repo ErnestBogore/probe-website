@@ -82,17 +82,22 @@ interface BlogPostCardProps {
 function BlogPostCard({ post }: BlogPostCardProps) {
   const publishedDate = post.publishedDate 
     ? format(new Date(post.publishedDate), 'MMM dd, yyyy')
+    : post._publishedAt 
+    ? format(new Date(post._publishedAt), 'MMM dd, yyyy')
     : 'No date';
+
+  // Use featured image or fallback to SEO image
+  const cardImage = post.featuredImage || post.seo?.image;
 
   return (
     <article className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
       <Link href={`/blog/${post.slug}`} className="block">
         {/* Featured Image */}
-        {post.featuredImage && (
+        {cardImage && (
           <div className="aspect-video relative overflow-hidden">
             <Image
-              src={post.featuredImage.url}
-              alt={post.featuredImage.alt || post.title}
+              src={cardImage.url}
+              alt={cardImage.alt || post.title}
               fill
               className="object-cover hover:scale-105 transition-transform duration-300"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -131,18 +136,23 @@ function BlogPostCard({ post }: BlogPostCardProps) {
           {/* Author and Date */}
           <div className="flex items-center justify-between text-sm text-gray-500">
             <div className="flex items-center space-x-2">
-              {post.author?.picture && (
+              {post.author?.image && (
                 <Image
-                  src={post.author.picture.url}
-                  alt={post.author.picture.alt || post.author.name || 'Author'}
+                  src={post.author.image.url}
+                  alt={post.author.image.alt || post.author.name || 'Author'}
                   width={24}
                   height={24}
                   className="rounded-full"
                 />
               )}
               <span>{post.author?.name || 'Anonymous'}</span>
+              {post.reviewer && (
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs bg-blue-100 text-blue-800">
+                  Reviewed
+                </span>
+              )}
             </div>
-            <time dateTime={post.publishedDate}>
+            <time dateTime={post.publishedDate || post._publishedAt}>
               {publishedDate}
             </time>
           </div>
