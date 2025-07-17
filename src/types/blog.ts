@@ -52,7 +52,7 @@ export interface VideoBlock {
 export type ContentBlock = ImageBlock | VideoBlock;
 
 export interface StructuredText {
-  value: any; // DatoCMS structured text format
+  value: unknown; // DatoCMS structured text format
   blocks?: Array<{
     [prop: string]: unknown;
     __typename?: string;

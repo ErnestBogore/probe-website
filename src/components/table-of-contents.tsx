@@ -18,7 +18,7 @@ interface TOCItem {
 }
 
 interface TableOfContentsProps {
-  content: any; // StructuredText content
+  content: unknown; // StructuredText content
   title?: string;
   className?: string;
   isCollapsible?: boolean;
@@ -28,14 +28,33 @@ interface TableOfContentsProps {
 /**
  * Extracts headings from StructuredText content
  */
-function extractHeadings(content: any): TOCItem[] {
-  if (!content?.value?.document?.children) return [];
+function extractHeadings(content: unknown): TOCItem[] {
+  // Type guard for expected structure
+  if (
+    !content ||
+    typeof content !== 'object' ||
+    !('value' in content) ||
+    typeof (content as any).value !== 'object' ||
+    !('document' in (content as any).value) ||
+    typeof (content as any).value.document !== 'object' ||
+    !('children' in (content as any).value.document)
+  )
+    return [];
 
   const headings: TOCItem[] = [];
 
-  function traverseNodes(nodes: any[]) {
+  function traverseNodes(nodes: unknown[]) {
     nodes.forEach((node) => {
-      if (node.type === 'heading' && node.level >= 2 && node.level <= 4) {
+      if (
+        node &&
+        typeof node === 'object' &&
+        'type' in node &&
+        (node as any).type === 'heading' &&
+        'level' in node &&
+        typeof (node as any).level === 'number' &&
+        (node as any).level >= 2 &&
+        (node as any).level <= 4
+      ) {
         // Extract text from heading children
         const text = extractTextFromNode(node);
         if (text) {
@@ -43,34 +62,32 @@ function extractHeadings(content: any): TOCItem[] {
           headings.push({
             id,
             text,
-            level: node.level
+            level: (node as any).level
           });
         }
       }
-      
       // Recursively traverse children
-      if (node.children) {
-        traverseNodes(node.children);
+      if (node && typeof node === 'object' && 'children' in node) {
+        traverseNodes((node as any).children);
       }
     });
   }
 
-  traverseNodes(content.value.document.children);
+  traverseNodes((content as any).value.document.children);
   return headings;
 }
 
 /**
  * Extracts plain text from a heading node
  */
-function extractTextFromNode(node: any): string {
-  if (!node.children) return '';
-  
-  return node.children
-    .map((child: any) => {
-      if (child.type === 'span') {
-        return child.value || '';
+function extractTextFromNode(node: unknown): string {
+  if (!node || typeof node !== 'object' || !('children' in node)) return '';
+  return ((node as any).children as unknown[])
+    .map((child: unknown) => {
+      if (child && typeof child === 'object' && 'type' in child && (child as any).type === 'span') {
+        return (child as any).value || '';
       }
-      if (child.children) {
+      if (child && typeof child === 'object' && 'children' in child) {
         return extractTextFromNode(child);
       }
       return '';
