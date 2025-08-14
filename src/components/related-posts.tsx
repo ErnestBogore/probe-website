@@ -30,7 +30,7 @@ export function RelatedPosts({ posts }: RelatedPostsProps) {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {posts.slice(0, 6).map((post) => {
           const publishedDate = post.publishedDate 
             ? format(new Date(post.publishedDate), 'MMM dd, yyyy')
@@ -52,7 +52,7 @@ export function RelatedPosts({ posts }: RelatedPostsProps) {
                     src={cardImage.url}
                     alt={cardImage.alt || post.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>

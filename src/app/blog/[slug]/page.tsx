@@ -15,6 +15,8 @@ import { StructuredText, renderNodeRule } from 'react-datocms/structured-text';
 import { isHeading, isParagraph, isLink, isList, isListItem } from 'datocms-structured-text-utils';
 import { ArrowLeft, ChevronRight } from 'lucide-react';
 import React from 'react';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Breadcrumb } from "@/components/marketing/breadcrumb";
 import { RelatedPosts } from '@/components/related-posts';
 import { TableOfContents } from '@/components/table-of-contents';
 import { generateAnchorId } from '@/lib/anchor-utils';
@@ -243,33 +245,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
     return (
       <div className="min-h-screen bg-white">
-        {/* Header with breadcrumb navigation */}
-        <div className="border-b bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <nav className="flex items-center space-x-2 text-sm text-gray-600" aria-label="Breadcrumb">
-              <Link 
-                href="/" 
-                className="text-blue-600 hover:text-blue-800 transition-colors"
-              >
-                Home
-              </Link>
-              <ChevronRight className="w-4 h-4 text-gray-400" />
-              <Link 
-                href="/blog" 
-                className="text-blue-600 hover:text-blue-800 transition-colors"
-              >
-                Blog
-              </Link>
-              <ChevronRight className="w-4 h-4 text-gray-400" />
-              <span className="text-gray-900 font-medium truncate" title={blogPost.title}>
-                {blogPost.title}
-              </span>
-            </nav>
-          </div>
+
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+          <Breadcrumb 
+            items={[
+              { name: 'Home', href: '/' },
+              { name: 'Blog', href: '/blog' },
+              { name: blogPost.title, href: `/blog/${blogPost.slug}` },
+            ]}
+          />
         </div>
 
         {/* Article */}
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12">
           {/* Article Header */}
           <header className="mb-8 text-center">
             {/* Title - Centered */}
