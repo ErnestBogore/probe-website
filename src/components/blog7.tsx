@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { format } from 'date-fns';
 
 interface Post {
@@ -53,9 +54,11 @@ const Blog7 = ({ title, description, posts }: Blog7Props) => {
                   target="_blank"
                   className="transition-opacity duration-200 fade-in hover:opacity-70"
                 >
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
+                    width={1600}
+                    height={900}
                     className="h-full w-full object-contain"
                   />
                 </a>

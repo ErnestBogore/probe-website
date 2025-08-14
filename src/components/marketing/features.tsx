@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export const Features = () => {
   return (
@@ -24,9 +25,11 @@ export const Features = () => {
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
           <div className="flex flex-col overflow-clip rounded-xl border border-border md:col-span-2 md:grid md:grid-cols-2 md:gap-6 lg:gap-8">
             <div className="md:min-h-[24rem] lg:min-h-[28rem] xl:min-h-[32rem]">
-              <img
+              <Image
                 src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
                 alt="Feature 1"
+                width={1600}
+                height={900}
                 className="aspect-16/9 h-full w-full object-cover object-center"
               />
             </div>
@@ -51,9 +54,11 @@ export const Features = () => {
               </p>
             </div>
             <div className="md:min-h-[24rem] lg:min-h-[28rem] xl:min-h-[32rem]">
-              <img
+              <Image
                 src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg"
                 alt="Feature 2"
+                width={1600}
+                height={900}
                 className="aspect-16/9 h-full w-full object-cover object-center"
               />
             </div>

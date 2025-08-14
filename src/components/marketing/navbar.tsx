@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from 'next/image';
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
 const ClientNav = dynamic(() => import('./client-nav').then(mod => mod.ClientNav), { ssr: false });
@@ -11,7 +12,7 @@ export const Navbar = () => {
     <section className="py-4">
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <a
+          <Link
             href="/"
             className="flex items-center gap-2"
           >
@@ -21,7 +22,7 @@ export const Navbar = () => {
               height={150}
               alt="Probe Analytics Logo"
             />
-          </a>
+          </Link>
           <ClientNav />
         </div>
       </div>

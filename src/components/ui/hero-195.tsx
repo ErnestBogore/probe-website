@@ -15,6 +15,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -75,11 +76,13 @@ export function Hero195() {
                </CardHeader>
                <CardContent className="p-6">
                  <div className="w-full bg-muted/20 p-4 rounded-lg">
-                   <img 
-                     src="/Tracked.png" 
-                     alt="AI Monitoring Dashboard"
-                     className="w-full h-auto object-cover rounded-lg shadow-md"
-                   />
+                   <Image 
+                    src="/Tracked.png" 
+                    alt="AI Monitoring Dashboard"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-cover rounded-lg shadow-md"
+                  />
                  </div>
                </CardContent>
              </Card>
@@ -93,11 +96,13 @@ export function Hero195() {
                </CardHeader>
                <CardContent className="p-6">
                  <div className="w-full bg-muted/20 p-4 rounded-lg">
-                   <img 
-                     src="/Prompt Details.png" 
-                     alt="360° Prompt Analytics"
-                     className="w-full h-auto object-cover rounded-lg shadow-md"
-                   />
+                   <Image 
+                    src="/Prompt Details.png" 
+                    alt="360° Prompt Analytics"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-cover rounded-lg shadow-md"
+                  />
                  </div>
                </CardContent>
              </Card>
@@ -111,11 +116,13 @@ export function Hero195() {
                </CardHeader>
                <CardContent className="p-6">
                  <div className="w-full bg-muted/20 p-4 rounded-lg">
-                   <img 
-                     src="/Chats.png" 
-                     alt="Live Chat Conversations"
-                     className="w-full h-auto object-cover rounded-lg shadow-md"
-                   />
+                   <Image 
+                    src="/Chats.png" 
+                    alt="Live Chat Conversations"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-cover rounded-lg shadow-md"
+                  />
                  </div>
                </CardContent>
              </Card>
@@ -129,11 +136,13 @@ export function Hero195() {
                </CardHeader>
                <CardContent className="p-6">
                  <div className="w-full bg-muted/20 p-4 rounded-lg">
-                   <img 
-                     src="/Suggest.png" 
-                     alt="Smart Suggestions Interface"
-                     className="w-full h-auto object-cover rounded-lg shadow-md"
-                   />
+                   <Image 
+                    src="/Suggest.png" 
+                    alt="Smart Suggestions Interface"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-cover rounded-lg shadow-md"
+                  />
                  </div>
                </CardContent>
              </Card>

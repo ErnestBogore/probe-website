@@ -7,7 +7,6 @@
 
 import { getAllBlogPosts } from "@/lib/datocms";
 import { Blog7 } from "@/components/blog7";
-import { Metadata } from 'next';
 import { BlogPost } from '@/types/blog';
 
 export default async function BlogPage() {

@@ -13,6 +13,12 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 's2.googleusercontent.com',
         port: '',
+        pathname: '/s2/favicons/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'deifkwefumgah.cloudfront.net',
+        port: '',
         pathname: '/**',
       },
     ],

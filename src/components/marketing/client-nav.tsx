@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 export const ClientNav = () => {
@@ -124,9 +125,11 @@ export const ClientNav = () => {
                 href="https://www.shadcnblocks.com"
                 className="flex items-center gap-2"
               >
-                <img
+                <Image
                   src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
-                  className="max-h-8"
+                  width={32}
+                  height={32}
+                  className="max-h-8 w-auto"
                   alt="Shadcn UI Navbar"
                 />
                 <span className="text-lg font-semibold tracking-tighter">
