@@ -109,7 +109,7 @@ export const ClientNav = () => {
       </NavigationMenu>
       <div className="hidden items-center gap-4 lg:flex">
         <Button variant="outline">Sign in</Button>
-        <Button>Start for free</Button>
+        <Button className="bg-gray-900 text-white hover:bg-gray-800 font-bold">Show Me My AI Rankings</Button>
       </div>
       <Sheet>
         <SheetTrigger asChild className="lg:hidden">
@@ -176,7 +176,7 @@ export const ClientNav = () => {
             </div>
             <div className="mt-6 flex flex-col gap-4">
               <Button variant="outline">Sign in</Button>
-              <Button>Start for free</Button>
+              <Button className="bg-gray-900 text-white hover:bg-gray-800 font-bold">Show Me My AI Rankings</Button>
             </div>
           </div>
         </SheetContent>

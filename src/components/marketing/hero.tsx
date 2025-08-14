@@ -23,7 +23,7 @@ export interface Tab {
 
 export interface HeroProps {
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   primaryButtonText: string;
   secondaryButtonText?: string;
   primaryButtonUrl: string;
@@ -72,17 +72,17 @@ export const Hero = ({
 
   return (
     <section className="overflow-hidden">
-      <div className="container mx-auto mt-16 md:mt-20 px-4 sm:px-6 lg:px-8">
-        <div className="border-border border-x py-20">
-          <div className="relative mx-auto max-w-2xl">
-            <h1 className="mx-1 mt-6 text-center text-5xl font-bold tracking-tighter md:text-7xl">
+      <div className="container mx-auto mt-0 px-4 sm:px-6 lg:px-8">
+        <div className="border-border border-x py-8">
+          <div className="relative mx-auto max-w-4xl">
+            <h1 className="mx-1 mt-6 text-center text-4xl font-bold tracking-tighter md:text-6xl">
               {title}
             </h1>
-            <p className="text-muted-foreground mx-2 mt-6 max-w-xl text-center text-lg font-medium md:text-xl">
+            <p className="text-muted-foreground mx-auto mt-6 max-w-3xl text-center text-lg font-medium md:text-xl">
               {description}
             </p>
             <div className="mx-2 mt-6 flex justify-center gap-2">
-              <Button asChild>
+              <Button asChild className="bg-gray-900 text-white hover:bg-gray-800 font-bold">
                 <a href={primaryButtonUrl}>{primaryButtonText}</a>
               </Button>
               {secondaryButtonText && (

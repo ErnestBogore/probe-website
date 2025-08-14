@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
 const ClientNav = dynamic(() => import('./client-nav').then(mod => mod.ClientNav), { ssr: false });
@@ -11,17 +12,15 @@ export const Navbar = () => {
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <a
-            href="https://www.shadcnblocks.com"
+            href="/"
             className="flex items-center gap-2"
           >
-            <img
-              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
-              className="max-h-8"
-              alt="Shadcn UI Navbar"
+            <Image
+              src="/probe_analytics_logo_v3.png"
+              width={150}
+              height={150}
+              alt="Probe Analytics Logo"
             />
-            <span className="text-lg font-semibold tracking-tighter">
-              Shadcnblocks.com
-            </span>
           </a>
           <ClientNav />
         </div>

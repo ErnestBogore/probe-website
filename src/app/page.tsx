@@ -9,14 +9,42 @@ import { Hero } from "@/components/marketing/hero";
 import { Features } from "@/components/marketing/features";
 import { Testimonials } from "@/components/marketing/testimonials";
 import { Cta } from "@/components/marketing/cta";
+import Image from "next/image";
+import React from "react";
+
+const llms = [
+  { name: "ChatGPT", domain: "chatgpt.com" },
+  { name: "Perplexity", domain: "perplexity.ai" },
+  { name: "Claude", domain: "claude.ai" },
+];
 
 export default function Home() {
+  const description = (
+    <>
+      Right now,{" "}
+      {llms.map((llm, index) => (
+        <React.Fragment key={llm.name}>
+          <Image
+            src={`https://s2.googleusercontent.com/s2/favicons?domain=${llm.domain}&sz=32`}
+            alt={`${llm.name} favicon`}
+            width={20}
+            height={20}
+            className="inline-block mr-1 h-5 w-5 align-middle" 
+          />
+          {llm.name}
+          {index < llms.length - 1 && ", "}
+        </React.Fragment>
+      ))}
+      {', and other LLMs are recommending your competitors to thousands of prospects you’ll never meet. Probe Analytics shows you exactly where you’ve vanished — and how to take back your place in AI search results.'}
+    </>
+  );
+
   return (
     <main>
       <Hero 
-        title="The Analytics Platform for GEO"
-        description="Monitor how ChatGPT, Claude, Perplexity, and other LLMs mention your brand. Track competitor visibility, optimize your AI presence, and capture revenue from the 40% of searches moving to generative engines. It's like Google Analytics but for GEO."
-        primaryButtonText="Monitor Your AI Visibility"
+        title="Discover What AI Answer Engines Say About Your Brand"
+        description={description}
+        primaryButtonText="Show Me My AI Rankings"
         primaryButtonUrl="#"
       />
       <Features />

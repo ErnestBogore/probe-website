@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
@@ -69,15 +70,15 @@ const defaultLegalLinks = [
 
 export const Footer = ({
   logo = {
-    url: "https://www.shadcnblocks.com",
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
-    alt: "logo",
-    title: "Shadcnblocks.com",
+    url: "/",
+    src: "/probe_analytics_logo_v3.png",
+    alt: "Probe Analytics Logo",
+    title: "Probe Analytics",
   },
   sections = defaultSections,
-  description = "A collection of components for your startup business or side project.",
+  description = "Unlock the power of your data with Probe Analytics.",
   socialLinks = defaultSocialLinks,
-  copyright = "© 2024 Shadcnblocks.com. All rights reserved.",
+  copyright = "© 2024 Probe Analytics. All rights reserved.",
   legalLinks = defaultLegalLinks,
 }: FooterProps) => {
   return (
@@ -88,14 +89,13 @@ export const Footer = ({
             {/* Logo */}
             <div className="flex items-center gap-2 lg:justify-start">
               <a href={logo.url}>
-                <img
+                <Image
                   src={logo.src}
                   alt={logo.alt}
-                  title={logo.title}
-                  className="h-8"
+                  width={150}
+                  height={150}
                 />
               </a>
-              <h2 className="text-xl font-semibold">{logo.title}</h2>
             </div>
             <p className="text-muted-foreground max-w-[70%] text-sm">
               {description}
