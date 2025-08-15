@@ -47,8 +47,8 @@ export default function Home() {
         primaryButtonText="Show Me My AI Rankings"
         primaryButtonUrl="#"
       />
-      <Features />
       <Testimonials />
+      <Features />
       <Cta />
     </main>
   );
