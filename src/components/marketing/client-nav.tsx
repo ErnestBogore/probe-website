@@ -17,9 +17,37 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className,
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = "ListItem";
 
 export const ClientNav = () => {
   const features = [
@@ -47,49 +75,42 @@ export const ClientNav = () => {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Features</NavigationMenuTrigger>
             <NavigationMenuContent className="bg-white dark:bg-zinc-900 shadow-lg">
-              <div className="grid w-[600px] grid-cols-2 p-3">
-                {features.map((feature, index) => (
-                  <NavigationMenuLink
+              <ul className="grid w-[600px] grid-cols-2 gap-3 p-4">
+                {features.map((feature) => (
+                  <Link
                     href={feature.href}
-                    key={index}
-                    className="rounded-md p-3 transition-colors hover:bg-muted/70"
+                    key={feature.title}
+                    passHref
+                    legacyBehavior
                   >
-                    <div key={feature.title}>
-                      <p className="mb-1 font-semibold text-foreground">
-                        {feature.title}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </NavigationMenuLink>
+                    <ListItem title={feature.title}>
+                      {feature.description}
+                    </ListItem>
+                  </Link>
                 ))}
-              </div>
+              </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink
-              href="#"
-              className={navigationMenuTriggerStyle()}
-            >
-              Products
-            </NavigationMenuLink>
+            <Link href="#" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Products
+              </NavigationMenuLink>
+            </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink
-              href="/blog"
-              className={navigationMenuTriggerStyle()}
-            >
-              Blog
-            </NavigationMenuLink>
+            <Link href="/blog" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Blog
+              </NavigationMenuLink>
+            </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink
-              href="#"
-              className={navigationMenuTriggerStyle()}
-            >
-              Contact
-            </NavigationMenuLink>
+            <Link href="#" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Contact
+              </NavigationMenuLink>
+            </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
@@ -106,22 +127,7 @@ export const ClientNav = () => {
         <SheetContent side="top" className="max-h-screen overflow-auto">
           <SheetHeader>
             <SheetTitle>
-              <a
-                href="https://www.shadcnblocks.com"
-                className="flex items-center gap-2"
-              >
-                <Image
-                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
-                  width={32}
-                  height={32}
-                  className="max-h-8 w-auto"
-                  alt="Shadcn UI Navbar"
-                />
-                <span className="text-lg font-semibold tracking-tighter">
-                  Shadcnblocks.com
-                </span>
-              </a>
-            </SheetTitle>
+                          </SheetTitle>
           </SheetHeader>
           <div className="flex flex-col p-4">
             <Accordion type="single" collapsible className="mt-4 mb-2">
@@ -131,13 +137,13 @@ export const ClientNav = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="grid md:grid-cols-2">
-                    {features.map((feature, index) => (
-                      <a
+                    {features.map((feature) => (
+                      <Link
                         href={feature.href}
-                        key={index}
+                        key={feature.title}
                         className="rounded-md p-3 transition-colors hover:bg-muted/70"
                       >
-                        <div key={feature.title}>
+                        <div>
                           <p className="mb-1 font-semibold text-foreground">
                             {feature.title}
                           </p>
@@ -145,22 +151,22 @@ export const ClientNav = () => {
                             {feature.description}
                           </p>
                         </div>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
             <div className="flex flex-col gap-6">
-              <a href="#" className="font-medium">
+              <Link href="#" className="font-medium">
                 Products
-              </a>
-              <a href="/blog" className="font-medium">
+              </Link>
+              <Link href="/blog" className="font-medium">
                 Blog
-              </a>
-              <a href="#" className="font-medium">
+              </Link>
+              <Link href="#" className="font-medium">
                 Contact
-              </a>
+              </Link>
             </div>
             <div className="mt-6 flex flex-col gap-4">
               <Button variant="outline">Sign in</Button>
