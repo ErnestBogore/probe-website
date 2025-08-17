@@ -76,16 +76,16 @@ export const Footer = ({
     title: "Probe Analytics",
   },
   sections = defaultSections,
-  description = "Unlock the power of your data with Probe Analytics.",
+  description = "Probe Analytics provides a comprehensive suite of tools to monitor your brand's visibility and sentiment across all major AI answer engines, giving you the insights to stay ahead.",
   socialLinks = defaultSocialLinks,
-  copyright = "© 2024 Probe Analytics. All rights reserved.",
+  copyright = "© 2025 Probe Analytics. All rights reserved.",
   legalLinks = defaultLegalLinks,
 }: FooterProps) => {
   return (
     <section className="py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
-          <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
+          <div className="flex w-full flex-col justify-between gap-4 lg:items-start">
             {/* Logo */}
             <div className="flex items-center gap-2 lg:justify-start">
               <a href={logo.url}>
@@ -93,7 +93,7 @@ export const Footer = ({
                   src={logo.src}
                   alt={logo.alt}
                   width={150}
-                  height={150}
+                  height={40}
                 />
               </a>
             </div>

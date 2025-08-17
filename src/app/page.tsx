@@ -5,6 +5,7 @@
  * shadcn components, animations, and modern UI patterns.
  */
 
+import type { Metadata } from 'next';
 import { Hero } from "@/components/marketing/hero";
 import { Features } from "@/components/marketing/features";
 import { Testimonials } from "@/components/marketing/testimonials";
@@ -17,6 +18,11 @@ const llms = [
   { name: "Perplexity", domain: "perplexity.ai" },
   { name: "Claude", domain: "claude.ai" },
 ];
+
+export const metadata: Metadata = {
+  title: 'AI Search Analytics For Marketing Teams.',
+  description: 'Understand how AI sees your brand. Monitor search rankings, analyze sentiment, and protect your reputation with our powerful AI analytics platform. Get started today.',
+};
 
 export default function Home() {
   const description = (

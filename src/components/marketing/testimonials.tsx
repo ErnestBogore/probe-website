@@ -4,18 +4,18 @@ import Image from 'next/image';
 // Data for the testimonials
 const testimonials = [
   {
-    quote: 'What I love most is having everything in one place—it simplifies routing and is 10x more intuitive than Chili Piper!',
-    author: 'Sarah Williams',
-    title: 'CTO, ARC',
-    avatar: '/placeholder-avatar-1.png',
-    logo: '/placeholder-logo-arc.svg',
+    quote: 'Probe Analytics has been a game-changer for our content strategy. We now know exactly how our articles are being interpreted by AI, allowing us to optimize for better visibility.',
+    author: 'Ibrahim Litinine',
+    title: 'Managing editor at Get French Classes',
+    avatar: '/ibrahim-litinine.jpeg',
+    logo: '/get-french-class.png',
   },
   {
-    quote: 'This app seamlessly integrates into our GTM ops, eliminating the need for a standalone tool and complex system connections.',
-    author: 'John Doe',
-    title: 'CEO & Founder, descript',
-    avatar: '/placeholder-avatar-2.png',
-    logo: '/placeholder-logo-descript.svg',
+    quote: 'The majority of our traffic comes from Bing. I was relieved to see a fair share of our total traffic comes from AI search as well. Now we can diversify our traffic source thanks to Probe Analytics.',
+    author: 'Justin Ahinon',
+    title: 'CEO at What Is That Movie',
+    avatar: '/justin-ahinon.jpg',
+    logo: '/what-is-that-movie.png',
   },
 ];
 
@@ -50,9 +50,9 @@ export const Testimonials = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-16">
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">What people think</h2>
+          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Hear From Brands Winning at AI Search</h2>
           <p className="mt-4 text-lg text-gray-600">
-            Transform go-to-market with smarter routing, actionable intent, and accelerated scheduling.
+            Leading brands use Probe Analytics to understand their AI search presence and stay ahead of the competition.
           </p>
         </div>
 

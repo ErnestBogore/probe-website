@@ -24,34 +24,19 @@ import React from "react";
 export const ClientNav = () => {
   const features = [
     {
-      title: "Dashboard",
-      description: "A quick overview of your business",
-      href: "#",
+      title: "AI Search Analytics Platform",
+      description: "Track your brand's visibility across all major AI answer engines.",
+      href: "/features/ai-search-analytics",
     },
     {
-      title: "Analytics",
-      description: "Track your performance",
-      href: "#",
+      title: "Brand Sentiment Analysis Tool",
+      description: "Monitor how AI perceives your brand and protect your reputation.",
+      href: "/features/brand-sentiment-analysis",
     },
     {
-      title: "Integrations",
-      description: "Connect with other tools",
-      href: "#",
-    },
-    {
-      title: "Settings",
-      description: "Manage your account",
-      href: "#",
-    },
-    {
-      title: "Storage",
-      description: "Manage your files",
-      href: "#",
-    },
-    {
-      title: "Support",
-      description: "Get help when needed",
-      href: "#",
+      title: "AI Search Tool",
+      description: "Run on-demand searches to get real-time AI rankings.",
+      href: "/features/ai-search-tool",
     },
   ];
 
@@ -92,10 +77,10 @@ export const ClientNav = () => {
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
-              href="#"
+              href="/blog"
               className={navigationMenuTriggerStyle()}
             >
-              Resources
+              Blog
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -168,13 +153,13 @@ export const ClientNav = () => {
             </Accordion>
             <div className="flex flex-col gap-6">
               <a href="#" className="font-medium">
-                Templates
+                Products
               </a>
-              <a href="#" className="font-medium">
+              <a href="/blog" className="font-medium">
                 Blog
               </a>
               <a href="#" className="font-medium">
-                Pricing
+                Contact
               </a>
             </div>
             <div className="mt-6 flex flex-col gap-4">
