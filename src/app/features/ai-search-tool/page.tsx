@@ -8,6 +8,9 @@ import React from 'react';
 export const metadata: Metadata = {
   title: 'Real-Time AI Search & Competitor Analysis Tool | Probe Analytics',
   description: "Get immediate AI search insights. Our on-demand tool lets you run ad-hoc searches to see real-time rankings, analyze competitors, and view full LLM responses.",
+  openGraph: {
+    images: ['/ai search tool image.png'],
+  },
 };
 
 const AISearchToolPage = () => {

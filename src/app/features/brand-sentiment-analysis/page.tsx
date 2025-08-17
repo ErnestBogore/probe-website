@@ -8,6 +8,9 @@ import React from 'react';
 export const metadata: Metadata = {
   title: 'AI Brand Sentiment Analysis Tool | Probe Analytics',
   description: "Understand how AI perceives your brand. Our sentiment analysis tool tracks whether the narrative is positive, neutral, or negative across LLMs to protect your reputation.",
+  openGraph: {
+    images: ['/monitor brand sentiment feature image.png'],
+  },
 };
 
 const BrandSentimentAnalysisPage = () => {

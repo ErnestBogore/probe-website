@@ -8,6 +8,9 @@ import React from 'react';
 export const metadata: Metadata = {
   title: 'AI Search Analytics Platform | Probe Analytics',
   description: "Measure what matters in the new era of search. Track AI rankings, analyze competitors, and connect your AI visibility to traffic and conversions with Probe Analytics.",
+  openGraph: {
+    images: ['/Hero-image-feature.png'],
+  },
 };
 
 const AISearchAnalyticsPage = () => {
