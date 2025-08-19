@@ -161,6 +161,11 @@ export async function getBlogPostBySlug(slug: string, includeDrafts = false) {
               headers
               rows
             }
+            ... on TakeawayRecord {
+              id
+              title
+              content
+            }
           }
         }
         publishedDate

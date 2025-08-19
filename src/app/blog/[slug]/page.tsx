@@ -19,6 +19,7 @@ import { Breadcrumb } from "@/components/marketing/breadcrumb";
 import { RelatedPosts } from '@/components/related-posts';
 import { TableOfContents } from '@/components/table-of-contents';
 import { Table } from '../../../components/blocks/Table';
+import { Takeaway } from '../../../components/blocks/Takeaway';
 import { generateAnchorId } from '@/lib/anchor-utils';
 
 interface BlogPostPageProps {
@@ -231,6 +232,13 @@ function StructuredTextWithTOC({ content }: { content: unknown }) {
               );
             }
             return null;
+          case 'TakeawayRecord':
+            const takeawayRecord = blockRecord as { id?: string; title?: string; content?: string };
+            return (
+              <Takeaway key={blockKey} title={takeawayRecord.title}>
+                {takeawayRecord.content}
+              </Takeaway>
+            );
           default:
             return null;
         }
