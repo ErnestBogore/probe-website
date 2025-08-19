@@ -18,12 +18,31 @@ import React from 'react';
 import { Breadcrumb } from "@/components/marketing/breadcrumb";
 import { RelatedPosts } from '@/components/related-posts';
 import { TableOfContents } from '@/components/table-of-contents';
+import { Table } from '../../../components/blocks/Table';
 import { generateAnchorId } from '@/lib/anchor-utils';
 
 interface BlogPostPageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+/**
+ * Simple table parser for comma-separated data
+ */
+function parseSimpleTable(headers: string, rows: string) {
+  const columns = headers.split(',').map(h => h.trim());
+  const data = rows.split('\n')
+    .filter(row => row.trim())
+    .map(row => {
+      const values = row.split(',').map(v => v.trim());
+      const rowObj: Record<string, string> = {};
+      columns.forEach((col, i) => {
+        rowObj[col] = values[i] || '';
+      });
+      return rowObj;
+    });
+  return { columns, data };
 }
 
 /**
@@ -198,6 +217,20 @@ function StructuredTextWithTOC({ content }: { content: unknown }) {
                 </video>
               </div>
             );
+          case 'TableRecord':
+            const tableRecord = blockRecord as { id?: string; title?: string; headers?: string; rows?: string };
+            if (tableRecord.headers && tableRecord.rows) {
+              const tableData = parseSimpleTable(tableRecord.headers, tableRecord.rows);
+              return (
+                <div key={blockKey}>
+                  {tableRecord.title && (
+                    <h3 className="text-xl font-semibold mb-4 text-gray-900">{tableRecord.title}</h3>
+                  )}
+                  <Table data={tableData} />
+                </div>
+              );
+            }
+            return null;
           default:
             return null;
         }

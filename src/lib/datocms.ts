@@ -155,6 +155,12 @@ export async function getBlogPostBySlug(slug: string, includeDrafts = false) {
                 height
               }
             }
+            ... on TableRecord {
+              id
+              title
+              headers
+              rows
+            }
           }
         }
         publishedDate

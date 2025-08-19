@@ -77,40 +77,27 @@ export const ClientNav = () => {
             <NavigationMenuContent className="bg-white dark:bg-zinc-900 shadow-lg">
               <ul className="grid w-[600px] grid-cols-2 gap-3 p-4">
                 {features.map((feature) => (
-                  <Link
-                    href={feature.href}
-                    key={feature.title}
-                    passHref
-                    legacyBehavior
-                  >
-                    <ListItem title={feature.title}>
-                      {feature.description}
-                    </ListItem>
-                  </Link>
+                  <ListItem key={feature.title} title={feature.title} href={feature.href}>
+                    {feature.description}
+                  </ListItem>
                 ))}
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="#" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Products
-              </NavigationMenuLink>
-            </Link>
+            <NavigationMenuLink href="#" className={navigationMenuTriggerStyle()}>
+              Products
+            </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/blog" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Blog
-              </NavigationMenuLink>
-            </Link>
+            <NavigationMenuLink href="/blog" className={navigationMenuTriggerStyle()}>
+              Blog
+            </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="#" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Contact
-              </NavigationMenuLink>
-            </Link>
+            <NavigationMenuLink href="#" className={navigationMenuTriggerStyle()}>
+              Contact
+            </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
