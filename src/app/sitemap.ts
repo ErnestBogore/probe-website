@@ -9,32 +9,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1.0,
+      changeFrequency: 'daily',
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/features/ai-search-analytics`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'daily',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/features/ai-search-tool`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'daily',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/features/brand-sentiment-analysis`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'daily',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.7,
+      priority: 0.8,
     },
   ];
 
@@ -46,8 +46,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const blogPages: MetadataRoute.Sitemap = allBlogPosts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
       lastModified: new Date(post._updatedAt || post._publishedAt || new Date()),
-      changeFrequency: 'weekly' as const,
-      priority: 0.6,
+      changeFrequency: 'daily' as const,
+      priority: 0.8,
     }));
 
     return [...staticPages, ...blogPages];
