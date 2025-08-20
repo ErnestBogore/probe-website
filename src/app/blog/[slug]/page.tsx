@@ -284,8 +284,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     // Use featured image or fallback to SEO image
     const heroImage = blogPost.featuredImage || blogPost.seo?.image;
 
+    // Generate structured data for this blog post
+    const structuredData = generateBlogPostSchema(blogPost);
+
     return (
       <div className="min-h-screen bg-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData)
+          }}
+        />
 
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
@@ -487,9 +496,6 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
         description,
         images: image ? [image.url] : undefined,
       },
-      other: {
-        'application/ld+json': JSON.stringify(structuredData)
-      }
     };
   } catch (error) {
     console.error('Error generating metadata:', error);
