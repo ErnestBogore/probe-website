@@ -2,6 +2,7 @@ import { Hero115 } from '@/components/features/ai-search-analytics/hero-115';
 import { Faq3 } from '@/components/faq3';
 import { Feature166 } from '@/components/feature166';
 import { Cta } from '@/components/marketing/cta';
+import { generateServiceSchema } from '@/lib/schema';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -46,8 +47,28 @@ const AISearchAnalyticsPage = () => {
     { src: '/grok.png', alt: 'Grok Logo', className: 'top-[5%] right-[10%] md:right-[15%]' },
   ];
 
+  // Generate service schema
+  const serviceSchema = generateServiceSchema({
+    name: "AI Search Analytics Platform",
+    description: "Measure what matters in the new era of search. Track AI rankings, analyze competitors, and connect your AI visibility to traffic and conversions.",
+    url: "https://www.tryprobe.com/features/ai-search-analytics",
+    category: "Analytics Software",
+    features: [
+      "Track AI Answer Engine Rankings",
+      "Competitive Intelligence",
+      "Content Opportunity Analysis", 
+      "Performance Impact Measurement"
+    ]
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema)
+        }}
+      />
       <Hero115 
       pillText="AI Search Analytics Platform"
       heading="Understand Your True AI Search Performance"

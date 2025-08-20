@@ -280,17 +280,72 @@ export function generateWebsiteSchema(): SchemaType {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Probe Analytics",
-    "url": "https://probe-analytics.com",
+    "name": ORGANIZATION_NAME,
+    "url": SITE_URL,
     "description": "Advanced analytics and AI-powered insights for modern businesses",
-    "publisher": generatePublisherSchema(),
+    "publisher": {
+      "@type": "Organization",
+      "name": ORGANIZATION_NAME,
+      "logo": {
+        "@type": "ImageObject",
+        "url": LOGO_URL
+      },
+      "url": SITE_URL
+    },
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://probe-analytics.com/search?q={search_term_string}"
+        "urlTemplate": `${SITE_URL}/search?q={search_term_string}`
       },
       "query-input": "required name=search_term_string"
+    }
+  };
+}
+
+interface ServiceSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  features: string[];
+  category: string;
+}
+
+export function generateServiceSchema(props: ServiceSchemaProps): SchemaType {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": props.name,
+    "description": props.description,
+    "url": props.url,
+    "provider": {
+      "@type": "Organization",
+      "name": ORGANIZATION_NAME,
+      "url": SITE_URL,
+      "logo": {
+        "@type": "ImageObject",
+        "url": LOGO_URL
+      }
+    },
+    "serviceType": props.category,
+    "hasOfferingCatalog": {
+      "@type": "OfferingCatalog",
+      "name": `${props.name} Features`,
+      "itemListElement": props.features.map((feature, index) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": feature
+        },
+        "position": index + 1
+      }))
+    },
+    "areaServed": "Worldwide",
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": props.url,
+      "serviceSmsNumber": undefined,
+      "servicePhone": undefined
     }
   };
 }
@@ -303,7 +358,7 @@ export function generateBreadcrumbSchema(items: Array<{ name: string; href: stri
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": `https://probe-analytics.com${item.href}`
+      "item": `${SITE_URL}${item.href}`
     }))
   };
 }

@@ -2,6 +2,7 @@ import { Hero115 } from '@/components/features/ai-search-analytics/hero-115';
 import { Faq3 } from '@/components/faq3';
 import { Feature166 } from '@/components/feature166';
 import { Cta } from '@/components/marketing/cta';
+import { generateServiceSchema } from '@/lib/schema';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -46,8 +47,28 @@ const BrandSentimentAnalysisPage = () => {
     { src: '/grok.png', alt: 'Grok Logo', className: 'top-[5%] right-[10%] md:right-[15%]' },
   ];
 
+  // Generate service schema
+  const serviceSchema = generateServiceSchema({
+    name: "AI Brand Sentiment Analysis Tool",
+    description: "Understand how AI perceives your brand. Track your brand sentiment across all major LLMs to identify positive, neutral, or negative perceptions and protect your reputation.",
+    url: "https://www.tryprobe.com/features/brand-sentiment-analysis",
+    category: "Brand Monitoring Software",
+    features: [
+      "Cross-LLM Sentiment Tracking",
+      "Detect Misinformation & Misattributions",
+      "Analyze Sentiment Trends Over Time",
+      "Protect Your Brand Reputation"
+    ]
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema)
+        }}
+      />
       <Hero115 
       pillText="Brand Sentiment Analysis Tool"
       heading="Monitor How AI Perceives <br /> Your Brand"

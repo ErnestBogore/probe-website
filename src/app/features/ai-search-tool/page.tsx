@@ -2,6 +2,7 @@ import { Hero115 } from '@/components/features/ai-search-analytics/hero-115';
 import { Faq3 } from '@/components/faq3';
 import { Feature166 } from '@/components/feature166';
 import { Cta } from '@/components/marketing/cta';
+import { generateServiceSchema } from '@/lib/schema';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -46,8 +47,28 @@ const AISearchToolPage = () => {
     { src: '/grok.png', alt: 'Grok Logo', className: 'top-[5%] right-[10%] md:right-[15%]' },
   ];
 
+  // Generate service schema
+  const serviceSchema = generateServiceSchema({
+    name: "AI Search Tool",
+    description: "Get immediate AI search insights. Run ad-hoc searches to see real-time rankings, analyze competitors, and view full LLM responses across all major answer engines.",
+    url: "https://www.tryprobe.com/features/ai-search-tool",
+    category: "Search Analysis Tool",
+    features: [
+      "Real-Time SERP Analysis",
+      "Citation & Source Tracking",
+      "Full Chat Response Viewer",
+      "Identify Market Dominators"
+    ]
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema)
+        }}
+      />
       <Hero115 
       pillText="AI Search Tool"
       heading="Get Instant AI Search Insights, On-Demand"
