@@ -4,15 +4,7 @@
  * Generates dynamic structured data for different page types
  */
 
-interface Author {
-  name: string;
-  title?: string;
-  image?: {
-    url: string;
-    alt?: string;
-  };
-  bio?: string;
-}
+import { BlogPost, Author, Image } from '@/types/blog';
 
 interface Publisher {
   name: string;
@@ -20,41 +12,22 @@ interface Publisher {
   url: string;
 }
 
-interface MediaObject {
-  url: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-  type?: 'image' | 'video' | 'audio';
-}
-
 interface FAQItem {
   question: string;
   answer: string;
 }
 
-interface BlogPost {
-  title: string;
-  slug: string;
-  body?: any;
-  publishedDate?: string;
-  _publishedAt?: string;
-  _updatedAt?: string;
-  author?: Author;
-  reviewer?: Author;
-  featuredImage?: MediaObject;
-  seo?: {
-    title?: string;
-    description?: string;
-    image?: MediaObject;
-  };
-  excerpt?: string;
+interface StructuredTextNode {
+  type: string;
+  level?: number;
+  children?: StructuredTextNode[];
+  value?: string;
 }
 
 type SchemaType = {
   "@context"?: string;
   "@type": string;
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 type MultiSchemaType = {
@@ -69,7 +42,6 @@ function generateAuthorSchema(author?: Author) {
     "@type": "Person",
     "name": author.name,
     ...(author.image && { "image": author.image.url }),
-    ...(author.bio && { "description": author.bio }),
     ...(author.title && { "jobTitle": author.title })
   };
 }
@@ -86,7 +58,7 @@ function generatePublisherSchema(): SchemaType {
   };
 }
 
-function generateMediaSchema(media?: MediaObject) {
+function generateMediaSchema(media?: Image) {
   if (!media) return null;
   
   return {
@@ -123,15 +95,26 @@ function isQuestion(text: string): boolean {
   return questionWords.includes(firstWord);
 }
 
-function extractFAQsFromStructuredText(body: any): FAQItem[] {
+function extractFAQsFromStructuredText(body: { value: unknown }): FAQItem[] {
   const faqs: FAQItem[] = [];
   
-  if (!body?.value?.document?.children) return faqs;
+  // Type guard to check if body has the expected structure
+  const hasDocumentStructure = (obj: unknown): obj is { document: { children: StructuredTextNode[] } } => {
+    return typeof obj === 'object' && obj !== null && 'document' in obj &&
+           typeof (obj as Record<string, unknown>).document === 'object' &&
+           (obj as Record<string, unknown>).document !== null &&
+           'children' in ((obj as Record<string, unknown>).document as Record<string, unknown>) &&
+           Array.isArray(((obj as Record<string, unknown>).document as Record<string, unknown>).children);
+  };
+  
+  if (!body?.value || !hasDocumentStructure(body.value)) return faqs;
+  
+  const documentChildren = (body.value as { document: { children: StructuredTextNode[] } }).document.children;
   
   let currentQuestion: string | null = null;
   let currentAnswer: string[] = [];
   
-  const processNode = (node: any) => {
+  const processNode = (node: StructuredTextNode) => {
     if (node.type === 'heading' && node.level === 2) {
       // Save previous FAQ if exists
       if (currentQuestion && currentAnswer.length > 0) {
@@ -162,7 +145,7 @@ function extractFAQsFromStructuredText(body: any): FAQItem[] {
     }
   };
   
-  body.value.document.children.forEach(processNode);
+  documentChildren.forEach(processNode);
   
   // Add the last FAQ if exists
   if (currentQuestion && currentAnswer.length > 0) {
@@ -175,7 +158,7 @@ function extractFAQsFromStructuredText(body: any): FAQItem[] {
   return faqs;
 }
 
-function extractTextFromNode(node: any): string {
+function extractTextFromNode(node: StructuredTextNode): string {
   if (node.type === 'text') {
     return node.value || '';
   }
