@@ -10,6 +10,7 @@ import { Hero } from "@/components/marketing/hero";
 import { Features } from "@/components/marketing/features";
 import { Testimonials } from "@/components/marketing/testimonials";
 import { Cta } from "@/components/marketing/cta";
+import { generateOrganizationSchema, generateWebsiteSchema } from "@/lib/schema";
 import Image from "next/image";
 import React from "react";
 
@@ -19,12 +20,26 @@ const llms = [
   { name: "Claude", domain: "claude.ai" },
 ];
 
+const organizationSchema = generateOrganizationSchema();
+const websiteSchema = generateWebsiteSchema();
+
+const combinedSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { ...organizationSchema, "@context": undefined },
+    { ...websiteSchema, "@context": undefined }
+  ]
+};
+
 export const metadata: Metadata = {
   title: 'AI Search Analytics For Marketing Teams',
   description: 'Understand how AI sees your brand. Monitor search rankings, analyze sentiment, and protect your reputation with our powerful AI analytics platform. Get started today.',
   openGraph: {
     images: ['/Artboard (1).png'],
   },
+  other: {
+    'application/ld+json': JSON.stringify(combinedSchema)
+  }
 };
 
 export default function Home() {

@@ -21,6 +21,7 @@ import { TableOfContents } from '@/components/table-of-contents';
 import { Table } from '../../../components/blocks/Table';
 import { Takeaway } from '../../../components/blocks/Takeaway';
 import { generateAnchorId } from '@/lib/anchor-utils';
+import { generateBlogPostSchema } from '@/lib/schema';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -458,6 +459,9 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     const description = blogPost.seo?.description || blogPost.excerpt || 'Read this insightful blog post from Probe Analytics.';
     const image = blogPost.seo?.image || blogPost.featuredImage;
 
+    // Generate structured data
+    const structuredData = generateBlogPostSchema(blogPost);
+
     return {
       title: `${title} | Probe Analytics`,
       description,
@@ -483,6 +487,9 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
         description,
         images: image ? [image.url] : undefined,
       },
+      other: {
+        'application/ld+json': JSON.stringify(structuredData)
+      }
     };
   } catch (error) {
     console.error('Error generating metadata:', error);
