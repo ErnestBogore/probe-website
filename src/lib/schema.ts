@@ -52,9 +52,9 @@ function generatePublisherSchema(): SchemaType {
     "name": "Probe Analytics",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://probe-analytics.com/logo.png"
+      "url": "https://www.tryprobe.com/logo.png"
     },
-    "url": "https://probe-analytics.com"
+    "url": "https://www.tryprobe.com"
   };
 }
 
@@ -88,28 +88,45 @@ function generateFAQSchema(faqs: FAQItem[]): SchemaType | null {
 }
 
 function isQuestion(text: string): boolean {
-  if (text.trim().endsWith('?')) return true;
+  const cleanText = text.trim().toLowerCase();
   
+  // Direct question mark
+  if (cleanText.endsWith('?')) return true;
+  
+  // Question words at the beginning
   const questionWords = ['how', 'what', 'why', 'when', 'where', 'which', 'who', 'can', 'should', 'will', 'do', 'does', 'is', 'are'];
-  const firstWord = text.trim().toLowerCase().split(' ')[0];
-  return questionWords.includes(firstWord);
+  const firstWord = cleanText.split(' ')[0];
+  if (questionWords.includes(firstWord)) return true;
+  
+  // Common question patterns
+  const questionPatterns = [
+    /^step \d+:/,
+    /how to/,
+    /what is/,
+    /why do/,
+    /when to/,
+    /where to/
+  ];
+  
+  return questionPatterns.some(pattern => pattern.test(cleanText));
 }
 
 function extractFAQsFromStructuredText(body: { value: unknown }): FAQItem[] {
   const faqs: FAQItem[] = [];
   
-  // Type guard to check if body has the expected structure
-  const hasDocumentStructure = (obj: unknown): obj is { document: { children: StructuredTextNode[] } } => {
-    return typeof obj === 'object' && obj !== null && 'document' in obj &&
+  // Type guard for DatoCMS DAST structure
+  const hasDastStructure = (obj: unknown): obj is { schema: string; document: { type: string; children: StructuredTextNode[] } } => {
+    return typeof obj === 'object' && obj !== null && 
+           'schema' in obj && 'document' in obj &&
            typeof (obj as Record<string, unknown>).document === 'object' &&
            (obj as Record<string, unknown>).document !== null &&
            'children' in ((obj as Record<string, unknown>).document as Record<string, unknown>) &&
            Array.isArray(((obj as Record<string, unknown>).document as Record<string, unknown>).children);
   };
   
-  if (!body?.value || !hasDocumentStructure(body.value)) return faqs;
+  if (!body?.value || !hasDastStructure(body.value)) return faqs;
   
-  const documentChildren = (body.value as { document: { children: StructuredTextNode[] } }).document.children;
+  const documentChildren = (body.value as { schema: string; document: { type: string; children: StructuredTextNode[] } }).document.children;
   
   let currentQuestion: string | null = null;
   let currentAnswer: string[] = [];
@@ -159,8 +176,12 @@ function extractFAQsFromStructuredText(body: { value: unknown }): FAQItem[] {
 }
 
 function extractTextFromNode(node: StructuredTextNode): string {
-  if (node.type === 'text') {
-    return node.value || '';
+  if (node.type === 'span' && node.value) {
+    return node.value;
+  }
+  
+  if (node.type === 'text' && node.value) {
+    return node.value;
   }
   
   if (node.children) {
@@ -181,7 +202,7 @@ export function generateBlogPostSchema(post: BlogPost): SchemaType | MultiSchema
   const blogSchema: Omit<SchemaType, "@context"> = {
     "@type": "BlogPosting",
     "headline": post.title,
-    "url": `https://probe-analytics.com/blog/${post.slug}`,
+    "url": `https://www.tryprobe.com/blog/${post.slug}`,
     "author": generateAuthorSchema(post.author),
     "publisher": generatePublisherSchema(),
     ...(publishedDate && { "datePublished": publishedDate }),
@@ -191,7 +212,7 @@ export function generateBlogPostSchema(post: BlogPost): SchemaType | MultiSchema
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://probe-analytics.com/blog/${post.slug}`
+      "@id": `https://www.tryprobe.com/blog/${post.slug}`
     }
   };
   
@@ -227,15 +248,19 @@ export function generateBlogPostSchema(post: BlogPost): SchemaType | MultiSchema
   };
 }
 
+const SITE_URL = 'https://www.tryprobe.com';
+const ORGANIZATION_NAME = 'Probe Analytics';
+const LOGO_URL = 'https://www.tryprobe.com/logo.png';
+
 export function generateOrganizationSchema(): SchemaType {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Probe Analytics",
-    "url": "https://probe-analytics.com",
+    "name": ORGANIZATION_NAME,
+    "url": SITE_URL,
     "logo": {
       "@type": "ImageObject",
-      "url": "https://probe-analytics.com/logo.png"
+      "url": LOGO_URL
     },
     "description": "Advanced analytics and AI-powered insights for modern businesses",
     "foundingDate": "2024",
