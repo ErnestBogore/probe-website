@@ -52,8 +52,7 @@ function extractHeadings(content: unknown): TOCItem[] {
         (node as { type: string }).type === 'heading' &&
         'level' in node &&
         typeof (node as { level: number }).level === 'number' &&
-        (node as { level: number }).level >= 2 &&
-        (node as { level: number }).level <= 4
+        (node as { level: number }).level === 2
       ) {
         // Extract text from heading children
         const text = extractTextFromNode(node);

@@ -78,6 +78,7 @@ export interface BlogPost {
   seo?: SEO;
   _publishedAt?: string;
   _updatedAt?: string;
+  contentType?: string;
 }
 
 export interface BlogPostSummary {

@@ -122,6 +122,7 @@ export async function getAllBlogPosts(includeDrafts = false) {
           }
         }
         _publishedAt
+        contentType
       }
     }
   `;
@@ -142,6 +143,7 @@ export async function getBlogPostBySlug(slug: string, includeDrafts = false) {
         id
         title
         slug
+        contentType
         body {
           value
           blocks {
@@ -239,6 +241,7 @@ export async function getBlogPostBySlug(slug: string, includeDrafts = false) {
         }
         _publishedAt
         _updatedAt
+        contentType
       }
     }
   `;
@@ -255,10 +258,11 @@ export async function getAllBlogPostSlugs() {
     query AllBlogPostSlugs {
       allBlogPosts {
         slug
+        contentType
       }
     }
   `;
 
-  const data = await request<{ allBlogPosts: Array<{ slug: string }> }>(query);
-  return data.allBlogPosts.map(post => post.slug);
+  const data = await request<{ allBlogPosts: Array<{ slug: string; contentType: string }> }>(query);
+  return data.allBlogPosts;
 } 

@@ -1,8 +1,7 @@
 /**
- * Dynamic Blog Post Page
+ * Dynamic Case Study Page
  * 
- * Renders individual blog posts fetched from DatoCMS by slug.
- * Features structured content rendering, SEO optimization, and responsive design.
+ * Renders individual case studies fetched from DatoCMS by slug.
  */
 
 import { getBlogPostBySlug, getAllBlogPostSlugs } from '@/lib/datocms';
@@ -23,15 +22,12 @@ import { Takeaway } from '../../../components/blocks/Takeaway';
 import { generateAnchorId } from '@/lib/anchor-utils';
 import { generateBlogPostSchema } from '@/lib/schema';
 
-interface BlogPostPageProps {
+interface CaseStudyPageProps {
   params: Promise<{
     slug: string;
   }>;
 }
 
-/**
- * Simple table parser for comma-separated data
- */
 function parseSimpleTable(headers: string, rows: string) {
   const columns = headers.split(',').map(h => h.trim());
   const data = rows.split('\n')
@@ -47,9 +43,6 @@ function parseSimpleTable(headers: string, rows: string) {
   return { columns, data };
 }
 
-/**
- * Extracts plain text from React children for generating anchor IDs
- */
 function extractTextFromChildren(children: unknown): string {
   if (typeof children === 'string') {
     return children;
@@ -66,14 +59,10 @@ function extractTextFromChildren(children: unknown): string {
   return '';
 }
 
-/**
- * Custom StructuredText component that inserts TOC before first H2
- */
 function StructuredTextWithTOC({ content }: { content: unknown }) {
   let firstH2Encountered = false;
 
   const customNodeRules = [
-    // Custom styling for headings with anchor IDs and TOC insertion
     renderNodeRule(isHeading, ({ node, children, key }) => {
       const headingClasses = {
         1: "text-4xl font-bold mt-12 mb-6 text-gray-900",
@@ -84,11 +73,9 @@ function StructuredTextWithTOC({ content }: { content: unknown }) {
         6: "text-base font-bold mt-3 mb-2 text-gray-900"
       };
       
-      // Extract text from children to generate anchor ID
       const headingText = extractTextFromChildren(children);
       const anchorId = headingText ? generateAnchorId(headingText) : undefined;
       
-      // Check if this is the first H2 we encounter
       const shouldInsertTOC = node.level === 2 && !firstH2Encountered;
       if (shouldInsertTOC) {
         firstH2Encountered = true;
@@ -115,7 +102,6 @@ function StructuredTextWithTOC({ content }: { content: unknown }) {
         }
       };
 
-      // Insert TOC before the first H2
       if (shouldInsertTOC) {
         return (
           <React.Fragment key={`fragment-${key}-${Date.now()}`}>
@@ -128,14 +114,12 @@ function StructuredTextWithTOC({ content }: { content: unknown }) {
       return <HeadingComponent key={`heading-wrapper-${key}-${Date.now()}`} />;
     }),
     
-    // Custom styling for paragraphs
     renderNodeRule(isParagraph, ({ children, key }) => (
       <p key={`paragraph-${key}-${Date.now()}`} className="mb-6 text-gray-700 leading-relaxed">
         {children}
       </p>
     )),
     
-    // Custom styling for links
     renderNodeRule(isLink, ({ node, children, key }) => (
       <a
         key={`link-${key}-${Date.now()}`}
@@ -148,7 +132,6 @@ function StructuredTextWithTOC({ content }: { content: unknown }) {
       </a>
     )),
     
-    // Custom styling for lists
     renderNodeRule(isList, ({ node, children, key }) => {
       const listClasses = "my-4 ml-6 space-y-2";
       const listKey = `list-${node.style || 'default'}-${key}-${Date.now()}`;
@@ -167,7 +150,6 @@ function StructuredTextWithTOC({ content }: { content: unknown }) {
         );
       }
       
-      // Default to bulleted list
       return (
         <ul key={listKey} className={`${listClasses} list-disc list-outside`}>
           {children}
@@ -175,7 +157,6 @@ function StructuredTextWithTOC({ content }: { content: unknown }) {
       );
     }),
     
-    // Custom styling for list items
     renderNodeRule(isListItem, ({ children, key }) => (
       <li key={`list-item-${key}`} className="text-gray-700 leading-relaxed pl-2">
         {children}
@@ -266,12 +247,13 @@ function StructuredTextWithTOC({ content }: { content: unknown }) {
   );
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
+export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   try {
     const { slug } = await params;
     const { blogPost } = await getBlogPostBySlug(slug);
 
-    if (!blogPost || blogPost.contentType === 'case_study') {
+
+    if (!blogPost || blogPost.contentType !== 'case_study') {
       notFound();
     }
 
@@ -281,10 +263,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       ? format(new Date(blogPost._publishedAt), 'MMMM dd, yyyy')
       : null;
 
-    // Use featured image or fallback to SEO image
     const heroImage = blogPost.featuredImage || blogPost.seo?.image;
-
-    // Generate structured data for this blog post
     const structuredData = generateBlogPostSchema(blogPost);
 
     return (
@@ -301,22 +280,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <Breadcrumb 
             items={[
               { name: 'Home', href: '/' },
-              { name: 'Blog', href: '/blog' },
-              { name: blogPost.title, href: `/blog/${blogPost.slug}` },
+              { name: 'Case Studies', href: '/case-study' },
+              { name: blogPost.title, href: `/case-study/${blogPost.slug}` },
             ]}
           />
         </div>
 
-        {/* Article */}
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12">
-          {/* Article Header */}
           <header className="mb-8 text-center">
-            {/* Title - Centered */}
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {blogPost.title}
             </h1>
 
-            {/* Date - Centered */}
             {publishedDate && (
               <div className="mb-8">
                 <time 
@@ -328,7 +303,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
             )}
 
-            {/* Author and Reviewer - Side by side, centered */}
             {(blogPost.author || blogPost.reviewer) && (
               <div className="flex flex-col md:flex-row justify-center items-start gap-12 mb-8">
                 {blogPost.author && (
@@ -383,7 +357,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
             )}
 
-            {/* Featured Image - Centered */}
             {heroImage && (
               <div className="flex justify-center mb-8">
                 <Image
@@ -399,27 +372,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             )}
           </header>
 
-          {/* Article Content */}
           {blogPost.body && (
             <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-blockquote:border-blue-500 prose-ul:list-disc prose-ol:list-decimal prose-li:text-gray-700 prose-ul:ml-6 prose-ol:ml-6" style={{ '--tw-prose-bullets': '#374151', '--tw-prose-counters': '#374151' } as React.CSSProperties}>
               <StructuredTextWithTOC content={blogPost.body} />
             </div>
           )}
 
-          {/* Related Posts */}
           {blogPost.relatedPosts && blogPost.relatedPosts.length > 0 && (
             <RelatedPosts posts={blogPost.relatedPosts} />
           )}
 
-          {/* Article Footer */}
           <footer className="mt-12 pt-8 border-t border-gray-200">
             <div className="flex justify-between items-center">
               <Link 
-                href="/blog"
+                href="/case-study"
                 className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to all posts
+                Back to all case studies
               </Link>
               
               {blogPost.updatedAt && (
@@ -433,50 +403,47 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </div>
     );
   } catch (error) {
-    console.error('Error fetching blog post:', error);
+    console.error('Error fetching case study:', error);
     notFound();
   }
 }
 
-// Generate static params for all blog post slugs
 export async function generateStaticParams() {
   try {
     const posts = await getAllBlogPostSlugs();
-    const blogSlugs = posts
-      .filter(post => post.contentType !== 'case_study')
+    const caseStudySlugs = posts
+      .filter(post => post.contentType === 'case_study')
       .map(post => ({ slug: post.slug }));
-    return blogSlugs;
+    return caseStudySlugs;
   } catch (error) {
-    console.error('Error generating static params for blog posts:', error);
+    console.error('Error generating static params for case studies:', error);
     return [];
   }
 }
 
-// Generate metadata for SEO
-export async function generateMetadata({ params }: BlogPostPageProps) {
+export async function generateMetadata({ params }: CaseStudyPageProps) {
   try {
     const { slug } = await params;
     const { blogPost } = await getBlogPostBySlug(slug);
 
     if (!blogPost) {
       return {
-        title: 'Post Not Found | Probe Analytics',
-        description: 'The requested blog post could not be found.',
+        title: 'Case Study Not Found | Probe Analytics',
+        description: 'The requested case study could not be found.',
       };
     }
 
     const title = blogPost.seo?.title || blogPost.title;
-    const description = blogPost.seo?.description || blogPost.excerpt || 'Read this insightful blog post from Probe Analytics.';
+    const description = blogPost.seo?.description || blogPost.excerpt || 'Read this case study from Probe Analytics.';
     const image = blogPost.seo?.image || blogPost.featuredImage;
 
-    // Generate structured data
     const structuredData = generateBlogPostSchema(blogPost);
 
     return {
-      title: `${title} | Probe Analytics`,
+      title: `${title} | Probe Analytics Case Study`,
       description,
       openGraph: {
-        title: `${title} | Probe Analytics`,
+        title: `${title} | Probe Analytics Case Study`,
         description,
         type: 'article',
         publishedTime: blogPost.publishedDate,
@@ -493,7 +460,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
       },
       twitter: {
         card: 'summary_large_image',
-        title: `${title} | Probe Analytics`,
+        title: `${title} | Probe Analytics Case Study`,
         description,
         images: image ? [image.url] : undefined,
       },
@@ -501,8 +468,8 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   } catch (error) {
     console.error('Error generating metadata:', error);
     return {
-      title: 'Blog Post | Probe Analytics',
-      description: 'Read this insightful blog post from Probe Analytics.',
+      title: 'Case Study | Probe Analytics',
+      description: 'Read this case study from Probe Analytics.',
     };
   }
-} 
+}

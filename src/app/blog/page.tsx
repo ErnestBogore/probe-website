@@ -12,7 +12,9 @@ import { BlogPost } from '@/types/blog';
 export default async function BlogPage() {
   const { allBlogPosts }: { allBlogPosts: BlogPost[] } = await getAllBlogPosts();
 
-  const postsForComponent = allBlogPosts.map((post: BlogPost) => ({
+  const postsForComponent = allBlogPosts
+    .filter(post => post.contentType !== 'case_study')
+    .map((post: BlogPost) => ({
     id: post.id,
     url: `/blog/${post.slug}`,
     image: post.featuredImage?.url || post.seo?.image?.url || '',
