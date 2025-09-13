@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/free-tools/ai-website-audit-tool/(.*)",
+      "destination": "https://site-ai-readiness-tool.vercel.app/$1"
+    }
+  ]
+}
