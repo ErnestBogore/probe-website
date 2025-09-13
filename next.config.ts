@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: "/free-tools/ai-website-audit-tool/:path*",
+        destination: "https://site-ai-readiness-tool.vercel.app/:path*",
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
