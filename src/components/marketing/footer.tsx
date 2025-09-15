@@ -46,6 +46,13 @@ const defaultSections = [
     ],
   },
   {
+    title: "Free Tools",
+    links: [
+      { name: "AI Website Audit Tool", href: "/free-tools/ai-website-audit-tool" },
+      { name: "LLM.txt Generator", href: "/free-tools/llm-txt-generator-tool" },
+    ],
+  },
+  {
     title: "Resources",
     links: [
       { name: "Help", href: "#" },
