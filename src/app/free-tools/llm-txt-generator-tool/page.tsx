@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/llmtxt og.png',
+        url: '/llmtxt-og.png',
         width: 1200,
         height: 630,
         alt: 'LLM.txt Generator Tool by Probe Analytics',

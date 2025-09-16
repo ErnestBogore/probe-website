@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/perplexity alternative og.png',
+        url: '/perplexity-alternative-og.png',
         width: 1200,
         height: 630,
         alt: 'Perplexity AI Alternative by Probe Analytics',
