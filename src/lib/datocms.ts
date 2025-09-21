@@ -80,7 +80,7 @@ async function request<T>(
 export async function getAllBlogPosts(includeDrafts = false) {
   const query = `
     query AllBlogPosts {
-      allBlogPosts(orderBy: publishedDate_DESC) {
+      allBlogPosts(orderBy: publishedDate_DESC, first: 100) {
         id
         title
         slug
@@ -256,7 +256,7 @@ export async function getBlogPostBySlug(slug: string, includeDrafts = false) {
 export async function getAllBlogPostSlugs() {
   const query = `
     query AllBlogPostSlugs {
-      allBlogPosts {
+      allBlogPosts(first: 100) {
         slug
         contentType
       }
