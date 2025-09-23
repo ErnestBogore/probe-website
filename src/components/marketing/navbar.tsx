@@ -9,19 +9,17 @@ const ClientNav = dynamic(() => import('./client-nav').then(mod => mod.ClientNav
 
 export const Navbar = () => {
   return (
-    <section className="py-4">
+    <section className="py-2">
       <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <Link
-            href="/"
-            className="flex items-center gap-2"
-          >
+        <div className="flex items-center justify-between">
+          <Link href="/" className="flex items-center">
             <Image
               src="/logo-tryanalyze.png"
-              width={150}
-              height={150}
+              width={120}
+              height={40}
               alt="Analyze Logo"
               className="h-auto w-auto"
+              priority
             />
           </Link>
           <ClientNav />

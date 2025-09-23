@@ -26,8 +26,8 @@ export const Cta = () => {
               <Image 
                 src="/Artboard (1).png" 
                 alt="A mockup of the Analyze dashboard."
-                layout="fill" 
-                objectFit="contain"
+                fill
+                className="object-contain"
               />
             </div>
           </div>

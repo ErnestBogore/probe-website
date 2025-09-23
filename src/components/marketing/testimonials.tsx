@@ -9,6 +9,7 @@ const testimonials = [
     title: 'Managing editor at Get French Classes',
     avatar: '/ibrahim-litinine.jpeg',
     logo: '/get-french-class.png',
+    bgColor: '#e0f2fe', // Light blue
   },
   {
     quote: 'The majority of our traffic comes from Bing. I was relieved to see a fair share of our total traffic comes from AI search as well. Now we can diversify our traffic source thanks to Analyze.',
@@ -16,6 +17,7 @@ const testimonials = [
     title: 'CEO at What Is That Movie',
     avatar: '/justin-ahinon.jpg',
     logo: '/what-is-that-movie.png',
+    bgColor: '#f0fdf4', // Light green
   },
 ];
 
@@ -26,21 +28,21 @@ const statCards = [
     description: 'GTM efficiency increase',
     title: 'How we Achieved 10x GTM Efficiency',
     href: '#',
-    backgroundImage: '/placeholder-bg-1.jpg',
+    backgroundColor: 'bg-blue-50',
   },
   {
     stat: '80%',
     description: 'faster lead response time',
     title: 'How Mercury Reduced Speed-to-Lead by 80%',
     href: '#',
-    backgroundImage: '/placeholder-bg-2.jpg',
+    backgroundColor: 'bg-green-50',
   },
   {
     stat: '$7M',
     description: 'inbound pipeline generated',
     title: 'From Zero to $7M in Pipeline',
     href: '#',
-    backgroundImage: '/placeholder-bg-3.jpg',
+    backgroundColor: 'bg-purple-50',
   },
 ];
 
@@ -63,13 +65,28 @@ export const Testimonials = () => {
               <p className="text-gray-800 text-lg mb-6">{testimonial.quote}</p>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <Image src={testimonial.avatar} alt={testimonial.author} width={40} height={40} className="rounded-full" />
+                  <div className="w-10 h-10 rounded-full overflow-hidden">
+                    <Image 
+                      src={testimonial.avatar} 
+                      alt={testimonial.author}
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <div>
                     <p className="font-semibold text-gray-900">{testimonial.author}</p>
                     <p className="text-gray-500">{testimonial.title}</p>
                   </div>
                 </div>
-                <Image src={testimonial.logo} alt="company logo" width={80} height={24} className="opacity-70" />
+                <div className="w-20 h-6 relative">
+                  <Image 
+                    src={testimonial.logo} 
+                    alt={`${testimonial.author}'s company logo`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </div>
           ))}
@@ -78,16 +95,16 @@ export const Testimonials = () => {
         {/* Stat Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {statCards.map((card, index) => (
-            <a href={card.href} key={index} className="group relative block rounded-xl overflow-hidden aspect-[4/3]">
-              <Image src={card.backgroundImage} alt={card.title} layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute inset-0 p-8 flex flex-col justify-between text-gray-900 group-hover:text-white transition-colors duration-300">
-                <div>
-                  <p className="text-5xl font-bold">{card.stat}</p>
-                  <p className="text-lg">{card.description}</p>
-                </div>
-                <p className="text-xl font-semibold">{card.title}</p>
+            <a 
+              href={card.href} 
+              key={index} 
+              className={`group relative block rounded-xl overflow-hidden aspect-[4/3] ${card.backgroundColor} p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-lg`}
+            >
+              <div>
+                <p className="text-5xl font-bold text-gray-900">{card.stat}</p>
+                <p className="text-lg text-gray-700">{card.description}</p>
               </div>
+              <p className="text-xl font-semibold text-gray-900">{card.title}</p>
             </a>
           ))}
         </div>
