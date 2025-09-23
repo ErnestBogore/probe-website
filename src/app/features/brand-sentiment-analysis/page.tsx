@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'AI Brand Sentiment Analysis Tool | Probe Analytics',
+  title: 'AI Brand Sentiment Analysis Tool | Analyze',
   description: "Understand how AI perceives your brand. Our sentiment analysis tool tracks whether the narrative is positive, neutral, or negative across LLMs to protect your reputation.",
   openGraph: {
     images: ['/monitor brand sentiment feature image.png'],
@@ -51,7 +51,7 @@ const BrandSentimentAnalysisPage = () => {
   const serviceSchema = generateServiceSchema({
     name: "AI Brand Sentiment Analysis Tool",
     description: "Understand how AI perceives your brand. Track your brand sentiment across all major LLMs to identify positive, neutral, or negative perceptions and protect your reputation.",
-    url: "https://www.tryprobe.com/features/brand-sentiment-analysis",
+    url: "https://www.tryanalyze.ai/features/brand-sentiment-analysis",
     category: "Brand Monitoring Software",
     features: [
       "Cross-LLM Sentiment Tracking",

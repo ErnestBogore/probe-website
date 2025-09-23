@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Real-Time AI Search & Competitor Analysis Tool | Probe Analytics',
+  title: 'Real-Time AI Search & Competitor Analysis Tool | Analyze',
   description: "Get immediate AI search insights. Our on-demand tool lets you run ad-hoc searches to see real-time rankings, analyze competitors, and view full LLM responses.",
   openGraph: {
     images: ['/ai search tool image.png'],
@@ -50,8 +50,8 @@ const AISearchToolPage = () => {
   // Generate service schema
   const serviceSchema = generateServiceSchema({
     name: "AI Search Tool",
-    description: "Get immediate AI search insights. Run ad-hoc searches to see real-time rankings, analyze competitors, and view full LLM responses across all major answer engines.",
-    url: "https://www.tryprobe.com/features/ai-search-tool",
+    description: "Get immediate AI search insights. Run ad-hoc searches to see real-time rankings, analyze competitors, and view full LLM responses across all major answer engines with Analyze.",
+    url: "https://www.tryanalyze.ai/features/ai-search-tool",
     category: "Search Analysis Tool",
     features: [
       "Real-Time SERP Analysis",

@@ -49,12 +49,12 @@ function generateAuthorSchema(author?: Author) {
 function generatePublisherSchema(): SchemaType {
   return {
     "@type": "Organization",
-    "name": "Probe Analytics",
+    "name": "Analyze",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.tryprobe.com/logo.png"
+      "url": "https://www.tryanalyze.ai/logo.png"
     },
-    "url": "https://www.tryprobe.com"
+    "url": "https://www.tryanalyze.ai"
   };
 }
 
@@ -202,7 +202,7 @@ export function generateBlogPostSchema(post: BlogPost): SchemaType | MultiSchema
   const blogSchema: Omit<SchemaType, "@context"> = {
     "@type": "BlogPosting",
     "headline": post.title,
-    "url": `https://www.tryprobe.com/blog/${post.slug}`,
+    "url": `https://www.tryanalyze.ai/blog/${post.slug}`,
     "author": generateAuthorSchema(post.author),
     "publisher": generatePublisherSchema(),
     ...(publishedDate && { "datePublished": publishedDate }),
@@ -212,7 +212,7 @@ export function generateBlogPostSchema(post: BlogPost): SchemaType | MultiSchema
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://www.tryprobe.com/blog/${post.slug}`
+      "@id": `https://www.tryanalyze.ai/blog/${post.slug}`
     }
   };
   
@@ -248,9 +248,9 @@ export function generateBlogPostSchema(post: BlogPost): SchemaType | MultiSchema
   };
 }
 
-const SITE_URL = 'https://www.tryprobe.com';
-const ORGANIZATION_NAME = 'Probe Analytics';
-const LOGO_URL = 'https://www.tryprobe.com/logo.png';
+const SITE_URL = 'https://www.tryanalyze.ai';
+const ORGANIZATION_NAME = 'Analyze';
+const LOGO_URL = 'https://www.tryanalyze.ai/logo.png';
 
 export function generateOrganizationSchema(): SchemaType {
   return {

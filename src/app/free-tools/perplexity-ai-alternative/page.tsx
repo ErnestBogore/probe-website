@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: '[Free Tool] Best Perplexity AI Alternative',
     description: 'Using this Perplexity Alternative, you can search anything and get a structured result along with a citation report.',
-    url: 'https://tryprobe.com/free-tools/perplexity-ai-alternative',
+    url: 'https://www.tryanalyze.ai/free-tools/perplexity-ai-alternative',
     type: 'website',
     images: [
       {
         url: '/perplexity-alternative-og.png',
         width: 1200,
         height: 630,
-        alt: 'Perplexity AI Alternative by Probe Analytics',
+        alt: 'Perplexity AI Alternative by Analyze',
       },
     ],
   },

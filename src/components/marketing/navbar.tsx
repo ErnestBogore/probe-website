@@ -20,7 +20,7 @@ export const Navbar = () => {
               src="/logo-tryanalyze.png"
               width={150}
               height={150}
-              alt="Probe Analytics Logo"
+              alt="Analyze Logo"
               className="h-auto w-auto"
             />
           </Link>

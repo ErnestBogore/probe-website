@@ -80,13 +80,13 @@ export const Footer = ({
   logo = {
     url: "/",
     src: "/logo-tryanalyze.png",
-    alt: "Probe Analytics Logo",
-    title: "Probe Analytics",
+    alt: "Analyze Logo",
+    title: "Analyze",
   },
   sections = defaultSections,
-  description = "Probe Analytics provides a comprehensive suite of tools to monitor your brand's visibility and sentiment across all major AI answer engines, giving you the insights to stay ahead.",
+  description = "Analyze provides a comprehensive suite of tools to monitor your brand's visibility and sentiment across all major AI answer engines, giving you the insights to stay ahead.",
   socialLinks = defaultSocialLinks,
-  copyright = "© 2025 Probe Analytics. All rights reserved.",
+  copyright = "© 2025 Analyze. All rights reserved.",
   legalLinks = defaultLegalLinks,
 }: FooterProps) => {
   return (

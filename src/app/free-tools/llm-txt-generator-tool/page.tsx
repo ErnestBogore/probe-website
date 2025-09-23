@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: '[Free Tool] Generate LLM.txt in Minutes',
     description: 'Generate LLM.txt files with our free LLM.txt Generator tool.',
-    url: 'https://tryprobe.com/free-tools/llm-txt-generator-tool',
+    url: 'https://www.tryanalyze.ai/free-tools/llm-txt-generator-tool',
     type: 'website',
     images: [
       {
         url: '/llmtxt-og.png',
         width: 1200,
         height: 630,
-        alt: 'LLM.txt Generator Tool by Probe Analytics',
+        alt: 'LLM.txt Generator Tool by Analyze',
       },
     ],
   },

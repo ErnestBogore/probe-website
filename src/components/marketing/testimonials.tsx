@@ -4,14 +4,14 @@ import Image from 'next/image';
 // Data for the testimonials
 const testimonials = [
   {
-    quote: 'Probe Analytics has been a game-changer for our content strategy. We now know exactly how our articles are being interpreted by AI, allowing us to optimize for better visibility.',
+    quote: 'Analyze has been a game-changer for our content strategy. We now know exactly how our articles are being interpreted by AI, allowing us to optimize for better visibility.',
     author: 'Ibrahim Litinine',
     title: 'Managing editor at Get French Classes',
     avatar: '/ibrahim-litinine.jpeg',
     logo: '/get-french-class.png',
   },
   {
-    quote: 'The majority of our traffic comes from Bing. I was relieved to see a fair share of our total traffic comes from AI search as well. Now we can diversify our traffic source thanks to Probe Analytics.',
+    quote: 'The majority of our traffic comes from Bing. I was relieved to see a fair share of our total traffic comes from AI search as well. Now we can diversify our traffic source thanks to Analyze.',
     author: 'Justin Ahinon',
     title: 'CEO at What Is That Movie',
     avatar: '/justin-ahinon.jpg',
@@ -52,7 +52,7 @@ export const Testimonials = () => {
         <div className="max-w-2xl mx-auto text-center mb-16">
           <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Hear From Brands Winning at AI Search</h2>
           <p className="mt-4 text-lg text-gray-600">
-            Leading brands use Probe Analytics to understand their AI search presence and stay ahead of the competition.
+            Leading brands use Analyze to understand their AI search presence and stay ahead of the competition.
           </p>
         </div>
 

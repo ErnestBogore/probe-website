@@ -55,7 +55,7 @@ export const Features = () => {
             A Complete Toolkit for AI Search Visibility
           </h2>
           <p className="mt-6 text-lg text-gray-600">
-            From ad-hoc searches to competitive insights and performance tracking, Probe Analytics gives you everything you need to own your narrative in the age of AI.
+            From ad-hoc searches to competitive insights and performance tracking, Analyze gives you everything you need to own your narrative in the age of AI.
           </p>
         </div>
 

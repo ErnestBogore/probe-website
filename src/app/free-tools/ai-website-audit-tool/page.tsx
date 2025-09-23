@@ -2,19 +2,19 @@ import { Metadata } from 'next';
 import { Faq3 } from '@/components/faq3';
 
 export const metadata: Metadata = {
-  title: 'Free AI Website Audit Tool | Probe Analytics',
+  title: 'Free AI Website Audit Tool | Analyze',
   description: 'Analyze your website\'s AI readiness with our free AI website audit tool',
   openGraph: {
-    title: 'Free AI Website Audit Tool | Probe Analytics',
+    title: 'Free AI Website Audit Tool | Analyze',
     description: 'Analyze your website\'s AI readiness with our free AI website audit tool',
-    url: 'https://tryprobe.com/free-tools/ai-website-audit-tool',
+    url: 'https://www.tryanalyze.ai/free-tools/ai-website-audit-tool',
     type: 'website',
     images: [
       {
         url: '/og-ai-website-audit-tool.png',
         width: 1200,
         height: 630,
-        alt: 'AI Website Audit Tool by Probe Analytics',
+        alt: 'AI Website Audit Tool by Analyze',
       },
     ],
   },

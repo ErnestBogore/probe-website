@@ -25,7 +25,7 @@ export const Cta = () => {
             <div className="relative w-full h-64 md:h-full p-8">
               <Image 
                 src="/Artboard (1).png" 
-                alt="A mockup of the Probe Analytics dashboard."
+                alt="A mockup of the Analyze dashboard."
                 layout="fill" 
                 objectFit="contain"
               />

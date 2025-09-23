@@ -7,8 +7,8 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'AI Search Analytics Platform | Probe Analytics',
-  description: "Measure what matters in the new era of search. Track AI rankings, analyze competitors, and connect your AI visibility to traffic and conversions with Probe Analytics.",
+  title: 'AI Search Analytics Platform | Analyze',
+  description: "Measure what matters in the new era of search. Track AI rankings, analyze competitors, and connect your AI visibility to traffic and conversions with Analyze.",
   openGraph: {
     images: ['/Hero-image-feature.png'],
   },
@@ -51,7 +51,7 @@ const AISearchAnalyticsPage = () => {
   const serviceSchema = generateServiceSchema({
     name: "AI Search Analytics Platform",
     description: "Measure what matters in the new era of search. Track AI rankings, analyze competitors, and connect your AI visibility to traffic and conversions.",
-    url: "https://www.tryprobe.com/features/ai-search-analytics",
+    url: "https://www.tryanalyze.ai/features/ai-search-analytics",
     category: "Analytics Software",
     features: [
       "Track AI Answer Engine Rankings",

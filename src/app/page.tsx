@@ -45,7 +45,7 @@ export default function Home() {
           {index < llms.length - 1 && ", "}
         </React.Fragment>
       ))}
-      {', and other LLMs are recommending your competitors to thousands of prospects you’ll never meet. Probe Analytics shows you exactly where you’ve vanished — and how to take back your place in AI search results.'}
+      {", and other LLMs are recommending your competitors to thousands of prospects you'll never meet. Analyze shows you exactly where you've vanished — and how to take back your place in AI search results."}
     </>
   );
 
