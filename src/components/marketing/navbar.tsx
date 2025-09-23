@@ -17,10 +17,11 @@ export const Navbar = () => {
             className="flex items-center gap-2"
           >
             <Image
-              src="/probe_analytics_logo_v3.png"
+              src="/logo-tryanalyze.png"
               width={150}
               height={150}
               alt="Probe Analytics Logo"
+              className="h-auto w-auto"
             />
           </Link>
           <ClientNav />

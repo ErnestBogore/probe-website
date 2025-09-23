@@ -79,7 +79,7 @@ const defaultLegalLinks = [
 export const Footer = ({
   logo = {
     url: "/",
-    src: "/probe_analytics_logo_v3.png",
+    src: "/logo-tryanalyze.png",
     alt: "Probe Analytics Logo",
     title: "Probe Analytics",
   },
