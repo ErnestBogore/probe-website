@@ -27,7 +27,7 @@ export default async function BlogPage() {
   return (
     <Blog7 
       posts={postsForComponent}
-      title="Probe Analytics Blog"
+      title="Analyze Blog"
       description="Insights, analysis, and thought leadership in data analytics and business intelligence."
     />
   );
@@ -36,11 +36,11 @@ export default async function BlogPage() {
 // Generate metadata for SEO
 export async function generateMetadata() {
   return {
-    title: 'Blog | Probe Analytics',
-    description: 'Insights, analysis, and thought leadership in data analytics and business intelligence from the Probe Analytics team.',
+    title: 'Blog | Analyze',
+    description: 'Insights, analysis, and thought leadership in data analytics and business intelligence from the Analyze team.',
     openGraph: {
-      title: 'Blog | Probe Analytics',
-      description: 'Insights, analysis, and thought leadership in data analytics and business intelligence from the Probe Analytics team.',
+      title: 'Blog | Analyze',
+      description: 'Insights, analysis, and thought leadership in AI traffic analytics and business intelligence from the Analyze team.',
       type: 'website',
     },
   };

@@ -72,7 +72,7 @@ const AISearchAnalyticsPage = () => {
       <Hero115 
       pillText="AI Search Analytics Platform"
       heading="Understand Your True AI Search Performance"
-      description="Go beyond vanity metrics. Probe Analytics gives you a complete picture of your brand's visibility across major AI answer engines, so you can measure what matters and make smarter decisions."
+      description="Go beyond vanity metrics. Analyze gives you a complete picture of your brand's visibility across major AI answer engines, so you can measure what matters and make smarter decisions."
       button={{
         text: "Show Me My AI Rankings",
         url: "/signup",

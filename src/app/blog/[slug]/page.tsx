@@ -460,23 +460,23 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 
     if (!blogPost) {
       return {
-        title: 'Post Not Found | Probe Analytics',
+        title: 'Post Not Found | Analyze',
         description: 'The requested blog post could not be found.',
       };
     }
 
     const title = blogPost.seo?.title || blogPost.title;
-    const description = blogPost.seo?.description || blogPost.excerpt || 'Read this insightful blog post from Probe Analytics.';
+    const description = blogPost.seo?.description || blogPost.excerpt || 'Read this insightful blog post from Analyze.';
     const image = blogPost.seo?.image || blogPost.featuredImage;
 
     // Generate structured data
     const structuredData = generateBlogPostSchema(blogPost);
 
     return {
-      title: `${title} | Probe Analytics`,
+      title: `${title} | Analyze`,
       description,
       openGraph: {
-        title: `${title} | Probe Analytics`,
+        title: `${title} | Analyze`,
         description,
         type: 'article',
         publishedTime: blogPost.publishedDate,
@@ -493,7 +493,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
       },
       twitter: {
         card: 'summary_large_image',
-        title: `${title} | Probe Analytics`,
+        title: `${title} | Analyze`,
         description,
         images: image ? [image.url] : undefined,
       },
@@ -501,8 +501,8 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   } catch (error) {
     console.error('Error generating metadata:', error);
     return {
-      title: 'Blog Post | Probe Analytics',
-      description: 'Read this insightful blog post from Probe Analytics.',
+      title: 'Blog Post | Analyze',
+      description: 'Read this insightful blog post from Analyze.',
     };
   }
 } 

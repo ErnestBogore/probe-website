@@ -428,22 +428,22 @@ export async function generateMetadata({ params }: CaseStudyPageProps) {
 
     if (!blogPost) {
       return {
-        title: 'Case Study Not Found | Probe Analytics',
+        title: 'Case Study Not Found | Analyze',
         description: 'The requested case study could not be found.',
       };
     }
 
     const title = blogPost.seo?.title || blogPost.title;
-    const description = blogPost.seo?.description || blogPost.excerpt || 'Read this case study from Probe Analytics.';
+    const description = blogPost.seo?.description || blogPost.excerpt || 'Read this case study from Analyze.';
     const image = blogPost.seo?.image || blogPost.featuredImage;
 
     const structuredData = generateBlogPostSchema(blogPost);
 
     return {
-      title: `${title} | Probe Analytics Case Study`,
+      title: `${title} | Analyze`,
       description,
       openGraph: {
-        title: `${title} | Probe Analytics Case Study`,
+        title: `${title} | Analyze`,
         description,
         type: 'article',
         publishedTime: blogPost.publishedDate,
@@ -460,7 +460,7 @@ export async function generateMetadata({ params }: CaseStudyPageProps) {
       },
       twitter: {
         card: 'summary_large_image',
-        title: `${title} | Probe Analytics Case Study`,
+        title: `${title} | Analyze`,
         description,
         images: image ? [image.url] : undefined,
       },
@@ -468,8 +468,8 @@ export async function generateMetadata({ params }: CaseStudyPageProps) {
   } catch (error) {
     console.error('Error generating metadata:', error);
     return {
-      title: 'Case Study | Probe Analytics',
-      description: 'Read this case study from Probe Analytics.',
+      title: 'Case Study | Analyze',
+      description: 'Read this case study from Analyze.',
     };
   }
 }
