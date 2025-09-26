@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sitemap:validate": "node scripts/validate-sitemap.js",
+    "sitemap:validate:local": "node scripts/validate-sitemap.js --local",
+    "sitemap:test": "node scripts/regenerate-sitemap.js"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

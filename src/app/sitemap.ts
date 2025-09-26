@@ -37,6 +37,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/case-study`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/free-tools/ai-website-audit-tool`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -60,15 +66,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Fetch all blog posts from DatoCMS
     const { allBlogPosts } = await getAllBlogPosts();
 
+    // Separate blog posts and case studies
+    const blogPosts = allBlogPosts.filter(post => post.contentType === 'blog_post' || !post.contentType);
+    const caseStudies = allBlogPosts.filter(post => post.contentType === 'case_study');
+
     // Generate blog post entries
-    const blogPages: MetadataRoute.Sitemap = allBlogPosts.map((post) => ({
+    const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
       lastModified: new Date(post._updatedAt || post._publishedAt || new Date()),
       changeFrequency: 'daily' as const,
       priority: 0.8,
     }));
 
-    return [...staticPages, ...blogPages];
+    // Generate case study entries
+    const caseStudyPages: MetadataRoute.Sitemap = caseStudies.map((post) => ({
+      url: `${baseUrl}/case-study/${post.slug}`,
+      lastModified: new Date(post._updatedAt || post._publishedAt || new Date()),
+      changeFrequency: 'daily' as const,
+      priority: 0.8,
+    }));
+
+    return [...staticPages, ...blogPages, ...caseStudyPages];
   } catch (error) {
     console.error('Error generating sitemap:', error);
     // Return static pages only if blog fetch fails
