@@ -80,8 +80,8 @@ export const Footer = ({
   logo = {
     url: "/",
     src: "/logo-tryanalyze.png",
-    alt: "Analyze Logo",
-    title: "Analyze",
+    alt: "Analyze - AI Search Analytics Platform",
+    title: "AI Search Analytics For Marketing Teams | Analyze",
   },
   sections = defaultSections,
   description = "Analyze provides a comprehensive suite of tools to monitor your brand's visibility and sentiment across all major AI answer engines, giving you the insights to stay ahead.",

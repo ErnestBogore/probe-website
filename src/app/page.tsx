@@ -21,9 +21,11 @@ const llms = [
 ];
 
 export const metadata: Metadata = {
-  title: 'AI Search Analytics For Marketing Teams',
+  title: 'AI Search Analytics For Marketing Teams | Analyze',
   description: 'Understand how AI sees your brand. Monitor search rankings, analyze sentiment, and protect your reputation with our powerful AI analytics platform. Get started today.',
   openGraph: {
+    title: 'AI Search Analytics For Marketing Teams | Analyze',
+    description: 'Understand how AI sees your brand. Monitor search rankings, analyze sentiment, and protect your reputation with our powerful AI analytics platform. Get started today.',
     images: ['/Artboard (1).png'],
   },
 };
