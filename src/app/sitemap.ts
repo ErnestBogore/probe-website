@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllBlogPosts } from '@/lib/datocms';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://tryanalyze.ai';
+  const baseUrl = 'https://www.tryanalyze.ai';
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
