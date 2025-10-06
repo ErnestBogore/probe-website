@@ -2,6 +2,8 @@
  * TypeScript interfaces for the AI Prompts feature.
  */
 
+import { DatoCMSStructuredText } from './datocms';
+
 // A generic type for DatoCMS SEO fields
 export interface Seo {
   title?: string;
@@ -29,12 +31,12 @@ export interface PromptPage {
   slug: string;
   description?: string;
   difficultyLevel?: string;
-  promptContent: any; // DatoCMS Structured Text field
+  promptContent: DatoCMSStructuredText; // DatoCMS Structured Text field
   variablesToReplace?: string;
-  exampleInput?: any; // DatoCMS Structured Text field
-  exampleOutput?: any; // DatoCMS Structured Text field
-  whenToUse?: any; // DatoCMS Structured Text field
-  proTips?: any; // DatoCMS Structured Text field
+  exampleInput?: DatoCMSStructuredText; // DatoCMS Structured Text field
+  exampleOutput?: DatoCMSStructuredText; // DatoCMS Structured Text field
+  whenToUse?: DatoCMSStructuredText; // DatoCMS Structured Text field
+  proTips?: DatoCMSStructuredText; // DatoCMS Structured Text field
   seoPrompt?: Seo;
   category?: PromptCategory;
   relatedPrompts?: Array<{

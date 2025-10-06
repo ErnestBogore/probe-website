@@ -3,10 +3,11 @@
 import { useState } from 'react';
 import { StructuredText } from 'react-datocms/structured-text';
 import { User, Bot } from 'lucide-react';
+import { DatoCMSStructuredText } from '@/types/datocms';
 
 interface ExampleBlockProps {
-  exampleInput: any;
-  exampleOutput: any;
+  exampleInput: DatoCMSStructuredText;
+  exampleOutput: DatoCMSStructuredText;
 }
 
 export function ExampleBlock({ exampleInput, exampleOutput }: ExampleBlockProps) {
@@ -36,7 +37,7 @@ export function ExampleBlock({ exampleInput, exampleOutput }: ExampleBlockProps)
             }`}
           >
             <Bot size={16} />
-            The AI's Response
+            The AI&apos;s Response
           </button>
         </nav>
       </div>

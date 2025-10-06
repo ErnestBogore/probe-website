@@ -9,13 +9,13 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { StructuredTextRenderer } from '@/components/StructuredTextRenderer';
-import { Breadcrumb } from '@/components/marketing/breadcrumb';
-import { Lightbulb, CheckCircle, Copy, ArrowLeft, Code } from 'lucide-react';
+import { ArrowLeft, Code } from 'lucide-react';
 import { WhenToUse } from '@/components/prompt/WhenToUse';
 import { ProTips } from '@/components/prompt/ProTips';
 import { Cta } from '@/components/marketing/cta';
 import { Metadata } from 'next';
 import { CopyButton } from '@/components/copy-button';
+import { render as structuredTextToPlainText } from 'datocms-structured-text-to-plain-text';
 
 interface PromptPageProps {
   params: {
@@ -63,7 +63,7 @@ export default async function PromptPage({ params }: PromptPageProps) {
     notFound();
   }
 
-  const promptText = promptPage.promptContent?.value?.document?.children.map((child: any) => child.children.map((c: any) => c.value).join('')).join('\n');
+  const promptText = (promptPage.promptContent ? structuredTextToPlainText(promptPage.promptContent) : '') || '';
 
   return (
     <div className="bg-white min-h-screen">

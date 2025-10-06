@@ -27,7 +27,6 @@ interface Hero115Props {
 }
 
 const Hero115 = ({
-  icon = <Wifi className="size-6" />,
   pillText,
   heading = "Blocks built with Shadcn & Tailwind",
   description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",

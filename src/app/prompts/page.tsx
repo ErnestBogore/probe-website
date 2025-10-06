@@ -8,7 +8,7 @@ import { getAllPromptsGroupedByCategory } from '@/lib/datocms';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import { PromptPage, PromptCategory } from '@/types/prompt';
+import { PromptPage } from '@/types/prompt';
 
 export const metadata: Metadata = {
   title: 'The Best Template Library for ChatGPT Prompts | Analyze',

@@ -3,6 +3,7 @@
 import { StructuredText, renderNodeRule } from 'react-datocms/structured-text';
 import { isList, isListItem, isParagraph } from 'datocms-structured-text-utils';
 import { Lightbulb } from 'lucide-react';
+import { DatoCMSStructuredText } from '@/types/datocms';
 
 const customNodeRules = [
   renderNodeRule(isList, ({ children, key }) => (
@@ -19,7 +20,7 @@ const customNodeRules = [
   )),
 ];
 
-export function ProTips({ data }: { data: any }) {
+export function ProTips({ data }: { data: DatoCMSStructuredText }) {
   return (
     <div className="bg-purple-50/70 border border-purple-200/70 rounded-lg p-6">
       <h2 className="font-bold text-lg text-purple-900 mb-3 flex items-center gap-2">

@@ -2,10 +2,11 @@
  * Reusable component for rendering DatoCMS Structured Text.
  */
 import { StructuredText, renderNodeRule } from 'react-datocms/structured-text';
-import { isHeading, isParagraph, isLink, isList, isListItem } from 'datocms-structured-text-utils';
+import { isParagraph, isLink, isList, isListItem } from 'datocms-structured-text-utils';
 import Image from 'next/image';
 import { Table } from './blocks/Table';
 import { Takeaway } from './blocks/Takeaway';
+import { DatoCMSStructuredText, BlockRecord } from '@/types/datocms';
 
 // Custom render rules for standard nodes
 const customNodeRules = [
@@ -38,14 +39,19 @@ const customNodeRules = [
 ];
 
 // Main renderer component
-export function StructuredTextRenderer({ data, customNodeRules: customRulesProp }: { data: any, customNodeRules?: any[] }) {
+interface StructuredTextRendererProps {
+  data: DatoCMSStructuredText | null | undefined;
+  customNodeRules?: any[];
+}
+
+export function StructuredTextRenderer({ data, customNodeRules: customRulesProp }: StructuredTextRendererProps) {
   if (!data) return null;
 
   return (
     <StructuredText
       data={data}
       customNodeRules={customRulesProp || customNodeRules}
-      renderBlock={({ record }: any) => {
+      renderBlock={({ record }: { record: BlockRecord }) => {
         switch (record.__typename) {
           case 'ImageBlockRecord':
             return (

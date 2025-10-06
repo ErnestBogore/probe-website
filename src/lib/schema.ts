@@ -6,11 +6,6 @@
 
 import { BlogPost, Author, Image } from '@/types/blog';
 
-interface Publisher {
-  name: string;
-  logo?: string;
-  url: string;
-}
 
 interface FAQItem {
   question: string;
