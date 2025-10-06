@@ -6,6 +6,7 @@
  */
 
 import { BlogPost } from '@/types/blog';
+import { PromptPage, PromptCategory } from '@/types/prompt';
 
 const API_URL = 'https://graphql.datocms.com/';
 const API_TOKEN = process.env.DATOCMS_API_TOKEN;
@@ -265,4 +266,188 @@ export async function getAllBlogPostSlugs() {
 
   const data = await request<{ allBlogPosts: Array<{ slug: string; contentType: string }> }>(query);
   return data.allBlogPosts;
-} 
+}
+
+// --- AI Prompt Functions --- //
+
+const BLOCK_FRAGMENT = `
+  fragment BlockFragment on RecordInterface {
+    __typename
+    ... on ImageBlockRecord {
+      id
+      image { url alt width height }
+    }
+    ... on TableRecord {
+      id
+      title
+      headers
+      rows
+    }
+    ... on TakeawayRecord {
+      id
+      title
+      content
+    }
+  }
+`;
+
+export async function getPromptBySlug(slug: string, includeDrafts = false) {
+  const query = `
+    query PromptBySlug($slug: String!) {
+      promptPage(filter: { slug: { eq: $slug } }) {
+        id
+        title
+        slug
+        description
+        difficultyLevel
+        promptContent { value, blocks { ...BlockFragment } }
+        variablesToReplace
+        exampleInput { value, blocks { ...BlockFragment } }
+        exampleOutput { value, blocks { ...BlockFragment } }
+        whenToUse { value, blocks { ...BlockFragment } }
+        proTips { value, blocks { ...BlockFragment } }
+        seoPrompt { title description image { url alt width height } }
+        category { name slugCategory }
+        relatedPrompts {
+          id
+          title
+          slug
+          description
+          seoPrompt {
+            image {
+              url
+              alt
+              width
+              height
+            }
+          }
+          category {
+            slugCategory
+          }
+        }
+        _publishedAt
+        _updatedAt
+      }
+    }
+    ${BLOCK_FRAGMENT}
+  `;
+  return request<{ promptPage: PromptPage | null }>(query, { slug }, includeDrafts);
+}
+
+export async function getAllPromptSlugs() {
+  const query = `
+    query AllPromptSlugs {
+      allPromptPages(first: 100) {
+        slug
+        category {
+          slugCategory
+        }
+      }
+    }
+  `;
+  const data = await request<{ allPromptPages: Array<{ slug: string; category: { slugCategory: string } }> }>(query);
+  return data.allPromptPages;
+}
+
+export async function getPromptsByCategory(categoryId: string, includeDrafts = false) {
+  const query = `
+    query PromptsByCategory($categoryId: ItemId!) {
+      allPromptPages(
+        filter: { category: { eq: $categoryId } }
+        orderBy: _publishedAt_DESC
+        first: 100
+      ) {
+        id
+        title
+        slug
+        description
+        difficultyLevel
+        seoPrompt {
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+        category {
+          id
+          name
+          slugCategory
+        }
+      }
+    }
+  `;
+  return request<{ allPromptPages: PromptPage[] }>(query, { categoryId }, includeDrafts);
+}
+
+export async function getAllCategorySlugs() {
+  const query = `
+    query AllCategorySlugs {
+      allPromptCategories {
+        slugCategory
+      }
+    }
+  `;
+  const data = await request<{ allPromptCategories: Array<{ slugCategory: string }> }>(query);
+  return data.allPromptCategories;
+}
+
+export async function getCategoryBySlug(slug: string, includeDrafts = false) {
+  const query = `
+    query CategoryBySlug($slug: String!) {
+      promptCategory(filter: { slugCategory: { eq: $slug } }) {
+        id
+        name
+        slugCategory
+        seoCategory {
+          title
+          description
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+      }
+    }
+  `;
+  return request<{ promptCategory: PromptCategory | null }>(query, { slug }, includeDrafts);
+}
+
+export async function getAllPromptsGroupedByCategory(includeDrafts = false) {
+  const query = `
+    query AllPromptsAndCategories {
+      allPromptCategories(orderBy: name_ASC) {
+        id
+        name
+        slugCategory
+      }
+      allPromptPages(orderBy: _publishedAt_DESC, first: 100) {
+        id
+        title
+        slug
+        description
+        difficultyLevel
+        seoPrompt {
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+        category {
+          id
+          name
+          slugCategory
+        }
+      }
+    }
+  `;
+  return request<{ 
+    allPromptCategories: PromptCategory[];
+    allPromptPages: PromptPage[];
+  }>(query, {}, includeDrafts);
+}
