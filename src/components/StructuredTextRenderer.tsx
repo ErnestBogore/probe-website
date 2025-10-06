@@ -39,9 +39,11 @@ const customNodeRules = [
 ];
 
 // Main renderer component
+type RenderRule = ReturnType<typeof renderNodeRule>;
+
 interface StructuredTextRendererProps {
   data: DatoCMSStructuredText | null | undefined;
-  customNodeRules?: any[];
+  customNodeRules?: RenderRule[];
 }
 
 export function StructuredTextRenderer({ data, customNodeRules: customRulesProp }: StructuredTextRendererProps) {
