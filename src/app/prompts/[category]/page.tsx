@@ -12,14 +12,14 @@ import { Metadata } from 'next';
 import { PromptPage } from '@/types/prompt';
 
 interface CategoryPageProps {
-  params: {
+  params: Promise<{
     category: string;
-  };
+  }>;
 }
 
 // Generate metadata for the page
 export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
-  const { category } = params;
+  const { category } = await params;
   const { promptCategory } = await getCategoryBySlug(category);
 
   if (!promptCategory) {
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 
 // Main page component
 export default async function PromptCategoryPage({ params }: CategoryPageProps) {
-  const { category: categorySlug } = params;
+  const { category: categorySlug } = await params;
 
   // Fetch the current category details to get its ID
   const { promptCategory } = await getCategoryBySlug(categorySlug);

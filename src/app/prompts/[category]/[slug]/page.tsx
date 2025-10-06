@@ -18,10 +18,10 @@ import { CopyButton } from '@/components/copy-button';
 import { render as structuredTextToPlainText } from 'datocms-structured-text-to-plain-text';
 
 interface PromptPageProps {
-  params: {
+  params: Promise<{
     category: string;
     slug: string;
-  };
+  }>;
 }
 
 // Generate metadata for the page
