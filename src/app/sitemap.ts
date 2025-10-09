@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getAllBlogPosts } from '@/lib/datocms';
+import { getAllBlogPosts, getAllPromptSlugs, getAllCategorySlugs } from '@/lib/datocms';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.tryanalyze.ai';
@@ -60,11 +60,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/prompts`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
   ];
 
   try {
-    // Fetch all blog posts from DatoCMS
-    const { allBlogPosts } = await getAllBlogPosts();
+    // Fetch all dynamic content from DatoCMS in parallel
+    const [{ allBlogPosts }, allPrompts, allCategories] = await Promise.all([
+      getAllBlogPosts(),
+      getAllPromptSlugs(),
+      getAllCategorySlugs(),
+    ]);
 
     // Separate blog posts and case studies
     const blogPosts = allBlogPosts.filter(post => post.contentType === 'blog_post' || !post.contentType);
@@ -86,7 +96,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     }));
 
-    return [...staticPages, ...blogPages, ...caseStudyPages];
+    // Generate prompt category entries
+    const promptCategoryPages: MetadataRoute.Sitemap = allCategories.map((category) => ({
+      url: `${baseUrl}/prompts/${category.slugCategory}`,
+      lastModified: new Date(), // Categories don't have a specific updated date
+      changeFrequency: 'daily' as const,
+      priority: 0.7,
+    }));
+
+    // Generate individual prompt entries
+    const promptPages: MetadataRoute.Sitemap = allPrompts.map((prompt) => ({
+      url: `${baseUrl}/prompts/${prompt.category.slugCategory}/${prompt.slug}`,
+      lastModified: new Date(prompt._updatedAt || new Date()),
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    }));
+
+    return [...staticPages, ...blogPages, ...caseStudyPages, ...promptCategoryPages, ...promptPages];
   } catch (error) {
     console.error('Error generating sitemap:', error);
     // Return static pages only if blog fetch fails

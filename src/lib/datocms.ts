@@ -342,10 +342,11 @@ export async function getAllPromptSlugs() {
         category {
           slugCategory
         }
+        _updatedAt
       }
     }
   `;
-  const data = await request<{ allPromptPages: Array<{ slug: string; category: { slugCategory: string } }> }>(query);
+  const data = await request<{ allPromptPages: Array<{ slug: string; category: { slugCategory: string }; _updatedAt: string }> }>(query);
   return data.allPromptPages;
 }
 
