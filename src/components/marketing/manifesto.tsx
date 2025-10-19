@@ -43,7 +43,7 @@ export const Manifesto = () => {
                     <div className="flex items-start">
                       <span className="text-2xl font-bold text-red-500 mr-4 mt-1">NO</span>
                       <p className="text-lg text-gray-700 font-serif">
-                        fear-based upsells or "GEO replaces SEO" pitches; you will get sober guidance grounded in your data and your market reality.
+                        fear-based upsells or &ldquo;GEO replaces SEO&rdquo; pitches; you will get sober guidance grounded in your data and your market reality.
                       </p>
                     </div>
                     
@@ -84,15 +84,15 @@ export const Manifesto = () => {
               <div className="prose prose-lg max-w-none">
                 <p className="text-xl leading-relaxed text-gray-700 mb-8 font-serif">
                   <span className="text-6xl font-serif text-gray-800 float-left mr-3 mt-1 leading-none">I</span>
-                  n a moment when every headline declares that "GEO is the new SEO," when dashboards multiply faster than insights, and when companies are told to start over instead of evolve, it is easy to lose sight of what actually works.
+                  In a moment when every headline declares that &ldquo;GEO is the new SEO,&rdquo; when dashboards multiply faster than insights, and when companies are told to start over instead of evolve, it is easy to lose sight of what actually works.
                 </p>
                 
                 <p className="text-lg leading-relaxed text-gray-700 mb-8 font-serif">
-                  Leaders are told to abandon the craft that built their brands and to buy "AI visibility" at a premium—even though generative engines still account for a small slice of total traffic for most companies. The result is confusion, waste, and teams drifting from the fundamentals that have always compounded.
+                  Leaders are told to abandon the craft that built their brands and to buy &ldquo;AI visibility&rdquo; at a premium—even though generative engines still account for a small slice of total traffic for most companies. The result is confusion, waste, and teams drifting from the fundamentals that have always compounded.
                 </p>
                 
                 <p className="text-lg leading-relaxed text-gray-700 mb-8 font-serif">
-                  At tryanalyze.ai, we believe <strong className="text-gray-900 font-bold">GEO isn't a replacement for SEO</strong>—it's the next transformation of it. Search is expanding from ten blue links to multi-modal, prompt-shaped answers. Quality still governs visibility. Authority still comes from depth, originality, structure, and usefulness.
+                  At tryanalyze.ai, we believe <strong className="text-gray-900 font-bold">GEO isn&rsquo;t a replacement for SEO</strong>—it&rsquo;s the next transformation of it. Search is expanding from ten blue links to multi-modal, prompt-shaped answers. Quality still governs visibility. Authority still comes from depth, originality, structure, and usefulness.
                 </p>
                 
                 <p className="text-lg leading-relaxed text-gray-700 mb-8 font-serif">
@@ -112,7 +112,7 @@ export const Manifesto = () => {
                     <div className="flex items-start">
                       <span className="text-2xl font-bold text-red-500 mr-4 mt-1">NO</span>
                       <p className="text-lg text-gray-700 font-serif">
-                        fear-based upsells or "GEO replaces SEO" pitches; you will get sober guidance grounded in your data and your market reality.
+                        fear-based upsells or &ldquo;GEO replaces SEO&rdquo; pitches; you will get sober guidance grounded in your data and your market reality.
                       </p>
                     </div>
                     

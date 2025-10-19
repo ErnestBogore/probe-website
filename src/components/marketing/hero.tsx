@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import {
   ArrowRight,
@@ -61,13 +62,13 @@ export const Hero = () => {
                 className="from-background h-auto gap-2 bg-linear-to-r to-transparent shadow-md"
                 asChild
               >
-                <a
+                <Link
                   href="/blog"
                   className="max-w-56 truncate text-start md:max-w-none"
                 >
                   Learn about AI search
                   <ArrowRight className="stroke-3" />
-                </a>
+                </Link>
               </Button>
             </div>
           </div>
