@@ -8,17 +8,12 @@
 import type { Metadata } from 'next';
 import { Hero } from "@/components/marketing/hero";
 import { Features } from "@/components/marketing/features";
+import { ModernFeatures } from "@/components/marketing/modern-features";
+import { ResourceAllocation } from "@/components/marketing/resource-allocation";
 import { Testimonials } from "@/components/marketing/testimonials";
+import { Manifesto } from "@/components/marketing/manifesto";
 import { Cta } from "@/components/marketing/cta";
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/schema';
-import Image from "next/image";
-import React from "react";
-
-const llms = [
-  { name: "ChatGPT", domain: "chatgpt.com" },
-  { name: "Perplexity", domain: "perplexity.ai" },
-  { name: "Claude", domain: "claude.ai" },
-];
 
 export const metadata: Metadata = {
   title: 'AI Search Analytics For Marketing Teams | Analyze',
@@ -31,26 +26,6 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const description = (
-    <>
-      Right now,{" "}
-      {llms.map((llm, index) => (
-        <React.Fragment key={llm.name}>
-          <Image
-            src={`https://s2.googleusercontent.com/s2/favicons?domain=${llm.domain}&sz=32`}
-            alt={`${llm.name} favicon`}
-            width={20}
-            height={20}
-            className="inline-block mr-1 h-5 w-5 align-middle" 
-          />
-          {llm.name}
-          {index < llms.length - 1 && ", "}
-        </React.Fragment>
-      ))}
-      {", and other LLMs are recommending your competitors to thousands of prospects you'll never meet. Analyze shows you exactly where you've vanished — and how to take back your place in AI search results."}
-    </>
-  );
-
   // Generate combined structured data for homepage
   const organizationSchema = generateOrganizationSchema();
   const websiteSchema = generateWebsiteSchema();
@@ -64,19 +39,17 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main className="bg-gray-50">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(structuredData)
         }}
       />
-      <Hero 
-        title="Discover What AI Answer Engines Say About Your Brand"
-        description={description}
-        primaryButtonText="Show Me My AI Rankings"
-        primaryButtonUrl="#"
-      />
+      <Hero />
+      <Manifesto />
+      <ModernFeatures />
+      <ResourceAllocation />
       <Testimonials />
       <Features />
       <Cta />

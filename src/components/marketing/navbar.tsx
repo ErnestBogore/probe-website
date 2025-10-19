@@ -9,7 +9,7 @@ const ClientNav = dynamic(() => import('./client-nav').then(mod => mod.ClientNav
 
 export const Navbar = () => {
   return (
-    <section className="py-2">
+    <section className="py-2 bg-gray-100">
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
