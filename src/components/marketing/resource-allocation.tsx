@@ -94,11 +94,11 @@ export const ResourceAllocation = () => {
   return (
     <section
       id="resource-allocation"
-      className="overflow-hidden pb-24"
+      className="overflow-hidden pb-6"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-3xl tracking-tight md:text-4xl lg:text-5xl text-balance">
-          And so much more you need to nail your generative engine optimization strategy.
+          And so much more you need to nail your generative engine optimization strategy
         </h2>
 
         <div className="mx-auto max-w-6xl">

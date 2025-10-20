@@ -32,7 +32,7 @@ const items = [
 
 export const ModernFeatures = () => {
   return (
-    <section id="feature-modern-teams" className="pb-24">
+    <section id="feature-modern-teams" className="pb-6">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top dashed line with text */}
         <div className="relative flex items-center justify-center">

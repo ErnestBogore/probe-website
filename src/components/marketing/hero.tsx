@@ -39,7 +39,7 @@ const features = [
 
 export const Hero = () => {
   return (
-    <section className="py-24 lg:py-28">
+    <section className="pt-24 pb-6 lg:pt-28 lg:pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">

@@ -1,7 +1,7 @@
 import { Hero115 } from '@/components/features/ai-search-analytics/hero-115';
 import { Faq3 } from '@/components/faq3';
 import { Feature166 } from '@/components/feature166';
-import { Cta } from '@/components/marketing/cta';
+import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -110,7 +110,7 @@ const AISearchAnalyticsPage = () => {
       description="Find answers to common questions about our AI Search Analytics platform."
       items={faqItems}
     />
-    <Cta />
+    <HeroCta />
     </>
   );
 };

@@ -13,7 +13,7 @@ import { ResourceAllocation } from "@/components/marketing/resource-allocation";
 import { ProblemSolution } from "@/components/marketing/problem-solution";
 import { Testimonials } from "@/components/marketing/testimonials";
 import { Manifesto } from "@/components/marketing/manifesto";
-import { Cta } from "@/components/marketing/cta";
+import { HeroCta } from "@/components/marketing/hero-cta";
 import { Faq3 } from "@/components/faq3";
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/schema';
 
@@ -44,33 +44,78 @@ export default function Home() {
   const homepageFaqItems = [
     {
       id: 'faq-1',
-      question: 'What is Analyze and how does it work?',
-      answer: 'Analyze is an AI search analytics platform that helps you understand how your brand appears in AI-powered search results. We track your visibility across major AI answer engines like Google SGE, Perplexity, and ChatGPT, giving you insights into your AI search performance.'
+      question: 'What is Analyze—and what does it actually do?',
+      answer: 'ANALYZE is an AI search analytics platform. It maps how AI answer engines portray your brand (what\'s said, where you appear, and who appears beside you), then ties that visibility to GA4 traffic, conversions, and revenue—so you can invest where results compound.'
     },
     {
       id: 'faq-2',
-      question: 'Why is AI search analytics important for my business?',
-      answer: 'As AI-powered search becomes more prevalent, traditional SEO metrics are no longer enough. AI search analytics helps you understand how your brand is represented in AI-generated answers, which is crucial for maintaining visibility and authority in the new search landscape.'
+      question: 'How is ANALYZE different from "GEO tools"?',
+      answer: 'Most GEO tools stop at screenshots of mentions. AI search analytics goes further: Tracks appearance + placement + sentiment across engines, Attributes AI referrals to sessions, pages, and conversions via GA4, Adds competitive and citation context (who else appears, which sources shape answers), Guides specific improvements (entities, sources, gaps) rather than generic scores.'
     },
     {
       id: 'faq-3',
-      question: 'Which AI search engines do you monitor?',
-      answer: 'We monitor a comprehensive list of AI search and answer engines including Google SGE (Search Generative Experience), Perplexity, ChatGPT, Microsoft Copilot, and other emerging AI-powered search platforms.'
+      question: 'How does ANALYZE work, in practice?',
+      answer: 'We follow a four-step loop that mirrors how teams operate: Discover: See where you do/don\'t appear; view sources models cite. Measure: Track share of answers, positions, sentiment, and movement by topic, product, and competitor. Improve: Get the citations, entities, and content gaps that influence model responses. Govern: Monitor risk terms and reputational drift; catch negative narratives early. No code to start. Connect GA4 to unlock attribution.'
     },
     {
       id: 'faq-4',
-      question: 'How is this different from traditional SEO tools?',
-      answer: 'Traditional SEO tools focus on ranking in blue-link search results. Analyze focuses on your brand\'s inclusion and visibility within AI-generated summaries and answers. It\'s designed for the new era of AI-driven search where answers are synthesized rather than just linked.'
+      question: 'Which AI engines do you monitor?',
+      answer: 'We track major answer engines and assistants (e.g., ChatGPT, Claude, Gemini, Perplexity, Copilot, and others as they gain adoption). You\'ll see engine-level contribution to traffic and visibility, month by month.'
     },
     {
       id: 'faq-5',
-      question: 'Can I track my competitors with Analyze?',
-      answer: 'Yes! Our platform includes competitive intelligence features that allow you to track your competitors\' visibility in AI search results, helping you identify opportunities and benchmark your performance against industry leaders.'
+      question: 'What counts as an "appearance" or "mention" in ANALYZE?',
+      answer: 'An appearance is when an engine names your brand, product, or site in its answer or includes your domain among citations/sources. We record position/ordering, sentiment, and co-mentions (who else appears alongside you).'
     },
     {
       id: 'faq-6',
-      question: 'How do I get started with Analyze?',
-      answer: 'Getting started is simple. Sign up for a free account, add your website and key topics you want to monitor, and we\'ll begin tracking your AI search performance. You\'ll get insights and recommendations to improve your visibility in AI-generated answers.'
+      question: 'Can Analyze show when AI is positive or negative about us?',
+      answer: 'Yes. We capture portrayal and sentiment at the prompt level (supportive, neutral, critical) and surface risk terms (e.g., pricing controversy, reliability complaints) so comms/content teams can respond with evidence.'
+    },
+    {
+      id: 'faq-7',
+      question: 'Can I track competitors?',
+      answer: 'Absolutely. Set the rivals that matter; ANALYZE maintains a rolling scoreboard by cluster and prompt—share of answers, sentiment, movement, and citation share—so you know where to push and how.'
+    },
+    {
+      id: 'faq-8',
+      question: 'How does attribution work?',
+      answer: 'Connect GA4 and we attribute AI-referred sessions to: Engine/model (e.g., Perplexity vs. Copilot), Landing pages (which pages earn visits and convert), Time trends (30-day, MoM). This closes the loop from appearance → session → conversion.'
+    },
+    {
+      id: 'faq-9',
+      question: 'What data do you collect from AI answers?',
+      answer: 'For each tracked prompt/cluster: full answer text, citations/domains, your presence and position, co-mentioned brands, sentiment, and engine metadata. With GA4 connected, we add referrer and landing page outcomes.'
+    },
+    {
+      id: 'faq-10',
+      question: 'How do you suggest improvements without "gaming" models?',
+      answer: 'We don\'t "game." We operationalize quality: Show exact citations/domains engines rely on (earn, update, or outrank), Highlight entity coverage and evidence gaps, Recommend content depth and structure that makes quality legible to crawlers and models. This aligns with your manifesto: the most helpful content wins.'
+    },
+    {
+      id: 'faq-11',
+      question: 'Who should use ANALYZE?',
+      answer: 'Marketing & SEO leaders proving impact and prioritizing content, Content teams needing prompt-level gaps and citation targets, Comms/brand monitoring narrative and risk terms, Growth & RevOps connecting AI visibility to pipeline and revenue.'
+    },
+    {
+      id: 'faq-12',
+      question: 'Does ANALYZE support multiple regions or languages?',
+      answer: 'Yes. Track locale and language variants where engines provide them. Results are segmented so you can compare market by market.'
+    },
+    {
+      id: 'faq-13',
+      question: 'How often is data refreshed?',
+      answer: 'Prompts run on a scheduled cadence (daily by default) so you can see movement and consistency over time and avoid manual checks.'
+    },
+    {
+      id: 'faq-14',
+      question: 'How do I get started?',
+      answer: 'Create a project and define topics/clusters. Select competitors and initial prompts (use our suggestions or add your own). Connect GA4 to unlock attribution. Review your Discover → Measure dashboards and prioritize Improve actions. You\'ll have your first visibility baseline within minutes; attribution populates as traffic flows.'
+    },
+    {
+      id: 'faq-15',
+      question: 'Do I need to change my site or install code?',
+      answer: 'No code is required to start. GA4 connection is optional but recommended for attribution. For improvement work, we provide clear briefs your team can implement in your CMS.'
     }
   ];
 
@@ -86,6 +131,7 @@ export default function Home() {
       <ProblemSolution />
       <ModernFeatures />
       <Manifesto />
+      <HeroCta />
       <Testimonials />
       <Features />
       <ResourceAllocation />
@@ -94,7 +140,7 @@ export default function Home() {
         description="Find answers to common questions about our AI search analytics platform. Can't find what you're looking for? Contact our support team."
         items={homepageFaqItems}
       />
-      <Cta />
+      <HeroCta />
     </main>
   );
 }

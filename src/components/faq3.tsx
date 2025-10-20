@@ -72,7 +72,7 @@ const Faq3 = ({
   items = faqItems,
 }: Faq3Props) => {
   return (
-    <section className="pt-16 pb-32">
+    <section className="pt-6 pb-32">
       <div className="container space-y-16">
         <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">

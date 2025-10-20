@@ -12,7 +12,7 @@ import { StructuredTextRenderer } from '@/components/StructuredTextRenderer';
 import { ArrowLeft, Code } from 'lucide-react';
 import { WhenToUse } from '@/components/prompt/WhenToUse';
 import { ProTips } from '@/components/prompt/ProTips';
-import { Cta } from '@/components/marketing/cta';
+import { HeroCta } from '@/components/marketing/hero-cta';
 import { Metadata } from 'next';
 import { CopyButton } from '@/components/copy-button';
 import { render as structuredTextToPlainText } from 'datocms-structured-text-to-plain-text';
@@ -177,7 +177,7 @@ export default async function PromptPage({ params }: PromptPageProps) {
       </div>
 
       <div className="-mt-12">
-        <Cta />
+        <HeroCta />
       </div>
     </div>
   );

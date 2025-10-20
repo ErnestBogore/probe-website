@@ -1,7 +1,17 @@
+import { DashedLine } from "../dashed-line";
+
 export const Manifesto = () => {
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="pt-6 pb-16 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top dashed line with text */}
+        <div className="relative flex items-center justify-center mb-10">
+          <DashedLine className="text-muted-foreground" />
+          <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+            BECAUSE WE&apos;RE FUNDAMENTALLY DIFFERENT
+          </span>
+        </div>
+        
         <div className="text-center mb-12">
           <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">
             OUR MANIFESTO
