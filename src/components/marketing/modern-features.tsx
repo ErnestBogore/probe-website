@@ -1,96 +1,227 @@
-import Image from "next/image";
-import Link from "next/link";
-
-import { ChevronRight } from "lucide-react";
-
-import { DashedLine } from "../dashed-line";
+"use client";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { DashedLine } from "../dashed-line";
 
 const items = [
   {
-    title: "Purpose-built for AI search analytics",
-    image: "/Search Anything.png",
+    number: "1",
+    title: "Discover",
+    description: "See where you appear (and don't) across answer engines, with the sources models rely on.",
+    image: "/Discover 1x.png",
   },
   {
-    title: "Monitor brand visibility end-to-end",
-    image: "/Prompt detail.png",
+    number: "2", 
+    title: "Measure",
+    description: "Track rankings, share of answers, and sentiment by topic, product, and competitor.",
+    image: "/Measure 1x.png",
   },
   {
-    title: "Build competitive intelligence and insights",
-    image: "/Competitive insights.png",
+    number: "3",
+    title: "Improve", 
+    description: "Get the specific citations, entities, and content gaps to influence model responses.",
+    image: "/Improve 1x.png",
+  },
+  {
+    number: "4",
+    title: "Govern",
+    description: "Monitor risk terms and reputational drift; catch negative narratives early.",
+    image: "/Govern 1x.png",
   },
 ];
 
 export const ModernFeatures = () => {
   return (
-    <section id="feature-modern-teams" className="pb-28 lg:pb-32">
+    <section id="feature-modern-teams" className="pb-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top dashed line with text */}
         <div className="relative flex items-center justify-center">
           <DashedLine className="text-muted-foreground" />
           <span className="bg-gray-50 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
-            MEASURE TWICE. CUT ONCE.
+            AI VISIBILITY YOU CAN ATTRIBUTE
           </span>
         </div>
 
         {/* Content */}
-        <div className="mx-auto mt-10 grid max-w-4xl items-center gap-3 md:gap-0 lg:mt-24 lg:grid-cols-2">
-          <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-            Made for modern marketing teams
+        <div className="text-center max-w-3xl mx-auto mt-10 lg:mt-24">
+          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
+            How ANALYZE makes magic happen
           </h2>
-          <p className="text-muted-foreground leading-snug">
-            Analyze is built on the habits that make the best marketing teams
-            successful: staying focused, moving quickly, and always aiming for
-            high-quality insights about AI search performance.
+          <p className="mt-6 text-lg text-gray-600">
+            ANALYZE maps how AI answers portray your brand, shows who appears beside you, and ties it all to traffic and conversions—so you invest where results compound.
           </p>
         </div>
 
-        {/* Features Card */}
+        {/* Milestone Cards with Dotted Road */}
         <div className="mx-auto max-w-6xl">
-          <Card className="mt-8 rounded-3xl md:mt-12 lg:mt-20">
-          <CardContent className="flex p-0 max-md:flex-col">
-            {items.map((item, i) => (
-              <div key={i} className="flex flex-1 max-md:flex-col">
-                <div className="flex-1 p-4 pe-0! md:p-6">
-                  <div className="relative aspect-[1.28/1] overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={`${item.title} interface`}
-                      fill
-                      className="object-cover object-left-top ps-4 pt-2"
-                    />
-                    <div className="from-background absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent" />
+          <div className="mt-8 md:mt-12 lg:mt-20">
+            {/* Desktop: Milestone cards - 2 per row */}
+            <div className="hidden md:block">
+              {/* Milestone cards */}
+              <div className="grid grid-cols-2 gap-12 mb-8">
+                {items.slice(0, 2).map((item, i) => (
+                  <div key={i} className="flex flex-col items-center">
+                    <Card className="group w-full rounded-3xl border border-gray-200/60 shadow-md hover:shadow-xl hover:-translate-y-1 hover:ring-1 hover:ring-pink-200/60 transition-transform duration-300">
+                      <CardContent className="p-8">
+                        <div 
+                          className="relative h-72 md:h-80 lg:h-96 xl:h-[26rem] mb-6 overflow-visible rounded-3xl cursor-pointer bg-white bg-gradient-to-b from-pink-50/70 via-white/70 to-transparent ring-1 ring-pink-100/50 p-6 flex items-center justify-center"
+                          style={{ perspective: '1000px' }}
+                        >
+                          <img
+                            src={item.image}
+                            alt={`${item.title} interface`}
+                            className="max-w-full max-h-full object-contain transition-all duration-500 ease-out transform-gpu drop-shadow-2xl z-10 relative"
+                            style={{
+                              transformStyle: 'preserve-3d',
+                              transform: 'rotateX(0deg) rotateY(0deg) scale(1)',
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.transform = 'rotateX(-2deg) rotateY(3deg) scale(1.05)';
+                              e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+                              e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                            }}
+                            onMouseMove={(e) => {
+                              const rect = e.currentTarget.getBoundingClientRect();
+                              const x = e.clientX - rect.left;
+                              const y = e.clientY - rect.top;
+                              const centerX = rect.width / 2;
+                              const centerY = rect.height / 2;
+                              const rotateX = (y - centerY) / centerY * -5;
+                              const rotateY = (x - centerX) / centerX * 5;
+                              
+                              e.currentTarget.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+                            }}
+                          />
+                          <span className="absolute top-3 right-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/95 ring-2 ring-pink-200 text-sm font-semibold text-gray-700 shadow-lg z-20">{item.number}</span>
+                          <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10" />
+                        </div>
+                        <div className="h-px bg-gradient-to-r from-pink-100/70 via-pink-50/40 to-transparent rounded-full -mx-2 mb-4" />
+                        <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                          {item.title}
+                        </h3>
+                        <p className="text-base text-gray-600 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </CardContent>
+                    </Card>
                   </div>
-
-                  <Link
-                    href="#"
-                    className={
-                      "group flex items-center justify-between gap-4 pe-4 pt-4 md:pe-6 md:pt-6"
-                    }
-                  >
-                    <h3 className="font-display max-w-60 text-2xl leading-tight font-bold tracking-tight">
-                      {item.title}
-                    </h3>
-                    <div className="rounded-full border p-2">
-                      <ChevronRight className="size-6 transition-transform group-hover:translate-x-1 lg:size-9" />
-                    </div>
-                  </Link>
-                </div>
-                {i < items.length - 1 && (
-                  <div className="relative hidden md:block">
-                    <DashedLine orientation="vertical" />
-                  </div>
-                )}
-                {i < items.length - 1 && (
-                  <div className="relative block md:hidden">
-                    <DashedLine orientation="horizontal" />
-                  </div>
-                )}
+                ))}
               </div>
-            ))}
-          </CardContent>
-        </Card>
+              
+              {/* Second row */}
+              <div className="grid grid-cols-2 gap-12">
+                {items.slice(2, 4).map((item, i) => (
+                  <div key={i + 2} className="flex flex-col items-center">
+                    <Card className="group w-full rounded-3xl border border-gray-200/60 shadow-md hover:shadow-xl hover:-translate-y-1 hover:ring-1 hover:ring-pink-200/60 transition-transform duration-300">
+                      <CardContent className="p-8">
+                        <div 
+                          className="relative h-72 md:h-80 lg:h-96 xl:h-[26rem] mb-6 overflow-visible rounded-3xl cursor-pointer bg-white bg-gradient-to-b from-pink-50/70 via-white/70 to-transparent ring-1 ring-pink-100/50 p-6 flex items-center justify-center"
+                          style={{ perspective: '1000px' }}
+                        >
+                          <img
+                            src={item.image}
+                            alt={`${item.title} interface`}
+                            className="max-w-full max-h-full object-contain transition-all duration-500 ease-out transform-gpu drop-shadow-2xl z-10 relative"
+                            style={{
+                              transformStyle: 'preserve-3d',
+                              transform: 'rotateX(0deg) rotateY(0deg) scale(1)',
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.transform = 'rotateX(-2deg) rotateY(3deg) scale(1.05)';
+                              e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+                              e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                            }}
+                            onMouseMove={(e) => {
+                              const rect = e.currentTarget.getBoundingClientRect();
+                              const x = e.clientX - rect.left;
+                              const y = e.clientY - rect.top;
+                              const centerX = rect.width / 2;
+                              const centerY = rect.height / 2;
+                              const rotateX = (y - centerY) / centerY * -5;
+                              const rotateY = (x - centerX) / centerX * 5;
+                              
+                              e.currentTarget.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+                            }}
+                          />
+                          <span className="absolute top-3 right-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/95 ring-2 ring-pink-200 text-sm font-semibold text-gray-700 shadow-lg z-20">{item.number}</span>
+                          <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10" />
+                        </div>
+                        <div className="h-px bg-gradient-to-r from-pink-100/70 via-pink-50/40 to-transparent rounded-full -mx-2 mb-4" />
+                        <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                          {item.title}
+                        </h3>
+                        <p className="text-base text-gray-600 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile: Vertical layout without connecting lines */}
+            <div className="md:hidden space-y-8">
+              {items.map((item, i) => (
+                <div key={i}>
+                  <div className="flex items-start gap-4">
+                    <Card className="group flex-1 rounded-3xl border border-gray-200/60 shadow-md hover:shadow-lg transition-transform duration-300">
+                      <CardContent className="p-6">
+                        <div 
+                          className="relative h-56 mb-4 overflow-visible rounded-3xl cursor-pointer bg-white bg-gradient-to-b from-pink-50/70 via-white/70 to-transparent ring-1 ring-pink-100/50 p-4 flex items-center justify-center"
+                          style={{ perspective: '1000px' }}
+                        >
+                          <img
+                            src={item.image}
+                            alt={`${item.title} interface`}
+                            className="max-w-full max-h-full object-contain transition-all duration-500 ease-out transform-gpu drop-shadow-2xl z-10 relative"
+                            style={{
+                              transformStyle: 'preserve-3d',
+                              transform: 'rotateX(0deg) rotateY(0deg) scale(1)',
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.transform = 'rotateX(-2deg) rotateY(3deg) scale(1.05)';
+                              e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+                              e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                            }}
+                            onMouseMove={(e) => {
+                              const rect = e.currentTarget.getBoundingClientRect();
+                              const x = e.clientX - rect.left;
+                              const y = e.clientY - rect.top;
+                              const centerX = rect.width / 2;
+                              const centerY = rect.height / 2;
+                              const rotateX = (y - centerY) / centerY * -5;
+                              const rotateY = (x - centerX) / centerX * 5;
+                              
+                              e.currentTarget.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+                            }}
+                          />
+                          <span className="absolute top-2 right-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/95 ring-2 ring-pink-200 text-xs font-semibold text-gray-700 shadow-lg z-20">{item.number}</span>
+                          <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10" />
+                        </div>
+                        <div className="h-px bg-gradient-to-r from-pink-100/70 via-pink-50/40 to-transparent rounded-full -mx-2 mb-3" />
+                        <h3 className="text-xl font-bold mb-3 text-gray-900">
+                          {item.title}
+                        </h3>
+                        <p className="text-base text-gray-600 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

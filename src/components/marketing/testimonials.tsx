@@ -48,11 +48,11 @@ const statCards = [
 
 export const Testimonials = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-16">
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Hear From Brands Winning at AI Search</h2>
+          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">Hear From Brands Winning at AI Search</h2>
           <p className="mt-4 text-lg text-gray-600">
             Leading brands use Analyze to understand their AI search presence and stay ahead of the competition.
           </p>

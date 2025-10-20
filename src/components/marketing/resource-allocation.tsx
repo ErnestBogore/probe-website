@@ -1,18 +1,16 @@
-import Image from "next/image";
-
 import { DashedLine } from "../dashed-line";
 
 import { cn } from "@/lib/utils";
 
 const topItems = [
   {
-    title: "Real-time AI search monitoring.",
+    title: "Accept smart prompt suggestions.",
     description:
-      "Track your brand visibility across all major AI engines with automated daily monitoring.",
+      "One-click \"Track\" suggested prompts by cluster to auto-schedule daily runs and expand coverage.",
     images: [
       {
-        src: "/Search Anything.png",
-        alt: "AI search monitoring interface",
+        src: "/Prompt Suggestion.png",
+        alt: "Smart prompt suggestions interface",
         width: 495,
         height: 186,
       },
@@ -22,91 +20,72 @@ const topItems = [
     fade: [""],
   },
   {
-    title: "Simplify your AI analytics stack.",
-    description: "No more scattered tools, spreadsheets, or manual tracking.",
+    title: "Prune noise from your prompt set.",
+    description: "Remove off-strategy prompts from tracking to keep trends, win rates, and attribution clean.",
     images: [
-      { src: "/logos/jira.svg", alt: "Jira logo", width: 48, height: 48 },
-      { src: "/logos/excel.svg", alt: "Excel logo", width: 48, height: 48 },
       {
-        src: "/logos/notion.svg",
-        alt: "Notion logo",
-        width: 48,
-        height: 48,
+        src: "/Prompt Removal.png",
+        alt: "Prompt removal interface",
+        width: 495,
+        height: 186,
       },
-      { src: "/logos/word.svg", alt: "Word logo", width: 48, height: 48 },
-      {
-        src: "/logos/monday.svg",
-        alt: "Monday logo",
-        width: 48,
-        height: 48,
-      },
-      {
-        src: "/logos/drive.svg",
-        alt: "Google Drive logo",
-        width: 48,
-        height: 48,
-      },
-      {
-        src: "/logos/jira.svg",
-        alt: "Jira logo",
-        width: 48,
-        height: 48,
-      },
-      { src: "/logos/asana.svg", alt: "Asana logo", width: 48, height: 48 },
     ],
     className:
-      "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 md:[&>.title-container]:translate-x-2 xl:[&>.title-container]:translate-x-4 [&>.title-container]:translate-x-0",
-    fade: [],
+      "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
+    fade: [""],
   },
 ];
 
 const bottomItems = [
   {
-    title: "Competitive insights.",
+    title: "Audit the domains shaping AI answers.",
     description:
-      "Monitor how competitors perform in AI search results and identify opportunities.",
+      "See the most-cited domains—including competitors—to target citation wins that turn visibility into sessions.",
     images: [
       {
-        src: "/Competitive insights.png",
-        alt: "Competitive analysis interface",
-        width: 305,
-        height: 280,
-      },
-    ],
-    className:
-      "[&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
-    fade: ["bottom"],
-  },
-  {
-    title: "Prompt performance tracking.",
-    description:
-      "Deep-dive into individual prompt metrics and ranking performance over time.",
-    images: [
-      {
-        src: "/Prompt detail.png",
-        alt: "Prompt performance interface",
+        src: "/Top Sources.png",
+        alt: "Domain audit interface",
         width: 320,
         height: 103,
       },
     ],
     className:
-      "justify-normal [&>.title-container]:mb-5 md:[&>.title-container]:mb-0 [&>.image-container]:flex-1 md:[&>.image-container]:place-items-center md:[&>.image-container]:-translate-y-3",
+      "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
     fade: [""],
   },
   {
-    title: "AI traffic analytics.",
+    title: "Benchmark presence and citations by model.",
     description:
-      "Connect your GA4 to see real AI referral traffic and conversion data.",
+      "Compare presence and citation share across providers to invest where models already trust you.",
     images: [
       {
-        src: "/AI traffic.png",
-        alt: "AI traffic analytics interface",
+        src: "/Model level metrics.png",
+        alt: "Model benchmarking interface",
         width: 305,
         height: 280,
       },
     ],
     className:
-      "[&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
+      "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
+    fade: ["bottom"],
+  },
+];
+
+const lastRowItems = [
+  {
+    title: "Prioritize engines that actually send sessions.",
+    description:
+      "Rank top LLM referrers by 30-day sessions and change to focus optimization where traffic comes.",
+    images: [
+      {
+        src: "/Trend By Engine.png",
+        alt: "Engine prioritization interface",
+        width: 305,
+        height: 280,
+      },
+    ],
+    className:
+      "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
     fade: ["bottom"],
   },
 ];
@@ -115,11 +94,11 @@ export const ResourceAllocation = () => {
   return (
     <section
       id="resource-allocation"
-      className="overflow-hidden pb-28 lg:pb-32"
+      className="overflow-hidden pb-24"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl">
-          Streamline your AI search analytics<br />and execution
+        <h2 className="text-center text-3xl tracking-tight md:text-4xl lg:text-5xl text-balance">
+          And so much more you need to nail your generative engine optimization strategy.
         </h2>
 
         <div className="mx-auto max-w-6xl">
@@ -140,14 +119,31 @@ export const ResourceAllocation = () => {
               className="scale-x-110"
             />
 
-            {/* Bottom Features Grid - 3 items */}
-            <div className="relative grid md:grid-cols-3">
+            {/* Bottom Features Grid - 2 items */}
+            <div className="relative flex flex-col md:flex-row">
               {bottomItems.map((item, i) => (
                 <Item
                   key={i}
                   item={item}
                   isLast={i === bottomItems.length - 1}
-                  className="md:pb-0"
+                  className="md:pb-0 flex-1"
+                />
+              ))}
+            </div>
+            <DashedLine
+              orientation="horizontal"
+              className="scale-x-110"
+            />
+
+            {/* Last Row - 1 item */}
+            <div className="relative flex justify-center">
+              {lastRowItems.map((item, i) => (
+                <Item
+                  key={i}
+                  item={item}
+                  isLast={true}
+                  className="md:pb-0 max-w-4xl w-full"
+                  isHorizontal={true}
                 />
               ))}
             </div>
@@ -163,12 +159,58 @@ export const ResourceAllocation = () => {
 };
 
 interface ItemProps {
-  item: (typeof topItems)[number] | (typeof bottomItems)[number];
+  item: (typeof topItems)[number] | (typeof bottomItems)[number] | (typeof lastRowItems)[number];
   isLast?: boolean;
   className?: string;
+  isHorizontal?: boolean;
 }
 
-const Item = ({ item, isLast, className }: ItemProps) => {
+const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
+  if (isHorizontal) {
+    return (
+      <div
+        className={cn(
+          "relative flex flex-col md:flex-row items-center gap-6 md:gap-8 px-0 py-6 md:px-6 md:py-8",
+          className,
+        )}
+      >
+        <div className="flex-1 text-balance">
+          <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+          <p className="text-muted-foreground text-lg leading-relaxed">{item.description}</p>
+        </div>
+        
+        <div className="flex-shrink-0 w-full md:w-auto md:max-w-xs">
+          <div className="image-container">
+            {item.images.map((image, j) => (
+              <div key={j} className="flex-shrink-0 relative">
+                <div className="rounded-lg p-4" style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}>
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="object-contain object-center w-full h-auto max-w-full"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {!isLast && (
+          <>
+            <DashedLine
+              orientation="vertical"
+              className="absolute top-0 right-0 max-md:hidden"
+            />
+            <DashedLine
+              orientation="horizontal"
+              className="absolute inset-x-0 bottom-0 md:hidden"
+            />
+          </>
+        )}
+      </div>
+    );
+  }
+  
   return (
     <div
       className={cn(
@@ -193,13 +235,12 @@ const Item = ({ item, isLast, className }: ItemProps) => {
               {item.images.slice(0, 4).map((image, j) => (
                 <div
                   key={j}
-                  className="bg-background grid aspect-square size-16 place-items-center rounded-2xl p-2 lg:size-20"
+                  className="grid aspect-square size-16 place-items-center rounded-2xl p-2 lg:size-20"
+                  style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}
                 >
-                  <Image
+                  <img
                     src={image.src}
                     alt={image.alt}
-                    width={image.width}
-                    height={image.height}
                     className="object-contain object-left-top"
                   />
                   <div className="from-muted/80 absolute inset-y-0 right-0 z-10 w-16 bg-linear-to-l to-transparent" />
@@ -211,13 +252,12 @@ const Item = ({ item, isLast, className }: ItemProps) => {
               {item.images.slice(4).map((image, j) => (
                 <div
                   key={j}
-                  className="bg-background grid aspect-square size-16 place-items-center rounded-2xl lg:size-20"
+                  className="grid aspect-square size-16 place-items-center rounded-2xl lg:size-20"
+                  style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}
                 >
-                  <Image
+                  <img
                     src={image.src}
                     alt={image.alt}
-                    width={image.width}
-                    height={image.height}
                     className="object-contain object-left-top"
                   />
                   <div className="from-muted absolute inset-y-0 bottom-0 left-0 z-10 w-14 bg-linear-to-r to-transparent" />
@@ -227,16 +267,15 @@ const Item = ({ item, isLast, className }: ItemProps) => {
           </div>
         </div>
       ) : (
-        <div className="image-container grid grid-cols-1 gap-4">
+        <div className="image-container flex flex-col gap-4 rounded-lg p-4" style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}>
           {item.images.map((image, j) => (
-            <Image
-              key={j}
-              src={image.src}
-              alt={image.alt}
-              width={image.width}
-              height={image.height}
-              className="object-contain object-left-top"
-            />
+            <div key={j} className="flex-shrink-0">
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="object-contain object-left-top w-full h-auto max-w-full"
+              />
+            </div>
           ))}
         </div>
       )}

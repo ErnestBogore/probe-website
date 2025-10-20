@@ -1,48 +1,47 @@
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const featuresData = [
   {
-    title: "Search Anything, Instantly",
+    title: "Select competitors to track across your clusters",
     description:
-      "Instantly check your brand's ranking for any prompt across major AI answer engines. Get a real-time view of your visibility.",
-    image: "/Search Anything.png",
-    alt: "A search interface for querying AI models about brand perception.",
+      "Set the rivals that matter. Your scheduled prompts run daily to measure visibility share, sentiment, and movement by cluster—so you have a rolling scoreboard you can act on without manual checks.",
+    image: "/Competitor Overview.png",
+    alt: "Competitor overview dashboard showing visibility share and performance metrics across clusters.",
   },
   {
-    title: "Deep-Dive Into Prompt Performance",
+    title: "Diagnose prompt-level presence and gaps",
     description:
-      "Go beyond surface-level data. Get detailed visibility, ranking, and citation metrics for every prompt you track.",
-    image: "/Prompt detail.png",
-    alt: "A dashboard showing detailed analytics for a specific search prompt.",
+      "See visibility, sentiment, and position for every tracked prompt with a response timeline. Spot where you're absent or under-represented, then target content and messaging to win specific prompts.",
+    image: "/Prompt Level Analytics.png",
+    alt: "Prompt-level analytics dashboard showing detailed performance metrics and response timelines.",
   },
   {
-    title: "Discover Your Most Important Prompts",
+    title: "Audit the sources AI relies on (citations & domains)",
     description:
-      "Uncover the core business prompts you need to be tracking. Our suggestion engine identifies key search terms relevant to your brand.",
-    image: "/Prompt Suggest.png",
-    alt: "A list of suggested prompts for a user to track.",
+      "Identify which of your URLs and which external domains models cite, how often, and in which engines. Expose citation gaps, competitor wins, and the exact sources to outrank or earn.",
+    image: "/Citation Analytics.png",
+    alt: "Citation analytics dashboard showing source analysis and domain citation patterns.",
   },
   {
-    title: "Continuous Monitoring, Effortless Insights",
+    title: "Attribute AI-driven sessions to your site",
     description:
-      "We automatically track your most important prompts daily. Stay ahead of changes and monitor your AI search performance over time without lifting a finger.",
-    image: "/Prompts.png",
-    alt: "A dashboard listing multiple tracked prompts with their performance metrics.",
+      "Quantify total sessions from AI search, trend them over time, and understand AI's share of overall traffic. This proves channel impact and establishes baselines for growth goals.",
+    image: "/AI Referral Traffic.png",
+    alt: "AI referral traffic dashboard showing session attribution and traffic trends from AI engines.",
   },
   {
-    title: "Gain a Competitive Edge",
+    title: "Attribute down to the landing page",
     description:
-      "See exactly how you stack up against the competition in AI search results. Track their rankings, citations, and share of voice.",
-    image: "/Competitive insights.png",
-    alt: "A competitive analysis dashboard with charts for share of voice and average ranking.",
+      "Pinpoint the pages AI engines send traffic to, matched with the referring model/site and sessions. Double down on winners, repair underperformers, and brief editors on formats AI prefers.",
+    image: "/AI Traffic By Page.png",
+    alt: "Page-level AI traffic attribution showing landing page performance and referral sources.",
   },
   {
-    title: "Measure Your AI Search ROI",
+    title: "Optimize by engine mix",
     description:
-      "Connect your Google Analytics 4 to see the real-world impact of your AI search strategy on your website traffic and business goals.",
-    image: "/AI traffic.png",
-    alt: "A dashboard showing AI traffic analytics and referral trends.",
+      "Compare contribution from ChatGPT, Perplexity, Claude, Copilot, Gemini, and more—month by month. Prioritize the engines that move the needle and tailor content and distribution for each.",
+    image: "/Analytics By Engine.png",
+    alt: "Engine-specific analytics dashboard comparing performance across different AI platforms.",
   },
 ];
 
@@ -51,11 +50,11 @@ export const Features = () => {
     <section className="py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            A Complete Toolkit for AI Search Visibility
+          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
+            One platform to see, compete, and prove ROI of AI search
           </h2>
           <p className="mt-6 text-lg text-gray-600">
-            From ad-hoc searches to competitive insights and performance tracking, Analyze gives you everything you need to own your narrative in the age of AI.
+            Track visibility, outpace rivals, and tie AI answers to real traffic and conversions.
           </p>
         </div>
 
@@ -79,11 +78,9 @@ export const Features = () => {
                 </p>
               </div>
               <div className="md:col-span-3 aspect-[16/9]">
-                <Image
+                <img
                   src={feature.image}
                   alt={feature.alt}
-                  width={1600}
-                  height={900}
                   className="w-full h-full object-contain object-center"
                 />
               </div>

@@ -4,13 +4,13 @@ import { Button } from '@/components/ui/button';
 
 export const Cta = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div style={{ backgroundColor: '#8858ed' }} className="rounded-2xl shadow-lg overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center">
             {/* Text Content */}
             <div className="p-8 md:p-12 lg:p-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+              <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-white">
                 Stop Guessing. Start Winning in AI Search.
               </h2>
               <p className="mt-6 text-lg text-gray-200">

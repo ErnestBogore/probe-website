@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -37,7 +39,7 @@ const features = [
 
 export const Hero = () => {
   return (
-    <section className="py-28 lg:py-32 lg:pt-44 bg-gray-100">
+    <section className="py-24 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
@@ -102,13 +104,41 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:mt-24">
-          <div className="relative h-[793px] w-full">
+        <div className="mt-12 max-lg:ml-6 md:mt-20 lg:mt-24">
+          <div 
+            className="relative w-full group cursor-pointer"
+            style={{ perspective: '1000px' }}
+          >
             <Image
-              src="/Hero-image-feature.png"
-              alt="hero"
-              fill
-              className="rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none"
+              src="/herotest.png"
+              alt="AI Search Analytics Dashboard - 3D Interactive View"
+              width={1200}
+              height={800}
+              quality={100}
+              priority
+              unoptimized
+              className="w-full max-w-5xl h-auto transition-all duration-500 ease-out transform-gpu mx-auto"
+              style={{
+                transformStyle: 'preserve-3d',
+                transform: 'rotateX(0deg) rotateY(0deg) scale(1)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'rotateX(-2deg) rotateY(3deg) scale(1.02)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+              }}
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / centerY * -5;
+                const rotateY = (x - centerX) / centerX * 5;
+                
+                e.currentTarget.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+              }}
             />
           </div>
         </div>
