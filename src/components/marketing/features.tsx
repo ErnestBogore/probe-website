@@ -6,14 +6,14 @@ const featuresData = [
     description:
       "Set the rivals that matter. Your scheduled prompts run daily to measure visibility share, sentiment, and movement by cluster—so you have a rolling scoreboard you can act on without manual checks.",
     image: "/Competitor Overview.png",
-    alt: "Competitor overview dashboard showing visibility share and performance metrics across clusters.",
+    alt: "Competitor overview dashboard showing visibility share and sentiment tracking across clusters.",
   },
   {
     title: "Diagnose prompt-level presence and gaps",
     description:
       "See visibility, sentiment, and position for every tracked prompt with a response timeline. Spot where you're absent or under-represented, then target content and messaging to win specific prompts.",
     image: "/Prompt Level Analytics.png",
-    alt: "Prompt-level analytics dashboard showing detailed performance metrics and response timelines.",
+    alt: "Prompt-level analytics dashboard showing visibility and sentiment analysis for individual prompts.",
   },
   {
     title: "Audit the sources AI relies on (citations & domains)",

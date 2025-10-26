@@ -2,6 +2,8 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { DashedLine } from "../dashed-line";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const items = [
   {
@@ -9,24 +11,28 @@ const items = [
     title: "Discover",
     description: "See where you appear (and don't) across answer engines, with the sources models rely on.",
     image: "/Discover 1x.png",
+    href: "/features/discover",
   },
   {
     number: "2", 
     title: "Measure",
     description: "Track rankings, share of answers, and sentiment by topic, product, and competitor.",
     image: "/Measure 1x.png",
+    href: "/features/monitor",
   },
   {
     number: "3",
     title: "Improve", 
     description: "Get the specific citations, entities, and content gaps to influence model responses.",
     image: "/Improve 1x.png",
+    href: "/features/improve",
   },
   {
     number: "4",
     title: "Govern",
     description: "Monitor risk terms and reputational drift; catch negative narratives early.",
     image: "/Govern 1x.png",
+    href: "/features/govern",
   },
 ];
 
@@ -61,8 +67,9 @@ export const ModernFeatures = () => {
               <div className="grid grid-cols-2 gap-12 mb-8">
                 {items.slice(0, 2).map((item, i) => (
                   <div key={i} className="flex flex-col items-center">
-                    <Card className="group w-full rounded-3xl border border-gray-200/60 shadow-md hover:shadow-xl hover:-translate-y-1 hover:ring-1 hover:ring-pink-200/60 transition-transform duration-300">
-                      <CardContent className="p-8">
+                    <Link href={item.href} className="w-full">
+                      <Card className="group w-full rounded-3xl border border-gray-200/60 shadow-md hover:shadow-xl hover:-translate-y-1 hover:ring-1 hover:ring-pink-200/60 transition-transform duration-300 cursor-pointer">
+                        <CardContent className="p-8">
                         <div 
                           className="relative h-72 md:h-80 lg:h-96 xl:h-[26rem] mb-6 overflow-visible rounded-3xl cursor-pointer bg-white bg-gradient-to-b from-pink-50/70 via-white/70 to-transparent ring-1 ring-pink-100/50 p-6 flex items-center justify-center"
                           style={{ perspective: '1000px' }}
@@ -99,14 +106,18 @@ export const ModernFeatures = () => {
                           <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10" />
                         </div>
                         <div className="h-px bg-gradient-to-r from-pink-100/70 via-pink-50/40 to-transparent rounded-full -mx-2 mb-4" />
-                        <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                          {item.title}
-                        </h3>
+                        <div className="flex items-center justify-between">
+                          <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                            {item.title}
+                          </h3>
+                          <ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-all duration-300" />
+                        </div>
                         <p className="text-base text-gray-600 leading-relaxed">
                           {item.description}
                         </p>
                       </CardContent>
                     </Card>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -115,7 +126,8 @@ export const ModernFeatures = () => {
               <div className="grid grid-cols-2 gap-12">
                 {items.slice(2, 4).map((item, i) => (
                   <div key={i + 2} className="flex flex-col items-center">
-                    <Card className="group w-full rounded-3xl border border-gray-200/60 shadow-md hover:shadow-xl hover:-translate-y-1 hover:ring-1 hover:ring-pink-200/60 transition-transform duration-300">
+                    <Link href={item.href} className="w-full">
+                      <Card className="group w-full rounded-3xl border border-gray-200/60 shadow-md hover:shadow-xl hover:-translate-y-1 hover:ring-1 hover:ring-pink-200/60 transition-transform duration-300 cursor-pointer">
                       <CardContent className="p-8">
                         <div 
                           className="relative h-72 md:h-80 lg:h-96 xl:h-[26rem] mb-6 overflow-visible rounded-3xl cursor-pointer bg-white bg-gradient-to-b from-pink-50/70 via-white/70 to-transparent ring-1 ring-pink-100/50 p-6 flex items-center justify-center"
@@ -153,14 +165,18 @@ export const ModernFeatures = () => {
                           <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10" />
                         </div>
                         <div className="h-px bg-gradient-to-r from-pink-100/70 via-pink-50/40 to-transparent rounded-full -mx-2 mb-4" />
-                        <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                          {item.title}
-                        </h3>
+                        <div className="flex items-center justify-between">
+                          <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                            {item.title}
+                          </h3>
+                          <ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-all duration-300" />
+                        </div>
                         <p className="text-base text-gray-600 leading-relaxed">
                           {item.description}
                         </p>
                       </CardContent>
                     </Card>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -171,8 +187,9 @@ export const ModernFeatures = () => {
               {items.map((item, i) => (
                 <div key={i}>
                   <div className="flex items-start gap-4">
-                    <Card className="group flex-1 rounded-3xl border border-gray-200/60 shadow-md hover:shadow-lg transition-transform duration-300">
-                      <CardContent className="p-6">
+                    <Link href={item.href} className="flex-1">
+                      <Card className="group flex-1 rounded-3xl border border-gray-200/60 shadow-md hover:shadow-lg transition-transform duration-300 cursor-pointer">
+                        <CardContent className="p-6">
                         <div 
                           className="relative h-56 mb-4 overflow-visible rounded-3xl cursor-pointer bg-white bg-gradient-to-b from-pink-50/70 via-white/70 to-transparent ring-1 ring-pink-100/50 p-4 flex items-center justify-center"
                           style={{ perspective: '1000px' }}
@@ -209,14 +226,18 @@ export const ModernFeatures = () => {
                           <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10" />
                         </div>
                         <div className="h-px bg-gradient-to-r from-pink-100/70 via-pink-50/40 to-transparent rounded-full -mx-2 mb-3" />
-                        <h3 className="text-xl font-bold mb-3 text-gray-900">
-                          {item.title}
-                        </h3>
+                        <div className="flex items-center justify-between">
+                          <h3 className="text-xl font-bold mb-3 text-gray-900">
+                            {item.title}
+                          </h3>
+                          <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-all duration-300" />
+                        </div>
                         <p className="text-base text-gray-600 leading-relaxed">
                           {item.description}
                         </p>
                       </CardContent>
                     </Card>
+                    </Link>
                   </div>
                 </div>
               ))}

@@ -1,27 +1,12 @@
-import { DashedLine } from "../dashed-line";
+import { DashedLine } from "../../dashed-line";
 
 import { cn } from "@/lib/utils";
 
 const topItems = [
   {
-    title: "Track the competitors that actually matter.",
+    title: "See why competitors are winning a prompt — down to the source URL.",
     description:
-      "Pick the brands you care about and we'll monitor how often they're recommended across high-intent prompts. We'll even surface \"emerging\" competitors you're being compared to so you don't get blindsided in deals.",
-    images: [
-      {
-        src: "/Competitors.png",
-        alt: "Competitor tracking interface",
-        width: 495,
-        height: 186,
-      },
-    ],
-    className:
-      "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
-    fade: [""],
-  },
-  {
-    title: "See why they're winning a prompt — down to the source URL.",
-    description: "For any prompt (e.g. \"best [category] for [ICP]\"), see who's being mentioned, which pages are being cited, how often they're being pulled into answers, and which models are repeating them. This shows you the exact assets fueling their visibility so you know what you need to build, update, or replicate.",
+      "For any prompt (e.g. \"best [category] for [ICP]\"), see the exact assets fueling their visibility so you know what you need to build, update, or replicate.",
     images: [
       {
         src: "/Prompt Level Citation.png",
@@ -34,19 +19,34 @@ const topItems = [
       "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
     fade: [""],
   },
+  {
+    title: "Benchmark presence and citations by model.",
+    description: "Compare presence and citation share across providers to invest where models already trust you.",
+    images: [
+      {
+        src: "/Model level metrics.png",
+        alt: "Model-level metrics showing presence and citation benchmarks",
+        width: 495,
+        height: 186,
+      },
+    ],
+    className:
+      "flex-1 [&>.title-container]:mb-3 md:[&>.title-container]:mb-5 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
+    fade: [""],
+  },
 ];
 
 const bottomItems = [
   {
-    title: "Watch your position vs. competitors over time.",
+    title: "Accept smart prompt suggestions.",
     description:
-      "See daily movement in AI answer rankings across your competitive set. Know when you're holding #1, when you're slipping, and when a rival starts gaining visibility so you can respond before it shows up in pipeline.",
+      "One-click \"Track\" suggested prompts by cluster to auto-schedule daily runs and expand coverage.",
     images: [
       {
-        src: "/Position by competitors.png",
-        alt: "Position tracking interface",
-        width: 320,
-        height: 103,
+        src: "/Prompt Suggestion.png",
+        alt: "Prompt suggestion interface showing smart recommendations",
+        width: 495,
+        height: 186,
       },
     ],
     className:
@@ -54,15 +54,15 @@ const bottomItems = [
     fade: [""],
   },
   {
-    title: "Get a prioritized list of prompts you should be winning next.",
+    title: "Prune noise from your prompt set.",
     description:
-      "We surface high-intent prompts where you're not being mentioned — but a competitor is. You get the gap, the competitor, and when we last saw it. This becomes your content / enablement to-do list, not a guessing exercise.",
+      "Remove off-strategy prompts from tracking to keep trends, win rates, and attribution clean.",
     images: [
       {
-        src: "/Opportunities.png",
-        alt: "Opportunity prioritization interface",
-        width: 305,
-        height: 280,
+        src: "/Prompt Removal.png",
+        alt: "Prompt removal interface for cleaning tracking sets",
+        width: 495,
+        height: 186,
       },
     ],
     className:
@@ -71,10 +71,10 @@ const bottomItems = [
   },
 ];
 
-export const ResourceAllocation = () => {
+export const ResourceAllocationImprove = () => {
   return (
     <section
-      id="resource-allocation"
+      id="resource-allocation-improve"
       className="overflow-hidden pb-6"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,7 +82,7 @@ export const ResourceAllocation = () => {
           And so much more you need to nail your generative engine optimization strategy
         </h2>
         <p className="text-center text-lg text-gray-600 mt-6 max-w-4xl mx-auto">
-          Track competitors, see why they&apos;re getting recommended, watch position shifts, and get a focused list of prompts you should be winning next.
+          Track competitors, see why they're getting recommended, watch position shifts, and get a focused list of prompts you should be winning next.
         </p>
 
         <div className="mx-auto max-w-6xl">
@@ -147,11 +147,13 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
         )}
       >
         <div className="flex-1 text-balance">
-          <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-          <p className="text-muted-foreground text-lg leading-relaxed">{item.description}</p>
+          <h3 className="inline">
+            <span className="font-semibold">{item.title}</span>
+            <span className="text-muted-foreground"> {item.description}</span>
+          </h3>
         </div>
         
-        <div className="flex-shrink-0 w-full md:w-auto md:max-w-xs">
+        <div className="flex-shrink-0 w-full md:w-auto md:max-w-sm">
           <div className="image-container">
             {item.images.map((image, j) => (
               <div key={j} className="flex-shrink-0 relative">
@@ -186,14 +188,16 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
   return (
     <div
       className={cn(
-        "relative flex flex-col justify-between px-0 py-6 md:px-6 md:py-8",
+        "relative flex flex-col px-0 py-6 md:px-6 md:py-8",
         className,
         item.className,
       )}
     >
       <div className="title-container text-balance">
-        <h3 className="inline font-semibold">{item.title} </h3>
-        <span className="text-muted-foreground"> {item.description}</span>
+        <h3 className="inline">
+          <span className="font-semibold">{item.title}</span>
+          <span className="text-muted-foreground"> {item.description}</span>
+        </h3>
       </div>
 
       {item.fade.includes("bottom") && (

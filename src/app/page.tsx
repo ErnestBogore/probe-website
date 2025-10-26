@@ -9,11 +9,11 @@ import type { Metadata } from 'next';
 import { Hero } from "@/components/marketing/hero";
 import { Features } from "@/components/marketing/features";
 import { ModernFeatures } from "@/components/marketing/modern-features";
-import { ResourceAllocation } from "@/components/marketing/resource-allocation";
 import { ProblemSolution } from "@/components/marketing/problem-solution";
 import { Testimonials } from "@/components/marketing/testimonials";
 import { Manifesto } from "@/components/marketing/manifesto";
 import { HeroCta } from "@/components/marketing/hero-cta";
+import { ResourceAllocationHomepage } from "@/components/marketing/resource-allocation-homepage";
 import { Faq3 } from "@/components/faq3";
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/schema';
 
@@ -134,7 +134,7 @@ export default function Home() {
       <HeroCta />
       <Testimonials />
       <Features />
-      <ResourceAllocation />
+      <ResourceAllocationHomepage />
       <Faq3 
         heading="Frequently Asked Questions"
         description="Find answers to common questions about our AI search analytics platform. Can't find what you're looking for? Contact our support team."

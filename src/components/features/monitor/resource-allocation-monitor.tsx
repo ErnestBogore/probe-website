@@ -1,4 +1,4 @@
-import { DashedLine } from "../dashed-line";
+import { DashedLine } from "../../dashed-line";
 
 import { cn } from "@/lib/utils";
 
@@ -71,7 +71,7 @@ const bottomItems = [
   },
 ];
 
-export const ResourceAllocation = () => {
+export const ResourceAllocationMonitor = () => {
   return (
     <section
       id="resource-allocation"

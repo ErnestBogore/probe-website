@@ -1,4 +1,4 @@
-import { DashedLine } from "../dashed-line";
+import { DashedLine } from "../../dashed-line";
 
 import { cn } from "@/lib/utils";
 
@@ -36,7 +36,7 @@ const topItems = [
   },
 ];
 
-const bottomItems = [
+const middleItems = [
   {
     title: "Watch your position vs. competitors over time.",
     description:
@@ -71,10 +71,29 @@ const bottomItems = [
   },
 ];
 
-export const ResourceAllocation = () => {
+const bottomItems = [
+  {
+    title: "Prioritize engines that actually send sessions.",
+    description:
+      "Rank top LLM referrers by 30-day sessions and change to focus optimization where traffic comes.",
+    images: [
+      {
+        src: "/Trend By Engine.png",
+        alt: "Engine prioritization showing session-based rankings",
+        width: 495,
+        height: 186,
+      },
+    ],
+    className:
+      "w-full [&>.title-container]:mb-5 md:[&>.title-container]:mb-8",
+    fade: [""],
+  },
+];
+
+export const ResourceAllocationDiscover = () => {
   return (
     <section
-      id="resource-allocation"
+      id="resource-allocation-discover"
       className="overflow-hidden pb-6"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,7 +101,7 @@ export const ResourceAllocation = () => {
           And so much more you need to nail your generative engine optimization strategy
         </h2>
         <p className="text-center text-lg text-gray-600 mt-6 max-w-4xl mx-auto">
-          Track competitors, see why they&apos;re getting recommended, watch position shifts, and get a focused list of prompts you should be winning next.
+          Track competitors, see why they're getting recommended, watch position shifts, and get a focused list of prompts you should be winning next.
         </p>
 
         <div className="mx-auto max-w-6xl">
@@ -103,15 +122,26 @@ export const ResourceAllocation = () => {
               className="scale-x-110"
             />
 
-            {/* Bottom Features Grid - 2 items */}
+            {/* Middle Features Grid - 2 items */}
             <div className="relative flex flex-col md:flex-row">
-              {bottomItems.map((item, i) => (
+              {middleItems.map((item, i) => (
                 <Item
                   key={i}
                   item={item}
-                  isLast={i === bottomItems.length - 1}
+                  isLast={i === middleItems.length - 1}
                   className="md:pb-0 flex-1"
                 />
+              ))}
+            </div>
+            <DashedLine
+              orientation="horizontal"
+              className="scale-x-110"
+            />
+
+            {/* Bottom Features Grid - 1 item */}
+            <div className="relative flex">
+              {bottomItems.map((item, i) => (
+                <Item key={i} item={item} isLast={true} className="w-full" isHorizontal={true} />
               ))}
             </div>
             <DashedLine
@@ -131,7 +161,7 @@ export const ResourceAllocation = () => {
 };
 
 interface ItemProps {
-  item: (typeof topItems)[number] | (typeof bottomItems)[number];
+  item: (typeof topItems)[number] | (typeof middleItems)[number] | (typeof bottomItems)[number];
   isLast?: boolean;
   className?: string;
   isHorizontal?: boolean;
@@ -147,11 +177,13 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
         )}
       >
         <div className="flex-1 text-balance">
-          <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-          <p className="text-muted-foreground text-lg leading-relaxed">{item.description}</p>
+          <h3 className="inline">
+            <span className="font-semibold">{item.title}</span>
+            <span className="text-muted-foreground"> {item.description}</span>
+          </h3>
         </div>
         
-        <div className="flex-shrink-0 w-full md:w-auto md:max-w-xs">
+        <div className="flex-shrink-0 w-full md:w-auto md:max-w-sm">
           <div className="image-container">
             {item.images.map((image, j) => (
               <div key={j} className="flex-shrink-0 relative">
@@ -192,8 +224,10 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
       )}
     >
       <div className="title-container text-balance">
-        <h3 className="inline font-semibold">{item.title} </h3>
-        <span className="text-muted-foreground"> {item.description}</span>
+        <h3 className="inline">
+          <span className="font-semibold">{item.title}</span>
+          <span className="text-muted-foreground"> {item.description}</span>
+        </h3>
       </div>
 
       {item.fade.includes("bottom") && (

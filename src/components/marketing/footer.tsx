@@ -30,10 +30,10 @@ const defaultSections = [
   {
     title: "Product",
     links: [
-      { name: "Overview", href: "#" },
-      { name: "Pricing", href: "#" },
-      { name: "Marketplace", href: "#" },
-      { name: "Features", href: "#" },
+      { name: "Discover", href: "/features/discover" },
+      { name: "Monitor", href: "/features/monitor" },
+      { name: "Improve", href: "/features/improve" },
+      { name: "Govern", href: "/features/govern" },
     ],
   },
   {

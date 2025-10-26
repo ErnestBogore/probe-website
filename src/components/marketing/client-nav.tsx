@@ -51,19 +51,24 @@ ListItem.displayName = "ListItem";
 export const ClientNav = () => {
   const features = [
     {
-      title: "AI Search Analytics Platform",
-      description: "Track your brand's visibility across all major AI answer engines.",
-      href: "/features/ai-search-analytics",
+      title: "Discover",
+      description: "See how AI assistants talk about your product and which competitors are being recommended.",
+      href: "/features/discover",
     },
     {
-      title: "Brand Sentiment Analysis Tool",
-      description: "Monitor how AI perceives your brand and protect your reputation.",
-      href: "/features/brand-sentiment-analysis",
+      title: "Monitor",
+      description: "Track AI-driven traffic, conversions, and revenue from AI sources.",
+      href: "/features/monitor",
     },
     {
-      title: "AI Search Tool",
-      description: "Run on-demand searches to get real-time AI rankings.",
-      href: "/features/ai-search-tool",
+      title: "Improve",
+      description: "Find high-intent prompts you're losing and see why competitors win them.",
+      href: "/features/improve",
+    },
+    {
+      title: "Govern",
+      description: "Monitor how AI represents your brand and catch risky claims early.",
+      href: "/features/govern",
     },
   ];
 

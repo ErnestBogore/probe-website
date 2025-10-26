@@ -32,19 +32,19 @@ export const ProblemSolution = () => {
   });
 
   return (
-    <section className="pt-6 pb-24 bg-gray-100" ref={ref}>
+    <section className="pt-12 pb-32 bg-gray-100" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
               You&apos;re being sold &quot;visibility&quot; that can&apos;t be verified or tied to outcomes...
             </h2>
           </div>
 
           {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Problems Column - Each in its own card */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Problems Column */}
             <div className="space-y-6">
               {problems.map((problem, index) => (
                 <div 
@@ -64,7 +64,7 @@ export const ProblemSolution = () => {
                       <X className="w-5 h-5 text-red-600" />
                     </div>
                     {/* Problem Text */}
-                    <p className="text-lg text-gray-700 leading-relaxed">
+                    <p className="text-gray-700 leading-relaxed">
                       {problem.text}
                     </p>
                   </div>
@@ -72,44 +72,30 @@ export const ProblemSolution = () => {
               ))}
             </div>
 
-            {/* Solutions Column */}
-            <div 
-              className={`rounded-2xl p-8 lg:p-10 transition-all duration-700 ${
-                inView 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
-              }`}
-              style={{ 
-                backgroundColor: '#8858ed',
-                transitionDelay: '600ms' 
-              }}
-            >
-              {/* Logo and Header */}
+            {/* ANALYZE Solution Box */}
+            <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-10 text-white h-full flex flex-col">
+              {/* ANALYZE Header */}
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1">
+                <div className="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center p-1">
                   <Image
-                    src="/favicon-32x32.png"
+                    src="/favicon.png"
                     alt="Analyze favicon"
                     width={24}
                     height={24}
-                    className="object-contain"
+                    className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="text-white font-bold text-xl">ANALYZE</span>
+                <span className="text-xl font-bold">ANALYZE</span>
               </div>
-              
-              <div className="bg-white rounded-xl p-6">
-                <h4 className="text-xl font-bold text-gray-900 mb-6">
-                  With ANALYZE, you can:
-                </h4>
-                
+
+              {/* Solution Content */}
+              <div className="bg-white bg-opacity-10 rounded-xl p-8 flex-1">
+                <h3 className="text-lg font-semibold mb-6 text-black">With ANALYZE, you can:</h3>
                 <div className="space-y-4">
                   {solutions.map((solution, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0" />
-                      <span className="text-gray-700 font-medium">
-                        {solution}
-                      </span>
+                      <CheckCircle className="w-5 h-5 text-green-300 flex-shrink-0" />
+                      <span className="text-black text-sm">{solution}</span>
                     </div>
                   ))}
                 </div>
