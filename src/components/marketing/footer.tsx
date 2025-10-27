@@ -62,6 +62,19 @@ const defaultSections = [
       { name: "Privacy", href: "#" },
     ],
   },
+  {
+    title: "Use Cases",
+    links: [
+      { name: "ChatGPT Tracking", href: "/use-cases/chatgpt" },
+      { name: "Google AI Mode", href: "/use-cases/google-ai-mode" },
+      { name: "Gemini Tracking", href: "/use-cases/gemini" },
+      { name: "Claude Tracking", href: "/use-cases/claude" },
+      { name: "Microsoft Copilot", href: "/use-cases/microsoft-copilot" },
+      { name: "Perplexity AI", href: "/use-cases/perplexity-ai" },
+      { name: "Meta AI Tracking", href: "/use-cases/meta-ai" },
+      { name: "Deepseek Tracking", href: "/use-cases/deepseek" },
+    ],
+  },
 ];
 
 const defaultSocialLinks = [
@@ -118,7 +131,7 @@ export const Footer = ({
               ))}
             </ul>
           </div>
-          <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
+          <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:gap-12">
             {sections.map((section, sectionIdx) => (
               <div key={sectionIdx}>
                 <h3 className="mb-4 font-bold">{section.title}</h3>
