@@ -1,7 +1,7 @@
 import { HeroDiscover } from '@/components/features/discover/hero-discover';
 import { FeaturesDiscover } from '@/components/features/discover/features-discover';
 import { ResourceAllocationDiscover } from '@/components/features/discover/resource-allocation-discover';
-import { Faq3 } from '@/components/faq3';
+import { FaqFeatures } from '@/components/features/faq-features';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
 import type { Metadata } from 'next';
@@ -113,7 +113,7 @@ const AISearchToolPage = () => {
       <HeroDiscover />
       <FeaturesDiscover />
       <ResourceAllocationDiscover />
-    <Faq3 
+    <FaqFeatures 
       heading="Frequently Asked Questions"
       description="Answers to common questions about how ANALYZE maps AI buying moments, competitive positioning, and where you're being mentioned (or not)."
       items={faqItems}

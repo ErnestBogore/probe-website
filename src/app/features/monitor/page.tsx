@@ -1,5 +1,5 @@
 import { Hero115 } from '@/components/features/monitor/hero-115';
-import { Faq3 } from '@/components/faq3';
+import { FaqFeatures } from '@/components/features/faq-features';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { ProblemSolutionMonitor } from '@/components/features/monitor/problem-solution-monitor';
 import { FeaturesMonitor } from '@/components/features/monitor/features-monitor';
@@ -116,7 +116,7 @@ const AISearchAnalyticsPage = () => {
       <HeroCta />
       <FeaturesMonitor />
       <ResourceAllocationMonitor />
-    <Faq3 
+    <FaqFeatures 
       heading="Frequently Asked Questions"
       description="Answers to common questions about how ANALYZE attributes AI-driven traffic, conversions, and revenue back to specific sources."
       items={faqItems}

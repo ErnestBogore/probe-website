@@ -1,4 +1,4 @@
-import { Faq3 } from '@/components/faq3';
+import { FaqUseCases } from '@/components/use-cases/faq-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { FeaturesGoogleAIMode } from '@/components/use-cases/google-ai-mode/features-google-ai-mode';
 import { HeroGoogleAIMode } from '@/components/use-cases/google-ai-mode/hero-google-ai-mode';
@@ -107,7 +107,7 @@ const GoogleAIModeUseCasePage = () => {
       <FeaturesGoogleAIMode />
       <ResourceAllocationGoogleAIMode />
       
-      <Faq3 
+      <FaqUseCases 
         heading="Google AI Mode Visibility Tracking FAQ"
         description="Common questions about tracking your brand's visibility and performance in Google AI Mode."
         items={faqItems}

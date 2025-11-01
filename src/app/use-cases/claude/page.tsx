@@ -1,4 +1,4 @@
-import { Faq3 } from '@/components/faq3';
+import { FaqUseCases } from '@/components/use-cases/faq-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { FeaturesClaude } from '@/components/use-cases/claude/features-claude';
 import { HeroClaude } from '@/components/use-cases/claude/hero-claude';
@@ -107,9 +107,9 @@ const ClaudeUseCasePage = () => {
       <FeaturesClaude />
       <ResourceAllocationClaude />
       
-      <Faq3 
+      <FaqUseCases 
         heading="Claude Visibility Tracking FAQ"
-        description="Common questions about tracking your brand's visibility and performance in Anthropic's Claude."
+        description="Common questions about tracking your brand's visibility and performance in Claude."
         items={faqItems}
       />
       

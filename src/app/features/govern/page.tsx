@@ -1,7 +1,7 @@
 import { HeroGovern } from '@/components/features/govern/hero-govern';
 import { FeaturesGovern } from '@/components/features/govern/features-govern';
 import { ResourceAllocationGovern } from '@/components/features/govern/resource-allocation-govern';
-import { Faq3 } from '@/components/faq3';
+import { FaqFeatures } from '@/components/features/faq-features';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
 import type { Metadata } from 'next';
@@ -113,12 +113,12 @@ const BrandSentimentAnalysisPage = () => {
       <HeroGovern />
       <FeaturesGovern />
       <ResourceAllocationGovern />
-    <Faq3 
-      heading="Frequently Asked Questions"
-      description="Answers to common questions about how ANALYZE helps you monitor messaging, sentiment, and brand risk across AI assistants."
-      items={faqItems}
-    />
-    <HeroCta />
+      <FaqFeatures 
+        heading="Frequently Asked Questions"
+        description="Answers to common questions about how ANALYZE monitors brand sentiment, narrative drift, and accuracy in AI responses."
+        items={faqItems}
+      />
+      <HeroCta />
     </main>
   );
 };

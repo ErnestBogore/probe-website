@@ -1,4 +1,4 @@
-import { Faq3 } from '@/components/faq3';
+import { FaqUseCases } from '@/components/use-cases/faq-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { FeaturesDeepseek } from '@/components/use-cases/deepseek/features-deepseek';
 import { HeroDeepseek } from '@/components/use-cases/deepseek/hero-deepseek';
@@ -108,9 +108,9 @@ const DeepseekUseCasePage = () => {
       <FeaturesDeepseek />
       <ResourceAllocationDeepseek />
       
-      <Faq3 
+      <FaqUseCases 
         heading="Deepseek Visibility Tracking FAQ"
-        description="Common questions about tracking your brand's visibility and performance in Deepseek AI."
+        description="Common questions about tracking your brand's visibility and performance in Deepseek."
         items={faqItems}
       />
       

@@ -1,4 +1,4 @@
-import { Faq3 } from '@/components/faq3';
+import { FaqUseCases } from '@/components/use-cases/faq-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { FeaturesGemini } from '@/components/use-cases/gemini/features-gemini';
 import { HeroGemini } from '@/components/use-cases/gemini/hero-gemini';
@@ -107,9 +107,9 @@ const GeminiUseCasePage = () => {
       <FeaturesGemini />
       <ResourceAllocationGemini />
       
-      <Faq3 
+      <FaqUseCases 
         heading="Gemini Visibility Tracking FAQ"
-        description="Common questions about tracking your brand's visibility and performance in Google Gemini."
+        description="Common questions about tracking your brand's visibility and performance in Gemini."
         items={faqItems}
       />
       

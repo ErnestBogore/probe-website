@@ -1,4 +1,4 @@
-import { Faq3 } from '@/components/faq3';
+import { FaqUseCases } from '@/components/use-cases/faq-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { FeaturesPerplexityAI } from '@/components/use-cases/perplexity-ai/features-perplexity-ai';
 import { HeroPerplexityAI } from '@/components/use-cases/perplexity-ai/hero-perplexity-ai';
@@ -108,7 +108,7 @@ const PerplexityAIUseCasePage = () => {
       <FeaturesPerplexityAI />
       <ResourceAllocationPerplexityAI />
       
-      <Faq3 
+      <FaqUseCases 
         heading="Perplexity AI Visibility Tracking FAQ"
         description="Common questions about tracking your brand's visibility and performance in Perplexity AI."
         items={faqItems}

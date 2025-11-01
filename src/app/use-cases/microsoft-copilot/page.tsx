@@ -1,4 +1,4 @@
-import { Faq3 } from '@/components/faq3';
+import { FaqUseCases } from '@/components/use-cases/faq-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { FeaturesMicrosoftCopilot } from '@/components/use-cases/microsoft-copilot/features-microsoft-copilot';
 import { HeroMicrosoftCopilot } from '@/components/use-cases/microsoft-copilot/hero-microsoft-copilot';
@@ -107,7 +107,7 @@ const MicrosoftCopilotUseCasePage = () => {
       <FeaturesMicrosoftCopilot />
       <ResourceAllocationMicrosoftCopilot />
       
-      <Faq3 
+      <FaqUseCases 
         heading="Microsoft Copilot Visibility Tracking FAQ"
         description="Common questions about tracking your brand's visibility and performance in Microsoft Copilot."
         items={faqItems}

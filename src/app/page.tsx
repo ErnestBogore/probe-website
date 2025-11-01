@@ -14,7 +14,7 @@ import { Testimonials } from "@/components/marketing/testimonials";
 import { Manifesto } from "@/components/marketing/manifesto";
 import { HeroCta } from "@/components/marketing/hero-cta";
 import { ResourceAllocationHomepage } from "@/components/marketing/resource-allocation-homepage";
-import { Faq3 } from "@/components/faq3";
+import { FaqHomepage } from "@/components/marketing/faq-homepage";
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
@@ -135,7 +135,7 @@ export default function Home() {
       <Testimonials />
       <Features />
       <ResourceAllocationHomepage />
-      <Faq3 
+      <FaqHomepage 
         heading="Frequently Asked Questions"
         description="Find answers to common questions about our AI search analytics platform. Can't find what you're looking for? Contact our support team."
         items={homepageFaqItems}

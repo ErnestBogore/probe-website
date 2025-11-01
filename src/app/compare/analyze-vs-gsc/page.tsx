@@ -1,0 +1,58 @@
+import { ResourceAllocationGsc } from '@/components/compare/gsc/resource-allocation-gsc';
+import { HeroComparisonGsc } from '@/components/compare/gsc/hero-comparison-gsc';
+import { ComparisonSectionGsc } from '@/components/compare/gsc/comparison-section-gsc';
+import { ComprehensiveSectionGsc } from '@/components/compare/gsc/comprehensive-section-gsc';
+import { FeaturesGsc } from '@/components/compare/gsc/features-gsc';
+import { FaqGsc } from '@/components/compare/gsc/faq-gsc';
+import { HeroCta } from '@/components/marketing/hero-cta';
+import { generateServiceSchema } from '@/lib/schema';
+import type { Metadata } from 'next';
+import React from 'react';
+
+export const metadata: Metadata = {
+  title: 'Analyze vs. Google Search Console: Feature Comparison',
+  description: 'Compare how Analyze and Google Search Console impact visibility, traffic, and conversions across AI engines.',
+  openGraph: {
+    images: ['/AI Referral Traffic.png'],
+  },
+};
+
+const AnalyzeVsGscPage = () => {
+
+  // Generate service schema
+  const serviceSchema = generateServiceSchema({
+    name: "ANALYZE vs GSC Comparison",
+    description: "Compare ANALYZE and Google Search Console for AI search visibility tracking. See why ANALYZE offers superior AI-first analytics beyond traditional search tools.",
+    url: "https://www.tryanalyze.ai/compare/analyze-vs-gsc",
+    category: "Analytics Software",
+    features: [
+      "AI Search Visibility Tracking",
+      "AI Traffic Attribution", 
+      "Competitor Analysis in AI",
+      "Real-time AI Monitoring",
+      "Citation Source Analysis",
+      "AI Performance Metrics"
+    ]
+  });
+
+  return (
+    <main className="bg-gray-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema)
+        }}
+      />
+      
+      <HeroComparisonGsc />
+      <ComparisonSectionGsc />
+      <ComprehensiveSectionGsc />
+      <FeaturesGsc />
+      <ResourceAllocationGsc />
+      <FaqGsc />
+      <HeroCta />
+    </main>
+  );
+};
+
+export default AnalyzeVsGscPage;

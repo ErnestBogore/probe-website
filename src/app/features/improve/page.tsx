@@ -1,7 +1,7 @@
 import { HeroImprove } from '@/components/features/improve/hero-improve';
 import { FeaturesImprove } from '@/components/features/improve/features-improve';
 import { ResourceAllocationImprove } from '@/components/features/improve/resource-allocation-improve';
-import { Faq3 } from '@/components/faq3';
+import { FaqFeatures } from '@/components/features/faq-features';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
 import type { Metadata } from 'next';
@@ -113,12 +113,12 @@ const AIImproveToolPage = () => {
       <HeroImprove />
       <FeaturesImprove />
       <ResourceAllocationImprove />
-    <Faq3 
-      heading="Frequently Asked Questions"
-      description="Answers to common questions about how ANALYZE shows you what to fix, what to defend, and what to double down on to win more demand."
-      items={faqItems}
-    />
-    <HeroCta />
+      <FaqFeatures 
+        heading="Frequently Asked Questions"
+        description="Answers to common questions about how ANALYZE identifies content opportunities and helps you win high-intent AI prompts."
+        items={faqItems}
+      />
+      <HeroCta />
     </main>
   );
 };

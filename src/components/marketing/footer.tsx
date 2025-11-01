@@ -54,15 +54,6 @@ const defaultSections = [
     ],
   },
   {
-    title: "Resources",
-    links: [
-      { name: "Help", href: "#" },
-      { name: "Sales", href: "#" },
-      { name: "Advertise", href: "#" },
-      { name: "Privacy", href: "#" },
-    ],
-  },
-  {
     title: "Use Cases",
     links: [
       { name: "ChatGPT Tracking", href: "/use-cases/chatgpt" },
@@ -73,6 +64,21 @@ const defaultSections = [
       { name: "Perplexity AI", href: "/use-cases/perplexity-ai" },
       { name: "Meta AI Tracking", href: "/use-cases/meta-ai" },
       { name: "Deepseek Tracking", href: "/use-cases/deepseek" },
+    ],
+  },
+  {
+    title: "Compare",
+    links: [
+      { name: "vs Ahrefs Brand Radar", href: "/compare/analyze-vs-ahrefs-brand-radar" },
+      { name: "vs HubSpot AI Search", href: "/compare/analyze-vs-hubspot-ai-search-grader" },
+      { name: "vs Google Looker Studio", href: "/compare/analyze-vs-google-looker-studio" },
+      { name: "vs Semrush AI Toolkit", href: "/compare/analyze-vs-semrush-ai-toolkit" },
+      { name: "vs Writesonic GEO", href: "/compare/analyze-vs-writesonic-geo" },
+      { name: "vs AthenaHQ", href: "/compare/analyze-vs-athenahq" },
+      { name: "vs Profound", href: "/compare/analyze-vs-profound" },
+      { name: "vs Peec AI", href: "/compare/analyze-vs-peec-ai" },
+      { name: "vs Surfer", href: "/compare/analyze-vs-surfer" },
+      { name: "vs Google Search Console", href: "/compare/analyze-vs-gsc" },
     ],
   },
 ];
