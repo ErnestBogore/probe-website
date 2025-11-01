@@ -89,8 +89,8 @@ export const ClientNav = () => {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink href="#" className={navigationMenuTriggerStyle()}>
-              Products
+            <NavigationMenuLink href="/pricing" className={navigationMenuTriggerStyle()}>
+              Pricing
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -149,8 +149,8 @@ export const ClientNav = () => {
               </AccordionItem>
             </Accordion>
             <div className="flex flex-col gap-6">
-              <Link href="#" className="font-medium">
-                Products
+              <Link href="/pricing" className="font-medium">
+                Pricing
               </Link>
               <Link href="/blog" className="font-medium">
                 Blog
