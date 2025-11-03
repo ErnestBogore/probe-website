@@ -5,7 +5,9 @@ import { HeroChatGPT } from '@/components/use-cases/chatgpt/hero-chatgpt';
 import { ModernFeaturesChatGPT } from '@/components/use-cases/chatgpt/modern-features-chatgpt';
 import { ProblemSolutionChatGPT } from '@/components/use-cases/chatgpt/problem-solution-chatgpt';
 import { ResourceAllocationChatGPT } from '@/components/use-cases/chatgpt/resource-allocation-chatgpt';
+import { ResourcesChatGPT } from '@/components/use-cases/chatgpt/resources-chatgpt';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const ChatGPTUseCasePage = () => {
+const ChatGPTUseCasePage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
   const faqItems = [
     {
       id: 'faq-1',
@@ -106,6 +114,8 @@ const ChatGPTUseCasePage = () => {
       <ModernFeaturesChatGPT />
       <FeaturesChatGPT />
       <ResourceAllocationChatGPT />
+      
+      <ResourcesChatGPT posts={resourcePosts} />
       
       <FaqUseCases 
         heading="ChatGPT Visibility Tracking FAQ"

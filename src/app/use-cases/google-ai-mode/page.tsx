@@ -5,7 +5,9 @@ import { HeroGoogleAIMode } from '@/components/use-cases/google-ai-mode/hero-goo
 import { ModernFeaturesGoogleAIMode } from '@/components/use-cases/google-ai-mode/modern-features-google-ai-mode';
 import { ProblemSolutionGoogleAIMode } from '@/components/use-cases/google-ai-mode/problem-solution-google-ai-mode';
 import { ResourceAllocationGoogleAIMode } from '@/components/use-cases/google-ai-mode/resource-allocation-google-ai-mode';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const GoogleAIModeUseCasePage = () => {
+const GoogleAiModeUseCasePage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
   const faqItems = [
     {
       id: 'faq-1',
@@ -107,6 +115,8 @@ const GoogleAIModeUseCasePage = () => {
       <FeaturesGoogleAIMode />
       <ResourceAllocationGoogleAIMode />
       
+      <ResourcesUseCases posts={resourcePosts} />
+      
       <FaqUseCases 
         heading="Google AI Mode Visibility Tracking FAQ"
         description="Common questions about tracking your brand's visibility and performance in Google AI Mode."
@@ -118,4 +128,4 @@ const GoogleAIModeUseCasePage = () => {
   );
 };
 
-export default GoogleAIModeUseCasePage;
+export default GoogleAiModeUseCasePage;

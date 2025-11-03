@@ -268,6 +268,57 @@ export async function getAllBlogPostSlugs() {
   return data.allBlogPosts;
 }
 
+/**
+ * Fetches multiple blog posts by their slugs
+ * @param slugs - Array of blog post slugs to fetch
+ * @param includeDrafts - Whether to include draft posts
+ * @returns Promise with array of blog posts
+ */
+export async function getBlogPostsBySlugs(slugs: string[], includeDrafts = false) {
+  const query = `
+    query BlogPostsBySlugs($slugs: [String!]!) {
+      allBlogPosts(filter: { slug: { in: $slugs } }) {
+        id
+        title
+        slug
+        publishedDate
+        _publishedAt
+        contentType
+        featuredImage {
+          url
+          alt
+          width
+          height
+        }
+        seo {
+          title
+          description
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+        author {
+          id
+          name
+          title
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+      }
+    }
+  `;
+
+  const data = await request<{ allBlogPosts: BlogPost[] }>(query, { slugs }, includeDrafts);
+  return data.allBlogPosts;
+}
+
 // --- AI Prompt Functions --- //
 
 const BLOCK_FRAGMENT = `

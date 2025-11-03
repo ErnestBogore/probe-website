@@ -5,7 +5,9 @@ import { HeroGemini } from '@/components/use-cases/gemini/hero-gemini';
 import { ModernFeaturesGemini } from '@/components/use-cases/gemini/modern-features-gemini';
 import { ProblemSolutionGemini } from '@/components/use-cases/gemini/problem-solution-gemini';
 import { ResourceAllocationGemini } from '@/components/use-cases/gemini/resource-allocation-gemini';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const GeminiUseCasePage = () => {
+const GeminiUseCasePage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
   const faqItems = [
     {
       id: 'faq-1',
@@ -106,6 +114,8 @@ const GeminiUseCasePage = () => {
       <ModernFeaturesGemini />
       <FeaturesGemini />
       <ResourceAllocationGemini />
+      
+      <ResourcesUseCases posts={resourcePosts} />
       
       <FaqUseCases 
         heading="Gemini Visibility Tracking FAQ"

@@ -14,8 +14,10 @@ import { Testimonials } from "@/components/marketing/testimonials";
 import { Manifesto } from "@/components/marketing/manifesto";
 import { HeroCta } from "@/components/marketing/hero-cta";
 import { ResourceAllocationHomepage } from "@/components/marketing/resource-allocation-homepage";
+import { ResourcesUseCases } from "@/components/use-cases/resources-use-cases";
 import { FaqHomepage } from "@/components/marketing/faq-homepage";
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 
 export const metadata: Metadata = {
   title: 'AI Search Analytics For Marketing Teams | Analyze',
@@ -27,7 +29,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
   // Generate combined structured data for homepage
   const organizationSchema = generateOrganizationSchema();
   const websiteSchema = generateWebsiteSchema();
@@ -135,6 +143,9 @@ export default function Home() {
       <Testimonials />
       <Features />
       <ResourceAllocationHomepage />
+      
+      <ResourcesUseCases posts={resourcePosts} />
+      
       <FaqHomepage 
         heading="Frequently Asked Questions"
         description="Find answers to common questions about our AI search analytics platform. Can't find what you're looking for? Contact our support team."

@@ -4,8 +4,10 @@ import { ComparisonSectionAhrefsBrandRadar } from '@/components/compare/ahrefs-b
 import { ComprehensiveSectionAhrefsBrandRadar } from '@/components/compare/ahrefs-brand-radar/comprehensive-section-ahrefs-brand-radar';
 import { FeaturesAhrefsBrandRadar } from '@/components/compare/ahrefs-brand-radar/features-ahrefs-brand-radar';
 import { FaqAhrefsBrandRadar } from '@/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const AnalyzeVsAhrefsBrandRadarPage = () => {
+const AnalyzeVsAhrefsBrandRadarPage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
 
   // Generate service schema
   const serviceSchema = generateServiceSchema({
@@ -49,6 +57,9 @@ const AnalyzeVsAhrefsBrandRadarPage = () => {
       <ComprehensiveSectionAhrefsBrandRadar />
       <FeaturesAhrefsBrandRadar />
       <ResourceAllocationAhrefsBrandRadar />
+      
+      <ResourcesUseCases posts={resourcePosts} />
+      
       <FaqAhrefsBrandRadar />
       <HeroCta />
     </main>

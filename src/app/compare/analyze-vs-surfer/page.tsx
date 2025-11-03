@@ -4,8 +4,10 @@ import { ComparisonSectionSurfer } from '@/components/compare/surfer/comparison-
 import { ComprehensiveSectionSurfer } from '@/components/compare/surfer/comprehensive-section-surfer';
 import { FeaturesSurfer } from '@/components/compare/surfer/features-surfer';
 import { FaqSurfer } from '@/components/compare/surfer/faq-surfer';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const AnalyzeVsSurferPage = () => {
+const AnalyzeVsSurferPage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
 
   // Generate service schema
   const serviceSchema = generateServiceSchema({
@@ -49,6 +57,9 @@ const AnalyzeVsSurferPage = () => {
       <ComprehensiveSectionSurfer />
       <FeaturesSurfer />
       <ResourceAllocationSurfer />
+      
+      <ResourcesUseCases posts={resourcePosts} />
+      
       <FaqSurfer />
       <HeroCta />
     </main>

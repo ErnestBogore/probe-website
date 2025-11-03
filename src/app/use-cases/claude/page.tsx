@@ -5,7 +5,9 @@ import { HeroClaude } from '@/components/use-cases/claude/hero-claude';
 import { ModernFeaturesClaude } from '@/components/use-cases/claude/modern-features-claude';
 import { ProblemSolutionClaude } from '@/components/use-cases/claude/problem-solution-claude';
 import { ResourceAllocationClaude } from '@/components/use-cases/claude/resource-allocation-claude';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const ClaudeUseCasePage = () => {
+const ClaudeUseCasePage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
   const faqItems = [
     {
       id: 'faq-1',
@@ -106,6 +114,8 @@ const ClaudeUseCasePage = () => {
       <ModernFeaturesClaude />
       <FeaturesClaude />
       <ResourceAllocationClaude />
+      
+      <ResourcesUseCases posts={resourcePosts} />
       
       <FaqUseCases 
         heading="Claude Visibility Tracking FAQ"

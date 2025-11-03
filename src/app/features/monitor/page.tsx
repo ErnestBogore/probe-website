@@ -4,7 +4,9 @@ import { HeroCta } from '@/components/marketing/hero-cta';
 import { ProblemSolutionMonitor } from '@/components/features/monitor/problem-solution-monitor';
 import { FeaturesMonitor } from '@/components/features/monitor/features-monitor';
 import { ResourceAllocationMonitor } from '@/components/features/monitor/resource-allocation-monitor';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -16,7 +18,13 @@ export const metadata: Metadata = {
   },
 };
 
-const AISearchAnalyticsPage = () => {
+const AISearchAnalyticsPage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
   const faqItems = [
     {
       id: 'faq-1',
@@ -113,15 +121,15 @@ const AISearchAnalyticsPage = () => {
       />
       <Hero115 />
       <ProblemSolutionMonitor />
-      <HeroCta />
       <FeaturesMonitor />
       <ResourceAllocationMonitor />
-    <FaqFeatures 
-      heading="Frequently Asked Questions"
-      description="Answers to common questions about how ANALYZE attributes AI-driven traffic, conversions, and revenue back to specific sources."
-      items={faqItems}
-    />
-    <HeroCta />
+      <ResourcesUseCases posts={resourcePosts} />
+      <FaqFeatures 
+        heading="Frequently Asked Questions"
+        description="Answers to common questions about how ANALYZE attributes AI-driven traffic, conversions, and revenue back to specific sources."
+        items={faqItems}
+      />
+      <HeroCta />
     </main>
   );
 };

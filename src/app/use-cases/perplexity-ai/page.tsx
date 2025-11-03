@@ -5,7 +5,9 @@ import { HeroPerplexityAI } from '@/components/use-cases/perplexity-ai/hero-perp
 import { ModernFeaturesPerplexityAI } from '@/components/use-cases/perplexity-ai/modern-features-perplexity-ai';
 import { ProblemSolutionPerplexityAI } from '@/components/use-cases/perplexity-ai/problem-solution-perplexity-ai';
 import { ResourceAllocationPerplexityAI } from '@/components/use-cases/perplexity-ai/resource-allocation-perplexity-ai';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const PerplexityAIUseCasePage = () => {
+const PerplexityAIUseCasePage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
   const faqItems = [
     {
       id: 'faq-1',
@@ -107,6 +115,8 @@ const PerplexityAIUseCasePage = () => {
       <ModernFeaturesPerplexityAI />
       <FeaturesPerplexityAI />
       <ResourceAllocationPerplexityAI />
+      
+      <ResourcesUseCases posts={resourcePosts} />
       
       <FaqUseCases 
         heading="Perplexity AI Visibility Tracking FAQ"

@@ -1,9 +1,11 @@
 import { HeroGovern } from '@/components/features/govern/hero-govern';
 import { FeaturesGovern } from '@/components/features/govern/features-govern';
 import { ResourceAllocationGovern } from '@/components/features/govern/resource-allocation-govern';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { FaqFeatures } from '@/components/features/faq-features';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -15,7 +17,13 @@ export const metadata: Metadata = {
   },
 };
 
-const BrandSentimentAnalysisPage = () => {
+const BrandSentimentAnalysisPage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
   const faqItems = [
     {
       id: 'faq-1',
@@ -113,6 +121,9 @@ const BrandSentimentAnalysisPage = () => {
       <HeroGovern />
       <FeaturesGovern />
       <ResourceAllocationGovern />
+      
+      <ResourcesUseCases posts={resourcePosts} />
+      
       <FaqFeatures 
         heading="Frequently Asked Questions"
         description="Answers to common questions about how ANALYZE monitors brand sentiment, narrative drift, and accuracy in AI responses."

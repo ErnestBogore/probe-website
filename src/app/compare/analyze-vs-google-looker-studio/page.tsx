@@ -4,8 +4,10 @@ import { ComparisonSectionGoogleLookerStudio } from '@/components/compare/google
 import { ComprehensiveSectionGoogleLookerStudio } from '@/components/compare/google-looker-studio/comprehensive-section-google-looker-studio';
 import { FeaturesGoogleLookerStudio } from '@/components/compare/google-looker-studio/features-google-looker-studio';
 import { FaqGoogleLookerStudio } from '@/components/compare/google-looker-studio/faq-google-looker-studio';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const AnalyzeVsGoogleLookerStudioPage = () => {
+const AnalyzeVsGoogleLookerStudioPage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
 
   // Generate service schema
   const serviceSchema = generateServiceSchema({
@@ -49,6 +57,9 @@ const AnalyzeVsGoogleLookerStudioPage = () => {
       <ComprehensiveSectionGoogleLookerStudio />
       <FeaturesGoogleLookerStudio />
       <ResourceAllocationGoogleLookerStudio />
+      
+      <ResourcesUseCases posts={resourcePosts} />
+      
       <FaqGoogleLookerStudio />
       <HeroCta />
     </main>

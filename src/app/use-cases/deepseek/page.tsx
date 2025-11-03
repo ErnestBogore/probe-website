@@ -5,7 +5,9 @@ import { HeroDeepseek } from '@/components/use-cases/deepseek/hero-deepseek';
 import { ModernFeaturesDeepseek } from '@/components/use-cases/deepseek/modern-features-deepseek';
 import { ProblemSolutionDeepseek } from '@/components/use-cases/deepseek/problem-solution-deepseek';
 import { ResourceAllocationDeepseek } from '@/components/use-cases/deepseek/resource-allocation-deepseek';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const DeepseekUseCasePage = () => {
+const DeepseekUseCasePage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
   const faqItems = [
     {
       id: 'faq-1',
@@ -107,6 +115,8 @@ const DeepseekUseCasePage = () => {
       <ModernFeaturesDeepseek />
       <FeaturesDeepseek />
       <ResourceAllocationDeepseek />
+      
+      <ResourcesUseCases posts={resourcePosts} />
       
       <FaqUseCases 
         heading="Deepseek Visibility Tracking FAQ"

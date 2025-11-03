@@ -4,8 +4,10 @@ import { ComparisonSectionWritesonicGeo } from '@/components/compare/writesonic-
 import { ComprehensiveSectionWritesonicGeo } from '@/components/compare/writesonic-geo/comprehensive-section-writesonic-geo';
 import { FeaturesWritesonicGeo } from '@/components/compare/writesonic-geo/features-writesonic-geo';
 import { FaqWritesonicGeo } from '@/components/compare/writesonic-geo/faq-writesonic-geo';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const AnalyzeVsWritesonicGeoPage = () => {
+const AnalyzeVsWritesonicGeoPage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
 
   // Generate service schema
   const serviceSchema = generateServiceSchema({
@@ -49,6 +57,9 @@ const AnalyzeVsWritesonicGeoPage = () => {
       <ComprehensiveSectionWritesonicGeo />
       <FeaturesWritesonicGeo />
       <ResourceAllocationWritesonicGeo />
+      
+      <ResourcesUseCases posts={resourcePosts} />
+      
       <FaqWritesonicGeo />
       <HeroCta />
     </main>

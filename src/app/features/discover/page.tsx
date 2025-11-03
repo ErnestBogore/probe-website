@@ -1,9 +1,11 @@
 import { HeroDiscover } from '@/components/features/discover/hero-discover';
 import { FeaturesDiscover } from '@/components/features/discover/features-discover';
 import { ResourceAllocationDiscover } from '@/components/features/discover/resource-allocation-discover';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { FaqFeatures } from '@/components/features/faq-features';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -15,7 +17,13 @@ export const metadata: Metadata = {
   },
 };
 
-const AISearchToolPage = () => {
+const AISearchToolPage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
   const faqItems = [
     {
       id: 'faq-1',
@@ -113,6 +121,9 @@ const AISearchToolPage = () => {
       <HeroDiscover />
       <FeaturesDiscover />
       <ResourceAllocationDiscover />
+      
+      <ResourcesUseCases posts={resourcePosts} />
+      
     <FaqFeatures 
       heading="Frequently Asked Questions"
       description="Answers to common questions about how ANALYZE maps AI buying moments, competitive positioning, and where you're being mentioned (or not)."

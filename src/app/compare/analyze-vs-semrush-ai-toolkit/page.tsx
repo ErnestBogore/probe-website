@@ -4,8 +4,10 @@ import { ComparisonSectionSemrushAiToolkit } from '@/components/compare/semrush-
 import { ComprehensiveSectionSemrushAiToolkit } from '@/components/compare/semrush-ai-toolkit/comprehensive-section-semrush-ai-toolkit';
 import { FeaturesSemrushAiToolkit } from '@/components/compare/semrush-ai-toolkit/features-semrush-ai-toolkit';
 import { FaqSemrushAiToolkit } from '@/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const AnalyzeVsSemrushAiToolkitPage = () => {
+const AnalyzeVsSemrushAiToolkitPage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
 
   // Generate service schema
   const serviceSchema = generateServiceSchema({
@@ -49,6 +57,9 @@ const AnalyzeVsSemrushAiToolkitPage = () => {
       <ComprehensiveSectionSemrushAiToolkit />
       <FeaturesSemrushAiToolkit />
       <ResourceAllocationSemrushAiToolkit />
+      
+      <ResourcesUseCases posts={resourcePosts} />
+      
       <FaqSemrushAiToolkit />
       <HeroCta />
     </main>

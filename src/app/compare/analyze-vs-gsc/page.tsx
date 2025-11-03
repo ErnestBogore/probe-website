@@ -4,8 +4,10 @@ import { ComparisonSectionGsc } from '@/components/compare/gsc/comparison-sectio
 import { ComprehensiveSectionGsc } from '@/components/compare/gsc/comprehensive-section-gsc';
 import { FeaturesGsc } from '@/components/compare/gsc/features-gsc';
 import { FaqGsc } from '@/components/compare/gsc/faq-gsc';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const AnalyzeVsGscPage = () => {
+const AnalyzeVsGscPage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
 
   // Generate service schema
   const serviceSchema = generateServiceSchema({
@@ -49,6 +57,9 @@ const AnalyzeVsGscPage = () => {
       <ComprehensiveSectionGsc />
       <FeaturesGsc />
       <ResourceAllocationGsc />
+      
+      <ResourcesUseCases posts={resourcePosts} />
+      
       <FaqGsc />
       <HeroCta />
     </main>

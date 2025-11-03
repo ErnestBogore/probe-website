@@ -4,8 +4,10 @@ import { ComparisonSectionProfound } from '@/components/compare/profound/compari
 import { ComprehensiveSectionProfound } from '@/components/compare/profound/comprehensive-section-profound';
 import { FeaturesProfound } from '@/components/compare/profound/features-profound';
 import { FaqProfound } from '@/components/compare/profound/faq-profound';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const AnalyzeVsProfoundPage = () => {
+const AnalyzeVsProfoundPage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
 
   // Generate service schema
   const serviceSchema = generateServiceSchema({
@@ -49,6 +57,9 @@ const AnalyzeVsProfoundPage = () => {
       <ComprehensiveSectionProfound />
       <FeaturesProfound />
       <ResourceAllocationProfound />
+      
+      <ResourcesUseCases posts={resourcePosts} />
+      
       <FaqProfound />
       <HeroCta />
     </main>

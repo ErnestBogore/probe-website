@@ -4,8 +4,10 @@ import { ComparisonSectionHubspotAiSearchGrader } from '@/components/compare/hub
 import { ComprehensiveSectionHubspotAiSearchGrader } from '@/components/compare/hubspot-ai-search-grader/comprehensive-section-hubspot-ai-search-grader';
 import { FeaturesHubspotAiSearchGrader } from '@/components/compare/hubspot-ai-search-grader/features-hubspot-ai-search-grader';
 import { FaqHubspotAiSearchGrader } from '@/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const AnalyzeVsHubspotAiSearchGraderPage = () => {
+const AnalyzeVsHubspotAiSearchGraderPage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
 
   // Generate service schema
   const serviceSchema = generateServiceSchema({
@@ -49,6 +57,9 @@ const AnalyzeVsHubspotAiSearchGraderPage = () => {
       <ComprehensiveSectionHubspotAiSearchGrader />
       <FeaturesHubspotAiSearchGrader />
       <ResourceAllocationHubspotAiSearchGrader />
+      
+      <ResourcesUseCases posts={resourcePosts} />
+      
       <FaqHubspotAiSearchGrader />
       <HeroCta />
     </main>

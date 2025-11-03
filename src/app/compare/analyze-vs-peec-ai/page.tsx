@@ -4,8 +4,10 @@ import { ComparisonSectionPeecAi } from '@/components/compare/peec-ai/comparison
 import { ComprehensiveSectionPeecAi } from '@/components/compare/peec-ai/comprehensive-section-peec-ai';
 import { FeaturesPeecAi } from '@/components/compare/peec-ai/features-peec-ai';
 import { FaqPeecAi } from '@/components/compare/peec-ai/faq-peec-ai';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const AnalyzeVsPeecAiPage = () => {
+const AnalyzeVsPeecAiPage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
 
   // Generate service schema
   const serviceSchema = generateServiceSchema({
@@ -49,6 +57,9 @@ const AnalyzeVsPeecAiPage = () => {
       <ComprehensiveSectionPeecAi />
       <FeaturesPeecAi />
       <ResourceAllocationPeecAi />
+      
+      <ResourcesUseCases posts={resourcePosts} />
+      
       <FaqPeecAi />
       <HeroCta />
     </main>

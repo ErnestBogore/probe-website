@@ -5,7 +5,9 @@ import { HeroMetaAI } from '@/components/use-cases/meta-ai/hero-meta-ai';
 import { ModernFeaturesMetaAI } from '@/components/use-cases/meta-ai/modern-features-meta-ai';
 import { ProblemSolutionMetaAI } from '@/components/use-cases/meta-ai/problem-solution-meta-ai';
 import { ResourceAllocationMetaAI } from '@/components/use-cases/meta-ai/resource-allocation-meta-ai';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const MetaAIUseCasePage = () => {
+const MetaAIUseCasePage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
   const faqItems = [
     {
       id: 'faq-1',
@@ -104,6 +112,8 @@ const MetaAIUseCasePage = () => {
       <ModernFeaturesMetaAI />
       <FeaturesMetaAI />
       <ResourceAllocationMetaAI />
+      
+      <ResourcesUseCases posts={resourcePosts} />
       
       <FaqUseCases 
         heading="Meta AI Visibility Tracking FAQ"

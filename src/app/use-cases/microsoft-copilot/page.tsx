@@ -5,7 +5,9 @@ import { HeroMicrosoftCopilot } from '@/components/use-cases/microsoft-copilot/h
 import { ModernFeaturesMicrosoftCopilot } from '@/components/use-cases/microsoft-copilot/modern-features-microsoft-copilot';
 import { ProblemSolutionMicrosoftCopilot } from '@/components/use-cases/microsoft-copilot/problem-solution-microsoft-copilot';
 import { ResourceAllocationMicrosoftCopilot } from '@/components/use-cases/microsoft-copilot/resource-allocation-microsoft-copilot';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { generateServiceSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -17,7 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-const MicrosoftCopilotUseCasePage = () => {
+const MicrosoftCopilotUseCasePage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
   const faqItems = [
     {
       id: 'faq-1',
@@ -106,6 +114,8 @@ const MicrosoftCopilotUseCasePage = () => {
       <ModernFeaturesMicrosoftCopilot />
       <FeaturesMicrosoftCopilot />
       <ResourceAllocationMicrosoftCopilot />
+      
+      <ResourcesUseCases posts={resourcePosts} />
       
       <FaqUseCases 
         heading="Microsoft Copilot Visibility Tracking FAQ"
