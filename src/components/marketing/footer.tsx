@@ -43,6 +43,7 @@ const defaultSections = [
       { name: "Team", href: "#" },
       { name: "Blog", href: "#" },
       { name: "Careers", href: "#" },
+      { name: "Affiliate Program", href: "/affiliate" },
     ],
   },
   {
