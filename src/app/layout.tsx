@@ -40,6 +40,10 @@ export default function RootLayout({
       <head>
         {/* Simple Analytics - 100% privacy-first analytics */}
         <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        {/* ConvertBox - Lead capture and conversion */}
+        <script type="text/javascript" dangerouslySetInnerHTML={{
+          __html: `!function(e,t){(e=t.createElement("script")).src="https://cdn.convertbox.com/convertbox/js/embed.js",e.id="app-convertbox-script",e.async=true,e.dataset.uuid="92151c5c-e8df-44b8-9c8e-96097edc1184",document.getElementsByTagName("head")[0].appendChild(e)}(window,document);`
+        }} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
