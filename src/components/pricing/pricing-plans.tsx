@@ -69,7 +69,7 @@ export const PricingPlans = () => {
                       <span className="text-gray-700 block text-base mt-2 font-medium">/monthly</span>
                     </div>
 
-                    <Button asChild className="w-full mb-4 bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-full text-lg font-semibold">
+                    <Button asChild className="w-full mb-4 bg-gray-900 text-white hover:bg-gray-800 py-3 text-lg font-semibold">
                       <a href="https://app.analyze.ai" target="_blank" rel="noopener noreferrer">
                         Get Started →
                       </a>

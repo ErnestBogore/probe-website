@@ -22,6 +22,14 @@ export const PromotionalOverlay = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
+    // Check if overlay was closed in this session
+    const wasClosedInSession = sessionStorage.getItem('promotional-overlay-closed');
+    if (wasClosedInSession === 'true') {
+      setIsClosed(true);
+      setIsVisible(false);
+      return;
+    }
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
@@ -46,6 +54,8 @@ export const PromotionalOverlay = () => {
   const handleClose = () => {
     setIsClosed(true);
     setIsVisible(false);
+    // Store in sessionStorage that overlay was closed
+    sessionStorage.setItem('promotional-overlay-closed', 'true');
   };
 
   if (isClosed || !isVisible) return null;
@@ -75,7 +85,7 @@ export const PromotionalOverlay = () => {
                   See Analyze In Action
                 </h3>
 
-                <Button asChild className="w-full mb-4 bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-full text-lg font-semibold whitespace-nowrap">
+                <Button asChild className="w-full mb-4 bg-gray-900 text-white hover:bg-gray-800 py-3 px-6 text-lg font-semibold whitespace-nowrap">
                   <a href="https://app.tryanalyze.ai" target="_blank" rel="noopener noreferrer">
                     Show Me My AI Rankings →
                   </a>

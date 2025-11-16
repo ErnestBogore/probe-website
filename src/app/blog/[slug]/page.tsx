@@ -299,14 +299,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         />
 
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-          <Breadcrumb 
-            items={[
-              { name: 'Home', href: '/' },
-              { name: 'Blog', href: '/blog' },
-              { name: blogPost.title, href: `/blog/${blogPost.slug}` },
-            ]}
-          />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <div className="lg:col-span-3 flex justify-center">
+              <Breadcrumb 
+                items={[
+                  { name: 'Home', href: '/' },
+                  { name: 'Blog', href: '/blog' },
+                  { name: blogPost.title, href: `/blog/${blogPost.slug}` },
+                ]}
+              />
+            </div>
+          </div>
         </div>
 
         {/* Main Content Area with Sidebar */}
