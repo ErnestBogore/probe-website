@@ -112,7 +112,7 @@ export const ClientNav = () => {
       </NavigationMenu>
       <div className="hidden items-center gap-4 lg:flex">
         <Button asChild variant="outline">
-          <a href="https://app.analyze.ai" target="_blank" rel="noopener noreferrer">
+          <a href="https://app.tryanalyze.ai" target="_blank" rel="noopener noreferrer">
             Sign in
           </a>
         </Button>
@@ -177,7 +177,7 @@ export const ClientNav = () => {
             </div>
             <div className="mt-6 flex flex-col gap-4">
               <Button asChild variant="outline">
-                <a href="https://app.analyze.ai" target="_blank" rel="noopener noreferrer">
+                <a href="https://app.tryanalyze.ai" target="_blank" rel="noopener noreferrer">
                   Sign in
                 </a>
               </Button>
