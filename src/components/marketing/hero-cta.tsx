@@ -28,17 +28,23 @@ export const HeroCta = () => {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
+                  asChild
                   size="lg" 
                   className="bg-white text-[#8858ed] hover:bg-purple-50 font-semibold px-8 py-4 text-lg h-auto shadow-lg"
                 >
-                  Show Me My AI Rankings
+                  <a href="https://app.tryanalyze.ai" target="_blank" rel="noopener noreferrer">
+                    Show Me My AI Rankings
+                  </a>
                 </Button>
                 <Button 
+                  asChild
                   variant="outline" 
                   size="lg" 
                   className="border-white/30 text-white hover:bg-white/10 hover:border-white font-semibold px-8 py-4 text-lg h-auto"
                 >
-                  Book A Demo
+                  <a href="/talk-to-a-human">
+                    Talk To A Human
+                  </a>
                 </Button>
               </div>
               

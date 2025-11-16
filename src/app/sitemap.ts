@@ -78,6 +78,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'daily',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/talk-to-a-human`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
     // Use Cases - AI Engine Tracking Pages
     {
       url: `${baseUrl}/use-cases/chatgpt`,

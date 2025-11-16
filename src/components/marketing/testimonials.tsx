@@ -21,30 +21,15 @@ const testimonials = [
   },
 ];
 
-// Data for the stat cards
-const statCards = [
-  {
-    stat: '10x',
-    description: 'GTM efficiency increase',
-    title: 'How we Achieved 10x GTM Efficiency',
-    href: '#',
-    backgroundColor: 'bg-blue-50',
-  },
-  {
-    stat: '80%',
-    description: 'faster lead response time',
-    title: 'How Mercury Reduced Speed-to-Lead by 80%',
-    href: '#',
-    backgroundColor: 'bg-green-50',
-  },
-  {
-    stat: '$7M',
-    description: 'inbound pipeline generated',
-    title: 'From Zero to $7M in Pipeline',
-    href: '#',
-    backgroundColor: 'bg-purple-50',
-  },
-];
+// Data for the Kylian case study
+const kylianCaseStudy = {
+  primaryStat: '936',
+  primaryDescription: 'AI visits generated',
+  secondaryStat: '300%',
+  secondaryDescription: 'growth in conversions',
+  title: 'How Kylian AI Used Analyze to Drive 936 Visits From AI SEO',
+  href: '/case-study/kylian-ai',
+};
 
 export const Testimonials = () => {
   return (
@@ -92,21 +77,46 @@ export const Testimonials = () => {
           ))}
         </div>
 
-        {/* Stat Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {statCards.map((card, index) => (
-            <a 
-              href={card.href} 
-              key={index} 
-              className={`group relative block rounded-xl overflow-hidden aspect-[4/3] ${card.backgroundColor} p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-lg`}
-            >
-              <div>
-                <p className="text-5xl font-bold text-gray-900">{card.stat}</p>
-                <p className="text-lg text-gray-700">{card.description}</p>
+        {/* Kylian Case Study - Enhanced Design */}
+        <div className="flex justify-center">
+          <a 
+            href={kylianCaseStudy.href} 
+            className="group relative block rounded-2xl overflow-hidden bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 p-8 transition-all duration-500 hover:shadow-2xl hover:scale-105 max-w-2xl w-full transform hover:-translate-y-2"
+          >
+            {/* Background Pattern */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
+            
+            {/* Content */}
+            <div className="relative z-10">
+              {/* Stats Row */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="text-center">
+                  <p className="text-5xl font-bold text-white mb-2">{kylianCaseStudy.primaryStat}</p>
+                  <p className="text-purple-200 text-lg font-medium">{kylianCaseStudy.primaryDescription}</p>
+                </div>
+                <div className="w-px h-16 bg-purple-300/30 mx-8"></div>
+                <div className="text-center">
+                  <p className="text-5xl font-bold text-white mb-2">{kylianCaseStudy.secondaryStat}</p>
+                  <p className="text-purple-200 text-lg font-medium">{kylianCaseStudy.secondaryDescription}</p>
+                </div>
               </div>
-              <p className="text-xl font-semibold text-gray-900">{card.title}</p>
-            </a>
-          ))}
+              
+              {/* Title */}
+              <div className="border-t border-purple-300/20 pt-6">
+                <p className="text-xl font-semibold text-white leading-tight group-hover:text-purple-100 transition-colors">
+                  {kylianCaseStudy.title}
+                </p>
+                <div className="flex items-center mt-4 text-purple-200 group-hover:text-white transition-colors">
+                  <span className="text-sm font-medium">Read case study</span>
+                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>

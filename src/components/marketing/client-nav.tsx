@@ -32,13 +32,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-[#8858ed] focus:bg-accent focus:text-accent-foreground",
+            "group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-[#8858ed] focus:bg-accent focus:text-accent-foreground dark:text-white dark:hover:text-white",
             className
           )}
           {...props}
         >
-          <div className="text-sm font-bold leading-none group-hover:text-white">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-gray-200">
+          <div className="text-sm font-bold leading-none group-hover:text-white dark:text-white">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-gray-200 dark:text-gray-300 dark:group-hover:text-gray-200">
             {children}
           </p>
         </a>
@@ -78,7 +78,7 @@ export const ClientNav = () => {
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger>Features</NavigationMenuTrigger>
-            <NavigationMenuContent className="bg-white dark:bg-zinc-900 shadow-lg">
+            <NavigationMenuContent className="bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700">
               <ul className="grid w-[600px] grid-cols-2 gap-3 p-4">
                 {features.map((feature) => (
                   <ListItem key={feature.title} title={feature.title} href={feature.href}>
@@ -99,15 +99,28 @@ export const ClientNav = () => {
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink href="#" className={navigationMenuTriggerStyle()}>
-              Contact
+            <NavigationMenuLink href="/case-study" className={navigationMenuTriggerStyle()}>
+              Success Stories
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink href="/talk-to-a-human" className={navigationMenuTriggerStyle()}>
+              Talk To A Human
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
       <div className="hidden items-center gap-4 lg:flex">
-        <Button variant="outline">Sign in</Button>
-        <Button className="bg-gray-900 text-white hover:bg-gray-800 font-bold">Show Me My AI Rankings</Button>
+        <Button asChild variant="outline">
+          <a href="https://app.analyze.ai" target="_blank" rel="noopener noreferrer">
+            Sign in
+          </a>
+        </Button>
+        <Button asChild className="bg-gray-900 text-white hover:bg-gray-800 font-bold">
+          <a href="https://app.tryanalyze.ai" target="_blank" rel="noopener noreferrer">
+            Show Me My AI Rankings
+          </a>
+        </Button>
       </div>
       <Sheet>
         <SheetTrigger asChild className="lg:hidden">
@@ -155,13 +168,24 @@ export const ClientNav = () => {
               <Link href="/blog" className="font-medium">
                 Blog
               </Link>
-              <Link href="#" className="font-medium">
-                Contact
+              <Link href="/case-study" className="font-medium">
+                Success Stories
+              </Link>
+              <Link href="/talk-to-a-human" className="font-medium">
+                Talk to a human
               </Link>
             </div>
             <div className="mt-6 flex flex-col gap-4">
-              <Button variant="outline">Sign in</Button>
-              <Button className="bg-gray-900 text-white hover:bg-gray-800 font-bold">Show Me My AI Rankings</Button>
+              <Button asChild variant="outline">
+                <a href="https://app.analyze.ai" target="_blank" rel="noopener noreferrer">
+                  Sign in
+                </a>
+              </Button>
+              <Button asChild className="bg-gray-900 text-white hover:bg-gray-800 font-bold">
+                <a href="https://app.tryanalyze.ai" target="_blank" rel="noopener noreferrer">
+                  Show Me My AI Rankings
+                </a>
+              </Button>
             </div>
           </div>
         </SheetContent>

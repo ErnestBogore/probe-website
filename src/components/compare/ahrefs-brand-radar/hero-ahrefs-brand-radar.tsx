@@ -58,8 +58,10 @@ export const HeroAhrefsBrandRadar = () => {
                 Start Free Trial
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button variant="outline" size="lg">
-                Book Demo
+              <Button asChild variant="outline" size="lg">
+                <a href="/talk-to-a-human">
+                  Talk To A Human
+                </a>
               </Button>
             </div>
 

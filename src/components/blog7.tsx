@@ -18,30 +18,61 @@ interface Post {
 interface Blog7Props {
   title: string;
   description: string;
+  subtitle?: string;
   posts: Post[];
+  featuredPost?: Post;
 }
 
-const Blog7 = ({ title, description, posts }: Blog7Props) => {
+const Blog7 = ({ title, description, subtitle, posts, featuredPost }: Blog7Props) => {
   return (
-    <section className="py-32">
+    <section className="py-32 bg-gray-100 min-h-screen">
       <div className="container mx-auto flex flex-col items-center gap-16 lg:px-16">
         <div className="text-center">
-          <Badge variant="secondary" className="mb-6">
-            Latest Updates
-          </Badge>
-          <h2 className="mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl">
-            {title}
-          </h2>
-          <p className="mb-8 text-muted-foreground md:text-base lg:max-w-2xl lg:text-lg">
+          <h1 className="text-foreground mb-4 text-2xl tracking-tight md:text-3xl lg:text-4xl max-w-4xl mx-auto">
             {description}
-          </p>
-          <Button variant="link" className="w-full sm:w-auto" asChild>
-            <a href="https://shadcnblocks.com" target="_blank">
-              View all articles
-              <ArrowRight className="ml-2 size-4" />
-            </a>
-          </Button>
+          </h1>
+          {subtitle && (
+            <p className="text-muted-foreground mb-8 text-base md:text-lg lg:max-w-4xl mx-auto">
+              {subtitle}
+            </p>
+          )}
         </div>
+        
+        {/* Featured Post Section */}
+        {featuredPost && (
+          <div className="w-full max-w-5xl">
+            <Card className="overflow-hidden border-0 shadow-lg">
+              <div className="aspect-[16/9] w-full relative">
+                <a href={featuredPost.url}>
+                  <Image
+                    src={featuredPost.image}
+                    alt={featuredPost.title}
+                    width={1200}
+                    height={675}
+                    className="h-full w-full object-cover"
+                  />
+                </a>
+              </div>
+              <div className="p-8">
+                <h3 className="text-3xl font-bold mb-4 hover:underline">
+                  <a href={featuredPost.url}>
+                    {featuredPost.title}
+                  </a>
+                </h3>
+                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                      <span className="text-xs font-medium">{featuredPost.author.charAt(0)}</span>
+                    </div>
+                    <span>{featuredPost.author}</span>
+                  </div>
+                  <span>{featuredPost.date ? format(new Date(featuredPost.date), 'MMM dd, yyyy') : ''}</span>
+                </div>
+              </div>
+            </Card>
+          </div>
+        )}
+        
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {posts.map((post) => (
             <Card

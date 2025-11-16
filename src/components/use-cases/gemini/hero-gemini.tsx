@@ -55,7 +55,7 @@ export const HeroGemini = () => {
 
             <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
               <Button asChild>
-                <a href="#" className="bg-gray-900 text-white hover:bg-gray-800">
+                <a href="https://app.tryanalyze.ai" target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white hover:bg-gray-800">
                   Show Me My Gemini Rankings
                 </a>
               </Button>
@@ -65,10 +65,10 @@ export const HeroGemini = () => {
                 asChild
               >
                 <Link
-                  href="/blog"
+                  href="/talk-to-a-human"
                   className="max-w-56 truncate text-start md:max-w-none"
                 >
-                  Book A Demo
+                  Talk To A Human
                   <ArrowRight className="stroke-3" />
                 </Link>
               </Button>

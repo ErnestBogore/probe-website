@@ -22,6 +22,8 @@ import { Table } from '../../../components/blocks/Table';
 import { Takeaway } from '../../../components/blocks/Takeaway';
 import { generateAnchorId } from '@/lib/anchor-utils';
 import { generateBlogPostSchema } from '@/lib/schema';
+import { BlogCta } from '@/components/marketing/blog-cta';
+import { BlogSidebarCta } from '@/components/blog/blog-sidebar-cta';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -76,12 +78,12 @@ function StructuredTextWithTOC({ content }: { content: unknown }) {
     // Custom styling for headings with anchor IDs and TOC insertion
     renderNodeRule(isHeading, ({ node, children, key }) => {
       const headingClasses = {
-        1: "text-4xl font-bold mt-12 mb-6 text-gray-900",
-        2: "text-3xl font-bold mt-10 mb-5 text-gray-900", 
-        3: "text-2xl font-bold mt-8 mb-4 text-gray-900",
-        4: "text-xl font-bold mt-6 mb-3 text-gray-900",
-        5: "text-lg font-bold mt-4 mb-2 text-gray-900",
-        6: "text-base font-bold mt-3 mb-2 text-gray-900"
+        1: "text-4xl tracking-tight mt-12 mb-6 text-foreground",
+        2: "text-3xl tracking-tight mt-10 mb-5 text-foreground", 
+        3: "text-2xl tracking-tight mt-8 mb-4 text-foreground",
+        4: "text-xl tracking-tight mt-6 mb-3 text-foreground",
+        5: "text-lg tracking-tight mt-4 mb-2 text-foreground",
+        6: "text-base tracking-tight mt-3 mb-2 text-foreground"
       };
       
       // Extract text from children to generate anchor ID
@@ -130,7 +132,7 @@ function StructuredTextWithTOC({ content }: { content: unknown }) {
     
     // Custom styling for paragraphs
     renderNodeRule(isParagraph, ({ children, key }) => (
-      <p key={`paragraph-${key}-${Date.now()}`} className="mb-6 text-gray-700 leading-relaxed">
+      <p key={`paragraph-${key}-${Date.now()}`} className="mb-6 text-muted-foreground leading-relaxed">
         {children}
       </p>
     )),
@@ -288,7 +290,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const structuredData = generateBlogPostSchema(blogPost);
 
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-gray-100">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -297,7 +299,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         />
 
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
           <Breadcrumb 
             items={[
               { name: 'Home', href: '/' },
@@ -307,12 +309,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           />
         </div>
 
-        {/* Article */}
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12">
+        {/* Main Content Area with Sidebar */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {/* Article */}
+            <article className="lg:col-span-3 order-1 lg:order-1">
           {/* Article Header */}
           <header className="mb-8 text-center">
             {/* Title - Centered */}
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl tracking-tight text-foreground mb-6 leading-tight">
               {blogPost.title}
             </h1>
 
@@ -321,7 +326,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <div className="mb-8">
                 <time 
                   dateTime={blogPost.publishedDate || blogPost._publishedAt}
-                  className="text-gray-500 font-medium text-lg"
+                  className="text-muted-foreground font-medium text-lg"
                 >
                   {publishedDate}
                 </time>
@@ -333,7 +338,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <div className="flex flex-col md:flex-row justify-center items-start gap-12 mb-8">
                 {blogPost.author && (
                   <div className="flex flex-col items-center min-w-[200px]">
-                    <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-4">Written by</p>
+                    <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-4">Written by</p>
                     <div className="flex items-center">
                       {blogPost.author.image && (
                         <div className="w-12 h-12 mr-4 flex-shrink-0">
@@ -406,6 +411,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           )}
 
+          {/* CTA Section */}
+          <BlogCta />
+
           {/* Related Posts */}
           {blogPost.relatedPosts && blogPost.relatedPosts.length > 0 && (
             <RelatedPosts posts={blogPost.relatedPosts} />
@@ -429,7 +437,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               )}
             </div>
           </footer>
-        </article>
+            </article>
+
+            {/* Sidebar */}
+            <aside className="lg:col-span-1 order-2 lg:order-2">
+              <BlogSidebarCta />
+            </aside>
+          </div>
+        </div>
       </div>
     );
   } catch (error) {

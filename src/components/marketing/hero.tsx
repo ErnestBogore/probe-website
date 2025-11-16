@@ -39,7 +39,7 @@ const features = [
 
 export const Hero = () => {
   return (
-    <section className="pt-24 pb-6 lg:pt-28 lg:pb-8">
+    <section className="pt-32 pb-6 lg:pt-36 lg:pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
@@ -55,7 +55,7 @@ export const Hero = () => {
 
             <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
               <Button asChild>
-                <a href="#" className="bg-gray-900 text-white hover:bg-gray-800">
+                <a href="https://app.tryanalyze.ai" target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white hover:bg-gray-800">
                   Show Me My AI Rankings
                 </a>
               </Button>
