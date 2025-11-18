@@ -45,6 +45,16 @@ export default function RootLayout({
         <script type="text/javascript" dangerouslySetInnerHTML={{
           __html: `!function(e,t){(e=t.createElement("script")).src="https://cdn.convertbox.com/convertbox/js/embed.js",e.id="app-convertbox-script",e.async=true,e.dataset.uuid="92151c5c-e8df-44b8-9c8e-96097edc1184",document.getElementsByTagName("head")[0].appendChild(e)}(window,document);`
         }} />
+        {/* PartneroJS - Partner program tracking */}
+        <script type="text/javascript" dangerouslySetInnerHTML={{
+          __html: `(function(p,t,n,e,r,o){ p['__partnerObject']=r;function f(){
+var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+f.q=f.q||[];p[r]=p[r]||f.bind(f.q);p[r].q=p[r].q||f.q;o=t.createElement(n);
+var _=t.getElementsByTagName(n)[0];o.async=1;o.src=e+'?v'+(~~(new Date().getTime()/1e6));
+_.parentNode.insertBefore(o,_);})(window, document, 'script', 'https://app.partnero.com/js/universal.js', 'po');
+po('settings', 'assets_host', 'https://app.partnero.com');
+po('program', 'TY8NQLFA', 'load');`
+        }} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
