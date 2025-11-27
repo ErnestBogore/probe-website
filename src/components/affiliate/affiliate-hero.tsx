@@ -18,7 +18,7 @@ export const AffiliateHero = () => {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Button asChild size="lg">
-              <a href="#apply" className="bg-gray-900 text-white hover:bg-gray-800 px-8 py-4 text-lg">
+              <a href="https://analyze.partneroapp.com/register" className="bg-gray-900 text-white hover:bg-gray-800 px-8 py-4 text-lg">
                 Join Program
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>

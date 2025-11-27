@@ -27,10 +27,13 @@ export const AffiliateCta = () => {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
+                  asChild
                   size="lg" 
                   className="bg-white text-[#8858ed] hover:bg-purple-50 font-semibold px-8 py-4 text-lg h-auto shadow-lg"
                 >
-                  Apply Now
+                  <a href="https://analyze.partneroapp.com/register">
+                    Apply Now
+                  </a>
                 </Button>
                 <Button 
                   variant="outline" 
