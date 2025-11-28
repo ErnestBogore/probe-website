@@ -4,6 +4,7 @@ import React from 'react';
 import { X, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
+import { DashedLine } from '../dashed-line';
 
 const problems = [
   {
@@ -34,13 +35,25 @@ export const ProblemSolution = () => {
   return (
     <section className="pt-12 pb-32 bg-gray-100" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top dashed line with text */}
+        <div className="relative flex items-center justify-center mb-10">
+          <DashedLine className="text-muted-foreground" />
+          <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+            THE PROBLEM
+          </span>
+        </div>
+
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
+            You&apos;re being sold &quot;visibility&quot; that can&apos;t be verified or tied to outcomes...
+          </h2>
+          <p className="mt-6 text-lg text-gray-600">
+            Here&apos;s what&apos;s broken with the current approach to AI visibility.
+          </p>
+        </div>
+
         <div className="mx-auto max-w-6xl">
-          {/* Header */}
-          <div className="text-center mb-20">
-            <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
-              You&apos;re being sold &quot;visibility&quot; that can&apos;t be verified or tied to outcomes...
-            </h2>
-          </div>
 
           {/* Two Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">

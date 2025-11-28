@@ -93,12 +93,25 @@ export const ResourceAllocationHomepage = () => {
   return (
     <section
       id="resource-allocation-homepage"
-      className="overflow-hidden pb-6"
+      className="overflow-hidden pt-12 pb-6"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl tracking-tight md:text-4xl lg:text-5xl text-balance">
-          And so much more you need to nail your generative engine optimization strategy
-        </h2>
+        {/* Top dashed line with text */}
+        <div className="relative flex items-center justify-center mb-10">
+          <DashedLine className="text-muted-foreground" />
+          <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+            MORE FEATURES
+          </span>
+        </div>
+
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
+            And so much more you need to nail your generative engine optimization strategy
+          </h2>
+          <p className="mt-6 text-lg text-gray-600">
+            Additional capabilities to help you master AI search optimization.
+          </p>
+        </div>
 
         <div className="mx-auto max-w-6xl">
           <div className="mt-8 md:mt-12 lg:mt-20">

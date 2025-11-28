@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { DashedLine } from '../dashed-line';
 
 interface FaqItem {
   id: string;
@@ -29,15 +30,24 @@ export const FaqHomepage = ({ heading, description, items }: FaqHomepageProps) =
   return (
     <section className="py-16 lg:py-20 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top dashed line with text */}
+        <div className="relative flex items-center justify-center mb-10">
+          <DashedLine className="text-muted-foreground" />
+          <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+            QUESTIONS YOU MIGHT HAVE
+          </span>
+        </div>
+
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
+            {heading}
+          </h2>
+          <p className="mt-6 text-lg text-gray-600">
+            {description}
+          </p>
+        </div>
+
         <div className="mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900 mb-4">
-              {heading}
-            </h2>
-            <p className="text-lg text-gray-600">
-              {description}
-            </p>
-          </div>
 
           <div className="space-y-4">
             {items.map((item, index) => (

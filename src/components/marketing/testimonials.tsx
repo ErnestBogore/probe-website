@@ -1,122 +1,90 @@
 import React from 'react';
 import Image from 'next/image';
-
-// Data for the testimonials
-const testimonials = [
-  {
-    quote: 'Analyze has been a game-changer for our content strategy. We now know exactly how our articles are being interpreted by AI, allowing us to optimize for better visibility.',
-    author: 'Ibrahim Litinine',
-    title: 'Managing editor at Get French Classes',
-    avatar: '/ibrahim-litinine.jpeg',
-    logo: '/get-french-class.png',
-    bgColor: '#e0f2fe', // Light blue
-  },
-  {
-    quote: 'The majority of our traffic comes from Bing. I was relieved to see a fair share of our total traffic comes from AI search as well. Now we can diversify our traffic source thanks to Analyze.',
-    author: 'Justin Ahinon',
-    title: 'CEO at What Is That Movie',
-    avatar: '/justin-ahinon.jpg',
-    logo: '/what-is-that-movie.png',
-    bgColor: '#f0fdf4', // Light green
-  },
-];
-
-// Data for the Kylian case study
-const kylianCaseStudy = {
-  primaryStat: '936',
-  primaryDescription: 'AI visits generated',
-  secondaryStat: '300%',
-  secondaryDescription: 'growth in conversions',
-  title: 'How Kylian AI Used Analyze to Drive 936 Visits From AI SEO',
-  href: '/case-study/kylian-ai',
-};
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { KylianChart } from './kylian-chart';
+import { DashedLine } from '../dashed-line';
 
 export const Testimonials = () => {
   return (
     <section className="pt-24 pb-12 bg-gray-100">
+      {/* Section Header */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center mb-16">
-          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">Hear From Brands Winning at AI Search</h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Leading brands use Analyze to understand their AI search presence and stay ahead of the competition.
-          </p>
+        {/* Top dashed line with text */}
+        <div className="relative flex items-center justify-center mb-10">
+          <DashedLine className="text-muted-foreground" />
+          <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+            REAL RESULTS
+          </span>
         </div>
 
-        {/* Testimonial Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-8 border border-gray-200">
-              <p className="text-gray-800 text-lg mb-6">{testimonial.quote}</p>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full overflow-hidden">
-                    <Image 
-                      src={testimonial.avatar} 
-                      alt={testimonial.author}
-                      width={40}
-                      height={40}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                    <p className="text-gray-500">{testimonial.title}</p>
-                  </div>
+        {/* Kylian Case Study */}
+        <div className="mb-20 bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <div className="p-8 lg:p-12">
+            {/* Header: Logo + CTA */}
+            <div className="flex items-center justify-between mb-8">
+              <div className="w-32 h-10 relative">
+                <Image 
+                  src="/Logo@2x.png" 
+                  alt="Kylian logo"
+                  fill
+                  className="object-contain object-left"
+                />
+              </div>
+              <Link 
+                href="https://www.tryanalyze.ai/case-study/kylian-ai"
+                className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-gray-700 transition-colors"
+              >
+                Read Case Study
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Quote and Case Study Section */}
+            <div className="flex flex-col lg:flex-row gap-10">
+              {/* Left - Quote */}
+              <div className="lg:w-[30%] lg:border-r lg:border-gray-200 lg:pr-10">
+                <blockquote className="text-lg text-gray-800 leading-relaxed mb-6">
+                  "We're now observing a <span className="font-semibold text-gray-900">5% conversion rate</span> from AI search traffic and we can attribute it down to the source page and medium. Our goal is to double down on Analyze's recommendations to reduce our over-reliance on Google."
+                </blockquote>
+                <div className="pt-4 border-t border-gray-100">
+                  <p className="font-semibold text-gray-900">Gilbert Igor</p>
+                  <p className="text-sm text-gray-500">Marketing Coordinator, Kylian</p>
                 </div>
-                <div className="w-20 h-6 relative">
-                  <Image 
-                    src={testimonial.logo} 
-                    alt={`${testimonial.author}'s company logo`}
-                    fill
-                    className="object-contain"
-                  />
+              </div>
+
+              {/* Right - Case Study */}
+              <div className="lg:flex-1">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  How Kylian AI used Analyze to drive 1k+/m visits from AI SEO
+                </h3>
+                <div className="text-gray-600 leading-relaxed space-y-4">
+                  <p>
+                    The Analyze dashboard showed exactly which pages were converting. <span className="font-medium text-gray-800">"Best Online English Courses"</span> drove 24 sessions and 2 conversions—a conversion rate of <span className="font-medium text-gray-800">8.3%</span>, far above the typical blog benchmark of 1–2%. "300 Most Common English Words" brought 17 sessions but no conversions, confirming its role as more informational. "Websites to Learn English" recorded 13 sessions and 1 conversion, a <span className="font-medium text-gray-800">7.7% rate</span>—again several times higher than standard content benchmarks.
+                  </p>
+                  <p>
+                    By August, the compounding effect was undeniable. AI-sourced sessions had scaled from 200 in May to <span className="font-medium text-gray-800">697 in August</span> (+15.4% month-over-month) and <span className="font-medium text-gray-800">1,000+ in November</span> (30% increase from October). AI referrals now make up 3% of all site traffic. And the growth was resilient—spread across ChatGPT, Copilot, Claude, Gemini, and more—rather than concentrated in a single platform.
+                  </p>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Interactive Chart - Inside the card */}
+          <div className="border-t border-gray-200 p-8 lg:p-12">
+            <KylianChart />
+          </div>
         </div>
 
-        {/* Kylian Case Study - Enhanced Design */}
-        <div className="flex justify-center">
-          <a 
-            href={kylianCaseStudy.href} 
-            className="group relative block rounded-2xl overflow-hidden bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 p-8 transition-all duration-500 hover:shadow-2xl hover:scale-105 max-w-2xl w-full transform hover:-translate-y-2"
-          >
-            {/* Background Pattern */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent"></div>
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
-            
-            {/* Content */}
-            <div className="relative z-10">
-              {/* Stats Row */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="text-center">
-                  <p className="text-5xl font-bold text-white mb-2">{kylianCaseStudy.primaryStat}</p>
-                  <p className="text-purple-200 text-lg font-medium">{kylianCaseStudy.primaryDescription}</p>
-                </div>
-                <div className="w-px h-16 bg-purple-300/30 mx-8"></div>
-                <div className="text-center">
-                  <p className="text-5xl font-bold text-white mb-2">{kylianCaseStudy.secondaryStat}</p>
-                  <p className="text-purple-200 text-lg font-medium">{kylianCaseStudy.secondaryDescription}</p>
-                </div>
-              </div>
-              
-              {/* Title */}
-              <div className="border-t border-purple-300/20 pt-6">
-                <p className="text-xl font-semibold text-white leading-tight group-hover:text-purple-100 transition-colors">
-                  {kylianCaseStudy.title}
-                </p>
-                <div className="flex items-center mt-4 text-purple-200 group-hover:text-white transition-colors">
-                  <span className="text-sm font-medium">Read case study</span>
-                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </a>
+        {/* Big Quote Section - Bold statement style */}
+        <div className="py-16">
+          <blockquote className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8">
+            "Google has been quite unreliable since the creation of What Is That Movie. We've been using Analyze to diversify our traffic sources and have been using their recommendations to boost our AI SEO traffic by 35% month-over-month."
+          </blockquote>
+          <div>
+            <p className="text-base font-semibold text-gray-900">Justin Ahinon</p>
+            <p className="text-sm text-gray-500">Owner, What Is That Movie</p>
+          </div>
         </div>
       </div>
     </section>

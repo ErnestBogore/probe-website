@@ -39,10 +39,8 @@ const defaultSections = [
   {
     title: "Company",
     links: [
-      { name: "About", href: "#" },
-      { name: "Team", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Careers", href: "#" },
+      { name: "About", href: "/blog/best-tools-for-tracking-brand-visibility-ai-search" },
+      { name: "Blog", href: "/blog" },
       { name: "Affiliate Program", href: "/affiliate" },
     ],
   },

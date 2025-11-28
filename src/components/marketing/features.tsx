@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { DashedLine } from "../dashed-line";
 
 const featuresData = [
   {
@@ -49,6 +50,14 @@ export const Features = () => {
   return (
     <section className="pt-12 pb-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top dashed line with text */}
+        <div className="relative flex items-center justify-center mb-10">
+          <DashedLine className="text-muted-foreground" />
+          <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+            THE FEATURES
+          </span>
+        </div>
+
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
             One platform to see, compete, and prove ROI of AI search

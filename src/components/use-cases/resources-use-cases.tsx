@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { BlogPost } from "@/types/blog";
+import { DashedLine } from "@/components/dashed-line";
 
 interface ResourcesUseCasesProps {
   posts?: BlogPost[];
@@ -15,11 +16,19 @@ const ResourcesUseCases = ({ posts }: ResourcesUseCasesProps) => {
   return (
     <section className="py-16 lg:py-20">
       <div className="container mx-auto px-4 lg:px-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-4 md:text-4xl lg:text-5xl">
+        {/* Top dashed line with text */}
+        <div className="relative flex items-center justify-center mb-10">
+          <DashedLine className="text-muted-foreground" />
+          <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+            RESOURCES TO EXECUTE
+          </span>
+        </div>
+
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
             And resources that are actionable
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-gray-600">
             Practical guides to help you improve your brand's visibility and performance across AI platforms.
           </p>
         </div>

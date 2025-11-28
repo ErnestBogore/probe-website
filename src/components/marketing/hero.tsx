@@ -56,7 +56,7 @@ export const Hero = () => {
             <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
               <Button asChild>
                 <a href="https://app.tryanalyze.ai" target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white hover:bg-gray-800">
-                  Show Me My AI Rankings
+                  Show me my AI rankings
                 </a>
               </Button>
               <Button
@@ -65,10 +65,10 @@ export const Hero = () => {
                 asChild
               >
                 <Link
-                  href="/blog"
+                  href="https://www.tryanalyze.ai/talk-to-a-human"
                   className="max-w-56 truncate text-start md:max-w-none"
                 >
-                  Learn about AI search
+                  Talk to a human
                   <ArrowRight className="stroke-3" />
                 </Link>
               </Button>

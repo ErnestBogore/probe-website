@@ -8,7 +8,7 @@ export const Manifesto = () => {
         <div className="relative flex items-center justify-center mb-10">
           <DashedLine className="text-muted-foreground" />
           <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
-            BECAUSE WE&apos;RE FUNDAMENTALLY DIFFERENT
+            WHY WE DO THINGS DIFFERENTLY
           </span>
         </div>
         
