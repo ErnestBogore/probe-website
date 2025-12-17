@@ -79,56 +79,77 @@ async function request<T>(
  * @returns Promise with array of blog posts
  */
 export async function getAllBlogPosts(includeDrafts = false) {
-  const query = `
-    query AllBlogPosts {
-      allBlogPosts(orderBy: publishedDate_DESC, first: 100) {
-        id
-        title
-        slug
-        publishedDate
-        featuredImage {
-          url
-          alt
-          width
-          height
-        }
-        author {
-          id
-          name
-          title
-          image {
-            url
-            alt
-            width
-            height
-          }
-        }
-        reviewer {
-          id
-          name
-          title
-          image {
-            url
-            alt
-            width
-            height
-          }
-        }
-        seo {
-          image {
-            url
-            alt
-            width
-            height
-          }
-        }
-        _publishedAt
-        contentType
-      }
-    }
-  `;
+  const allPosts: BlogPost[] = [];
+  let skip = 0;
+  const first = 100;
 
-  return request<{ allBlogPosts: BlogPost[] }>(query, {}, includeDrafts);
+  while (true) {
+    const query = `
+      query AllBlogPosts($first: IntType!, $skip: IntType!) {
+        allBlogPosts(orderBy: publishedDate_DESC, first: $first, skip: $skip) {
+          id
+          title
+          slug
+          publishedDate
+          featuredImage {
+            url
+            alt
+            width
+            height
+          }
+          author {
+            id
+            name
+            title
+            image {
+              url
+              alt
+              width
+              height
+            }
+          }
+          reviewer {
+            id
+            name
+            title
+            image {
+              url
+              alt
+              width
+              height
+            }
+          }
+          seo {
+            image {
+              url
+              alt
+              width
+              height
+            }
+          }
+          _publishedAt
+          _updatedAt
+          contentType
+        }
+      }
+    `;
+
+    const data = await request<{ allBlogPosts: BlogPost[] }>(query, { first, skip }, includeDrafts);
+
+    if (data.allBlogPosts.length === 0) {
+      break;
+    }
+
+    allPosts.push(...data.allBlogPosts);
+
+    if (data.allBlogPosts.length < first) {
+      break;
+    }
+
+    skip += first;
+  }
+
+  return { allBlogPosts: allPosts };
 }
 
 /**
@@ -386,19 +407,38 @@ export async function getPromptBySlug(slug: string, includeDrafts = false) {
 }
 
 export async function getAllPromptSlugs() {
-  const query = `
-    query AllPromptSlugs {
-      allPromptPages(first: 100) {
-        slug
-        category {
-          slugCategory
+  const allPrompts: Array<{ slug: string; category: { slugCategory: string }; _updatedAt: string }> = [];
+  let skip = 0;
+  const first = 100;
+  
+  while (true) {
+    const query = `
+      query AllPromptSlugs($first: IntType!, $skip: IntType!) {
+        allPromptPages(first: $first, skip: $skip) {
+          slug
+          category {
+            slugCategory
+          }
+          _updatedAt
         }
-        _updatedAt
       }
+    `;
+    const data = await request<{ allPromptPages: Array<{ slug: string; category: { slugCategory: string }; _updatedAt: string }> }>(query, { first, skip });
+    
+    if (data.allPromptPages.length === 0) {
+      break;
     }
-  `;
-  const data = await request<{ allPromptPages: Array<{ slug: string; category: { slugCategory: string }; _updatedAt: string }> }>(query);
-  return data.allPromptPages;
+    
+    allPrompts.push(...data.allPromptPages);
+    
+    if (data.allPromptPages.length < first) {
+      break;
+    }
+    
+    skip += first;
+  }
+  
+  return allPrompts;
 }
 
 export async function getPromptsByCategory(categoryId: string, includeDrafts = false) {
@@ -469,37 +509,65 @@ export async function getCategoryBySlug(slug: string, includeDrafts = false) {
 }
 
 export async function getAllPromptsGroupedByCategory(includeDrafts = false) {
-  const query = `
-    query AllPromptsAndCategories {
+  // First fetch all categories
+  const categoriesQuery = `
+    query AllCategories {
       allPromptCategories(orderBy: name_ASC) {
         id
         name
         slugCategory
       }
-      allPromptPages(orderBy: _publishedAt_DESC, first: 100) {
-        id
-        title
-        slug
-        description
-        difficultyLevel
-        seoPrompt {
-          image {
-            url
-            alt
-            width
-            height
-          }
-        }
-        category {
-          id
-          name
-          slugCategory
-        }
-      }
     }
   `;
-  return request<{ 
-    allPromptCategories: PromptCategory[];
-    allPromptPages: PromptPage[];
-  }>(query, {}, includeDrafts);
+  const categoriesData = await request<{ allPromptCategories: PromptCategory[] }>(categoriesQuery, {}, includeDrafts);
+
+  // Then fetch all prompts with pagination
+  const allPrompts: PromptPage[] = [];
+  let skip = 0;
+  const first = 100;
+
+  while (true) {
+    const promptsQuery = `
+      query AllPrompts($first: IntType!, $skip: IntType!) {
+        allPromptPages(orderBy: _publishedAt_DESC, first: $first, skip: $skip) {
+          id
+          title
+          slug
+          description
+          difficultyLevel
+          seoPrompt {
+            image {
+              url
+              alt
+              width
+              height
+            }
+          }
+          category {
+            id
+            name
+            slugCategory
+          }
+        }
+      }
+    `;
+    const data = await request<{ allPromptPages: PromptPage[] }>(promptsQuery, { first, skip }, includeDrafts);
+
+    if (data.allPromptPages.length === 0) {
+      break;
+    }
+
+    allPrompts.push(...data.allPromptPages);
+
+    if (data.allPromptPages.length < first) {
+      break;
+    }
+
+    skip += first;
+  }
+
+  return { 
+    allPromptCategories: categoriesData.allPromptCategories,
+    allPromptPages: allPrompts,
+  };
 }
