@@ -50,6 +50,7 @@ const defaultSections = [
       { name: "AI Website Audit Tool", href: "/free-tools/ai-website-audit-tool" },
       { name: "LLM.txt Generator", href: "/free-tools/llm-txt-generator-tool" },
       { name: "Perplexity AI Alternative", href: "/free-tools/perplexity-ai-alternative" },
+      { name: "AI Prompts Library", href: "/prompts" },
     ],
   },
   {

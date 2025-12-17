@@ -56,13 +56,14 @@ export function StructuredTextRenderer({ data, customNodeRules: customRulesProp 
       renderBlock={({ record }: { record: BlockRecord }) => {
         switch (record.__typename) {
           case 'ImageBlockRecord':
+            if (!record.image?.url) return null;
             return (
               <div className="my-6">
                 <Image
                   src={record.image.url}
                   alt={record.image.alt || 'Block image'}
-                  width={record.image.width}
-                  height={record.image.height}
+                  width={record.image.width || 800}
+                  height={record.image.height || 600}
                   className="rounded-lg max-w-full h-auto shadow-md"
                 />
               </div>
