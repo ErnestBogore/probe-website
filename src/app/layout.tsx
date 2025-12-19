@@ -39,6 +39,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5FYJJYT0H"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-S5FYJJYT0H');
+          `
+        }} />
         {/* Simple Analytics - 100% privacy-first analytics */}
         <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
         {/* ConvertBox - Lead capture and conversion */}
