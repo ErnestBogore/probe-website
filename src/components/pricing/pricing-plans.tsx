@@ -75,7 +75,7 @@ export const PricingPlans = () => {
                     </div>
 
                     <Button asChild className="w-full mb-4 bg-gray-900 text-white hover:bg-gray-800 py-3 text-lg font-semibold">
-                      <a href="https://app.analyze.ai" target="_blank" rel="noopener noreferrer">
+                      <a href="https://app.tryanalyze.ai" target="_blank" rel="noopener noreferrer">
                         Get Started →
                       </a>
                     </Button>
