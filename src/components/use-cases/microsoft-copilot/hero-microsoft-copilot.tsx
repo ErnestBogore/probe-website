@@ -55,7 +55,7 @@ export const HeroMicrosoftCopilot = () => {
 
             <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
               <Button asChild>
-                <a href="https://app.tryanalyze.ai" target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white hover:bg-gray-800">
+                <a href="https://tryanalyze.ai/pricing" target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white hover:bg-gray-800">
                   Show Me My Microsoft Copilot Rankings
                 </a>
               </Button>

@@ -5,7 +5,7 @@
  * Handles blog post queries and content fetching.
  */
 
-import { BlogPost } from '@/types/blog';
+import { BlogPost, InternationalBlogPost, SupportedLanguage } from '@/types/blog';
 import { PromptPage, PromptCategory } from '@/types/prompt';
 
 const API_URL = 'https://graphql.datocms.com/';
@@ -570,4 +570,268 @@ export async function getAllPromptsGroupedByCategory(includeDrafts = false) {
     allPromptCategories: categoriesData.allPromptCategories,
     allPromptPages: allPrompts,
   };
+}
+
+// --- International Blog Functions --- //
+
+/**
+ * Fetches all international blog posts for a specific language
+ * @param language - Language code (fr, de, es, it, nl)
+ * @param includeDrafts - Whether to include draft posts
+ * @returns Promise with array of international blog posts
+ */
+export async function getAllInternationalBlogPosts(language: SupportedLanguage, includeDrafts = false) {
+  const allPosts: InternationalBlogPost[] = [];
+  let skip = 0;
+  const first = 100;
+
+  while (true) {
+    const query = `
+      query AllInternationalBlogPosts($language: String!, $first: IntType!, $skip: IntType!) {
+        allBlogPostInternationals(
+          filter: { language: { eq: $language } }
+          orderBy: publishedDate_DESC
+          first: $first
+          skip: $skip
+        ) {
+          id
+          title
+          slug
+          language
+          publishedDate
+          featuredImage {
+            url
+            alt
+            width
+            height
+          }
+          author {
+            id
+            name
+            title
+            image {
+              url
+              alt
+              width
+              height
+            }
+          }
+          reviewer {
+            id
+            name
+            title
+            image {
+              url
+              alt
+              width
+              height
+            }
+          }
+          seo {
+            image {
+              url
+              alt
+              width
+              height
+            }
+          }
+          _publishedAt
+          _updatedAt
+          contentType
+        }
+      }
+    `;
+
+    const data = await request<{ allBlogPostInternationals: InternationalBlogPost[] }>(
+      query, 
+      { language, first, skip }, 
+      includeDrafts
+    );
+
+    if (data.allBlogPostInternationals.length === 0) {
+      break;
+    }
+
+    allPosts.push(...data.allBlogPostInternationals);
+
+    if (data.allBlogPostInternationals.length < first) {
+      break;
+    }
+
+    skip += first;
+  }
+
+  return { allBlogPostInternationals: allPosts };
+}
+
+/**
+ * Fetches a single international blog post by language and slug
+ * @param language - Language code (fr, de, es, it, nl)
+ * @param slug - Blog post slug
+ * @param includeDrafts - Whether to include draft posts
+ * @returns Promise with international blog post data
+ */
+export async function getInternationalBlogPostBySlug(
+  language: SupportedLanguage, 
+  slug: string, 
+  includeDrafts = false
+) {
+  const query = `
+    query InternationalBlogPostBySlug($language: String!, $slug: String!) {
+      blogPostInternational(filter: { language: { eq: $language }, slug: { eq: $slug } }) {
+        id
+        title
+        slug
+        language
+        contentType
+        body {
+          value
+          blocks {
+            __typename
+            ... on ImageBlockRecord {
+              id
+              image {
+                url
+                alt
+                width
+                height
+              }
+            }
+            ... on TableRecord {
+              id
+              title
+              headers
+              rows
+            }
+            ... on TakeawayRecord {
+              id
+              title
+              content
+            }
+          }
+        }
+        publishedDate
+        featuredImage {
+          url
+          alt
+          width
+          height
+        }
+        author {
+          id
+          name
+          title
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+        reviewer {
+          id
+          name
+          title
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+        relatedPostsInternational {
+          ... on BlogPostInternationalRecord {
+            id
+            title
+            slug
+            language
+            publishedDate
+            featuredImage {
+              url
+              alt
+              width
+              height
+            }
+            author {
+              id
+              name
+              image {
+                url
+                alt
+                width
+                height
+              }
+            }
+            seo {
+              image {
+                url
+                alt
+                width
+                height
+              }
+            }
+          }
+        }
+        seo {
+          title
+          description
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+        _publishedAt
+        _updatedAt
+        contentType
+      }
+    }
+  `;
+
+  return request<{ blogPostInternational: InternationalBlogPost | null }>(
+    query, 
+    { language, slug }, 
+    includeDrafts
+  );
+}
+
+/**
+ * Fetches all international blog post slugs for static generation
+ * @returns Promise with array of { language, slug } pairs
+ */
+export async function getAllInternationalBlogPostSlugs() {
+  const allSlugs: Array<{ slug: string; language: SupportedLanguage; contentType?: string }> = [];
+  let skip = 0;
+  const first = 100;
+
+  while (true) {
+    const query = `
+      query AllInternationalBlogPostSlugs($first: IntType!, $skip: IntType!) {
+        allBlogPostInternationals(first: $first, skip: $skip) {
+          slug
+          language
+          contentType
+        }
+      }
+    `;
+
+    const data = await request<{ 
+      allBlogPostInternationals: Array<{ slug: string; language: SupportedLanguage; contentType?: string }> 
+    }>(query, { first, skip });
+
+    if (data.allBlogPostInternationals.length === 0) {
+      break;
+    }
+
+    allSlugs.push(...data.allBlogPostInternationals);
+
+    if (data.allBlogPostInternationals.length < first) {
+      break;
+    }
+
+    skip += first;
+  }
+
+  return allSlugs;
 }

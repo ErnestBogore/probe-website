@@ -25,7 +25,7 @@ export const BlogCta = () => {
               size="lg" 
               className="bg-white text-[#8858ed] hover:bg-purple-50 font-semibold px-8 py-4 text-lg h-auto shadow-lg"
             >
-              <a href="https://app.tryanalyze.ai" target="_blank" rel="noopener noreferrer">
+              <a href="https://tryanalyze.ai/pricing" target="_blank" rel="noopener noreferrer">
                 Show Me My AI Rankings
               </a>
             </Button>

@@ -17,6 +17,9 @@ const features = [
 ];
 
 export const PromotionalOverlay = () => {
+  // DEACTIVATED - return null to hide overlay without deleting code
+  return null;
+  
   const [isVisible, setIsVisible] = useState(true);
   const [isClosed, setIsClosed] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -86,7 +89,7 @@ export const PromotionalOverlay = () => {
                 </h3>
 
                 <Button asChild className="w-full mb-4 bg-gray-900 text-white hover:bg-gray-800 py-3 px-6 text-lg font-semibold whitespace-nowrap">
-                  <a href="https://app.tryanalyze.ai" target="_blank" rel="noopener noreferrer">
+                  <a href="https://tryanalyze.ai/pricing" target="_blank" rel="noopener noreferrer">
                     Show Me My AI Rankings →
                   </a>
                 </Button>

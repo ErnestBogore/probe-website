@@ -92,4 +92,50 @@ export interface BlogPostSummary {
   featuredImage?: Image;
   seo?: Pick<SEO, 'image'>;
   tags?: Tag[];
-} 
+}
+
+// --- International Blog Types --- //
+
+export type SupportedLanguage = 'fr' | 'de' | 'es' | 'it' | 'nl';
+
+export interface InternationalBlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  language: SupportedLanguage;
+  excerpt?: string;
+  body?: StructuredText;
+  publishedDate?: string;
+  updatedAt?: string;
+  author?: Author;
+  reviewer?: Author;
+  featuredImage?: Image;
+  relatedPostsInternational?: InternationalBlogPostSummary[];
+  tags?: Tag[];
+  seo?: SEO;
+  _publishedAt?: string;
+  _updatedAt?: string;
+  contentType?: string;
+}
+
+export interface InternationalBlogPostSummary {
+  id: string;
+  title: string;
+  slug: string;
+  language: SupportedLanguage;
+  excerpt?: string;
+  publishedDate?: string;
+  author?: Pick<Author, 'name' | 'image'>;
+  reviewer?: Pick<Author, 'name' | 'image'>;
+  featuredImage?: Image;
+  seo?: Pick<SEO, 'image'>;
+  tags?: Tag[];
+}
+
+export const LANGUAGE_LABELS: Record<SupportedLanguage, string> = {
+  fr: 'Français',
+  de: 'Deutsch',
+  es: 'Español',
+  it: 'Italiano',
+  nl: 'Nederlands',
+}; 
