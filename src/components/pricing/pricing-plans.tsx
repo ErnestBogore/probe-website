@@ -27,7 +27,7 @@ const features = [
 
 export const PricingPlans = () => {
   return (
-    <section id="plans" className="py-16 lg:py-20 bg-gray-100">
+    <section id="plans" className="pt-24 pb-16 lg:pt-28 lg:pb-20 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           {/* Header with AI Engine Logos */}
@@ -37,7 +37,7 @@ export const PricingPlans = () => {
             </h2>
             
             {/* AI Engine Logos */}
-            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 mb-12">
+            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 mb-8">
               {aiEngineLogos.map((logo, index) => (
                 <div key={index} className="flex items-center justify-center">
                   <Image
@@ -50,6 +50,11 @@ export const PricingPlans = () => {
                 </div>
               ))}
             </div>
+
+            {/* Subtext */}
+            <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
+              Track your brand visibility across major AI platforms and see total sessions from AI search in the last 30 days, how that is trending over time, and how much of your overall traffic now comes from AI sources.
+            </p>
           </div>
 
           {/* Single Pricing Card - Horizontal Layout */}

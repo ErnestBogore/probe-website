@@ -1,4 +1,3 @@
-import { PricingHero } from '@/components/pricing/pricing-hero';
 import { PricingPlans } from '@/components/pricing/pricing-plans';
 import { PricingFaq } from '@/components/pricing/pricing-faq';
 import { HeroCta } from '@/components/marketing/hero-cta';
@@ -38,7 +37,6 @@ const PricingPage = () => {
           __html: JSON.stringify(serviceSchema)
         }}
       />
-      <PricingHero />
       <PricingPlans />
       <PricingFaq />
       <HeroCta />
