@@ -104,8 +104,8 @@ export const ClientNav = () => {
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink href="/talk-to-a-human" className={navigationMenuTriggerStyle()}>
-              Talk To A Human
+            <NavigationMenuLink href="/free-tools/ai-website-audit-tool" className={navigationMenuTriggerStyle()}>
+              Website AI Readiness Checker
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
@@ -171,8 +171,8 @@ export const ClientNav = () => {
               <Link href="/case-study" className="font-medium">
                 Success Stories
               </Link>
-              <Link href="/talk-to-a-human" className="font-medium">
-                Talk to a human
+              <Link href="/free-tools/ai-website-audit-tool" className="font-medium">
+                Website AI Readiness Checker
               </Link>
             </div>
             <div className="mt-6 flex flex-col gap-4">
