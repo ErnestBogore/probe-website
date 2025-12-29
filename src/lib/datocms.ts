@@ -684,6 +684,8 @@ export async function getInternationalBlogPostBySlug(
         slug
         language
         contentType
+        editorType
+        bodyHtml
         body {
           value
           blocks {

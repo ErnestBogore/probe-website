@@ -18,12 +18,35 @@ import React from 'react';
 import { Breadcrumb } from "@/components/marketing/breadcrumb";
 import { RelatedPostsInternational } from '@/components/related-posts-international';
 import { TableOfContents } from '@/components/table-of-contents';
+import { TableOfContentsHtml, extractHeadingsFromHtml, addAnchorIdsToHtml } from '@/components/table-of-contents-html';
 import { Table } from '@/components/blocks/Table';
 import { Takeaway } from '@/components/blocks/Takeaway';
 import { generateAnchorId } from '@/lib/anchor-utils';
 import { BlogCta } from '@/components/marketing/blog-cta';
 import { BlogSidebarCta } from '@/components/blog/blog-sidebar-cta';
 import { InternationalBlogPost as InternationalBlogPostType, SupportedLanguage, LANGUAGE_LABELS } from '@/types/blog';
+
+// Sanitize TinyMCE HTML to remove inline font styles that override our CSS
+function sanitizeHtml(html: string): string {
+  return html
+    // Remove font-size inline styles
+    .replace(/font-size:\s*[^;]+;?/gi, '')
+    // Remove font-family inline styles  
+    .replace(/font-family:\s*[^;]+;?/gi, '')
+    // Remove line-height inline styles
+    .replace(/line-height:\s*[^;]+;?/gi, '')
+    // Clean up empty style attributes
+    .replace(/style="\s*"/gi, '')
+    .replace(/style='\s*'/gi, '');
+}
+
+// Process HTML content: sanitize, add anchor IDs, and prepare for TOC injection
+function processHtmlContent(html: string): { processedHtml: string; headings: { id: string; text: string; level: number }[] } {
+  const sanitized = sanitizeHtml(html);
+  const withAnchors = addAnchorIdsToHtml(sanitized);
+  const headings = extractHeadingsFromHtml(sanitized);
+  return { processedHtml: withAnchors, headings };
+}
 
 const DATE_LOCALES: Record<SupportedLanguage, Locale> = {
   fr,
@@ -290,6 +313,49 @@ function StructuredTextWithTOC({ content }: { content: unknown }) {
   );
 }
 
+/**
+ * Component to render TinyMCE HTML content with Table of Contents
+ * Injects TOC before the first H2, similar to StructuredTextWithTOC
+ */
+function HtmlContentWithTOC({ html }: { html: string }) {
+  const { processedHtml, headings } = processHtmlContent(html);
+  
+  // Split HTML at the first H2 to inject TOC before it
+  const firstH2Match = processedHtml.match(/<h2[^>]*>/i);
+  
+  if (firstH2Match && firstH2Match.index !== undefined && headings.length > 0) {
+    const beforeFirstH2 = processedHtml.slice(0, firstH2Match.index);
+    const fromFirstH2 = processedHtml.slice(firstH2Match.index);
+    
+    return (
+      <>
+        {beforeFirstH2 && (
+          <div 
+            className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-blockquote:border-blue-500 prose-ul:list-disc prose-ol:list-decimal prose-li:text-gray-700 prose-ul:ml-6 prose-ol:ml-6 html-blog-content"
+            style={{ '--tw-prose-bullets': '#374151', '--tw-prose-counters': '#374151' } as React.CSSProperties}
+            dangerouslySetInnerHTML={{ __html: beforeFirstH2 }} 
+          />
+        )}
+        <TableOfContentsHtml headings={headings} />
+        <div 
+          className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-blockquote:border-blue-500 prose-ul:list-disc prose-ol:list-decimal prose-li:text-gray-700 prose-ul:ml-6 prose-ol:ml-6 html-blog-content"
+          style={{ '--tw-prose-bullets': '#374151', '--tw-prose-counters': '#374151' } as React.CSSProperties}
+          dangerouslySetInnerHTML={{ __html: fromFirstH2 }} 
+        />
+      </>
+    );
+  }
+  
+  // No H2 found, render without TOC
+  return (
+    <div 
+      className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-blockquote:border-blue-500 prose-ul:list-disc prose-ol:list-decimal prose-li:text-gray-700 prose-ul:ml-6 prose-ol:ml-6 html-blog-content"
+      style={{ '--tw-prose-bullets': '#374151', '--tw-prose-counters': '#374151' } as React.CSSProperties}
+      dangerouslySetInnerHTML={{ __html: processedHtml }} 
+    />
+  );
+}
+
 interface InternationalBlogPostProps {
   blogPost: InternationalBlogPostType;
   language: SupportedLanguage;
@@ -411,11 +477,13 @@ export function InternationalBlogPostView({ blogPost, language }: InternationalB
               )}
             </header>
 
-            {blogPost.body && (
+            {blogPost.editorType === 'html' && blogPost.bodyHtml ? (
+              <HtmlContentWithTOC html={blogPost.bodyHtml} />
+            ) : blogPost.body ? (
               <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-blockquote:border-blue-500 prose-ul:list-disc prose-ol:list-decimal prose-li:text-gray-700 prose-ul:ml-6 prose-ol:ml-6" style={{ '--tw-prose-bullets': '#374151', '--tw-prose-counters': '#374151' } as React.CSSProperties}>
                 <StructuredTextWithTOC content={blogPost.body} />
               </div>
-            )}
+            ) : null}
 
             <BlogCta />
 

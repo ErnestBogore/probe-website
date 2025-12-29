@@ -105,6 +105,8 @@ export interface InternationalBlogPost {
   language: SupportedLanguage;
   excerpt?: string;
   body?: StructuredText;
+  bodyHtml?: string;
+  editorType?: 'structured' | 'html';
   publishedDate?: string;
   updatedAt?: string;
   author?: Author;
