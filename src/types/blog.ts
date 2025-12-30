@@ -68,6 +68,8 @@ export interface BlogPost {
   slug: string;
   excerpt?: string;
   body?: StructuredText;
+  englishBodyHtml?: string;
+  editorTypeEnglish?: 'structured' | 'html';
   publishedDate?: string;
   updatedAt?: string;
   author?: Author;

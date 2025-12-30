@@ -18,10 +18,12 @@ import React from 'react';
 import { Breadcrumb } from "@/components/marketing/breadcrumb";
 import { RelatedPosts } from '@/components/related-posts';
 import { TableOfContents } from '@/components/table-of-contents';
+import { TableOfContentsHtml } from '@/components/table-of-contents-html';
 import { Table } from '../../../components/blocks/Table';
 import { Takeaway } from '../../../components/blocks/Takeaway';
 import { generateAnchorId } from '@/lib/anchor-utils';
 import { generateBlogPostSchema } from '@/lib/schema';
+import { BlogPost } from '@/types/blog';
 import { BlogCta } from '@/components/marketing/blog-cta';
 import { BlogSidebarCta } from '@/components/blog/blog-sidebar-cta';
 
@@ -34,6 +36,77 @@ interface BlogPostPageProps {
 /**
  * Simple table parser for comma-separated data
  */
+// Sanitize TinyMCE HTML to remove inline font styles that override our CSS
+function sanitizeHtml(html: string): string {
+  return html
+    // Remove font-size inline styles
+    .replace(/font-size:\s*[^;]+;?/gi, '')
+    // Remove font-family inline styles  
+    .replace(/font-family:\s*[^;]+;?/gi, '')
+    // Remove line-height inline styles
+    .replace(/line-height:\s*[^;]+;?/gi, '')
+    // Clean up empty style attributes
+    .replace(/style="\s*"/gi, '')
+    .replace(/style='\s*'/gi, '');
+}
+
+// Extract H2 headings from HTML string content (server-compatible version)
+function extractHeadingsFromHtml(html: string): { id: string; text: string; level: number }[] {
+  const headings: { id: string; text: string; level: number }[] = [];
+  
+  const h2Regex = /<h2[^>]*>([\s\S]*?)<\/h2>/gi;
+  let match;
+  
+  while ((match = h2Regex.exec(html)) !== null) {
+    const text = match[1]
+      .replace(/<[^>]*>/g, '')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .trim();
+    
+    if (text) {
+      const id = generateAnchorId(text);
+      headings.push({ id, text, level: 2 });
+    }
+  }
+  
+  return headings;
+}
+
+// Add anchor IDs to H2 headings in HTML (server-compatible version)
+function addAnchorIdsToHtml(html: string): string {
+  return html.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/gi, (match, attrs, content) => {
+    const text = content
+      .replace(/<[^>]*>/g, '')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .trim();
+    
+    if (text) {
+      const id = generateAnchorId(text);
+      if (attrs.includes('id=')) {
+        return match;
+      }
+      return `<h2${attrs} id="${id}">${content}</h2>`;
+    }
+    return match;
+  });
+}
+
+// Process HTML content: sanitize, add anchor IDs, and prepare for TOC injection
+function processHtmlContent(html: string): { processedHtml: string; headings: { id: string; text: string; level: number }[] } {
+  const sanitized = sanitizeHtml(html);
+  const withAnchors = addAnchorIdsToHtml(sanitized);
+  const headings = extractHeadingsFromHtml(sanitized);
+  return { processedHtml: withAnchors, headings };
+}
+
 function parseSimpleTable(headers: string, rows: string) {
   const columns = headers.split(',').map(h => h.trim());
   const data = rows.split('\n')
@@ -268,6 +341,49 @@ function StructuredTextWithTOC({ content }: { content: unknown }) {
   );
 }
 
+/**
+ * Component to render TinyMCE HTML content with Table of Contents
+ * Injects TOC before the first H2, similar to StructuredTextWithTOC
+ */
+function HtmlContentWithTOC({ html }: { html: string }) {
+  const { processedHtml, headings } = processHtmlContent(html);
+  
+  // Split HTML at the first H2 to inject TOC before it
+  const firstH2Match = processedHtml.match(/<h2[^>]*>/i);
+  
+  if (firstH2Match && firstH2Match.index !== undefined && headings.length > 0) {
+    const beforeFirstH2 = processedHtml.slice(0, firstH2Match.index);
+    const fromFirstH2 = processedHtml.slice(firstH2Match.index);
+    
+    return (
+      <>
+        {beforeFirstH2 && (
+          <div 
+            className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-blockquote:border-blue-500 prose-ul:list-disc prose-ol:list-decimal prose-li:text-gray-700 prose-ul:ml-6 prose-ol:ml-6 html-blog-content"
+            style={{ '--tw-prose-bullets': '#374151', '--tw-prose-counters': '#374151' } as React.CSSProperties}
+            dangerouslySetInnerHTML={{ __html: beforeFirstH2 }} 
+          />
+        )}
+        <TableOfContentsHtml headings={headings} />
+        <div 
+          className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-blockquote:border-blue-500 prose-ul:list-disc prose-ol:list-decimal prose-li:text-gray-700 prose-ul:ml-6 prose-ol:ml-6 html-blog-content"
+          style={{ '--tw-prose-bullets': '#374151', '--tw-prose-counters': '#374151' } as React.CSSProperties}
+          dangerouslySetInnerHTML={{ __html: fromFirstH2 }} 
+        />
+      </>
+    );
+  }
+  
+  // No H2 found, render without TOC
+  return (
+    <div 
+      className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-blockquote:border-blue-500 prose-ul:list-disc prose-ol:list-decimal prose-li:text-gray-700 prose-ul:ml-6 prose-ol:ml-6 html-blog-content"
+      style={{ '--tw-prose-bullets': '#374151', '--tw-prose-counters': '#374151' } as React.CSSProperties}
+      dangerouslySetInnerHTML={{ __html: processedHtml }} 
+    />
+  );
+}
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   try {
     const { slug } = await params;
@@ -409,11 +525,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </header>
 
           {/* Article Content */}
-          {blogPost.body && (
+          {blogPost.editorTypeEnglish === 'html' && blogPost.englishBodyHtml ? (
+            <HtmlContentWithTOC html={blogPost.englishBodyHtml} />
+          ) : blogPost.body ? (
             <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-blockquote:border-blue-500 prose-ul:list-disc prose-ol:list-decimal prose-li:text-gray-700 prose-ul:ml-6 prose-ol:ml-6" style={{ '--tw-prose-bullets': '#374151', '--tw-prose-counters': '#374151' } as React.CSSProperties}>
               <StructuredTextWithTOC content={blogPost.body} />
             </div>
-          )}
+          ) : null}
 
           {/* CTA Section */}
           <BlogCta />

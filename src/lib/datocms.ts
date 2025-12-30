@@ -166,6 +166,8 @@ export async function getBlogPostBySlug(slug: string, includeDrafts = false) {
         title
         slug
         contentType
+        editorTypeEnglish
+        englishBodyHtml
         body {
           value
           blocks {
