@@ -4,6 +4,7 @@ import { useState, useCallback } from 'react';
 import { ToolForm } from './ToolForm';
 import { ToolOutput } from './ToolOutput';
 import { ToolUseCases } from './ToolUseCases';
+import { RelatedTools } from './RelatedTools';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { FaqHomepage } from '@/components/marketing/faq-homepage';
 import { ToolConfig } from '@/lib/ai-tools/tools-config';
@@ -101,14 +102,14 @@ export function ToolPage({ tool }: ToolPageProps) {
               </span>
             </div>
             
-            {/* H1 */}
+            {/* H1 - uses meta title */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-              {tool.title.replace('Free AI ', '')}
+              {tool.title}
             </h1>
             
-            {/* Subtext */}
+            {/* Subtext - uses meta description */}
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
-              {tool.description}
+              {tool.metaDescription}
             </p>
           </div>
 
@@ -144,6 +145,12 @@ export function ToolPage({ tool }: ToolPageProps) {
           answer: faq.answer,
         }))}
       />
+
+      {/* Related Tools Section */}
+      <RelatedTools currentToolSlug={tool.slug} />
+
+      {/* Bottom CTA Section */}
+      <HeroCta />
     </div>
   );
 }

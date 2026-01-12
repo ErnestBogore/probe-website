@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 interface FooterProps {
   logo?: {
@@ -14,6 +14,7 @@ interface FooterProps {
     links: Array<{ name: string; href: string }>;
   }>;
   description?: string;
+  address?: string;
   socialLinks?: Array<{
     icon: React.ReactElement;
     href: string;
@@ -84,10 +85,8 @@ const defaultSections = [
 ];
 
 const defaultSocialLinks = [
-  { icon: <FaInstagram className="size-5" />, href: "#", label: "Instagram" },
-  { icon: <FaFacebook className="size-5" />, href: "#", label: "Facebook" },
-  { icon: <FaTwitter className="size-5" />, href: "#", label: "Twitter" },
-  { icon: <FaLinkedin className="size-5" />, href: "#", label: "LinkedIn" },
+  { icon: <FaLinkedin className="size-5" />, href: "https://www.linkedin.com/company/analyzeai/", label: "LinkedIn" },
+  { icon: <FaXTwitter className="size-5" />, href: "https://x.com/AnalyzeLLM", label: "X" },
 ];
 
 const defaultLegalLinks = [
@@ -104,8 +103,9 @@ export const Footer = ({
   },
   sections = defaultSections,
   description = "Analyze provides a comprehensive suite of tools to monitor your brand's visibility and sentiment across all major AI answer engines, giving you the insights to stay ahead.",
+  address = "2498, 701 Tillery Street Unit 12, Austin, TX",
   socialLinks = defaultSocialLinks,
-  copyright = "© 2025 Analyze. All rights reserved.",
+  copyright = "© 2026 Analyze. All rights reserved.",
   legalLinks = defaultLegalLinks,
 }: FooterProps) => {
   return (
@@ -126,6 +126,9 @@ export const Footer = ({
             </div>
             <p className="text-muted-foreground max-w-[70%] text-sm">
               {description}
+            </p>
+            <p className="text-muted-foreground text-sm">
+              {address}
             </p>
             <ul className="text-muted-foreground flex items-center space-x-6">
               {socialLinks.map((social, idx) => (
