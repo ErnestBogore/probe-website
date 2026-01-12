@@ -3,6 +3,30 @@ import { notFound } from 'next/navigation';
 import { getToolBySlug, getAllTools } from '@/lib/ai-tools/tools-config';
 import { ToolPage } from '@/components/ai-tools/ToolPage';
 
+function generateToolFAQSchema(tool: { title: string; slug: string; faqs: { question: string; answer: string }[] }) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": tool.title,
+        "url": `https://www.tryanalyze.ai/free-tools/${tool.slug}`
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": tool.faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      }
+    ]
+  };
+}
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -44,5 +68,17 @@ export default async function DynamicToolPage({ params }: PageProps) {
     notFound();
   }
 
-  return <ToolPage tool={tool} />;
+  const structuredData = generateToolFAQSchema(tool);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData)
+        }}
+      />
+      <ToolPage tool={tool} />
+    </>
+  );
 }
