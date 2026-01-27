@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Copy, Check, RefreshCw } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 interface ToolOutputProps {
   output: string;
@@ -62,17 +63,13 @@ export function ToolOutput({ output, isLoading, onReset }: ToolOutputProps) {
             <span>Generating content...</span>
           </div>
         ) : (
-          <div className="prose prose-gray max-w-none">
-            <div className="text-gray-800 leading-relaxed space-y-4">
-              {output.split('\n\n').map((paragraph, index) => (
-                <p key={index} className="whitespace-pre-wrap">
-                  {paragraph}
-                </p>
-              ))}
-              {isLoading && (
-                <span className="inline-block w-2 h-5 bg-purple-600 animate-pulse ml-1" />
-              )}
-            </div>
+          <div className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-headings:font-semibold prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-p:text-gray-700 prose-p:leading-relaxed prose-strong:text-gray-900 prose-ul:text-gray-700 prose-ol:text-gray-700 prose-li:marker:text-purple-600">
+            <ReactMarkdown>
+              {output}
+            </ReactMarkdown>
+            {isLoading && (
+              <span className="inline-block w-2 h-5 bg-purple-600 animate-pulse ml-1" />
+            )}
           </div>
         )}
       </div>

@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getAllBlogPosts, getAllPromptSlugs, getAllCategorySlugs } from '@/lib/datocms';
+import { getAllTools } from '@/lib/ai-tools/tools-config';
+import { getAllBusinessNameGenerators } from '@/lib/ai-tools/business-name-generators-config';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.tryanalyze.ai';
@@ -194,7 +196,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    // Free Tools Index Page
+    {
+      url: `${baseUrl}/free-tools`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
   ];
+
+  // Generate free tools pages (from tools-config)
+  const allFreeTools = getAllTools();
+  const freeToolPages: MetadataRoute.Sitemap = allFreeTools.map((tool) => ({
+    url: `${baseUrl}/free-tools/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate business name generator pages
+  const allBusinessNameGenerators = getAllBusinessNameGenerators();
+  const businessNameGeneratorPages: MetadataRoute.Sitemap = allBusinessNameGenerators.map((tool) => ({
+    url: `${baseUrl}/free-tools/business-name-generator/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
 
   try {
     // Fetch all dynamic content from DatoCMS in parallel
@@ -240,7 +267,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     }));
 
-    return [...staticPages, ...blogPages, ...caseStudyPages, ...promptCategoryPages, ...promptPages];
+    return [...staticPages, ...freeToolPages, ...businessNameGeneratorPages, ...blogPages, ...caseStudyPages, ...promptCategoryPages, ...promptPages];
   } catch (error) {
     console.error('Error generating sitemap:', error);
     // Return static pages only if blog fetch fails

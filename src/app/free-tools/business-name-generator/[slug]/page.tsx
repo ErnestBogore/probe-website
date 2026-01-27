@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getToolBySlug, getAllTools } from '@/lib/ai-tools/tools-config';
-import { ToolPage } from '@/components/ai-tools/ToolPage';
+import { getBusinessNameGeneratorBySlug, getAllBusinessNameGenerators } from '@/lib/ai-tools/business-name-generators-config';
+import { BusinessNameGeneratorPage } from '@/components/ai-tools/BusinessNameGeneratorPage';
 
 function generateToolFAQSchema(tool: { title: string; slug: string; faqs: { question: string; answer: string }[] }) {
   return {
@@ -10,7 +10,7 @@ function generateToolFAQSchema(tool: { title: string; slug: string; faqs: { ques
       {
         "@type": "WebPage",
         "name": tool.title,
-        "url": `https://www.tryanalyze.ai/free-tools/${tool.slug}`
+        "url": `https://www.tryanalyze.ai/free-tools/business-name-generator/${tool.slug}`
       },
       {
         "@type": "FAQPage",
@@ -32,7 +32,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const tools = getAllTools();
+  const tools = getAllBusinessNameGenerators();
   return tools.map((tool) => ({
     slug: tool.slug,
   }));
@@ -40,7 +40,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const tool = getToolBySlug(slug);
+  const tool = getBusinessNameGeneratorBySlug(slug);
 
   if (!tool) {
     return {
@@ -54,11 +54,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${tool.title} | Analyze`,
       description: tool.metaDescription,
-      url: `https://www.tryanalyze.ai/free-tools/${tool.slug}`,
+      url: `https://www.tryanalyze.ai/free-tools/business-name-generator/${tool.slug}`,
       type: 'website',
       images: [
         {
-          url: 'https://www.tryanalyze.ai/og-free-ai-marketing-tools.png',
+          url: 'https://www.tryanalyze.ai/og-free-business-name-generator.png',
           width: 1200,
           height: 630,
           alt: `${tool.title}`,
@@ -69,14 +69,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: 'summary_large_image',
       title: `${tool.title} | Analyze`,
       description: tool.metaDescription,
-      images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
+      images: ['https://www.tryanalyze.ai/og-free-business-name-generator.png'],
     },
   };
 }
 
-export default async function DynamicToolPage({ params }: PageProps) {
+export default async function DynamicBusinessNameGeneratorPage({ params }: PageProps) {
   const { slug } = await params;
-  const tool = getToolBySlug(slug);
+  const tool = getBusinessNameGeneratorBySlug(slug);
 
   if (!tool) {
     notFound();
@@ -92,7 +92,7 @@ export default async function DynamicToolPage({ params }: PageProps) {
           __html: JSON.stringify(structuredData)
         }}
       />
-      <ToolPage tool={tool} />
+      <BusinessNameGeneratorPage tool={tool} />
     </>
   );
 }

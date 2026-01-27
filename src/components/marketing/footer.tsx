@@ -52,6 +52,7 @@ const defaultSections = [
       { name: "LLM.txt Generator", href: "/free-tools/llm-txt-generator-tool" },
       { name: "Perplexity AI Alternative", href: "/free-tools/perplexity-ai-alternative" },
       { name: "AI Prompts Library", href: "/prompts" },
+      { name: "More free marketing tools", href: "/free-tools" },
     ],
   },
   {

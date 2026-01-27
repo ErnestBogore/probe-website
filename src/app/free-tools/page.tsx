@@ -18,7 +18,25 @@ import {
   Smile,
   Shield,
   Globe,
-  Zap
+  Zap,
+  Image,
+  Lightbulb,
+  Video,
+  Building2,
+  Briefcase,
+  Package,
+  Megaphone,
+  MousePointerClick,
+  ShoppingBag,
+  Layout,
+  FileSignature,
+  AtSign,
+  Instagram,
+  Music2,
+  Youtube,
+  MessageSquare,
+  Users,
+  Repeat
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -29,26 +47,74 @@ export const metadata: Metadata = {
     description: 'Access our collection of free AI writing tools including paragraph generators, paraphrasers, summarizers, grammar checkers, and more. No signup required.',
     url: 'https://www.tryanalyze.ai/free-tools',
     type: 'website',
+    images: [
+      {
+        url: 'https://www.tryanalyze.ai/og-free-ai-marketing-tools.png',
+        width: 1200,
+        height: 630,
+        alt: 'Free AI Writing Tools',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free AI Writing Tools | Analyze',
+    description: 'Access our collection of free AI writing tools including paragraph generators, paraphrasers, summarizers, grammar checkers, and more. No signup required.',
+    images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },
 };
 
 const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  // Writing Tools
   'paragraph-generator': FileText,
   'paragraph-rewriter': RefreshCw,
-  'meta-description-generator': Search,
-  'paraphrasing-tool': Type,
-  'summarizer': ListChecks,
-  'blog-title-generator': Sparkles,
+  'sentence-rewriter': PenTool,
+  'conclusion-generator': FileText,
   'outline-generator': ListChecks,
+  'blog-title-generator': Sparkles,
+  'rewording-tool': Repeat,
+  // SEO & Content Marketing Tools
+  'meta-description-generator': Search,
+  'summarizer': ListChecks,
+  'paraphrasing-tool': Type,
+  'blog-post-ideas-generator': Lightbulb,
+  'seo-title-generator': Search,
+  'image-alt-text-generator': Image,
+  'content-idea-generator': Lightbulb,
+  'video-script-generator': Video,
+  // Utility Tools
+  'grammar-checker': CheckCircle,
   'ai-content-detector': Search,
   'ai-text-humanizer': Sparkles,
-  'conclusion-generator': FileText,
-  'grammar-checker': CheckCircle,
-  'sentence-rewriter': PenTool,
+  'plagiarism-checker': Shield,
   'acronym-generator': Hash,
   'lorem-ipsum-generator': FileCode,
   'emoji-translator': Smile,
-  'plagiarism-checker': Shield,
+  // Business & Marketing Tools
+  'brand-name-generator': Building2,
+  'business-name-generator': Briefcase,
+  'product-name-generator': Package,
+  'slogan-generator': Megaphone,
+  'google-ads-copy-generator': MousePointerClick,
+  'product-description-generator': ShoppingBag,
+  'landing-page-generator': Layout,
+  'website-copy-generator': Globe,
+  'resignation-letter-generator': FileSignature,
+  // Social Media Tools
+  'hook-generator': Zap,
+  'social-media-bio-generator': Users,
+  'instagram-bio-generator': Instagram,
+  'social-media-caption-generator': MessageSquare,
+  'instagram-caption-generator': Instagram,
+  'social-media-hashtag-generator': Hash,
+  'instagram-hashtag-generator': Instagram,
+  'social-media-username-generator': AtSign,
+  'instagram-name-generator': Instagram,
+  'tiktok-hashtag-generator': Music2,
+  'tiktok-username-generator': Music2,
+  'youtube-channel-description-generator': Youtube,
+  'youtube-name-generator': Youtube,
+  'youtube-video-description-generator': Youtube,
 };
 
 const standaloneTools = [
@@ -73,9 +139,11 @@ const standaloneTools = [
 ];
 
 // Categorize tools
-const writingTools = ['paragraph-generator', 'paragraph-rewriter', 'sentence-rewriter', 'conclusion-generator', 'outline-generator', 'blog-title-generator'];
-const seoTools = ['meta-description-generator', 'summarizer', 'paraphrasing-tool'];
+const writingTools = ['paragraph-generator', 'paragraph-rewriter', 'sentence-rewriter', 'conclusion-generator', 'outline-generator', 'blog-title-generator', 'rewording-tool'];
+const seoTools = ['meta-description-generator', 'summarizer', 'paraphrasing-tool', 'blog-post-ideas-generator', 'seo-title-generator', 'image-alt-text-generator', 'content-idea-generator', 'video-script-generator'];
 const utilityTools = ['grammar-checker', 'ai-content-detector', 'ai-text-humanizer', 'plagiarism-checker', 'acronym-generator', 'lorem-ipsum-generator', 'emoji-translator'];
+const businessTools = ['brand-name-generator', 'business-name-generator', 'product-name-generator', 'slogan-generator', 'google-ads-copy-generator', 'product-description-generator', 'landing-page-generator', 'website-copy-generator', 'resignation-letter-generator'];
+const socialMediaTools = ['hook-generator', 'social-media-bio-generator', 'instagram-bio-generator', 'social-media-caption-generator', 'instagram-caption-generator', 'social-media-hashtag-generator', 'instagram-hashtag-generator', 'social-media-username-generator', 'instagram-name-generator', 'tiktok-hashtag-generator', 'tiktok-username-generator', 'youtube-channel-description-generator', 'youtube-name-generator', 'youtube-video-description-generator'];
 
 export default function FreeToolsPage() {
   const allTools = getAllTools();
@@ -87,6 +155,8 @@ export default function FreeToolsPage() {
   const writing = getToolsByCategory(writingTools);
   const seo = getToolsByCategory(seoTools);
   const utility = getToolsByCategory(utilityTools);
+  const business = getToolsByCategory(businessTools);
+  const socialMedia = getToolsByCategory(socialMediaTools);
 
   return (
     <main className="bg-gray-100">
@@ -252,6 +322,98 @@ export default function FreeToolsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {utility.map((tool) => {
+              const Icon = toolIcons[tool.slug] || FileText;
+              return (
+                <Link
+                  key={tool.slug}
+                  href={`/free-tools/${tool.slug}`}
+                  className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+                >
+                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                    <Icon className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 line-clamp-2">
+                      {tool.description}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Business & Marketing Tools Section */}
+      <section className="py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative flex items-center justify-center mb-10">
+            <DashedLine className="text-muted-foreground" />
+            <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+              BUSINESS & MARKETING
+            </span>
+          </div>
+
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
+              Business & Marketing Tools
+            </h2>
+            <p className="text-gray-600">
+              Generate brand names, slogans, product descriptions, and marketing copy.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {business.map((tool) => {
+              const Icon = toolIcons[tool.slug] || FileText;
+              return (
+                <Link
+                  key={tool.slug}
+                  href={`/free-tools/${tool.slug}`}
+                  className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+                >
+                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                    <Icon className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 line-clamp-2">
+                      {tool.description}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Social Media Tools Section */}
+      <section className="py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative flex items-center justify-center mb-10">
+            <DashedLine className="text-muted-foreground" />
+            <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+              SOCIAL MEDIA
+            </span>
+          </div>
+
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
+              Social Media Tools
+            </h2>
+            <p className="text-gray-600">
+              Create engaging bios, captions, hashtags, and usernames for all platforms.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {socialMedia.map((tool) => {
               const Icon = toolIcons[tool.slug] || FileText;
               return (
                 <Link
