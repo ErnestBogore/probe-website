@@ -6,6 +6,11 @@ import { getAllToolsFr } from '@/lib/ai-tools/i18n/tools-config.fr';
 import { getAllToolsDe } from '@/lib/ai-tools/i18n/tools-config.de';
 import { getAllToolsEs } from '@/lib/ai-tools/i18n/tools-config.es';
 import { getAllToolsPt } from '@/lib/ai-tools/i18n/tools-config.pt';
+import { getAllToolsIt } from '@/lib/ai-tools/i18n/tools-config.it';
+import { getAllToolsJa } from '@/lib/ai-tools/i18n/tools-config.ja';
+import { getAllToolsZh } from '@/lib/ai-tools/i18n/tools-config.zh';
+import { getAllToolsKo } from '@/lib/ai-tools/i18n/tools-config.ko';
+import { getAllToolsTr } from '@/lib/ai-tools/i18n/tools-config.tr';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.tryanalyze.ai';
@@ -231,6 +236,36 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/free-tools/it`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/free-tools/ja`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/free-tools/zh`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/free-tools/ko`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/free-tools/tr`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
   ];
 
   // Generate free tools pages (from tools-config)
@@ -273,6 +308,51 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allFreeToolsPt = getAllToolsPt();
   const freeToolPagesPt: MetadataRoute.Sitemap = allFreeToolsPt.map((tool) => ({
     url: `${baseUrl}/free-tools/pt/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate Italian free tools pages
+  const allFreeToolsIt = getAllToolsIt();
+  const freeToolPagesIt: MetadataRoute.Sitemap = allFreeToolsIt.map((tool) => ({
+    url: `${baseUrl}/free-tools/it/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate Japanese free tools pages
+  const allFreeToolsJa = getAllToolsJa();
+  const freeToolPagesJa: MetadataRoute.Sitemap = allFreeToolsJa.map((tool) => ({
+    url: `${baseUrl}/free-tools/ja/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate Chinese free tools pages
+  const allFreeToolsZh = getAllToolsZh();
+  const freeToolPagesZh: MetadataRoute.Sitemap = allFreeToolsZh.map((tool) => ({
+    url: `${baseUrl}/free-tools/zh/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate Korean free tools pages
+  const allFreeToolsKo = getAllToolsKo();
+  const freeToolPagesKo: MetadataRoute.Sitemap = allFreeToolsKo.map((tool) => ({
+    url: `${baseUrl}/free-tools/ko/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate Turkish free tools pages
+  const allFreeToolsTr = getAllToolsTr();
+  const freeToolPagesTr: MetadataRoute.Sitemap = allFreeToolsTr.map((tool) => ({
+    url: `${baseUrl}/free-tools/tr/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
@@ -331,7 +411,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     }));
 
-    return [...staticPages, ...freeToolPages, ...freeToolPagesFr, ...freeToolPagesDe, ...freeToolPagesEs, ...freeToolPagesPt, ...businessNameGeneratorPages, ...blogPages, ...caseStudyPages, ...promptCategoryPages, ...promptPages];
+    return [...staticPages, ...freeToolPages, ...freeToolPagesFr, ...freeToolPagesDe, ...freeToolPagesEs, ...freeToolPagesPt, ...freeToolPagesIt, ...freeToolPagesJa, ...freeToolPagesZh, ...freeToolPagesKo, ...freeToolPagesTr, ...businessNameGeneratorPages, ...blogPages, ...caseStudyPages, ...promptCategoryPages, ...promptPages];
   } catch (error) {
     console.error('Error generating sitemap:', error);
     // Return static pages only if blog fetch fails

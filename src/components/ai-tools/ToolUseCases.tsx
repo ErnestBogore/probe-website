@@ -30,6 +30,26 @@ const translations: Record<string, { sectionLabel: string; heading: (toolName: s
     sectionLabel: 'COMO VOCÊ PODE USAR ESTA FERRAMENTA',
     heading: (toolName: string) => `Casos de uso do ${toolName} da Analyze`,
   },
+  it: {
+    sectionLabel: 'COME PUOI USARE QUESTO STRUMENTO',
+    heading: (toolName: string) => `Casi d'uso del ${toolName} di Analyze`,
+  },
+  ja: {
+    sectionLabel: 'このツールの使い方',
+    heading: (toolName: string) => `Analyzeの${toolName}の活用例`,
+  },
+  zh: {
+    sectionLabel: '如何使用此工具',
+    heading: (toolName: string) => `Analyze ${toolName}的使用案例`,
+  },
+  ko: {
+    sectionLabel: '이 도구 사용 방법',
+    heading: (toolName: string) => `Analyze ${toolName}의 사용 사례`,
+  },
+  tr: {
+    sectionLabel: 'BU ARACI NASIL KULLANABİLİRSİNİZ',
+    heading: (toolName: string) => `Analyze ${toolName} Kullanım Örnekleri`,
+  },
 };
 
 export function ToolUseCases({ toolName, useCases, locale }: ToolUseCasesProps) {

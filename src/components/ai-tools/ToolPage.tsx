@@ -37,6 +37,26 @@ const translations: Record<string, { faqHeading: string; faqDescription: (toolNa
     faqHeading: 'Perguntas Frequentes',
     faqDescription: (toolName: string) => `Perguntas comuns sobre nossa ferramenta ${toolName}.`,
   },
+  it: {
+    faqHeading: 'Domande Frequenti',
+    faqDescription: (toolName: string) => `Domande comuni sul nostro strumento ${toolName}.`,
+  },
+  ja: {
+    faqHeading: 'よくある質問',
+    faqDescription: (toolName: string) => `${toolName}ツールに関するよくある質問。`,
+  },
+  zh: {
+    faqHeading: '常见问题',
+    faqDescription: (toolName: string) => `关于${toolName}工具的常见问题。`,
+  },
+  ko: {
+    faqHeading: '자주 묻는 질문',
+    faqDescription: (toolName: string) => `${toolName} 도구에 대한 자주 묻는 질문입니다.`,
+  },
+  tr: {
+    faqHeading: 'Sıkça Sorulan Sorular',
+    faqDescription: (toolName: string) => `${toolName} aracı hakkında sıkça sorulan sorular.`,
+  },
 };
 
 export function ToolPage({ tool, locale, englishSlug }: ToolPageProps) {

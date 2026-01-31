@@ -49,6 +49,16 @@ export async function POST(req: Request) {
       systemPrompt += '\n\nIMPORTANT: You MUST generate ALL output content in Spanish (español). All text, titles, descriptions, examples, and explanations must be written in Spanish.';
     } else if (locale === 'pt') {
       systemPrompt += '\n\nIMPORTANT: You MUST generate ALL output content in Portuguese (português). All text, titles, descriptions, examples, and explanations must be written in Portuguese.';
+    } else if (locale === 'it') {
+      systemPrompt += '\n\nIMPORTANT: You MUST generate ALL output content in Italian (italiano). All text, titles, descriptions, examples, and explanations must be written in Italian.';
+    } else if (locale === 'ja') {
+      systemPrompt += '\n\nIMPORTANT: You MUST generate ALL output content in Japanese (日本語). All text, titles, descriptions, examples, and explanations must be written in Japanese.';
+    } else if (locale === 'zh') {
+      systemPrompt += '\n\nIMPORTANT: You MUST generate ALL output content in Chinese (中文). All text, titles, descriptions, examples, and explanations must be written in Chinese.';
+    } else if (locale === 'ko') {
+      systemPrompt += '\n\nIMPORTANT: You MUST generate ALL output content in Korean (한국어). All text, titles, descriptions, examples, and explanations must be written in Korean.';
+    } else if (locale === 'tr') {
+      systemPrompt += '\n\nIMPORTANT: You MUST generate ALL output content in Turkish (Türkçe). All text, titles, descriptions, examples, and explanations must be written in Turkish.';
     }
 
     const result = await streamText({

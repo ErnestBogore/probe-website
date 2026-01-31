@@ -7,6 +7,11 @@ import { getAllToolsFr } from '@/lib/ai-tools/i18n/tools-config.fr';
 import { getAllToolsDe } from '@/lib/ai-tools/i18n/tools-config.de';
 import { getAllToolsEs } from '@/lib/ai-tools/i18n/tools-config.es';
 import { getAllToolsPt } from '@/lib/ai-tools/i18n/tools-config.pt';
+import { getAllToolsIt } from '@/lib/ai-tools/i18n/tools-config.it';
+import { getAllToolsJa } from '@/lib/ai-tools/i18n/tools-config.ja';
+import { getAllToolsZh } from '@/lib/ai-tools/i18n/tools-config.zh';
+import { getAllToolsKo } from '@/lib/ai-tools/i18n/tools-config.ko';
+import { getAllToolsTr } from '@/lib/ai-tools/i18n/tools-config.tr';
 import { ArrowRight, FileText, RefreshCw, Search, Type, ListChecks, Sparkles, PenTool, CheckCircle, Hash, FileCode, Smile, Shield, Lightbulb, Video, ImageIcon } from 'lucide-react';
 import { DashedLine } from '@/components/dashed-line';
 
@@ -64,6 +69,31 @@ const translations: Record<string, { sectionLabel: string; heading: string; allT
     sectionLabel: 'MAIS FERRAMENTAS GRÁTIS',
     heading: 'Outras ferramentas de escrita que podem ajudar',
     allToolsLink: 'Todas as ferramentas IA',
+  },
+  it: {
+    sectionLabel: 'ALTRI STRUMENTI GRATUITI',
+    heading: 'Altri strumenti di scrittura che potrebbero esserti utili',
+    allToolsLink: 'Tutti gli strumenti IA',
+  },
+  ja: {
+    sectionLabel: 'その他の無料ツール',
+    heading: 'お役に立つかもしれない他のライティングツール',
+    allToolsLink: 'すべてのAIツール',
+  },
+  zh: {
+    sectionLabel: '更多免费工具',
+    heading: '可能对您有帮助的其他写作工具',
+    allToolsLink: '所有AI工具',
+  },
+  ko: {
+    sectionLabel: '더 많은 무료 도구',
+    heading: '도움이 될 수 있는 다른 글쓰기 도구',
+    allToolsLink: '모든 AI 도구',
+  },
+  tr: {
+    sectionLabel: 'DAHA FAZLA ÜCRETSIZ ARAÇ',
+    heading: 'Yararlı olabilecek diğer yazma araçları',
+    allToolsLink: 'Tüm AI Araçları',
   },
 };
 
@@ -133,6 +163,11 @@ function getToolsByLocale(locale?: string): ToolConfig[] {
   if (locale === 'de') return getAllToolsDe();
   if (locale === 'es') return getAllToolsEs();
   if (locale === 'pt') return getAllToolsPt();
+  if (locale === 'it') return getAllToolsIt();
+  if (locale === 'ja') return getAllToolsJa();
+  if (locale === 'zh') return getAllToolsZh();
+  if (locale === 'ko') return getAllToolsKo();
+  if (locale === 'tr') return getAllToolsTr();
   return getAllTools();
 }
 

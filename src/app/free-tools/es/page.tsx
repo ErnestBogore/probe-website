@@ -255,11 +255,28 @@ export default function FreeToolsEsPage() {
                   Explorar Herramientas
                 </a>
               </Button>
-              <Button asChild variant="outline">
-                <Link href="/free-tools" className="border-gray-300">
-                  English Version
-                </Link>
-              </Button>
+            </div>
+
+            {/* Language Navigation */}
+            <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
+              <span className="text-sm text-gray-500">Otros idiomas:</span>
+              <Link href="/free-tools" className="text-sm text-purple-600 hover:text-purple-800 hover:underline">EN</Link>
+              <span className="text-gray-300">|</span>
+              <Link href="/free-tools/fr" className="text-sm text-purple-600 hover:text-purple-800 hover:underline">FR</Link>
+              <span className="text-gray-300">|</span>
+              <Link href="/free-tools/de" className="text-sm text-purple-600 hover:text-purple-800 hover:underline">DE</Link>
+              <span className="text-gray-300">|</span>
+              <Link href="/free-tools/pt" className="text-sm text-purple-600 hover:text-purple-800 hover:underline">PT</Link>
+              <span className="text-gray-300">|</span>
+              <Link href="/free-tools/it" className="text-sm text-purple-600 hover:text-purple-800 hover:underline">IT</Link>
+              <span className="text-gray-300">|</span>
+              <Link href="/free-tools/ja" className="text-sm text-purple-600 hover:text-purple-800 hover:underline">JA</Link>
+              <span className="text-gray-300">|</span>
+              <Link href="/free-tools/zh" className="text-sm text-purple-600 hover:text-purple-800 hover:underline">ZH</Link>
+              <span className="text-gray-300">|</span>
+              <Link href="/free-tools/ko" className="text-sm text-purple-600 hover:text-purple-800 hover:underline">KO</Link>
+              <span className="text-gray-300">|</span>
+              <Link href="/free-tools/tr" className="text-sm text-purple-600 hover:text-purple-800 hover:underline">TR</Link>
             </div>
           </div>
         </div>
