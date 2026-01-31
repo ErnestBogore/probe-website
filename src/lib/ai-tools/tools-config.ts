@@ -6882,6 +6882,121 @@ If multiple variants requested:
       { question: 'Should I always accept the reworded version?', answer: 'No, always review and edit. AI rewording is a starting point that may need refinement. Use your judgment to ensure the final version accurately reflects your voice, maintains accuracy, and fits your specific context.' },
     ],
   },
+
+  'youtube-video-title-generator': {
+    slug: 'youtube-video-title-generator',
+    name: 'YouTube Video Title Generator',
+    title: 'Free AI YouTube Video Title Generator',
+    description: 'Generate click-worthy YouTube video titles that get views. Our AI creates SEO-optimized titles that attract viewers and boost your video performance.',
+    metaDescription: 'Generate click-worthy YouTube video titles that get views. Our AI creates SEO-optimized titles that attract viewers and boost your video performance.',
+    inputLabel: 'Describe your video topic...',
+    inputPlaceholder: 'e.g. Lightroom tutorial for editing portrait photos',
+    buttonText: 'Generate Titles',
+    maxLength: 2048,
+    options: [
+      {
+        name: 'style',
+        label: 'Title style',
+        choices: ['Informative/Clear', 'Catchy/Clickbait', 'Question', 'List/Numbers', 'How-to'],
+        default: 'Informative/Clear',
+        type: 'select',
+      },
+      {
+        name: 'video_type',
+        label: 'Video type',
+        choices: ['Tutorial/Educational', 'Entertainment/Vlog', 'Review/Product', 'Gaming', 'News/Commentary'],
+        default: 'Tutorial/Educational',
+        type: 'select',
+      },
+    ],
+    systemPrompt: `You are an expert YouTube content strategist specializing in creating compelling, click-worthy video titles. Your role is to generate title ideas that maximize click-through rates while accurately representing video content and following YouTube SEO best practices.
+
+## YOUTUBE TITLE FUNDAMENTALS
+**Character Limit**: 100 characters (60-70 recommended for full visibility)
+**SEO Impact**: Titles are the primary ranking factor for YouTube search
+**CTR Impact**: Titles directly affect whether viewers click on your video
+
+## EFFECTIVE TITLE PATTERNS
+
+### Pattern 1: How-To/Tutorial
+- "How to [Achieve Result] in [Timeframe]"
+- "The Complete Guide to [Topic]"
+- "[Number] Ways to [Achieve Result]"
+
+### Pattern 2: List/Number-Based
+- "[Number] [Things] You Didn't Know About [Topic]"
+- "Top [Number] [Category] of [Year]"
+- "[Number] Mistakes to Avoid When [Doing Something]"
+
+### Pattern 3: Question-Based
+- "Why Does [Thing] [Do Something]?"
+- "Is [Thing] Worth It in [Year]?"
+- "What Happens When [Scenario]?"
+
+### Pattern 4: Curiosity/Hook
+- "I Tried [Thing] for [Time Period] - Here's What Happened"
+- "The Truth About [Topic]"
+- "[Unexpected Result] Changed Everything"
+
+### Pattern 5: Direct/Clear
+- "[Topic] Explained in [Time]"
+- "[Product] Review: [Key Verdict]"
+- "[Topic] Tutorial for Beginners"
+
+## TITLE OPTIMIZATION TIPS
+1. **Front-load keywords**: Put main keyword in first 3-4 words
+2. **Create curiosity**: Make viewers want to know more
+3. **Be specific**: Vague titles get fewer clicks
+4. **Use numbers**: Specific numbers outperform general claims
+5. **Match search intent**: Title should match what people search for
+6. **Avoid clickbait**: Title must accurately represent content
+7. **Consider thumbnail**: Title + thumbnail work together
+
+## POWER WORDS FOR CTR
+- Ultimate, Complete, Essential
+- Secrets, Hidden, Unknown
+- Mistakes, Avoid, Never
+- Easy, Simple, Quick
+- Proven, Tested, Works
+- Free, Best, Top
+
+Style: {{style}}
+Video Type: {{video_type}}
+
+## OUTPUT FORMAT
+Generate 8-10 title options that are:
+- Under 60 characters when possible
+- Keyword-optimized
+- Click-worthy but not misleading
+- Appropriate for the content type
+- Varied in approach
+
+For each title, briefly explain why it works.`,
+    useCases: [
+      {
+        title: 'Click-through rate optimization',
+        description: 'YouTube creators use the Video Title Generator to craft titles that maximize click-through rates. By entering video topic and target keywords, the tool generates title options designed to attract viewers while accurately representing content.',
+      },
+      {
+        title: 'Video SEO improvement',
+        description: 'YouTubers looking to improve search rankings use the generator to create keyword-optimized titles. The tool helps identify the best ways to structure titles for search visibility while maintaining viewer appeal.',
+      },
+      {
+        title: 'A/B testing titles',
+        description: 'Creators testing different title approaches use the generator to produce multiple variations. This enables testing which title styles resonate best with their audience and generate the most views.',
+      },
+    ],
+    faqs: [
+      { question: 'How long should a YouTube video title be?', answer: 'YouTube allows up to 100 characters, but aim for 60-70 characters for full visibility in search results. Longer titles may get cut off depending on device and context.' },
+      { question: 'How do I create catchy YouTube titles?', answer: 'Use power words, numbers, questions, or curiosity. Be specific about what viewers will get. Combine clarity with intrigue—viewers should know what the video is about while wanting to learn more.' },
+      { question: 'Does the title affect YouTube SEO?', answer: 'Yes, titles are one of the most important ranking factors. Include your main keyword in the first 3-4 words and use language that matches what viewers search for.' },
+      { question: 'Should I use capitalization in my titles?', answer: 'Title case (capitalizing first letter of each word) is common and professional. ALL CAPS can look spammy. Sentence case works for casual titles. Be consistent with your brand style.' },
+      { question: 'How do I avoid clickbait titles?', answer: 'Ensure your title accurately represents the content. Curiosity is fine; deception is not. Viewers who click and leave quickly hurt your ranking.' },
+      { question: 'Can I change my YouTube titles after publishing?', answer: 'Yes, you can change titles anytime. Some creators test different titles to optimize performance. However, frequent changes may temporarily affect ranking.' },
+      { question: 'Should I include the year in my titles?', answer: 'Including the year (e.g., "Best Tools of 2024") can boost clicks for timely content but will require updates. Use for time-sensitive topics; avoid for evergreen content.' },
+      { question: 'How does the title work with the thumbnail?', answer: 'Title and thumbnail should complement each other, not repeat. If your thumbnail shows a reaction, your title can explain why. Together they should tell a compelling story.' },
+    ],
+  },
 };
 
 export function getToolBySlug(slug: string): ToolConfig | undefined {

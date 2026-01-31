@@ -7,7 +7,7 @@ export const runtime = 'edge';
 
 export async function POST(req: Request) {
   try {
-    const { toolSlug, input, options } = await req.json();
+    const { toolSlug, input, options, locale } = await req.json();
 
     if (!toolSlug || !input) {
       return new Response(
@@ -38,6 +38,17 @@ export async function POST(req: Request) {
         );
       }
       systemPrompt = buildPrompt(tool.systemPrompt, options || {});
+    }
+
+    // Add localized output instruction based on locale
+    if (locale === 'fr') {
+      systemPrompt += '\n\nIMPORTANT: You MUST generate ALL output content in French (français). All text, titles, descriptions, examples, and explanations must be written in French.';
+    } else if (locale === 'de') {
+      systemPrompt += '\n\nIMPORTANT: You MUST generate ALL output content in German (Deutsch). All text, titles, descriptions, examples, and explanations must be written in German.';
+    } else if (locale === 'es') {
+      systemPrompt += '\n\nIMPORTANT: You MUST generate ALL output content in Spanish (español). All text, titles, descriptions, examples, and explanations must be written in Spanish.';
+    } else if (locale === 'pt') {
+      systemPrompt += '\n\nIMPORTANT: You MUST generate ALL output content in Portuguese (português). All text, titles, descriptions, examples, and explanations must be written in Portuguese.';
     }
 
     const result = await streamText({

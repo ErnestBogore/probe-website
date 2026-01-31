@@ -3,6 +3,10 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { getAllTools, ToolConfig } from '@/lib/ai-tools/tools-config';
+import { getAllToolsFr } from '@/lib/ai-tools/i18n/tools-config.fr';
+import { getAllToolsDe } from '@/lib/ai-tools/i18n/tools-config.de';
+import { getAllToolsEs } from '@/lib/ai-tools/i18n/tools-config.es';
+import { getAllToolsPt } from '@/lib/ai-tools/i18n/tools-config.pt';
 import { ArrowRight, FileText, RefreshCw, Search, Type, ListChecks, Sparkles, PenTool, CheckCircle, Hash, FileCode, Smile, Shield, Lightbulb, Video, ImageIcon } from 'lucide-react';
 import { DashedLine } from '@/components/dashed-line';
 
@@ -32,10 +36,43 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
 
 interface RelatedToolsProps {
   currentToolSlug: string;
+  locale?: string;
 }
 
+const translations: Record<string, { sectionLabel: string; heading: string; allToolsLink: string }> = {
+  en: {
+    sectionLabel: 'MORE FREE TOOLS',
+    heading: 'Other writing tools you may find helpful',
+    allToolsLink: 'All AI tools',
+  },
+  fr: {
+    sectionLabel: 'PLUS D\'OUTILS GRATUITS',
+    heading: 'Autres outils de rédaction qui pourraient vous être utiles',
+    allToolsLink: 'Tous les outils IA',
+  },
+  de: {
+    sectionLabel: 'WEITERE KOSTENLOSE WERKZEUGE',
+    heading: 'Andere Schreibwerkzeuge, die Ihnen helfen könnten',
+    allToolsLink: 'Alle KI-Werkzeuge',
+  },
+  es: {
+    sectionLabel: 'MÁS HERRAMIENTAS GRATIS',
+    heading: 'Otras herramientas de escritura que podrían ayudarte',
+    allToolsLink: 'Todas las herramientas IA',
+  },
+  pt: {
+    sectionLabel: 'MAIS FERRAMENTAS GRÁTIS',
+    heading: 'Outras ferramentas de escrita que podem ajudar',
+    allToolsLink: 'Todas as ferramentas IA',
+  },
+};
+
 // Helper component to render the tools grid
-function RelatedToolsContent({ tools }: { tools: ToolConfig[] }) {
+function RelatedToolsContent({ tools, locale }: { tools: ToolConfig[]; locale?: string }) {
+  const t = translations[locale || 'en'] || translations.en;
+  const toolsBasePath = locale ? `/free-tools/${locale}` : '/free-tools';
+  const allToolsPath = locale ? `/free-tools/${locale}` : '/free-tools';
+  
   return (
     <section className="py-16 lg:py-20 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,20 +80,20 @@ function RelatedToolsContent({ tools }: { tools: ToolConfig[] }) {
         <div className="relative flex items-center justify-center mb-10">
           <DashedLine className="text-muted-foreground" />
           <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
-            MORE FREE TOOLS
+            {t.sectionLabel}
           </span>
         </div>
 
         {/* Centered heading */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
-            Other writing tools you may find helpful
+            {t.heading}
           </h2>
           <Link 
-            href="/free-tools" 
+            href={allToolsPath} 
             className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors"
           >
-            All AI tools
+            {t.allToolsLink}
             <ArrowRight className="ml-1 w-4 h-4" />
           </Link>
         </div>
@@ -68,7 +105,7 @@ function RelatedToolsContent({ tools }: { tools: ToolConfig[] }) {
             return (
               <Link
                 key={tool.slug}
-                href={`/free-tools/${tool.slug}`}
+                href={`${toolsBasePath}/${tool.slug}`}
                 className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
@@ -91,20 +128,28 @@ function RelatedToolsContent({ tools }: { tools: ToolConfig[] }) {
   );
 }
 
-export function RelatedTools({ currentToolSlug }: RelatedToolsProps) {
+function getToolsByLocale(locale?: string): ToolConfig[] {
+  if (locale === 'fr') return getAllToolsFr();
+  if (locale === 'de') return getAllToolsDe();
+  if (locale === 'es') return getAllToolsEs();
+  if (locale === 'pt') return getAllToolsPt();
+  return getAllTools();
+}
+
+export function RelatedTools({ currentToolSlug, locale }: RelatedToolsProps) {
   const [relatedTools, setRelatedTools] = useState<ToolConfig[]>(() => {
     // Initialize with deterministic order for SSR
-    const allTools = getAllTools();
+    const allTools = getToolsByLocale(locale);
     return allTools.filter(tool => tool.slug !== currentToolSlug).slice(0, 12);
   });
 
   useEffect(() => {
     // Shuffle on client side only
-    const allTools = getAllTools();
+    const allTools = getToolsByLocale(locale);
     const otherTools = allTools.filter(tool => tool.slug !== currentToolSlug);
     const shuffled = [...otherTools].sort(() => Math.random() - 0.5);
     setRelatedTools(shuffled.slice(0, 12));
-  }, [currentToolSlug]);
+  }, [currentToolSlug, locale]);
 
-  return <RelatedToolsContent tools={relatedTools} />;
+  return <RelatedToolsContent tools={relatedTools} locale={locale} />;
 }

@@ -11,11 +11,40 @@ import { ToolConfig } from '@/lib/ai-tools/tools-config';
 
 interface ToolPageProps {
   tool: ToolConfig;
+  locale?: string;
+  englishSlug?: string;
 }
 
-export function ToolPage({ tool }: ToolPageProps) {
+// Translations for UI elements
+const translations: Record<string, { faqHeading: string; faqDescription: (toolName: string) => string }> = {
+  en: {
+    faqHeading: 'Frequently Asked Questions',
+    faqDescription: (toolName: string) => `Common questions about our ${toolName} tool.`,
+  },
+  fr: {
+    faqHeading: 'Questions Fréquemment Posées',
+    faqDescription: (toolName: string) => `Questions courantes sur notre outil ${toolName}.`,
+  },
+  de: {
+    faqHeading: 'Häufig Gestellte Fragen',
+    faqDescription: (toolName: string) => `Häufige Fragen zu unserem ${toolName} Werkzeug.`,
+  },
+  es: {
+    faqHeading: 'Preguntas Frecuentes',
+    faqDescription: (toolName: string) => `Preguntas comunes sobre nuestra herramienta ${toolName}.`,
+  },
+  pt: {
+    faqHeading: 'Perguntas Frequentes',
+    faqDescription: (toolName: string) => `Perguntas comuns sobre nossa ferramenta ${toolName}.`,
+  },
+};
+
+export function ToolPage({ tool, locale, englishSlug }: ToolPageProps) {
   const [output, setOutput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
+  // Use English slug for API calls (API expects English tool slugs)
+  const apiSlug = englishSlug || tool.slug;
 
   const handleSubmit = useCallback(async (input: string, options: Record<string, string>) => {
     setIsLoading(true);
@@ -28,9 +57,10 @@ export function ToolPage({ tool }: ToolPageProps) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          toolSlug: tool.slug,
+          toolSlug: apiSlug,
           input,
           options,
+          locale: locale || 'en',
         }),
       });
 
@@ -60,7 +90,7 @@ export function ToolPage({ tool }: ToolPageProps) {
     } finally {
       setIsLoading(false);
     }
-  }, [tool.slug]);
+  }, [apiSlug, locale]);
 
   const handleReset = useCallback(() => {
     setOutput('');
@@ -133,12 +163,12 @@ export function ToolPage({ tool }: ToolPageProps) {
       <HeroCta />
 
       {/* Use Cases Section */}
-      <ToolUseCases toolName={tool.name} useCases={tool.useCases} />
+      <ToolUseCases toolName={tool.name} useCases={tool.useCases} locale={locale} />
 
       {/* FAQ Section */}
       <FaqHomepage 
-        heading="Frequently Asked Questions"
-        description={`Common questions about our ${tool.name} tool.`}
+        heading={locale === 'fr' ? translations.fr.faqHeading : translations.en.faqHeading}
+        description={locale === 'fr' ? translations.fr.faqDescription(tool.name) : translations.en.faqDescription(tool.name)}
         items={tool.faqs.map((faq, index) => ({
           id: `faq-${index}`,
           question: faq.question,
@@ -147,7 +177,7 @@ export function ToolPage({ tool }: ToolPageProps) {
       />
 
       {/* Related Tools Section */}
-      <RelatedTools currentToolSlug={tool.slug} />
+      <RelatedTools currentToolSlug={tool.slug} locale={locale} />
 
       {/* Bottom CTA Section */}
       <HeroCta />

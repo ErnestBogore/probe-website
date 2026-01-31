@@ -2,6 +2,10 @@ import { MetadataRoute } from 'next';
 import { getAllBlogPosts, getAllPromptSlugs, getAllCategorySlugs } from '@/lib/datocms';
 import { getAllTools } from '@/lib/ai-tools/tools-config';
 import { getAllBusinessNameGenerators } from '@/lib/ai-tools/business-name-generators-config';
+import { getAllToolsFr } from '@/lib/ai-tools/i18n/tools-config.fr';
+import { getAllToolsDe } from '@/lib/ai-tools/i18n/tools-config.de';
+import { getAllToolsEs } from '@/lib/ai-tools/i18n/tools-config.es';
+import { getAllToolsPt } from '@/lib/ai-tools/i18n/tools-config.pt';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.tryanalyze.ai';
@@ -203,12 +207,72 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/free-tools/fr`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/free-tools/de`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/free-tools/es`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/free-tools/pt`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
   ];
 
   // Generate free tools pages (from tools-config)
   const allFreeTools = getAllTools();
   const freeToolPages: MetadataRoute.Sitemap = allFreeTools.map((tool) => ({
     url: `${baseUrl}/free-tools/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate French free tools pages
+  const allFreeToolsFr = getAllToolsFr();
+  const freeToolPagesFr: MetadataRoute.Sitemap = allFreeToolsFr.map((tool) => ({
+    url: `${baseUrl}/free-tools/fr/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate German free tools pages
+  const allFreeToolsDe = getAllToolsDe();
+  const freeToolPagesDe: MetadataRoute.Sitemap = allFreeToolsDe.map((tool) => ({
+    url: `${baseUrl}/free-tools/de/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate Spanish free tools pages
+  const allFreeToolsEs = getAllToolsEs();
+  const freeToolPagesEs: MetadataRoute.Sitemap = allFreeToolsEs.map((tool) => ({
+    url: `${baseUrl}/free-tools/es/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate Portuguese free tools pages
+  const allFreeToolsPt = getAllToolsPt();
+  const freeToolPagesPt: MetadataRoute.Sitemap = allFreeToolsPt.map((tool) => ({
+    url: `${baseUrl}/free-tools/pt/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
@@ -267,7 +331,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     }));
 
-    return [...staticPages, ...freeToolPages, ...businessNameGeneratorPages, ...blogPages, ...caseStudyPages, ...promptCategoryPages, ...promptPages];
+    return [...staticPages, ...freeToolPages, ...freeToolPagesFr, ...freeToolPagesDe, ...freeToolPagesEs, ...freeToolPagesPt, ...businessNameGeneratorPages, ...blogPages, ...caseStudyPages, ...promptCategoryPages, ...promptPages];
   } catch (error) {
     console.error('Error generating sitemap:', error);
     // Return static pages only if blog fetch fails

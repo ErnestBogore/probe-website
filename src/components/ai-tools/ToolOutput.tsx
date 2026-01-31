@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Copy, Check, RefreshCw } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface ToolOutputProps {
   output: string;
@@ -63,8 +64,8 @@ export function ToolOutput({ output, isLoading, onReset }: ToolOutputProps) {
             <span>Generating content...</span>
           </div>
         ) : (
-          <div className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-headings:font-semibold prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-p:text-gray-700 prose-p:leading-relaxed prose-strong:text-gray-900 prose-ul:text-gray-700 prose-ol:text-gray-700 prose-li:marker:text-purple-600">
-            <ReactMarkdown>
+          <div className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-headings:font-semibold prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-p:text-gray-700 prose-p:leading-relaxed prose-strong:text-gray-900 prose-ul:text-gray-700 prose-ol:text-gray-700 prose-li:marker:text-purple-600 prose-table:border-collapse prose-table:w-full prose-th:border prose-th:border-gray-300 prose-th:bg-gray-100 prose-th:px-4 prose-th:py-2 prose-th:text-left prose-th:font-semibold prose-td:border prose-td:border-gray-300 prose-td:px-4 prose-td:py-2">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {output}
             </ReactMarkdown>
             {isLoading && (

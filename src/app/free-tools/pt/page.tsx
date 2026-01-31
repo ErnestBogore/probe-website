@@ -1,0 +1,556 @@
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { getAllToolsPt } from '@/lib/ai-tools/i18n/tools-config.pt';
+import { DashedLine } from '@/components/dashed-line';
+import { Button } from '@/components/ui/button';
+import { HeroCta } from '@/components/marketing/hero-cta';
+import { 
+  FileText, 
+  RefreshCw, 
+  Search, 
+  Type, 
+  ListChecks, 
+  Sparkles,
+  PenTool,
+  CheckCircle,
+  Hash,
+  FileCode,
+  Smile,
+  Shield,
+  Globe,
+  Zap,
+  Image,
+  Lightbulb,
+  Video,
+  Building2,
+  Briefcase,
+  Package,
+  Megaphone,
+  MousePointerClick,
+  ShoppingBag,
+  Layout,
+  FileSignature,
+  AtSign,
+  Instagram,
+  Music2,
+  Youtube,
+  MessageSquare,
+  Users,
+  Repeat,
+} from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Ferramentas de Escrita com IA Grátis | Analyze',
+  description: 'Acesse nossa coleção de ferramentas de escrita com IA gratuitas: geradores de parágrafos, parafraseadores, resumidores, corretores gramaticais e mais. Sem necessidade de cadastro.',
+  alternates: {
+    canonical: 'https://www.tryanalyze.ai/free-tools/pt',
+    languages: {
+      'en': 'https://www.tryanalyze.ai/free-tools',
+      'pt': 'https://www.tryanalyze.ai/free-tools/pt',
+    },
+  },
+  openGraph: {
+    title: 'Ferramentas de Escrita com IA Grátis | Analyze',
+    description: 'Acesse nossa coleção de ferramentas de escrita com IA gratuitas: geradores de parágrafos, parafraseadores, resumidores, corretores gramaticais e mais. Sem necessidade de cadastro.',
+    url: 'https://www.tryanalyze.ai/free-tools/pt',
+    type: 'website',
+    locale: 'pt_BR',
+    images: [
+      {
+        url: 'https://www.tryanalyze.ai/og-free-ai-marketing-tools.png',
+        width: 1200,
+        height: 630,
+        alt: 'Ferramentas de Escrita com IA Grátis',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ferramentas de Escrita com IA Grátis | Analyze',
+    description: 'Acesse nossa coleção de ferramentas de escrita com IA gratuitas: geradores de parágrafos, parafraseadores, resumidores, corretores gramaticais e mais. Sem necessidade de cadastro.',
+    images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
+  },
+};
+
+// Map English slugs to icons
+const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  // Writing Tools
+  'paragraph-generator': FileText,
+  'paragraph-rewriter': RefreshCw,
+  'sentence-rewriter': PenTool,
+  'conclusion-generator': FileText,
+  'outline-generator': ListChecks,
+  'blog-title-generator': Sparkles,
+  'rewording-tool': Repeat,
+  'paraphrasing-tool': Type,
+  // SEO & Content Marketing Tools
+  'meta-description-generator': Search,
+  'summarizer': ListChecks,
+  'image-alt-text-generator': Image,
+  'blog-post-ideas-generator': Lightbulb,
+  'seo-title-generator': Search,
+  'content-idea-generator': Lightbulb,
+  'video-script-generator': Video,
+  // Utility Tools
+  'grammar-checker': CheckCircle,
+  'ai-content-detector': Search,
+  'ai-text-humanizer': Sparkles,
+  'acronym-generator': Hash,
+  'lorem-ipsum-generator': FileCode,
+  'emoji-translator': Smile,
+  'plagiarism-checker': Shield,
+  // Business & Marketing Tools
+  'brand-name-generator': Building2,
+  'business-name-generator': Briefcase,
+  'product-name-generator': Package,
+  'slogan-generator': Megaphone,
+  'google-ads-copy-generator': MousePointerClick,
+  'product-description-generator': ShoppingBag,
+  'landing-page-generator': Layout,
+  'website-copy-generator': Globe,
+  'resignation-letter-generator': FileSignature,
+  'hook-generator': Zap,
+  // Social Media Tools
+  'social-media-bio-generator': Users,
+  'instagram-bio-generator': Instagram,
+  'social-media-caption-generator': MessageSquare,
+  'instagram-caption-generator': Instagram,
+  'social-media-hashtag-generator': Hash,
+  'instagram-hashtag-generator': Instagram,
+  'social-media-username-generator': AtSign,
+  'instagram-name-generator': Instagram,
+  'tiktok-hashtag-generator': Music2,
+  'tiktok-username-generator': Music2,
+  // YouTube Tools
+  'youtube-channel-description-generator': Youtube,
+  'youtube-video-description-generator': Youtube,
+  'youtube-name-generator': Youtube,
+};
+
+// Categorize tools by slug patterns
+const writingToolSlugs = [
+  'paragraph-generator', 
+  'paragraph-rewriter',
+  'sentence-rewriter',
+  'conclusion-generator', 
+  'outline-generator', 
+  'blog-title-generator',
+  'rewording-tool',
+  'paraphrasing-tool'
+];
+
+const seoToolSlugs = [
+  'meta-description-generator', 
+  'summarizer', 
+  'image-alt-text-generator',
+  'blog-post-ideas-generator',
+  'seo-title-generator',
+  'content-idea-generator',
+  'video-script-generator'
+];
+
+const utilityToolSlugs = [
+  'grammar-checker', 
+  'ai-content-detector', 
+  'ai-text-humanizer',
+  'acronym-generator',
+  'lorem-ipsum-generator',
+  'emoji-translator',
+  'plagiarism-checker'
+];
+
+const businessToolSlugs = [
+  'brand-name-generator',
+  'business-name-generator',
+  'product-name-generator',
+  'slogan-generator',
+  'google-ads-copy-generator',
+  'product-description-generator',
+  'landing-page-generator',
+  'website-copy-generator',
+  'resignation-letter-generator',
+  'hook-generator'
+];
+
+const socialMediaToolSlugs = [
+  'social-media-bio-generator',
+  'instagram-bio-generator',
+  'social-media-caption-generator',
+  'instagram-caption-generator',
+  'social-media-hashtag-generator',
+  'instagram-hashtag-generator',
+  'social-media-username-generator',
+  'instagram-name-generator',
+  'tiktok-hashtag-generator',
+  'tiktok-username-generator'
+];
+
+const youtubeToolSlugs = [
+  'youtube-channel-description-generator',
+  'youtube-video-description-generator',
+  'youtube-name-generator'
+];
+
+export default function FreeToolsPtPage() {
+  const allTools = getAllToolsPt();
+  
+  const getToolsByCategory = (slugs: string[]) => {
+    return allTools.filter(tool => slugs.includes(tool.slug));
+  };
+
+  const writing = getToolsByCategory(writingToolSlugs);
+  const seo = getToolsByCategory(seoToolSlugs);
+  const utility = getToolsByCategory(utilityToolSlugs);
+  const business = getToolsByCategory(businessToolSlugs);
+  const socialMedia = getToolsByCategory(socialMediaToolSlugs);
+  const youtube = getToolsByCategory(youtubeToolSlugs);
+
+  return (
+    <main className="bg-gray-100">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-16 lg:pt-36 lg:pb-20 overflow-hidden">
+        {/* Grain texture overlay */}
+        <div 
+          className="absolute inset-0 opacity-50 pointer-events-none"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+            backgroundRepeat: 'repeat',
+          }}
+        />
+        
+        {/* Decorative elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-32 h-32 border border-gray-300 opacity-30" />
+          <div className="absolute top-40 right-20 w-24 h-24 border border-gray-300 opacity-20" />
+          <div className="absolute bottom-20 left-1/4 w-16 h-16 border border-gray-300 opacity-25" />
+          <div className="absolute top-16 left-1/3 w-2 h-2 bg-purple-400 rounded-full opacity-60" />
+          <div className="absolute top-32 right-1/3 w-1.5 h-1.5 bg-purple-500 rounded-full opacity-50" />
+        </div>
+
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            {/* Pill */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-200 shadow-sm mb-6">
+              <span className="text-sm font-medium text-gray-700">Ferramentas IA Grátis</span>
+              <span className="w-5 h-5 bg-purple-600 rounded flex items-center justify-center">
+                <Sparkles className="w-3 h-3 text-white" />
+              </span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              Ferramentas de Escrita com IA Grátis
+            </h1>
+            
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
+              As ferramentas de escrita com IA da Analyze ajudam você a criar conteúdo de alta qualidade que gera cliques, cadastros e vendas. Seja para gerar um título, escrever um relatório ou qualquer outra coisa, nossas ferramentas de IA estão aqui para ajudar.
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Button asChild>
+                <a href="#ferramentas-escrita" className="bg-gray-900 text-white hover:bg-gray-800">
+                  Explorar Ferramentas
+                </a>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="/free-tools" className="border-gray-300">
+                  English Version
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Writing Tools Section */}
+      {writing.length > 0 && (
+        <section id="ferramentas-escrita" className="py-16 lg:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative flex items-center justify-center mb-10">
+              <DashedLine className="text-muted-foreground" />
+              <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+                FERRAMENTAS DE ESCRITA
+              </span>
+            </div>
+
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
+                Ferramentas de Escrita
+              </h2>
+              <p className="text-gray-600">
+                Gere, reescreva e melhore seu conteúdo com assistentes de escrita alimentados por IA.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {writing.map((tool) => {
+                const Icon = toolIcons[tool.slug] || FileText;
+                return (
+                  <Link
+                    key={tool.slug}
+                    href={`/free-tools/pt/${tool.slug}`}
+                    className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                      <Icon className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                        {tool.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 line-clamp-2">
+                        {tool.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SEO & Content Marketing Tools Section */}
+      {seo.length > 0 && (
+        <section className="py-16 lg:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative flex items-center justify-center mb-10">
+              <DashedLine className="text-muted-foreground" />
+              <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+                SEO E MARKETING DE CONTEÚDO
+              </span>
+            </div>
+
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
+                Ferramentas de SEO e Marketing de Conteúdo
+              </h2>
+              <p className="text-gray-600">
+                Otimize seu conteúdo para mecanismos de busca e crie textos de marketing impactantes.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {seo.map((tool) => {
+                const Icon = toolIcons[tool.slug] || FileText;
+                return (
+                  <Link
+                    key={tool.slug}
+                    href={`/free-tools/pt/${tool.slug}`}
+                    className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                      <Icon className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                        {tool.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 line-clamp-2">
+                        {tool.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Utility Tools Section */}
+      {utility.length > 0 && (
+        <section className="py-16 lg:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative flex items-center justify-center mb-10">
+              <DashedLine className="text-muted-foreground" />
+              <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+                FERRAMENTAS UTILITÁRIAS
+              </span>
+            </div>
+
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
+                Ferramentas Utilitárias
+              </h2>
+              <p className="text-gray-600">
+                Verifique gramática, detecte conteúdo de IA, humanize seus textos e muito mais.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {utility.map((tool) => {
+                const Icon = toolIcons[tool.slug] || FileText;
+                return (
+                  <Link
+                    key={tool.slug}
+                    href={`/free-tools/pt/${tool.slug}`}
+                    className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                      <Icon className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                        {tool.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 line-clamp-2">
+                        {tool.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Business & Marketing Tools Section */}
+      {business.length > 0 && (
+        <section className="py-16 lg:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative flex items-center justify-center mb-10">
+              <DashedLine className="text-muted-foreground" />
+              <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+                NEGÓCIOS E MARKETING
+              </span>
+            </div>
+
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
+                Ferramentas de Negócios e Marketing
+              </h2>
+              <p className="text-gray-600">
+                Gere nomes de marca, slogans, descrições de produtos e textos de marketing.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {business.map((tool) => {
+                const Icon = toolIcons[tool.slug] || FileText;
+                return (
+                  <Link
+                    key={tool.slug}
+                    href={`/free-tools/pt/${tool.slug}`}
+                    className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                      <Icon className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                        {tool.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 line-clamp-2">
+                        {tool.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Social Media Tools Section */}
+      {socialMedia.length > 0 && (
+        <section className="py-16 lg:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative flex items-center justify-center mb-10">
+              <DashedLine className="text-muted-foreground" />
+              <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+                REDES SOCIAIS
+              </span>
+            </div>
+
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
+                Ferramentas para Redes Sociais
+              </h2>
+              <p className="text-gray-600">
+                Crie bios atraentes, legendas, hashtags e publicações para todas as plataformas.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {socialMedia.map((tool) => {
+                const Icon = toolIcons[tool.slug] || MessageSquare;
+                return (
+                  <Link
+                    key={tool.slug}
+                    href={`/free-tools/pt/${tool.slug}`}
+                    className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                      <Icon className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                        {tool.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 line-clamp-2">
+                        {tool.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* YouTube Tools Section */}
+      {youtube.length > 0 && (
+        <section className="py-16 lg:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative flex items-center justify-center mb-10">
+              <DashedLine className="text-muted-foreground" />
+              <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+                FERRAMENTAS YOUTUBE
+              </span>
+            </div>
+
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
+                Ferramentas para YouTube
+              </h2>
+              <p className="text-gray-600">
+                Gere títulos, descrições e roteiros para seus vídeos do YouTube.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {youtube.map((tool) => {
+                const Icon = toolIcons[tool.slug] || Youtube;
+                return (
+                  <Link
+                    key={tool.slug}
+                    href={`/free-tools/pt/${tool.slug}`}
+                    className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                      <Icon className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                        {tool.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 line-clamp-2">
+                        {tool.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* CTA Section */}
+      <HeroCta />
+    </main>
+  );
+}

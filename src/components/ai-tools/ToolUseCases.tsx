@@ -6,9 +6,35 @@ import { DashedLine } from '@/components/dashed-line';
 interface ToolUseCasesProps {
   toolName: string;
   useCases: UseCase[];
+  locale?: string;
 }
 
-export function ToolUseCases({ toolName, useCases }: ToolUseCasesProps) {
+const translations: Record<string, { sectionLabel: string; heading: (toolName: string) => string }> = {
+  en: {
+    sectionLabel: 'HOW YOU CAN USE THIS TOOL',
+    heading: (toolName: string) => `Use cases of Analyze's ${toolName}`,
+  },
+  fr: {
+    sectionLabel: 'COMMENT UTILISER CET OUTIL',
+    heading: (toolName: string) => `Cas d'utilisation du ${toolName} d'Analyze`,
+  },
+  de: {
+    sectionLabel: 'SO KÖNNEN SIE DIESES WERKZEUG NUTZEN',
+    heading: (toolName: string) => `Anwendungsfälle für Analyzes ${toolName}`,
+  },
+  es: {
+    sectionLabel: 'CÓMO PUEDES USAR ESTA HERRAMIENTA',
+    heading: (toolName: string) => `Casos de uso del ${toolName} de Analyze`,
+  },
+  pt: {
+    sectionLabel: 'COMO VOCÊ PODE USAR ESTA FERRAMENTA',
+    heading: (toolName: string) => `Casos de uso do ${toolName} da Analyze`,
+  },
+};
+
+export function ToolUseCases({ toolName, useCases, locale }: ToolUseCasesProps) {
+  const t = translations[locale || 'en'] || translations.en;
+  
   return (
     <section className="py-16 lg:py-20 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,13 +42,13 @@ export function ToolUseCases({ toolName, useCases }: ToolUseCasesProps) {
         <div className="relative flex items-center justify-center mb-10">
           <DashedLine className="text-muted-foreground" />
           <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
-            HOW YOU CAN USE THIS TOOL
+            {t.sectionLabel}
           </span>
         </div>
 
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
-            Use cases of Analyze&apos;s {toolName}
+            {t.heading(toolName)}
           </h2>
         </div>
 
