@@ -11,9 +11,104 @@ import { BusinessNameGeneratorConfig } from '@/lib/ai-tools/business-name-genera
 
 interface BusinessNameGeneratorPageProps {
   tool: BusinessNameGeneratorConfig;
+  locale?: string;
 }
 
-export function BusinessNameGeneratorPage({ tool }: BusinessNameGeneratorPageProps) {
+// Localized UI strings
+const localeStrings: Record<string, {
+  howToChooseTitle: (name: string) => string;
+  ideasTitle: (name: string) => string;
+  ideasDescription: string;
+  faqHeading: string;
+  faqDescription: (name: string) => string;
+  moreGenerators: string;
+  otherGeneratorsHeading: string;
+  allAiTools: string;
+}> = {
+  en: {
+    howToChooseTitle: (name) => `How to Choose ${name.replace(' Generator', '')}`,
+    ideasTitle: (name) => `20 ${name.replace(' Generator', '')} Ideas`,
+    ideasDescription: 'Need inspiration? Here are some creative name ideas to spark your imagination.',
+    faqHeading: 'Frequently Asked Questions',
+    faqDescription: (name) => `Common questions about our ${name} tool.`,
+    moreGenerators: 'MORE NAME GENERATORS',
+    otherGeneratorsHeading: 'Other business name generators you may find helpful',
+    allAiTools: 'All AI tools',
+  },
+  fr: {
+    howToChooseTitle: (name) => `Comment choisir le nom de votre entreprise ${name.replace('Générateur de noms d\'entreprise ', '').replace(' Generator', '')}`,
+    ideasTitle: (name) => `20 idées de noms d'entreprise ${name.replace('Générateur de noms d\'entreprise ', '').replace(' Generator', '')}`,
+    ideasDescription: 'Besoin d\'inspiration ? Voici quelques idées de noms créatifs pour stimuler votre imagination.',
+    faqHeading: 'Questions Fréquemment Posées',
+    faqDescription: (name) => `Questions courantes sur notre outil ${name}.`,
+    moreGenerators: 'PLUS DE GÉNÉRATEURS DE NOMS',
+    otherGeneratorsHeading: 'Autres générateurs de noms d\'entreprise qui pourraient vous être utiles',
+    allAiTools: 'Tous les outils IA',
+  },
+  es: {
+    howToChooseTitle: (name) => `Cómo elegir el nombre de tu empresa ${name.replace('Generador de nombres de empresas de ', '').replace(' Generator', '')}`,
+    ideasTitle: (name) => `20 ideas de nombres de empresas ${name.replace('Generador de nombres de empresas de ', '').replace(' Generator', '')}`,
+    ideasDescription: '¿Necesitas inspiración? Aquí tienes algunas ideas creativas de nombres para despertar tu imaginación.',
+    faqHeading: 'Preguntas Frecuentes',
+    faqDescription: (name) => `Preguntas comunes sobre nuestra herramienta ${name}.`,
+    moreGenerators: 'MÁS GENERADORES DE NOMBRES',
+    otherGeneratorsHeading: 'Otros generadores de nombres de empresas que pueden resultarte útiles',
+    allAiTools: 'Todas las herramientas IA',
+  },
+  de: {
+    howToChooseTitle: (name) => `So wählen Sie den Namen für Ihr Unternehmen ${name.replace('Ästhetik-Geschäftsnamen-Generator', 'Ästhetik').replace('-Geschäftsnamen-Generator', '').replace(' Generator', '')}`,
+    ideasTitle: (name) => `20 Geschäftsnamen-Ideen ${name.replace('-Geschäftsnamen-Generator', '').replace(' Generator', '')}`,
+    ideasDescription: 'Brauchen Sie Inspiration? Hier sind einige kreative Namensideen, um Ihre Fantasie anzuregen.',
+    faqHeading: 'Häufig Gestellte Fragen',
+    faqDescription: (name) => `Häufige Fragen zu unserem ${name} Tool.`,
+    moreGenerators: 'MEHR NAMENSGENERATOREN',
+    otherGeneratorsHeading: 'Andere Geschäftsnamen-Generatoren, die Ihnen helfen könnten',
+    allAiTools: 'Alle KI-Tools',
+  },
+  it: {
+    howToChooseTitle: (name) => `Come scegliere il nome per la tua attività ${name.replace('Generatore di nomi aziendali per ', '').replace(' Generator', '')}`,
+    ideasTitle: (name) => `20 idee di nomi aziendali ${name.replace('Generatore di nomi aziendali per ', '').replace(' Generator', '')}`,
+    ideasDescription: 'Hai bisogno di ispirazione? Ecco alcune idee creative di nomi per stimolare la tua immaginazione.',
+    faqHeading: 'Domande Frequenti',
+    faqDescription: (name) => `Domande comuni sul nostro strumento ${name}.`,
+    moreGenerators: 'ALTRI GENERATORI DI NOMI',
+    otherGeneratorsHeading: 'Altri generatori di nomi aziendali che potrebbero esserti utili',
+    allAiTools: 'Tutti gli strumenti IA',
+  },
+  pt: {
+    howToChooseTitle: (name) => `Como escolher o nome para seu negócio ${name.replace('Gerador de Nomes para ', '').replace(' Generator', '')}`,
+    ideasTitle: (name) => `20 ideias de nomes comerciais ${name.replace('Gerador de Nomes para ', '').replace(' Generator', '')}`,
+    ideasDescription: 'Precisa de inspiração? Aqui estão algumas ideias criativas de nomes para estimular sua imaginação.',
+    faqHeading: 'Perguntas Frequentes',
+    faqDescription: (name) => `Perguntas comuns sobre nossa ferramenta ${name}.`,
+    moreGenerators: 'MAIS GERADORES DE NOMES',
+    otherGeneratorsHeading: 'Outros geradores de nomes comerciais que podem ser úteis',
+    allAiTools: 'Todas as ferramentas IA',
+  },
+  ja: {
+    howToChooseTitle: (name) => `${name.replace('ジェネレーター', '').replace(' Generator', '')}の名前の選び方`,
+    ideasTitle: (name) => `${name.replace('ジェネレーター', '').replace(' Generator', '')}の名前アイデア20選`,
+    ideasDescription: 'インスピレーションが必要ですか？創造力を刺激するクリエイティブな名前のアイデアをご紹介します。',
+    faqHeading: 'よくある質問',
+    faqDescription: (name) => `${name}ツールに関するよくある質問。`,
+    moreGenerators: 'その他のネームジェネレーター',
+    otherGeneratorsHeading: 'お役に立てるかもしれない他のビジネスネームジェネレーター',
+    allAiTools: 'すべてのAIツール',
+  },
+  ko: {
+    howToChooseTitle: (name) => `${name.replace('이름 생성기', '').replace(' Generator', '')} 이름 선택 방법`,
+    ideasTitle: (name) => `${name.replace('이름 생성기', '').replace(' Generator', '')} 이름 아이디어 20선`,
+    ideasDescription: '영감이 필요하신가요? 창의력을 자극하는 크리에이티브한 이름 아이디어를 소개합니다.',
+    faqHeading: '자주 묻는 질문',
+    faqDescription: (name) => `${name} 도구에 관한 자주 묻는 질문입니다.`,
+    moreGenerators: '더 많은 이름 생성기',
+    otherGeneratorsHeading: '도움이 될 수 있는 다른 비즈니스 이름 생성기',
+    allAiTools: '모든 AI 도구',
+  },
+};
+
+export function BusinessNameGeneratorPage({ tool, locale = 'en' }: BusinessNameGeneratorPageProps) {
+  const strings = localeStrings[locale] || localeStrings.en;
   const [output, setOutput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -31,6 +126,7 @@ export function BusinessNameGeneratorPage({ tool }: BusinessNameGeneratorPagePro
           toolSlug: `business-name-generator-${tool.slug}`,
           input,
           options,
+          locale,
         }),
       });
 
@@ -60,7 +156,7 @@ export function BusinessNameGeneratorPage({ tool }: BusinessNameGeneratorPagePro
     } finally {
       setIsLoading(false);
     }
-  }, [tool.slug]);
+  }, [tool.slug, locale]);
 
   const handleReset = useCallback(() => {
     setOutput('');
@@ -140,7 +236,8 @@ export function BusinessNameGeneratorPage({ tool }: BusinessNameGeneratorPagePro
             <ToolOutput 
               output={output} 
               isLoading={isLoading} 
-              onReset={handleReset} 
+              onReset={handleReset}
+              locale={locale}
             />
           </div>
         </div>
@@ -150,14 +247,14 @@ export function BusinessNameGeneratorPage({ tool }: BusinessNameGeneratorPagePro
       <HeroCta />
 
       {/* Use Cases Section */}
-      <ToolUseCases toolName={tool.name} useCases={tool.useCases} />
+      <ToolUseCases toolName={tool.name} useCases={tool.useCases} locale={locale} />
 
       {/* How to Choose Section - Left/Right Alternating Layout */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
-              How to Choose {tool.name.replace(' Generator', '')}
+              {strings.howToChooseTitle(tool.name)}
             </h2>
             <p className="text-gray-600">
               {tool.howToChoose.intro}
@@ -197,10 +294,10 @@ export function BusinessNameGeneratorPage({ tool }: BusinessNameGeneratorPagePro
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
-              20 {tool.name.replace(' Generator', '')} Ideas
+              {strings.ideasTitle(tool.name)}
             </h2>
             <p className="text-gray-600">
-              Need inspiration? Here are some creative name ideas to spark your imagination.
+              {strings.ideasDescription}
             </p>
           </div>
 
@@ -233,8 +330,8 @@ export function BusinessNameGeneratorPage({ tool }: BusinessNameGeneratorPagePro
 
       {/* FAQ Section */}
       <FaqHomepage 
-        heading="Frequently Asked Questions"
-        description={`Common questions about our ${tool.name} tool.`}
+        heading={strings.faqHeading}
+        description={strings.faqDescription(tool.name)}
         items={tool.faqs.map((faq, index) => ({
           id: `faq-${index}`,
           question: faq.question,
@@ -243,7 +340,7 @@ export function BusinessNameGeneratorPage({ tool }: BusinessNameGeneratorPagePro
       />
 
       {/* Related Tools Section */}
-      <RelatedBusinessNameGenerators currentToolSlug={tool.slug} />
+      <RelatedBusinessNameGenerators currentToolSlug={tool.slug} locale={locale} />
 
       {/* Bottom CTA Section */}
       <HeroCta />

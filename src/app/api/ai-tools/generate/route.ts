@@ -2,6 +2,9 @@ import { anthropic } from '@ai-sdk/anthropic';
 import { streamText } from 'ai';
 import { getToolBySlug, buildPrompt } from '@/lib/ai-tools/tools-config';
 import { getBusinessNameGeneratorBySlug } from '@/lib/ai-tools/business-name-generators-config';
+import { getBusinessNameGeneratorDe } from '@/lib/ai-tools/i18n/business-name-generators-config.de';
+import { getBusinessNameGeneratorFr } from '@/lib/ai-tools/i18n/business-name-generators-config.fr';
+import { getBusinessNameGeneratorEs } from '@/lib/ai-tools/i18n/business-name-generators-config.es';
 
 export const runtime = 'edge';
 
@@ -21,7 +24,22 @@ export async function POST(req: Request) {
     // Check if it's a business name generator tool
     if (toolSlug.startsWith('business-name-generator-')) {
       const generatorSlug = toolSlug.replace('business-name-generator-', '');
-      const generator = getBusinessNameGeneratorBySlug(generatorSlug);
+      
+      // Get the correct localized generator based on locale
+      let generator;
+      switch (locale) {
+        case 'de':
+          generator = getBusinessNameGeneratorDe(generatorSlug);
+          break;
+        case 'fr':
+          generator = getBusinessNameGeneratorFr(generatorSlug);
+          break;
+        case 'es':
+          generator = getBusinessNameGeneratorEs(generatorSlug);
+          break;
+        default:
+          generator = getBusinessNameGeneratorBySlug(generatorSlug);
+      }
       if (!generator) {
         return new Response(
           JSON.stringify({ error: `Tool not found: ${toolSlug}` }),
