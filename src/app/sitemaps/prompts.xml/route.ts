@@ -1,6 +1,11 @@
 import { NextResponse } from 'next/server';
 import { getAllPromptSlugs, getAllCategorySlugs } from '@/lib/datocms';
 
+const EXCLUDED_PROMPT_URLS = new Set([
+  '/prompts/copywriting/chatgpt-prompt-for-prospect-qualifying-questions',
+  '/prompts/social-media/chatgpt-prompt-for-feedback-request-messages',
+]);
+
 export async function GET() {
   const baseUrl = 'https://www.tryanalyze.ai';
 
@@ -17,12 +22,14 @@ export async function GET() {
       changefreq: 'daily',
     }));
 
-    const promptUrls = allPrompts.map(prompt => ({
-      url: `${baseUrl}/prompts/${prompt.category.slugCategory}/${prompt.slug}`,
-      lastmod: prompt._updatedAt || new Date().toISOString(),
-      priority: 0.6,
-      changefreq: 'weekly',
-    }));
+    const promptUrls = allPrompts
+      .filter(prompt => !EXCLUDED_PROMPT_URLS.has(`/prompts/${prompt.category.slugCategory}/${prompt.slug}`))
+      .map(prompt => ({
+        url: `${baseUrl}/prompts/${prompt.category.slugCategory}/${prompt.slug}`,
+        lastmod: prompt._updatedAt || new Date().toISOString(),
+        priority: 0.6,
+        changefreq: 'weekly',
+      }));
 
     const allUrls = [...categoryUrls, ...promptUrls];
 

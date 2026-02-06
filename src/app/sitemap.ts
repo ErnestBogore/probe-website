@@ -21,6 +21,19 @@ import { getAllToolsZh } from '@/lib/ai-tools/i18n/tools-config.zh';
 import { getAllToolsKo } from '@/lib/ai-tools/i18n/tools-config.ko';
 import { getAllToolsTr } from '@/lib/ai-tools/i18n/tools-config.tr';
 
+// URLs confirmed as 404 — exclude from sitemap
+const EXCLUDED_URLS = new Set([
+  '/free-tools/ja/business-name-generator/skin-care',
+  '/free-tools/ja/business-name-generator/lip-gloss',
+  '/free-tools/ja/business-name-generator/interior-design',
+  '/free-tools/ja/business-name-generator/real-estate',
+  '/free-tools/ja/business-name-generator/print-shop',
+  '/free-tools/ja/business-name-generator/jewelry-store',
+  '/free-tools/ja/business-name-generator/ice-cream',
+  '/prompts/copywriting/chatgpt-prompt-for-prospect-qualifying-questions',
+  '/prompts/social-media/chatgpt-prompt-for-feedback-request-messages',
+]);
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.tryanalyze.ai';
 
@@ -441,12 +454,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Generate Japanese business name generator pages
   const allBusinessNameGeneratorsJa = getAllBusinessNameGeneratorsJa();
-  const businessNameGeneratorPagesJa: MetadataRoute.Sitemap = allBusinessNameGeneratorsJa.map((tool) => ({
-    url: `${baseUrl}/free-tools/ja/business-name-generator/${tool.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }));
+  const businessNameGeneratorPagesJa: MetadataRoute.Sitemap = allBusinessNameGeneratorsJa
+    .filter((tool) => !EXCLUDED_URLS.has(`/free-tools/ja/business-name-generator/${tool.slug}`))
+    .map((tool) => ({
+      url: `${baseUrl}/free-tools/ja/business-name-generator/${tool.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    }));
 
   // Generate Portuguese business name generator pages
   const allBusinessNameGeneratorsPt = getAllBusinessNameGeneratorsPt();
@@ -494,12 +509,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
 
     // Generate individual prompt entries
-    const promptPages: MetadataRoute.Sitemap = allPrompts.map((prompt) => ({
-      url: `${baseUrl}/prompts/${prompt.category.slugCategory}/${prompt.slug}`,
-      lastModified: new Date(prompt._updatedAt || new Date()),
-      changeFrequency: 'weekly' as const,
-      priority: 0.6,
-    }));
+    const promptPages: MetadataRoute.Sitemap = allPrompts
+      .filter((prompt) => !EXCLUDED_URLS.has(`/prompts/${prompt.category.slugCategory}/${prompt.slug}`))
+      .map((prompt) => ({
+        url: `${baseUrl}/prompts/${prompt.category.slugCategory}/${prompt.slug}`,
+        lastModified: new Date(prompt._updatedAt || new Date()),
+        changeFrequency: 'weekly' as const,
+        priority: 0.6,
+      }));
 
     return [...staticPages, ...freeToolPages, ...freeToolPagesFr, ...freeToolPagesDe, ...freeToolPagesEs, ...freeToolPagesPt, ...freeToolPagesIt, ...freeToolPagesJa, ...freeToolPagesZh, ...freeToolPagesKo, ...freeToolPagesTr, ...businessNameGeneratorPages, ...businessNameGeneratorPagesZh, ...businessNameGeneratorPagesKo, ...businessNameGeneratorPagesTr, ...businessNameGeneratorPagesDe, ...businessNameGeneratorPagesEs, ...businessNameGeneratorPagesFr, ...businessNameGeneratorPagesIt, ...businessNameGeneratorPagesJa, ...businessNameGeneratorPagesPt, ...blogPages, ...caseStudyPages, ...promptCategoryPages, ...promptPages];
   } catch (error) {
