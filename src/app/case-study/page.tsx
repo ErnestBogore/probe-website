@@ -35,10 +35,10 @@ export default async function CaseStudyPage() {
 // Generate metadata for SEO
 export async function generateMetadata() {
   return {
-    title: 'Case Studies | Analyze',
+    title: 'Case Studies | Analyze AI',
     description: 'Explore our case studies to see how we\'ve helped businesses like yours succeed.',
     openGraph: {
-      title: 'Case Studies | Analyze',
+      title: 'Case Studies | Analyze AI',
       description: 'Explore our case studies to see how we\'ve helped businesses like yours succeed.',
       type: 'website',
     },

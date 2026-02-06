@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         url: '/perplexity-alternative-og.png',
         width: 1200,
         height: 630,
-        alt: 'Perplexity AI Alternative by Analyze',
+        alt: 'Perplexity AI Alternative by Analyze AI',
       },
     ],
   },

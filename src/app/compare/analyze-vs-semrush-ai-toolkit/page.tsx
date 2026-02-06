@@ -12,8 +12,8 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Analyze vs. Semrush AI Toolkit: Feature Comparison',
-  description: 'Compare how Analyze and Semrush AI Toolkit impact visibility, traffic, and conversions across AI engines.',
+  title: 'Analyze AI vs. Semrush AI Toolkit: Feature Comparison',
+  description: 'Compare how Analyze AI and Semrush AI Toolkit impact visibility, traffic, and conversions across AI engines.',
   openGraph: {
     images: ['/AI Referral Traffic.png'],
   },
@@ -29,8 +29,8 @@ const AnalyzeVsSemrushAiToolkitPage = async () => {
 
   // Generate service schema
   const serviceSchema = generateServiceSchema({
-    name: "ANALYZE vs Semrush AI Toolkit Comparison",
-    description: "Compare ANALYZE and Semrush AI Toolkit for AI search visibility tracking. See why ANALYZE offers superior AI-first analytics beyond traditional SEO tools.",
+    name: "Analyze AI vs Semrush AI Toolkit Comparison",
+    description: "Compare Analyze AI and Semrush AI Toolkit for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional SEO tools.",
     url: "https://www.tryanalyze.ai/compare/analyze-vs-semrush-ai-toolkit",
     category: "Analytics Software",
     features: [

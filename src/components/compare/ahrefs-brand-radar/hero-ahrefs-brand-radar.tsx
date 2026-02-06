@@ -46,11 +46,11 @@ export const HeroAhrefsBrandRadar = () => {
           {/* Left side - Main content */}
           <div className="flex-1">
             <h1 className="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl">
-              ANALYZE vs Ahrefs Brand Radar: AI Search Analytics vs Traditional Brand Monitoring
+              Analyze AI vs Ahrefs Brand Radar: AI Search Analytics vs Traditional Brand Monitoring
             </h1>
             
             <p className="text-muted-foreground mt-6 max-w-lg text-lg">
-              While Ahrefs Brand Radar tracks traditional web mentions, ANALYZE shows how AI assistants talk about your brand, recommend competitors, and drive actual traffic.
+              While Ahrefs Brand Radar tracks traditional web mentions, Analyze AI shows how AI assistants talk about your brand, recommend competitors, and drive actual traffic.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -78,7 +78,7 @@ export const HeroAhrefsBrandRadar = () => {
               <div className="relative h-96 w-full max-w-lg lg:h-[500px]">
                 <Image
                   src="/AI traffic.png"
-                  alt="ANALYZE AI Search Analytics Dashboard"
+                  alt="Analyze AI Search Analytics Dashboard"
                   fill
                   className="rounded-lg object-cover shadow-2xl"
                   priority

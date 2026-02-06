@@ -41,7 +41,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Strumenti di Scrittura IA Gratuiti | Analyze',
+  title: 'Strumenti di Scrittura IA Gratuiti | Analyze AI',
   description: 'Accedi alla nostra collezione di strumenti di scrittura IA gratuiti: generatori di paragrafi, parafrasi, riassunti, correttori grammaticali e altro. Nessuna registrazione richiesta.',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/it',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Strumenti di Scrittura IA Gratuiti | Analyze',
+    title: 'Strumenti di Scrittura IA Gratuiti | Analyze AI',
     description: 'Accedi alla nostra collezione di strumenti di scrittura IA gratuiti: generatori di paragrafi, parafrasi, riassunti, correttori grammaticali e altro. Nessuna registrazione richiesta.',
     url: 'https://www.tryanalyze.ai/free-tools/it',
     type: 'website',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Strumenti di Scrittura IA Gratuiti | Analyze',
+    title: 'Strumenti di Scrittura IA Gratuiti | Analyze AI',
     description: 'Accedi alla nostra collezione di strumenti di scrittura IA gratuiti: generatori di paragrafi, parafrasi, riassunti, correttori grammaticali e altro. Nessuna registrazione richiesta.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },
@@ -246,7 +246,7 @@ export default function FreeToolsItPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-              Gli strumenti di scrittura IA di Analyze ti aiutano a creare contenuti di alta qualità che generano clic, iscrizioni e vendite. Che tu debba generare un titolo, scrivere un report o qualsiasi altra cosa, i nostri strumenti IA sono qui per te.
+              Gli strumenti di scrittura IA di Analyze AI ti aiutano a creare contenuti di alta qualità che generano clic, iscrizioni e vendite. Che tu debba generare un titolo, scrivere un report o qualsiasi altra cosa, i nostri strumenti IA sono qui per te.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">

@@ -18,7 +18,7 @@ export const AffiliateCalculator = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900 mb-4">
-            How much money will you make promoting Analyze?
+            How much money will you make promoting Analyze AI?
           </h2>
           <p className="text-lg text-gray-600">
             Use the slider below to see your potential earnings based on the number of referrals.

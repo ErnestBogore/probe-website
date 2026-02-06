@@ -85,25 +85,25 @@ export const ProblemSolution = () => {
               ))}
             </div>
 
-            {/* ANALYZE Solution Box */}
+            {/* Analyze AI Solution Box */}
             <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-10 text-white h-full flex flex-col">
-              {/* ANALYZE Header */}
+              {/* Analyze AI Header */}
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center p-1">
                   <Image
                     src="/favicon.png"
-                    alt="Analyze favicon"
+                    alt="Analyze AI favicon"
                     width={24}
                     height={24}
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="text-xl font-bold">ANALYZE</span>
+                <span className="text-xl font-bold">Analyze AI</span>
               </div>
 
               {/* Solution Content */}
               <div className="bg-white bg-opacity-10 rounded-xl p-8 flex-1">
-                <h3 className="text-lg font-semibold mb-6 text-black">With ANALYZE, you can:</h3>
+                <h3 className="text-lg font-semibold mb-6 text-black">With Analyze AI, you can:</h3>
                 <div className="space-y-4">
                   {solutions.map((solution, index) => (
                     <div key={index} className="flex items-center gap-3">

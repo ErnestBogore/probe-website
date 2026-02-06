@@ -29,7 +29,7 @@ export const ProblemSolutionAhrefsBrandRadar = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
-              Ahrefs Brand Radar tracks traditional mentions. ANALYZE tracks AI search performance.
+              Ahrefs Brand Radar tracks traditional mentions. Analyze AI tracks AI search performance.
             </h2>
           </div>
 

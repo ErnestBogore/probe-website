@@ -51,20 +51,20 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 
     if (!blogPostInternational) {
       return {
-        title: 'Bericht niet gevonden | Analyze',
+        title: 'Bericht niet gevonden | Analyze AI',
         description: 'Het gevraagde blogbericht kon niet worden gevonden.',
       };
     }
 
     const title = blogPostInternational.seo?.title || blogPostInternational.title;
-    const description = blogPostInternational.seo?.description || blogPostInternational.excerpt || 'Lees dit inzichtelijke blogbericht van Analyze.';
+    const description = blogPostInternational.seo?.description || blogPostInternational.excerpt || 'Lees dit inzichtelijke blogbericht van Analyze AI.';
     const image = blogPostInternational.seo?.image || blogPostInternational.featuredImage;
 
     return {
-      title: `${title} | Analyze`,
+      title: `${title} | Analyze AI`,
       description,
       openGraph: {
-        title: `${title} | Analyze`,
+        title: `${title} | Analyze AI`,
         description,
         type: 'article',
         publishedTime: blogPostInternational.publishedDate,
@@ -82,7 +82,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
       },
       twitter: {
         card: 'summary_large_image',
-        title: `${title} | Analyze`,
+        title: `${title} | Analyze AI`,
         description,
         images: image ? [image.url] : undefined,
       },
@@ -90,8 +90,8 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   } catch (error) {
     console.error('Error generating metadata:', error);
     return {
-      title: 'Blogbericht | Analyze',
-      description: 'Lees dit inzichtelijke blogbericht van Analyze.',
+      title: 'Blogbericht | Analyze AI',
+      description: 'Lees dit inzichtelijke blogbericht van Analyze AI.',
     };
   }
 }

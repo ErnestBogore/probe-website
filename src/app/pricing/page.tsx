@@ -5,10 +5,10 @@ import { generateServiceSchema } from '@/lib/schema';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Pricing | ANALYZE - AI Search Analytics Platform',
+  title: 'Pricing | Analyze AI - AI Search Analytics Platform',
   description: 'Choose the right AI search analytics plan for your team. Track brand visibility, measure AI traffic, and optimize your presence across all major AI engines.',
   openGraph: {
-    title: 'Pricing | ANALYZE - AI Search Analytics Platform',
+    title: 'Pricing | Analyze AI - AI Search Analytics Platform',
     description: 'Choose the right AI search analytics plan for your team. Track brand visibility, measure AI traffic, and optimize your presence across all major AI engines.',
     images: ['/pricing-hero.png'],
   },

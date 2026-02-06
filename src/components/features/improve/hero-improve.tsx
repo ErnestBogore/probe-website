@@ -60,7 +60,7 @@ export const HeroImprove = () => {
             </h1>
 
             <p className="text-muted-foreground text-1xl mt-5 md:text-3xl">
-              ANALYZE shows you the prompts you should be winning, which competitor is winning them today — so content, product marketing, and demand gen know what to ship next.
+              Analyze AI shows you the prompts you should be winning, which competitor is winning them today — so content, product marketing, and demand gen know what to ship next.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">

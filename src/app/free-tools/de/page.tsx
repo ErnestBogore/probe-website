@@ -42,7 +42,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Kostenlose KI-Schreibwerkzeuge | Analyze',
+  title: 'Kostenlose KI-Schreibwerkzeuge | Analyze AI',
   description: 'Greifen Sie auf unsere Sammlung kostenloser KI-Schreibwerkzeuge zu: Absatz-Generatoren, Paraphrasierer, Zusammenfasser, Grammatikprüfer und mehr. Keine Anmeldung erforderlich.',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/de',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Kostenlose KI-Schreibwerkzeuge | Analyze',
+    title: 'Kostenlose KI-Schreibwerkzeuge | Analyze AI',
     description: 'Greifen Sie auf unsere Sammlung kostenloser KI-Schreibwerkzeuge zu: Absatz-Generatoren, Paraphrasierer, Zusammenfasser, Grammatikprüfer und mehr. Keine Anmeldung erforderlich.',
     url: 'https://www.tryanalyze.ai/free-tools/de',
     type: 'website',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kostenlose KI-Schreibwerkzeuge | Analyze',
+    title: 'Kostenlose KI-Schreibwerkzeuge | Analyze AI',
     description: 'Greifen Sie auf unsere Sammlung kostenloser KI-Schreibwerkzeuge zu: Absatz-Generatoren, Paraphrasierer, Zusammenfasser, Grammatikprüfer und mehr. Keine Anmeldung erforderlich.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },
@@ -247,7 +247,7 @@ export default function FreeToolsDePage() {
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-              Die KI-Schreibwerkzeuge von Analyze helfen Ihnen, hochwertige Inhalte zu erstellen, die Klicks, Anmeldungen und Verkäufe generieren. Ob Sie eine Überschrift generieren, einen Bericht schreiben oder etwas anderes benötigen – unsere KI-Werkzeuge sind für Sie da.
+              Die KI-Schreibwerkzeuge von Analyze AI helfen Ihnen, hochwertige Inhalte zu erstellen, die Klicks, Anmeldungen und Verkäufe generieren. Ob Sie eine Überschrift generieren, einen Bericht schreiben oder etwas anderes benötigen – unsere KI-Werkzeuge sind für Sie da.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">

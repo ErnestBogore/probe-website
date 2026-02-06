@@ -50,10 +50,10 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Free AI Writing Tools | Analyze',
+  title: 'Free AI Writing Tools | Analyze AI',
   description: 'Access our collection of free AI writing tools including paragraph generators, paraphrasers, summarizers, grammar checkers, and more. No signup required.',
   openGraph: {
-    title: 'Free AI Writing Tools | Analyze',
+    title: 'Free AI Writing Tools | Analyze AI',
     description: 'Access our collection of free AI writing tools including paragraph generators, paraphrasers, summarizers, grammar checkers, and more. No signup required.',
     url: 'https://www.tryanalyze.ai/free-tools',
     type: 'website',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free AI Writing Tools | Analyze',
+    title: 'Free AI Writing Tools | Analyze AI',
     description: 'Access our collection of free AI writing tools including paragraph generators, paraphrasers, summarizers, grammar checkers, and more. No signup required.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },
@@ -131,7 +131,7 @@ const standaloneTools = [
   {
     slug: 'ai-website-audit-tool',
     name: 'AI Website Audit Tool',
-    description: 'Analyze your website\'s AI readiness and get actionable recommendations.',
+    description: 'Analyze AI your website\'s AI readiness and get actionable recommendations.',
     icon: Globe,
   },
   {
@@ -242,7 +242,7 @@ export default function FreeToolsPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-              Analyze&apos;s AI writing tools help you produce high-quality content that drives clicks, sign-ups, and sales. Whether you&apos;re looking to generate a title, write a report, or anything else, our AI writing tools have got you covered.
+              Analyze AI's AI writing tools help you produce high-quality content that drives clicks, sign-ups, and sales. Whether you&apos;re looking to generate a title, write a report, or anything else, our AI writing tools have got you covered.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -571,7 +571,7 @@ export default function FreeToolsPage() {
               AI SEO & Analysis Tools
             </h2>
             <p className="text-gray-600">
-              Analyze your website&apos;s AI readiness and optimize for AI search engines.
+              Analyze AI your website&apos;s AI readiness and optimize for AI search engines.
             </p>
           </div>
 

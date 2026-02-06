@@ -4,7 +4,7 @@ const featuresData = [
   {
     title: "Choose the competitors that actually matter",
     description:
-      "Set the rivals you care about, and ANALYZE will measure how often Gemini recommends each one in high-intent prompts. You get an always-current scoreboard: visibility share, sentiment, and movement — without manually checking Gemini every day.",
+      "Set the rivals you care about, and Analyze AI will measure how often Gemini recommends each one in high-intent prompts. You get an always-current scoreboard: visibility share, sentiment, and movement — without manually checking Gemini every day.",
     image: "/Competitor Overview.png",
     alt: "Competitor overview dashboard showing visibility share and sentiment tracking across Gemini prompts.",
   },

@@ -44,7 +44,7 @@ function generateAuthorSchema(author?: Author) {
 function generatePublisherSchema(): SchemaType {
   return {
     "@type": "Organization",
-    "name": "Analyze",
+    "name": "Analyze AI",
     "logo": {
       "@type": "ImageObject",
       "url": "https://www.tryanalyze.ai/logo.png"
@@ -244,7 +244,7 @@ export function generateBlogPostSchema(post: BlogPost): SchemaType | MultiSchema
 }
 
 const SITE_URL = 'https://www.tryanalyze.ai';
-const ORGANIZATION_NAME = 'Analyze';
+const ORGANIZATION_NAME = 'Analyze AI';
 const LOGO_URL = 'https://www.tryanalyze.ai/logo.png';
 
 export function generateOrganizationSchema(): SchemaType {

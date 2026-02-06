@@ -7,7 +7,7 @@ export const AffiliateBenefits = () => {
     <section className="py-16 lg:py-20 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900 mb-4">Why promote Analyze to your audience?</h2>
+          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900 mb-4">Why promote Analyze AI to your audience?</h2>
           <p className="text-lg text-gray-600">Make money by helping your audience get traffic from ChatGPT, Claude, and other major answer engines.</p>
         </div>
         
@@ -22,7 +22,7 @@ export const AffiliateBenefits = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900">Fast-growing platform</h3>
             </div>
-            <p className="text-gray-600">With AI-driven search referral traffic becoming a major growth channel, Analyze is growing by 20% month over month. As you refer more clients into our ecosystem, your earnings scale with our growth.</p>
+            <p className="text-gray-600">With AI-driven search referral traffic becoming a major growth channel, Analyze AI is growing by 20% month over month. As you refer more clients into our ecosystem, your earnings scale with our growth.</p>
           </div>
 
           {/* High earning potential */}
@@ -58,7 +58,7 @@ export const AffiliateBenefits = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900">Easy-to-sell product</h3>
             </div>
-            <p className="text-gray-600">Analyze solves the real-world problem of proving AI-search ROI. It's not a vague "visibility dashboard" — it connects AI assistant referrals (ChatGPT, Claude, Gemini, etc.) to actual sessions, conversions and revenue. That makes it a compelling offer for marketing teams tired of vanity metrics.</p>
+            <p className="text-gray-600">Analyze AI solves the real-world problem of proving AI-search ROI. It's not a vague "visibility dashboard" — it connects AI assistant referrals (ChatGPT, Claude, Gemini, etc.) to actual sessions, conversions and revenue. That makes it a compelling offer for marketing teams tired of vanity metrics.</p>
           </div>
 
           {/* Monthly payouts */}

@@ -18,23 +18,23 @@ export const HeroComparisonHubspotAiSearchGrader = () => {
         <div className="mx-auto max-w-4xl text-center">
           {/* Logo Comparison */}
           <div className="flex items-center justify-center gap-4 mb-8">
-            <Image src="/favicon.png" alt="Analyze" width={48} height={48} className="rounded" />
+            <Image src="/favicon.png" alt="Analyze AI" width={48} height={48} className="rounded" />
             <span className="text-2xl font-bold text-gray-600">vs</span>
             <Image src="/Hubspot AI Search Logo.png" alt="HubSpot AI Search Grader" width={48} height={48} />
           </div>
           
           <h1 className="text-foreground text-3xl tracking-tight md:text-4xl lg:text-5xl">
-            Analyze vs HubSpot AI Search Grader: which platform gives you deeper AI visibility?
+            Analyze AI vs HubSpot AI Search Grader: which platform gives you deeper AI visibility?
           </h1>
           
           <p className="text-muted-foreground text-xl mt-6 md:text-2xl max-w-3xl mx-auto">
-            Compare how Analyze and HubSpot AI Search Grader measure your AI visibility — from how often your brand appears in AI responses to how that visibility translates into actual traffic and revenue. See where Analyze goes deeper, and how that depth turns AI visibility into competitive advantage.
+            Compare how Analyze AI and HubSpot AI Search Grader measure your AI visibility — from how often your brand appears in AI responses to how that visibility translates into actual traffic and revenue. See where Analyze AI goes deeper, and how that depth turns AI visibility into competitive advantage.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Button asChild size="lg">
               <a href="/talk-to-a-human" className="bg-gray-900 text-white hover:bg-gray-800 px-8 py-4 text-lg">
-                See Analyze in action
+                See Analyze AI in action
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>

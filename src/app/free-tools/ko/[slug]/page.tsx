@@ -45,12 +45,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!tool) {
     return {
-      title: '도구를 찾을 수 없습니다 | Analyze',
+      title: '도구를 찾을 수 없습니다 | Analyze AI',
     };
   }
 
   return {
-    title: `${tool.title} | Analyze`,
+    title: `${tool.title} | Analyze AI`,
     description: tool.metaDescription,
     alternates: {
       canonical: `https://www.tryanalyze.ai/free-tools/ko/${tool.slug}`,
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     },
     openGraph: {
-      title: `${tool.title} | Analyze`,
+      title: `${tool.title} | Analyze AI`,
       description: tool.metaDescription,
       url: `https://www.tryanalyze.ai/free-tools/ko/${tool.slug}`,
       type: 'website',
@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${tool.title} | Analyze`,
+      title: `${tool.title} | Analyze AI`,
       description: tool.metaDescription,
       images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
     },

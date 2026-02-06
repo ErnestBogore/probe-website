@@ -51,20 +51,20 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 
     if (!blogPostInternational) {
       return {
-        title: 'Artículo no encontrado | Analyze',
+        title: 'Artículo no encontrado | Analyze AI',
         description: 'El artículo solicitado no pudo ser encontrado.',
       };
     }
 
     const title = blogPostInternational.seo?.title || blogPostInternational.title;
-    const description = blogPostInternational.seo?.description || blogPostInternational.excerpt || 'Lee este artículo perspicaz de Analyze.';
+    const description = blogPostInternational.seo?.description || blogPostInternational.excerpt || 'Lee este artículo perspicaz de Analyze AI.';
     const image = blogPostInternational.seo?.image || blogPostInternational.featuredImage;
 
     return {
-      title: `${title} | Analyze`,
+      title: `${title} | Analyze AI`,
       description,
       openGraph: {
-        title: `${title} | Analyze`,
+        title: `${title} | Analyze AI`,
         description,
         type: 'article',
         publishedTime: blogPostInternational.publishedDate,
@@ -82,7 +82,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
       },
       twitter: {
         card: 'summary_large_image',
-        title: `${title} | Analyze`,
+        title: `${title} | Analyze AI`,
         description,
         images: image ? [image.url] : undefined,
       },
@@ -90,8 +90,8 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   } catch (error) {
     console.error('Error generating metadata:', error);
     return {
-      title: 'Artículo | Analyze',
-      description: 'Lee este artículo perspicaz de Analyze.',
+      title: 'Artículo | Analyze AI',
+      description: 'Lee este artículo perspicaz de Analyze AI.',
     };
   }
 }

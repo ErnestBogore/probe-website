@@ -51,7 +51,7 @@ export const FeaturesWritesonicGeo = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
-            Moreover, customers choose Analyze because it's actionnable and allows you to do things that Writesonic GEO can't
+            Moreover, customers choose Analyze AI because it's actionnable and allows you to do things that Writesonic GEO can't
           </h2>
           <p className="mt-6 text-lg text-gray-600">
             One platform to see where you stand, prove what it's worth, and know what to do next.

@@ -36,7 +36,7 @@ export const BlogSidebarCta = () => {
     <div className="fixed bottom-8 right-8 z-50 w-80">
       <div className="bg-gradient-to-br from-purple-100 via-purple-200 to-indigo-200 rounded-2xl p-6 text-gray-800 shadow-xl border border-purple-200/50">
         <div className="text-center mb-4">
-          <h3 className="text-xl font-bold text-gray-900">See Analyze in action</h3>
+          <h3 className="text-xl font-bold text-gray-900">See Analyze AI in action</h3>
         </div>
         
         <div className="space-y-3 mb-6">

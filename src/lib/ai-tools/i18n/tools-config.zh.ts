@@ -477,7 +477,7 @@ IMPORTANT: Generate all output in Chinese.`,
     options: [
       { name: 'sensitivity', label: '检测敏感度', choices: ['标准', '高', '平衡'], default: '平衡', type: 'select' },
     ],
-    systemPrompt: `You are an AI content detection specialist. Analyze the provided text for indicators of AI-generated content.
+    systemPrompt: `You are an AI content detection specialist. Analyze AI the provided text for indicators of AI-generated content.
 Consider these factors:
 - Writing pattern consistency
 - Vocabulary diversity and complexity
@@ -1722,7 +1722,7 @@ IMPORTANT: Generate all output in Chinese.`,
       { name: 'style', label: '写作风格', choices: ['一般', '学术', '商业', '休闲'], default: '一般', type: 'select' },
     ],
     systemPrompt: `You are an expert grammar and writing checker.
-Analyze the text for:
+Analyze AI the text for:
 - Grammar errors (subject-verb agreement, tense, etc.)
 - Punctuation issues
 - Spelling mistakes
@@ -1771,7 +1771,7 @@ IMPORTANT: Generate all output in Chinese.`,
 ## IMPORTANT LIMITATIONS
 This tool provides analysis based on pattern recognition. It does not have access to a comprehensive database of all published content.
 ## CORE RULES
-- Analyze text for originality indicators and red flags
+- Analyze AI text for originality indicators and red flags
 - Identify passages that appear copied or heavily templated
 - Distinguish between common phrases and potentially plagiarized content
 - Provide actionable feedback for improving originality

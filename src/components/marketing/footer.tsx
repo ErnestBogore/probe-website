@@ -99,14 +99,14 @@ export const Footer = ({
   logo = {
     url: "/",
     src: "/logo-tryanalyze.png",
-    alt: "Analyze - AI Search Analytics Platform",
-    title: "AI Search Analytics For Marketing Teams | Analyze",
+    alt: "Analyze AI - AI Search Analytics Platform",
+    title: "AI Search Analytics For Marketing Teams | Analyze AI",
   },
   sections = defaultSections,
-  description = "Analyze provides a comprehensive suite of tools to monitor your brand's visibility and sentiment across all major AI answer engines, giving you the insights to stay ahead.",
+  description = "Analyze AI provides a comprehensive suite of tools to monitor your brand's visibility and sentiment across all major AI answer engines, giving you the insights to stay ahead.",
   address = "2498, 701 Tillery Street Unit 12, Austin, TX",
   socialLinks = defaultSocialLinks,
-  copyright = "© 2026 Analyze. All rights reserved.",
+  copyright = "© 2026 Analyze AI. All rights reserved.",
   legalLinks = defaultLegalLinks,
 }: FooterProps) => {
   return (

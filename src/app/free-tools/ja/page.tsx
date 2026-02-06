@@ -41,7 +41,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '無料AIライティングツール | Analyze',
+  title: '無料AIライティングツール | Analyze AI',
   description: '無料のAIライティングツールコレクションにアクセス：段落ジェネレーター、パラフレーズ、要約、文法チェッカーなど。登録不要。',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/ja',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: '無料AIライティングツール | Analyze',
+    title: '無料AIライティングツール | Analyze AI',
     description: '無料のAIライティングツールコレクションにアクセス：段落ジェネレーター、パラフレーズ、要約、文法チェッカーなど。登録不要。',
     url: 'https://www.tryanalyze.ai/free-tools/ja',
     type: 'website',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '無料AIライティングツール | Analyze',
+    title: '無料AIライティングツール | Analyze AI',
     description: '無料のAIライティングツールコレクションにアクセス：段落ジェネレーター、パラフレーズ、要約、文法チェッカーなど。登録不要。',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },
@@ -246,7 +246,7 @@ export default function FreeToolsJaPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-              AnalyzeのAIライティングツールは、クリック、登録、売上を生み出す高品質なコンテンツの作成をサポートします。タイトルの生成、レポートの作成など、あらゆるニーズに対応するAIツールをご用意しています。
+              Analyze AIのAIライティングツールは、クリック、登録、売上を生み出す高品質なコンテンツの作成をサポートします。タイトルの生成、レポートの作成など、あらゆるニーズに対応するAIツールをご用意しています。
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">

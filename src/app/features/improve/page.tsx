@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Improve | ANALYZE',
+  title: 'Improve | Analyze AI',
   description: "Find high-intent prompts you're losing, see why competitors win them, defend areas where you're slipping, and double down on pages already converting from AI traffic.",
   openGraph: {
     images: ['/ai-improvement-feature.png'],
@@ -28,38 +28,38 @@ const AIImproveToolPage = async () => {
   const faqItems = [
     {
       id: 'faq-1',
-      question: 'Can ANALYZE show the specific buying questions where we\'re being left out and a competitor is winning the recommendation?',
-      answer: 'Yes. ANALYZE surfaces the high-intent prompts where buyers are clearly in evaluation mode ("best platform for [ICP]," "[competitor] alternatives," "[tool] vs [tool]") and shows where a competitor is being recommended and you\'re not. You get "we\'re missing here, they\'re winning here" in plain language — not just abstract share-of-voice.'
+      question: 'Can Analyze AI show the specific buying questions where we\'re being left out and a competitor is winning the recommendation?',
+      answer: 'Yes. Analyze AI surfaces the high-intent prompts where buyers are clearly in evaluation mode ("best platform for [ICP]," "[competitor] alternatives," "[tool] vs [tool]") and shows where a competitor is being recommended and you\'re not. You get "we\'re missing here, they\'re winning here" in plain language — not just abstract share-of-voice.'
     },
     {
       id: 'faq-2',
-      question: 'Does ANALYZE tell me which gaps to prioritize first instead of dropping a giant list on me?',
-      answer: 'Yes. Gaps are ranked, not dumped. ANALYZE scores each missed prompt by intent level, recency, competitive exposure, and strategic importance so you know which missed moments matter most right now. You get an ordered list of "fix these first," not 200 rows in a spreadsheet.'
+      question: 'Does Analyze AI tell me which gaps to prioritize first instead of dropping a giant list on me?',
+      answer: 'Yes. Gaps are ranked, not dumped. Analyze AI scores each missed prompt by intent level, recency, competitive exposure, and strategic importance so you know which missed moments matter most right now. You get an ordered list of "fix these first," not 200 rows in a spreadsheet.'
     },
     {
       id: 'faq-3',
       question: 'Can I see why a competitor is winning a specific prompt — including the messaging and pages the model is pulling from?',
-      answer: 'Yes. For any high-value prompt, ANALYZE shows you the exact language AI models are using to justify recommending that competitor, plus the specific URLs being cited (comparison pages, feature breakdowns, top-tool listicles, etc.). You see the pitch that\'s beating you, and the assets that are powering it.'
+      answer: 'Yes. For any high-value prompt, Analyze AI shows you the exact language AI models are using to justify recommending that competitor, plus the specific URLs being cited (comparison pages, feature breakdowns, top-tool listicles, etc.). You see the pitch that\'s beating you, and the assets that are powering it.'
     },
     {
       id: 'faq-4',
-      question: 'Can ANALYZE track whether our updates (new page, new positioning, new proof point) actually move us into that conversation over time?',
+      question: 'Can Analyze AI track whether our updates (new page, new positioning, new proof point) actually move us into that conversation over time?',
       answer: 'Yes. After you ship changes — new messaging, refreshed content, new proof — you can watch whether you start getting mentioned for that prompt, whether your position improves, and whether sentiment shifts. It\'s not "we published it and hope for the best," it\'s "did we enter the consideration set for that exact buying moment?"'
     },
     {
       id: 'faq-5',
       question: 'Can we see early signs that our presence is slipping in a high-value space, before it turns into lost pipeline?',
-      answer: 'Yes. ANALYZE tracks your visibility and rank for the prompts that matter to you and shows when that presence starts to drop. If you\'re losing ground for a core use case, or you\'re being replaced by another vendor, you\'ll see it as it starts — not after Sales starts complaining about lead quality.'
+      answer: 'Yes. Analyze AI tracks your visibility and rank for the prompts that matter to you and shows when that presence starts to drop. If you\'re losing ground for a core use case, or you\'re being replaced by another vendor, you\'ll see it as it starts — not after Sales starts complaining about lead quality.'
     },
     {
       id: 'faq-6',
-      question: 'Does ANALYZE show which AI engines (ChatGPT, Perplexity, Copilot, etc.) are slowing down for us so we know where we\'re losing distribution?',
+      question: 'Does Analyze AI show which AI engines (ChatGPT, Perplexity, Copilot, etc.) are slowing down for us so we know where we\'re losing distribution?',
       answer: 'Yes. You can see how each AI assistant or AI search engine is treating you over time: who\'s still recommending you, who\'s cooled off, and who has started favoring a competitor. That lets you say, "Perplexity dropped us this month and Copilot is tilting toward [Competitor]" instead of guessing where demand went.'
     },
     {
       id: 'faq-7',
       question: 'Can we identify which pages on our site are already getting AI-driven sessions and converting, so we know what to scale?',
-      answer: 'Yes. ANALYZE shows which of your pages are already getting traffic from AI assistants and AI search, how many sessions those pages are generating, and which of those sessions turn into meaningful actions. That tells you what\'s already working so you can double down with promotion, refresh, localization, or paid support.'
+      answer: 'Yes. Analyze AI shows which of your pages are already getting traffic from AI assistants and AI search, how many sessions those pages are generating, and which of those sessions turn into meaningful actions. That tells you what\'s already working so you can double down with promotion, refresh, localization, or paid support.'
     },
     {
       id: 'faq-8',
@@ -74,17 +74,17 @@ const AIImproveToolPage = async () => {
     {
       id: 'faq-10',
       question: 'How does this help me justify resourcing ("we need to work on this prompt now, not next quarter")?',
-      answer: 'You can point to revenue impact and active loss. ANALYZE shows: "This prompt is clearly in-buying-cycle, we\'re not in it, [Competitor] is." "This is trending down for us and they\'re starting to replace us." "This page is already converting from AI-sourced traffic. We should amplify it now." You can walk into a resourcing conversation with "here\'s where pipeline is leaking and here\'s where pipeline is already forming," not "I think we should write a blog."'
+      answer: 'You can point to revenue impact and active loss. Analyze AI shows: "This prompt is clearly in-buying-cycle, we\'re not in it, [Competitor] is." "This is trending down for us and they\'re starting to replace us." "This page is already converting from AI-sourced traffic. We should amplify it now." You can walk into a resourcing conversation with "here\'s where pipeline is leaking and here\'s where pipeline is already forming," not "I think we should write a blog."'
     },
     {
       id: 'faq-11',
       question: 'Does this replace traditional SEO tools, or is this solving a different problem than search ranking?',
-      answer: 'It\'s a different problem. SEO tools show how you rank in traditional web search. ANALYZE shows how AI assistants recommend vendors, explain your product, compare you with competitors, and route buyers to specific pages — and whether that visibility is turning into traffic and conversions. Classic SEO can\'t tell you that.'
+      answer: 'It\'s a different problem. SEO tools show how you rank in traditional web search. Analyze AI shows how AI assistants recommend vendors, explain your product, compare you with competitors, and route buyers to specific pages — and whether that visibility is turning into traffic and conversions. Classic SEO can\'t tell you that.'
     },
     {
       id: 'faq-12',
-      question: 'How quickly does ANALYZE start surfacing opportunity gaps after we connect?',
-      answer: 'Very quickly. Once ANALYZE is set up, you start seeing: prompts where you\'re absent but competitors are present, which competitors are being favored for those prompts, and which of your existing pages are already pulling qualified AI-driven traffic. You don\'t need weeks of "learning mode" before you can take action.'
+      question: 'How quickly does Analyze AI start surfacing opportunity gaps after we connect?',
+      answer: 'Very quickly. Once Analyze AI is set up, you start seeing: prompts where you\'re absent but competitors are present, which competitors are being favored for those prompts, and which of your existing pages are already pulling qualified AI-driven traffic. You don\'t need weeks of "learning mode" before you can take action.'
     }
   ];
 
@@ -127,7 +127,7 @@ const AIImproveToolPage = async () => {
       
       <FaqFeatures 
         heading="Frequently Asked Questions"
-        description="Answers to common questions about how ANALYZE identifies content opportunities and helps you win high-intent AI prompts."
+        description="Answers to common questions about how Analyze AI identifies content opportunities and helps you win high-intent AI prompts."
         items={faqItems}
       />
       <HeroCta />

@@ -9,10 +9,10 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Become An Affiliate - Earn 30% Recurring Commission',
-  description: 'Join the ANALYZE affiliate program and earn 30% recurring commission forever. Promote the fastest-growing AI traffic analytics platform.',
+  description: 'Join the Analyze AI affiliate program and earn 30% recurring commission forever. Promote the fastest-growing AI traffic analytics platform.',
   openGraph: {
     title: 'Become An Affiliate - Earn 30% Recurring Commission',
-    description: 'Join the ANALYZE affiliate program and earn 30% recurring commission forever. Promote the fastest-growing AI traffic analytics platform.',
+    description: 'Join the Analyze AI affiliate program and earn 30% recurring commission forever. Promote the fastest-growing AI traffic analytics platform.',
     images: ['/affiliate-hero.png'],
   },
 };
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const AffiliatePage = () => {
   // Generate service schema for affiliate page
   const serviceSchema = generateServiceSchema({
-    name: "ANALYZE Affiliate Program",
+    name: "Analyze AI Affiliate Program",
     description: "Earn 30% recurring commission forever promoting the fastest-growing AI traffic analytics platform.",
     url: "https://www.tryanalyze.ai/affiliate",
     category: "Affiliate Program",

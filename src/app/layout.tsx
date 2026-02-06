@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "AI Search Analytics Platform For Marketing Teams",
-  description: "Monitor your brand's visibility and sentiment across all major AI answer engines with Analyze.",
+  description: "Monitor your brand's visibility and sentiment across all major AI answer engines with Analyze AI.",
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },

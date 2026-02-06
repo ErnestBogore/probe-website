@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Discover | ANALYZE',
+  title: 'Discover | Analyze AI',
   description: "See how AI assistants talk about your product, which competitors are being recommended, and where you're missing from buyer prompts — before it costs you pipeline.",
   openGraph: {
     images: ['/ai search tool image.png'],
@@ -27,8 +27,8 @@ const AISearchToolPage = async () => {
   const faqItems = [
     {
       id: 'faq-1',
-      question: 'How does ANALYZE figure out which prompts buyers are actually asking in the market?',
-      answer: 'ANALYZE monitors real, high-intent buying questions that people ask AI assistants and AI search engines (e.g. "best [category] for [ICP]," "alternatives to [competitor]," "[tool] vs [tool] for [use case]"). We cluster and score those prompts around purchase intent, segment, and product line. You\'re not guessing what buyers might ask — you\'re looking at the actual evaluation language that shows up in-market.'
+      question: 'How does Analyze AI figure out which prompts buyers are actually asking in the market?',
+      answer: 'Analyze AI monitors real, high-intent buying questions that people ask AI assistants and AI search engines (e.g. "best [category] for [ICP]," "alternatives to [competitor]," "[tool] vs [tool] for [use case]"). We cluster and score those prompts around purchase intent, segment, and product line. You\'re not guessing what buyers might ask — you\'re looking at the actual evaluation language that shows up in-market.'
     },
     {
       id: 'faq-2',
@@ -37,8 +37,8 @@ const AISearchToolPage = async () => {
     },
     {
       id: 'faq-3',
-      question: 'Can ANALYZE highlight the prompts where we\'re not being mentioned but competitors are?',
-      answer: 'Yes. ANALYZE flags prompts where buyers are clearly in-market ("top platforms for X," "best alternative to Y") and your competitors are being recommended but you\'re either missing or underrepresented. You get a list of "we\'re invisible here / they\'re getting picked instead," which becomes a direct gaps list for PMM, content, and demand gen.'
+      question: 'Can Analyze AI highlight the prompts where we\'re not being mentioned but competitors are?',
+      answer: 'Yes. Analyze AI flags prompts where buyers are clearly in-market ("top platforms for X," "best alternative to Y") and your competitors are being recommended but you\'re either missing or underrepresented. You get a list of "we\'re invisible here / they\'re getting picked instead," which becomes a direct gaps list for PMM, content, and demand gen.'
     },
     {
       id: 'faq-4',
@@ -47,18 +47,18 @@ const AISearchToolPage = async () => {
     },
     {
       id: 'faq-5',
-      question: 'Does ANALYZE show which competitors are getting mentioned next to us most often, and in what context?',
-      answer: 'Yes. ANALYZE shows which vendors are most frequently listed alongside you in answers to high-intent prompts, and for which use cases. You can see, for example, "When buyers ask about mid-market CRM, we\'re being compared to A, B, and C — and here\'s how each of us is framed." That gives you a live competitive set for each motion, not just a static \'competitors\' slide.'
+      question: 'Does Analyze AI show which competitors are getting mentioned next to us most often, and in what context?',
+      answer: 'Yes. Analyze AI shows which vendors are most frequently listed alongside you in answers to high-intent prompts, and for which use cases. You can see, for example, "When buyers ask about mid-market CRM, we\'re being compared to A, B, and C — and here\'s how each of us is framed." That gives you a live competitive set for each motion, not just a static \'competitors\' slide.'
     },
     {
       id: 'faq-6',
-      question: 'Can ANALYZE surface "new" or unexpected competitors that sales/PMM hasn\'t even been watching yet?',
+      question: 'Can Analyze AI surface "new" or unexpected competitors that sales/PMM hasn\'t even been watching yet?',
       answer: 'Yes. When we detect brands that keep getting recommended for your category but aren\'t in your tracked competitor list, we surface them as suggested competitors. This helps you catch fast-moving or niche challengers before they start showing up on sales calls or in RFPs.'
     },
     {
       id: 'faq-7',
       question: 'Can I see which exact sources and URLs AI is citing when it recommends a competitor over us?',
-      answer: 'Yes. ANALYZE shows the specific pages models are pulling from to justify recommendations — competitor comparison pages, "top tools for [use case]" listicles, blog posts, analyst-style breakdowns, etc. You don\'t just see "they\'re winning"; you see why they\'re winning and which assets are persuading the model.'
+      answer: 'Yes. Analyze AI shows the specific pages models are pulling from to justify recommendations — competitor comparison pages, "top tools for [use case]" listicles, blog posts, analyst-style breakdowns, etc. You don\'t just see "they\'re winning"; you see why they\'re winning and which assets are persuading the model.'
     },
     {
       id: 'faq-8',
@@ -68,7 +68,7 @@ const AISearchToolPage = async () => {
     {
       id: 'faq-9',
       question: 'How is this different from manually asking ChatGPT \'Who are the best tools for X?\' and screenshotting the answer?',
-      answer: 'Manual checks give you one answer, once. ANALYZE gives you: Coverage across many high-intent prompts, not one guess. Competitor frequency and momentum, not just a snapshot. How you\'re being positioned, not just whether you appear. The sources and URLs backing those claims. Suggested gaps (where you\'re missing but should be in the conversation). In other words, it\'s structured market intelligence, not screenshots.'
+      answer: 'Manual checks give you one answer, once. Analyze AI gives you: Coverage across many high-intent prompts, not one guess. Competitor frequency and momentum, not just a snapshot. How you\'re being positioned, not just whether you appear. The sources and URLs backing those claims. Suggested gaps (where you\'re missing but should be in the conversation). In other words, it\'s structured market intelligence, not screenshots.'
     },
     {
       id: 'faq-10',
@@ -99,7 +99,7 @@ const AISearchToolPage = async () => {
   // Generate service schema
   const serviceSchema = generateServiceSchema({
     name: "AI Search Tool",
-    description: "Get immediate AI search insights. Run ad-hoc searches to see real-time rankings, analyze competitors, and view full LLM responses across all major answer engines with Analyze.",
+    description: "Get immediate AI search insights. Run ad-hoc searches to see real-time rankings, analyze competitors, and view full LLM responses across all major answer engines with Analyze AI.",
     url: "https://www.tryanalyze.ai/features/discover",
     category: "Search Analysis Tool",
     features: [
@@ -126,7 +126,7 @@ const AISearchToolPage = async () => {
       
     <FaqFeatures 
       heading="Frequently Asked Questions"
-      description="Answers to common questions about how ANALYZE maps AI buying moments, competitive positioning, and where you're being mentioned (or not)."
+      description="Answers to common questions about how Analyze AI maps AI buying moments, competitive positioning, and where you're being mentioned (or not)."
       items={faqItems}
     />
     <HeroCta />

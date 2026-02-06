@@ -41,7 +41,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Herramientas de Escritura con IA Gratis | Analyze',
+  title: 'Herramientas de Escritura con IA Gratis | Analyze AI',
   description: 'Accede a nuestra colección de herramientas de escritura con IA gratuitas: generadores de párrafos, parafraseadores, resumidores, correctores gramaticales y más. Sin registro.',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/es',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Herramientas de Escritura con IA Gratis | Analyze',
+    title: 'Herramientas de Escritura con IA Gratis | Analyze AI',
     description: 'Accede a nuestra colección de herramientas de escritura con IA gratuitas: generadores de párrafos, parafraseadores, resumidores, correctores gramaticales y más. Sin registro.',
     url: 'https://www.tryanalyze.ai/free-tools/es',
     type: 'website',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Herramientas de Escritura con IA Gratis | Analyze',
+    title: 'Herramientas de Escritura con IA Gratis | Analyze AI',
     description: 'Accede a nuestra colección de herramientas de escritura con IA gratuitas: generadores de párrafos, parafraseadores, resumidores, correctores gramaticales y más. Sin registro.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },
@@ -250,7 +250,7 @@ export default function FreeToolsEsPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-              Las herramientas de escritura con IA de Analyze te ayudan a crear contenido de alta calidad que genera clics, registros y ventas. Ya sea que necesites generar un título, escribir un informe o cualquier otra cosa, nuestras herramientas de IA están aquí para ayudarte.
+              Las herramientas de escritura con IA de Analyze AI te ayudan a crear contenido de alta calidad que genera clics, registros y ventas. Ya sea que necesites generar un título, escribir un informe o cualquier otra cosa, nuestras herramientas de IA están aquí para ayudarte.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">

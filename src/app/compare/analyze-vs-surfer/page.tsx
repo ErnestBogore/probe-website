@@ -12,8 +12,8 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Analyze vs. Surfer: Feature Comparison',
-  description: 'Compare how Analyze and Surfer impact visibility, traffic, and conversions across AI engines.',
+  title: 'Analyze AI vs. Surfer: Feature Comparison',
+  description: 'Compare how Analyze AI and Surfer impact visibility, traffic, and conversions across AI engines.',
   openGraph: {
     images: ['/AI Referral Traffic.png'],
   },
@@ -29,8 +29,8 @@ const AnalyzeVsSurferPage = async () => {
 
   // Generate service schema
   const serviceSchema = generateServiceSchema({
-    name: "ANALYZE vs Surfer Comparison",
-    description: "Compare ANALYZE and Surfer for AI search visibility tracking. See why ANALYZE offers superior AI-first analytics beyond traditional SEO tools.",
+    name: "Analyze AI vs Surfer Comparison",
+    description: "Compare Analyze AI and Surfer for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional SEO tools.",
     url: "https://www.tryanalyze.ai/compare/analyze-vs-surfer",
     category: "Analytics Software",
     features: [

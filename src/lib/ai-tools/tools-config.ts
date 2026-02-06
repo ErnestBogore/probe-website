@@ -1005,7 +1005,7 @@ Generate a structured outline with headings and brief notes.`,
     metaDescription: 'Detect AI-generated content instantly with our free tool. Get detailed analysis and learn what makes your text sound like AI. No signup required.',
     inputLabel: 'Text to analyze...',
     inputPlaceholder: 'Paste the text you want to check for AI generation...',
-    buttonText: 'Analyze Text',
+    buttonText: 'Analyze AI Text',
     maxLength: 4096,
     options: [
       { name: 'analysisDepth', label: 'Analysis depth', choices: ['Quick scan', 'Standard analysis', 'Detailed breakdown'], default: 'Standard analysis', type: 'select' },
@@ -1014,7 +1014,7 @@ Generate a structured outline with headings and brief notes.`,
 
 ## CORE RULES
 - Provide a percentage score indicating likelihood of AI generation
-- Analyze multiple dimensions of the text
+- Analyze AI multiple dimensions of the text
 - Explain reasoning with specific examples
 - Acknowledge uncertainty when indicators are mixed
 - Never claim 100% certainty
@@ -1540,8 +1540,8 @@ Provide the translation with explanation of key emojis used.`,
     slug: 'plagiarism-checker',
     name: 'Plagiarism Checker',
     title: 'Free AI Plagiarism Checker',
-    description: 'Analyze your content for originality and identify passages that may need citations or rewriting.',
-    metaDescription: 'Analyze your content for originality and identify passages that may need citations or rewriting. Get actionable feedback to improve your writing.',
+    description: 'Analyze AI your content for originality and identify passages that may need citations or rewriting.',
+    metaDescription: 'Analyze AI your content for originality and identify passages that may need citations or rewriting. Get actionable feedback to improve your writing.',
     inputLabel: 'Text to check...',
     inputPlaceholder: 'Paste your text here to check for originality...',
     buttonText: 'Check Originality',
@@ -1555,7 +1555,7 @@ Provide the translation with explanation of key emojis used.`,
 This tool provides analysis based on pattern recognition. It does not have access to a comprehensive database of all published content. For high-stakes situations (academic submission, legal matters), use dedicated plagiarism services with full database access.
 
 ## CORE RULES
-- Analyze text for originality indicators and red flags
+- Analyze AI text for originality indicators and red flags
 - Identify passages that appear copied or heavily templated
 - Distinguish between common phrases and potentially plagiarized content
 - Provide actionable feedback for improving originality
@@ -1653,7 +1653,7 @@ This analysis is based on pattern recognition and does not compare against a com
 
 ## IDEA GENERATION FRAMEWORK
 
-### Step 1: Analyze the Input
+### Step 1: Analyze AI the Input
 - Identify the core topic/niche
 - Determine the likely target audience
 - Assess commercial intent vs. informational intent
@@ -2380,7 +2380,7 @@ Revise any alt text failing these checks.`,
 
 ## CONTENT IDEA GENERATION PROCESS
 
-### Step 1: Analyze Input
+### Step 1: Analyze AI Input
 - Core topic or niche
 - Target audience (explicit or inferred)
 - Platform focus (or multi-platform)
@@ -2871,7 +2871,7 @@ Names combining two words or concepts.
 
 ## NAME GENERATION PROCESS
 
-### Step 1: Analyze Brand Context
+### Step 1: Analyze AI Brand Context
 Extract from user input:
 - Industry/category
 - Target audience
@@ -3262,7 +3262,7 @@ Names combining two words or concepts.
 
 ## NAME GENERATION PROCESS
 
-### Step 1: Analyze Product Context
+### Step 1: Analyze AI Product Context
 Identify from user input:
 - Product category and function
 - Key benefits or differentiators
@@ -3624,7 +3624,7 @@ Revise any slogan failing these checks.`,
 
 ## AD COPY CREATION PROCESS
 
-### Step 1: Analyze Landing Page/Offer
+### Step 1: Analyze AI Landing Page/Offer
 Identify from user input:
 - Primary product/service
 - Key benefits and features
@@ -4539,7 +4539,7 @@ Revise any element failing these checks.`,
 
 ## HOOK GENERATION PROCESS
 
-1. **Analyze Input Context**
+1. **Analyze AI Input Context**
    - Identify the core topic and theme
    - Understand the target audience
    - Recognize the content format (article, speech, video, etc.)
@@ -5610,7 +5610,7 @@ Provide hashtags as:
       { question: 'How often should I change my hashtags?', answer: 'Avoid using identical hashtag sets repeatedly—this can appear spammy. Create 5-10 different sets for your content types and rotate them. Update your strategy monthly based on performance.' },
       { question: 'Do hashtags work for Instagram Reels?', answer: 'Yes, hashtags help Reels discoverability. Use 3-5 relevant hashtags including Reels-specific tags, trending hashtags, and niche tags. The audio you use also affects Reels discovery.' },
       { question: 'Can I follow hashtags on Instagram?', answer: 'Yes, you can follow hashtags to see related content in your feed. This also means your content using those hashtags can appear in followers\' feeds—another reason to use relevant tags.' },
-      { question: 'Why aren\'t my hashtags working?', answer: 'Possible reasons: using irrelevant or banned hashtags, repeating the same sets, using only very popular tags with high competition, or posting at times when your audience isn\'t active. Analyze and adjust your strategy.' },
+      { question: 'Why aren\'t my hashtags working?', answer: 'Possible reasons: using irrelevant or banned hashtags, repeating the same sets, using only very popular tags with high competition, or posting at times when your audience isn\'t active. Analyze AI and adjust your strategy.' },
     ],
   },
 

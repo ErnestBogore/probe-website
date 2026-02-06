@@ -20,10 +20,10 @@ import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/schema'
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 
 export const metadata: Metadata = {
-  title: 'AI Search Analytics For Marketing Teams | Analyze',
+  title: 'AI Search Analytics For Marketing Teams | Analyze AI',
   description: 'Understand how AI sees your brand. Monitor search rankings, analyze sentiment, and protect your reputation with our powerful AI analytics platform. Get started today.',
   openGraph: {
-    title: 'AI Search Analytics For Marketing Teams | Analyze',
+    title: 'AI Search Analytics For Marketing Teams | Analyze AI',
     description: 'Understand how AI sees your brand. Monitor search rankings, analyze sentiment, and protect your reputation with our powerful AI analytics platform. Get started today.',
     images: ['/Artboard (1).png'],
   },
@@ -52,17 +52,17 @@ export default async function Home() {
   const homepageFaqItems = [
     {
       id: 'faq-1',
-      question: 'What is Analyze—and what does it actually do?',
-      answer: 'ANALYZE is an AI search analytics platform. It maps how AI answer engines portray your brand (what\'s said, where you appear, and who appears beside you), then ties that visibility to GA4 traffic, conversions, and revenue—so you can invest where results compound.'
+      question: 'What is Analyze AI—and what does it actually do?',
+      answer: 'Analyze AI is an AI search analytics platform. It maps how AI answer engines portray your brand (what\'s said, where you appear, and who appears beside you), then ties that visibility to GA4 traffic, conversions, and revenue—so you can invest where results compound.'
     },
     {
       id: 'faq-2',
-      question: 'How is ANALYZE different from "GEO tools"?',
+      question: 'How is Analyze AI different from "GEO tools"?',
       answer: 'Most GEO tools stop at screenshots of mentions. AI search analytics goes further: Tracks appearance + placement + sentiment across engines, Attributes AI referrals to sessions, pages, and conversions via GA4, Adds competitive and citation context (who else appears, which sources shape answers), Guides specific improvements (entities, sources, gaps) rather than generic scores.'
     },
     {
       id: 'faq-3',
-      question: 'How does ANALYZE work, in practice?',
+      question: 'How does Analyze AI work, in practice?',
       answer: 'We follow a four-step loop that mirrors how teams operate: Discover: See where you do/don\'t appear; view sources models cite. Measure: Track share of answers, positions, sentiment, and movement by topic, product, and competitor. Improve: Get the citations, entities, and content gaps that influence model responses. Govern: Monitor risk terms and reputational drift; catch negative narratives early. No code to start. Connect GA4 to unlock attribution.'
     },
     {
@@ -72,18 +72,18 @@ export default async function Home() {
     },
     {
       id: 'faq-5',
-      question: 'What counts as an "appearance" or "mention" in ANALYZE?',
+      question: 'What counts as an "appearance" or "mention" in Analyze AI?',
       answer: 'An appearance is when an engine names your brand, product, or site in its answer or includes your domain among citations/sources. We record position/ordering, sentiment, and co-mentions (who else appears alongside you).'
     },
     {
       id: 'faq-6',
-      question: 'Can Analyze show when AI is positive or negative about us?',
+      question: 'Can Analyze AI show when AI is positive or negative about us?',
       answer: 'Yes. We capture portrayal and sentiment at the prompt level (supportive, neutral, critical) and surface risk terms (e.g., pricing controversy, reliability complaints) so comms/content teams can respond with evidence.'
     },
     {
       id: 'faq-7',
       question: 'Can I track competitors?',
-      answer: 'Absolutely. Set the rivals that matter; ANALYZE maintains a rolling scoreboard by cluster and prompt—share of answers, sentiment, movement, and citation share—so you know where to push and how.'
+      answer: 'Absolutely. Set the rivals that matter; Analyze AI maintains a rolling scoreboard by cluster and prompt—share of answers, sentiment, movement, and citation share—so you know where to push and how.'
     },
     {
       id: 'faq-8',
@@ -102,12 +102,12 @@ export default async function Home() {
     },
     {
       id: 'faq-11',
-      question: 'Who should use ANALYZE?',
+      question: 'Who should use Analyze AI?',
       answer: 'Marketing & SEO leaders proving impact and prioritizing content, Content teams needing prompt-level gaps and citation targets, Comms/brand monitoring narrative and risk terms, Growth & RevOps connecting AI visibility to pipeline and revenue.'
     },
     {
       id: 'faq-12',
-      question: 'Does ANALYZE support multiple regions or languages?',
+      question: 'Does Analyze AI support multiple regions or languages?',
       answer: 'Yes. Track locale and language variants where engines provide them. Results are segmented so you can compare market by market.'
     },
     {

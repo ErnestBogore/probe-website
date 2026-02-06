@@ -6,8 +6,8 @@ import { FaqTalkToHuman } from '@/components/talk-to-human/faq-talk-to-human'
 import { getBlogPostsBySlugs } from '@/lib/datocms'
 
 export const metadata: Metadata = {
-  title: 'Talk To A Human | ANALYZE - AI Search Analytics Platform',
-  description: 'Schedule a demo with our team to see how ANALYZE can help you track your AI visibility across major AI engines.',
+  title: 'Talk To A Human | Analyze AI - AI Search Analytics Platform',
+  description: 'Schedule a demo with our team to see how Analyze AI can help you track your AI visibility across major AI engines.',
 }
 
 export default async function TalkToAHumanPage() {
@@ -23,7 +23,7 @@ export default async function TalkToAHumanPage() {
     {
       id: 'faq-1',
       question: 'What happens during the demo?',
-      answer: 'During our 15-30 minute demo, we\'ll show you how ANALYZE tracks your brand across AI engines, walk through your current visibility, and discuss how our platform can help you improve your AI search presence. We\'ll also answer any specific questions about your use case.'
+      answer: 'During our 15-30 minute demo, we\'ll show you how Analyze AI tracks your brand across AI engines, walk through your current visibility, and discuss how our platform can help you improve your AI search presence. We\'ll also answer any specific questions about your use case.'
     },
     {
       id: 'faq-2',
@@ -33,7 +33,7 @@ export default async function TalkToAHumanPage() {
     {
       id: 'faq-3',
       question: 'How long does the demo take?',
-      answer: 'Most demos take 15-30 minutes. We keep them focused and actionable, showing you exactly how ANALYZE works and how it applies to your specific situation.'
+      answer: 'Most demos take 15-30 minutes. We keep them focused and actionable, showing you exactly how Analyze AI works and how it applies to your specific situation.'
     },
     {
       id: 'faq-4',

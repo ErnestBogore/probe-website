@@ -12,8 +12,8 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Analyze vs. Google Looker Studio: Feature Comparison',
-  description: 'Compare how Analyze and Google Looker Studio impact visibility, traffic, and conversions across AI engines.',
+  title: 'Analyze AI vs. Google Looker Studio: Feature Comparison',
+  description: 'Compare how Analyze AI and Google Looker Studio impact visibility, traffic, and conversions across AI engines.',
   openGraph: {
     images: ['/AI Referral Traffic.png'],
   },
@@ -29,8 +29,8 @@ const AnalyzeVsGoogleLookerStudioPage = async () => {
 
   // Generate service schema
   const serviceSchema = generateServiceSchema({
-    name: "ANALYZE vs Google Looker Studio Comparison",
-    description: "Compare ANALYZE and Google Looker Studio for AI search visibility tracking. See why ANALYZE offers superior AI-first analytics beyond traditional data visualization.",
+    name: "Analyze AI vs Google Looker Studio Comparison",
+    description: "Compare Analyze AI and Google Looker Studio for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional data visualization.",
     url: "https://www.tryanalyze.ai/compare/analyze-vs-google-looker-studio",
     category: "Analytics Software",
     features: [

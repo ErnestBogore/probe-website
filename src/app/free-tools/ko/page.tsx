@@ -41,7 +41,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '무료 AI 글쓰기 도구 | Analyze',
+  title: '무료 AI 글쓰기 도구 | Analyze AI',
   description: '무료 AI 글쓰기 도구 컬렉션에 액세스하세요: 단락 생성기, 패러프레이징, 요약, 문법 검사기 등. 가입 필요 없음.',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/ko',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: '무료 AI 글쓰기 도구 | Analyze',
+    title: '무료 AI 글쓰기 도구 | Analyze AI',
     description: '무료 AI 글쓰기 도구 컬렉션에 액세스하세요: 단락 생성기, 패러프레이징, 요약, 문법 검사기 등. 가입 필요 없음.',
     url: 'https://www.tryanalyze.ai/free-tools/ko',
     type: 'website',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '무료 AI 글쓰기 도구 | Analyze',
+    title: '무료 AI 글쓰기 도구 | Analyze AI',
     description: '무료 AI 글쓰기 도구 컬렉션에 액세스하세요: 단락 생성기, 패러프레이징, 요약, 문법 검사기 등. 가입 필요 없음.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },
@@ -246,7 +246,7 @@ export default function FreeToolsKoPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-              Analyze의 AI 글쓰기 도구는 클릭, 가입, 판매를 유도하는 고품질 콘텐츠를 만드는 데 도움을 줍니다. 제목 생성, 보고서 작성 등 무엇이든 우리의 AI 도구가 도와드립니다.
+              Analyze AI의 AI 글쓰기 도구는 클릭, 가입, 판매를 유도하는 고품질 콘텐츠를 만드는 데 도움을 줍니다. 제목 생성, 보고서 작성 등 무엇이든 우리의 AI 도구가 도와드립니다.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">

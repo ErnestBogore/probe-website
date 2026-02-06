@@ -41,7 +41,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '免费AI写作工具 | Analyze',
+  title: '免费AI写作工具 | Analyze AI',
   description: '访问我们的免费AI写作工具集合：段落生成器、改写工具、摘要工具、语法检查器等。无需注册。',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/zh',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: '免费AI写作工具 | Analyze',
+    title: '免费AI写作工具 | Analyze AI',
     description: '访问我们的免费AI写作工具集合：段落生成器、改写工具、摘要工具、语法检查器等。无需注册。',
     url: 'https://www.tryanalyze.ai/free-tools/zh',
     type: 'website',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '免费AI写作工具 | Analyze',
+    title: '免费AI写作工具 | Analyze AI',
     description: '访问我们的免费AI写作工具集合：段落生成器、改写工具、摘要工具、语法检查器等。无需注册。',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },
@@ -246,7 +246,7 @@ export default function FreeToolsZhPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-              Analyze的AI写作工具帮助您创建能够产生点击、注册和销售的高质量内容。无论您需要生成标题、撰写报告还是其他任何内容，我们的AI工具都能为您提供帮助。
+              Analyze AI的AI写作工具帮助您创建能够产生点击、注册和销售的高质量内容。无论您需要生成标题、撰写报告还是其他任何内容，我们的AI工具都能为您提供帮助。
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">

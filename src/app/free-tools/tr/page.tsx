@@ -41,7 +41,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Ücretsiz AI Yazma Araçları | Analyze',
+  title: 'Ücretsiz AI Yazma Araçları | Analyze AI',
   description: 'Ücretsiz AI yazma araçları koleksiyonumuza erişin: paragraf oluşturucu, yeniden ifade, özet, dilbilgisi denetleyici ve daha fazlası. Kayıt gerekmez.',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/tr',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Ücretsiz AI Yazma Araçları | Analyze',
+    title: 'Ücretsiz AI Yazma Araçları | Analyze AI',
     description: 'Ücretsiz AI yazma araçları koleksiyonumuza erişin: paragraf oluşturucu, yeniden ifade, özet, dilbilgisi denetleyici ve daha fazlası. Kayıt gerekmez.',
     url: 'https://www.tryanalyze.ai/free-tools/tr',
     type: 'website',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ücretsiz AI Yazma Araçları | Analyze',
+    title: 'Ücretsiz AI Yazma Araçları | Analyze AI',
     description: 'Ücretsiz AI yazma araçları koleksiyonumuza erişin: paragraf oluşturucu, yeniden ifade, özet, dilbilgisi denetleyici ve daha fazlası. Kayıt gerekmez.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },
@@ -246,7 +246,7 @@ export default function FreeToolsTrPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-              Analyze&apos;ın AI yazma araçları, tıklama, kayıt ve satış sağlayan yüksek kaliteli içerik oluşturmanıza yardımcı olur. Başlık oluşturma, rapor yazma veya başka herhangi bir şey için AI araçlarımız yanınızda.
+              Analyze AI'ın AI yazma araçları, tıklama, kayıt ve satış sağlayan yüksek kaliteli içerik oluşturmanıza yardımcı olur. Başlık oluşturma, rapor yazma veya başka herhangi bir şey için AI araçlarımız yanınızda.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">

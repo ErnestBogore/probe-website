@@ -11,7 +11,7 @@ import { Metadata } from 'next';
 import { PromptPage } from '@/types/prompt';
 
 export const metadata: Metadata = {
-  title: 'The Best Template Library for ChatGPT Prompts | Analyze',
+  title: 'The Best Template Library for ChatGPT Prompts | Analyze AI',
   description: 'Battle-tested prompts for marketing, SEO, social media, and more. Copy, customize, and get results in minutes.',
 };
 

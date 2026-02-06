@@ -45,7 +45,7 @@ export const Testimonials = () => {
               {/* Left - Quote */}
               <div className="lg:w-[30%] lg:border-r lg:border-gray-200 lg:pr-10">
                 <blockquote className="text-lg text-gray-800 leading-relaxed mb-6">
-                  "We're now observing a <span className="font-semibold text-gray-900">5% conversion rate</span> from AI search traffic and we can attribute it down to the source page and medium. Our goal is to double down on Analyze's recommendations to reduce our over-reliance on Google."
+                  "We're now observing a <span className="font-semibold text-gray-900">5% conversion rate</span> from AI search traffic and we can attribute it down to the source page and medium. Our goal is to double down on Analyze AI's recommendations to reduce our over-reliance on Google."
                 </blockquote>
                 <div className="pt-4 border-t border-gray-100">
                   <p className="font-semibold text-gray-900">Gilbert Igor</p>
@@ -56,11 +56,11 @@ export const Testimonials = () => {
               {/* Right - Case Study */}
               <div className="lg:flex-1">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  How Kylian AI used Analyze to drive 1k+/m visits from AI SEO
+                  How Kylian AI used Analyze AI to drive 1k+/m visits from AI SEO
                 </h3>
                 <div className="text-gray-600 leading-relaxed space-y-4">
                   <p>
-                    The Analyze dashboard showed exactly which pages were converting. <span className="font-medium text-gray-800">"Best Online English Courses"</span> drove 24 sessions and 2 conversions—a conversion rate of <span className="font-medium text-gray-800">8.3%</span>, far above the typical blog benchmark of 1–2%. "300 Most Common English Words" brought 17 sessions but no conversions, confirming its role as more informational. "Websites to Learn English" recorded 13 sessions and 1 conversion, a <span className="font-medium text-gray-800">7.7% rate</span>—again several times higher than standard content benchmarks.
+                    The Analyze AI dashboard showed exactly which pages were converting. <span className="font-medium text-gray-800">"Best Online English Courses"</span> drove 24 sessions and 2 conversions—a conversion rate of <span className="font-medium text-gray-800">8.3%</span>, far above the typical blog benchmark of 1–2%. "300 Most Common English Words" brought 17 sessions but no conversions, confirming its role as more informational. "Websites to Learn English" recorded 13 sessions and 1 conversion, a <span className="font-medium text-gray-800">7.7% rate</span>—again several times higher than standard content benchmarks.
                   </p>
                   <p>
                     By August, the compounding effect was undeniable. AI-sourced sessions had scaled from 200 in May to <span className="font-medium text-gray-800">697 in August</span> (+15.4% month-over-month) and <span className="font-medium text-gray-800">1,000+ in November</span> (30% increase from October). AI referrals now make up 3% of all site traffic. And the growth was resilient—spread across ChatGPT, Copilot, Claude, Gemini, and more—rather than concentrated in a single platform.
@@ -79,7 +79,7 @@ export const Testimonials = () => {
         {/* Big Quote Section - Bold statement style */}
         <div className="py-16">
           <blockquote className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8">
-            "Google has been quite unreliable since the creation of What Is That Movie. We've been using Analyze to diversify our traffic sources and have been using their recommendations to boost our AI SEO traffic by 35% month-over-month."
+            "Google has been quite unreliable since the creation of What Is That Movie. We've been using Analyze AI to diversify our traffic sources and have been using their recommendations to boost our AI SEO traffic by 35% month-over-month."
           </blockquote>
           <div>
             <p className="text-base font-semibold text-gray-900">Justin Ahinon</p>

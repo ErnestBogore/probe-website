@@ -17,7 +17,7 @@ export const Navbar = () => {
               src="/logo-tryanalyze.png"
               width={120}
               height={40}
-              alt="Analyze - AI Search Analytics Platform"
+              alt="Analyze AI - AI Search Analytics Platform"
               className="h-auto w-auto"
               priority
             />

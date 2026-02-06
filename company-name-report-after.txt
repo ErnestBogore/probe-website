@@ -1,0 +1,1030 @@
+==========================================
+Company Name Usage Report
+Searching for: ANALYZE and Analyze
+==========================================
+
+## Summary
+
+- ANALYZE (uppercase):        0 occurrences
+- Analyze (title case):      840 occurrences
+
+## Files with ANALYZE (uppercase)
+
+
+## Files with Analyze (title case)
+
+./scripts/../src/app/affiliate/page.tsx
+./scripts/../src/app/blog/[slug]/page.tsx
+./scripts/../src/app/blog/de/[slug]/page.tsx
+./scripts/../src/app/blog/es/[slug]/page.tsx
+./scripts/../src/app/blog/fr/[slug]/page.tsx
+./scripts/../src/app/blog/it/[slug]/page.tsx
+./scripts/../src/app/blog/nl/[slug]/page.tsx
+./scripts/../src/app/blog/page.tsx
+./scripts/../src/app/case-study/[slug]/page.tsx
+./scripts/../src/app/case-study/page.tsx
+./scripts/../src/app/compare/analyze-vs-ahrefs-brand-radar/page.tsx
+./scripts/../src/app/compare/analyze-vs-athenahq/page.tsx
+./scripts/../src/app/compare/analyze-vs-google-looker-studio/page.tsx
+./scripts/../src/app/compare/analyze-vs-gsc/page.tsx
+./scripts/../src/app/compare/analyze-vs-hubspot-ai-search-grader/page.tsx
+./scripts/../src/app/compare/analyze-vs-peec-ai/page.tsx
+./scripts/../src/app/compare/analyze-vs-profound/page.tsx
+./scripts/../src/app/compare/analyze-vs-semrush-ai-toolkit/page.tsx
+./scripts/../src/app/compare/analyze-vs-surfer/page.tsx
+./scripts/../src/app/compare/analyze-vs-writesonic-geo/page.tsx
+./scripts/../src/app/features/discover/page.tsx
+./scripts/../src/app/features/govern/page.tsx
+./scripts/../src/app/features/improve/page.tsx
+./scripts/../src/app/features/monitor/page.tsx
+./scripts/../src/app/free-tools/[slug]/page.tsx
+./scripts/../src/app/free-tools/ai-website-audit-tool/page.tsx
+./scripts/../src/app/free-tools/business-name-generator/[slug]/page.tsx
+./scripts/../src/app/free-tools/de/[slug]/page.tsx
+./scripts/../src/app/free-tools/de/business-name-generator/[slug]/page.tsx
+./scripts/../src/app/free-tools/de/page.tsx
+./scripts/../src/app/free-tools/es/[slug]/page.tsx
+./scripts/../src/app/free-tools/es/business-name-generator/[slug]/page.tsx
+./scripts/../src/app/free-tools/es/page.tsx
+./scripts/../src/app/free-tools/fr/[slug]/page.tsx
+./scripts/../src/app/free-tools/fr/business-name-generator/[slug]/page.tsx
+./scripts/../src/app/free-tools/fr/page.tsx
+./scripts/../src/app/free-tools/it/[slug]/page.tsx
+./scripts/../src/app/free-tools/it/business-name-generator/[slug]/page.tsx
+./scripts/../src/app/free-tools/it/page.tsx
+./scripts/../src/app/free-tools/ja/[slug]/page.tsx
+./scripts/../src/app/free-tools/ja/business-name-generator/[slug]/page.tsx
+./scripts/../src/app/free-tools/ja/page.tsx
+./scripts/../src/app/free-tools/ko/[slug]/page.tsx
+./scripts/../src/app/free-tools/ko/business-name-generator/[slug]/page.tsx
+./scripts/../src/app/free-tools/ko/page.tsx
+./scripts/../src/app/free-tools/llm-txt-generator-tool/page.tsx
+./scripts/../src/app/free-tools/page.tsx
+./scripts/../src/app/free-tools/perplexity-ai-alternative/page.tsx
+./scripts/../src/app/free-tools/pt/[slug]/page.tsx
+./scripts/../src/app/free-tools/pt/business-name-generator/[slug]/page.tsx
+./scripts/../src/app/free-tools/pt/page.tsx
+./scripts/../src/app/free-tools/tr/[slug]/page.tsx
+./scripts/../src/app/free-tools/tr/business-name-generator/[slug]/page.tsx
+./scripts/../src/app/free-tools/tr/page.tsx
+./scripts/../src/app/free-tools/zh/[slug]/page.tsx
+./scripts/../src/app/free-tools/zh/business-name-generator/[slug]/page.tsx
+./scripts/../src/app/free-tools/zh/page.tsx
+./scripts/../src/app/layout.tsx
+./scripts/../src/app/page.tsx
+./scripts/../src/app/pricing/page.tsx
+./scripts/../src/app/prompts/page.tsx
+./scripts/../src/app/talk-to-a-human/page.tsx
+./scripts/../src/app/use-cases/chatgpt/page.tsx
+./scripts/../src/app/use-cases/claude/page.tsx
+./scripts/../src/app/use-cases/deepseek/page.tsx
+./scripts/../src/app/use-cases/gemini/page.tsx
+./scripts/../src/app/use-cases/google-ai-mode/page.tsx
+./scripts/../src/app/use-cases/meta-ai/page.tsx
+./scripts/../src/app/use-cases/microsoft-copilot/page.tsx
+./scripts/../src/app/use-cases/perplexity-ai/page.tsx
+./scripts/../src/components/affiliate/affiliate-benefits.tsx
+./scripts/../src/components/affiliate/affiliate-calculator.tsx
+./scripts/../src/components/affiliate/affiliate-faq.tsx
+./scripts/../src/components/affiliate/affiliate-steps.tsx
+./scripts/../src/components/ai-tools/ToolUseCases.tsx
+./scripts/../src/components/blog/blog-sidebar-cta.tsx
+./scripts/../src/components/blog/international-blog-listing.tsx
+./scripts/../src/components/compare/ahrefs-brand-radar/comparison-section-ahrefs-brand-radar.tsx
+./scripts/../src/components/compare/ahrefs-brand-radar/comprehensive-section-ahrefs-brand-radar.tsx
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx
+./scripts/../src/components/compare/ahrefs-brand-radar/features-ahrefs-brand-radar.tsx
+./scripts/../src/components/compare/ahrefs-brand-radar/hero-ahrefs-brand-radar.tsx
+./scripts/../src/components/compare/ahrefs-brand-radar/hero-comparison-ahrefs-brand-radar.tsx
+./scripts/../src/components/compare/ahrefs-brand-radar/problem-solution-ahrefs-brand-radar.tsx
+./scripts/../src/components/compare/athenahq/comparison-section-athenahq.tsx
+./scripts/../src/components/compare/athenahq/comprehensive-section-athenahq.tsx
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx
+./scripts/../src/components/compare/athenahq/features-athenahq.tsx
+./scripts/../src/components/compare/athenahq/hero-comparison-athenahq.tsx
+./scripts/../src/components/compare/google-looker-studio/comparison-section-google-looker-studio.tsx
+./scripts/../src/components/compare/google-looker-studio/comprehensive-section-google-looker-studio.tsx
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx
+./scripts/../src/components/compare/google-looker-studio/features-google-looker-studio.tsx
+./scripts/../src/components/compare/google-looker-studio/hero-comparison-google-looker-studio.tsx
+./scripts/../src/components/compare/gsc/comparison-section-gsc.tsx
+./scripts/../src/components/compare/gsc/comprehensive-section-gsc.tsx
+./scripts/../src/components/compare/gsc/faq-gsc.tsx
+./scripts/../src/components/compare/gsc/features-gsc.tsx
+./scripts/../src/components/compare/gsc/hero-comparison-gsc.tsx
+./scripts/../src/components/compare/hubspot-ai-search-grader/comparison-section-hubspot-ai-search-grader.tsx
+./scripts/../src/components/compare/hubspot-ai-search-grader/comprehensive-section-hubspot-ai-search-grader.tsx
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx
+./scripts/../src/components/compare/hubspot-ai-search-grader/features-hubspot-ai-search-grader.tsx
+./scripts/../src/components/compare/hubspot-ai-search-grader/hero-comparison-hubspot-ai-search-grader.tsx
+./scripts/../src/components/compare/peec-ai/comparison-section-peec-ai.tsx
+./scripts/../src/components/compare/peec-ai/comprehensive-section-peec-ai.tsx
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx
+./scripts/../src/components/compare/peec-ai/features-peec-ai.tsx
+./scripts/../src/components/compare/peec-ai/hero-comparison-peec-ai.tsx
+./scripts/../src/components/compare/profound/comparison-section-profound.tsx
+./scripts/../src/components/compare/profound/comprehensive-section-profound.tsx
+./scripts/../src/components/compare/profound/faq-profound.tsx
+./scripts/../src/components/compare/profound/features-profound.tsx
+./scripts/../src/components/compare/profound/hero-comparison-profound.tsx
+./scripts/../src/components/compare/semrush-ai-toolkit/comparison-section-semrush-ai-toolkit.tsx
+./scripts/../src/components/compare/semrush-ai-toolkit/comprehensive-section-semrush-ai-toolkit.tsx
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx
+./scripts/../src/components/compare/semrush-ai-toolkit/features-semrush-ai-toolkit.tsx
+./scripts/../src/components/compare/semrush-ai-toolkit/hero-comparison-semrush-ai-toolkit.tsx
+./scripts/../src/components/compare/surfer/comparison-section-surfer.tsx
+./scripts/../src/components/compare/surfer/comprehensive-section-surfer.tsx
+./scripts/../src/components/compare/surfer/faq-surfer.tsx
+./scripts/../src/components/compare/surfer/features-surfer.tsx
+./scripts/../src/components/compare/surfer/hero-comparison-surfer.tsx
+./scripts/../src/components/compare/writesonic-geo/comparison-section-writesonic-geo.tsx
+./scripts/../src/components/compare/writesonic-geo/comprehensive-section-writesonic-geo.tsx
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx
+./scripts/../src/components/compare/writesonic-geo/features-writesonic-geo.tsx
+./scripts/../src/components/compare/writesonic-geo/hero-comparison-writesonic-geo.tsx
+./scripts/../src/components/features/discover/features-discover.tsx
+./scripts/../src/components/features/improve/hero-improve.tsx
+./scripts/../src/components/marketing/footer.tsx
+./scripts/../src/components/marketing/hero-cta.tsx
+./scripts/../src/components/marketing/manifesto.tsx
+./scripts/../src/components/marketing/modern-features.tsx
+./scripts/../src/components/marketing/navbar.tsx
+./scripts/../src/components/marketing/problem-solution.tsx
+./scripts/../src/components/marketing/promotional-overlay.tsx
+./scripts/../src/components/marketing/testimonials.tsx
+./scripts/../src/components/use-cases/chatgpt/features-chatgpt.tsx
+./scripts/../src/components/use-cases/chatgpt/modern-features-chatgpt.tsx
+./scripts/../src/components/use-cases/claude/features-claude.tsx
+./scripts/../src/components/use-cases/claude/modern-features-claude.tsx
+./scripts/../src/components/use-cases/deepseek/features-deepseek.tsx
+./scripts/../src/components/use-cases/deepseek/modern-features-deepseek.tsx
+./scripts/../src/components/use-cases/gemini/features-gemini.tsx
+./scripts/../src/components/use-cases/gemini/modern-features-gemini.tsx
+./scripts/../src/components/use-cases/google-ai-mode/features-google-ai-mode.tsx
+./scripts/../src/components/use-cases/google-ai-mode/modern-features-google-ai-mode.tsx
+./scripts/../src/components/use-cases/meta-ai/features-meta-ai.tsx
+./scripts/../src/components/use-cases/meta-ai/modern-features-meta-ai.tsx
+./scripts/../src/components/use-cases/microsoft-copilot/features-microsoft-copilot.tsx
+./scripts/../src/components/use-cases/microsoft-copilot/modern-features-microsoft-copilot.tsx
+./scripts/../src/components/use-cases/perplexity-ai/features-perplexity-ai.tsx
+./scripts/../src/components/use-cases/perplexity-ai/modern-features-perplexity-ai.tsx
+./scripts/../src/lib/ai-tools/i18n/tools-config.de.ts
+./scripts/../src/lib/ai-tools/i18n/tools-config.es.ts
+./scripts/../src/lib/ai-tools/i18n/tools-config.fr.ts
+./scripts/../src/lib/ai-tools/i18n/tools-config.it.ts
+./scripts/../src/lib/ai-tools/i18n/tools-config.ja.ts
+./scripts/../src/lib/ai-tools/i18n/tools-config.ko.ts
+./scripts/../src/lib/ai-tools/i18n/tools-config.pt.ts
+./scripts/../src/lib/ai-tools/i18n/tools-config.zh.ts
+./scripts/../src/lib/ai-tools/tools-config.ts
+./scripts/../src/lib/schema.ts
+
+## Detailed occurrences (ANALYZE - uppercase)
+
+
+## Detailed occurrences (Analyze - title case)
+
+./scripts/../src/app/features/monitor/page.tsx:14:  title: 'Monitor | Analyze AI',
+./scripts/../src/app/features/monitor/page.tsx:31:      question: 'How does Analyze AI actually measure "AI traffic"?',
+./scripts/../src/app/features/monitor/page.tsx:52:      answer: 'Most tools stop at "You appeared in an AI answer." Analyze AI shows: did that appearance drive a visit, to which page, and did that visit do anything valuable (sign up, request demo, etc.). In other words, we track performance, not vanity.'
+./scripts/../src/app/features/monitor/page.tsx:82:      answer: 'No — it answers a different question. SEO tells you how you rank in traditional search. Analyze AI tells you how AI assistants talk about you, whether that visibility turns into site traffic, and whether that traffic converts.'
+./scripts/../src/app/features/monitor/page.tsx:129:        description="Answers to common questions about how Analyze AI attributes AI-driven traffic, conversions, and revenue back to specific sources."
+./scripts/../src/app/features/discover/page.tsx:13:  title: 'Discover | Analyze AI',
+./scripts/../src/app/features/discover/page.tsx:30:      question: 'How does Analyze AI figure out which prompts buyers are actually asking in the market?',
+./scripts/../src/app/features/discover/page.tsx:31:      answer: 'Analyze AI monitors real, high-intent buying questions that people ask AI assistants and AI search engines (e.g. "best [category] for [ICP]," "alternatives to [competitor]," "[tool] vs [tool] for [use case]"). We cluster and score those prompts around purchase intent, segment, and product line. You\'re not guessing what buyers might ask — you\'re looking at the actual evaluation language that shows up in-market.'
+./scripts/../src/app/features/discover/page.tsx:40:      question: 'Can Analyze AI highlight the prompts where we\'re not being mentioned but competitors are?',
+./scripts/../src/app/features/discover/page.tsx:41:      answer: 'Yes. Analyze AI flags prompts where buyers are clearly in-market ("top platforms for X," "best alternative to Y") and your competitors are being recommended but you\'re either missing or underrepresented. You get a list of "we\'re invisible here / they\'re getting picked instead," which becomes a direct gaps list for PMM, content, and demand gen.'
+./scripts/../src/app/features/discover/page.tsx:50:      question: 'Does Analyze AI show which competitors are getting mentioned next to us most often, and in what context?',
+./scripts/../src/app/features/discover/page.tsx:51:      answer: 'Yes. Analyze AI shows which vendors are most frequently listed alongside you in answers to high-intent prompts, and for which use cases. You can see, for example, "When buyers ask about mid-market CRM, we\'re being compared to A, B, and C — and here\'s how each of us is framed." That gives you a live competitive set for each motion, not just a static \'competitors\' slide.'
+./scripts/../src/app/features/discover/page.tsx:55:      question: 'Can Analyze AI surface "new" or unexpected competitors that sales/PMM hasn\'t even been watching yet?',
+./scripts/../src/app/features/discover/page.tsx:61:      answer: 'Yes. Analyze AI shows the specific pages models are pulling from to justify recommendations — competitor comparison pages, "top tools for [use case]" listicles, blog posts, analyst-style breakdowns, etc. You don\'t just see "they\'re winning"; you see why they\'re winning and which assets are persuading the model.'
+./scripts/../src/app/features/discover/page.tsx:71:      answer: 'Manual checks give you one answer, once. Analyze AI gives you: Coverage across many high-intent prompts, not one guess. Competitor frequency and momentum, not just a snapshot. How you\'re being positioned, not just whether you appear. The sources and URLs backing those claims. Suggested gaps (where you\'re missing but should be in the conversation). In other words, it\'s structured market intelligence, not screenshots.'
+./scripts/../src/app/features/discover/page.tsx:102:    description: "Get immediate AI search insights. Run ad-hoc searches to see real-time rankings, analyze competitors, and view full LLM responses across all major answer engines with Analyze AI.",
+./scripts/../src/app/features/discover/page.tsx:129:      description="Answers to common questions about how Analyze AI maps AI buying moments, competitive positioning, and where you're being mentioned (or not)."
+./scripts/../src/app/features/govern/page.tsx:13:  title: 'Govern | Analyze AI',
+./scripts/../src/app/features/govern/page.tsx:30:      question: 'Can Analyze AI alert us if AI tools are saying something inaccurate, risky, or off-message about our product?',
+./scripts/../src/app/features/govern/page.tsx:31:      answer: 'Yes. Analyze AI monitors how AI assistants describe your product and flags language that\'s inaccurate, out-of-date, non-compliant, or off-message. If an assistant claims you do something you don\'t, misstates capabilities, or frames you in a way you can\'t legally stand behind, you see it and can act before that shows up in a sales call or security review.'
+./scripts/../src/app/features/govern/page.tsx:36:      answer: 'Yes. Analyze AI tracks sentiment toward your brand and your competitors across high-intent prompts over time. You can see whether the model is becoming more positive about you, more negative about you, or more enthusiastic about a competitor in a specific use case. This gives you early signal on perception shifts.'
+./scripts/../src/app/features/govern/page.tsx:41:      answer: 'Yes. Analyze AI captures and stores the exact answers AI assistants are giving buyers, including specific claims and promises. That means legal, compliance, and comms can review "Here\'s what\'s being said about us right now" with full context — instead of hearing later that a rep had to walk back something the model told a prospect.'
+./scripts/../src/app/features/govern/page.tsx:45:      question: 'Can Analyze AI show which competitors are being positioned as "better for [use case]" so sales and PMM can respond?',
+./scripts/../src/app/features/govern/page.tsx:51:      answer: 'Yes. Analyze AI shows you the domains and URLs that AI assistants are citing to describe you and your competitors — review sites, comparison pages, blog posts, PDFs, landing pages. You see which sources are shaping the narrative, how often they\'re referenced, and whether they\'re friendly, neutral, misleading, or outright hostile.'
+./scripts/../src/app/features/govern/page.tsx:56:      answer: 'Yes. Analyze AI tracks how each AI assistant / AI search engine treats you over time. If you were being recommended in a certain channel and that channel stops mentioning you (or starts preferring a competitor), you\'ll see that shift. That\'s an early warning that a source of qualified demand is eroding.'
+./scripts/../src/app/features/govern/page.tsx:61:      answer: 'Yes. Because Analyze AI tracks language, sentiment, and competitive framing over time, you can spot "We\'re suddenly being described as outdated / limited / not for enterprise" the moment it starts happening. That means you can correct messaging, prep leadership, and brief Sales before it shows up in pipeline reviews or board questions.'
+./scripts/../src/app/features/govern/page.tsx:70:      question: 'Does Analyze AI ingest or expose any private customer conversations, or is this all from public/observable model output?',
+./scripts/../src/app/features/govern/page.tsx:71:      answer: 'Analyze AI is working off of publicly observable model output and what AI assistants are telling buyers in-market. We\'re not ingesting your internal call recordings, emails, chat logs, or proprietary conversations. Your internal data and your workspace remain private to you.'
+./scripts/../src/app/features/govern/page.tsx:86:      answer: 'Brand monitoring tells you what people are saying about you on social and review platforms. Analyze AI tells you what AI assistants are saying to your buyers while they\'re in evaluation mode. That includes: how you\'re positioned vs. specific competitors, whether you\'re being recommended at all, whether you\'re being described accurately, and whether sentiment is tilting toward someone else. This isn\'t social chatter. This is what the "advisor" in the buying process is already telling your prospects.'
+./scripts/../src/app/features/govern/page.tsx:108:      "Analyze AI Sentiment Trends Over Time",
+./scripts/../src/app/features/govern/page.tsx:129:        description="Answers to common questions about how Analyze AI monitors brand sentiment, narrative drift, and accuracy in AI responses."
+./scripts/../src/app/features/improve/page.tsx:13:  title: 'Improve | Analyze AI',
+./scripts/../src/app/features/improve/page.tsx:31:      question: 'Can Analyze AI show the specific buying questions where we\'re being left out and a competitor is winning the recommendation?',
+./scripts/../src/app/features/improve/page.tsx:32:      answer: 'Yes. Analyze AI surfaces the high-intent prompts where buyers are clearly in evaluation mode ("best platform for [ICP]," "[competitor] alternatives," "[tool] vs [tool]") and shows where a competitor is being recommended and you\'re not. You get "we\'re missing here, they\'re winning here" in plain language — not just abstract share-of-voice.'
+./scripts/../src/app/features/improve/page.tsx:36:      question: 'Does Analyze AI tell me which gaps to prioritize first instead of dropping a giant list on me?',
+./scripts/../src/app/features/improve/page.tsx:37:      answer: 'Yes. Gaps are ranked, not dumped. Analyze AI scores each missed prompt by intent level, recency, competitive exposure, and strategic importance so you know which missed moments matter most right now. You get an ordered list of "fix these first," not 200 rows in a spreadsheet.'
+./scripts/../src/app/features/improve/page.tsx:42:      answer: 'Yes. For any high-value prompt, Analyze AI shows you the exact language AI models are using to justify recommending that competitor, plus the specific URLs being cited (comparison pages, feature breakdowns, top-tool listicles, etc.). You see the pitch that\'s beating you, and the assets that are powering it.'
+./scripts/../src/app/features/improve/page.tsx:46:      question: 'Can Analyze AI track whether our updates (new page, new positioning, new proof point) actually move us into that conversation over time?',
+./scripts/../src/app/features/improve/page.tsx:52:      answer: 'Yes. Analyze AI tracks your visibility and rank for the prompts that matter to you and shows when that presence starts to drop. If you\'re losing ground for a core use case, or you\'re being replaced by another vendor, you\'ll see it as it starts — not after Sales starts complaining about lead quality.'
+./scripts/../src/app/features/improve/page.tsx:56:      question: 'Does Analyze AI show which AI engines (ChatGPT, Perplexity, Copilot, etc.) are slowing down for us so we know where we\'re losing distribution?',
+./scripts/../src/app/features/improve/page.tsx:62:      answer: 'Yes. Analyze AI shows which of your pages are already getting traffic from AI assistants and AI search, how many sessions those pages are generating, and which of those sessions turn into meaningful actions. That tells you what\'s already working so you can double down with promotion, refresh, localization, or paid support.'
+./scripts/../src/app/features/improve/page.tsx:77:      answer: 'You can point to revenue impact and active loss. Analyze AI shows: "This prompt is clearly in-buying-cycle, we\'re not in it, [Competitor] is." "This is trending down for us and they\'re starting to replace us." "This page is already converting from AI-sourced traffic. We should amplify it now." You can walk into a resourcing conversation with "here\'s where pipeline is leaking and here\'s where pipeline is already forming," not "I think we should write a blog."'
+./scripts/../src/app/features/improve/page.tsx:82:      answer: 'It\'s a different problem. SEO tools show how you rank in traditional web search. Analyze AI shows how AI assistants recommend vendors, explain your product, compare you with competitors, and route buyers to specific pages — and whether that visibility is turning into traffic and conversions. Classic SEO can\'t tell you that.'
+./scripts/../src/app/features/improve/page.tsx:86:      question: 'How quickly does Analyze AI start surfacing opportunity gaps after we connect?',
+./scripts/../src/app/features/improve/page.tsx:87:      answer: 'Very quickly. Once Analyze AI is set up, you start seeing: prompts where you\'re absent but competitors are present, which competitors are being favored for those prompts, and which of your existing pages are already pulling qualified AI-driven traffic. You don\'t need weeks of "learning mode" before you can take action.'
+./scripts/../src/app/features/improve/page.tsx:130:        description="Answers to common questions about how Analyze AI identifies content opportunities and helps you win high-intent AI prompts."
+./scripts/../src/app/talk-to-a-human/page.tsx:9:  title: 'Talk To A Human | Analyze AI - AI Search Analytics Platform',
+./scripts/../src/app/talk-to-a-human/page.tsx:10:  description: 'Schedule a demo with our team to see how Analyze AI can help you track your AI visibility across major AI engines.',
+./scripts/../src/app/talk-to-a-human/page.tsx:26:      answer: 'During our 15-30 minute demo, we\'ll show you how Analyze AI tracks your brand across AI engines, walk through your current visibility, and discuss how our platform can help you improve your AI search presence. We\'ll also answer any specific questions about your use case.'
+./scripts/../src/app/talk-to-a-human/page.tsx:36:      answer: 'Most demos take 15-30 minutes. We keep them focused and actionable, showing you exactly how Analyze AI works and how it applies to your specific situation.'
+./scripts/../src/app/blog/it/[slug]/page.tsx:54:        title: 'Articolo non trovato | Analyze AI',
+./scripts/../src/app/blog/it/[slug]/page.tsx:60:    const description = blogPostInternational.seo?.description || blogPostInternational.excerpt || 'Leggi questo articolo perspicace di Analyze AI.';
+./scripts/../src/app/blog/it/[slug]/page.tsx:64:      title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/it/[slug]/page.tsx:67:        title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/it/[slug]/page.tsx:85:        title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/it/[slug]/page.tsx:93:      title: 'Articolo | Analyze AI',
+./scripts/../src/app/blog/it/[slug]/page.tsx:94:      description: 'Leggi questo articolo perspicace di Analyze AI.',
+./scripts/../src/app/blog/nl/[slug]/page.tsx:54:        title: 'Bericht niet gevonden | Analyze AI',
+./scripts/../src/app/blog/nl/[slug]/page.tsx:60:    const description = blogPostInternational.seo?.description || blogPostInternational.excerpt || 'Lees dit inzichtelijke blogbericht van Analyze AI.';
+./scripts/../src/app/blog/nl/[slug]/page.tsx:64:      title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/nl/[slug]/page.tsx:67:        title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/nl/[slug]/page.tsx:85:        title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/nl/[slug]/page.tsx:93:      title: 'Blogbericht | Analyze AI',
+./scripts/../src/app/blog/nl/[slug]/page.tsx:94:      description: 'Lees dit inzichtelijke blogbericht van Analyze AI.',
+./scripts/../src/app/blog/de/[slug]/page.tsx:54:        title: 'Beitrag nicht gefunden | Analyze AI',
+./scripts/../src/app/blog/de/[slug]/page.tsx:60:    const description = blogPostInternational.seo?.description || blogPostInternational.excerpt || 'Lesen Sie diesen aufschlussreichen Blogbeitrag von Analyze AI.';
+./scripts/../src/app/blog/de/[slug]/page.tsx:64:      title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/de/[slug]/page.tsx:67:        title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/de/[slug]/page.tsx:85:        title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/de/[slug]/page.tsx:93:      title: 'Blogbeitrag | Analyze AI',
+./scripts/../src/app/blog/de/[slug]/page.tsx:94:      description: 'Lesen Sie diesen aufschlussreichen Blogbeitrag von Analyze AI.',
+./scripts/../src/app/blog/fr/[slug]/page.tsx:54:        title: 'Article non trouvé | Analyze AI',
+./scripts/../src/app/blog/fr/[slug]/page.tsx:60:    const description = blogPostInternational.seo?.description || blogPostInternational.excerpt || 'Lisez cet article perspicace d\'Analyze AI.';
+./scripts/../src/app/blog/fr/[slug]/page.tsx:64:      title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/fr/[slug]/page.tsx:67:        title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/fr/[slug]/page.tsx:85:        title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/fr/[slug]/page.tsx:93:      title: 'Article | Analyze AI',
+./scripts/../src/app/blog/fr/[slug]/page.tsx:94:      description: 'Lisez cet article perspicace d\'Analyze AI.',
+./scripts/../src/app/blog/es/[slug]/page.tsx:54:        title: 'Artículo no encontrado | Analyze AI',
+./scripts/../src/app/blog/es/[slug]/page.tsx:60:    const description = blogPostInternational.seo?.description || blogPostInternational.excerpt || 'Lee este artículo perspicaz de Analyze AI.';
+./scripts/../src/app/blog/es/[slug]/page.tsx:64:      title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/es/[slug]/page.tsx:67:        title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/es/[slug]/page.tsx:85:        title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/es/[slug]/page.tsx:93:      title: 'Artículo | Analyze AI',
+./scripts/../src/app/blog/es/[slug]/page.tsx:94:      description: 'Lee este artículo perspicaz de Analyze AI.',
+./scripts/../src/app/blog/page.tsx:58:      title="Analyze AI Blog"
+./scripts/../src/app/blog/page.tsx:60:      subtitle="At Analyze AI, we constantly study how LLMs are redefining how people discover, learn, purchase products online. We share our insights on how to get your brand mentionned in answer engines, how to attribute AI visibility to revenue and real traffic, and more."
+./scripts/../src/app/blog/page.tsx:77:  const pageTitle = currentPage > 1 ? `Blog - Page ${currentPage} | Analyze AI` : 'Blog | Analyze AI';
+./scripts/../src/app/blog/page.tsx:81:    description: 'Insights, analysis, and thought leadership in data analytics and business intelligence from the Analyze AI team.',
+./scripts/../src/app/blog/page.tsx:84:      description: 'Insights, analysis, and thought leadership in AI traffic analytics and business intelligence from the Analyze AI team.',
+./scripts/../src/app/blog/[slug]/page.tsx:600:        title: 'Post Not Found | Analyze AI',
+./scripts/../src/app/blog/[slug]/page.tsx:606:    const description = blogPost.seo?.description || blogPost.excerpt || 'Read this insightful blog post from Analyze AI.';
+./scripts/../src/app/blog/[slug]/page.tsx:613:      title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/[slug]/page.tsx:616:        title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/[slug]/page.tsx:633:        title: `${title} | Analyze AI`,
+./scripts/../src/app/blog/[slug]/page.tsx:641:      title: 'Blog Post | Analyze AI',
+./scripts/../src/app/blog/[slug]/page.tsx:642:      description: 'Read this insightful blog post from Analyze AI.',
+./scripts/../src/app/use-cases/meta-ai/page.tsx:32:      question: 'How does Analyze AI know what Meta AI is saying about us?',
+./scripts/../src/app/use-cases/meta-ai/page.tsx:33:      answer: 'Analyze AI monitors how Meta AI answers real buyer-style prompts (for example "best [category] for [ICP]," "[Competitor] alternatives," "[Tool] vs [Tool] for [Use Case]"). We capture how you\'re described, whether you\'re recommended, and which competitors are offered instead — so you can see how Meta AI positions you in live evaluation moments.'
+./scripts/../src/app/use-cases/meta-ai/page.tsx:37:      question: 'Can Analyze AI show when Meta AI recommends a competitor instead of us?',
+./scripts/../src/app/use-cases/meta-ai/page.tsx:43:      answer: 'Yes. Analyze AI shows the exact language Meta AI is using to justify the recommendation and the specific URLs and domains it\'s citing as evidence. You get the messaging, claims, and assets that are winning that moment — not just "you lost."'
+./scripts/../src/app/use-cases/meta-ai/page.tsx:47:      question: 'Can Analyze AI show if Meta AI is sending us traffic, not just talking about us?',
+./scripts/../src/app/use-cases/meta-ai/page.tsx:53:      answer: 'Yes. Analyze AI shows how often you appear, how you\'re positioned, who you\'re compared to, and whether that\'s trending up or down. If Meta AI starts preferring a competitor for a high-intent use case, you\'ll see it before Sales feels it.'
+./scripts/../src/app/use-cases/meta-ai/page.tsx:57:      question: 'Will Analyze AI tell me which prompts we should go win first in Meta AI?',
+./scripts/../src/app/use-cases/meta-ai/page.tsx:58:      answer: 'Yes. Analyze AI ranks the highest-value prompts you\'re currently losing in Meta AI — the ones most tied to buying intent — and shows you which to fix first. That gives PMM, content, and demand gen a focused "work on these now" list instead of 200 vague ideas.'
+./scripts/../src/app/use-cases/meta-ai/page.tsx:63:      answer: 'No. SEO tools tell you how you rank in traditional web search. Analyze AI tells you how Meta AI talks about you, who Meta AI is recommending, which competitors it positions you against, and whether Meta AI is driving traffic and conversions. This is AI buying-path visibility and attribution, not classic search rank tracking.'
+./scripts/../src/app/use-cases/meta-ai/page.tsx:78:      answer: 'No. Your tracked prompts, competitor set, traffic data, and insights are private to your workspace. Analyze AI doesn\'t reshare your view of how Meta AI talks about you.'
+./scripts/../src/app/use-cases/meta-ai/page.tsx:82:      question: 'Can I use Analyze AI for more than Meta AI?',
+./scripts/../src/app/use-cases/gemini/page.tsx:32:      question: 'How does Analyze AI know what Gemini is saying about us?',
+./scripts/../src/app/use-cases/gemini/page.tsx:33:      answer: 'Analyze AI monitors how Gemini answers real buyer-style prompts (for example "best [category] for [ICP]," "[Competitor] alternatives," "[Tool] vs [Tool] for [Use Case]"). We capture how you\'re described, whether you\'re recommended, and which competitors are offered instead — so you can see how Gemini positions you in live evaluation moments.'
+./scripts/../src/app/use-cases/gemini/page.tsx:37:      question: 'Can Analyze AI show when Gemini recommends a competitor instead of us?',
+./scripts/../src/app/use-cases/gemini/page.tsx:43:      answer: 'Yes. Analyze AI shows the exact language Gemini is using to justify the recommendation and the specific URLs and domains it\'s citing as evidence. You get the messaging, claims, and assets that are winning that moment — not just "you lost."'
+./scripts/../src/app/use-cases/gemini/page.tsx:47:      question: 'Can Analyze AI show if Gemini is sending us traffic, not just talking about us?',
+./scripts/../src/app/use-cases/gemini/page.tsx:53:      answer: 'Yes. Analyze AI shows how often you appear, how you\'re positioned, who you\'re compared to, and whether that\'s trending up or down. If Gemini starts preferring a competitor for a high-intent use case, you\'ll see it before Sales feels it.'
+./scripts/../src/app/use-cases/gemini/page.tsx:57:      question: 'Will Analyze AI tell me which prompts we should go win first in Gemini?',
+./scripts/../src/app/use-cases/gemini/page.tsx:58:      answer: 'Yes. Analyze AI ranks the highest-value prompts you\'re currently losing in Gemini — the ones most tied to buying intent — and shows you which to fix first. That gives PMM, content, and demand gen a focused "work on these now" list instead of 200 vague ideas.'
+./scripts/../src/app/use-cases/gemini/page.tsx:63:      answer: 'No. SEO tools tell you how you rank in traditional web search. Analyze AI tells you how Gemini talks about you, who Gemini is recommending, which competitors it positions you against, and whether Gemini is driving traffic and conversions. This is AI buying-path visibility and attribution, not classic search rank tracking.'
+./scripts/../src/app/use-cases/gemini/page.tsx:78:      answer: 'No. Your tracked prompts, competitor set, traffic data, and insights are private to your workspace. Analyze AI doesn\'t reshare your view of how Gemini talks about you.'
+./scripts/../src/app/use-cases/gemini/page.tsx:82:      question: 'Can I use Analyze AI for more than Gemini?',
+./scripts/../src/app/use-cases/microsoft-copilot/page.tsx:32:      question: 'How does Analyze AI know what Microsoft Copilot is saying about us?',
+./scripts/../src/app/use-cases/microsoft-copilot/page.tsx:33:      answer: 'Analyze AI monitors how Microsoft Copilot answers real buyer-style prompts (for example "best [category] for [ICP]," "[Competitor] alternatives," "[Tool] vs [Tool] for [Use Case]"). We capture how you\'re described, whether you\'re recommended, and which competitors are offered instead — so you can see how Microsoft Copilot positions you in live evaluation moments.'
+./scripts/../src/app/use-cases/microsoft-copilot/page.tsx:37:      question: 'Can Analyze AI show when Microsoft Copilot recommends a competitor instead of us?',
+./scripts/../src/app/use-cases/microsoft-copilot/page.tsx:43:      answer: 'Yes. Analyze AI shows the exact language Microsoft Copilot is using to justify the recommendation and the specific URLs and domains it\'s citing as evidence. You get the messaging, claims, and assets that are winning that moment — not just "you lost."'
+./scripts/../src/app/use-cases/microsoft-copilot/page.tsx:47:      question: 'Can Analyze AI show if Microsoft Copilot is sending us traffic, not just talking about us?',
+./scripts/../src/app/use-cases/microsoft-copilot/page.tsx:53:      answer: 'Yes. Analyze AI shows how often you appear, how you\'re positioned, who you\'re compared to, and whether that\'s trending up or down. If Microsoft Copilot starts preferring a competitor for a high-intent use case, you\'ll see it before Sales feels it.'
+./scripts/../src/app/use-cases/microsoft-copilot/page.tsx:57:      question: 'Will Analyze AI tell me which prompts we should go win first in Microsoft Copilot?',
+./scripts/../src/app/use-cases/microsoft-copilot/page.tsx:58:      answer: 'Yes. Analyze AI ranks the highest-value prompts you\'re currently losing in Microsoft Copilot — the ones most tied to buying intent — and shows you which to fix first. That gives PMM, content, and demand gen a focused "work on these now" list instead of 200 vague ideas.'
+./scripts/../src/app/use-cases/microsoft-copilot/page.tsx:63:      answer: 'No. SEO tools tell you how you rank in traditional web search. Analyze AI tells you how Microsoft Copilot talks about you, who Microsoft Copilot is recommending, which competitors it positions you against, and whether Microsoft Copilot is driving traffic and conversions. This is AI buying-path visibility and attribution, not classic search rank tracking.'
+./scripts/../src/app/use-cases/microsoft-copilot/page.tsx:78:      answer: 'No. Your tracked prompts, competitor set, traffic data, and insights are private to your workspace. Analyze AI doesn\'t reshare your view of how Microsoft Copilot talks about you.'
+./scripts/../src/app/use-cases/microsoft-copilot/page.tsx:82:      question: 'Can I use Analyze AI for more than Microsoft Copilot?',
+./scripts/../src/app/use-cases/claude/page.tsx:32:      question: 'How does Analyze AI know what Claude is saying about us?',
+./scripts/../src/app/use-cases/claude/page.tsx:33:      answer: 'Analyze AI monitors how Claude answers real buyer-style prompts (for example "best [category] for [ICP]," "[Competitor] alternatives," "[Tool] vs [Tool] for [Use Case]"). We capture how you\'re described, whether you\'re recommended, and which competitors are offered instead — so you can see how Claude positions you in live evaluation moments.'
+./scripts/../src/app/use-cases/claude/page.tsx:37:      question: 'Can Analyze AI show when Claude recommends a competitor instead of us?',
+./scripts/../src/app/use-cases/claude/page.tsx:43:      answer: 'Yes. Analyze AI shows the exact language Claude is using to justify the recommendation and the specific URLs and domains it\'s citing as evidence. You get the messaging, claims, and assets that are winning that moment — not just "you lost."'
+./scripts/../src/app/use-cases/claude/page.tsx:47:      question: 'Can Analyze AI show if Claude is sending us traffic, not just talking about us?',
+./scripts/../src/app/use-cases/claude/page.tsx:53:      answer: 'Yes. Analyze AI shows how often you appear, how you\'re positioned, who you\'re compared to, and whether that\'s trending up or down. If Claude starts preferring a competitor for a high-intent use case, you\'ll see it before Sales feels it.'
+./scripts/../src/app/use-cases/claude/page.tsx:57:      question: 'Will Analyze AI tell me which prompts we should go win first in Claude?',
+./scripts/../src/app/use-cases/claude/page.tsx:58:      answer: 'Yes. Analyze AI ranks the highest-value prompts you\'re currently losing in Claude — the ones most tied to buying intent — and shows you which to fix first. That gives PMM, content, and demand gen a focused "work on these now" list instead of 200 vague ideas.'
+./scripts/../src/app/use-cases/claude/page.tsx:63:      answer: 'No. SEO tools tell you how you rank in traditional web search. Analyze AI tells you how Claude talks about you, who Claude is recommending, which competitors it positions you against, and whether Claude is driving traffic and conversions. This is AI buying-path visibility and attribution, not classic search rank tracking.'
+./scripts/../src/app/use-cases/claude/page.tsx:78:      answer: 'No. Your tracked prompts, competitor set, traffic data, and insights are private to your workspace. Analyze AI doesn\'t reshare your view of how Claude talks about you.'
+./scripts/../src/app/use-cases/claude/page.tsx:82:      question: 'Can I use Analyze AI for more than Claude?',
+./scripts/../src/app/use-cases/deepseek/page.tsx:32:      question: 'How does Analyze AI know what Deepseek is saying about us?',
+./scripts/../src/app/use-cases/deepseek/page.tsx:33:      answer: 'Analyze AI monitors how Deepseek answers real buyer-style prompts (for example "best [category] for [ICP]," "[Competitor] alternatives," "[Tool] vs [Tool] for [Use Case]"). We capture how you\'re described, whether you\'re recommended, and which competitors are offered instead — so you can see how Deepseek positions you in live evaluation moments.'
+./scripts/../src/app/use-cases/deepseek/page.tsx:37:      question: 'Can Analyze AI show when Deepseek recommends a competitor instead of us?',
+./scripts/../src/app/use-cases/deepseek/page.tsx:43:      answer: 'Yes. Analyze AI shows the exact language Deepseek is using to justify the recommendation and the specific URLs and domains it\'s citing as evidence. You get the messaging, claims, and assets that are winning that moment — not just "you lost."'
+./scripts/../src/app/use-cases/deepseek/page.tsx:47:      question: 'Can Analyze AI show if Deepseek is sending us traffic, not just talking about us?',
+./scripts/../src/app/use-cases/deepseek/page.tsx:53:      answer: 'Yes. Analyze AI shows how often you appear, how you\'re positioned, who you\'re compared to, and whether that\'s trending up or down. If Deepseek starts preferring a competitor for a high-intent use case, you\'ll see it before Sales feels it.'
+./scripts/../src/app/use-cases/deepseek/page.tsx:57:      question: 'Will Analyze AI tell me which prompts we should go win first in Deepseek?',
+./scripts/../src/app/use-cases/deepseek/page.tsx:58:      answer: 'Yes. Analyze AI ranks the highest-value prompts you\'re currently losing in Deepseek — the ones most tied to buying intent — and shows you which to fix first. That gives PMM, content, and demand gen a focused "work on these now" list instead of 200 vague ideas.'
+./scripts/../src/app/use-cases/deepseek/page.tsx:63:      answer: 'No. SEO tools tell you how you rank in traditional web search. Analyze AI tells you how Deepseek talks about you, who Deepseek is recommending, which competitors it positions you against, and whether Deepseek is driving traffic and conversions. This is AI buying-path visibility and attribution, not classic search rank tracking.'
+./scripts/../src/app/use-cases/deepseek/page.tsx:78:      answer: 'No. Your tracked prompts, competitor set, traffic data, and insights are private to your workspace. Analyze AI doesn\'t reshare your view of how Deepseek talks about you.'
+./scripts/../src/app/use-cases/deepseek/page.tsx:82:      question: 'Can I use Analyze AI for more than Deepseek?',
+./scripts/../src/app/use-cases/perplexity-ai/page.tsx:32:      question: 'How does Analyze AI know what Perplexity AI is saying about us?',
+./scripts/../src/app/use-cases/perplexity-ai/page.tsx:33:      answer: 'Analyze AI monitors how Perplexity AI answers real buyer-style prompts (for example "best [category] for [ICP]," "[Competitor] alternatives," "[Tool] vs [Tool] for [Use Case]"). We capture how you\'re described, whether you\'re recommended, and which competitors are offered instead — so you can see how Perplexity AI positions you in live evaluation moments.'
+./scripts/../src/app/use-cases/perplexity-ai/page.tsx:37:      question: 'Can Analyze AI show when Perplexity AI recommends a competitor instead of us?',
+./scripts/../src/app/use-cases/perplexity-ai/page.tsx:43:      answer: 'Yes. Analyze AI shows the exact language Perplexity AI is using to justify the recommendation and the specific URLs and domains it\'s citing as evidence. You get the messaging, claims, and assets that are winning that moment — not just "you lost."'
+./scripts/../src/app/use-cases/perplexity-ai/page.tsx:47:      question: 'Can Analyze AI show if Perplexity AI is sending us traffic, not just talking about us?',
+./scripts/../src/app/use-cases/perplexity-ai/page.tsx:53:      answer: 'Yes. Analyze AI shows how often you appear, how you\'re positioned, who you\'re compared to, and whether that\'s trending up or down. If Perplexity AI starts preferring a competitor for a high-intent use case, you\'ll see it before Sales feels it.'
+./scripts/../src/app/use-cases/perplexity-ai/page.tsx:57:      question: 'Will Analyze AI tell me which prompts we should go win first in Perplexity AI?',
+./scripts/../src/app/use-cases/perplexity-ai/page.tsx:58:      answer: 'Yes. Analyze AI ranks the highest-value prompts you\'re currently losing in Perplexity AI — the ones most tied to buying intent — and shows you which to fix first. That gives PMM, content, and demand gen a focused "work on these now" list instead of 200 vague ideas.'
+./scripts/../src/app/use-cases/perplexity-ai/page.tsx:63:      answer: 'No. SEO tools tell you how you rank in traditional web search. Analyze AI tells you how Perplexity AI talks about you, who Perplexity AI is recommending, which competitors it positions you against, and whether Perplexity AI is driving traffic and conversions. This is AI buying-path visibility and attribution, not classic search rank tracking.'
+./scripts/../src/app/use-cases/perplexity-ai/page.tsx:78:      answer: 'No. Your tracked prompts, competitor set, traffic data, and insights are private to your workspace. Analyze AI doesn\'t reshare your view of how Perplexity AI talks about you.'
+./scripts/../src/app/use-cases/perplexity-ai/page.tsx:82:      question: 'Can I use Analyze AI for more than Perplexity AI?',
+./scripts/../src/app/use-cases/chatgpt/page.tsx:32:      question: 'How does Analyze AI know what ChatGPT is saying about us?',
+./scripts/../src/app/use-cases/chatgpt/page.tsx:33:      answer: 'Analyze AI monitors how ChatGPT answers real buyer-style prompts (for example "best [category] for [ICP]," "[Competitor] alternatives," "[Tool] vs [Tool] for [Use Case]"). We capture how you\'re described, whether you\'re recommended, and which competitors are offered instead — so you can see how ChatGPT positions you in live evaluation moments.'
+./scripts/../src/app/use-cases/chatgpt/page.tsx:37:      question: 'Can Analyze AI show when ChatGPT recommends a competitor instead of us?',
+./scripts/../src/app/use-cases/chatgpt/page.tsx:43:      answer: 'Yes. Analyze AI shows the exact language ChatGPT is using to justify the recommendation and the specific URLs and domains it\'s citing as evidence. You get the messaging, claims, and assets that are winning that moment — not just "you lost."'
+./scripts/../src/app/use-cases/chatgpt/page.tsx:47:      question: 'Can Analyze AI show if ChatGPT is sending us traffic, not just talking about us?',
+./scripts/../src/app/use-cases/chatgpt/page.tsx:53:      answer: 'Yes. Analyze AI shows how often you appear, how you\'re positioned, who you\'re compared to, and whether that\'s trending up or down. If ChatGPT starts preferring a competitor for a high-intent use case, you\'ll see it before Sales feels it.'
+./scripts/../src/app/use-cases/chatgpt/page.tsx:57:      question: 'Will Analyze AI tell me which prompts we should go win first in ChatGPT?',
+./scripts/../src/app/use-cases/chatgpt/page.tsx:58:      answer: 'Yes. Analyze AI ranks the highest-value prompts you\'re currently losing in ChatGPT — the ones most tied to buying intent — and shows you which to fix first. That gives PMM, content, and demand gen a focused "work on these now" list instead of 200 vague ideas.'
+./scripts/../src/app/use-cases/chatgpt/page.tsx:63:      answer: 'No. SEO tools tell you how you rank in traditional web search. Analyze AI tells you how ChatGPT talks about you, who ChatGPT is recommending, which competitors it positions you against, and whether ChatGPT is driving traffic and conversions. This is AI buying-path visibility and attribution, not classic search rank tracking.'
+./scripts/../src/app/use-cases/chatgpt/page.tsx:78:      answer: 'No. Your tracked prompts, competitor set, traffic data, and insights are private to your workspace. Analyze AI doesn\'t reshare your view of how ChatGPT talks about you.'
+./scripts/../src/app/use-cases/chatgpt/page.tsx:82:      question: 'Can I use Analyze AI for more than ChatGPT?',
+./scripts/../src/app/use-cases/google-ai-mode/page.tsx:32:      question: 'How does Analyze AI know what Google AI Mode is saying about us?',
+./scripts/../src/app/use-cases/google-ai-mode/page.tsx:33:      answer: 'Analyze AI monitors how Google AI Mode answers real buyer-style prompts (for example "best [category] for [ICP]," "[Competitor] alternatives," "[Tool] vs [Tool] for [Use Case]"). We capture how you\'re described, whether you\'re recommended, and which competitors are offered instead — so you can see how Google AI Mode positions you in live evaluation moments.'
+./scripts/../src/app/use-cases/google-ai-mode/page.tsx:37:      question: 'Can Analyze AI show when Google AI Mode recommends a competitor instead of us?',
+./scripts/../src/app/use-cases/google-ai-mode/page.tsx:43:      answer: 'Yes. Analyze AI shows the exact language Google AI Mode is using to justify the recommendation and the specific URLs and domains it\'s citing as evidence. You get the messaging, claims, and assets that are winning that moment — not just "you lost."'
+./scripts/../src/app/use-cases/google-ai-mode/page.tsx:47:      question: 'Can Analyze AI show if Google AI Mode is sending us traffic, not just talking about us?',
+./scripts/../src/app/use-cases/google-ai-mode/page.tsx:53:      answer: 'Yes. Analyze AI shows how often you appear, how you\'re positioned, who you\'re compared to, and whether that\'s trending up or down. If Google AI Mode starts preferring a competitor for a high-intent use case, you\'ll see it before Sales feels it.'
+./scripts/../src/app/use-cases/google-ai-mode/page.tsx:57:      question: 'Will Analyze AI tell me which prompts we should go win first in Google AI Mode?',
+./scripts/../src/app/use-cases/google-ai-mode/page.tsx:58:      answer: 'Yes. Analyze AI ranks the highest-value prompts you\'re currently losing in Google AI Mode — the ones most tied to buying intent — and shows you which to fix first. That gives PMM, content, and demand gen a focused "work on these now" list instead of 200 vague ideas.'
+./scripts/../src/app/use-cases/google-ai-mode/page.tsx:63:      answer: 'No. SEO tools tell you how you rank in traditional web search. Analyze AI tells you how Google AI Mode talks about you, who Google AI Mode is recommending, which competitors it positions you against, and whether Google AI Mode is driving traffic and conversions. This is AI buying-path visibility and attribution, not classic search rank tracking.'
+./scripts/../src/app/use-cases/google-ai-mode/page.tsx:78:      answer: 'No. Your tracked prompts, competitor set, traffic data, and insights are private to your workspace. Analyze AI doesn\'t reshare your view of how Google AI Mode talks about you.'
+./scripts/../src/app/use-cases/google-ai-mode/page.tsx:82:      question: 'Can I use Analyze AI for more than Google AI Mode?',
+./scripts/../src/app/free-tools/ja/business-name-generator/[slug]/page.tsx:48:      title: 'ツールが見つかりません | Analyze AI',
+./scripts/../src/app/free-tools/ja/business-name-generator/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/ja/business-name-generator/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/ja/business-name-generator/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/ja/page.tsx:44:  title: '無料AIライティングツール | Analyze AI',
+./scripts/../src/app/free-tools/ja/page.tsx:54:    title: '無料AIライティングツール | Analyze AI',
+./scripts/../src/app/free-tools/ja/page.tsx:70:    title: '無料AIライティングツール | Analyze AI',
+./scripts/../src/app/free-tools/ja/page.tsx:249:              Analyze AIのAIライティングツールは、クリック、登録、売上を生み出す高品質なコンテンツの作成をサポートします。タイトルの生成、レポートの作成など、あらゆるニーズに対応するAIツールをご用意しています。
+./scripts/../src/app/free-tools/ja/[slug]/page.tsx:48:      title: 'ツールが見つかりません | Analyze AI',
+./scripts/../src/app/free-tools/ja/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/ja/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/ja/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/it/business-name-generator/[slug]/page.tsx:48:      title: 'Strumento Non Trovato | Analyze AI',
+./scripts/../src/app/free-tools/it/business-name-generator/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/it/business-name-generator/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/it/business-name-generator/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/it/page.tsx:44:  title: 'Strumenti di Scrittura IA Gratuiti | Analyze AI',
+./scripts/../src/app/free-tools/it/page.tsx:54:    title: 'Strumenti di Scrittura IA Gratuiti | Analyze AI',
+./scripts/../src/app/free-tools/it/page.tsx:70:    title: 'Strumenti di Scrittura IA Gratuiti | Analyze AI',
+./scripts/../src/app/free-tools/it/page.tsx:249:              Gli strumenti di scrittura IA di Analyze AI ti aiutano a creare contenuti di alta qualità che generano clic, iscrizioni e vendite. Che tu debba generare un titolo, scrivere un report o qualsiasi altra cosa, i nostri strumenti IA sono qui per te.
+./scripts/../src/app/free-tools/it/[slug]/page.tsx:48:      title: 'Strumento Non Trovato | Analyze AI',
+./scripts/../src/app/free-tools/it/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/it/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/it/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/perplexity-ai-alternative/page.tsx:17:        alt: 'Perplexity AI Alternative by Analyze AI',
+./scripts/../src/app/free-tools/pt/business-name-generator/[slug]/page.tsx:48:      title: 'Ferramenta Não Encontrada | Analyze AI',
+./scripts/../src/app/free-tools/pt/business-name-generator/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/pt/business-name-generator/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/pt/business-name-generator/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/pt/page.tsx:44:  title: 'Ferramentas de Escrita com IA Grátis | Analyze AI',
+./scripts/../src/app/free-tools/pt/page.tsx:54:    title: 'Ferramentas de Escrita com IA Grátis | Analyze AI',
+./scripts/../src/app/free-tools/pt/page.tsx:70:    title: 'Ferramentas de Escrita com IA Grátis | Analyze AI',
+./scripts/../src/app/free-tools/pt/page.tsx:249:              As ferramentas de escrita com IA da Analyze AI ajudam você a criar conteúdo de alta qualidade que gera cliques, cadastros e vendas. Seja para gerar um título, escrever um relatório ou qualquer outra coisa, nossas ferramentas de IA estão aqui para ajudar.
+./scripts/../src/app/free-tools/pt/[slug]/page.tsx:48:      title: 'Ferramenta Não Encontrada | Analyze AI',
+./scripts/../src/app/free-tools/pt/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/pt/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/pt/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/zh/business-name-generator/[slug]/page.tsx:48:      title: '找不到工具 | Analyze AI',
+./scripts/../src/app/free-tools/zh/business-name-generator/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/zh/business-name-generator/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/zh/business-name-generator/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/zh/page.tsx:44:  title: '免费AI写作工具 | Analyze AI',
+./scripts/../src/app/free-tools/zh/page.tsx:54:    title: '免费AI写作工具 | Analyze AI',
+./scripts/../src/app/free-tools/zh/page.tsx:70:    title: '免费AI写作工具 | Analyze AI',
+./scripts/../src/app/free-tools/zh/page.tsx:249:              Analyze AI的AI写作工具帮助您创建能够产生点击、注册和销售的高质量内容。无论您需要生成标题、撰写报告还是其他任何内容，我们的AI工具都能为您提供帮助。
+./scripts/../src/app/free-tools/zh/[slug]/page.tsx:48:      title: '工具未找到 | Analyze AI',
+./scripts/../src/app/free-tools/zh/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/zh/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/zh/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/ai-website-audit-tool/page.tsx:5:  title: 'Free AI Website Audit Tool | Analyze AI',
+./scripts/../src/app/free-tools/ai-website-audit-tool/page.tsx:6:  description: 'Analyze AI your website\'s AI readiness with our free AI website audit tool',
+./scripts/../src/app/free-tools/ai-website-audit-tool/page.tsx:8:    title: 'Free AI Website Audit Tool | Analyze AI',
+./scripts/../src/app/free-tools/ai-website-audit-tool/page.tsx:9:    description: 'Analyze AI your website\'s AI readiness with our free AI website audit tool',
+./scripts/../src/app/free-tools/ai-website-audit-tool/page.tsx:17:        alt: 'AI Website Audit Tool by Analyze AI',
+./scripts/../src/app/free-tools/business-name-generator/[slug]/page.tsx:47:      title: 'Tool Not Found | Analyze AI',
+./scripts/../src/app/free-tools/business-name-generator/[slug]/page.tsx:52:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/business-name-generator/[slug]/page.tsx:55:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/business-name-generator/[slug]/page.tsx:70:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/de/business-name-generator/[slug]/page.tsx:48:      title: 'Werkzeug Nicht Gefunden | Analyze AI',
+./scripts/../src/app/free-tools/de/business-name-generator/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/de/business-name-generator/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/de/business-name-generator/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/de/page.tsx:45:  title: 'Kostenlose KI-Schreibwerkzeuge | Analyze AI',
+./scripts/../src/app/free-tools/de/page.tsx:55:    title: 'Kostenlose KI-Schreibwerkzeuge | Analyze AI',
+./scripts/../src/app/free-tools/de/page.tsx:71:    title: 'Kostenlose KI-Schreibwerkzeuge | Analyze AI',
+./scripts/../src/app/free-tools/de/page.tsx:250:              Die KI-Schreibwerkzeuge von Analyze AI helfen Ihnen, hochwertige Inhalte zu erstellen, die Klicks, Anmeldungen und Verkäufe generieren. Ob Sie eine Überschrift generieren, einen Bericht schreiben oder etwas anderes benötigen – unsere KI-Werkzeuge sind für Sie da.
+./scripts/../src/app/free-tools/de/[slug]/page.tsx:48:      title: 'Werkzeug Nicht Gefunden | Analyze AI',
+./scripts/../src/app/free-tools/de/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/de/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/de/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/ko/business-name-generator/[slug]/page.tsx:48:      title: '도구를 찾을 수 없습니다 | Analyze AI',
+./scripts/../src/app/free-tools/ko/business-name-generator/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/ko/business-name-generator/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/ko/business-name-generator/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/ko/page.tsx:44:  title: '무료 AI 글쓰기 도구 | Analyze AI',
+./scripts/../src/app/free-tools/ko/page.tsx:54:    title: '무료 AI 글쓰기 도구 | Analyze AI',
+./scripts/../src/app/free-tools/ko/page.tsx:70:    title: '무료 AI 글쓰기 도구 | Analyze AI',
+./scripts/../src/app/free-tools/ko/page.tsx:249:              Analyze AI의 AI 글쓰기 도구는 클릭, 가입, 판매를 유도하는 고품질 콘텐츠를 만드는 데 도움을 줍니다. 제목 생성, 보고서 작성 등 무엇이든 우리의 AI 도구가 도와드립니다.
+./scripts/../src/app/free-tools/ko/[slug]/page.tsx:48:      title: '도구를 찾을 수 없습니다 | Analyze AI',
+./scripts/../src/app/free-tools/ko/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/ko/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/ko/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/fr/business-name-generator/[slug]/page.tsx:48:      title: 'Outil Non Trouvé | Analyze AI',
+./scripts/../src/app/free-tools/fr/business-name-generator/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/fr/business-name-generator/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/fr/business-name-generator/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/fr/page.tsx:47:  title: 'Outils IA Gratuits pour la Rédaction | Analyze AI',
+./scripts/../src/app/free-tools/fr/page.tsx:57:    title: 'Outils IA Gratuits pour la Rédaction | Analyze AI',
+./scripts/../src/app/free-tools/fr/page.tsx:73:    title: 'Outils IA Gratuits pour la Rédaction | Analyze AI',
+./scripts/../src/app/free-tools/fr/page.tsx:262:              Les outils de rédaction IA d&apos;Analyze AI vous aident à produire du contenu de haute qualité qui génère des clics, des inscriptions et des ventes. Que vous cherchiez à générer un titre, rédiger un rapport ou autre chose, nos outils IA sont là pour vous.
+./scripts/../src/app/free-tools/fr/[slug]/page.tsx:48:      title: 'Outil Non Trouvé | Analyze AI',
+./scripts/../src/app/free-tools/fr/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/fr/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/fr/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/es/business-name-generator/[slug]/page.tsx:48:      title: 'Herramienta No Encontrada | Analyze AI',
+./scripts/../src/app/free-tools/es/business-name-generator/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/es/business-name-generator/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/es/business-name-generator/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/es/page.tsx:44:  title: 'Herramientas de Escritura con IA Gratis | Analyze AI',
+./scripts/../src/app/free-tools/es/page.tsx:54:    title: 'Herramientas de Escritura con IA Gratis | Analyze AI',
+./scripts/../src/app/free-tools/es/page.tsx:70:    title: 'Herramientas de Escritura con IA Gratis | Analyze AI',
+./scripts/../src/app/free-tools/es/page.tsx:253:              Las herramientas de escritura con IA de Analyze AI te ayudan a crear contenido de alta calidad que genera clics, registros y ventas. Ya sea que necesites generar un título, escribir un informe o cualquier otra cosa, nuestras herramientas de IA están aquí para ayudarte.
+./scripts/../src/app/free-tools/es/[slug]/page.tsx:48:      title: 'Herramienta No Encontrada | Analyze AI',
+./scripts/../src/app/free-tools/es/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/es/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/es/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/page.tsx:53:  title: 'Free AI Writing Tools | Analyze AI',
+./scripts/../src/app/free-tools/page.tsx:56:    title: 'Free AI Writing Tools | Analyze AI',
+./scripts/../src/app/free-tools/page.tsx:71:    title: 'Free AI Writing Tools | Analyze AI',
+./scripts/../src/app/free-tools/page.tsx:134:    description: 'Analyze AI your website\'s AI readiness and get actionable recommendations.',
+./scripts/../src/app/free-tools/page.tsx:245:              Analyze AI's AI writing tools help you produce high-quality content that drives clicks, sign-ups, and sales. Whether you&apos;re looking to generate a title, write a report, or anything else, our AI writing tools have got you covered.
+./scripts/../src/app/free-tools/page.tsx:574:              Analyze AI your website&apos;s AI readiness and optimize for AI search engines.
+./scripts/../src/app/free-tools/[slug]/page.tsx:47:      title: 'Tool Not Found | Analyze AI',
+./scripts/../src/app/free-tools/[slug]/page.tsx:52:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/[slug]/page.tsx:55:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/[slug]/page.tsx:70:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/tr/business-name-generator/[slug]/page.tsx:48:      title: 'Araç Bulunamadı | Analyze AI',
+./scripts/../src/app/free-tools/tr/business-name-generator/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/tr/business-name-generator/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/tr/business-name-generator/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/tr/page.tsx:44:  title: 'Ücretsiz AI Yazma Araçları | Analyze AI',
+./scripts/../src/app/free-tools/tr/page.tsx:54:    title: 'Ücretsiz AI Yazma Araçları | Analyze AI',
+./scripts/../src/app/free-tools/tr/page.tsx:70:    title: 'Ücretsiz AI Yazma Araçları | Analyze AI',
+./scripts/../src/app/free-tools/tr/page.tsx:249:              Analyze AI'ın AI yazma araçları, tıklama, kayıt ve satış sağlayan yüksek kaliteli içerik oluşturmanıza yardımcı olur. Başlık oluşturma, rapor yazma veya başka herhangi bir şey için AI araçlarımız yanınızda.
+./scripts/../src/app/free-tools/tr/[slug]/page.tsx:48:      title: 'Araç Bulunamadı | Analyze AI',
+./scripts/../src/app/free-tools/tr/[slug]/page.tsx:53:    title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/tr/[slug]/page.tsx:63:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/tr/[slug]/page.tsx:79:      title: `${tool.title} | Analyze AI`,
+./scripts/../src/app/free-tools/llm-txt-generator-tool/page.tsx:17:        alt: 'LLM.txt Generator Tool by Analyze AI',
+./scripts/../src/app/layout.tsx:20:  description: "Monitor your brand's visibility and sentiment across all major AI answer engines with Analyze AI.",
+./scripts/../src/app/compare/analyze-vs-peec-ai/page.tsx:15:  title: 'Analyze AI vs. Peec AI: Feature Comparison',
+./scripts/../src/app/compare/analyze-vs-peec-ai/page.tsx:16:  description: 'Compare how Analyze AI and Peec AI impact visibility, traffic, and conversions across AI engines.',
+./scripts/../src/app/compare/analyze-vs-peec-ai/page.tsx:22:const AnalyzeVsPeecAiPage = async () => {
+./scripts/../src/app/compare/analyze-vs-peec-ai/page.tsx:32:    name: "Analyze AI vs Peec AI Comparison",
+./scripts/../src/app/compare/analyze-vs-peec-ai/page.tsx:33:    description: "Compare Analyze AI and Peec AI for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional AI tools.",
+./scripts/../src/app/compare/analyze-vs-peec-ai/page.tsx:69:export default AnalyzeVsPeecAiPage;
+./scripts/../src/app/compare/analyze-vs-google-looker-studio/page.tsx:15:  title: 'Analyze AI vs. Google Looker Studio: Feature Comparison',
+./scripts/../src/app/compare/analyze-vs-google-looker-studio/page.tsx:16:  description: 'Compare how Analyze AI and Google Looker Studio impact visibility, traffic, and conversions across AI engines.',
+./scripts/../src/app/compare/analyze-vs-google-looker-studio/page.tsx:22:const AnalyzeVsGoogleLookerStudioPage = async () => {
+./scripts/../src/app/compare/analyze-vs-google-looker-studio/page.tsx:32:    name: "Analyze AI vs Google Looker Studio Comparison",
+./scripts/../src/app/compare/analyze-vs-google-looker-studio/page.tsx:33:    description: "Compare Analyze AI and Google Looker Studio for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional data visualization.",
+./scripts/../src/app/compare/analyze-vs-google-looker-studio/page.tsx:69:export default AnalyzeVsGoogleLookerStudioPage;
+./scripts/../src/app/compare/analyze-vs-athenahq/page.tsx:15:  title: 'Analyze AI vs. AthenaHQ: Feature Comparison',
+./scripts/../src/app/compare/analyze-vs-athenahq/page.tsx:16:  description: 'Compare how Analyze AI and AthenaHQ impact visibility, traffic, and conversions across AI engines.',
+./scripts/../src/app/compare/analyze-vs-athenahq/page.tsx:22:const AnalyzeVsAthenaHQPage = async () => {
+./scripts/../src/app/compare/analyze-vs-athenahq/page.tsx:32:    name: "Analyze AI vs AthenaHQ Comparison",
+./scripts/../src/app/compare/analyze-vs-athenahq/page.tsx:33:    description: "Compare Analyze AI and AthenaHQ for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional research tools.",
+./scripts/../src/app/compare/analyze-vs-athenahq/page.tsx:69:export default AnalyzeVsAthenaHQPage;
+./scripts/../src/app/compare/analyze-vs-writesonic-geo/page.tsx:15:  title: 'Analyze AI vs. Writesonic GEO: Feature Comparison',
+./scripts/../src/app/compare/analyze-vs-writesonic-geo/page.tsx:16:  description: 'Compare how Analyze AI and Writesonic GEO impact visibility, traffic, and conversions across AI engines.',
+./scripts/../src/app/compare/analyze-vs-writesonic-geo/page.tsx:22:const AnalyzeVsWritesonicGeoPage = async () => {
+./scripts/../src/app/compare/analyze-vs-writesonic-geo/page.tsx:32:    name: "Analyze AI vs Writesonic GEO Comparison",
+./scripts/../src/app/compare/analyze-vs-writesonic-geo/page.tsx:33:    description: "Compare Analyze AI and Writesonic GEO for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional content tools.",
+./scripts/../src/app/compare/analyze-vs-writesonic-geo/page.tsx:69:export default AnalyzeVsWritesonicGeoPage;
+./scripts/../src/app/compare/analyze-vs-surfer/page.tsx:15:  title: 'Analyze AI vs. Surfer: Feature Comparison',
+./scripts/../src/app/compare/analyze-vs-surfer/page.tsx:16:  description: 'Compare how Analyze AI and Surfer impact visibility, traffic, and conversions across AI engines.',
+./scripts/../src/app/compare/analyze-vs-surfer/page.tsx:22:const AnalyzeVsSurferPage = async () => {
+./scripts/../src/app/compare/analyze-vs-surfer/page.tsx:32:    name: "Analyze AI vs Surfer Comparison",
+./scripts/../src/app/compare/analyze-vs-surfer/page.tsx:33:    description: "Compare Analyze AI and Surfer for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional SEO tools.",
+./scripts/../src/app/compare/analyze-vs-surfer/page.tsx:69:export default AnalyzeVsSurferPage;
+./scripts/../src/app/compare/analyze-vs-semrush-ai-toolkit/page.tsx:15:  title: 'Analyze AI vs. Semrush AI Toolkit: Feature Comparison',
+./scripts/../src/app/compare/analyze-vs-semrush-ai-toolkit/page.tsx:16:  description: 'Compare how Analyze AI and Semrush AI Toolkit impact visibility, traffic, and conversions across AI engines.',
+./scripts/../src/app/compare/analyze-vs-semrush-ai-toolkit/page.tsx:22:const AnalyzeVsSemrushAiToolkitPage = async () => {
+./scripts/../src/app/compare/analyze-vs-semrush-ai-toolkit/page.tsx:32:    name: "Analyze AI vs Semrush AI Toolkit Comparison",
+./scripts/../src/app/compare/analyze-vs-semrush-ai-toolkit/page.tsx:33:    description: "Compare Analyze AI and Semrush AI Toolkit for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional SEO tools.",
+./scripts/../src/app/compare/analyze-vs-semrush-ai-toolkit/page.tsx:69:export default AnalyzeVsSemrushAiToolkitPage;
+./scripts/../src/app/compare/analyze-vs-ahrefs-brand-radar/page.tsx:15:  title: 'Analyze AI vs. Ahrefs Brand Radar: Feature Comparison',
+./scripts/../src/app/compare/analyze-vs-ahrefs-brand-radar/page.tsx:16:  description: 'Compare how Analyze AI and Ahrefs Brand Radar impact visibility, traffic, and conversions across AI engines.',
+./scripts/../src/app/compare/analyze-vs-ahrefs-brand-radar/page.tsx:22:const AnalyzeVsAhrefsBrandRadarPage = async () => {
+./scripts/../src/app/compare/analyze-vs-ahrefs-brand-radar/page.tsx:32:    name: "Analyze AI vs Ahrefs Brand Radar Comparison",
+./scripts/../src/app/compare/analyze-vs-ahrefs-brand-radar/page.tsx:33:    description: "Compare Analyze AI and Ahrefs Brand Radar for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional brand monitoring.",
+./scripts/../src/app/compare/analyze-vs-ahrefs-brand-radar/page.tsx:69:export default AnalyzeVsAhrefsBrandRadarPage;
+./scripts/../src/app/compare/analyze-vs-hubspot-ai-search-grader/page.tsx:15:  title: 'Analyze AI vs. HubSpot AI Search Grader: Feature Comparison',
+./scripts/../src/app/compare/analyze-vs-hubspot-ai-search-grader/page.tsx:16:  description: 'Compare how Analyze AI and HubSpot AI Search Grader impact visibility, traffic, and conversions across AI engines.',
+./scripts/../src/app/compare/analyze-vs-hubspot-ai-search-grader/page.tsx:22:const AnalyzeVsHubspotAiSearchGraderPage = async () => {
+./scripts/../src/app/compare/analyze-vs-hubspot-ai-search-grader/page.tsx:32:    name: "Analyze AI vs HubSpot AI Search Grader Comparison",
+./scripts/../src/app/compare/analyze-vs-hubspot-ai-search-grader/page.tsx:33:    description: "Compare Analyze AI and HubSpot AI Search Grader for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional SEO tools.",
+./scripts/../src/app/compare/analyze-vs-hubspot-ai-search-grader/page.tsx:69:export default AnalyzeVsHubspotAiSearchGraderPage;
+./scripts/../src/app/compare/analyze-vs-profound/page.tsx:15:  title: 'Analyze AI vs. Profound: Feature Comparison',
+./scripts/../src/app/compare/analyze-vs-profound/page.tsx:16:  description: 'Compare how Analyze AI and Profound impact visibility, traffic, and conversions across AI engines.',
+./scripts/../src/app/compare/analyze-vs-profound/page.tsx:22:const AnalyzeVsProfoundPage = async () => {
+./scripts/../src/app/compare/analyze-vs-profound/page.tsx:32:    name: "Analyze AI vs Profound Comparison",
+./scripts/../src/app/compare/analyze-vs-profound/page.tsx:33:    description: "Compare Analyze AI and Profound for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional analysis tools.",
+./scripts/../src/app/compare/analyze-vs-profound/page.tsx:69:export default AnalyzeVsProfoundPage;
+./scripts/../src/app/compare/analyze-vs-gsc/page.tsx:15:  title: 'Analyze AI vs. Google Search Console: Feature Comparison',
+./scripts/../src/app/compare/analyze-vs-gsc/page.tsx:16:  description: 'Compare how Analyze AI and Google Search Console impact visibility, traffic, and conversions across AI engines.',
+./scripts/../src/app/compare/analyze-vs-gsc/page.tsx:22:const AnalyzeVsGscPage = async () => {
+./scripts/../src/app/compare/analyze-vs-gsc/page.tsx:32:    name: "Analyze AI vs GSC Comparison",
+./scripts/../src/app/compare/analyze-vs-gsc/page.tsx:33:    description: "Compare Analyze AI and Google Search Console for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional search tools.",
+./scripts/../src/app/compare/analyze-vs-gsc/page.tsx:69:export default AnalyzeVsGscPage;
+./scripts/../src/app/prompts/page.tsx:14:  title: 'The Best Template Library for ChatGPT Prompts | Analyze AI',
+./scripts/../src/app/affiliate/page.tsx:12:  description: 'Join the Analyze AI affiliate program and earn 30% recurring commission forever. Promote the fastest-growing AI traffic analytics platform.',
+./scripts/../src/app/affiliate/page.tsx:15:    description: 'Join the Analyze AI affiliate program and earn 30% recurring commission forever. Promote the fastest-growing AI traffic analytics platform.',
+./scripts/../src/app/affiliate/page.tsx:23:    name: "Analyze AI Affiliate Program",
+./scripts/../src/app/page.tsx:23:  title: 'AI Search Analytics For Marketing Teams | Analyze AI',
+./scripts/../src/app/page.tsx:26:    title: 'AI Search Analytics For Marketing Teams | Analyze AI',
+./scripts/../src/app/page.tsx:55:      question: 'What is Analyze AI—and what does it actually do?',
+./scripts/../src/app/page.tsx:56:      answer: 'Analyze AI is an AI search analytics platform. It maps how AI answer engines portray your brand (what\'s said, where you appear, and who appears beside you), then ties that visibility to GA4 traffic, conversions, and revenue—so you can invest where results compound.'
+./scripts/../src/app/page.tsx:60:      question: 'How is Analyze AI different from "GEO tools"?',
+./scripts/../src/app/page.tsx:65:      question: 'How does Analyze AI work, in practice?',
+./scripts/../src/app/page.tsx:75:      question: 'What counts as an "appearance" or "mention" in Analyze AI?',
+./scripts/../src/app/page.tsx:80:      question: 'Can Analyze AI show when AI is positive or negative about us?',
+./scripts/../src/app/page.tsx:86:      answer: 'Absolutely. Set the rivals that matter; Analyze AI maintains a rolling scoreboard by cluster and prompt—share of answers, sentiment, movement, and citation share—so you know where to push and how.'
+./scripts/../src/app/page.tsx:105:      question: 'Who should use Analyze AI?',
+./scripts/../src/app/page.tsx:110:      question: 'Does Analyze AI support multiple regions or languages?',
+./scripts/../src/app/case-study/page.tsx:38:    title: 'Case Studies | Analyze AI',
+./scripts/../src/app/case-study/page.tsx:41:      title: 'Case Studies | Analyze AI',
+./scripts/../src/app/case-study/[slug]/page.tsx:431:        title: 'Case Study Not Found | Analyze AI',
+./scripts/../src/app/case-study/[slug]/page.tsx:437:    const description = blogPost.seo?.description || blogPost.excerpt || 'Read this case study from Analyze AI.';
+./scripts/../src/app/case-study/[slug]/page.tsx:443:      title: `${title} | Analyze AI`,
+./scripts/../src/app/case-study/[slug]/page.tsx:446:        title: `${title} | Analyze AI`,
+./scripts/../src/app/case-study/[slug]/page.tsx:463:        title: `${title} | Analyze AI`,
+./scripts/../src/app/case-study/[slug]/page.tsx:471:      title: 'Case Study | Analyze AI',
+./scripts/../src/app/case-study/[slug]/page.tsx:472:      description: 'Read this case study from Analyze AI.',
+./scripts/../src/app/pricing/page.tsx:8:  title: 'Pricing | Analyze AI - AI Search Analytics Platform',
+./scripts/../src/app/pricing/page.tsx:11:    title: 'Pricing | Analyze AI - AI Search Analytics Platform',
+./scripts/../src/components/features/discover/features-discover.tsx:12:    title: "Not sure which prompt to track? Let Analyze AI surface a few prompts for you",
+./scripts/../src/components/features/improve/hero-improve.tsx:63:              Analyze AI shows you the prompts you should be winning, which competitor is winning them today — so content, product marketing, and demand gen know what to ship next.
+./scripts/../src/components/blog/international-blog-listing.tsx:18:    title: 'Blog Analyze AI',
+./scripts/../src/components/blog/international-blog-listing.tsx:20:    subtitle: 'Chez Analyze AI, nous étudions constamment comment les LLMs redéfinissent la façon dont les gens découvrent, apprennent et achètent des produits en ligne. Nous partageons nos insights sur comment faire mentionner votre marque dans les moteurs de réponse, comment attribuer la visibilité IA au revenu et au trafic réel, et plus encore.',
+./scripts/../src/components/blog/international-blog-listing.tsx:23:    title: 'Analyze AI Blog',
+./scripts/../src/components/blog/international-blog-listing.tsx:25:    subtitle: 'Bei Analyze AI untersuchen wir ständig, wie LLMs die Art und Weise neu definieren, wie Menschen Produkte online entdecken, lernen und kaufen. Wir teilen unsere Erkenntnisse darüber, wie Sie Ihre Marke in Antwortmaschinen erwähnen lassen, wie Sie KI-Sichtbarkeit auf Umsatz und echten Traffic zurückführen können, und mehr.',
+./scripts/../src/components/blog/international-blog-listing.tsx:28:    title: 'Blog de Analyze AI',
+./scripts/../src/components/blog/international-blog-listing.tsx:30:    subtitle: 'En Analyze AI, estudiamos constantemente cómo los LLMs están redefiniendo la forma en que las personas descubren, aprenden y compran productos en línea. Compartimos nuestros conocimientos sobre cómo hacer que tu marca sea mencionada en los motores de respuesta, cómo atribuir la visibilidad de IA a ingresos y tráfico real, y más.',
+./scripts/../src/components/blog/international-blog-listing.tsx:33:    title: 'Blog Analyze AI',
+./scripts/../src/components/blog/international-blog-listing.tsx:35:    subtitle: 'In Analyze AI, studiamo costantemente come i LLM stanno ridefinendo il modo in cui le persone scoprono, imparano e acquistano prodotti online. Condividiamo le nostre intuizioni su come far menzionare il tuo brand nei motori di risposta, come attribuire la visibilità AI ai ricavi e al traffico reale, e altro ancora.',
+./scripts/../src/components/blog/international-blog-listing.tsx:38:    title: 'Analyze AI Blog',
+./scripts/../src/components/blog/international-blog-listing.tsx:40:    subtitle: 'Bij Analyze AI bestuderen we voortdurend hoe LLMs de manier waarop mensen producten online ontdekken, leren en kopen opnieuw definiëren. We delen onze inzichten over hoe je je merk kunt laten vermelden in antwoordmachines, hoe je AI-zichtbaarheid kunt toeschrijven aan omzet en echt verkeer, en meer.',
+./scripts/../src/components/blog/international-blog-listing.tsx:79:    title: `${localizedContent.title} | Analyze AI`,
+./scripts/../src/components/blog/international-blog-listing.tsx:82:      title: `${localizedContent.title} | Analyze AI`,
+./scripts/../src/components/blog/blog-sidebar-cta.tsx:39:          <h3 className="text-xl font-bold text-gray-900">See Analyze AI in action</h3>
+./scripts/../src/components/use-cases/meta-ai/modern-features-meta-ai.tsx:54:            How Analyze AI makes Meta AI actionable
+./scripts/../src/components/use-cases/meta-ai/modern-features-meta-ai.tsx:57:            Analyze AI maps how Meta AI talks about you, shows when it prefers a competitor, and ties that to traffic and conversions — so you know where to defend, where to improve, and where to invest.
+./scripts/../src/components/use-cases/meta-ai/features-meta-ai.tsx:7:      "Set the rivals you care about, and Analyze AI will measure how often Meta AI recommends each one in high-intent prompts. You get an always-current scoreboard: visibility share, sentiment, and movement — without manually checking Meta AI every day.",
+./scripts/../src/components/use-cases/gemini/modern-features-gemini.tsx:54:            How Analyze AI makes Gemini actionable
+./scripts/../src/components/use-cases/gemini/modern-features-gemini.tsx:57:            Analyze AI maps how Gemini talks about you, shows when it prefers a competitor, and ties that to traffic and conversions — so you know where to defend, where to improve, and where to invest.
+./scripts/../src/components/use-cases/gemini/features-gemini.tsx:7:      "Set the rivals you care about, and Analyze AI will measure how often Gemini recommends each one in high-intent prompts. You get an always-current scoreboard: visibility share, sentiment, and movement — without manually checking Gemini every day.",
+./scripts/../src/components/use-cases/microsoft-copilot/features-microsoft-copilot.tsx:7:      "Set the rivals you care about, and Analyze AI will measure how often Microsoft Copilot recommends each one in high-intent prompts. You get an always-current scoreboard: visibility share, sentiment, and movement — without manually checking Microsoft Copilot every day.",
+./scripts/../src/components/use-cases/microsoft-copilot/modern-features-microsoft-copilot.tsx:54:            How Analyze AI makes Microsoft Copilot actionable
+./scripts/../src/components/use-cases/microsoft-copilot/modern-features-microsoft-copilot.tsx:57:            Analyze AI maps how Microsoft Copilot talks about you, shows when it prefers a competitor, and ties that to traffic and conversions — so you know where to defend, where to improve, and where to invest.
+./scripts/../src/components/use-cases/claude/modern-features-claude.tsx:54:            How Analyze AI makes Claude actionable
+./scripts/../src/components/use-cases/claude/modern-features-claude.tsx:57:            Analyze AI maps how Claude talks about you, shows when it prefers a competitor, and ties that to traffic and conversions — so you know where to defend, where to improve, and where to invest.
+./scripts/../src/components/use-cases/claude/features-claude.tsx:7:      "Set the rivals you care about, and Analyze AI will measure how often Claude recommends each one in high-intent prompts. You get an always-current scoreboard: visibility share, sentiment, and movement — without manually checking Claude every day.",
+./scripts/../src/components/use-cases/deepseek/modern-features-deepseek.tsx:54:            How Analyze AI makes Deepseek actionable
+./scripts/../src/components/use-cases/deepseek/modern-features-deepseek.tsx:57:            Analyze AI maps how Deepseek talks about you, shows when it prefers a competitor, and ties that to traffic and conversions — so you know where to defend, where to improve, and where to invest.
+./scripts/../src/components/use-cases/deepseek/features-deepseek.tsx:7:      "Set the rivals you care about, and Analyze AI will measure how often Deepseek recommends each one in high-intent prompts. You get an always-current scoreboard: visibility share, sentiment, and movement — without manually checking Deepseek every day.",
+./scripts/../src/components/use-cases/perplexity-ai/modern-features-perplexity-ai.tsx:54:            How Analyze AI makes Perplexity AI actionable
+./scripts/../src/components/use-cases/perplexity-ai/modern-features-perplexity-ai.tsx:57:            Analyze AI maps how Perplexity AI talks about you, shows when it prefers a competitor, and ties that to traffic and conversions — so you know where to defend, where to improve, and where to invest.
+./scripts/../src/components/use-cases/perplexity-ai/features-perplexity-ai.tsx:7:      "Set the rivals you care about, and Analyze AI will measure how often Perplexity AI recommends each one in high-intent prompts. You get an always-current scoreboard: visibility share, sentiment, and movement — without manually checking Perplexity AI every day.",
+./scripts/../src/components/use-cases/chatgpt/modern-features-chatgpt.tsx:54:            How Analyze AI makes ChatGPT actionable
+./scripts/../src/components/use-cases/chatgpt/modern-features-chatgpt.tsx:57:            Analyze AI maps how ChatGPT talks about you, shows when it prefers a competitor, and ties that to traffic and conversions — so you know where to defend, where to improve, and where to invest.
+./scripts/../src/components/use-cases/chatgpt/features-chatgpt.tsx:7:      "Set the rivals you care about, and Analyze AI will measure how often ChatGPT recommends each one in high-intent prompts. You get an always-current scoreboard: visibility share, sentiment, and movement — without manually checking ChatGPT every day.",
+./scripts/../src/components/use-cases/google-ai-mode/modern-features-google-ai-mode.tsx:54:            How Analyze AI makes Google AI Mode actionable
+./scripts/../src/components/use-cases/google-ai-mode/modern-features-google-ai-mode.tsx:57:            Analyze AI maps how Google AI Mode talks about you, shows when it prefers a competitor, and ties that to traffic and conversions — so you know where to defend, where to improve, and where to invest.
+./scripts/../src/components/use-cases/google-ai-mode/features-google-ai-mode.tsx:7:      "Set the rivals you care about, and Analyze AI will measure how often Google AI Mode recommends each one in high-intent prompts. You get an always-current scoreboard: visibility share, sentiment, and movement — without manually checking Google AI Mode every day.",
+./scripts/../src/components/ai-tools/ToolUseCases.tsx:15:    heading: (toolName: string) => `Use cases of Analyze AI's ${toolName}`,
+./scripts/../src/components/ai-tools/ToolUseCases.tsx:19:    heading: (toolName: string) => `Cas d'utilisation du ${toolName} d'Analyze AI`,
+./scripts/../src/components/ai-tools/ToolUseCases.tsx:23:    heading: (toolName: string) => `Anwendungsfälle für Analyze AI's ${toolName}`,
+./scripts/../src/components/ai-tools/ToolUseCases.tsx:27:    heading: (toolName: string) => `Casos de uso del ${toolName} de Analyze AI`,
+./scripts/../src/components/ai-tools/ToolUseCases.tsx:31:    heading: (toolName: string) => `Casos de uso do ${toolName} da Analyze AI`,
+./scripts/../src/components/ai-tools/ToolUseCases.tsx:35:    heading: (toolName: string) => `Casi d'uso del ${toolName} di Analyze AI`,
+./scripts/../src/components/ai-tools/ToolUseCases.tsx:39:    heading: (toolName: string) => `Analyze AIの${toolName}の活用例`,
+./scripts/../src/components/ai-tools/ToolUseCases.tsx:43:    heading: (toolName: string) => `Analyze AI ${toolName}的使用案例`,
+./scripts/../src/components/ai-tools/ToolUseCases.tsx:47:    heading: (toolName: string) => `Analyze AI ${toolName}의 사용 사례`,
+./scripts/../src/components/ai-tools/ToolUseCases.tsx:51:    heading: (toolName: string) => `Analyze AI ${toolName} Kullanım Örnekleri`,
+./scripts/../src/components/compare/writesonic-geo/features-writesonic-geo.tsx:54:            Moreover, customers choose Analyze AI because it's actionnable and allows you to do things that Writesonic GEO can't
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:8:    question: "What is the main difference between Analyze AI and Writesonic GEO?",
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:9:    answer: "Analyze AI focuses on the measurement and monetization of AI visibility—how it translates into traffic, conversions, and business results—whereas Writesonic GEO is a discovery and visibility-tracking layer within the Writesonic ecosystem. GEO highlights how brands appear across AI search platforms, but it doesn't connect that visibility to verified GA4 traffic or conversion data. Analyze AI takes those insights further, turning visibility into performance metrics and prioritized actions for growth."
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:12:    question: "Does Analyze AI track real traffic from AI engines like ChatGPT, Perplexity, or Google AI Overviews?",
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:13:    answer: "Yes. Analyze AI attributes verified GA4 traffic to each AI engine, showing exactly how many visitors and sessions originate from each source. Writesonic GEO focuses on detecting mentions and appearance rates across AI engines but doesn't tie that to analytics-verified web traffic."
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:16:    question: "Can Analyze AI show which pages are getting AI-generated traffic?",
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:17:    answer: "Yes. Analyze AI shows precisely which URLs receive traffic from AI engines and how those visitors behave once they land on your site. It delivers page-level visibility, so you can identify your strongest AI-performing pages. GEO doesn't provide this page-specific analytics view; it focuses on brand-level visibility."
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:20:    question: "Does Analyze AI measure conversions from AI traffic?",
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:21:    answer: "Yes. Analyze AI integrates directly with GA4 to measure sign-ups, purchases, and other conversions coming from AI referrals. Writesonic GEO doesn't track conversions—it measures presence and share of AI exposure rather than downstream ROI."
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:24:    question: "How does Analyze AI identify opportunities or actions to improve AI visibility?",
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:25:    answer: "Analyze AI automatically surfaces prioritized \"to-do\" recommendations based on where your visibility or traffic is trending. For example, it might flag a page losing traction in ChatGPT or reveal keywords you should target for Google Overviews inclusion. GEO provides directional insights but not automated, data-driven recommendations tied to measurable outcomes."
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:28:    question: "Can Analyze AI monitor competitors' AI visibility too?",
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:29:    answer: "Yes. Analyze AI benchmarks your AI traffic and visibility against competitors, helping you see who is gaining ground and where to react. GEO also offers competitor benchmarking, but it remains at the visibility layer rather than connecting competitor performance to conversion metrics."
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:32:    question: "How easy is it to set up Analyze AI compared to Writesonic GEO?",
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:33:    answer: "Analyze AI requires only a GA4 connection and domain entry—it's live in minutes. GEO setup is also straightforward but depends on integration within the broader Writesonic platform, which may involve account setup and linking if you're not an existing user."
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:36:    question: "How much does Analyze AI cost?",
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:37:    answer: "Analyze AI costs $99 per month, all-inclusive. GEO is part of higher Writesonic tiers, generally starting at around $199 per month, with pricing increasing for advanced features."
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:40:    question: "Who is Analyze AI best suited for?",
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:41:    answer: "Analyze AI serves SMBs, marketing teams, and agencies that want measurable AI traffic data, conversion tracking, and clear improvement guidance without enterprise-level costs. GEO fits larger content or brand-marketing teams who mainly want visibility reporting inside the Writesonic ecosystem."
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:44:    question: "Can I use Analyze AI alongside Writesonic GEO or other analytics tools?",
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:45:    answer: "Yes. Many users combine them—using GEO to see visibility snapshots and Analyze AI to measure the actual impact of that visibility in traffic and conversions. They complement each other rather than compete."
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:66:              Analyze AI vs Writesonic GEO: FAQ
+./scripts/../src/components/compare/writesonic-geo/faq-writesonic-geo.tsx:69:              Common questions about choosing between Analyze AI and Writesonic GEO for AI visibility tracking
+./scripts/../src/components/compare/writesonic-geo/comprehensive-section-writesonic-geo.tsx:54:            Why Analyze AI is more comprehensive than Writesonic GEO's visibility tracker
+./scripts/../src/components/compare/writesonic-geo/comprehensive-section-writesonic-geo.tsx:57:            Same category, different outcome: Analyze AI ties AI visibility to business impact and gives marketing/PMM a concrete plan.
+./scripts/../src/components/compare/writesonic-geo/hero-comparison-writesonic-geo.tsx:21:            <Image src="/favicon.png" alt="Analyze AI" width={48} height={48} className="rounded" />
+./scripts/../src/components/compare/writesonic-geo/hero-comparison-writesonic-geo.tsx:27:            Analyze AI vs Writesonic GEO: which platform gives you deeper AI visibility?
+./scripts/../src/components/compare/writesonic-geo/hero-comparison-writesonic-geo.tsx:30:            Compare how Analyze AI and Writesonic GEO measure your AI visibility — from how often your brand appears in AI responses to how that visibility translates into actual traffic and revenue. See where Analyze AI goes deeper, and how that depth turns AI visibility into competitive advantage.
+./scripts/../src/components/compare/writesonic-geo/hero-comparison-writesonic-geo.tsx:35:                See Analyze AI in action
+./scripts/../src/components/compare/writesonic-geo/comparison-section-writesonic-geo.tsx:89:              <div>Compare how Analyze AI and Writesonic GEO impact</div>
+./scripts/../src/components/compare/writesonic-geo/comparison-section-writesonic-geo.tsx:118:                        <Image src="/favicon.png" alt="Analyze AI" width={24} height={24} className="rounded" />
+./scripts/../src/components/compare/writesonic-geo/comparison-section-writesonic-geo.tsx:119:                        <span>Analyze AI</span>
+./scripts/../src/components/compare/athenahq/comparison-section-athenahq.tsx:96:              <div>Compare how Analyze AI and AthenaHQ impact</div>
+./scripts/../src/components/compare/athenahq/comparison-section-athenahq.tsx:125:                        <Image src="/favicon.png" alt="Analyze AI" width={24} height={24} className="rounded" />
+./scripts/../src/components/compare/athenahq/comparison-section-athenahq.tsx:126:                        <span>Analyze AI</span>
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:8:    question: "What is the main difference between Analyze AI and AthenaHQ?",
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:9:    answer: "Analyze AI is designed as a lightweight, actionable analytics platform for AI visibility and real traffic attribution. AthenaHQ, in contrast, is an enterprise intelligence suite for AI model monitoring and performance analytics. It focuses more on internal AI and data-governance metrics than on website visibility and conversions. Analyze AI zeroes in on external visibility—how AI engines drive traffic and results to your site—and translates that into tangible marketing outcomes."
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:12:    question: "Does Analyze AI track real traffic from AI engines like ChatGPT, Perplexity, or Google AI Overviews?",
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:13:    answer: "Yes. Analyze AI tracks and categorizes authentic GA4 sessions by AI source. AthenaHQ monitors AI model outputs and performance metrics but doesn't connect to your GA4 or track inbound AI-engine traffic to your website."
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:16:    question: "Can Analyze AI show which pages are getting AI-generated traffic?",
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:17:    answer: "Yes. Analyze AI lists all pages receiving AI-engine visits and helps you understand which content is performing best within generative search environments. AthenaHQ doesn't provide web-traffic analytics—it's focused on internal model analytics and performance dashboards."
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:20:    question: "Does Analyze AI measure conversions from AI traffic?",
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:24:    question: "How does Analyze AI identify opportunities or actions to improve AI visibility?",
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:25:    answer: "Analyze AI provides dynamic recommendations—highlighting declining pages, missed AI queries, and optimization paths. It helps teams act on opportunities quickly. AthenaHQ focuses on performance management and system alerts rather than marketing actions or content opportunities."
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:28:    question: "Can Analyze AI monitor competitors' AI visibility too?",
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:29:    answer: "Yes. Analyze AI benchmarks your visibility and AI-traffic trends against competitors, showing where your brand is winning or losing share. AthenaHQ is not designed for competitive marketing analysis—it's a platform for internal AI governance."
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:32:    question: "How easy is it to set up Analyze AI compared to AthenaHQ?",
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:33:    answer: "Analyze AI is plug-and-play—connect GA4, add your site, and start viewing results in minutes. AthenaHQ typically requires enterprise onboarding, API access, and account configuration, reflecting its focus on corporate AI operations."
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:36:    question: "How much does Analyze AI cost?",
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:37:    answer: "Analyze AI costs $99 per month. AthenaHQ operates at enterprise-level pricing, often several hundred dollars per month or more, depending on usage tiers and data volumes."
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:40:    question: "Who is Analyze AI best suited for?",
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:41:    answer: "Analyze AI is tailored for marketing, growth, and SEO teams who want actionable AI visibility and performance insights. AthenaHQ is best suited for enterprises managing AI models, compliance, and operational performance internally."
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:44:    question: "Can I use Analyze AI alongside AthenaHQ or other analytics tools?",
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:45:    answer: "Yes. They serve completely different purposes: Analyze AI focuses on marketing and audience analytics, while AthenaHQ supports internal AI model governance. They can coexist seamlessly without overlap."
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:66:              Analyze AI vs AthenaHQ: FAQ
+./scripts/../src/components/compare/athenahq/faq-athenahq.tsx:69:              Common questions about choosing between Analyze AI and AthenaHQ for AI visibility tracking
+./scripts/../src/components/compare/athenahq/features-athenahq.tsx:54:            Moreover, customers choose Analyze AI because it's actionnable and allows you to do things that AthenaHQ can't
+./scripts/../src/components/compare/athenahq/hero-comparison-athenahq.tsx:21:            <Image src="/favicon.png" alt="Analyze AI" width={48} height={48} className="rounded" />
+./scripts/../src/components/compare/athenahq/hero-comparison-athenahq.tsx:27:            Analyze AI vs AthenaHQ: which platform gives you deeper AI visibility?
+./scripts/../src/components/compare/athenahq/hero-comparison-athenahq.tsx:30:            Compare how Analyze AI and AthenaHQ measure your AI visibility — from how often your brand appears in AI responses to how that visibility translates into actual traffic and revenue. See where Analyze AI goes deeper, and how that depth turns AI visibility into competitive advantage.
+./scripts/../src/components/compare/athenahq/hero-comparison-athenahq.tsx:35:                See Analyze AI in action
+./scripts/../src/components/compare/athenahq/comprehensive-section-athenahq.tsx:54:            Why Analyze AI is more comprehensive than AthenaHQ's visibility tracker
+./scripts/../src/components/compare/athenahq/comprehensive-section-athenahq.tsx:57:            Same category, different outcome: Analyze AI ties AI visibility to business impact and gives marketing/PMM a concrete plan.
+./scripts/../src/components/compare/google-looker-studio/features-google-looker-studio.tsx:54:            Moreover, customers choose Analyze AI because it's actionnable and allows you to do things that Google Looker Studio can't
+./scripts/../src/components/compare/google-looker-studio/comprehensive-section-google-looker-studio.tsx:54:            Why Analyze AI is more comprehensive than Google Looker Studio's visibility tracker
+./scripts/../src/components/compare/google-looker-studio/comprehensive-section-google-looker-studio.tsx:57:            Same category, different outcome: Analyze AI ties AI visibility to business impact and gives marketing/PMM a concrete plan.
+./scripts/../src/components/compare/google-looker-studio/comparison-section-google-looker-studio.tsx:89:              <div>Compare how Analyze AI and Google Looker Studio impact</div>
+./scripts/../src/components/compare/google-looker-studio/comparison-section-google-looker-studio.tsx:118:                        <Image src="/favicon.png" alt="Analyze AI" width={24} height={24} className="rounded" />
+./scripts/../src/components/compare/google-looker-studio/comparison-section-google-looker-studio.tsx:119:                        <span>Analyze AI</span>
+./scripts/../src/components/compare/google-looker-studio/hero-comparison-google-looker-studio.tsx:21:            <Image src="/favicon.png" alt="Analyze AI" width={48} height={48} className="rounded" />
+./scripts/../src/components/compare/google-looker-studio/hero-comparison-google-looker-studio.tsx:27:            Analyze AI vs Google Looker Studio: which platform gives you deeper AI visibility?
+./scripts/../src/components/compare/google-looker-studio/hero-comparison-google-looker-studio.tsx:31:            Compare how Analyze AI and Google Looker Studio measure your AI visibility — from how often your brand appears in AI responses to how that visibility translates into actual traffic and revenue. See where Analyze AI goes deeper, and how that depth turns AI visibility into competitive advantage.
+./scripts/../src/components/compare/google-looker-studio/hero-comparison-google-looker-studio.tsx:37:                See Analyze AI in action
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:8:    question: "What is the main difference between Analyze AI and Google Looker Studio?",
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:9:    answer: "Analyze AI is a purpose-built AI-visibility analytics platform; Looker Studio is a visualization tool. Looker can visualize any data source but doesn't natively know how to detect or classify AI-engine referrals. Analyze, by contrast, already connects those dots—it ingests GA4 data, detects traffic from AI sources, maps it to pages, trends, and conversions, and adds interpretation and prioritization."
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:12:    question: "Does Analyze AI track real traffic from AI engines like ChatGPT, Perplexity, or Google AI Overviews?",
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:13:    answer: "Yes. Analyze AI automatically identifies and segments visits from AI engines within your GA4 data. Looker Studio can only show that data if you build and maintain the models yourself; it doesn't have built-in logic for AI-engine attribution."
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:16:    question: "Can Analyze AI show which pages are getting AI-generated traffic?",
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:17:    answer: "Yes. Analyze AI provides clear page-level reports showing exactly which URLs gain traffic from AI engines and how those visits behave. Looker Studio can theoretically show the same if you manually build filters and datasets—but Analyze AI does it out-of-the-box."
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:20:    question: "Does Analyze AI measure conversions from AI traffic?",
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:21:    answer: "Yes. Conversions from AI visits are automatically calculated inside Analyze AI, including goal and e-commerce metrics. Looker Studio only visualizes whatever conversion data you supply—it won't isolate AI-related conversions without extensive manual setup."
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:24:    question: "How does Analyze AI identify opportunities or actions to improve AI visibility?",
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:25:    answer: "Analyze AI evaluates shifts in traffic, engine trends, and page performance, then ranks actions such as \"optimize schema for Google Overviews\" or \"expand prompt coverage for ChatGPT.\" Looker Studio provides no built-in recommendations; it's a reporting canvas."
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:28:    question: "Can Analyze AI monitor competitors' AI visibility too?",
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:29:    answer: "Yes. Analyze AI tracks competitive domains within the same AI engines, showing comparative visibility, traffic, and growth patterns. Looker Studio depends on you to supply competitor data; it doesn't collect any by default."
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:32:    question: "How easy is it to set up Analyze AI compared to Looker Studio?",
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:33:    answer: "Analyze AI setup is plug-and-play: connect GA4, choose AI engines, and insights appear. Looker Studio requires data connectors, schema design, and manual configuration, making setup more technical."
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:36:    question: "How much does Analyze AI cost?",
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:37:    answer: "Analyze AI costs $99 per month. Looker Studio is free for basic use, but meaningful AI-tracking requires third-party connectors and engineering time, which often cost more than Analyze AI's subscription."
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:40:    question: "Who is Analyze AI best suited for?",
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:41:    answer: "Analyze AI is ideal for marketers who need instant clarity on AI traffic and actions without building dashboards. Looker Studio is better for data analysts or teams already maintaining custom BI environments."
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:44:    question: "Can I use Analyze AI alongside Looker Studio or other analytics tools?",
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:45:    answer: "Yes. Analyze AI can export its AI-traffic metrics to Looker Studio, GA4, or any BI layer, enabling you to enrich your existing dashboards with real AI-specific data."
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:66:              Analyze AI vs Google Looker Studio: FAQ
+./scripts/../src/components/compare/google-looker-studio/faq-google-looker-studio.tsx:69:              Common questions about choosing between Analyze AI and Google Looker Studio for AI visibility tracking
+./scripts/../src/components/compare/profound/faq-profound.tsx:8:    question: "What is the main difference between Analyze AI and Profound?",
+./scripts/../src/components/compare/profound/faq-profound.tsx:9:    answer: "Analyze AI democratizes AI visibility analytics for SMBs—measuring real traffic, conversions, and opportunities—whereas Profound is an enterprise-grade platform focused on visibility intelligence and reporting for large organizations. Profound offers deep dashboards and custom data visualizations, but Analyze AI provides the action layer that ties visibility to revenue impact and makes insights accessible without an analyst."
+./scripts/../src/components/compare/profound/faq-profound.tsx:12:    question: "Does Analyze AI track real traffic from AI engines like ChatGPT, Perplexity, or Google AI Overviews?",
+./scripts/../src/components/compare/profound/faq-profound.tsx:13:    answer: "Yes. Analyze AI directly attributes traffic from AI engines to your GA4 data, letting you see verified sessions and trends per engine. Profound focuses on visibility scoring and brand presence but does not include GA4-based attribution or conversion tracking."
+./scripts/../src/components/compare/profound/faq-profound.tsx:16:    question: "Can Analyze AI show which pages are getting AI-generated traffic?",
+./scripts/../src/components/compare/profound/faq-profound.tsx:17:    answer: "Yes. Analyze AI shows page-level traffic insights from each AI engine, revealing where AI-driven discovery is happening on your site. Profound's reports tend to summarize visibility at the brand or topic level, not the page level."
+./scripts/../src/components/compare/profound/faq-profound.tsx:20:    question: "Does Analyze AI measure conversions from AI traffic?",
+./scripts/../src/components/compare/profound/faq-profound.tsx:21:    answer: "Yes. Conversions are part of Analyze AI's core design—tracking leads and purchases from AI-engine referrals. Profound typically does not include conversion analytics; its primary purpose is monitoring visibility, trends, and sentiment."
+./scripts/../src/components/compare/profound/faq-profound.tsx:24:    question: "How does Analyze AI identify opportunities or actions to improve AI visibility?",
+./scripts/../src/components/compare/profound/faq-profound.tsx:25:    answer: "Analyze AI prioritizes opportunities into an actionable to-do list. Each insight comes with a recommended fix—such as strengthening structured data, enhancing page metadata, or targeting new AI prompts. Profound delivers powerful dashboards but expects analysts or strategists to interpret and act on the data manually."
+./scripts/../src/components/compare/profound/faq-profound.tsx:28:    question: "Can Analyze AI monitor competitors' AI visibility too?",
+./scripts/../src/components/compare/profound/faq-profound.tsx:29:    answer: "Yes. Analyze AI continuously tracks competitor visibility, traffic trends, and AI citation share. Profound also includes competitive intelligence, though it's positioned more for corporate insight teams than agile marketing teams."
+./scripts/../src/components/compare/profound/faq-profound.tsx:32:    question: "How easy is it to set up Analyze AI compared to Profound?",
+./scripts/../src/components/compare/profound/faq-profound.tsx:33:    answer: "Analyze AI is extremely quick to deploy—connect GA4, verify your site, and select competitors. Profound requires enterprise onboarding, custom account setup, and data-integration support."
+./scripts/../src/components/compare/profound/faq-profound.tsx:36:    question: "How much does Analyze AI cost?",
+./scripts/../src/components/compare/profound/faq-profound.tsx:37:    answer: "Analyze AI is $99 per month, designed for SMBs and agencies. Profound operates on enterprise contracts, typically in the $400–$500 per month range or higher."
+./scripts/../src/components/compare/profound/faq-profound.tsx:40:    question: "Who is Analyze AI best suited for?",
+./scripts/../src/components/compare/profound/faq-profound.tsx:41:    answer: "Analyze AI suits marketing teams, agencies, and founders who want fast, clear visibility into AI-generated traffic and ROI. Profound suits corporate insight teams with dedicated analysts managing multiple brands and data pipelines."
+./scripts/../src/components/compare/profound/faq-profound.tsx:44:    question: "Can I use Analyze AI alongside Profound or other analytics tools?",
+./scripts/../src/components/compare/profound/faq-profound.tsx:45:    answer: "Yes. Analyze AI can run alongside Profound or any other analytics suite. Many organizations use Profound for corporate-level visibility and Analyze AI for hands-on, GA4-based performance tracking and execution support."
+./scripts/../src/components/compare/profound/faq-profound.tsx:66:              Analyze AI vs Profound: FAQ
+./scripts/../src/components/compare/profound/faq-profound.tsx:69:              Common questions about choosing between Analyze AI and Profound for AI visibility tracking
+./scripts/../src/components/compare/profound/comparison-section-profound.tsx:96:              <div>Compare how Analyze AI and Profound impact</div>
+./scripts/../src/components/compare/profound/comparison-section-profound.tsx:125:                        <Image src="/favicon.png" alt="Analyze AI" width={24} height={24} className="rounded" />
+./scripts/../src/components/compare/profound/comparison-section-profound.tsx:126:                        <span>Analyze AI</span>
+./scripts/../src/components/compare/profound/hero-comparison-profound.tsx:21:            <Image src="/favicon.png" alt="Analyze AI" width={48} height={48} className="rounded" />
+./scripts/../src/components/compare/profound/hero-comparison-profound.tsx:27:            Analyze AI vs Profound: which platform gives you deeper AI visibility?
+./scripts/../src/components/compare/profound/hero-comparison-profound.tsx:30:            Compare how Analyze AI and Profound measure your AI visibility — from how often your brand appears in AI responses to how that visibility translates into actual traffic and revenue. See where Analyze AI goes deeper, and how that depth turns AI visibility into competitive advantage.
+./scripts/../src/components/compare/profound/hero-comparison-profound.tsx:35:                See Analyze AI in action
+./scripts/../src/components/compare/profound/features-profound.tsx:54:            Moreover, customers choose Analyze AI because it's actionnable and allows you to do things that Profound can't
+./scripts/../src/components/compare/profound/comprehensive-section-profound.tsx:54:            Why Analyze AI is more comprehensive than Profound's visibility tracker
+./scripts/../src/components/compare/profound/comprehensive-section-profound.tsx:57:            Same category, different outcome: Analyze AI ties AI visibility to business impact and gives marketing/PMM a concrete plan.
+./scripts/../src/components/compare/semrush-ai-toolkit/hero-comparison-semrush-ai-toolkit.tsx:21:            <Image src="/favicon.png" alt="Analyze AI" width={48} height={48} className="rounded" />
+./scripts/../src/components/compare/semrush-ai-toolkit/hero-comparison-semrush-ai-toolkit.tsx:27:            Analyze AI vs Semrush AI Toolkit: which platform gives you deeper AI visibility?
+./scripts/../src/components/compare/semrush-ai-toolkit/hero-comparison-semrush-ai-toolkit.tsx:31:            Compare how Analyze AI and Semrush AI Toolkit measure your AI visibility — from how often your brand appears in AI responses to how that visibility translates into actual traffic and revenue. See where Analyze AI goes deeper, and how that depth turns AI visibility into competitive advantage.
+./scripts/../src/components/compare/semrush-ai-toolkit/hero-comparison-semrush-ai-toolkit.tsx:37:                See Analyze AI in action
+./scripts/../src/components/compare/semrush-ai-toolkit/comparison-section-semrush-ai-toolkit.tsx:96:              <div>Compare how Analyze AI and Semrush AI Toolkit impact</div>
+./scripts/../src/components/compare/semrush-ai-toolkit/comparison-section-semrush-ai-toolkit.tsx:125:                        <Image src="/favicon.png" alt="Analyze AI" width={24} height={24} className="rounded" />
+./scripts/../src/components/compare/semrush-ai-toolkit/comparison-section-semrush-ai-toolkit.tsx:126:                        <span>Analyze AI</span>
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:8:    question: "What is the main difference between Analyze AI and Semrush AI Toolkit?",
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:9:    answer: "Semrush AI Toolkit is primarily a visibility and sentiment tracking suite—great for understanding how your brand or content appears within AI-generated answers. Analyze, however, connects that visibility to actual traffic and conversions. It measures the tangible outcomes of AI exposure and translates them into growth actions. Semrush's toolkit is more research-oriented, while Analyze AI functions as an ongoing performance engine."
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:12:    question: "Does Analyze AI track real traffic from AI engines like ChatGPT, Perplexity, or Google AI Overviews?",
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:13:    answer: "Yes. Analyze AI pulls authenticated GA4 session data and labels which AI engine each session came from. Semrush's AI Toolkit currently tracks where your brand appears in AI answers but doesn't quantify real GA4 traffic from those appearances."
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:16:    question: "Can Analyze AI show which pages are getting AI-generated traffic?",
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:17:    answer: "Yes. Analyze AI lists every page receiving AI-engine visits and correlates it with the AI responses that drive those sessions. Semrush AI Toolkit focuses on brand or content mentions in AI tools, not which site pages receive the resulting traffic."
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:20:    question: "Does Analyze AI measure conversions from AI traffic?",
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:21:    answer: "Yes. Analyze AI connects visibility to outcomes, tracking sign-ups, purchases, or leads generated by AI-engine visitors. Semrush's toolkit does not include conversion tracking; it emphasizes exposure metrics and trend scores."
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:24:    question: "How does Analyze AI identify opportunities or actions to improve AI visibility?",
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:25:    answer: "Analyze AI produces prioritized, data-driven recommendations—such as optimizing underperforming pages in engines showing declining trend lines or targeting queries where competitors are gaining traction. Semrush AI Toolkit surfaces keyword and prompt opportunities but leaves conversion and prioritization logic to you."
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:28:    question: "Can Analyze AI monitor competitors' AI visibility too?",
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:29:    answer: "Yes. Analyze AI provides side-by-side comparisons of your and your competitors' AI visibility, traffic, and conversion trends. Semrush AI Toolkit also offers competitor tracking but largely focuses on visibility and sentiment rather than traffic or ROI."
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:32:    question: "How easy is it to set up Analyze AI compared to Semrush AI Toolkit?",
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:33:    answer: "Analyze AI requires a quick GA4 connection and domain setup. Semrush's toolkit is part of a larger platform that needs project configuration, keyword imports, and app-center integrations, which can take longer."
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:36:    question: "How much does Analyze AI cost?",
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:37:    answer: "Analyze AI costs $99 per month flat. Semrush AI Toolkit is an add-on within Semrush, typically requiring a paid base plan plus the AI-visibility module, leading to a higher combined monthly spend."
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:40:    question: "Who is Analyze AI best suited for?",
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:41:    answer: "Analyze AI is built for SMBs, agencies, and marketing teams seeking direct AI-traffic attribution, conversion tracking, and clear action guidance. Semrush AI Toolkit is ideal for SEO professionals needing broader visibility analytics across AI but not necessarily tied to GA4 outcomes."
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:44:    question: "Can I use Analyze AI alongside Semrush AI Toolkit or other analytics tools?",
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:45:    answer: "Yes. Many teams use both: Semrush for market-wide visibility benchmarking and Analyze AI for actual performance and ROI measurement. They complement one another—Semrush helps you see where you appear, while Analyze AI shows what that appearance is worth in traffic and conversions."
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:66:              Analyze AI vs Semrush AI Toolkit: FAQ
+./scripts/../src/components/compare/semrush-ai-toolkit/faq-semrush-ai-toolkit.tsx:69:              Common questions about choosing between Analyze AI and Semrush AI Toolkit for AI visibility tracking
+./scripts/../src/components/compare/semrush-ai-toolkit/comprehensive-section-semrush-ai-toolkit.tsx:54:            Why Analyze AI is more comprehensive than Semrush AI Toolkit's visibility tracker
+./scripts/../src/components/compare/semrush-ai-toolkit/comprehensive-section-semrush-ai-toolkit.tsx:57:            Same category, different outcome: Analyze AI ties AI visibility to business impact and gives marketing/PMM a concrete plan.
+./scripts/../src/components/compare/semrush-ai-toolkit/features-semrush-ai-toolkit.tsx:54:            Moreover, customers choose Analyze AI because it's actionnable and allows you to do things that Semrush AI Toolkit can't
+./scripts/../src/components/compare/gsc/comprehensive-section-gsc.tsx:54:            Why Analyze AI is more comprehensive than Google Search Console's visibility tracker
+./scripts/../src/components/compare/gsc/comprehensive-section-gsc.tsx:57:            Same category, different outcome: Analyze AI ties AI visibility to business impact and gives marketing/PMM a concrete plan.
+./scripts/../src/components/compare/gsc/features-gsc.tsx:54:            Moreover, customers choose Analyze AI because it's actionnable and allows you to do things that Google Search Console can't
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:8:    question: "What is the main difference between Analyze AI and Google Search Console?",
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:9:    answer: "Analyze AI measures visibility and performance across AI engines—like ChatGPT, Perplexity, and Google AI Overviews—whereas Google Search Console measures web search visibility within Google's own SERPs. GSC provides traditional SEO metrics such as clicks, impressions, and indexing coverage, while Analyze AI extends analytics into the AI-driven web to show where and how generative tools are sending visitors."
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:12:    question: "Does Analyze AI track real traffic from AI engines like ChatGPT, Perplexity, or Google AI Overviews?",
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:13:    answer: "Yes. Analyze AI directly identifies and tracks sessions from AI engines inside GA4, showing the quantity and quality of traffic they deliver. GSC does not recognize AI engines as a traffic source—it only tracks standard search clicks from Google."
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:16:    question: "Can Analyze AI show which pages are getting AI-generated traffic?",
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:17:    answer: "Yes. Analyze AI lists every page receiving AI-driven visits, providing a clear sense of which content resonates with generative engines. GSC can show which pages rank in Google search, but it doesn't separate or identify AI Overview traffic or generative responses."
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:20:    question: "Does Analyze AI measure conversions from AI traffic?",
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:21:    answer: "Yes. Analyze AI integrates with GA4 to show conversions tied to AI-sourced sessions. GSC does not track conversions—it's focused on search visibility, not user behavior after the click."
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:24:    question: "How does Analyze AI identify opportunities or actions to improve AI visibility?",
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:25:    answer: "Analyze AI proactively highlights opportunities to improve AI exposure—such as adding structured data, enhancing meta language, or fixing pages losing AI referrals. GSC provides valuable SEO suggestions but doesn't include AI visibility diagnostics or to-do prioritization."
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:28:    question: "Can Analyze AI monitor competitors' AI visibility too?",
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:29:    answer: "Yes. Analyze AI benchmarks your visibility against competitors across AI engines. GSC only provides data for your verified domains and cannot be used for competitive tracking."
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:32:    question: "How easy is it to set up Analyze AI compared to Google Search Console?",
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:33:    answer: "Both are simple to set up. GSC requires site verification through DNS or HTML tags; Analyze AI only requires connecting GA4 and entering your domain. The difference lies in purpose—Analyze AI starts showing AI data immediately, while GSC focuses on web search."
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:36:    question: "How much does Analyze AI cost?",
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:37:    answer: "Analyze AI is $99 per month. GSC is free but limited to Google search data and lacks AI visibility, traffic attribution, or conversion reporting."
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:40:    question: "Who is Analyze AI best suited for?",
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:41:    answer: "Analyze AI is for marketers, agencies, and SEO teams ready to move beyond traditional search analytics into AI visibility and performance tracking. GSC remains indispensable for basic SEO insights but doesn't address the emerging AI discovery layer."
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:44:    question: "Can I use Analyze AI alongside Google Search Console or other analytics tools?",
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:45:    answer: "Absolutely. Analyze AI complements GSC perfectly: GSC covers traditional search visibility, while Analyze AI shows where AI engines generate new traffic opportunities. Together, they give a complete view of organic and generative performance."
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:66:              Analyze AI vs Google Search Console: FAQ
+./scripts/../src/components/compare/gsc/faq-gsc.tsx:69:              Common questions about choosing between Analyze AI and Google Search Console for AI visibility tracking
+./scripts/../src/components/compare/gsc/hero-comparison-gsc.tsx:21:            <Image src="/favicon.png" alt="Analyze AI" width={48} height={48} className="rounded" />
+./scripts/../src/components/compare/gsc/hero-comparison-gsc.tsx:27:            Analyze AI vs GSC: which platform gives you deeper AI visibility?
+./scripts/../src/components/compare/gsc/hero-comparison-gsc.tsx:30:            Compare how Analyze AI and GSC measure your AI visibility — from how often your brand appears in AI responses to how that visibility translates into actual traffic and revenue. See where Analyze AI goes deeper, and how that depth turns AI visibility into competitive advantage.
+./scripts/../src/components/compare/gsc/hero-comparison-gsc.tsx:35:                See Analyze AI in action
+./scripts/../src/components/compare/gsc/comparison-section-gsc.tsx:89:              <div>Compare how Analyze AI and Google Search Console impact</div>
+./scripts/../src/components/compare/gsc/comparison-section-gsc.tsx:118:                        <Image src="/favicon.png" alt="Analyze AI" width={24} height={24} className="rounded" />
+./scripts/../src/components/compare/gsc/comparison-section-gsc.tsx:119:                        <span>Analyze AI</span>
+./scripts/../src/components/compare/ahrefs-brand-radar/hero-ahrefs-brand-radar.tsx:49:              Analyze AI vs Ahrefs Brand Radar: AI Search Analytics vs Traditional Brand Monitoring
+./scripts/../src/components/compare/ahrefs-brand-radar/hero-ahrefs-brand-radar.tsx:53:              While Ahrefs Brand Radar tracks traditional web mentions, Analyze AI shows how AI assistants talk about your brand, recommend competitors, and drive actual traffic.
+./scripts/../src/components/compare/ahrefs-brand-radar/hero-ahrefs-brand-radar.tsx:81:                  alt="Analyze AI Search Analytics Dashboard"
+./scripts/../src/components/compare/ahrefs-brand-radar/problem-solution-ahrefs-brand-radar.tsx:32:              Ahrefs Brand Radar tracks traditional mentions. Analyze AI tracks AI search performance.
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:8:    question: "What is the main difference between Analyze AI and Ahrefs Brand Radar?",
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:9:    answer: "The main difference is that Analyze AI not only tracks visibility across AI engines but also connects that traffic to real GA4 data (sessions, conversions, pages), and surfaces prioritized actions. In contrast, Ahrefs Brand Radar offers a strong brand-and-AI-visibility layer (mentions, share of voice across AI Overviews, etc.) but lacks explicit GA4-based traffic + conversion attribution."
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:12:    question: "Does Analyze AI track real traffic from AI engines like ChatGPT, Perplexity, or Google AI Overviews?",
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:13:    answer: "Yes. Analyze AI connects to your analytics (e.g., GA4) and attributes actual user sessions and pages to specific AI-engines, showing real traffic from those sources. Ahrefs Brand Radar does not clearly provide GA4-based traffic attribution for AI engines—it focuses on prompts, mentions, and share of voice."
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:16:    question: "Can Analyze AI show which pages are getting AI-generated traffic?",
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:17:    answer: "Yes — Analyze AI surfaces precisely which pages on your site are receiving visits attributable to AI engine referrals, enabling you to understand page-level performance. Ahrefs Brand Radar offers insights like which domains are cited, and topic-ownership, but does not explicitly map AI-engine traffic to your internal page analytics."
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:20:    question: "Does Analyze AI measure conversions from AI traffic?",
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:21:    answer: "Yes — Analyze AI measures not just visits but conversions (goals/e-commerce) originating from AI engine traffic, so you can evaluate ROI from AI visibility. Ahrefs Brand Radar does not prominently claim conversions from AI engine traffic; it is more focused on visibility and share-of-voice metrics."
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:24:    question: "How does Analyze AI identify opportunities or actions to improve AI visibility?",
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:25:    answer: "Analyze AI provides prioritized, actionable recommendations (for example: \"page X has high drops in AI referrals—optimize for prompt Y\", or \"your competitor is gaining in AI engine Z—here's how to close the gap\"). It moves beyond dashboards to action-ticks. Ahrefs Brand Radar offers strong diagnostics (visibility gaps, topic ownership, competitor comparison) but less in the way of prescriptive, prioritized action steps tied to your site's traffic and conversion outcomes."
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:28:    question: "Can Analyze AI monitor competitors' AI visibility too?",
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:29:    answer: "Yes — Analyze AI offers competitive monitoring, showing how you stack up versus peers across AI engine traffic, visibility, conversions, and actionable gaps. Ahrefs Brand Radar also supports competitor benchmarking (share of voice, topic ownership) in its AI visibility layer."
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:32:    question: "How easy is it to set up Analyze AI compared to Ahrefs Brand Radar?",
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:33:    answer: "Analyze AI is designed for relatively low setup time: connect GA4, choose AI engines you care about, and you're live. Ahrefs Brand Radar is very low-setup for visibility tracking (no site tagging required), but because it lacks deep integration with your conversions, you'll need to pair it with analytics externally if you want full attribution."
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:36:    question: "How much does Analyze AI cost?",
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:37:    answer: "Analyze AI is priced at $99 / month (flat). Ahrefs Brand Radar is an add-on to Ahrefs; the AI indexes are now available at ~$99/mo each, but you still need a base Ahrefs plan, making total costs higher."
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:40:    question: "Who is Analyze AI best suited for?",
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:41:    answer: "Analyze AI is best for small to mid-sized businesses, agencies, marketers who want concrete AI-engine traffic insights, page-level detail, and conversion attribution—without the enterprise price tag. Ahrefs Brand Radar is suited for brands or agencies already using Ahrefs who primarily want visibility tracking and share-of-voice across AI, and are comfortable doing deeper attribution externally."
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:44:    question: "Can I use Analyze AI alongside Ahrefs Brand Radar or other analytics tools?",
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:45:    answer: "Yes — Analyze AI is built to integrate with GA4 and other analytics tools, and it can run alongside Ahrefs Brand Radar (or other SEO/visibility tools). Many teams will use Analyze AI for AI-traffic/conversion attribution and still use Ahrefs for broader SEO/keyword rank tracking. Ahrefs Brand Radar likewise can coexist with other analytics tools; its visibility layer can supplement what Analyze AI provides."
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:66:              Analyze AI vs Ahrefs Brand Radar: FAQ
+./scripts/../src/components/compare/ahrefs-brand-radar/faq-ahrefs-brand-radar.tsx:69:              Common questions about choosing between Analyze AI and Ahrefs Brand Radar for AI visibility tracking
+./scripts/../src/components/compare/ahrefs-brand-radar/features-ahrefs-brand-radar.tsx:54:            Moreover, customers choose Analyze AI because it's actionnable and allows you to do things that Ahrefs Brand Radar can't
+./scripts/../src/components/compare/ahrefs-brand-radar/comprehensive-section-ahrefs-brand-radar.tsx:54:            Why Analyze AI is more comprehensive than Ahrefs Brand Radar's visibility tracker
+./scripts/../src/components/compare/ahrefs-brand-radar/comprehensive-section-ahrefs-brand-radar.tsx:57:            Same category, different outcome: Analyze AI ties AI visibility to business impact and gives marketing/PMM a concrete plan.
+./scripts/../src/components/compare/ahrefs-brand-radar/hero-comparison-ahrefs-brand-radar.tsx:21:            <Image src="/favicon.png" alt="Analyze AI" width={48} height={48} className="rounded" />
+./scripts/../src/components/compare/ahrefs-brand-radar/hero-comparison-ahrefs-brand-radar.tsx:27:            Analyze AI vs Ahrefs Brand Radar: which platform gives you deeper AI visibility?
+./scripts/../src/components/compare/ahrefs-brand-radar/hero-comparison-ahrefs-brand-radar.tsx:31:            Compare how Analyze AI and Ahrefs Brand Radar measure your AI visibility — from how often your brand appears in AI responses to how that visibility translates into actual traffic and revenue. See where Analyze AI goes deeper, and how that depth turns AI visibility into competitive advantage.
+./scripts/../src/components/compare/ahrefs-brand-radar/hero-comparison-ahrefs-brand-radar.tsx:37:                See Analyze AI in action
+./scripts/../src/components/compare/ahrefs-brand-radar/comparison-section-ahrefs-brand-radar.tsx:103:              <div>Compare how Analyze AI and Ahrefs Brand Radar impact</div>
+./scripts/../src/components/compare/ahrefs-brand-radar/comparison-section-ahrefs-brand-radar.tsx:132:                        <Image src="/favicon.png" alt="Analyze AI" width={24} height={24} className="rounded" />
+./scripts/../src/components/compare/ahrefs-brand-radar/comparison-section-ahrefs-brand-radar.tsx:133:                        <span>Analyze AI</span>
+./scripts/../src/components/compare/peec-ai/hero-comparison-peec-ai.tsx:21:            <Image src="/favicon.png" alt="Analyze AI" width={48} height={48} className="rounded" />
+./scripts/../src/components/compare/peec-ai/hero-comparison-peec-ai.tsx:27:            Analyze AI vs Peec AI: which platform gives you deeper AI visibility?
+./scripts/../src/components/compare/peec-ai/hero-comparison-peec-ai.tsx:30:            Compare how Analyze AI and Peec AI measure your AI visibility — from how often your brand appears in AI responses to how that visibility translates into actual traffic and revenue. See where Analyze AI goes deeper, and how that depth turns AI visibility into competitive advantage.
+./scripts/../src/components/compare/peec-ai/hero-comparison-peec-ai.tsx:35:                See Analyze AI in action
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:8:    question: "What is the main difference between Analyze AI and Peec AI?",
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:9:    answer: "The main difference is that Analyze AI ties AI-engine visibility not only to mentions/prompts but to actual website traffic, page-level insights, conversions and prioritized actions, while Peec AI focuses more on monitoring visibility, mentions, prompts, and share-of-voice across AI engines without full attribution to GA4 traffic + conversions or deep actionable optimization steps."
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:12:    question: "Does Analyze AI track real traffic from AI engines like ChatGPT, Perplexity, or Google AI Overviews?",
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:13:    answer: "Yes — Analyze AI brings real traffic data from AI engines into GA4-based dashboards and links to actual website metrics. Peec AI does not clearly provide GA4-based traffic or conversion attribution; it primarily tracks prompts, mentions, visibility in AI."
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:16:    question: "Can Analyze AI show which pages are getting AI-generated traffic?",
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:17:    answer: "Yes — Analyze AI surfaces page-level data showing which pages are receiving AI-engine referrals and conversions. Peec AI gives prompt-level visibility and mentions, but review commentary says it lacks detailed mapping of traffic to pages."
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:20:    question: "Does Analyze AI measure conversions from AI traffic?",
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:21:    answer: "Yes — Analyze AI supports conversion tracking for AI-engine derived traffic, enabling ROI measurement. Peec AI does not visibly offer conversion attribution in its public materials; it is strong on tracking brand visibility but weaker on \"what to do\" and \"what conversion benefit\"."
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:24:    question: "How does Analyze AI identify opportunities or actions to improve AI visibility?",
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:25:    answer: "Analyze AI delivers prioritized action items (e.g., fix pages with high drop-off, optimize content for specific AI engine prompt classes, competitor gap closes). Peec AI does offer insights like \"which prompts trigger your brand\" and \"which sources are cited\", but according to reviews it lacks deeper optimization guidance and actionable road-map steps."
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:28:    question: "Can Analyze AI monitor competitors' AI visibility too?",
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:29:    answer: "Yes — Analyze AI includes competitor monitoring: you can track your brand vs others across AI-engine traffic, visibility, conversions, and gaps. Peec AI also provides competitor benchmarking (brand mentions, prompt coverage) across AI platforms."
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:32:    question: "How easy is it to set up Analyze AI compared to Peec AI?",
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:33:    answer: "Analyze AI setup is straightforward: connect GA4, select engines, define goals/pages; built for rapid time-to-value. Peec AI also markets ease-of-use (\"plug and play\"), especially for visibility tracking. But if you need conversion attribution or page-level traffic details, you may need extra setup/workarounds."
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:36:    question: "How much does Analyze AI cost?",
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:37:    answer: "Analyze AI is priced at $99/month (flat). Peec AI entry plan is €89/month (~$95) for limited prompts/engines; pricing rises with more prompts/engines to €199 or €499+."
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:40:    question: "Who is Analyze AI best suited for?",
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:41:    answer: "Analyze AI is best for SMBs, agencies, growth-teams that want to measure real AI-engine derived traffic and conversions, optimize page by page, and act on prioritized recommendations—without high cost. Peec AI is more suited for teams who want to track brand presence-in-AI search, prompts, mentions, and competitor share but may not yet need deep conversion attribution or optimization workflows."
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:44:    question: "Can I use Analyze AI alongside Peec AI or other analytics tools?",
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:45:    answer: "Yes — You can run Analyze AI alongside Peec AI (or other visibility tools). For example, you might use Peec for high-level visibility/mention tracking, and Analyze AI for traffic/conversion attribution and action-planning. They complement rather than exclude each other. Peec AI likewise can be used alongside analytics tools; many users layer visibility dashboards with GA4 and other tools to fill gaps."
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:66:              Analyze AI vs Peec AI: FAQ
+./scripts/../src/components/compare/peec-ai/faq-peec-ai.tsx:69:              Common questions about choosing between Analyze AI and Peec AI for AI visibility tracking
+./scripts/../src/components/compare/peec-ai/comprehensive-section-peec-ai.tsx:54:            Why Analyze AI is more comprehensive than Peec AI's visibility tracker
+./scripts/../src/components/compare/peec-ai/comprehensive-section-peec-ai.tsx:57:            Same category, different outcome: Analyze AI ties AI visibility to business impact and gives marketing/PMM a concrete plan.
+./scripts/../src/components/compare/peec-ai/comparison-section-peec-ai.tsx:96:              <div>Compare how Analyze AI and Peec AI impact</div>
+./scripts/../src/components/compare/peec-ai/comparison-section-peec-ai.tsx:125:                        <Image src="/favicon.png" alt="Analyze AI" width={24} height={24} className="rounded" />
+./scripts/../src/components/compare/peec-ai/comparison-section-peec-ai.tsx:126:                        <span>Analyze AI</span>
+./scripts/../src/components/compare/peec-ai/features-peec-ai.tsx:54:            Moreover, customers choose Analyze AI because it's actionnable and allows you to do things that Peec AI can't
+./scripts/../src/components/compare/surfer/comparison-section-surfer.tsx:89:              <div>Compare how Analyze AI and Surfer AI Tracker impact</div>
+./scripts/../src/components/compare/surfer/comparison-section-surfer.tsx:118:                        <Image src="/favicon.png" alt="Analyze AI" width={24} height={24} className="rounded" />
+./scripts/../src/components/compare/surfer/comparison-section-surfer.tsx:119:                        <span>Analyze AI</span>
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:8:    question: "What is the main difference between Analyze AI and Surfer?",
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:9:    answer: "Analyze AI focuses on measuring and improving visibility within AI search engines, while Surfer focuses on traditional SEO optimization for Google rankings. Surfer helps you improve content for search engine results pages (SERPs), but it doesn't track AI-engine exposure, traffic, or conversions. Analyze AI bridges that gap by tracking real traffic and conversions coming from ChatGPT, Perplexity, Copilot, and other AI engines, allowing you to see how generative search truly impacts your site performance."
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:12:    question: "Does Analyze AI track real traffic from AI engines like ChatGPT, Perplexity, or Google AI Overviews?",
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:13:    answer: "Yes. Analyze AI uses GA4-based attribution to detect and measure visits coming from specific AI sources, showing real session counts, pageviews, and engagement. Surfer currently does not measure traffic from AI engines—it remains focused on traditional SEO visibility and keyword rankings."
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:16:    question: "Can Analyze AI show which pages are getting AI-generated traffic?",
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:17:    answer: "Yes. Analyze AI provides a clear breakdown of which pages receive visits from AI-generated sources, showing what content is being surfaced most often in AI responses. Surfer can show which pages rank in Google SERPs, but it does not track which pages are being cited or visited through AI platforms."
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:20:    question: "Does Analyze AI measure conversions from AI traffic?",
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:21:    answer: "Yes. Analyze AI tracks conversions from AI-attributed sessions, allowing you to measure ROI from generative visibility. Surfer focuses on SEO performance metrics like keyword rankings, backlinks, and content scores—valuable for optimization but disconnected from AI-driven conversion data."
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:24:    question: "How does Analyze AI identify opportunities or actions to improve AI visibility?",
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:25:    answer: "Analyze AI automatically prioritizes next steps—like optimizing schema, updating metadata for AI snippets, or targeting prompt classes driving competitor visibility. Surfer offers excellent content optimization guidance but not in the context of AI-engine exposure or performance."
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:28:    question: "Can Analyze AI monitor competitors' AI visibility too?",
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:29:    answer: "Yes. Analyze AI benchmarks your AI visibility and traffic against competitors, showing which domains are gaining ground across AI search results. Surfer includes competitor comparisons for SEO keyword rankings, not AI-engine mentions or visibility trends."
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:32:    question: "How easy is it to set up Analyze AI compared to Surfer?",
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:33:    answer: "Analyze AI setup is extremely lightweight—connect GA4, select AI engines, and start tracking automatically. Surfer requires you to input keywords, connect your site, and optimize individual content pieces—effective but more manual."
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:36:    question: "How much does Analyze AI cost?",
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:37:    answer: "Analyze AI costs $99 per month, covering full AI-traffic analytics, conversions, and competitive tracking. Surfer's plans vary from roughly $95 to $175 per month depending on the number of content credits and features used."
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:40:    question: "Who is Analyze AI best suited for?",
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:41:    answer: "Analyze AI is built for marketers and growth teams who want to understand and act on AI-driven traffic and conversions. Surfer is best for SEO writers and strategists optimizing content for Google search."
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:44:    question: "Can I use Analyze AI alongside Surfer or other analytics tools?",
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:45:    answer: "Yes. Many users run both—Surfer for optimizing search rankings, and Analyze AI for tracking what happens in the generative AI landscape. Together, they give you full visibility into both traditional and emerging discovery channels."
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:66:              Analyze AI vs Surfer: FAQ
+./scripts/../src/components/compare/surfer/faq-surfer.tsx:69:              Common questions about choosing between Analyze AI and Surfer for AI visibility tracking
+./scripts/../src/components/compare/surfer/comprehensive-section-surfer.tsx:54:            Why Analyze AI is more comprehensive than Surfer AI Tracker's visibility tracker
+./scripts/../src/components/compare/surfer/comprehensive-section-surfer.tsx:57:            Same category, different outcome: Analyze AI ties AI visibility to business impact and gives marketing/PMM a concrete plan.
+./scripts/../src/components/compare/surfer/hero-comparison-surfer.tsx:21:            <Image src="/favicon.png" alt="Analyze AI" width={48} height={48} className="rounded" />
+./scripts/../src/components/compare/surfer/hero-comparison-surfer.tsx:27:            Analyze AI vs Surfer: which platform gives you deeper AI visibility?
+./scripts/../src/components/compare/surfer/hero-comparison-surfer.tsx:30:            Compare how Analyze AI and Surfer measure your AI visibility — from how often your brand appears in AI responses to how that visibility translates into actual traffic and revenue. See where Analyze AI goes deeper, and how that depth turns AI visibility into competitive advantage.
+./scripts/../src/components/compare/surfer/hero-comparison-surfer.tsx:35:                See Analyze AI in action
+./scripts/../src/components/compare/surfer/features-surfer.tsx:54:            Moreover, customers choose Analyze AI because it's actionnable and allows you to do things that Surfer can't
+./scripts/../src/components/compare/hubspot-ai-search-grader/comprehensive-section-hubspot-ai-search-grader.tsx:54:            Why Analyze AI is more comprehensive than HubSpot AI Search Grader's visibility tracker
+./scripts/../src/components/compare/hubspot-ai-search-grader/comprehensive-section-hubspot-ai-search-grader.tsx:57:            Same category, different outcome: Analyze AI ties AI visibility to business impact and gives marketing/PMM a concrete plan.
+./scripts/../src/components/compare/hubspot-ai-search-grader/features-hubspot-ai-search-grader.tsx:54:            Moreover, customers choose Analyze AI because it's actionnable and allows you to do things that HubSpot AI Search Grader can't
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:8:    question: "What is the main difference between Analyze AI and HubSpot AI Search Grader?",
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:9:    answer: "Analyze AI is a continuous AI-visibility and traffic intelligence platform, while HubSpot AI Search Grader is a one-time assessment tool. HubSpot's grader provides a surface-level score of how well your brand appears across generative engines, but it doesn't track ongoing changes, traffic, or conversions. Analyze, on the other hand, turns AI visibility into measurable performance data by showing which engines send real visits, which pages attract those visits, and how those users convert. It replaces static \"grade\" snapshots with living analytics and actionable insights."
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:12:    question: "Does Analyze AI track real traffic from AI engines like ChatGPT, Perplexity, or Google AI Overviews?",
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:13:    answer: "Yes. Analyze AI pulls verified session data from your GA4 account and attributes it to specific AI engines. This lets you see exactly how many visitors come from ChatGPT, Perplexity, Copilot, or Google AI Overviews, and how that traffic changes over time. HubSpot's grader doesn't measure traffic—it evaluates visibility factors algorithmically rather than through live referral data."
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:16:    question: "Can Analyze AI show which pages are getting AI-generated traffic?",
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:17:    answer: "Absolutely. Analyze AI reports which of your pages receive visits originating from AI engines. You can trace how each page performs, whether it's being surfaced by conversational answers, and where new discovery opportunities exist. HubSpot AI Search Grader doesn't provide page-level data; it only scores overall visibility and general content readiness."
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:20:    question: "Does Analyze AI measure conversions from AI traffic?",
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:21:    answer: "Yes. Conversions are core to Analyze AI's model. You can see form fills, sign-ups, and purchases tied to AI-engine referrals, connecting visibility directly to revenue. HubSpot's grader doesn't tie its grading output to conversion data, so it can't tell you what AI exposure is actually producing business results."
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:24:    question: "How does Analyze AI identify opportunities or actions to improve AI visibility?",
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:25:    answer: "Analyze AI continuously processes your data and generates prioritized \"next actions\"—specific steps to expand AI visibility or recover traffic. For example, it can recommend optimizing structured data for better inclusion in Overviews or updating metadata where drop-offs occur. HubSpot's grader provides broad suggestions but doesn't update dynamically or adapt to your actual traffic results."
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:28:    question: "Can Analyze AI monitor competitors' AI visibility too?",
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:29:    answer: "Yes. Analyze AI benchmarks your brand against competitors across AI engines, showing who appears in AI responses and who's receiving measurable traffic. HubSpot's grader can grade multiple domains, but it's not designed for continuous competitor monitoring."
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:32:    question: "How easy is it to set up Analyze AI compared to HubSpot AI Search Grader?",
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:33:    answer: "Setup for Analyze AI takes a few minutes: connect your GA4 property, add your domain, and select target AI engines. The platform immediately starts tracking. HubSpot's grader is even simpler but temporary—it requires no integration because it's a quick test, not an analytics system."
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:36:    question: "How much does Analyze AI cost?",
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:37:    answer: "Analyze AI costs $99 per month, including all tracking, reporting, and action features. HubSpot AI Search Grader is free but limited to snapshot grading, not full visibility analytics."
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:40:    question: "Who is Analyze AI best suited for?",
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:41:    answer: "Analyze AI is ideal for marketers, SMBs, and agencies that want to quantify AI traffic and act on data. HubSpot's grader is more for marketers looking for a quick awareness check or early diagnostic."
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:44:    question: "Can I use Analyze AI alongside HubSpot AI Search Grader or other analytics tools?",
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:45:    answer: "Yes. Many users run a HubSpot grade to benchmark and then rely on Analyze AI for continuous measurement. Analyze AI integrates cleanly with GA4, Looker, or other analytics, adding the AI-traffic and action layers those platforms lack."
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:66:              Analyze AI vs HubSpot AI Search Grader: FAQ
+./scripts/../src/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader.tsx:69:              Common questions about choosing between Analyze AI and HubSpot AI Search Grader for AI visibility tracking
+./scripts/../src/components/compare/hubspot-ai-search-grader/hero-comparison-hubspot-ai-search-grader.tsx:21:            <Image src="/favicon.png" alt="Analyze AI" width={48} height={48} className="rounded" />
+./scripts/../src/components/compare/hubspot-ai-search-grader/hero-comparison-hubspot-ai-search-grader.tsx:27:            Analyze AI vs HubSpot AI Search Grader: which platform gives you deeper AI visibility?
+./scripts/../src/components/compare/hubspot-ai-search-grader/hero-comparison-hubspot-ai-search-grader.tsx:31:            Compare how Analyze AI and HubSpot AI Search Grader measure your AI visibility — from how often your brand appears in AI responses to how that visibility translates into actual traffic and revenue. See where Analyze AI goes deeper, and how that depth turns AI visibility into competitive advantage.
+./scripts/../src/components/compare/hubspot-ai-search-grader/hero-comparison-hubspot-ai-search-grader.tsx:37:                See Analyze AI in action
+./scripts/../src/components/compare/hubspot-ai-search-grader/comparison-section-hubspot-ai-search-grader.tsx:89:              <div>Compare how Analyze AI and HubSpot AI Search Grader impact</div>
+./scripts/../src/components/compare/hubspot-ai-search-grader/comparison-section-hubspot-ai-search-grader.tsx:118:                        <Image src="/favicon.png" alt="Analyze AI" width={24} height={24} className="rounded" />
+./scripts/../src/components/compare/hubspot-ai-search-grader/comparison-section-hubspot-ai-search-grader.tsx:119:                        <span>Analyze AI</span>
+./scripts/../src/components/marketing/navbar.tsx:20:              alt="Analyze AI - AI Search Analytics Platform"
+./scripts/../src/components/marketing/hero-cta.tsx:64:                  alt="Analyze AI Dashboard - AI Search Analytics Platform"
+./scripts/../src/components/marketing/promotional-overlay.tsx:88:                  See Analyze AI In Action
+./scripts/../src/components/marketing/manifesto.tsx:148:                    — the Analyze AI team
+./scripts/../src/components/marketing/modern-features.tsx:54:            How Analyze AI makes magic happen
+./scripts/../src/components/marketing/modern-features.tsx:57:            Analyze AI maps how AI answers portray your brand, shows who appears beside you, and ties it all to traffic and conversions—so you invest where results compound.
+./scripts/../src/components/marketing/footer.tsx:90:  { icon: <FaXTwitter className="size-5" />, href: "https://x.com/AnalyzeLLM", label: "X" },
+./scripts/../src/components/marketing/footer.tsx:102:    alt: "Analyze AI - AI Search Analytics Platform",
+./scripts/../src/components/marketing/footer.tsx:103:    title: "AI Search Analytics For Marketing Teams | Analyze AI",
+./scripts/../src/components/marketing/footer.tsx:106:  description = "Analyze AI provides a comprehensive suite of tools to monitor your brand's visibility and sentiment across all major AI answer engines, giving you the insights to stay ahead.",
+./scripts/../src/components/marketing/footer.tsx:109:  copyright = "© 2026 Analyze AI. All rights reserved.",
+./scripts/../src/components/marketing/testimonials.tsx:48:                  "We're now observing a <span className="font-semibold text-gray-900">5% conversion rate</span> from AI search traffic and we can attribute it down to the source page and medium. Our goal is to double down on Analyze AI's recommendations to reduce our over-reliance on Google."
+./scripts/../src/components/marketing/testimonials.tsx:59:                  How Kylian AI used Analyze AI to drive 1k+/m visits from AI SEO
+./scripts/../src/components/marketing/testimonials.tsx:63:                    The Analyze AI dashboard showed exactly which pages were converting. <span className="font-medium text-gray-800">"Best Online English Courses"</span> drove 24 sessions and 2 conversions—a conversion rate of <span className="font-medium text-gray-800">8.3%</span>, far above the typical blog benchmark of 1–2%. "300 Most Common English Words" brought 17 sessions but no conversions, confirming its role as more informational. "Websites to Learn English" recorded 13 sessions and 1 conversion, a <span className="font-medium text-gray-800">7.7% rate</span>—again several times higher than standard content benchmarks.
+./scripts/../src/components/marketing/testimonials.tsx:82:            "Google has been quite unreliable since the creation of What Is That Movie. We've been using Analyze AI to diversify our traffic sources and have been using their recommendations to boost our AI SEO traffic by 35% month-over-month."
+./scripts/../src/components/marketing/problem-solution.tsx:88:            {/* Analyze AI Solution Box */}
+./scripts/../src/components/marketing/problem-solution.tsx:90:              {/* Analyze AI Header */}
+./scripts/../src/components/marketing/problem-solution.tsx:95:                    alt="Analyze AI favicon"
+./scripts/../src/components/marketing/problem-solution.tsx:101:                <span className="text-xl font-bold">Analyze AI</span>
+./scripts/../src/components/marketing/problem-solution.tsx:106:                <h3 className="text-lg font-semibold mb-6 text-black">With Analyze AI, you can:</h3>
+./scripts/../src/components/affiliate/affiliate-calculator.tsx:21:            How much money will you make promoting Analyze AI?
+./scripts/../src/components/affiliate/affiliate-benefits.tsx:10:          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900 mb-4">Why promote Analyze AI to your audience?</h2>
+./scripts/../src/components/affiliate/affiliate-benefits.tsx:25:            <p className="text-gray-600">With AI-driven search referral traffic becoming a major growth channel, Analyze AI is growing by 20% month over month. As you refer more clients into our ecosystem, your earnings scale with our growth.</p>
+./scripts/../src/components/affiliate/affiliate-benefits.tsx:61:            <p className="text-gray-600">Analyze AI solves the real-world problem of proving AI-search ROI. It's not a vague "visibility dashboard" — it connects AI assistant referrals (ChatGPT, Claude, Gemini, etc.) to actual sessions, conversions and revenue. That makes it a compelling offer for marketing teams tired of vanity metrics.</p>
+./scripts/../src/components/affiliate/affiliate-faq.tsx:32:      answer: 'Forever! As long as the customer you referred continues to pay for Analyze AI, you will continue to receive your 30% commission. There are no time limits or caps on your earnings.'
+./scripts/../src/components/affiliate/affiliate-faq.tsx:51:      question: 'Who is the ideal customer for Analyze AI?',
+./scripts/../src/components/affiliate/affiliate-faq.tsx:52:      answer: 'Marketing teams, SEO professionals, content creators, and businesses who want to understand and improve their visibility in AI search results. Anyone dealing with AI-driven search traffic will find value in Analyze AI.'
+./scripts/../src/components/affiliate/affiliate-faq.tsx:62:      answer: 'Simply apply for our affiliate program, get approved, and receive your unique referral link. Start promoting Analyze AI to your audience using our marketing materials and track your success through the affiliate dashboard.'
+./scripts/../src/components/affiliate/affiliate-faq.tsx:75:              Everything you need to know about earning with the Analyze AI affiliate program.
+./scripts/../src/components/affiliate/affiliate-steps.tsx:8:          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900 mb-4">How to become an affiliate for Analyze AI?</h2>
+./scripts/../src/components/affiliate/affiliate-steps.tsx:32:            <p className="text-gray-600">Tell your audience about Analyze AI.</p>
+./scripts/../src/lib/schema.ts:47:    "name": "Analyze AI",
+./scripts/../src/lib/schema.ts:247:const ORGANIZATION_NAME = 'Analyze AI';
+./scripts/../src/lib/ai-tools/tools-config.ts:1008:    buttonText: 'Analyze AI Text',
+./scripts/../src/lib/ai-tools/tools-config.ts:1017:- Analyze AI multiple dimensions of the text
+./scripts/../src/lib/ai-tools/tools-config.ts:1543:    description: 'Analyze AI your content for originality and identify passages that may need citations or rewriting.',
+./scripts/../src/lib/ai-tools/tools-config.ts:1544:    metaDescription: 'Analyze AI your content for originality and identify passages that may need citations or rewriting. Get actionable feedback to improve your writing.',
+./scripts/../src/lib/ai-tools/tools-config.ts:1558:- Analyze AI text for originality indicators and red flags
+./scripts/../src/lib/ai-tools/tools-config.ts:1656:### Step 1: Analyze AI the Input
+./scripts/../src/lib/ai-tools/tools-config.ts:2383:### Step 1: Analyze AI Input
+./scripts/../src/lib/ai-tools/tools-config.ts:2874:### Step 1: Analyze AI Brand Context
+./scripts/../src/lib/ai-tools/tools-config.ts:3265:### Step 1: Analyze AI Product Context
+./scripts/../src/lib/ai-tools/tools-config.ts:3627:### Step 1: Analyze AI Landing Page/Offer
+./scripts/../src/lib/ai-tools/tools-config.ts:4542:1. **Analyze AI Input Context**
+./scripts/../src/lib/ai-tools/tools-config.ts:5613:      { question: 'Why aren\'t my hashtags working?', answer: 'Possible reasons: using irrelevant or banned hashtags, repeating the same sets, using only very popular tags with high competition, or posting at times when your audience isn\'t active. Analyze AI and adjust your strategy.' },
+./scripts/../src/lib/ai-tools/i18n/tools-config.de.ts:2857:- Analyze AI text for originality indicators and red flags
+./scripts/../src/lib/ai-tools/i18n/tools-config.de.ts:2945:### Step 1: Analyze AI the Input
+./scripts/../src/lib/ai-tools/i18n/tools-config.de.ts:3197:### Step 1: Analyze AI Brand Context
+./scripts/../src/lib/ai-tools/i18n/tools-config.de.ts:3485:### Step 1: Analyze AI Product Context
+./scripts/../src/lib/ai-tools/i18n/tools-config.zh.ts:480:    systemPrompt: `You are an AI content detection specialist. Analyze AI the provided text for indicators of AI-generated content.
+./scripts/../src/lib/ai-tools/i18n/tools-config.zh.ts:1725:Analyze AI the text for:
+./scripts/../src/lib/ai-tools/i18n/tools-config.zh.ts:1774:- Analyze AI text for originality indicators and red flags
+./scripts/../src/lib/ai-tools/i18n/tools-config.fr.ts:946:- Analyze AI multiple dimensions of the text
+./scripts/../src/lib/ai-tools/i18n/tools-config.fr.ts:1601:- Analyze AI text for originality indicators and red flags
+./scripts/../src/lib/ai-tools/i18n/tools-config.it.ts:797:- Analyze AI multiple dimensions of the text
+./scripts/../src/lib/ai-tools/i18n/tools-config.it.ts:2276:- Analyze AI text for patterns suggesting copied content
+./scripts/../src/lib/ai-tools/i18n/tools-config.es.ts:2456:- Analyze AI multiple dimensions of the text
+./scripts/../src/lib/ai-tools/i18n/tools-config.es.ts:2879:### Step 1: Analyze AI Landing Page/Offer
+./scripts/../src/lib/ai-tools/i18n/tools-config.es.ts:4624:- Analyze AI text for originality indicators and red flags
+./scripts/../src/lib/ai-tools/i18n/tools-config.es.ts:4712:### Step 1: Analyze AI the Input
+./scripts/../src/lib/ai-tools/i18n/tools-config.ko.ts:844:- Analyze AI multiple dimensions of the text
+./scripts/../src/lib/ai-tools/i18n/tools-config.ko.ts:1341:- Analyze AI text for originality indicators and red flags
+./scripts/../src/lib/ai-tools/i18n/tools-config.pt.ts:704:- Analyze AI creativity and unpredictability
+./scripts/../src/lib/ai-tools/i18n/tools-config.pt.ts:2564:- Analyze AI text for originality indicators and red flags
+./scripts/../src/lib/ai-tools/i18n/tools-config.pt.ts:2784:1. Analyze AI Brand Context
+./scripts/../src/lib/ai-tools/i18n/tools-config.pt.ts:2946:1. Analyze AI Product Context
+./scripts/../src/lib/ai-tools/i18n/tools-config.ja.ts:552:- Analyze AI multiple dimensions of the text
+
+==========================================
+Report complete
+==========================================

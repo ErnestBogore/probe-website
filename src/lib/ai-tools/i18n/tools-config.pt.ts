@@ -701,7 +701,7 @@ IMPORTANT: Generate all output in Portuguese.`,
 ## ANALYSIS FRAMEWORK
 - Examine sentence structure patterns
 - Check vocabulary distribution
-- Analyze creativity and unpredictability
+- Analyze AI creativity and unpredictability
 - Look for AI-typical phrasings
 - Assess coherence and flow patterns
 ## INDICATORS TO CHECK
@@ -2561,7 +2561,7 @@ IMPORTANT: Generate all output in Portuguese.`,
 ## IMPORTANT LIMITATIONS
 This tool provides analysis based on pattern recognition. It does not have access to a comprehensive database of all published content.
 ## CORE RULES
-- Analyze text for originality indicators and red flags
+- Analyze AI text for originality indicators and red flags
 - Identify passages that appear copied or heavily templated
 - Distinguish between common phrases and potentially plagiarized content
 - Provide actionable feedback for improving originality
@@ -2781,7 +2781,7 @@ IMPORTANT: Generate all output in Portuguese.`,
 ### Acronym/Initialism Names
 ### Compound/Portmanteau Names
 ## NAME GENERATION PROCESS
-1. Analyze Brand Context
+1. Analyze AI Brand Context
 2. Generate Across Multiple Categories
 3. Apply Quality Filters
 4. Explain the Strategic Rationale
@@ -2943,7 +2943,7 @@ IMPORTANT: Generate all output in Portuguese.`,
 ### Founder/Character Names
 ### Compound/Blend Names
 ## NAME GENERATION PROCESS
-1. Analyze Product Context
+1. Analyze AI Product Context
 2. Generate Across Categories
 3. Apply Product-Specific Filters
 ## FOR EACH NAME, PROVIDE:

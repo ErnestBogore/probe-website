@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         url: '/llmtxt-og.png',
         width: 1200,
         height: 630,
-        alt: 'LLM.txt Generator Tool by Analyze',
+        alt: 'LLM.txt Generator Tool by Analyze AI',
       },
     ],
   },

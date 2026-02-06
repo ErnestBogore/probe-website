@@ -9,7 +9,7 @@ const featuresData = [
     alt: "Ad hoc search interface showing instant AI prompt analysis and positioning results.",
   },
   {
-    title: "Not sure which prompt to track? Let ANALYZE surface a few prompts for you",
+    title: "Not sure which prompt to track? Let Analyze AI surface a few prompts for you",
     description:
       "We suggest high-intent prompts your buyers are asking — grouped by theme and ICP — and you can add them to tracking with one click. No more brainstorming \"what would our prospects even ask?\" The system feeds you the moments that actually matter.",
     image: "/Prompt Suggestion 2.png",

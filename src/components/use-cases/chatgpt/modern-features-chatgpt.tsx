@@ -51,10 +51,10 @@ export const ModernFeaturesChatGPT = () => {
         {/* Content */}
         <div className="text-center max-w-3xl mx-auto mt-10 lg:mt-24">
           <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
-            How ANALYZE makes ChatGPT actionable
+            How Analyze AI makes ChatGPT actionable
           </h2>
           <p className="mt-6 text-lg text-gray-600">
-            ANALYZE maps how ChatGPT talks about you, shows when it prefers a competitor, and ties that to traffic and conversions — so you know where to defend, where to improve, and where to invest.
+            Analyze AI maps how ChatGPT talks about you, shows when it prefers a competitor, and ties that to traffic and conversions — so you know where to defend, where to improve, and where to invest.
           </p>
         </div>
 

@@ -5,7 +5,7 @@ export const AffiliateSteps = () => {
     <section className="py-16 lg:py-20 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900 mb-4">How to become an affiliate for Analyze?</h2>
+          <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900 mb-4">How to become an affiliate for Analyze AI?</h2>
           <p className="text-lg text-gray-600">It's very simple to join our partner program. As simple as ABC.</p>
         </div>
         
@@ -29,7 +29,7 @@ export const AffiliateSteps = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900">Distribute</h3>
             </div>
-            <p className="text-gray-600">Tell your audience about Analyze.</p>
+            <p className="text-gray-600">Tell your audience about Analyze AI.</p>
           </div>
 
           {/* Step 3: Earn */}

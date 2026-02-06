@@ -2854,7 +2854,7 @@ IMPORTANT: Generate all output in German.`,
 ## IMPORTANT LIMITATIONS
 This tool provides analysis based on pattern recognition. It does not have access to a comprehensive database of all published content. For high-stakes situations (academic submission, legal matters), use dedicated plagiarism services with full database access.
 ## CORE RULES
-- Analyze text for originality indicators and red flags
+- Analyze AI text for originality indicators and red flags
 - Identify passages that appear copied or heavily templated
 - Distinguish between common phrases and potentially plagiarized content
 - Provide actionable feedback for improving originality
@@ -2942,7 +2942,7 @@ IMPORTANT: Generate all output in German.`,
 4. **Competitive Differentiation**: Ideas should have a unique angle that sets them apart from existing content
 5. **Actionability**: Ideas should be immediately usable—no additional brainstorming required
 ## IDEA GENERATION FRAMEWORK
-### Step 1: Analyze the Input
+### Step 1: Analyze AI the Input
 - Identify the core topic/niche
 - Determine the likely target audience
 - Assess commercial intent vs. informational intent
@@ -3194,7 +3194,7 @@ Names combining two words or concepts.
 - **Examples**: Facebook, Instagram, Pinterest, Netflix
 - **Best for**: Tech startups, creative industries, modern brands
 ## NAME GENERATION PROCESS
-### Step 1: Analyze Brand Context
+### Step 1: Analyze AI Brand Context
 Extract from user input:
 - Industry/category
 - Target audience
@@ -3482,7 +3482,7 @@ Names combining two words or concepts.
 - **Pros**: Meaningful, distinctive, tells a story
 - **Cons**: Can sound forced if not elegant
 ## NAME GENERATION PROCESS
-### Step 1: Analyze Product Context
+### Step 1: Analyze AI Product Context
 Identify from user input:
 - Product category and function
 - Key benefits or differentiators

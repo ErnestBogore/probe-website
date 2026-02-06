@@ -55,9 +55,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   return (
     <Blog7 
       posts={regularPosts}
-      title="Analyze Blog"
+      title="Analyze AI Blog"
       description="Where marketers learn about strategies, tactics, and hands-on playbooks to make the most of AI search"
-      subtitle="At Analyze, we constantly study how LLMs are redefining how people discover, learn, purchase products online. We share our insights on how to get your brand mentionned in answer engines, how to attribute AI visibility to revenue and real traffic, and more."
+      subtitle="At Analyze AI, we constantly study how LLMs are redefining how people discover, learn, purchase products online. We share our insights on how to get your brand mentionned in answer engines, how to attribute AI visibility to revenue and real traffic, and more."
       featuredPost={featuredPost}
       pagination={{
         currentPage: pagination.currentPage,
@@ -74,14 +74,14 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 export async function generateMetadata({ searchParams }: BlogPageProps) {
   const params = await searchParams;
   const currentPage = parseInt(params.page || '1', 10);
-  const pageTitle = currentPage > 1 ? `Blog - Page ${currentPage} | Analyze` : 'Blog | Analyze';
+  const pageTitle = currentPage > 1 ? `Blog - Page ${currentPage} | Analyze AI` : 'Blog | Analyze AI';
   
   return {
     title: pageTitle,
-    description: 'Insights, analysis, and thought leadership in data analytics and business intelligence from the Analyze team.',
+    description: 'Insights, analysis, and thought leadership in data analytics and business intelligence from the Analyze AI team.',
     openGraph: {
       title: pageTitle,
-      description: 'Insights, analysis, and thought leadership in AI traffic analytics and business intelligence from the Analyze team.',
+      description: 'Insights, analysis, and thought leadership in AI traffic analytics and business intelligence from the Analyze AI team.',
       type: 'website',
     },
     ...(currentPage > 1 && {

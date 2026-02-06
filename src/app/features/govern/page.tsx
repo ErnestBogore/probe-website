@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Govern | ANALYZE',
+  title: 'Govern | Analyze AI',
   description: "Monitor how AI represents your brand. Catch risky claims, negative shifts in sentiment, and channel drops early — before they show up in deals or exec conversations.",
   openGraph: {
     images: ['/monitor brand sentiment feature image.png'],
@@ -27,38 +27,38 @@ const BrandSentimentAnalysisPage = async () => {
   const faqItems = [
     {
       id: 'faq-1',
-      question: 'Can ANALYZE alert us if AI tools are saying something inaccurate, risky, or off-message about our product?',
-      answer: 'Yes. ANALYZE monitors how AI assistants describe your product and flags language that\'s inaccurate, out-of-date, non-compliant, or off-message. If an assistant claims you do something you don\'t, misstates capabilities, or frames you in a way you can\'t legally stand behind, you see it and can act before that shows up in a sales call or security review.'
+      question: 'Can Analyze AI alert us if AI tools are saying something inaccurate, risky, or off-message about our product?',
+      answer: 'Yes. Analyze AI monitors how AI assistants describe your product and flags language that\'s inaccurate, out-of-date, non-compliant, or off-message. If an assistant claims you do something you don\'t, misstates capabilities, or frames you in a way you can\'t legally stand behind, you see it and can act before that shows up in a sales call or security review.'
     },
     {
       id: 'faq-2',
       question: 'Can we monitor sentiment toward our brand over time and compare that to key competitors?',
-      answer: 'Yes. ANALYZE tracks sentiment toward your brand and your competitors across high-intent prompts over time. You can see whether the model is becoming more positive about you, more negative about you, or more enthusiastic about a competitor in a specific use case. This gives you early signal on perception shifts.'
+      answer: 'Yes. Analyze AI tracks sentiment toward your brand and your competitors across high-intent prompts over time. You can see whether the model is becoming more positive about you, more negative about you, or more enthusiastic about a competitor in a specific use case. This gives you early signal on perception shifts.'
     },
     {
       id: 'faq-3',
       question: 'Can we see when AI answers start making claims about us that legal, compliance, or comms would flag?',
-      answer: 'Yes. ANALYZE captures and stores the exact answers AI assistants are giving buyers, including specific claims and promises. That means legal, compliance, and comms can review "Here\'s what\'s being said about us right now" with full context — instead of hearing later that a rep had to walk back something the model told a prospect.'
+      answer: 'Yes. Analyze AI captures and stores the exact answers AI assistants are giving buyers, including specific claims and promises. That means legal, compliance, and comms can review "Here\'s what\'s being said about us right now" with full context — instead of hearing later that a rep had to walk back something the model told a prospect.'
     },
     {
       id: 'faq-4',
-      question: 'Can ANALYZE show which competitors are being positioned as "better for [use case]" so sales and PMM can respond?',
+      question: 'Can Analyze AI show which competitors are being positioned as "better for [use case]" so sales and PMM can respond?',
       answer: 'Yes. You can see, for a given use case or segment ("best for enterprise security," "best for small teams," etc.), which competitor AI is recommending and how it\'s justifying that recommendation. This gives PMM and Sales enablement real positioning intel: how we\'re being framed, how they\'re being framed, and what claims are winning those recommendations.'
     },
     {
       id: 'faq-5',
       question: 'Can we identify which sources (analyst sites, blogs, partner pages, competitor content) AI is using as "truth" when it talks about us?',
-      answer: 'Yes. ANALYZE shows you the domains and URLs that AI assistants are citing to describe you and your competitors — review sites, comparison pages, blog posts, PDFs, landing pages. You see which sources are shaping the narrative, how often they\'re referenced, and whether they\'re friendly, neutral, misleading, or outright hostile.'
+      answer: 'Yes. Analyze AI shows you the domains and URLs that AI assistants are citing to describe you and your competitors — review sites, comparison pages, blog posts, PDFs, landing pages. You see which sources are shaping the narrative, how often they\'re referenced, and whether they\'re friendly, neutral, misleading, or outright hostile.'
     },
     {
       id: 'faq-6',
       question: 'Can we tell if a specific AI channel that used to recommend us — like Copilot, Perplexity, or ChatGPT — quietly stopped doing it?',
-      answer: 'Yes. ANALYZE tracks how each AI assistant / AI search engine treats you over time. If you were being recommended in a certain channel and that channel stops mentioning you (or starts preferring a competitor), you\'ll see that shift. That\'s an early warning that a source of qualified demand is eroding.'
+      answer: 'Yes. Analyze AI tracks how each AI assistant / AI search engine treats you over time. If you were being recommended in a certain channel and that channel stops mentioning you (or starts preferring a competitor), you\'ll see that shift. That\'s an early warning that a source of qualified demand is eroding.'
     },
     {
       id: 'faq-7',
       question: 'Can we catch negative narrative drift early, before it becomes something our CRO or CMO gets asked about?',
-      answer: 'Yes. Because ANALYZE tracks language, sentiment, and competitive framing over time, you can spot "We\'re suddenly being described as outdated / limited / not for enterprise" the moment it starts happening. That means you can correct messaging, prep leadership, and brief Sales before it shows up in pipeline reviews or board questions.'
+      answer: 'Yes. Because Analyze AI tracks language, sentiment, and competitive framing over time, you can spot "We\'re suddenly being described as outdated / limited / not for enterprise" the moment it starts happening. That means you can correct messaging, prep leadership, and brief Sales before it shows up in pipeline reviews or board questions.'
     },
     {
       id: 'faq-8',
@@ -67,8 +67,8 @@ const BrandSentimentAnalysisPage = async () => {
     },
     {
       id: 'faq-9',
-      question: 'Does ANALYZE ingest or expose any private customer conversations, or is this all from public/observable model output?',
-      answer: 'ANALYZE is working off of publicly observable model output and what AI assistants are telling buyers in-market. We\'re not ingesting your internal call recordings, emails, chat logs, or proprietary conversations. Your internal data and your workspace remain private to you.'
+      question: 'Does Analyze AI ingest or expose any private customer conversations, or is this all from public/observable model output?',
+      answer: 'Analyze AI is working off of publicly observable model output and what AI assistants are telling buyers in-market. We\'re not ingesting your internal call recordings, emails, chat logs, or proprietary conversations. Your internal data and your workspace remain private to you.'
     },
     {
       id: 'faq-10',
@@ -83,7 +83,7 @@ const BrandSentimentAnalysisPage = async () => {
     {
       id: 'faq-12',
       question: 'How is this different from brand monitoring or social listening tools we already use?',
-      answer: 'Brand monitoring tells you what people are saying about you on social and review platforms. ANALYZE tells you what AI assistants are saying to your buyers while they\'re in evaluation mode. That includes: how you\'re positioned vs. specific competitors, whether you\'re being recommended at all, whether you\'re being described accurately, and whether sentiment is tilting toward someone else. This isn\'t social chatter. This is what the "advisor" in the buying process is already telling your prospects.'
+      answer: 'Brand monitoring tells you what people are saying about you on social and review platforms. Analyze AI tells you what AI assistants are saying to your buyers while they\'re in evaluation mode. That includes: how you\'re positioned vs. specific competitors, whether you\'re being recommended at all, whether you\'re being described accurately, and whether sentiment is tilting toward someone else. This isn\'t social chatter. This is what the "advisor" in the buying process is already telling your prospects.'
     }
   ];
 
@@ -105,7 +105,7 @@ const BrandSentimentAnalysisPage = async () => {
     features: [
       "Cross-LLM Sentiment Tracking",
       "Detect Misinformation & Misattributions",
-      "Analyze Sentiment Trends Over Time",
+      "Analyze AI Sentiment Trends Over Time",
       "Protect Your Brand Reputation"
     ]
   });
@@ -126,7 +126,7 @@ const BrandSentimentAnalysisPage = async () => {
       
       <FaqFeatures 
         heading="Frequently Asked Questions"
-        description="Answers to common questions about how ANALYZE monitors brand sentiment, narrative drift, and accuracy in AI responses."
+        description="Answers to common questions about how Analyze AI monitors brand sentiment, narrative drift, and accuracy in AI responses."
         items={faqItems}
       />
       <HeroCta />

@@ -86,7 +86,7 @@ export const ComparisonSectionGoogleLookerStudio = () => {
           {/* Header with AI Engine Logos */}
           <div className="text-center mb-16">
             <h2 className="text-2xl tracking-tight md:text-3xl text-gray-900 mb-8">
-              <div>Compare how Analyze and Google Looker Studio impact</div>
+              <div>Compare how Analyze AI and Google Looker Studio impact</div>
               <div>visibility, traffic, and conversions across</div>
             </h2>
             
@@ -115,8 +115,8 @@ export const ComparisonSectionGoogleLookerStudio = () => {
                     <th className="text-left py-8 px-8 font-bold text-gray-900 text-xl">Capability</th>
                     <th className="text-center py-8 px-8 font-bold text-purple-600 text-xl">
                       <div className="flex items-center justify-center gap-2">
-                        <Image src="/favicon.png" alt="Analyze" width={24} height={24} className="rounded" />
-                        <span>Analyze</span>
+                        <Image src="/favicon.png" alt="Analyze AI" width={24} height={24} className="rounded" />
+                        <span>Analyze AI</span>
                       </div>
                     </th>
                     <th className="text-center py-8 px-8 font-bold text-gray-900 text-xl">

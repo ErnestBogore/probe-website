@@ -51,10 +51,10 @@ export const ComprehensiveSectionPeecAi = () => {
         {/* Content */}
         <div className="text-center max-w-3xl mx-auto mt-10 lg:mt-24">
           <h2 className="text-3xl tracking-tight md:text-4xl lg:text-5xl text-gray-900">
-            Why Analyze is more comprehensive than Peec AI's visibility tracker
+            Why Analyze AI is more comprehensive than Peec AI's visibility tracker
           </h2>
           <p className="mt-6 text-lg text-gray-600">
-            Same category, different outcome: ANALYZE ties AI visibility to business impact and gives marketing/PMM a concrete plan.
+            Same category, different outcome: Analyze AI ties AI visibility to business impact and gives marketing/PMM a concrete plan.
           </p>
         </div>
 

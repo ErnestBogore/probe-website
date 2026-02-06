@@ -11,7 +11,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Monitor | ANALYZE',
+  title: 'Monitor | Analyze AI',
   description: "Track AI-driven traffic, conversions, and revenue. See which AI sources send you visitors, which pages they land on, and how AI is performing as a real channel.",
   openGraph: {
     images: ['/ai-search-analytics-feature.png'],
@@ -28,7 +28,7 @@ const AISearchAnalyticsPage = async () => {
   const faqItems = [
     {
       id: 'faq-1',
-      question: 'How does ANALYZE actually measure "AI traffic"?',
+      question: 'How does Analyze AI actually measure "AI traffic"?',
       answer: 'We detect and attribute sessions that originate from LLMs (ChatGPT, Perplexity, Copilot, Gemini, etc.), then tie those sessions to the landing pages they hit and the actions they take on your site.'
     },
     {
@@ -49,7 +49,7 @@ const AISearchAnalyticsPage = async () => {
     {
       id: 'faq-5',
       question: 'How is this different from "AI visibility" tools that just show mentions?',
-      answer: 'Most tools stop at "You appeared in an AI answer." ANALYZE shows: did that appearance drive a visit, to which page, and did that visit do anything valuable (sign up, request demo, etc.). In other words, we track performance, not vanity.'
+      answer: 'Most tools stop at "You appeared in an AI answer." Analyze AI shows: did that appearance drive a visit, to which page, and did that visit do anything valuable (sign up, request demo, etc.). In other words, we track performance, not vanity.'
     },
     {
       id: 'faq-6',
@@ -79,7 +79,7 @@ const AISearchAnalyticsPage = async () => {
     {
       id: 'faq-11',
       question: 'Does this replace my SEO platform?',
-      answer: 'No — it answers a different question. SEO tells you how you rank in traditional search. ANALYZE tells you how AI assistants talk about you, whether that visibility turns into site traffic, and whether that traffic converts.'
+      answer: 'No — it answers a different question. SEO tells you how you rank in traditional search. Analyze AI tells you how AI assistants talk about you, whether that visibility turns into site traffic, and whether that traffic converts.'
     },
     {
       id: 'faq-12',
@@ -126,7 +126,7 @@ const AISearchAnalyticsPage = async () => {
       <ResourcesUseCases posts={resourcePosts} />
       <FaqFeatures 
         heading="Frequently Asked Questions"
-        description="Answers to common questions about how ANALYZE attributes AI-driven traffic, conversions, and revenue back to specific sources."
+        description="Answers to common questions about how Analyze AI attributes AI-driven traffic, conversions, and revenue back to specific sources."
         items={faqItems}
       />
       <HeroCta />

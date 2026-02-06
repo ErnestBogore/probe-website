@@ -12,8 +12,8 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Analyze vs. Peec AI: Feature Comparison',
-  description: 'Compare how Analyze and Peec AI impact visibility, traffic, and conversions across AI engines.',
+  title: 'Analyze AI vs. Peec AI: Feature Comparison',
+  description: 'Compare how Analyze AI and Peec AI impact visibility, traffic, and conversions across AI engines.',
   openGraph: {
     images: ['/AI Referral Traffic.png'],
   },
@@ -29,8 +29,8 @@ const AnalyzeVsPeecAiPage = async () => {
 
   // Generate service schema
   const serviceSchema = generateServiceSchema({
-    name: "ANALYZE vs Peec AI Comparison",
-    description: "Compare ANALYZE and Peec AI for AI search visibility tracking. See why ANALYZE offers superior AI-first analytics beyond traditional AI tools.",
+    name: "Analyze AI vs Peec AI Comparison",
+    description: "Compare Analyze AI and Peec AI for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional AI tools.",
     url: "https://www.tryanalyze.ai/compare/analyze-vs-peec-ai",
     category: "Analytics Software",
     features: [

@@ -29,7 +29,7 @@ export const AffiliateFaq = () => {
     {
       id: 'affiliate-faq-2',
       question: 'How long do I earn commissions?',
-      answer: 'Forever! As long as the customer you referred continues to pay for Analyze, you will continue to receive your 30% commission. There are no time limits or caps on your earnings.'
+      answer: 'Forever! As long as the customer you referred continues to pay for Analyze AI, you will continue to receive your 30% commission. There are no time limits or caps on your earnings.'
     },
     {
       id: 'affiliate-faq-3',
@@ -48,8 +48,8 @@ export const AffiliateFaq = () => {
     },
     {
       id: 'affiliate-faq-6',
-      question: 'Who is the ideal customer for Analyze?',
-      answer: 'Marketing teams, SEO professionals, content creators, and businesses who want to understand and improve their visibility in AI search results. Anyone dealing with AI-driven search traffic will find value in Analyze.'
+      question: 'Who is the ideal customer for Analyze AI?',
+      answer: 'Marketing teams, SEO professionals, content creators, and businesses who want to understand and improve their visibility in AI search results. Anyone dealing with AI-driven search traffic will find value in Analyze AI.'
     },
     {
       id: 'affiliate-faq-7',
@@ -59,7 +59,7 @@ export const AffiliateFaq = () => {
     {
       id: 'affiliate-faq-8',
       question: 'How do I get started?',
-      answer: 'Simply apply for our affiliate program, get approved, and receive your unique referral link. Start promoting Analyze to your audience using our marketing materials and track your success through the affiliate dashboard.'
+      answer: 'Simply apply for our affiliate program, get approved, and receive your unique referral link. Start promoting Analyze AI to your audience using our marketing materials and track your success through the affiliate dashboard.'
     }
   ];
 
@@ -72,7 +72,7 @@ export const AffiliateFaq = () => {
               Affiliate Program FAQ
             </h2>
             <p className="text-lg text-gray-600">
-              Everything you need to know about earning with the Analyze affiliate program.
+              Everything you need to know about earning with the Analyze AI affiliate program.
             </p>
           </div>
 

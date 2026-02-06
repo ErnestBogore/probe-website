@@ -12,43 +12,43 @@ interface ToolUseCasesProps {
 const translations: Record<string, { sectionLabel: string; heading: (toolName: string) => string }> = {
   en: {
     sectionLabel: 'HOW YOU CAN USE THIS TOOL',
-    heading: (toolName: string) => `Use cases of Analyze's ${toolName}`,
+    heading: (toolName: string) => `Use cases of Analyze AI's ${toolName}`,
   },
   fr: {
     sectionLabel: 'COMMENT UTILISER CET OUTIL',
-    heading: (toolName: string) => `Cas d'utilisation du ${toolName} d'Analyze`,
+    heading: (toolName: string) => `Cas d'utilisation du ${toolName} d'Analyze AI`,
   },
   de: {
     sectionLabel: 'SO KÖNNEN SIE DIESES WERKZEUG NUTZEN',
-    heading: (toolName: string) => `Anwendungsfälle für Analyzes ${toolName}`,
+    heading: (toolName: string) => `Anwendungsfälle für Analyze AI's ${toolName}`,
   },
   es: {
     sectionLabel: 'CÓMO PUEDES USAR ESTA HERRAMIENTA',
-    heading: (toolName: string) => `Casos de uso del ${toolName} de Analyze`,
+    heading: (toolName: string) => `Casos de uso del ${toolName} de Analyze AI`,
   },
   pt: {
     sectionLabel: 'COMO VOCÊ PODE USAR ESTA FERRAMENTA',
-    heading: (toolName: string) => `Casos de uso do ${toolName} da Analyze`,
+    heading: (toolName: string) => `Casos de uso do ${toolName} da Analyze AI`,
   },
   it: {
     sectionLabel: 'COME PUOI USARE QUESTO STRUMENTO',
-    heading: (toolName: string) => `Casi d'uso del ${toolName} di Analyze`,
+    heading: (toolName: string) => `Casi d'uso del ${toolName} di Analyze AI`,
   },
   ja: {
     sectionLabel: 'このツールの使い方',
-    heading: (toolName: string) => `Analyzeの${toolName}の活用例`,
+    heading: (toolName: string) => `Analyze AIの${toolName}の活用例`,
   },
   zh: {
     sectionLabel: '如何使用此工具',
-    heading: (toolName: string) => `Analyze ${toolName}的使用案例`,
+    heading: (toolName: string) => `Analyze AI ${toolName}的使用案例`,
   },
   ko: {
     sectionLabel: '이 도구 사용 방법',
-    heading: (toolName: string) => `Analyze ${toolName}의 사용 사례`,
+    heading: (toolName: string) => `Analyze AI ${toolName}의 사용 사례`,
   },
   tr: {
     sectionLabel: 'BU ARACI NASIL KULLANABİLİRSİNİZ',
-    heading: (toolName: string) => `Analyze ${toolName} Kullanım Örnekleri`,
+    heading: (toolName: string) => `Analyze AI ${toolName} Kullanım Örnekleri`,
   },
 };
 

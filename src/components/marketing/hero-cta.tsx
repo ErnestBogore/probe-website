@@ -61,7 +61,7 @@ export const HeroCta = () => {
               >
                 <img
                   src="/CTA Image.png"
-                  alt="ANALYZE Dashboard - AI Search Analytics Platform"
+                  alt="Analyze AI Dashboard - AI Search Analytics Platform"
                   className="w-full h-auto mx-auto"
                   style={{
                     transformStyle: 'preserve-3d',

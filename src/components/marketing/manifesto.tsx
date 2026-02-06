@@ -145,7 +145,7 @@ export const Manifesto = () => {
                 {/* Signature */}
                 <div className="mt-16 text-right">
                   <p className="text-2xl text-gray-600 transform -rotate-2" style={{ fontFamily: 'Brush Script MT, cursive' }}>
-                    — the Analyze team
+                    — the Analyze AI team
                   </p>
                 </div>
               </div>
