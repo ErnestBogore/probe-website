@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllToolsTr } from '@/lib/ai-tools/i18n/tools-config.tr';
+import { generateToolsListingHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { getAllBusinessNameGeneratorsTr } from '@/lib/ai-tools/i18n/business-name-generators-config.tr';
 import { DashedLine } from '@/components/dashed-line';
 import { Button } from '@/components/ui/button';
@@ -41,17 +42,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Ücretsiz AI Yazma Araçları | Analyze AI',
+  title: 'Ücretsiz AI Yazma Araçları',
   description: 'Ücretsiz AI yazma araçları koleksiyonumuza erişin: paragraf oluşturucu, yeniden ifade, özet, dilbilgisi denetleyici ve daha fazlası. Kayıt gerekmez.',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/tr',
-    languages: {
-      'en': 'https://www.tryanalyze.ai/free-tools',
-      'tr': 'https://www.tryanalyze.ai/free-tools/tr',
-    },
+    languages: generateToolsListingHreflangAlternates(),
   },
   openGraph: {
-    title: 'Ücretsiz AI Yazma Araçları | Analyze AI',
+    title: 'Ücretsiz AI Yazma Araçları',
     description: 'Ücretsiz AI yazma araçları koleksiyonumuza erişin: paragraf oluşturucu, yeniden ifade, özet, dilbilgisi denetleyici ve daha fazlası. Kayıt gerekmez.',
     url: 'https://www.tryanalyze.ai/free-tools/tr',
     type: 'website',
@@ -67,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ücretsiz AI Yazma Araçları | Analyze AI',
+    title: 'Ücretsiz AI Yazma Araçları',
     description: 'Ücretsiz AI yazma araçları koleksiyonumuza erişin: paragraf oluşturucu, yeniden ifade, özet, dilbilgisi denetleyici ve daha fazlası. Kayıt gerekmez.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },

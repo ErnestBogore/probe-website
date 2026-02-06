@@ -100,7 +100,7 @@ export const Footer = ({
     url: "/",
     src: "/logo-tryanalyze.png",
     alt: "Analyze AI - AI Search Analytics Platform",
-    title: "AI Search Analytics For Marketing Teams | Analyze AI",
+    title: "AI Search Analytics For Marketing Teams",
   },
   sections = defaultSections,
   description = "Analyze AI provides a comprehensive suite of tools to monitor your brand's visibility and sentiment across all major AI answer engines, giving you the insights to stay ahead.",

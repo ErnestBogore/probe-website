@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllToolsPt } from '@/lib/ai-tools/i18n/tools-config.pt';
+import { generateToolsListingHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { getAllBusinessNameGeneratorsPt } from '@/lib/ai-tools/i18n/business-name-generators-config.pt';
 import { DashedLine } from '@/components/dashed-line';
 import { Button } from '@/components/ui/button';
@@ -41,17 +42,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Ferramentas de Escrita com IA Grátis | Analyze AI',
+  title: 'Ferramentas de Escrita com IA Grátis',
   description: 'Acesse nossa coleção de ferramentas de escrita com IA gratuitas: geradores de parágrafos, parafraseadores, resumidores, corretores gramaticais e mais. Sem necessidade de cadastro.',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/pt',
-    languages: {
-      'en': 'https://www.tryanalyze.ai/free-tools',
-      'pt': 'https://www.tryanalyze.ai/free-tools/pt',
-    },
+    languages: generateToolsListingHreflangAlternates(),
   },
   openGraph: {
-    title: 'Ferramentas de Escrita com IA Grátis | Analyze AI',
+    title: 'Ferramentas de Escrita com IA Grátis',
     description: 'Acesse nossa coleção de ferramentas de escrita com IA gratuitas: geradores de parágrafos, parafraseadores, resumidores, corretores gramaticais e mais. Sem necessidade de cadastro.',
     url: 'https://www.tryanalyze.ai/free-tools/pt',
     type: 'website',
@@ -67,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ferramentas de Escrita com IA Grátis | Analyze AI',
+    title: 'Ferramentas de Escrita com IA Grátis',
     description: 'Acesse nossa coleção de ferramentas de escrita com IA gratuitas: geradores de parágrafos, parafraseadores, resumidores, corretores gramaticais e mais. Sem necessidade de cadastro.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },

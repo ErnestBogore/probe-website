@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllToolsZh } from '@/lib/ai-tools/i18n/tools-config.zh';
+import { generateToolsListingHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { getAllBusinessNameGeneratorsZh } from '@/lib/ai-tools/i18n/business-name-generators-config.zh';
 import { DashedLine } from '@/components/dashed-line';
 import { Button } from '@/components/ui/button';
@@ -41,17 +42,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '免费AI写作工具 | Analyze AI',
+  title: '免费AI写作工具',
   description: '访问我们的免费AI写作工具集合：段落生成器、改写工具、摘要工具、语法检查器等。无需注册。',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/zh',
-    languages: {
-      'en': 'https://www.tryanalyze.ai/free-tools',
-      'zh': 'https://www.tryanalyze.ai/free-tools/zh',
-    },
+    languages: generateToolsListingHreflangAlternates(),
   },
   openGraph: {
-    title: '免费AI写作工具 | Analyze AI',
+    title: '免费AI写作工具',
     description: '访问我们的免费AI写作工具集合：段落生成器、改写工具、摘要工具、语法检查器等。无需注册。',
     url: 'https://www.tryanalyze.ai/free-tools/zh',
     type: 'website',
@@ -67,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '免费AI写作工具 | Analyze AI',
+    title: '免费AI写作工具',
     description: '访问我们的免费AI写作工具集合：段落生成器、改写工具、摘要工具、语法检查器等。无需注册。',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },

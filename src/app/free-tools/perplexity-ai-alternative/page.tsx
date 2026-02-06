@@ -4,6 +4,9 @@ import { Faq3 } from '@/components/faq3';
 export const metadata: Metadata = {
   title: '[Free Tool] Best Perplexity AI Alternative',
   description: 'Using this Perplexity Alternative, you can search anything and get a structured result along with a citation report.',
+  alternates: {
+    canonical: '/free-tools/perplexity-ai-alternative',
+  },
   openGraph: {
     title: '[Free Tool] Best Perplexity AI Alternative',
     description: 'Using this Perplexity Alternative, you can search anything and get a structured result along with a citation report.',
@@ -11,7 +14,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/perplexity-alternative-og.png',
+        url: 'https://www.tryanalyze.ai/perplexity-alternative-og.png',
         width: 1200,
         height: 630,
         alt: 'Perplexity AI Alternative by Analyze AI',

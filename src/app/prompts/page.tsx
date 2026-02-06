@@ -11,8 +11,22 @@ import { Metadata } from 'next';
 import { PromptPage } from '@/types/prompt';
 
 export const metadata: Metadata = {
-  title: 'The Best Template Library for ChatGPT Prompts | Analyze AI',
+  title: 'The Best Template Library for ChatGPT Prompts',
   description: 'Battle-tested prompts for marketing, SEO, social media, and more. Copy, customize, and get results in minutes.',
+  alternates: {
+    canonical: '/prompts',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'The Best Template Library for ChatGPT Prompts',
+    description: 'Battle-tested prompts for marketing, SEO, social media, and more. Copy, customize, and get results in minutes.',
+    images: [{
+      url: 'https://www.tryanalyze.ai/Artboard%20(1).png',
+      width: 1536,
+      height: 1024,
+      alt: 'AI Prompts Library',
+    }],
+  },
 };
 
 export default async function AllPromptsPage() {

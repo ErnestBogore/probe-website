@@ -37,19 +37,35 @@ export async function generateMetadata({ params }: PromptPageProps): Promise<Met
   const description = promptPage.seoPrompt?.description || promptPage.description;
   const image = promptPage.seoPrompt?.image;
 
+  const { category } = await params;
+  
   return {
     title,
     description,
+    alternates: {
+      canonical: `/prompts/${category}/${slug}`,
+    },
     openGraph: {
+      type: 'article',
       title,
       description,
-      images: image ? [image.url] : [],
+      images: image ? [{
+        url: image.url,
+        width: image.width || undefined,
+        height: image.height || undefined,
+        alt: image.alt || title,
+      }] : [{
+        url: 'https://www.tryanalyze.ai/Artboard%20(1).png',
+        width: 1536,
+        height: 1024,
+        alt: title,
+      }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: image ? [image.url] : [],
+      images: image ? [image.url] : ['https://www.tryanalyze.ai/Artboard%20(1).png'],
     },
   };
 }

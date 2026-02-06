@@ -2,16 +2,19 @@ import { Metadata } from 'next';
 import { Faq3 } from '@/components/faq3';
 
 export const metadata: Metadata = {
-  title: 'Free AI Website Audit Tool | Analyze AI',
+  title: 'Free AI Website Audit Tool',
   description: 'Analyze AI your website\'s AI readiness with our free AI website audit tool',
+  alternates: {
+    canonical: '/free-tools/ai-website-audit-tool',
+  },
   openGraph: {
-    title: 'Free AI Website Audit Tool | Analyze AI',
+    title: 'Free AI Website Audit Tool',
     description: 'Analyze AI your website\'s AI readiness with our free AI website audit tool',
     url: 'https://www.tryanalyze.ai/free-tools/ai-website-audit-tool',
     type: 'website',
     images: [
       {
-        url: '/og-ai-website-audit-tool.png',
+        url: 'https://www.tryanalyze.ai/og-ai-website-audit-tool.png',
         width: 1200,
         height: 630,
         alt: 'AI Website Audit Tool by Analyze AI',

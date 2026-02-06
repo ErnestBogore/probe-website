@@ -6,8 +6,22 @@ import { FaqTalkToHuman } from '@/components/talk-to-human/faq-talk-to-human'
 import { getBlogPostsBySlugs } from '@/lib/datocms'
 
 export const metadata: Metadata = {
-  title: 'Talk To A Human | Analyze AI - AI Search Analytics Platform',
+  title: 'Talk To A Human - AI Search Analytics Platform',
   description: 'Schedule a demo with our team to see how Analyze AI can help you track your AI visibility across major AI engines.',
+  alternates: {
+    canonical: '/talk-to-a-human',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Talk To A Human - AI Search Analytics Platform',
+    description: 'Schedule a demo with our team to see how Analyze AI can help you track your AI visibility across major AI engines.',
+    images: [{
+      url: 'https://www.tryanalyze.ai/Artboard%20(1).png',
+      width: 1536,
+      height: 1024,
+      alt: 'Schedule a Demo with Analyze AI',
+    }],
+  },
 }
 
 export default async function TalkToAHumanPage() {

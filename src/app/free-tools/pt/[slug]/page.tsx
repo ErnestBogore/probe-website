@@ -1,7 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getToolBySlugPt, getAllToolsPt, getEnglishSlugPt } from '@/lib/ai-tools/i18n/tools-config.pt';
+import { generateToolHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { ToolPage } from '@/components/ai-tools/ToolPage';
+import { computeRelatedTools } from '@/lib/ai-tools/related-tools-utils';
 
 function generateToolFAQSchema(tool: { title: string; slug: string; faqs: { question: string; answer: string }[] }) {
   return {
@@ -45,22 +47,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!tool) {
     return {
-      title: 'Ferramenta Não Encontrada | Analyze AI',
+      title: 'Ferramenta Não Encontrada',
     };
   }
 
   return {
-    title: `${tool.title} | Analyze AI`,
+    title: `${tool.title}`,
     description: tool.metaDescription,
     alternates: {
       canonical: `https://www.tryanalyze.ai/free-tools/pt/${tool.slug}`,
-      languages: {
-        'en': `https://www.tryanalyze.ai/free-tools/${getEnglishSlugPt(tool.slug)}`,
-        'pt': `https://www.tryanalyze.ai/free-tools/pt/${tool.slug}`,
-      },
+      languages: generateToolHreflangAlternates(getEnglishSlugPt(tool.slug), 'tool'),
     },
     openGraph: {
-      title: `${tool.title} | Analyze AI`,
+      title: `${tool.title}`,
       description: tool.metaDescription,
       url: `https://www.tryanalyze.ai/free-tools/pt/${tool.slug}`,
       type: 'website',
@@ -76,7 +75,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${tool.title} | Analyze AI`,
+      title: `${tool.title}`,
       description: tool.metaDescription,
       images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
     },
@@ -104,7 +103,7 @@ export default async function PortugueseToolPage({ params }: PageProps) {
           __html: JSON.stringify(structuredData)
         }}
       />
-      <ToolPage tool={tool} locale="pt" englishSlug={englishSlug} />
+      <ToolPage tool={tool} locale="pt" englishSlug={englishSlug} relatedTools={computeRelatedTools(getAllToolsPt(), slug)} />
     </>
   );
 }

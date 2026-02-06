@@ -14,8 +14,17 @@ import React from 'react';
 export const metadata: Metadata = {
   title: 'Best ChatGPT Visibility Tracking Tool for Brands',
   description: 'Track brand and website visibility within ChatGPT answers. Monitor mentions, links, get real traffic data and competitors, and review actual answers.',
+  alternates: {
+    canonical: '/use-cases/chatgpt',
+  },
   openGraph: {
-    images: ['/AI Traffic By Page.png'],
+    type: 'website',
+    images: [{
+      url: 'https://www.tryanalyze.ai/AI%20Traffic%20By%20Page.png',
+      width: 1920,
+      height: 1080,
+      alt: 'AI Traffic By Page Analytics Dashboard',
+    }],
   },
 };
 

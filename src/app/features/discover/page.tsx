@@ -10,10 +10,19 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Discover | Analyze AI',
-  description: "See how AI assistants talk about your product, which competitors are being recommended, and where you're missing from buyer prompts — before it costs you pipeline.",
+  title: 'Discover',
+  description: "See how AI assistants talk about your product, which competitors are being recommended, and where you're missing from buyer...",
+  alternates: {
+    canonical: '/features/discover',
+  },
   openGraph: {
-    images: ['/ai search tool image.png'],
+    type: 'website',
+    images: [{
+      url: 'https://www.tryanalyze.ai/Discover%20hero.png',
+      width: 2940,
+      height: 1880,
+      alt: 'AI Search Discovery Dashboard',
+    }],
   },
 };
 

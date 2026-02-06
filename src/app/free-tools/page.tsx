@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllTools } from '@/lib/ai-tools/tools-config';
+import { generateToolsListingHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { getAllBusinessNameGenerators } from '@/lib/ai-tools/business-name-generators-config';
 import { getAllBusinessNameGeneratorsDe } from '@/lib/ai-tools/i18n/business-name-generators-config.de';
 import { getAllBusinessNameGeneratorsEs } from '@/lib/ai-tools/i18n/business-name-generators-config.es';
@@ -50,10 +51,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Free AI Writing Tools | Analyze AI',
+  title: 'Free AI Writing Tools',
   description: 'Access our collection of free AI writing tools including paragraph generators, paraphrasers, summarizers, grammar checkers, and more. No signup required.',
+  alternates: {
+    canonical: '/free-tools',
+    languages: generateToolsListingHreflangAlternates(),
+  },
   openGraph: {
-    title: 'Free AI Writing Tools | Analyze AI',
+    title: 'Free AI Writing Tools',
     description: 'Access our collection of free AI writing tools including paragraph generators, paraphrasers, summarizers, grammar checkers, and more. No signup required.',
     url: 'https://www.tryanalyze.ai/free-tools',
     type: 'website',
@@ -68,7 +73,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free AI Writing Tools | Analyze AI',
+    title: 'Free AI Writing Tools',
     description: 'Access our collection of free AI writing tools including paragraph generators, paraphrasers, summarizers, grammar checkers, and more. No signup required.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },

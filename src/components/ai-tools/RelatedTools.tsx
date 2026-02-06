@@ -1,19 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { getAllTools, ToolConfig } from '@/lib/ai-tools/tools-config';
-import { getAllToolsFr } from '@/lib/ai-tools/i18n/tools-config.fr';
-import { getAllToolsDe } from '@/lib/ai-tools/i18n/tools-config.de';
-import { getAllToolsEs } from '@/lib/ai-tools/i18n/tools-config.es';
-import { getAllToolsPt } from '@/lib/ai-tools/i18n/tools-config.pt';
-import { getAllToolsIt } from '@/lib/ai-tools/i18n/tools-config.it';
-import { getAllToolsJa } from '@/lib/ai-tools/i18n/tools-config.ja';
-import { getAllToolsZh } from '@/lib/ai-tools/i18n/tools-config.zh';
-import { getAllToolsKo } from '@/lib/ai-tools/i18n/tools-config.ko';
-import { getAllToolsTr } from '@/lib/ai-tools/i18n/tools-config.tr';
 import { ArrowRight, FileText, RefreshCw, Search, Type, ListChecks, Sparkles, PenTool, CheckCircle, Hash, FileCode, Smile, Shield, Lightbulb, Video, ImageIcon } from 'lucide-react';
 import { DashedLine } from '@/components/dashed-line';
+import { RelatedToolData } from '@/lib/ai-tools/related-tools-utils';
 
 const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   'paragraph-generator': FileText,
@@ -40,7 +30,7 @@ const toolIcons: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 interface RelatedToolsProps {
-  currentToolSlug: string;
+  tools: RelatedToolData[];
   locale?: string;
 }
 
@@ -97,8 +87,7 @@ const translations: Record<string, { sectionLabel: string; heading: string; allT
   },
 };
 
-// Helper component to render the tools grid
-function RelatedToolsContent({ tools, locale }: { tools: ToolConfig[]; locale?: string }) {
+export function RelatedTools({ tools, locale }: RelatedToolsProps) {
   const t = translations[locale || 'en'] || translations.en;
   const toolsBasePath = locale ? `/free-tools/${locale}` : '/free-tools';
   const allToolsPath = locale ? `/free-tools/${locale}` : '/free-tools';
@@ -156,35 +145,4 @@ function RelatedToolsContent({ tools, locale }: { tools: ToolConfig[]; locale?: 
       </div>
     </section>
   );
-}
-
-function getToolsByLocale(locale?: string): ToolConfig[] {
-  if (locale === 'fr') return getAllToolsFr();
-  if (locale === 'de') return getAllToolsDe();
-  if (locale === 'es') return getAllToolsEs();
-  if (locale === 'pt') return getAllToolsPt();
-  if (locale === 'it') return getAllToolsIt();
-  if (locale === 'ja') return getAllToolsJa();
-  if (locale === 'zh') return getAllToolsZh();
-  if (locale === 'ko') return getAllToolsKo();
-  if (locale === 'tr') return getAllToolsTr();
-  return getAllTools();
-}
-
-export function RelatedTools({ currentToolSlug, locale }: RelatedToolsProps) {
-  const [relatedTools, setRelatedTools] = useState<ToolConfig[]>(() => {
-    // Initialize with deterministic order for SSR
-    const allTools = getToolsByLocale(locale);
-    return allTools.filter(tool => tool.slug !== currentToolSlug).slice(0, 12);
-  });
-
-  useEffect(() => {
-    // Shuffle on client side only
-    const allTools = getToolsByLocale(locale);
-    const otherTools = allTools.filter(tool => tool.slug !== currentToolSlug);
-    const shuffled = [...otherTools].sort(() => Math.random() - 0.5);
-    setRelatedTools(shuffled.slice(0, 12));
-  }, [currentToolSlug, locale]);
-
-  return <RelatedToolsContent tools={relatedTools} locale={locale} />;
 }

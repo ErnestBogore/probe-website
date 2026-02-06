@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllToolsFr } from '@/lib/ai-tools/i18n/tools-config.fr';
+import { generateToolsListingHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { getAllBusinessNameGeneratorsFr } from '@/lib/ai-tools/i18n/business-name-generators-config.fr';
 import { DashedLine } from '@/components/dashed-line';
 import { Button } from '@/components/ui/button';
@@ -44,17 +45,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Outils IA Gratuits pour la Rédaction | Analyze AI',
+  title: 'Outils IA Gratuits pour la Rédaction',
   description: 'Accédez à notre collection d\'outils IA gratuits pour la rédaction : générateurs de paragraphes, paraphraseurs, résumeurs, correcteurs grammaticaux et plus encore. Aucune inscription requise.',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/fr',
-    languages: {
-      'en': 'https://www.tryanalyze.ai/free-tools',
-      'fr': 'https://www.tryanalyze.ai/free-tools/fr',
-    },
+    languages: generateToolsListingHreflangAlternates(),
   },
   openGraph: {
-    title: 'Outils IA Gratuits pour la Rédaction | Analyze AI',
+    title: 'Outils IA Gratuits pour la Rédaction',
     description: 'Accédez à notre collection d\'outils IA gratuits pour la rédaction : générateurs de paragraphes, paraphraseurs, résumeurs, correcteurs grammaticaux et plus encore. Aucune inscription requise.',
     url: 'https://www.tryanalyze.ai/free-tools/fr',
     type: 'website',
@@ -70,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Outils IA Gratuits pour la Rédaction | Analyze AI',
+    title: 'Outils IA Gratuits pour la Rédaction',
     description: 'Accédez à notre collection d\'outils IA gratuits pour la rédaction : générateurs de paragraphes, paraphraseurs, résumeurs, correcteurs grammaticaux et plus encore. Aucune inscription requise.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },

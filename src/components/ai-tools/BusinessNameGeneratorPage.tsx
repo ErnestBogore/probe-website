@@ -8,10 +8,12 @@ import { RelatedBusinessNameGenerators } from './RelatedBusinessNameGenerators';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { FaqHomepage } from '@/components/marketing/faq-homepage';
 import { BusinessNameGeneratorConfig } from '@/lib/ai-tools/business-name-generators-config';
+import { RelatedToolData } from '@/lib/ai-tools/related-tools-utils';
 
 interface BusinessNameGeneratorPageProps {
   tool: BusinessNameGeneratorConfig;
   locale?: string;
+  relatedTools: RelatedToolData[];
 }
 
 // Localized UI strings
@@ -127,7 +129,7 @@ const localeStrings: Record<string, {
   },
 };
 
-export function BusinessNameGeneratorPage({ tool, locale = 'en' }: BusinessNameGeneratorPageProps) {
+export function BusinessNameGeneratorPage({ tool, locale = 'en', relatedTools }: BusinessNameGeneratorPageProps) {
   const strings = localeStrings[locale] || localeStrings.en;
   const [output, setOutput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -360,7 +362,7 @@ export function BusinessNameGeneratorPage({ tool, locale = 'en' }: BusinessNameG
       />
 
       {/* Related Tools Section */}
-      <RelatedBusinessNameGenerators currentToolSlug={tool.slug} locale={locale} />
+      <RelatedBusinessNameGenerators tools={relatedTools} locale={locale} />
 
       {/* Bottom CTA Section */}
       <HeroCta />

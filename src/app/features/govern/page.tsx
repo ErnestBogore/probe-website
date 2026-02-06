@@ -10,10 +10,19 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Govern | Analyze AI',
-  description: "Monitor how AI represents your brand. Catch risky claims, negative shifts in sentiment, and channel drops early — before they show up in deals or exec conversations.",
+  title: 'Govern',
+  description: "Monitor how AI represents your brand. Catch risky claims, negative shifts in sentiment, and channel drops early — before they...",
+  alternates: {
+    canonical: '/features/govern',
+  },
   openGraph: {
-    images: ['/monitor brand sentiment feature image.png'],
+    type: 'website',
+    images: [{
+      url: 'https://www.tryanalyze.ai/monitor%20brand%20sentiment%20feature%20image.png',
+      width: 1832,
+      height: 1285,
+      alt: 'Brand Sentiment Monitoring Dashboard',
+    }],
   },
 };
 

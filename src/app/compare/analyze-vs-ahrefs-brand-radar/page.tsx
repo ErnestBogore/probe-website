@@ -14,8 +14,17 @@ import React from 'react';
 export const metadata: Metadata = {
   title: 'Analyze AI vs. Ahrefs Brand Radar: Feature Comparison',
   description: 'Compare how Analyze AI and Ahrefs Brand Radar impact visibility, traffic, and conversions across AI engines.',
+  alternates: {
+    canonical: '/compare/analyze-vs-ahrefs-brand-radar',
+  },
   openGraph: {
-    images: ['/AI Referral Traffic.png'],
+    type: 'website',
+    images: [{
+      url: 'https://www.tryanalyze.ai/AI%20Referral%20Traffic.png',
+      width: 1920,
+      height: 1080,
+      alt: 'AI Referral Traffic Analytics Dashboard',
+    }],
   },
 };
 

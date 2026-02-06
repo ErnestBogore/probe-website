@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 
     if (!blogPostInternational) {
       return {
-        title: 'Artículo no encontrado | Analyze AI',
+        title: 'Artículo no encontrado',
         description: 'El artículo solicitado no pudo ser encontrado.',
       };
     }
@@ -61,10 +61,13 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     const image = blogPostInternational.seo?.image || blogPostInternational.featuredImage;
 
     return {
-      title: `${title} | Analyze AI`,
+      title: `${title}`,
       description,
+      alternates: {
+        canonical: `/blog/es/${slug}`,
+      },
       openGraph: {
-        title: `${title} | Analyze AI`,
+        title: `${title}`,
         description,
         type: 'article',
         publishedTime: blogPostInternational.publishedDate,
@@ -82,7 +85,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
       },
       twitter: {
         card: 'summary_large_image',
-        title: `${title} | Analyze AI`,
+        title: `${title}`,
         description,
         images: image ? [image.url] : undefined,
       },
@@ -90,7 +93,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   } catch (error) {
     console.error('Error generating metadata:', error);
     return {
-      title: 'Artículo | Analyze AI',
+      title: 'Artículo',
       description: 'Lee este artículo perspicaz de Analyze AI.',
     };
   }

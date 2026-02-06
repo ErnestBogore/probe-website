@@ -4,6 +4,9 @@ import { Faq3 } from '@/components/faq3';
 export const metadata: Metadata = {
   title: '[Free Tool] Generate LLM.txt in Minutes',
   description: 'Generate LLM.txt files with our free LLM.txt Generator tool.',
+  alternates: {
+    canonical: '/free-tools/llm-txt-generator-tool',
+  },
   openGraph: {
     title: '[Free Tool] Generate LLM.txt in Minutes',
     description: 'Generate LLM.txt files with our free LLM.txt Generator tool.',
@@ -11,7 +14,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/llmtxt-og.png',
+        url: 'https://www.tryanalyze.ai/llmtxt-og.png',
         width: 1200,
         height: 630,
         alt: 'LLM.txt Generator Tool by Analyze AI',

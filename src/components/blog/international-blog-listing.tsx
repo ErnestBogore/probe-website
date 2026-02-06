@@ -76,14 +76,15 @@ export function getLocalizedMetadata(language: SupportedLanguage) {
   const localizedContent = LOCALIZED_CONTENT[language];
   
   return {
-    title: `${localizedContent.title} | Analyze AI`,
+    title: `${localizedContent.title}`,
     description: localizedContent.description,
     openGraph: {
-      title: `${localizedContent.title} | Analyze AI`,
+      title: `${localizedContent.title}`,
       description: localizedContent.description,
       type: 'website',
     },
     alternates: {
+      canonical: `/blog/${language}`,
       languages: {
         'fr': '/blog/fr',
         'de': '/blog/de',

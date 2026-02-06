@@ -10,10 +10,19 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Become An Affiliate - Earn 30% Recurring Commission',
   description: 'Join the Analyze AI affiliate program and earn 30% recurring commission forever. Promote the fastest-growing AI traffic analytics platform.',
+  alternates: {
+    canonical: '/affiliate',
+  },
   openGraph: {
+    type: 'website',
     title: 'Become An Affiliate - Earn 30% Recurring Commission',
     description: 'Join the Analyze AI affiliate program and earn 30% recurring commission forever. Promote the fastest-growing AI traffic analytics platform.',
-    images: ['/affiliate-hero.png'],
+    images: [{
+      url: 'https://www.tryanalyze.ai/Artboard%20(1).png',
+      width: 1536,
+      height: 1024,
+      alt: 'Analyze AI Affiliate Program',
+    }],
   },
 };
 

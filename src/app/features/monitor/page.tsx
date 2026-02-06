@@ -11,10 +11,19 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Monitor | Analyze AI',
+  title: 'Monitor',
   description: "Track AI-driven traffic, conversions, and revenue. See which AI sources send you visitors, which pages they land on, and how AI is performing as a real channel.",
+  alternates: {
+    canonical: '/features/monitor',
+  },
   openGraph: {
-    images: ['/ai-search-analytics-feature.png'],
+    type: 'website',
+    images: [{
+      url: 'https://www.tryanalyze.ai/AI%20traffic.png',
+      width: 1782,
+      height: 1501,
+      alt: 'AI Traffic Analytics Dashboard',
+    }],
   },
 };
 

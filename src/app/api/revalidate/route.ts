@@ -3,6 +3,11 @@
  * 
  * This endpoint is called by DatoCMS webhooks to trigger Next.js revalidation
  * for specific pages when content is updated, created, or deleted.
+ * 
+ * Setup in DatoCMS:
+ * 1. Go to Settings > Webhooks
+ * 2. Use a custom payload with { "secret": "...", "revalidatePath": "/blog", "slug": "{{entity.slug}}" }
+ * 3. Set REVALIDATION_SECRET env var to match the secret in the payload
  */
 
 import { NextRequest, NextResponse } from 'next/server';
@@ -10,38 +15,72 @@ import { revalidatePath } from 'next/cache';
 
 export async function POST(request: NextRequest) {
   try {
-    // Verify the request is from DatoCMS
     const body = await request.json();
     
-    // Log the webhook payload for debugging
     console.log('DatoCMS webhook received:', JSON.stringify(body, null, 2));
+
+    // Verify the secret — check both body.secret (custom payload) and ?secret= (query param)
+    const secret = body.secret || request.nextUrl.searchParams.get('secret');
+    const expectedSecret = process.env.REVALIDATION_SECRET;
     
-    // Extract the event type and entity type from the webhook payload
-    const eventType = body.event_type;
-    const entityType = body.entity_type;
-    
-    // Revalidate based on the entity type
-    if (entityType === 'blog_post') {
-      // Revalidate the blog listing page
-      revalidatePath('/blog');
-      
-      // If we have a specific blog post slug, revalidate that page too
-      if (body.entity?.slug) {
-        revalidatePath(`/blog/${body.entity.slug}`);
+    if (expectedSecret && secret !== expectedSecret) {
+      return NextResponse.json(
+        { success: false, error: 'Invalid secret' },
+        { status: 401 }
+      );
+    }
+
+    const revalidatedPaths: string[] = [];
+
+    // Custom payload format: { secret, revalidatePath, slug }
+    if (body.revalidatePath) {
+      const basePath = body.revalidatePath;
+      revalidatePath(basePath);
+      revalidatedPaths.push(basePath);
+
+      if (body.slug) {
+        revalidatePath(`${basePath}/${body.slug}`);
+        revalidatedPaths.push(`${basePath}/${body.slug}`);
       }
-      
-      console.log(`Revalidated blog pages for ${eventType} event on ${entityType}`);
+    }
+
+    // Default DatoCMS payload format: { event_type, entity_type, entity }
+    if (body.entity_type) {
+      const entityType = body.entity_type;
+
+      if (entityType === 'blog_post') {
+        revalidatePath('/blog');
+        revalidatedPaths.push('/blog');
+        if (body.entity?.slug) {
+          revalidatePath(`/blog/${body.entity.slug}`);
+          revalidatedPaths.push(`/blog/${body.entity.slug}`);
+        }
+      }
+
+      if (entityType === 'prompt_page') {
+        revalidatePath('/prompts', 'layout');
+        revalidatedPaths.push('/prompts');
+      }
+
+      if (entityType === 'case_study') {
+        if (body.entity?.slug) {
+          revalidatePath(`/case-study/${body.entity.slug}`);
+          revalidatedPaths.push(`/case-study/${body.entity.slug}`);
+        }
+      }
     }
     
-    // You can add more entity types here as needed
-    // if (entityType === 'other_content_type') {
-    //   revalidatePath('/other-page);
-    // }
+    // Fallback: if nothing matched, revalidate everything
+    if (revalidatedPaths.length === 0) {
+      revalidatePath('/', 'layout');
+      revalidatedPaths.push('/ (all pages)');
+    }
+    
+    console.log('Revalidated paths:', revalidatedPaths);
     
     return NextResponse.json({ 
       success: true, 
-      message: `Revalidated pages for ${eventType} event on ${entityType}`,
-      revalidatedPaths: entityType === 'blog_post' ? ['/blog'] : []
+      revalidatedPaths
     });
     
   } catch (error) {

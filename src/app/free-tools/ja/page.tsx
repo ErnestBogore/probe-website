@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllToolsJa } from '@/lib/ai-tools/i18n/tools-config.ja';
+import { generateToolsListingHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { getAllBusinessNameGeneratorsJa } from '@/lib/ai-tools/i18n/business-name-generators-config.ja';
 import { DashedLine } from '@/components/dashed-line';
 import { Button } from '@/components/ui/button';
@@ -41,17 +42,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '無料AIライティングツール | Analyze AI',
+  title: '無料AIライティングツール',
   description: '無料のAIライティングツールコレクションにアクセス：段落ジェネレーター、パラフレーズ、要約、文法チェッカーなど。登録不要。',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/ja',
-    languages: {
-      'en': 'https://www.tryanalyze.ai/free-tools',
-      'ja': 'https://www.tryanalyze.ai/free-tools/ja',
-    },
+    languages: generateToolsListingHreflangAlternates(),
   },
   openGraph: {
-    title: '無料AIライティングツール | Analyze AI',
+    title: '無料AIライティングツール',
     description: '無料のAIライティングツールコレクションにアクセス：段落ジェネレーター、パラフレーズ、要約、文法チェッカーなど。登録不要。',
     url: 'https://www.tryanalyze.ai/free-tools/ja',
     type: 'website',
@@ -67,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '無料AIライティングツール | Analyze AI',
+    title: '無料AIライティングツール',
     description: '無料のAIライティングツールコレクションにアクセス：段落ジェネレーター、パラフレーズ、要約、文法チェッカーなど。登録不要。',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },

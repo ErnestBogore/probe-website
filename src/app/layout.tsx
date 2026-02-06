@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.tryanalyze.ai'),
   title: "AI Search Analytics Platform For Marketing Teams",
   description: "Monitor your brand's visibility and sentiment across all major AI answer engines with Analyze AI.",
   icons: {

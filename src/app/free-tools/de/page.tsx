@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllToolsDe } from '@/lib/ai-tools/i18n/tools-config.de';
+import { generateToolsListingHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { getAllBusinessNameGeneratorsDe } from '@/lib/ai-tools/i18n/business-name-generators-config.de';
 import { DashedLine } from '@/components/dashed-line';
 import { Button } from '@/components/ui/button';
@@ -42,17 +43,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Kostenlose KI-Schreibwerkzeuge | Analyze AI',
+  title: 'Kostenlose KI-Schreibwerkzeuge',
   description: 'Greifen Sie auf unsere Sammlung kostenloser KI-Schreibwerkzeuge zu: Absatz-Generatoren, Paraphrasierer, Zusammenfasser, Grammatikprüfer und mehr. Keine Anmeldung erforderlich.',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/de',
-    languages: {
-      'en': 'https://www.tryanalyze.ai/free-tools',
-      'de': 'https://www.tryanalyze.ai/free-tools/de',
-    },
+    languages: generateToolsListingHreflangAlternates(),
   },
   openGraph: {
-    title: 'Kostenlose KI-Schreibwerkzeuge | Analyze AI',
+    title: 'Kostenlose KI-Schreibwerkzeuge',
     description: 'Greifen Sie auf unsere Sammlung kostenloser KI-Schreibwerkzeuge zu: Absatz-Generatoren, Paraphrasierer, Zusammenfasser, Grammatikprüfer und mehr. Keine Anmeldung erforderlich.',
     url: 'https://www.tryanalyze.ai/free-tools/de',
     type: 'website',
@@ -68,7 +66,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kostenlose KI-Schreibwerkzeuge | Analyze AI',
+    title: 'Kostenlose KI-Schreibwerkzeuge',
     description: 'Greifen Sie auf unsere Sammlung kostenloser KI-Schreibwerkzeuge zu: Absatz-Generatoren, Paraphrasierer, Zusammenfasser, Grammatikprüfer und mehr. Keine Anmeldung erforderlich.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },

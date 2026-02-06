@@ -32,9 +32,9 @@ export const PricingPlans = () => {
         <div className="mx-auto max-w-6xl">
           {/* Header with AI Engine Logos */}
           <div className="text-center mb-16">
-            <h2 className="text-2xl tracking-tight md:text-3xl text-gray-900 mb-8">
+            <h1 className="text-2xl tracking-tight md:text-3xl text-gray-900 mb-8">
               Grow visibility, traffic, and conversions across
-            </h2>
+            </h1>
             
             {/* AI Engine Logos */}
             <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 mb-8">

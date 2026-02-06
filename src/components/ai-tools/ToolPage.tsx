@@ -8,11 +8,13 @@ import { RelatedTools } from './RelatedTools';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { FaqHomepage } from '@/components/marketing/faq-homepage';
 import { ToolConfig } from '@/lib/ai-tools/tools-config';
+import { RelatedToolData } from '@/lib/ai-tools/related-tools-utils';
 
 interface ToolPageProps {
   tool: ToolConfig;
   locale?: string;
   englishSlug?: string;
+  relatedTools: RelatedToolData[];
 }
 
 // Translations for UI elements
@@ -59,7 +61,7 @@ const translations: Record<string, { faqHeading: string; faqDescription: (toolNa
   },
 };
 
-export function ToolPage({ tool, locale, englishSlug }: ToolPageProps) {
+export function ToolPage({ tool, locale, englishSlug, relatedTools }: ToolPageProps) {
   const [output, setOutput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -197,7 +199,7 @@ export function ToolPage({ tool, locale, englishSlug }: ToolPageProps) {
       />
 
       {/* Related Tools Section */}
-      <RelatedTools currentToolSlug={tool.slug} locale={locale} />
+      <RelatedTools tools={relatedTools} locale={locale} />
 
       {/* Bottom CTA Section */}
       <HeroCta />

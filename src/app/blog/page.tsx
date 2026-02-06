@@ -74,15 +74,24 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 export async function generateMetadata({ searchParams }: BlogPageProps) {
   const params = await searchParams;
   const currentPage = parseInt(params.page || '1', 10);
-  const pageTitle = currentPage > 1 ? `Blog - Page ${currentPage} | Analyze AI` : 'Blog | Analyze AI';
+  const pageTitle = currentPage > 1 ? `Blog - Page ${currentPage}` : 'Blog';
   
   return {
     title: pageTitle,
     description: 'Insights, analysis, and thought leadership in data analytics and business intelligence from the Analyze AI team.',
+    alternates: {
+      canonical: currentPage > 1 ? `/blog?page=${currentPage}` : '/blog',
+    },
     openGraph: {
       title: pageTitle,
       description: 'Insights, analysis, and thought leadership in AI traffic analytics and business intelligence from the Analyze AI team.',
       type: 'website',
+      images: [{
+        url: 'https://www.tryanalyze.ai/Artboard%20(1).png',
+        width: 1536,
+        height: 1024,
+        alt: 'Analyze AI Blog',
+      }],
     },
     ...(currentPage > 1 && {
       robots: {

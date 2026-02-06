@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllToolsKo } from '@/lib/ai-tools/i18n/tools-config.ko';
+import { generateToolsListingHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { getAllBusinessNameGeneratorsKo } from '@/lib/ai-tools/i18n/business-name-generators-config.ko';
 import { DashedLine } from '@/components/dashed-line';
 import { Button } from '@/components/ui/button';
@@ -41,17 +42,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '무료 AI 글쓰기 도구 | Analyze AI',
+  title: '무료 AI 글쓰기 도구',
   description: '무료 AI 글쓰기 도구 컬렉션에 액세스하세요: 단락 생성기, 패러프레이징, 요약, 문법 검사기 등. 가입 필요 없음.',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/ko',
-    languages: {
-      'en': 'https://www.tryanalyze.ai/free-tools',
-      'ko': 'https://www.tryanalyze.ai/free-tools/ko',
-    },
+    languages: generateToolsListingHreflangAlternates(),
   },
   openGraph: {
-    title: '무료 AI 글쓰기 도구 | Analyze AI',
+    title: '무료 AI 글쓰기 도구',
     description: '무료 AI 글쓰기 도구 컬렉션에 액세스하세요: 단락 생성기, 패러프레이징, 요약, 문법 검사기 등. 가입 필요 없음.',
     url: 'https://www.tryanalyze.ai/free-tools/ko',
     type: 'website',
@@ -67,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '무료 AI 글쓰기 도구 | Analyze AI',
+    title: '무료 AI 글쓰기 도구',
     description: '무료 AI 글쓰기 도구 컬렉션에 액세스하세요: 단락 생성기, 패러프레이징, 요약, 문법 검사기 등. 가입 필요 없음.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },

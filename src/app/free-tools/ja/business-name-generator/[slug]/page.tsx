@@ -1,7 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getBusinessNameGeneratorJa, getAllBusinessNameGeneratorsJa } from '@/lib/ai-tools/i18n/business-name-generators-config.ja';
+import { generateToolHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { BusinessNameGeneratorPage } from '@/components/ai-tools/BusinessNameGeneratorPage';
+import { computeRelatedTools } from '@/lib/ai-tools/related-tools-utils';
 
 function generateToolFAQSchema(tool: { title: string; slug: string; faqs: { question: string; answer: string }[] }) {
   return {
@@ -45,22 +47,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!tool) {
     return {
-      title: 'ツールが見つかりません | Analyze AI',
+      title: 'ツールが見つかりません',
     };
   }
 
   return {
-    title: `${tool.title} | Analyze AI`,
+    title: `${tool.title}`,
     description: tool.metaDescription,
     alternates: {
       canonical: `https://www.tryanalyze.ai/free-tools/ja/business-name-generator/${tool.slug}`,
-      languages: {
-        'en': `https://www.tryanalyze.ai/free-tools/business-name-generator/${tool.slug}`,
-        'ja': `https://www.tryanalyze.ai/free-tools/ja/business-name-generator/${tool.slug}`,
-      },
+      languages: generateToolHreflangAlternates(tool.slug, 'business-name-generator'),
     },
     openGraph: {
-      title: `${tool.title} | Analyze AI`,
+      title: `${tool.title}`,
       description: tool.metaDescription,
       url: `https://www.tryanalyze.ai/free-tools/ja/business-name-generator/${tool.slug}`,
       type: 'website',
@@ -76,7 +75,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${tool.title} | Analyze AI`,
+      title: `${tool.title}`,
       description: tool.metaDescription,
       images: ['https://www.tryanalyze.ai/og-free-business-name-generator.png'],
     },
@@ -101,7 +100,7 @@ export default async function JapaneseBusinessNameGeneratorPage({ params }: Page
           __html: JSON.stringify(structuredData)
         }}
       />
-      <BusinessNameGeneratorPage tool={tool} locale="ja" />
+      <BusinessNameGeneratorPage tool={tool} locale="ja" relatedTools={computeRelatedTools(getAllBusinessNameGeneratorsJa(), slug)} />
     </>
   );
 }

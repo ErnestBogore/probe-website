@@ -428,7 +428,7 @@ export async function generateMetadata({ params }: CaseStudyPageProps) {
 
     if (!blogPost) {
       return {
-        title: 'Case Study Not Found | Analyze AI',
+        title: 'Case Study Not Found',
         description: 'The requested case study could not be found.',
       };
     }
@@ -440,10 +440,13 @@ export async function generateMetadata({ params }: CaseStudyPageProps) {
     const structuredData = generateBlogPostSchema(blogPost);
 
     return {
-      title: `${title} | Analyze AI`,
+      title: `${title}`,
       description,
+      alternates: {
+        canonical: `/case-study/${slug}`,
+      },
       openGraph: {
-        title: `${title} | Analyze AI`,
+        title: `${title}`,
         description,
         type: 'article',
         publishedTime: blogPost.publishedDate,
@@ -460,7 +463,7 @@ export async function generateMetadata({ params }: CaseStudyPageProps) {
       },
       twitter: {
         card: 'summary_large_image',
-        title: `${title} | Analyze AI`,
+        title: `${title}`,
         description,
         images: image ? [image.url] : undefined,
       },
@@ -468,7 +471,7 @@ export async function generateMetadata({ params }: CaseStudyPageProps) {
   } catch (error) {
     console.error('Error generating metadata:', error);
     return {
-      title: 'Case Study | Analyze AI',
+      title: 'Case Study',
       description: 'Read this case study from Analyze AI.',
     };
   }

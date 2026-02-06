@@ -50,8 +50,9 @@ async function request<T>(
       variables,
     }),
     next: {
-      // Cache for 60 seconds in production, always fresh in development
-      revalidate: process.env.NODE_ENV === 'development' ? 0 : 60,
+      // Cache for 1 hour in production, always fresh in development.
+      // On-demand revalidation via /api/revalidate webhook keeps content fresh.
+      revalidate: process.env.NODE_ENV === 'development' ? 0 : 3600,
     },
   });
 

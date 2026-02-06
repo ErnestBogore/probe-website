@@ -35,12 +35,21 @@ export default async function CaseStudyPage() {
 // Generate metadata for SEO
 export async function generateMetadata() {
   return {
-    title: 'Case Studies | Analyze AI',
+    title: 'Case Studies',
     description: 'Explore our case studies to see how we\'ve helped businesses like yours succeed.',
+    alternates: {
+      canonical: '/case-study',
+    },
     openGraph: {
-      title: 'Case Studies | Analyze AI',
+      title: 'Case Studies',
       description: 'Explore our case studies to see how we\'ve helped businesses like yours succeed.',
       type: 'website',
+      images: [{
+        url: 'https://www.tryanalyze.ai/Artboard%20(1).png',
+        width: 1536,
+        height: 1024,
+        alt: 'Analyze AI Case Studies',
+      }],
     },
   };
 }

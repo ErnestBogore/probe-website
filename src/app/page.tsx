@@ -20,12 +20,21 @@ import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/schema'
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 
 export const metadata: Metadata = {
-  title: 'AI Search Analytics For Marketing Teams | Analyze AI',
-  description: 'Understand how AI sees your brand. Monitor search rankings, analyze sentiment, and protect your reputation with our powerful AI analytics platform. Get started today.',
+  title: 'AI Search Analytics For Marketing Teams',
+  description: 'Understand how AI sees your brand. Monitor search rankings, analyze sentiment, and protect your reputation with our powerful...',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'AI Search Analytics For Marketing Teams | Analyze AI',
-    description: 'Understand how AI sees your brand. Monitor search rankings, analyze sentiment, and protect your reputation with our powerful AI analytics platform. Get started today.',
-    images: ['/Artboard (1).png'],
+    type: 'website',
+    title: 'AI Search Analytics For Marketing Teams',
+    description: 'Understand how AI sees your brand. Monitor search rankings, analyze sentiment, and protect your reputation with our powerful...',
+    images: [{
+      url: 'https://www.tryanalyze.ai/Artboard%20(1).png',
+      width: 1536,
+      height: 1024,
+      alt: 'Analyze AI - AI Search Analytics Platform',
+    }],
   },
 };
 

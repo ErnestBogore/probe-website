@@ -1,19 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { getAllBusinessNameGenerators, BusinessNameGeneratorConfig } from '@/lib/ai-tools/business-name-generators-config';
-import { getAllBusinessNameGeneratorsFr } from '@/lib/ai-tools/i18n/business-name-generators-config.fr';
-import { getAllBusinessNameGeneratorsEs } from '@/lib/ai-tools/i18n/business-name-generators-config.es';
-import { getAllBusinessNameGeneratorsDe } from '@/lib/ai-tools/i18n/business-name-generators-config.de';
-import { getAllBusinessNameGeneratorsIt } from '@/lib/ai-tools/i18n/business-name-generators-config.it';
-import { getAllBusinessNameGeneratorsPt } from '@/lib/ai-tools/i18n/business-name-generators-config.pt';
-import { getAllBusinessNameGeneratorsJa } from '@/lib/ai-tools/i18n/business-name-generators-config.ja';
-import { getAllBusinessNameGeneratorsKo } from '@/lib/ai-tools/i18n/business-name-generators-config.ko';
-import { getAllBusinessNameGeneratorsZh } from '@/lib/ai-tools/i18n/business-name-generators-config.zh';
-import { getAllBusinessNameGeneratorsTr } from '@/lib/ai-tools/i18n/business-name-generators-config.tr';
 import { ArrowRight, Building2, Sparkles, Briefcase, Smartphone, Baby, Heart, ShoppingBag, Coffee, Cake, Flame, Candy, Shirt, Cookie, Palette, Scissors, IceCream, Megaphone, Cpu, PartyPopper, Store, Dumbbell, Flower2, UtensilsCrossed, Truck, Laugh, Sofa, Gamepad2, PenTool, Gem, Stethoscope, Home, Monitor, Music2, Droplets, Camera, Printer, Key, Footprints, Leaf, Sparkle, Bath, Trophy, Plane } from 'lucide-react';
 import { DashedLine } from '@/components/dashed-line';
+import { RelatedToolData } from '@/lib/ai-tools/related-tools-utils';
 
 const generatorIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   'aesthetic': Sparkles,
@@ -69,7 +59,7 @@ const generatorIcons: Record<string, React.ComponentType<{ className?: string }>
 };
 
 interface RelatedBusinessNameGeneratorsProps {
-  currentToolSlug: string;
+  tools: RelatedToolData[];
   locale?: string;
 }
 
@@ -153,7 +143,7 @@ const localeStrings: Record<string, {
   },
 };
 
-function RelatedToolsContent({ tools, locale = 'en' }: { tools: BusinessNameGeneratorConfig[]; locale?: string }) {
+export function RelatedBusinessNameGenerators({ tools, locale = 'en' }: RelatedBusinessNameGeneratorsProps) {
   const strings = localeStrings[locale] || localeStrings.en;
   return (
     <section className="py-16 lg:py-20 bg-gray-100">
@@ -208,50 +198,4 @@ function RelatedToolsContent({ tools, locale = 'en' }: { tools: BusinessNameGene
       </div>
     </section>
   );
-}
-
-function getGeneratorsByLocale(locale: string): BusinessNameGeneratorConfig[] {
-  switch (locale) {
-    case 'fr':
-      return getAllBusinessNameGeneratorsFr();
-    case 'es':
-      return getAllBusinessNameGeneratorsEs();
-    case 'de':
-      return getAllBusinessNameGeneratorsDe();
-    case 'it':
-      return getAllBusinessNameGeneratorsIt();
-    case 'pt':
-      return getAllBusinessNameGeneratorsPt();
-    case 'ja':
-      return getAllBusinessNameGeneratorsJa();
-    case 'ko':
-      return getAllBusinessNameGeneratorsKo();
-    case 'zh':
-      return getAllBusinessNameGeneratorsZh();
-    case 'tr':
-      return getAllBusinessNameGeneratorsTr();
-    default:
-      return getAllBusinessNameGenerators();
-  }
-}
-
-export function RelatedBusinessNameGenerators({ currentToolSlug, locale = 'en' }: RelatedBusinessNameGeneratorsProps) {
-  // Chinese and Turkish show 12 tools, others show 10
-  const toolCount = (locale === 'zh' || locale === 'tr') ? 12 : 10;
-  
-  const [relatedTools, setRelatedTools] = useState<BusinessNameGeneratorConfig[]>(() => {
-    // Initialize with deterministic order for SSR
-    const allTools = getGeneratorsByLocale(locale);
-    return allTools.filter(tool => tool.slug !== currentToolSlug).slice(0, toolCount);
-  });
-
-  useEffect(() => {
-    // Shuffle on client side only
-    const allTools = getGeneratorsByLocale(locale);
-    const otherTools = allTools.filter(tool => tool.slug !== currentToolSlug);
-    const shuffled = [...otherTools].sort(() => Math.random() - 0.5);
-    setRelatedTools(shuffled.slice(0, toolCount));
-  }, [currentToolSlug, locale, toolCount]);
-
-  return <RelatedToolsContent tools={relatedTools} locale={locale} />;
 }

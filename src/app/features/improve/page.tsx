@@ -10,10 +10,19 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Improve | Analyze AI',
-  description: "Find high-intent prompts you're losing, see why competitors win them, defend areas where you're slipping, and double down on pages already converting from AI traffic.",
+  title: 'Improve',
+  description: "Find high-intent prompts you're losing, see why competitors win them, defend areas where you're slipping, and double down on...",
+  alternates: {
+    canonical: '/features/improve',
+  },
   openGraph: {
-    images: ['/ai-improvement-feature.png'],
+    type: 'website',
+    images: [{
+      url: 'https://www.tryanalyze.ai/Improve.png',
+      width: 2400,
+      height: 1257,
+      alt: 'AI Content Improvement Dashboard',
+    }],
   },
 };
 

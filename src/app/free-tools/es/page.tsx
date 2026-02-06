@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllToolsEs } from '@/lib/ai-tools/i18n/tools-config.es';
+import { generateToolsListingHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { getAllBusinessNameGeneratorsEs } from '@/lib/ai-tools/i18n/business-name-generators-config.es';
 import { DashedLine } from '@/components/dashed-line';
 import { Button } from '@/components/ui/button';
@@ -41,17 +42,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Herramientas de Escritura con IA Gratis | Analyze AI',
+  title: 'Herramientas de Escritura con IA Gratis',
   description: 'Accede a nuestra colección de herramientas de escritura con IA gratuitas: generadores de párrafos, parafraseadores, resumidores, correctores gramaticales y más. Sin registro.',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/es',
-    languages: {
-      'en': 'https://www.tryanalyze.ai/free-tools',
-      'es': 'https://www.tryanalyze.ai/free-tools/es',
-    },
+    languages: generateToolsListingHreflangAlternates(),
   },
   openGraph: {
-    title: 'Herramientas de Escritura con IA Gratis | Analyze AI',
+    title: 'Herramientas de Escritura con IA Gratis',
     description: 'Accede a nuestra colección de herramientas de escritura con IA gratuitas: generadores de párrafos, parafraseadores, resumidores, correctores gramaticales y más. Sin registro.',
     url: 'https://www.tryanalyze.ai/free-tools/es',
     type: 'website',
@@ -67,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Herramientas de Escritura con IA Gratis | Analyze AI',
+    title: 'Herramientas de Escritura con IA Gratis',
     description: 'Accede a nuestra colección de herramientas de escritura con IA gratuitas: generadores de párrafos, parafraseadores, resumidores, correctores gramaticales y más. Sin registro.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },
