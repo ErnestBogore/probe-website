@@ -105,6 +105,26 @@ const localeStrings: Record<string, {
     otherGeneratorsHeading: '도움이 될 수 있는 다른 비즈니스 이름 생성기',
     allAiTools: '모든 AI 도구',
   },
+  zh: {
+    howToChooseTitle: (name) => `如何选择${name.replace('企业名称生成器', '').replace(' Generator', '')}企业名称`,
+    ideasTitle: (name) => `20个${name.replace('企业名称生成器', '').replace(' Generator', '')}企业名称创意`,
+    ideasDescription: '需要灵感？这里有一些创意名称想法，激发您的想象力。',
+    faqHeading: '常见问题',
+    faqDescription: (name) => `关于我们${name}工具的常见问题。`,
+    moreGenerators: '更多名称生成器',
+    otherGeneratorsHeading: '其他可能对您有帮助的企业名称生成器',
+    allAiTools: '所有AI工具',
+  },
+  tr: {
+    howToChooseTitle: (name) => `${name.replace('İşletme Adı Üreteci', '').replace(' Generator', '')} İşletme Adı Nasıl Seçilir`,
+    ideasTitle: (name) => `20 ${name.replace('İşletme Adı Üreteci', '').replace(' Generator', '')} İşletme Adı Fikri`,
+    ideasDescription: 'İlhama mı ihtiyacınız var? İşte hayal gücünüzü harekete geçirecek yaratıcı isim fikirleri.',
+    faqHeading: 'Sıkça Sorulan Sorular',
+    faqDescription: (name) => `${name} aracımız hakkında sık sorulan sorular.`,
+    moreGenerators: 'Daha Fazla İsim Üreteci',
+    otherGeneratorsHeading: 'Faydalı bulabileceğiniz diğer işletme adı üreteçleri',
+    allAiTools: 'Tüm AI Araçları',
+  },
 };
 
 export function BusinessNameGeneratorPage({ tool, locale = 'en' }: BusinessNameGeneratorPageProps) {

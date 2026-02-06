@@ -2,6 +2,15 @@ import { MetadataRoute } from 'next';
 import { getAllBlogPosts, getAllPromptSlugs, getAllCategorySlugs } from '@/lib/datocms';
 import { getAllTools } from '@/lib/ai-tools/tools-config';
 import { getAllBusinessNameGenerators } from '@/lib/ai-tools/business-name-generators-config';
+import { getAllBusinessNameGeneratorsZh } from '@/lib/ai-tools/i18n/business-name-generators-config.zh';
+import { getAllBusinessNameGeneratorsKo } from '@/lib/ai-tools/i18n/business-name-generators-config.ko';
+import { getAllBusinessNameGeneratorsTr } from '@/lib/ai-tools/i18n/business-name-generators-config.tr';
+import { getAllBusinessNameGeneratorsDe } from '@/lib/ai-tools/i18n/business-name-generators-config.de';
+import { getAllBusinessNameGeneratorsEs } from '@/lib/ai-tools/i18n/business-name-generators-config.es';
+import { getAllBusinessNameGeneratorsFr } from '@/lib/ai-tools/i18n/business-name-generators-config.fr';
+import { getAllBusinessNameGeneratorsIt } from '@/lib/ai-tools/i18n/business-name-generators-config.it';
+import { getAllBusinessNameGeneratorsJa } from '@/lib/ai-tools/i18n/business-name-generators-config.ja';
+import { getAllBusinessNameGeneratorsPt } from '@/lib/ai-tools/i18n/business-name-generators-config.pt';
 import { getAllToolsFr } from '@/lib/ai-tools/i18n/tools-config.fr';
 import { getAllToolsDe } from '@/lib/ai-tools/i18n/tools-config.de';
 import { getAllToolsEs } from '@/lib/ai-tools/i18n/tools-config.es';
@@ -367,6 +376,87 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // Generate Chinese business name generator pages
+  const allBusinessNameGeneratorsZh = getAllBusinessNameGeneratorsZh();
+  const businessNameGeneratorPagesZh: MetadataRoute.Sitemap = allBusinessNameGeneratorsZh.map((tool) => ({
+    url: `${baseUrl}/free-tools/zh/business-name-generator/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate Korean business name generator pages
+  const allBusinessNameGeneratorsKo = getAllBusinessNameGeneratorsKo();
+  const businessNameGeneratorPagesKo: MetadataRoute.Sitemap = allBusinessNameGeneratorsKo.map((tool) => ({
+    url: `${baseUrl}/free-tools/ko/business-name-generator/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate Turkish business name generator pages
+  const allBusinessNameGeneratorsTr = getAllBusinessNameGeneratorsTr();
+  const businessNameGeneratorPagesTr: MetadataRoute.Sitemap = allBusinessNameGeneratorsTr.map((tool) => ({
+    url: `${baseUrl}/free-tools/tr/business-name-generator/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate German business name generator pages
+  const allBusinessNameGeneratorsDe = getAllBusinessNameGeneratorsDe();
+  const businessNameGeneratorPagesDe: MetadataRoute.Sitemap = allBusinessNameGeneratorsDe.map((tool) => ({
+    url: `${baseUrl}/free-tools/de/business-name-generator/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate Spanish business name generator pages
+  const allBusinessNameGeneratorsEs = getAllBusinessNameGeneratorsEs();
+  const businessNameGeneratorPagesEs: MetadataRoute.Sitemap = allBusinessNameGeneratorsEs.map((tool) => ({
+    url: `${baseUrl}/free-tools/es/business-name-generator/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate French business name generator pages
+  const allBusinessNameGeneratorsFr = getAllBusinessNameGeneratorsFr();
+  const businessNameGeneratorPagesFr: MetadataRoute.Sitemap = allBusinessNameGeneratorsFr.map((tool) => ({
+    url: `${baseUrl}/free-tools/fr/business-name-generator/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate Italian business name generator pages
+  const allBusinessNameGeneratorsIt = getAllBusinessNameGeneratorsIt();
+  const businessNameGeneratorPagesIt: MetadataRoute.Sitemap = allBusinessNameGeneratorsIt.map((tool) => ({
+    url: `${baseUrl}/free-tools/it/business-name-generator/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate Japanese business name generator pages
+  const allBusinessNameGeneratorsJa = getAllBusinessNameGeneratorsJa();
+  const businessNameGeneratorPagesJa: MetadataRoute.Sitemap = allBusinessNameGeneratorsJa.map((tool) => ({
+    url: `${baseUrl}/free-tools/ja/business-name-generator/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Generate Portuguese business name generator pages
+  const allBusinessNameGeneratorsPt = getAllBusinessNameGeneratorsPt();
+  const businessNameGeneratorPagesPt: MetadataRoute.Sitemap = allBusinessNameGeneratorsPt.map((tool) => ({
+    url: `${baseUrl}/free-tools/pt/business-name-generator/${tool.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
   try {
     // Fetch all dynamic content from DatoCMS in parallel
     const [{ allBlogPosts }, allPrompts, allCategories] = await Promise.all([
@@ -411,7 +501,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     }));
 
-    return [...staticPages, ...freeToolPages, ...freeToolPagesFr, ...freeToolPagesDe, ...freeToolPagesEs, ...freeToolPagesPt, ...freeToolPagesIt, ...freeToolPagesJa, ...freeToolPagesZh, ...freeToolPagesKo, ...freeToolPagesTr, ...businessNameGeneratorPages, ...blogPages, ...caseStudyPages, ...promptCategoryPages, ...promptPages];
+    return [...staticPages, ...freeToolPages, ...freeToolPagesFr, ...freeToolPagesDe, ...freeToolPagesEs, ...freeToolPagesPt, ...freeToolPagesIt, ...freeToolPagesJa, ...freeToolPagesZh, ...freeToolPagesKo, ...freeToolPagesTr, ...businessNameGeneratorPages, ...businessNameGeneratorPagesZh, ...businessNameGeneratorPagesKo, ...businessNameGeneratorPagesTr, ...businessNameGeneratorPagesDe, ...businessNameGeneratorPagesEs, ...businessNameGeneratorPagesFr, ...businessNameGeneratorPagesIt, ...businessNameGeneratorPagesJa, ...businessNameGeneratorPagesPt, ...blogPages, ...caseStudyPages, ...promptCategoryPages, ...promptPages];
   } catch (error) {
     console.error('Error generating sitemap:', error);
     // Return static pages only if blog fetch fails

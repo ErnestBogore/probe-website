@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllToolsPt } from '@/lib/ai-tools/i18n/tools-config.pt';
+import { getAllBusinessNameGeneratorsPt } from '@/lib/ai-tools/i18n/business-name-generators-config.pt';
 import { DashedLine } from '@/components/dashed-line';
 import { Button } from '@/components/ui/button';
 import { HeroCta } from '@/components/marketing/hero-cta';
@@ -204,6 +205,9 @@ export default function FreeToolsPtPage() {
   const business = getToolsByCategory(businessToolSlugs);
   const socialMedia = getToolsByCategory(socialMediaToolSlugs);
   const youtube = getToolsByCategory(youtubeToolSlugs);
+
+  // Get 5 business name generators for this language
+  const businessNameGenerators = getAllBusinessNameGeneratorsPt().slice(0, 5);
 
   return (
     <main className="bg-gray-100">
@@ -561,6 +565,51 @@ export default function FreeToolsPtPage() {
                   </Link>
                 );
               })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Business Name Ideas Section */}
+      {businessNameGenerators.length > 0 && (
+        <section className="py-16 lg:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative flex items-center justify-center mb-10">
+              <DashedLine className="text-muted-foreground" />
+              <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+                IDEIAS DE NOMES DE EMPRESA
+              </span>
+            </div>
+
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
+                Gerador de Ideias de Nomes de Empresa
+              </h2>
+              <p className="text-gray-600">
+                Gere nomes de empresa criativos e memoráveis para qualquer setor.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {businessNameGenerators.map((generator) => (
+                <Link
+                  key={generator.slug}
+                  href={`/free-tools/pt/business-name-generator/${generator.slug}`}
+                  className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+                >
+                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                    <Briefcase className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                      {generator.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 line-clamp-2">
+                      {generator.metaDescription}
+                    </p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

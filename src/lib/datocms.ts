@@ -153,6 +153,80 @@ export async function getAllBlogPosts(includeDrafts = false) {
 }
 
 /**
+ * Fetches paginated blog posts for the blog listing page
+ * @param page - Page number (1-indexed)
+ * @param perPage - Number of posts per page
+ * @param includeDrafts - Whether to include draft posts
+ * @returns Promise with paginated blog posts and metadata
+ */
+export async function getPaginatedBlogPosts(page: number = 1, perPage: number = 12, includeDrafts = false) {
+  const skip = (page - 1) * perPage;
+
+  // Query for posts on current page
+  const postsQuery = `
+    query PaginatedBlogPosts($first: IntType!, $skip: IntType!) {
+      allBlogPosts(orderBy: publishedDate_DESC, first: $first, skip: $skip, filter: { contentType: { neq: "case_study" } }) {
+        id
+        title
+        slug
+        publishedDate
+        featuredImage {
+          url
+          alt
+          width
+          height
+        }
+        author {
+          id
+          name
+          title
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+        seo {
+          image {
+            url
+            alt
+            width
+            height
+          }
+        }
+        _publishedAt
+        _updatedAt
+        contentType
+      }
+      _allBlogPostsMeta(filter: { contentType: { neq: "case_study" } }) {
+        count
+      }
+    }
+  `;
+
+  const data = await request<{ 
+    allBlogPosts: BlogPost[]; 
+    _allBlogPostsMeta: { count: number } 
+  }>(postsQuery, { first: perPage, skip }, includeDrafts);
+
+  const totalPosts = data._allBlogPostsMeta.count;
+  const totalPages = Math.ceil(totalPosts / perPage);
+
+  return {
+    posts: data.allBlogPosts,
+    pagination: {
+      currentPage: page,
+      totalPages,
+      totalPosts,
+      perPage,
+      hasNextPage: page < totalPages,
+      hasPrevPage: page > 1,
+    }
+  };
+}
+
+/**
  * Fetches a single blog post by slug
  * @param slug - Blog post slug
  * @param includeDrafts - Whether to include draft posts

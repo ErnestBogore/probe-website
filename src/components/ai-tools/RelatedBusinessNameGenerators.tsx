@@ -10,6 +10,8 @@ import { getAllBusinessNameGeneratorsIt } from '@/lib/ai-tools/i18n/business-nam
 import { getAllBusinessNameGeneratorsPt } from '@/lib/ai-tools/i18n/business-name-generators-config.pt';
 import { getAllBusinessNameGeneratorsJa } from '@/lib/ai-tools/i18n/business-name-generators-config.ja';
 import { getAllBusinessNameGeneratorsKo } from '@/lib/ai-tools/i18n/business-name-generators-config.ko';
+import { getAllBusinessNameGeneratorsZh } from '@/lib/ai-tools/i18n/business-name-generators-config.zh';
+import { getAllBusinessNameGeneratorsTr } from '@/lib/ai-tools/i18n/business-name-generators-config.tr';
 import { ArrowRight, Building2, Sparkles, Briefcase, Smartphone, Baby, Heart, ShoppingBag, Coffee, Cake, Flame, Candy, Shirt, Cookie, Palette, Scissors, IceCream, Megaphone, Cpu, PartyPopper, Store, Dumbbell, Flower2, UtensilsCrossed, Truck, Laugh, Sofa, Gamepad2, PenTool, Gem, Stethoscope, Home, Monitor, Music2, Droplets, Camera, Printer, Key, Footprints, Leaf, Sparkle, Bath, Trophy, Plane } from 'lucide-react';
 import { DashedLine } from '@/components/dashed-line';
 
@@ -135,6 +137,20 @@ const localeStrings: Record<string, {
     allToolsHref: '/free-tools/ko',
     toolHref: (slug) => `/free-tools/ko/business-name-generator/${slug}`,
   },
+  zh: {
+    moreGenerators: '更多名称生成器',
+    heading: '其他可能对您有帮助的企业名称生成器',
+    allToolsLink: '所有AI工具',
+    allToolsHref: '/free-tools/zh',
+    toolHref: (slug) => `/free-tools/zh/business-name-generator/${slug}`,
+  },
+  tr: {
+    moreGenerators: 'DAHA FAZLA İSİM ÜRETECİ',
+    heading: 'Faydalı bulabileceğiniz diğer işletme adı üreteçleri',
+    allToolsLink: 'Tüm AI Araçları',
+    allToolsHref: '/free-tools/tr',
+    toolHref: (slug) => `/free-tools/tr/business-name-generator/${slug}`,
+  },
 };
 
 function RelatedToolsContent({ tools, locale = 'en' }: { tools: BusinessNameGeneratorConfig[]; locale?: string }) {
@@ -210,16 +226,23 @@ function getGeneratorsByLocale(locale: string): BusinessNameGeneratorConfig[] {
       return getAllBusinessNameGeneratorsJa();
     case 'ko':
       return getAllBusinessNameGeneratorsKo();
+    case 'zh':
+      return getAllBusinessNameGeneratorsZh();
+    case 'tr':
+      return getAllBusinessNameGeneratorsTr();
     default:
       return getAllBusinessNameGenerators();
   }
 }
 
 export function RelatedBusinessNameGenerators({ currentToolSlug, locale = 'en' }: RelatedBusinessNameGeneratorsProps) {
+  // Chinese and Turkish show 12 tools, others show 10
+  const toolCount = (locale === 'zh' || locale === 'tr') ? 12 : 10;
+  
   const [relatedTools, setRelatedTools] = useState<BusinessNameGeneratorConfig[]>(() => {
     // Initialize with deterministic order for SSR
     const allTools = getGeneratorsByLocale(locale);
-    return allTools.filter(tool => tool.slug !== currentToolSlug).slice(0, 12);
+    return allTools.filter(tool => tool.slug !== currentToolSlug).slice(0, toolCount);
   });
 
   useEffect(() => {
@@ -227,8 +250,8 @@ export function RelatedBusinessNameGenerators({ currentToolSlug, locale = 'en' }
     const allTools = getGeneratorsByLocale(locale);
     const otherTools = allTools.filter(tool => tool.slug !== currentToolSlug);
     const shuffled = [...otherTools].sort(() => Math.random() - 0.5);
-    setRelatedTools(shuffled.slice(0, 12));
-  }, [currentToolSlug, locale]);
+    setRelatedTools(shuffled.slice(0, toolCount));
+  }, [currentToolSlug, locale, toolCount]);
 
   return <RelatedToolsContent tools={relatedTools} locale={locale} />;
 }

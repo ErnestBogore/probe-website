@@ -1,6 +1,16 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllTools } from '@/lib/ai-tools/tools-config';
+import { getAllBusinessNameGenerators } from '@/lib/ai-tools/business-name-generators-config';
+import { getAllBusinessNameGeneratorsDe } from '@/lib/ai-tools/i18n/business-name-generators-config.de';
+import { getAllBusinessNameGeneratorsEs } from '@/lib/ai-tools/i18n/business-name-generators-config.es';
+import { getAllBusinessNameGeneratorsFr } from '@/lib/ai-tools/i18n/business-name-generators-config.fr';
+import { getAllBusinessNameGeneratorsIt } from '@/lib/ai-tools/i18n/business-name-generators-config.it';
+import { getAllBusinessNameGeneratorsJa } from '@/lib/ai-tools/i18n/business-name-generators-config.ja';
+import { getAllBusinessNameGeneratorsKo } from '@/lib/ai-tools/i18n/business-name-generators-config.ko';
+import { getAllBusinessNameGeneratorsPt } from '@/lib/ai-tools/i18n/business-name-generators-config.pt';
+import { getAllBusinessNameGeneratorsTr } from '@/lib/ai-tools/i18n/business-name-generators-config.tr';
+import { getAllBusinessNameGeneratorsZh } from '@/lib/ai-tools/i18n/business-name-generators-config.zh';
 import { DashedLine } from '@/components/dashed-line';
 import { Button } from '@/components/ui/button';
 import { HeroCta } from '@/components/marketing/hero-cta';
@@ -157,6 +167,43 @@ export default function FreeToolsPage() {
   const utility = getToolsByCategory(utilityTools);
   const business = getToolsByCategory(businessTools);
   const socialMedia = getToolsByCategory(socialMediaTools);
+
+  // Get one random business name generator from each language
+  const enGenerators = getAllBusinessNameGenerators();
+  const deGenerators = getAllBusinessNameGeneratorsDe();
+  const esGenerators = getAllBusinessNameGeneratorsEs();
+  const frGenerators = getAllBusinessNameGeneratorsFr();
+  const itGenerators = getAllBusinessNameGeneratorsIt();
+  const jaGenerators = getAllBusinessNameGeneratorsJa();
+  const koGenerators = getAllBusinessNameGeneratorsKo();
+  const ptGenerators = getAllBusinessNameGeneratorsPt();
+  const trGenerators = getAllBusinessNameGeneratorsTr();
+  const zhGenerators = getAllBusinessNameGeneratorsZh();
+
+  // Pick one random generator from each language (use fixed index for SSR consistency)
+  const enGen = enGenerators[0];
+  const deGen = deGenerators[5];
+  const esGen = esGenerators[10];
+  const frGen = frGenerators[15];
+  const itGen = itGenerators[20];
+  const jaGen = jaGenerators[25];
+  const koGen = koGenerators[30];
+  const ptGen = ptGenerators[35];
+  const trGen = trGenerators[40];
+  const zhGen = zhGenerators[45];
+
+  const businessNameIdeas = [
+    { lang: 'en', langCode: 'EN', flag: '🇺🇸', title: enGen.title, description: enGen.metaDescription, url: `/free-tools/business-name-generator/${enGen.slug}` },
+    { lang: 'de', langCode: 'DE', flag: '🇩🇪', title: deGen.title, description: deGen.metaDescription, url: `/free-tools/de/business-name-generator/${deGen.slug}` },
+    { lang: 'es', langCode: 'ES', flag: '🇪🇸', title: esGen.title, description: esGen.metaDescription, url: `/free-tools/es/business-name-generator/${esGen.slug}` },
+    { lang: 'fr', langCode: 'FR', flag: '🇫🇷', title: frGen.title, description: frGen.metaDescription, url: `/free-tools/fr/business-name-generator/${frGen.slug}` },
+    { lang: 'it', langCode: 'IT', flag: '🇮🇹', title: itGen.title, description: itGen.metaDescription, url: `/free-tools/it/business-name-generator/${itGen.slug}` },
+    { lang: 'ja', langCode: 'JA', flag: '🇯🇵', title: jaGen.title, description: jaGen.metaDescription, url: `/free-tools/ja/business-name-generator/${jaGen.slug}` },
+    { lang: 'ko', langCode: 'KO', flag: '🇰🇷', title: koGen.title, description: koGen.metaDescription, url: `/free-tools/ko/business-name-generator/${koGen.slug}` },
+    { lang: 'pt', langCode: 'PT', flag: '🇧🇷', title: ptGen.title, description: ptGen.metaDescription, url: `/free-tools/pt/business-name-generator/${ptGen.slug}` },
+    { lang: 'tr', langCode: 'TR', flag: '🇹🇷', title: trGen.title, description: trGen.metaDescription, url: `/free-tools/tr/business-name-generator/${trGen.slug}` },
+    { lang: 'zh', langCode: 'ZH', flag: '🇨🇳', title: zhGen.title, description: zhGen.metaDescription, url: `/free-tools/zh/business-name-generator/${zhGen.slug}` },
+  ];
 
   return (
     <main className="bg-gray-100">
@@ -457,6 +504,54 @@ export default function FreeToolsPage() {
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Business Name Ideas Section */}
+      <section className="py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative flex items-center justify-center mb-10">
+            <DashedLine className="text-muted-foreground" />
+            <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+              BUSINESS NAME IDEAS
+            </span>
+          </div>
+
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
+              Business Name Ideas
+            </h2>
+            <p className="text-gray-600">
+              Generate creative and memorable business names for any industry. Available in 10 languages.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {businessNameIdeas.map((item) => (
+              <Link
+                key={item.lang}
+                href={item.url}
+                className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+              >
+                <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                  <span className="text-lg font-bold text-purple-600">{item.flag}</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-purple-600 transition-colors truncate">
+                      {item.title}
+                    </h3>
+                    <span className="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
+                      {item.langCode}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-600 line-clamp-2">
+                    {item.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

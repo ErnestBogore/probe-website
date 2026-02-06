@@ -1,8 +1,9 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemaps
 Sitemap: https://www.tryanalyze.ai/sitemap.xml
+Sitemap: https://www.tryanalyze.ai/sitemap-index.xml
 
 # Block admin and API routes
 Disallow: /api/
