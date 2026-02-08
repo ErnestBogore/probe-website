@@ -1,9 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { ArrowRight } from 'lucide-react';
-import { KylianChart } from './kylian-chart';
 import { DashedLine } from '../dashed-line';
+
+const KylianChart = dynamic(() => import('./kylian-chart').then(m => m.KylianChart), {
+  loading: () => <div className="h-64 bg-gray-50 rounded-lg" />,
+});
 
 export const Testimonials = () => {
   return (

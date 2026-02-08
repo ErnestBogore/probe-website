@@ -1,8 +1,7 @@
-"use client";
-
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { Image3D } from '@/components/ui/image-3d';
 
 export const HeroCta = () => {
 
@@ -56,16 +55,13 @@ export const HeroCta = () => {
             
             {/* Right side - Large Interactive Dashboard */}
             <div className="relative flex items-center justify-center min-h-[600px]">
-              <div 
-                className="relative w-full group cursor-pointer"
-                style={{ perspective: '1000px' }}
-              >
+              <Image3D>
                 <Image
                   src="/CTA Image.png"
                   alt="Analyze AI Dashboard - AI Search Analytics Platform"
                   width={1070}
                   height={832}
-                  quality={85}
+                  quality={75}
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-auto mx-auto"
                   style={{
@@ -73,25 +69,8 @@ export const HeroCta = () => {
                     transform: 'rotateX(0deg) rotateY(0deg) scale(1)',
                     transition: 'transform 0.3s ease-out',
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'rotateX(-2deg) rotateY(3deg) scale(1.02)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
-                  }}
-                  onMouseMove={(e) => {
-                    const rect = e.currentTarget.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    const rotateX = (y - centerY) / centerY * -5;
-                    const rotateY = (x - centerX) / centerX * 5;
-                    
-                    e.currentTarget.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-                  }}
                 />
-              </div>
+              </Image3D>
             </div>
           </div>
           

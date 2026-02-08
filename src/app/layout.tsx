@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Navbar } from "@/components/marketing/navbar";
 import { Footer } from "@/components/marketing/footer";
-import { PromotionalOverlay } from "@/components/marketing/promotional-overlay";
+import { DeferredScripts } from "@/components/deferred-scripts";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/schema';
 import "./globals.css";
@@ -42,6 +43,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* DNS prefetch for 3rd-party origins */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://scripts.simpleanalyticscdn.com" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://widget.intercom.io" />
+        <link rel="dns-prefetch" href="https://cdn.convertbox.com" />
         {/* Sitewide Structured Data: Organization + WebSite */}
         <script
           type="application/ld+json"
@@ -60,16 +67,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <PromotionalOverlay />
         {children}
         <Footer />
 
-        {/* Google Analytics — loads after page is interactive */}
+        {/* Google Analytics — deferred to after page load */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-S5FYJJYT0H"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga-init" strategy="afterInteractive">
+        <Script id="ga-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -78,10 +84,10 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Simple Analytics — lightweight, loads after interactive */}
+        {/* Simple Analytics — deferred to after page load */}
         <Script
           src="https://scripts.simpleanalyticscdn.com/latest.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         {/* Microsoft Clarity — deferred to after page load */}
@@ -95,11 +101,6 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* ConvertBox — deferred to after page load */}
-        <Script id="convertbox-init" strategy="lazyOnload">
-          {`!function(e,t){(e=t.createElement("script")).src="https://cdn.convertbox.com/convertbox/js/embed.js",e.id="app-convertbox-script",e.async=true,e.dataset.uuid="92151c5c-e8df-44b8-9c8e-96097edc1184",document.getElementsByTagName("head")[0].appendChild(e)}(window,document);`}
-        </Script>
-
         {/* PartneroJS — deferred to after page load */}
         <Script id="partnero-init" strategy="lazyOnload">
           {`(function(p,t,n,e,r,o){ p['__partnerObject']=r;function f(){
@@ -111,20 +112,8 @@ po('settings', 'assets_host', 'https://assets.partnero.com');
 po('program', 'TY8NQLFA', 'load');`}
         </Script>
 
-        {/* Intercom Messenger — deferred to after page load */}
-        <Script id="intercom-settings" strategy="lazyOnload">
-          {`
-            window.intercomSettings = {
-              api_base: "https://api-iam.intercom.io",
-              app_id: "cs5wyv8i",
-            };
-          `}
-        </Script>
-        <Script id="intercom-init" strategy="lazyOnload">
-          {`
-            (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/cs5wyv8i';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
-          `}
-        </Script>
+        {/* Intercom + ConvertBox — deferred until user interaction or 10s idle */}
+        <DeferredScripts />
       </body>
     </html>
   );

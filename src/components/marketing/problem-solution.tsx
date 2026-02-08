@@ -1,9 +1,6 @@
-"use client";
-
 import React from 'react';
 import { X, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
-import { useInView } from 'react-intersection-observer';
 import { DashedLine } from '../dashed-line';
 
 const problems = [
@@ -27,13 +24,8 @@ const solutions = [
 ];
 
 export const ProblemSolution = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
-
   return (
-    <section className="pt-12 pb-32 bg-gray-100" ref={ref}>
+    <section className="pt-12 pb-32 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top dashed line with text */}
         <div className="relative flex items-center justify-center mb-10">
@@ -62,14 +54,7 @@ export const ProblemSolution = () => {
               {problems.map((problem, index) => (
                 <div 
                   key={index} 
-                  className={`bg-red-50 border border-red-200 rounded-xl p-6 transition-all duration-700 ${
-                    inView 
-                      ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{ 
-                    transitionDelay: `${index * 200}ms` 
-                  }}
+                  className="bg-red-50 border border-red-200 rounded-xl p-6"
                 >
                   <div className="flex items-start gap-4">
                     {/* Error Icon */}

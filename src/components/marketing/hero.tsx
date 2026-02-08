@@ -1,5 +1,3 @@
-"use client";
-
 import { SchemaImage as Image } from "@/components/ui/schema-image";
 import Link from "next/link";
 
@@ -13,6 +11,7 @@ import {
 
 import { DashedLine } from "@/components/dashed-line";
 import { Button } from "@/components/ui/button";
+import { Image3D } from "@/components/ui/image-3d";
 
 const features = [
   {
@@ -105,16 +104,13 @@ export const Hero = () => {
         </div>
 
         <div className="mt-12 max-lg:ml-6 md:mt-20 lg:mt-24">
-          <div 
-            className="relative w-full group cursor-pointer"
-            style={{ perspective: '1000px' }}
-          >
+          <Image3D>
             <Image
               src="/herotest.png"
               alt="AI Search Analytics Dashboard - 3D Interactive View"
               width={1200}
               height={800}
-              quality={90}
+              quality={75}
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
               className="w-full max-w-5xl h-auto transition-all duration-500 ease-out transform-gpu mx-auto"
@@ -122,25 +118,8 @@ export const Hero = () => {
                 transformStyle: 'preserve-3d',
                 transform: 'rotateX(0deg) rotateY(0deg) scale(1)',
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'rotateX(-2deg) rotateY(3deg) scale(1.02)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
-              }}
-              onMouseMove={(e) => {
-                const rect = e.currentTarget.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / centerY * -5;
-                const rotateY = (x - centerX) / centerX * 5;
-                
-                e.currentTarget.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-              }}
             />
-          </div>
+          </Image3D>
         </div>
         </div>
       </div>
