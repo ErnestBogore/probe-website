@@ -81,6 +81,7 @@ export function getLocalizedMetadata(language: SupportedLanguage) {
     openGraph: {
       title: `${localizedContent.title}`,
       description: localizedContent.description,
+      url: `/blog/${language}`,
       type: 'website',
     },
     alternates: {

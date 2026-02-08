@@ -37,6 +37,15 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // Content-Language headers for locale pages
+      ...['de', 'es', 'fr', 'it', 'ja', 'ko', 'pt', 'tr', 'zh'].map((locale) => ({
+        source: `/free-tools/${locale}/:path*`,
+        headers: [{ key: 'Content-Language', value: locale }],
+      })),
+      ...['de', 'es', 'fr', 'it', 'nl'].map((locale) => ({
+        source: `/blog/${locale}/:path*`,
+        headers: [{ key: 'Content-Language', value: locale }],
+      })),
       {
         source: '/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico|woff|woff2)',
         headers: [

@@ -1,0 +1,89 @@
+import { ResourceAllocationProfound } from '@/components/compare/profound/resource-allocation-profound';
+import { HeroComparisonProfound } from '@/components/compare/profound/hero-comparison-profound';
+import { ComparisonSectionProfound } from '@/components/compare/profound/comparison-section-profound';
+import { ComprehensiveSectionProfound } from '@/components/compare/profound/comprehensive-section-profound';
+import { FeaturesProfound } from '@/components/compare/profound/features-profound';
+import { FaqProfound } from '@/components/compare/profound/faq-profound';
+import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
+import { HeroCta } from '@/components/marketing/hero-cta';
+import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/schema';
+import { getBlogPostsBySlugs } from '@/lib/datocms';
+import type { Metadata } from 'next';
+import React from 'react';
+
+export const metadata: Metadata = {
+  title: 'Analyze AI vs. Profound: Feature Comparison',
+  description: 'Compare how Analyze AI and Profound impact visibility, traffic, and conversions across AI engines. Discover which tool gives you prompt-level brand monitoring, source-level citation analysis, and a concrete plan to improve your AI visibility.',
+  alternates: {
+    canonical: '/compare/analyze-vs-profound',
+  },
+  openGraph: {
+    type: 'website',
+    url: '/compare/analyze-vs-profound',
+    images: [{
+      url: 'https://www.tryanalyze.ai/AI%20Referral%20Traffic.png',
+      width: 1920,
+      height: 1080,
+      alt: 'AI Referral Traffic Analytics Dashboard',
+    }],
+  },
+};
+
+const AnalyzeVsProfoundPage = async () => {
+  // Fetch the specific blog posts for the resources section
+  const resourcePosts = await getBlogPostsBySlugs([
+    'outrank-competitors-in-ai-search',
+    'how-to-rank-on-chatgpt',
+    'how-to-rank-on-perplexity'
+  ]);
+
+  // Generate service schema
+  const serviceSchema = generateServiceSchema({
+    name: "Analyze AI vs Profound Comparison",
+    description: "Compare Analyze AI and Profound for AI search visibility tracking. See why Analyze AI offers superior AI-first analytics beyond traditional analysis tools.",
+    url: "https://www.tryanalyze.ai/compare/analyze-vs-profound",
+    category: "Analytics Software",
+    features: [
+      "AI Search Visibility Tracking",
+      "AI Traffic Attribution", 
+      "Competitor Analysis in AI",
+      "Real-time AI Monitoring",
+      "Citation Source Analysis",
+      "AI Performance Metrics"
+    ]
+  });
+
+  return (
+    <main className="bg-gray-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', href: '/' },
+            { name: 'Compare', href: '/compare/analyze-vs-profound' },
+            { name: 'Analyze vs Profound', href: '/compare/analyze-vs-profound' },
+          ]))
+        }}
+      />
+      
+      <HeroComparisonProfound />
+      <ComparisonSectionProfound />
+      <ComprehensiveSectionProfound />
+      <FeaturesProfound />
+      <ResourceAllocationProfound />
+      
+      <ResourcesUseCases posts={resourcePosts} />
+      
+      <FaqProfound />
+      <HeroCta />
+    </main>
+  );
+};
+
+export default AnalyzeVsProfoundPage;
