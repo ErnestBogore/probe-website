@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SchemaImage as Image } from "@/components/ui/schema-image";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";

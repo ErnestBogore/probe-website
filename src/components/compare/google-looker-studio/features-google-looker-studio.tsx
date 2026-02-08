@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const featuresData = [
@@ -77,10 +78,14 @@ export const FeaturesGoogleLookerStudio = () => {
                   {feature.description}
                 </p>
               </div>
-              <div className="md:col-span-3 aspect-[16/9]">
-                <img
+              <div className="md:col-span-3 aspect-[16/9] relative">
+                <Image
                   src={feature.image}
                   alt={feature.alt}
+                  width={1200}
+                  height={675}
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, 60vw"
                   className="w-full h-full object-contain object-center"
                 />
               </div>

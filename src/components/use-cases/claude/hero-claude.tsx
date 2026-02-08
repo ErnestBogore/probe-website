@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SchemaImage as Image } from "@/components/ui/schema-image";
 import Link from "next/link";
 
 import {
@@ -114,9 +114,9 @@ export const HeroClaude = () => {
               alt="Claude Analytics Dashboard - 3D Interactive View"
               width={1200}
               height={800}
-              quality={100}
+              quality={90}
               priority
-              unoptimized
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
               className="w-full max-w-5xl h-auto transition-all duration-500 ease-out transform-gpu mx-auto"
               style={{
                 transformStyle: 'preserve-3d',

@@ -4,7 +4,7 @@ import { ResourceAllocationImprove } from '@/components/features/improve/resourc
 import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { FaqFeatures } from '@/components/features/faq-features';
 import { HeroCta } from '@/components/marketing/hero-cta';
-import { generateServiceSchema } from '@/lib/schema';
+import { generateSoftwareApplicationSchema, generateFAQPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -106,26 +106,45 @@ const AIImproveToolPage = async () => {
     { src: '/grok.png', alt: 'Grok Logo', className: 'top-[5%] right-[10%] md:right-[15%]' },
   ];
 
-  // Generate service schema
-  const serviceSchema = generateServiceSchema({
-    name: "AI Content Improvement Tool",
-    description: "Improve your AI search performance with data-driven insights. Get actionable recommendations to optimize content and increase visibility across AI answer engines.",
+  // Generate structured data
+  const softwareSchema = generateSoftwareApplicationSchema({
+    name: "Analyze AI — Improve",
+    description: "Find high-intent prompts you're losing, see why competitors win them, and get a prioritized action plan to win them back.",
     url: "https://www.tryanalyze.ai/features/improve",
-    category: "Content Optimization Tool",
-    features: [
+    applicationCategory: "BusinessApplication",
+    offers: { price: "0", priceCurrency: "USD", url: "https://www.tryanalyze.ai/pricing" },
+    featureList: [
       "Performance Gap Analysis",
-      "Content Optimization Recommendations", 
+      "Content Optimization Recommendations",
       "Competitive Improvement Strategies",
-      "AI Algorithm Alignment"
+      "Prompt Win Tracking"
     ]
   });
+  const faqSchema = generateFAQPageSchema(faqItems.map(item => ({ question: item.question, answer: item.answer })));
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Features', href: '/features/improve' },
+    { name: 'Improve', href: '/features/improve' },
+  ]);
 
   return (
     <main className="bg-gray-100">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema)
+          __html: JSON.stringify(softwareSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
         }}
       />
       <HeroImprove />

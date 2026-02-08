@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { DashedLine } from "../dashed-line";
 import { cn } from "@/lib/utils";
 
@@ -189,11 +190,15 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
         
         <div className="flex-shrink-0 w-full md:w-auto md:max-w-sm">
           <div className="image-container">
-            {item.images.map((image: { src: string; alt: string }, j: number) => (
+            {item.images.map((image: { src: string; alt: string; width?: number; height?: number }, j: number) => (
               <div key={j} className="flex-shrink-0 relative">
                 <div className="rounded-lg p-4" style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}>
-                  <img
+                  <Image
                     src={image.src}
+                    width={image.width || 495}
+                    height={image.height || 186}
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     alt={image.alt}
                     className="object-contain object-center w-full h-auto max-w-full"
                   />
@@ -242,14 +247,18 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
           <div className="flex flex-col gap-5">
             {/* First row - right aligned */}
             <div className="flex translate-x-4 justify-end gap-5">
-              {item.images.slice(0, 4).map((image: { src: string; alt: string }, j: number) => (
+              {item.images.slice(0, 4).map((image: { src: string; alt: string; width?: number; height?: number }, j: number) => (
                 <div
                   key={j}
                   className="grid aspect-square size-16 place-items-center rounded-2xl p-2 lg:size-20"
                   style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}
                 >
-                  <img
+                  <Image
                     src={image.src}
+                    width={image.width || 495}
+                    height={image.height || 186}
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     alt={image.alt}
                     className="object-contain object-left-top"
                   />
@@ -259,14 +268,18 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
             </div>
             {/* Second row - left aligned */}
             <div className="flex -translate-x-4 gap-5">
-              {item.images.slice(4).map((image: { src: string; alt: string }, j: number) => (
+              {item.images.slice(4).map((image: { src: string; alt: string; width?: number; height?: number }, j: number) => (
                 <div
                   key={j}
                   className="grid aspect-square size-16 place-items-center rounded-2xl lg:size-20"
                   style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}
                 >
-                  <img
+                  <Image
                     src={image.src}
+                    width={image.width || 495}
+                    height={image.height || 186}
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     alt={image.alt}
                     className="object-contain object-left-top"
                   />
@@ -278,10 +291,14 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
         </div>
       ) : (
         <div className="image-container flex flex-col gap-4 rounded-lg p-4" style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}>
-          {item.images.map((image: { src: string; alt: string }, j: number) => (
+          {item.images.map((image: { src: string; alt: string; width?: number; height?: number }, j: number) => (
             <div key={j} className="flex-shrink-0">
-              <img
+              <Image
                 src={image.src}
+                width={image.width || 495}
+                height={image.height || 186}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, 40vw"
                 alt={image.alt}
                 className="object-contain object-left-top w-full h-auto max-w-full"
               />

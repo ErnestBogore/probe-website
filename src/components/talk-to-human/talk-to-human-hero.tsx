@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { SchemaImage as Image } from "@/components/ui/schema-image";
 
 const aiEngineLogos = [
   { src: '/anthropic.png', alt: 'Anthropic Claude' },

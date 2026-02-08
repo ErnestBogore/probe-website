@@ -6,7 +6,7 @@ import { FeaturesSurfer } from '@/components/compare/surfer/features-surfer';
 import { FaqSurfer } from '@/components/compare/surfer/faq-surfer';
 import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
-import { generateServiceSchema } from '@/lib/schema';
+import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -58,6 +58,16 @@ const AnalyzeVsSurferPage = async () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', href: '/' },
+            { name: 'Compare', href: '/compare/analyze-vs-surfer' },
+            { name: 'Analyze vs Surfer', href: '/compare/analyze-vs-surfer' },
+          ]))
         }}
       />
       

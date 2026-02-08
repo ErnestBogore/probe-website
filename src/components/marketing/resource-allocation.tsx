@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { DashedLine } from "../dashed-line";
 
 import { cn } from "@/lib/utils";
@@ -156,9 +157,13 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
             {item.images.map((image, j) => (
               <div key={j} className="flex-shrink-0 relative">
                 <div className="rounded-lg p-4" style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}>
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.alt}
+                    width={image.width || 495}
+                    height={image.height || 186}
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-contain object-center w-full h-auto max-w-full"
                   />
                 </div>
@@ -210,9 +215,12 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
                   className="grid aspect-square size-16 place-items-center rounded-2xl p-2 lg:size-20"
                   style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}
                 >
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.alt}
+                    width={image.width || 80}
+                    height={image.height || 80}
+                    quality={85}
                     className="object-contain object-left-top"
                   />
                   <div className="from-muted/80 absolute inset-y-0 right-0 z-10 w-16 bg-linear-to-l to-transparent" />
@@ -227,9 +235,12 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
                   className="grid aspect-square size-16 place-items-center rounded-2xl lg:size-20"
                   style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}
                 >
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.alt}
+                    width={image.width || 80}
+                    height={image.height || 80}
+                    quality={85}
                     className="object-contain object-left-top"
                   />
                   <div className="from-muted absolute inset-y-0 bottom-0 left-0 z-10 w-14 bg-linear-to-r to-transparent" />
@@ -242,9 +253,13 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
         <div className="image-container flex flex-col gap-4 rounded-lg p-4" style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}>
           {item.images.map((image, j) => (
             <div key={j} className="flex-shrink-0">
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
+                width={image.width || 495}
+                height={image.height || 186}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-contain object-left-top w-full h-auto max-w-full"
               />
             </div>

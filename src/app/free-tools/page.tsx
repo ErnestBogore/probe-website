@@ -13,6 +13,7 @@ import { getAllBusinessNameGeneratorsPt } from '@/lib/ai-tools/i18n/business-nam
 import { getAllBusinessNameGeneratorsTr } from '@/lib/ai-tools/i18n/business-name-generators-config.tr';
 import { getAllBusinessNameGeneratorsZh } from '@/lib/ai-tools/i18n/business-name-generators-config.zh';
 import { DashedLine } from '@/components/dashed-line';
+import { generateItemListSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { Button } from '@/components/ui/button';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { 
@@ -210,8 +211,36 @@ export default function FreeToolsPage() {
     { lang: 'zh', langCode: 'ZH', flag: '🇨🇳', title: zhGen.title, description: zhGen.metaDescription, url: `/free-tools/zh/business-name-generator/${zhGen.slug}` },
   ];
 
+  const itemListSchema = generateItemListSchema({
+    name: 'Free AI Writing Tools',
+    description: 'Access our collection of free AI writing tools including paragraph generators, paraphrasers, summarizers, grammar checkers, and more.',
+    url: 'https://www.tryanalyze.ai/free-tools',
+    items: allTools.map(tool => ({
+      name: tool.name,
+      url: `https://www.tryanalyze.ai/free-tools/${tool.slug}`,
+      description: tool.description,
+    })),
+    itemListOrder: 'unordered',
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Free Tools', href: '/free-tools' },
+  ]);
+
   return (
     <main className="bg-gray-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(itemListSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
+        }}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 lg:pt-36 lg:pb-20 overflow-hidden">
         {/* Grain texture overlay */}

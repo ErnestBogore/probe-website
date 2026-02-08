@@ -6,7 +6,7 @@ import { ModernFeaturesGoogleAIMode } from '@/components/use-cases/google-ai-mod
 import { ProblemSolutionGoogleAIMode } from '@/components/use-cases/google-ai-mode/problem-solution-google-ai-mode';
 import { ResourceAllocationGoogleAIMode } from '@/components/use-cases/google-ai-mode/resource-allocation-google-ai-mode';
 import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
-import { generateServiceSchema } from '@/lib/schema';
+import { generateServiceSchema, generateFAQPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -115,6 +115,22 @@ const GoogleAiModeUseCasePage = async () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQPageSchema(faqItems.map(item => ({ question: item.question, answer: item.answer }))))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', href: '/' },
+            { name: 'Use Cases', href: '/use-cases/google-ai-mode' },
+            { name: 'Google AI Mode', href: '/use-cases/google-ai-mode' },
+          ]))
         }}
       />
       

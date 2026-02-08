@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SchemaImage as Image } from "@/components/ui/schema-image";
 import React from "react";
 import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 

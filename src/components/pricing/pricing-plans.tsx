@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Check, BarChart3, Search, FileText, Users, BookOpen, Monitor } from "lucide-react";
-import Image from "next/image";
+import { SchemaImage as Image } from "@/components/ui/schema-image";
 
 const aiEngineLogos = [
   { src: '/anthropic.png', alt: 'Anthropic Claude' },

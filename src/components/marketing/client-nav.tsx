@@ -124,7 +124,7 @@ export const ClientNav = () => {
       </div>
       <Sheet>
         <SheetTrigger asChild className="lg:hidden">
-          <Button variant="outline" size="icon">
+          <Button variant="outline" size="icon" aria-label="Open navigation menu">
             <MenuIcon className="h-4 w-4" />
           </Button>
         </SheetTrigger>

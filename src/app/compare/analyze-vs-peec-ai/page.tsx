@@ -6,7 +6,7 @@ import { FeaturesPeecAi } from '@/components/compare/peec-ai/features-peec-ai';
 import { FaqPeecAi } from '@/components/compare/peec-ai/faq-peec-ai';
 import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
-import { generateServiceSchema } from '@/lib/schema';
+import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -58,6 +58,16 @@ const AnalyzeVsPeecAiPage = async () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', href: '/' },
+            { name: 'Compare', href: '/compare/analyze-vs-peec-ai' },
+            { name: 'Analyze vs Peec AI', href: '/compare/analyze-vs-peec-ai' },
+          ]))
         }}
       />
       

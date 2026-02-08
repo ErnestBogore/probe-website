@@ -6,7 +6,7 @@ import { ModernFeaturesClaude } from '@/components/use-cases/claude/modern-featu
 import { ProblemSolutionClaude } from '@/components/use-cases/claude/problem-solution-claude';
 import { ResourceAllocationClaude } from '@/components/use-cases/claude/resource-allocation-claude';
 import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
-import { generateServiceSchema } from '@/lib/schema';
+import { generateServiceSchema, generateFAQPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -115,6 +115,22 @@ const ClaudeUseCasePage = async () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQPageSchema(faqItems.map(item => ({ question: item.question, answer: item.answer }))))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', href: '/' },
+            { name: 'Use Cases', href: '/use-cases/claude' },
+            { name: 'Claude', href: '/use-cases/claude' },
+          ]))
         }}
       />
       

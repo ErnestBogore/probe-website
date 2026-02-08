@@ -13,7 +13,7 @@ export const Manifesto = () => {
         </div>
         
         <div className="text-center mb-12">
-          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">
+          <h2 className="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-4">
             OUR MANIFESTO
           </h2>
         </div>

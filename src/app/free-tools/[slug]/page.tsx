@@ -4,30 +4,7 @@ import { getToolBySlug, getAllTools } from '@/lib/ai-tools/tools-config';
 import { generateToolHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { ToolPage } from '@/components/ai-tools/ToolPage';
 import { computeRelatedTools } from '@/lib/ai-tools/related-tools-utils';
-
-function generateToolFAQSchema(tool: { title: string; slug: string; faqs: { question: string; answer: string }[] }) {
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "name": tool.title,
-        "url": `https://www.tryanalyze.ai/free-tools/${tool.slug}`
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": tool.faqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
-          }
-        }))
-      }
-    ]
-  };
-}
+import { generateWebApplicationSchema, generateFAQPageSchema, generateBreadcrumbSchema, generateHowToSchema } from '@/lib/schema';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -88,14 +65,58 @@ export default async function DynamicToolPage({ params }: PageProps) {
     notFound();
   }
 
-  const structuredData = generateToolFAQSchema(tool);
+  const webAppSchema = generateWebApplicationSchema({
+    name: tool.title,
+    description: tool.metaDescription,
+    url: `https://www.tryanalyze.ai/free-tools/${tool.slug}`,
+    applicationCategory: 'BusinessApplication',
+  });
+  const faqSchema = generateFAQPageSchema(tool.faqs);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Free Tools', href: '/free-tools' },
+    { name: tool.name, href: `/free-tools/${tool.slug}` },
+  ]);
+  const howToSchema = generateHowToSchema({
+    name: `How to Use the ${tool.name}`,
+    description: tool.description,
+    url: `https://www.tryanalyze.ai/free-tools/${tool.slug}`,
+    totalTime: 'PT2M',
+    steps: [
+      { name: 'Enter your topic or prompt', text: `Type your content into the input field. ${tool.inputPlaceholder ? `For example: "${tool.inputPlaceholder}"` : ''}` },
+      ...tool.options.map(opt => ({
+        name: `Choose your ${opt.label.toLowerCase()}`,
+        text: `Select from available options: ${opt.choices.join(', ')}.`
+      })),
+      { name: `Click "${tool.buttonText}"`, text: `Click the "${tool.buttonText}" button to generate your content using AI.` },
+      { name: 'Review and copy your result', text: 'Review the generated content and copy it to use wherever you need.' },
+    ],
+  });
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData)
+          __html: JSON.stringify(webAppSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(howToSchema)
         }}
       />
       <ToolPage tool={tool} relatedTools={computeRelatedTools(getAllTools(), slug)} />

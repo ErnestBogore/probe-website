@@ -20,7 +20,7 @@ import { TableOfContents } from '@/components/table-of-contents';
 import { Table } from '../../../components/blocks/Table';
 import { Takeaway } from '../../../components/blocks/Takeaway';
 import { generateAnchorId } from '@/lib/anchor-utils';
-import { generateBlogPostSchema } from '@/lib/schema';
+import { generateBlogPostSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 interface CaseStudyPageProps {
   params: Promise<{
@@ -272,6 +272,16 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateBreadcrumbSchema([
+              { name: 'Home', href: '/' },
+              { name: 'Case Studies', href: '/case-study' },
+              { name: blogPost.title, href: `/case-study/${blogPost.slug}` },
+            ]))
           }}
         />
 

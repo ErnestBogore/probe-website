@@ -15,7 +15,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import { SchemaImage as Image } from "@/components/ui/schema-image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";

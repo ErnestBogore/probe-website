@@ -22,7 +22,7 @@ import { TableOfContentsHtml } from '@/components/table-of-contents-html';
 import { Table } from '../../../components/blocks/Table';
 import { Takeaway } from '../../../components/blocks/Takeaway';
 import { generateAnchorId } from '@/lib/anchor-utils';
-import { generateBlogPostSchema } from '@/lib/schema';
+import { generateBlogPostSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { BlogPost } from '@/types/blog';
 import { BlogCta } from '@/components/marketing/blog-cta';
 import { BlogSidebarCta } from '@/components/blog/blog-sidebar-cta';
@@ -411,6 +411,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateBreadcrumbSchema([
+              { name: 'Home', href: '/' },
+              { name: 'Blog', href: '/blog' },
+              { name: blogPost.title, href: `/blog/${blogPost.slug}` },
+            ]))
           }}
         />
 

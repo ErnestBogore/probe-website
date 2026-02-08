@@ -8,6 +8,7 @@
 import { getPaginatedBlogPosts } from "@/lib/datocms";
 import { Blog7 } from "@/components/blog7";
 import { BlogPost } from '@/types/blog';
+import { generateItemListSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 interface BlogPageProps {
   searchParams: Promise<{ page?: string }>;
@@ -52,7 +53,36 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     ? postsForComponent.filter(post => !post.url.includes('best-tools-for-tracking-brand-visibility-ai-search'))
     : postsForComponent;
 
+  const itemListSchema = generateItemListSchema({
+    name: 'Analyze AI Blog',
+    description: 'Insights, analysis, and thought leadership in AI search analytics from the Analyze AI team.',
+    url: 'https://www.tryanalyze.ai/blog',
+    items: postsForComponent.map(post => ({
+      name: post.title,
+      url: `https://www.tryanalyze.ai${post.url}`,
+      ...(post.image && { image: post.image }),
+    })),
+    itemListOrder: 'descending',
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Blog', href: '/blog' },
+  ]);
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(itemListSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
+        }}
+      />
     <Blog7 
       posts={regularPosts}
       title="Analyze AI Blog"
@@ -67,6 +97,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         hasPrevPage: pagination.hasPrevPage,
       }}
     />
+    </>
   );
 }
 

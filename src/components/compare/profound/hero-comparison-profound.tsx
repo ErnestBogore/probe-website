@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
+import { SchemaImage as Image } from "@/components/ui/schema-image";
 
 export const HeroComparisonProfound = () => {
   const scrollToComparison = () => {

@@ -6,7 +6,7 @@ import { ModernFeaturesChatGPT } from '@/components/use-cases/chatgpt/modern-fea
 import { ProblemSolutionChatGPT } from '@/components/use-cases/chatgpt/problem-solution-chatgpt';
 import { ResourceAllocationChatGPT } from '@/components/use-cases/chatgpt/resource-allocation-chatgpt';
 import { ResourcesChatGPT } from '@/components/use-cases/chatgpt/resources-chatgpt';
-import { generateServiceSchema } from '@/lib/schema';
+import { generateServiceSchema, generateFAQPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -115,6 +115,22 @@ const ChatGPTUseCasePage = async () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQPageSchema(faqItems.map(item => ({ question: item.question, answer: item.answer }))))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', href: '/' },
+            { name: 'Use Cases', href: '/use-cases/chatgpt' },
+            { name: 'ChatGPT', href: '/use-cases/chatgpt' },
+          ]))
         }}
       />
       

@@ -83,7 +83,7 @@ export const Testimonials = () => {
           </blockquote>
           <div>
             <p className="text-base font-semibold text-gray-900">Justin Ahinon</p>
-            <p className="text-sm text-gray-500">Owner, What Is That Movie</p>
+            <p className="text-sm text-gray-700">Owner, What Is That Movie</p>
           </div>
         </div>
       </div>

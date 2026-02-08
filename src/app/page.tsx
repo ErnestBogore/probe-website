@@ -16,7 +16,7 @@ import { HeroCta } from "@/components/marketing/hero-cta";
 import { ResourceAllocationHomepage } from "@/components/marketing/resource-allocation-homepage";
 import { ResourcesUseCases } from "@/components/use-cases/resources-use-cases";
 import { FaqHomepage } from "@/components/marketing/faq-homepage";
-import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/schema';
+import { generateFAQPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 
 export const metadata: Metadata = {
@@ -45,18 +45,6 @@ export default async function Home() {
     'how-to-rank-on-chatgpt',
     'how-to-rank-on-perplexity'
   ]);
-  // Generate combined structured data for homepage
-  const organizationSchema = generateOrganizationSchema();
-  const websiteSchema = generateWebsiteSchema();
-  
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      { ...organizationSchema, "@context": undefined },
-      { ...websiteSchema, "@context": undefined }
-    ]
-  };
-
   // Homepage FAQ items
   const homepageFaqItems = [
     {
@@ -141,7 +129,13 @@ export default async function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData)
+          __html: JSON.stringify(generateFAQPageSchema(homepageFaqItems.map(item => ({ question: item.question, answer: item.answer }))))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([{ name: 'Home', href: '/' }]))
         }}
       />
       <Hero />

@@ -6,7 +6,7 @@ import { FeaturesGoogleLookerStudio } from '@/components/compare/google-looker-s
 import { FaqGoogleLookerStudio } from '@/components/compare/google-looker-studio/faq-google-looker-studio';
 import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
-import { generateServiceSchema } from '@/lib/schema';
+import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -58,6 +58,16 @@ const AnalyzeVsGoogleLookerStudioPage = async () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', href: '/' },
+            { name: 'Compare', href: '/compare/analyze-vs-google-looker-studio' },
+            { name: 'Analyze vs Google Looker Studio', href: '/compare/analyze-vs-google-looker-studio' },
+          ]))
         }}
       />
       

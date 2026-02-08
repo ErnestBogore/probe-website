@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { DashedLine } from "../../dashed-line";
 import { ArrowRight } from "lucide-react";
@@ -74,9 +75,13 @@ export const ModernFeaturesDeepseek = () => {
                           className="relative h-72 md:h-80 lg:h-96 xl:h-[26rem] mb-6 overflow-visible rounded-3xl cursor-pointer bg-white bg-gradient-to-b from-pink-50/70 via-white/70 to-transparent ring-1 ring-pink-100/50 p-6 flex items-center justify-center"
                           style={{ perspective: '1000px' }}
                         >
-                          <img
+                          <Image
                             src={item.image}
                             alt={`${item.title} interface`}
+                            width={504}
+                            height={336}
+                            quality={85}
+                            sizes="(max-width: 768px) 100vw, 40vw"
                             className="max-w-full max-h-full object-contain transition-all duration-500 ease-out transform-gpu drop-shadow-2xl z-10 relative"
                             style={{
                               transformStyle: 'preserve-3d',
@@ -133,9 +138,13 @@ export const ModernFeaturesDeepseek = () => {
                           className="relative h-72 md:h-80 lg:h-96 xl:h-[26rem] mb-6 overflow-visible rounded-3xl cursor-pointer bg-white bg-gradient-to-b from-pink-50/70 via-white/70 to-transparent ring-1 ring-pink-100/50 p-6 flex items-center justify-center"
                           style={{ perspective: '1000px' }}
                         >
-                          <img
+                          <Image
                             src={item.image}
                             alt={`${item.title} interface`}
+                            width={504}
+                            height={336}
+                            quality={85}
+                            sizes="(max-width: 768px) 100vw, 40vw"
                             className="max-w-full max-h-full object-contain transition-all duration-500 ease-out transform-gpu drop-shadow-2xl z-10 relative"
                             style={{
                               transformStyle: 'preserve-3d',
@@ -194,9 +203,13 @@ export const ModernFeaturesDeepseek = () => {
                           className="relative h-56 mb-4 overflow-visible rounded-3xl cursor-pointer bg-white bg-gradient-to-b from-pink-50/70 via-white/70 to-transparent ring-1 ring-pink-100/50 p-4 flex items-center justify-center"
                           style={{ perspective: '1000px' }}
                         >
-                          <img
+                          <Image
                             src={item.image}
                             alt={`${item.title} interface`}
+                            width={504}
+                            height={336}
+                            quality={85}
+                            sizes="(max-width: 768px) 100vw, 40vw"
                             className="max-w-full max-h-full object-contain transition-all duration-500 ease-out transform-gpu drop-shadow-2xl z-10 relative"
                             style={{
                               transformStyle: 'preserve-3d',

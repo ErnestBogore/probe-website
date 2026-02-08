@@ -4,7 +4,7 @@ import { ResourceAllocationGovern } from '@/components/features/govern/resource-
 import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { FaqFeatures } from '@/components/features/faq-features';
 import { HeroCta } from '@/components/marketing/hero-cta';
-import { generateServiceSchema } from '@/lib/schema';
+import { generateSoftwareApplicationSchema, generateFAQPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -105,26 +105,45 @@ const BrandSentimentAnalysisPage = async () => {
     { src: '/grok.png', alt: 'Grok Logo', className: 'top-[5%] right-[10%] md:right-[15%]' },
   ];
 
-  // Generate service schema
-  const serviceSchema = generateServiceSchema({
-    name: "AI Brand Sentiment Analysis Tool",
-    description: "Understand how AI perceives your brand. Track your brand sentiment across all major LLMs to identify positive, neutral, or negative perceptions and protect your reputation.",
+  // Generate structured data
+  const softwareSchema = generateSoftwareApplicationSchema({
+    name: "Analyze AI — Govern",
+    description: "Monitor how AI represents your brand. Catch risky claims, negative shifts in sentiment, and channel drops early.",
     url: "https://www.tryanalyze.ai/features/govern",
-    category: "Brand Monitoring Software",
-    features: [
+    applicationCategory: "BusinessApplication",
+    offers: { price: "0", priceCurrency: "USD", url: "https://www.tryanalyze.ai/pricing" },
+    featureList: [
       "Cross-LLM Sentiment Tracking",
-      "Detect Misinformation & Misattributions",
-      "Analyze AI Sentiment Trends Over Time",
-      "Protect Your Brand Reputation"
+      "Misinformation Detection",
+      "Narrative Drift Monitoring",
+      "Brand Reputation Protection"
     ]
   });
+  const faqSchema = generateFAQPageSchema(faqItems.map(item => ({ question: item.question, answer: item.answer })));
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Features', href: '/features/govern' },
+    { name: 'Govern', href: '/features/govern' },
+  ]);
 
   return (
     <main className="bg-gray-100">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema)
+          __html: JSON.stringify(softwareSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
         }}
       />
       <HeroGovern />

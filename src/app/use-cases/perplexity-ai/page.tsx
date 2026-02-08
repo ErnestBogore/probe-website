@@ -6,7 +6,7 @@ import { ModernFeaturesPerplexityAI } from '@/components/use-cases/perplexity-ai
 import { ProblemSolutionPerplexityAI } from '@/components/use-cases/perplexity-ai/problem-solution-perplexity-ai';
 import { ResourceAllocationPerplexityAI } from '@/components/use-cases/perplexity-ai/resource-allocation-perplexity-ai';
 import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
-import { generateServiceSchema } from '@/lib/schema';
+import { generateServiceSchema, generateFAQPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -116,6 +116,22 @@ const PerplexityAIUseCasePage = async () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQPageSchema(faqItems.map(item => ({ question: item.question, answer: item.answer }))))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', href: '/' },
+            { name: 'Use Cases', href: '/use-cases/perplexity-ai' },
+            { name: 'Perplexity AI', href: '/use-cases/perplexity-ai' },
+          ]))
         }}
       />
       

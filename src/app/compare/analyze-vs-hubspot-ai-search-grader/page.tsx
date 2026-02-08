@@ -6,7 +6,7 @@ import { FeaturesHubspotAiSearchGrader } from '@/components/compare/hubspot-ai-s
 import { FaqHubspotAiSearchGrader } from '@/components/compare/hubspot-ai-search-grader/faq-hubspot-ai-search-grader';
 import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { HeroCta } from '@/components/marketing/hero-cta';
-import { generateServiceSchema } from '@/lib/schema';
+import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -58,6 +58,16 @@ const AnalyzeVsHubspotAiSearchGraderPage = async () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', href: '/' },
+            { name: 'Compare', href: '/compare/analyze-vs-hubspot-ai-search-grader' },
+            { name: 'Analyze vs HubSpot AI Search Grader', href: '/compare/analyze-vs-hubspot-ai-search-grader' },
+          ]))
         }}
       />
       

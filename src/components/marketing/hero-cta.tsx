@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 export const HeroCta = () => {
@@ -59,22 +60,23 @@ export const HeroCta = () => {
                 className="relative w-full group cursor-pointer"
                 style={{ perspective: '1000px' }}
               >
-                <img
+                <Image
                   src="/CTA Image.png"
                   alt="Analyze AI Dashboard - AI Search Analytics Platform"
+                  width={1070}
+                  height={832}
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-auto mx-auto"
                   style={{
                     transformStyle: 'preserve-3d',
                     transform: 'rotateX(0deg) rotateY(0deg) scale(1)',
                     transition: 'transform 0.3s ease-out',
-                    imageRendering: 'crisp-edges'
                   }}
                   onMouseEnter={(e) => {
-                    console.log('Mouse entered image');
                     e.currentTarget.style.transform = 'rotateX(-2deg) rotateY(3deg) scale(1.02)';
                   }}
                   onMouseLeave={(e) => {
-                    console.log('Mouse left image');
                     e.currentTarget.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
                   }}
                   onMouseMove={(e) => {

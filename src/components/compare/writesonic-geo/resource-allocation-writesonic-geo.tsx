@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { DashedLine } from "../../dashed-line";
 import { cn } from "@/lib/utils";
 
@@ -84,7 +85,7 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
             {item.images.map((image, j) => (
               <div key={j} className="flex-shrink-0 relative">
                 <div className="rounded-lg p-4" style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}>
-                  <img src={image.src} alt={image.alt} className="object-contain object-center w-full h-auto max-w-full" />
+                  <Image src={image.src} alt={image.alt} width={image.width || 495} height={image.height || 186} quality={85} sizes="(max-width: 768px) 100vw, 40vw" className="object-contain object-center w-full h-auto max-w-full" />
                 </div>
               </div>
             ))}
@@ -110,7 +111,7 @@ const Item = ({ item, isLast, className, isHorizontal }: ItemProps) => {
       <div className="image-container flex flex-col gap-4 rounded-lg p-4" style={{ background: 'linear-gradient(135deg, rgba(136, 88, 237, 0.1), rgba(136, 88, 237, 0.05))' }}>
         {item.images.map((image, j) => (
           <div key={j} className="flex-shrink-0">
-            <img src={image.src} alt={image.alt} className="object-contain object-left-top w-full h-auto max-w-full" />
+            <Image src={image.src} alt={image.alt} width={image.width || 495} height={image.height || 186} quality={85} sizes="(max-width: 768px) 100vw, 40vw" className="object-contain object-left-top w-full h-auto max-w-full" />
           </div>
         ))}
       </div>

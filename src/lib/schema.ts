@@ -37,7 +37,29 @@ function generateAuthorSchema(author?: Author) {
     "@type": "Person",
     "name": author.name,
     ...(author.image && { "image": author.image.url }),
-    ...(author.title && { "jobTitle": author.title })
+    ...(author.title && { "jobTitle": author.title }),
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Analyze AI",
+      "url": "https://www.tryanalyze.ai"
+    }
+  };
+}
+
+function generateStandalonePersonSchema(author?: Author): Omit<SchemaType, "@context"> | null {
+  if (!author) return null;
+  
+  return {
+    "@type": "Person",
+    "@id": `https://www.tryanalyze.ai/#/person/${author.name.toLowerCase().replace(/\s+/g, '-')}`,
+    "name": author.name,
+    ...(author.image && { "image": author.image.url }),
+    ...(author.title && { "jobTitle": author.title }),
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Analyze AI",
+      "url": "https://www.tryanalyze.ai"
+    }
   };
 }
 
@@ -62,7 +84,33 @@ function generateMediaSchema(media?: Image) {
     ...(media.width && { "width": media.width }),
     ...(media.height && { "height": media.height }),
     ...(media.alt && { "caption": media.alt }),
-    "representativeOfPage": true
+    ...(media.alt && { "name": media.alt }),
+    "representativeOfPage": true,
+    "inLanguage": "en",
+    "contentUrl": media.url
+  };
+}
+
+export function generateImageObjectSchema(props: {
+  url: string;
+  width?: number;
+  height?: number;
+  caption?: string;
+  name?: string;
+  creditText?: string;
+}): SchemaType {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "url": props.url,
+    "contentUrl": props.url,
+    ...(props.width && { "width": props.width }),
+    ...(props.height && { "height": props.height }),
+    ...(props.caption && { "caption": props.caption }),
+    ...(props.name && { "name": props.name }),
+    ...(props.creditText && { "creditText": props.creditText, "copyrightHolder": { "@type": "Organization", "name": ORGANIZATION_NAME } }),
+    "representativeOfPage": true,
+    "inLanguage": "en"
   };
 }
 
@@ -186,6 +234,37 @@ function extractTextFromNode(node: StructuredTextNode): string {
   return '';
 }
 
+function estimateWordCount(post: BlogPost): number {
+  let text = '';
+  if (post.englishBodyHtml) {
+    text = post.englishBodyHtml.replace(/<[^>]*>/g, ' ');
+  } else if (post.body?.value) {
+    const extractAll = (node: unknown): string => {
+      if (!node || typeof node !== 'object') return '';
+      const n = node as Record<string, unknown>;
+      if (n.value && typeof n.value === 'string') return n.value + ' ';
+      if (Array.isArray(n.children)) return n.children.map(extractAll).join('');
+      if (n.document && typeof n.document === 'object') {
+        const doc = n.document as Record<string, unknown>;
+        if (Array.isArray(doc.children)) return doc.children.map(extractAll).join('');
+      }
+      return '';
+    };
+    text = extractAll(post.body.value);
+  }
+  return text.split(/\s+/).filter(w => w.length > 0).length;
+}
+
+function extractArticleSection(tags?: { name: string; slug: string }[]): string | undefined {
+  if (!tags?.length) return undefined;
+  return tags[0].name;
+}
+
+function extractKeywords(tags?: { name: string; slug: string }[]): string | undefined {
+  if (!tags?.length) return undefined;
+  return tags.map(t => t.name).join(', ');
+}
+
 export function generateBlogPostSchema(post: BlogPost): SchemaType | MultiSchemaType {
   const schemas: Omit<SchemaType, "@context">[] = [];
   
@@ -193,21 +272,36 @@ export function generateBlogPostSchema(post: BlogPost): SchemaType | MultiSchema
   const publishedDate = post.publishedDate || post._publishedAt;
   const modifiedDate = post._updatedAt;
   const featuredImage = post.featuredImage || post.seo?.image;
+  const wordCount = estimateWordCount(post);
+  const articleSection = extractArticleSection(post.tags);
+  const keywords = extractKeywords(post.tags);
+  
+  const authorRef = post.author
+    ? `https://www.tryanalyze.ai/#/person/${post.author.name.toLowerCase().replace(/\s+/g, '-')}`
+    : undefined;
   
   const blogSchema: Omit<SchemaType, "@context"> = {
     "@type": "BlogPosting",
     "headline": post.title,
     "url": `https://www.tryanalyze.ai/blog/${post.slug}`,
-    "author": generateAuthorSchema(post.author),
+    "author": authorRef ? { "@type": "Person", "@id": authorRef } : generateAuthorSchema(post.author),
     "publisher": generatePublisherSchema(),
     ...(publishedDate && { "datePublished": publishedDate }),
     ...(modifiedDate && { "dateModified": modifiedDate }),
     ...(featuredImage && { "image": generateMediaSchema(featuredImage) }),
     ...(post.seo?.description && { "description": post.seo.description }),
+    ...(wordCount > 0 && { "wordCount": wordCount }),
+    ...(articleSection && { "articleSection": articleSection }),
+    ...(keywords && { "keywords": keywords }),
     "inLanguage": "en",
+    "isAccessibleForFree": true,
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `https://www.tryanalyze.ai/blog/${post.slug}`
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "[data-speakable]"]
     }
   };
   
@@ -217,6 +311,20 @@ export function generateBlogPostSchema(post: BlogPost): SchemaType | MultiSchema
   }
   
   schemas.push(blogSchema);
+  
+  // Add standalone Person schema for author (entity)
+  const authorPersonSchema = generateStandalonePersonSchema(post.author);
+  if (authorPersonSchema) {
+    schemas.push(authorPersonSchema);
+  }
+  
+  // Add standalone Person schema for reviewer if different from author
+  if (post.reviewer && post.reviewer.name !== post.author?.name) {
+    const reviewerPersonSchema = generateStandalonePersonSchema(post.reviewer);
+    if (reviewerPersonSchema) {
+      schemas.push(reviewerPersonSchema);
+    }
+  }
   
   // Extract and add FAQ schema if questions found in content
   if (post.body) {
@@ -229,14 +337,7 @@ export function generateBlogPostSchema(post: BlogPost): SchemaType | MultiSchema
     }
   }
   
-  // Return single schema or multi-schema with @graph
-  if (schemas.length === 1) {
-    return {
-      "@context": "https://schema.org",
-      ...schemas[0]
-    };
-  }
-  
+  // Always return @graph for blog posts (multiple schemas)
   return {
     "@context": "https://schema.org",
     "@graph": schemas
@@ -354,6 +455,217 @@ export function generateBreadcrumbSchema(items: Array<{ name: string; href: stri
       "position": index + 1,
       "name": item.name,
       "item": `${SITE_URL}${item.href}`
+    }))
+  };
+}
+
+interface SoftwareApplicationSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  applicationCategory: string;
+  operatingSystem?: string;
+  offers?: {
+    price?: string;
+    priceCurrency?: string;
+    url?: string;
+  };
+  featureList?: string[];
+}
+
+export function generateSoftwareApplicationSchema(props: SoftwareApplicationSchemaProps): SchemaType {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": props.name,
+    "description": props.description,
+    "url": props.url,
+    "applicationCategory": props.applicationCategory,
+    "operatingSystem": props.operatingSystem || "Web",
+    "provider": {
+      "@type": "Organization",
+      "name": ORGANIZATION_NAME,
+      "url": SITE_URL
+    },
+    ...(props.offers && {
+      "offers": {
+        "@type": "Offer",
+        "price": props.offers.price || "0",
+        "priceCurrency": props.offers.priceCurrency || "USD",
+        ...(props.offers.url && { "url": props.offers.url })
+      }
+    }),
+    ...(props.featureList && { "featureList": props.featureList.join(", ") })
+  };
+}
+
+interface WebApplicationSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  applicationCategory?: string;
+  inLanguage?: string;
+}
+
+export function generateWebApplicationSchema(props: WebApplicationSchemaProps): SchemaType {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": props.name,
+    "description": props.description,
+    "url": props.url,
+    "applicationCategory": props.applicationCategory || "UtilityApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    ...(props.inLanguage && { "inLanguage": props.inLanguage }),
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": ORGANIZATION_NAME,
+      "url": SITE_URL
+    }
+  };
+}
+
+interface ProductOfferSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  offers: Array<{
+    name: string;
+    price: string;
+    priceCurrency?: string;
+    description?: string;
+    url?: string;
+  }>;
+}
+
+export function generateProductSchema(props: ProductOfferSchemaProps): SchemaType {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": props.name,
+    "description": props.description,
+    "url": props.url,
+    "brand": {
+      "@type": "Brand",
+      "name": ORGANIZATION_NAME
+    },
+    "offers": props.offers.length === 1
+      ? {
+          "@type": "Offer",
+          "price": props.offers[0].price,
+          "priceCurrency": props.offers[0].priceCurrency || "USD",
+          ...(props.offers[0].description && { "description": props.offers[0].description }),
+          ...(props.offers[0].url && { "url": props.offers[0].url }),
+          "availability": "https://schema.org/InStock"
+        }
+      : {
+          "@type": "AggregateOffer",
+          "lowPrice": props.offers.reduce((min, o) => {
+            const p = parseFloat(o.price);
+            return p < min ? p : min;
+          }, Infinity).toString(),
+          "highPrice": props.offers.reduce((max, o) => {
+            const p = parseFloat(o.price);
+            return p > max ? p : max;
+          }, 0).toString(),
+          "priceCurrency": props.offers[0].priceCurrency || "USD",
+          "offerCount": props.offers.length,
+          "offers": props.offers.map(offer => ({
+            "@type": "Offer",
+            "name": offer.name,
+            "price": offer.price,
+            "priceCurrency": offer.priceCurrency || "USD",
+            ...(offer.description && { "description": offer.description }),
+            ...(offer.url && { "url": offer.url }),
+            "availability": "https://schema.org/InStock"
+          }))
+        }
+  };
+}
+
+export function generateFAQPageSchema(faqs: FAQItem[]): SchemaType | null {
+  if (!faqs?.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+}
+
+interface HowToStep {
+  name: string;
+  text: string;
+  image?: string;
+}
+
+export function generateHowToSchema(props: {
+  name: string;
+  description: string;
+  url: string;
+  steps: HowToStep[];
+  totalTime?: string;
+}): SchemaType {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": props.name,
+    "description": props.description,
+    "url": props.url,
+    ...(props.totalTime && { "totalTime": props.totalTime }),
+    "step": props.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": step.name,
+      "text": step.text,
+      ...(step.image && { "image": step.image })
+    }))
+  };
+}
+
+interface ItemListItem {
+  name: string;
+  url: string;
+  description?: string;
+  image?: string;
+}
+
+export function generateItemListSchema(props: {
+  name: string;
+  description?: string;
+  url: string;
+  items: ItemListItem[];
+  itemListOrder?: 'ascending' | 'descending' | 'unordered';
+}): SchemaType {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": props.name,
+    ...(props.description && { "description": props.description }),
+    "url": props.url,
+    "itemListOrder": props.itemListOrder === 'ascending' ? 'https://schema.org/ItemListOrderAscending'
+      : props.itemListOrder === 'descending' ? 'https://schema.org/ItemListOrderDescending'
+      : 'https://schema.org/ItemListUnordered',
+    "numberOfItems": props.items.length,
+    "itemListElement": props.items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "url": item.url,
+      ...(item.description && { "description": item.description }),
+      ...(item.image && { "image": item.image })
     }))
   };
 }

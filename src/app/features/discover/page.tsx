@@ -4,7 +4,7 @@ import { ResourceAllocationDiscover } from '@/components/features/discover/resou
 import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
 import { FaqFeatures } from '@/components/features/faq-features';
 import { HeroCta } from '@/components/marketing/hero-cta';
-import { generateServiceSchema } from '@/lib/schema';
+import { generateSoftwareApplicationSchema, generateFAQPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -105,26 +105,45 @@ const AISearchToolPage = async () => {
     { src: '/grok.png', alt: 'Grok Logo', className: 'top-[5%] right-[10%] md:right-[15%]' },
   ];
 
-  // Generate service schema
-  const serviceSchema = generateServiceSchema({
-    name: "AI Search Tool",
-    description: "Get immediate AI search insights. Run ad-hoc searches to see real-time rankings, analyze competitors, and view full LLM responses across all major answer engines with Analyze AI.",
+  // Generate structured data
+  const softwareSchema = generateSoftwareApplicationSchema({
+    name: "Analyze AI — Discover",
+    description: "See how AI assistants talk about your product, which competitors are being recommended, and where you're missing from buyer conversations.",
     url: "https://www.tryanalyze.ai/features/discover",
-    category: "Search Analysis Tool",
-    features: [
+    applicationCategory: "BusinessApplication",
+    offers: { price: "0", priceCurrency: "USD", url: "https://www.tryanalyze.ai/pricing" },
+    featureList: [
       "Real-Time SERP Analysis",
       "Citation & Source Tracking",
-      "Full Chat Response Viewer",
-      "Identify Market Dominators"
+      "Competitive Positioning Analysis",
+      "Prompt Gap Detection"
     ]
   });
+  const faqSchema = generateFAQPageSchema(faqItems.map(item => ({ question: item.question, answer: item.answer })));
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Features', href: '/features/discover' },
+    { name: 'Discover', href: '/features/discover' },
+  ]);
 
   return (
     <main className="bg-gray-100">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema)
+          __html: JSON.stringify(softwareSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
         }}
       />
       <HeroDiscover />

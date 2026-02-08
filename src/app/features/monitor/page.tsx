@@ -5,7 +5,7 @@ import { ProblemSolutionMonitor } from '@/components/features/monitor/problem-so
 import { FeaturesMonitor } from '@/components/features/monitor/features-monitor';
 import { ResourceAllocationMonitor } from '@/components/features/monitor/resource-allocation-monitor';
 import { ResourcesUseCases } from '@/components/use-cases/resources-use-cases';
-import { generateServiceSchema } from '@/lib/schema';
+import { generateSoftwareApplicationSchema, generateFAQPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getBlogPostsBySlugs } from '@/lib/datocms';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -106,28 +106,42 @@ const AISearchAnalyticsPage = async () => {
     { src: '/grok.png', alt: 'Grok Logo', className: 'top-[5%] right-[10%] md:right-[15%]' },
   ];
 
-  // Generate service schema
-  const serviceSchema = generateServiceSchema({
-    name: "AI Search Analytics Platform",
-    description: "Measure what matters in the new era of search. Track AI rankings, analyze competitors, and connect your AI visibility to traffic and conversions.",
+  // Generate structured data
+  const softwareSchema = generateSoftwareApplicationSchema({
+    name: "Analyze AI — Monitor",
+    description: "Track AI-driven traffic, conversions, and revenue. See which AI sources send you visitors, which pages they land on, and how AI is performing as a real channel.",
     url: "https://www.tryanalyze.ai/features/monitor",
-    category: "Analytics Software",
-    features: [
+    applicationCategory: "BusinessApplication",
+    offers: { price: "0", priceCurrency: "USD", url: "https://www.tryanalyze.ai/pricing" },
+    featureList: [
       "Track AI Answer Engine Rankings",
+      "AI Traffic Attribution",
       "Competitive Intelligence",
-      "Content Opportunity Analysis", 
       "Performance Impact Measurement"
     ]
   });
+  const faqSchema = generateFAQPageSchema(faqItems.map(item => ({ question: item.question, answer: item.answer })));
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Features', href: '/features/monitor' },
+    { name: 'Monitor', href: '/features/monitor' },
+  ]);
 
   return (
     <main className="bg-gray-100">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema)
+          __html: JSON.stringify(softwareSchema)
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema)
+        }}
+      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Hero115 />
       <ProblemSolutionMonitor />
       <FeaturesMonitor />

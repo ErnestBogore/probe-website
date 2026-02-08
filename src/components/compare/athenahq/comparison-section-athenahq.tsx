@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SchemaImage as Image } from "@/components/ui/schema-image";
 import { Check, X } from "lucide-react";
 
 const aiEngineLogos = [
