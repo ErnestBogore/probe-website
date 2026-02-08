@@ -42,15 +42,15 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '免费AI写作工具',
-  description: '访问我们的免费AI写作工具集合：段落生成器、改写工具、摘要工具、语法检查器等。无需注册。',
+  title: '免费AI写作工具 | Analyze AI',
+  description: '访问我们的免费AI写作工具集合：段落生成器、改写工具、摘要工具、语法检查器等。无需注册。立即在Analyze AI上免费试用此工具及更多免费工具。',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/zh',
     languages: generateToolsListingHreflangAlternates(),
   },
   openGraph: {
-    title: '免费AI写作工具',
-    description: '访问我们的免费AI写作工具集合：段落生成器、改写工具、摘要工具、语法检查器等。无需注册。',
+    title: '免费AI写作工具 | Analyze AI',
+    description: '访问我们的免费AI写作工具集合：段落生成器、改写工具、摘要工具、语法检查器等。无需注册。立即在Analyze AI上免费试用此工具及更多免费工具。',
     url: 'https://www.tryanalyze.ai/free-tools/zh',
     type: 'website',
     locale: 'zh_CN',
@@ -65,8 +65,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '免费AI写作工具',
-    description: '访问我们的免费AI写作工具集合：段落生成器、改写工具、摘要工具、语法检查器等。无需注册。',
+    title: '免费AI写作工具 | Analyze AI',
+    description: '访问我们的免费AI写作工具集合：段落生成器、改写工具、摘要工具、语法检查器等。无需注册。立即在Analyze AI上免费试用此工具及更多免费工具。',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },
 };

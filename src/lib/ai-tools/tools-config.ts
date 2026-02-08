@@ -6997,6 +6997,213 @@ For each title, briefly explain why it works.`,
       { question: 'How does the title work with the thumbnail?', answer: 'Title and thumbnail should complement each other, not repeat. If your thumbnail shows a reaction, your title can explain why. Together they should tell a compelling story.' },
     ],
   },
+
+  'introduction-generator': {
+    slug: 'introduction-generator',
+    name: 'Introduction Generator',
+    title: 'Free AI Introduction Generator',
+    description: 'Create captivating introductions that hook readers from the first sentence. Perfect for blogs, essays, and articles.',
+    metaDescription: 'Create captivating introductions that hook readers from the first sentence. Our free AI tool generates compelling openings for blogs, essays...',
+    inputLabel: 'Article topic and key points...',
+    inputPlaceholder: 'e.g. Topic: Remote work productivity. Key points: flexibility, work-life balance, communication challenges',
+    buttonText: 'Generate Introduction',
+    maxLength: 2048,
+    options: [
+      {
+        name: 'contentType',
+        label: 'Content type',
+        choices: ['Blog Post', 'How-to Guide', 'Listicle', 'Essay/Opinion', 'Product Review', 'Research/Report'],
+        default: 'Blog Post',
+        type: 'select',
+      },
+      {
+        name: 'hookType',
+        label: 'Hook type',
+        choices: ['Question', 'Statistic', 'Story', 'Bold Statement', 'Relatable'],
+        default: 'Question',
+        type: 'select',
+      },
+      {
+        name: 'tone',
+        label: 'Tone',
+        choices: ['Professional', 'Casual', 'Inspirational', 'Academic'],
+        default: 'Professional',
+        type: 'select',
+      },
+    ],
+    systemPrompt: `You are an expert content writer specializing in crafting compelling introductions that hook readers and set up the content effectively.
+## CORE RULES
+- Start with an attention-grabbing hook
+- Establish relevance to the reader within the first 2-3 sentences
+- Preview the value the content will deliver
+- Keep introductions proportional (10-15% of total content length)
+- Never start with "In today's world" or similar clichés
+## INTRODUCTION ARCHITECTURE
+1. Hook (first sentence): Grab attention immediately
+2. Context: Establish why this matters to the reader
+3. Problem/Opportunity: What challenge or benefit will be addressed
+4. Promise: What the reader will learn/gain
+5. Transition: Lead smoothly into the main content
+## HOOK TYPE APPROACHES
+### IF HOOK = "Question"
+- Ask something the reader genuinely wonders about
+- Make it specific, not generic
+- Example: "What if the key to productivity wasn't working harder?"
+### IF HOOK = "Statistic"
+- Lead with a surprising or compelling number
+- Source it credibly
+- Connect to reader's situation
+### IF HOOK = "Story"
+- Start in media res (in the middle of action)
+- Keep it brief but vivid
+- Make the protagonist relatable
+### IF HOOK = "Bold Statement"
+- Challenge conventional wisdom
+- Make a confident claim you'll support
+- Create curiosity
+### IF HOOK = "Relatable"
+- Describe a common experience
+- Use "you" language
+- Show you understand the reader's situation
+## CONTENT TYPE ADAPTATIONS
+### IF TYPE = "Blog Post" - Conversational, promise practical value
+### IF TYPE = "How-to Guide" - Focus on transformation/outcome
+### IF TYPE = "Listicle" - Tease variety and completeness
+### IF TYPE = "Essay/Opinion" - Establish thesis angle
+### IF TYPE = "Product Review" - Address purchase decision context
+### IF TYPE = "Research/Report" - Lead with key finding
+## OUTPUT FORMAT
+Content Type: {{contentType}}
+Hook Type: {{hookType}}
+Tone: {{tone}}
+Output only the introduction paragraph(s). No preamble.`,
+    useCases: [
+      {
+        title: 'Content marketing and blog openings',
+        description: 'Content creators struggling to start articles use the Introduction Generator to craft engaging openings that hook readers immediately. The tool ensures every piece starts strong instead of losing readers with weak or generic openings.',
+      },
+      {
+        title: 'Academic essay introductions',
+        description: 'Students writing essays, research papers, or thesis chapters can generate well-structured introductions that clearly establish their thesis and prepare the reader for the arguments to come. The tool helps avoid weak starts that often plague academic writing.',
+      },
+      {
+        title: 'Business document openings',
+        description: 'Professionals writing reports, proposals, or presentations can create introductions that immediately establish the importance of their message and make busy executives want to keep reading.',
+      },
+    ],
+    faqs: [
+      { question: 'What makes a good introduction?', answer: 'A strong introduction hooks readers immediately, establishes relevance to their situation, presents the problem or opportunity, and promises value. It should make readers want to continue rather than click away.' },
+      { question: 'Is the introduction generator free?', answer: 'Yes, the tool is completely free with no sign-up or payment required. Generate as many introductions as you need at no cost.' },
+      { question: 'What information should I provide?', answer: 'At minimum, provide your topic and key points covered in your content. For best results, also specify the content type (blog, essay, report), desired tone, and any specific hook you want to include.' },
+      { question: 'Will the introduction match my writing style?', answer: 'The tool adapts to the tone you specify (professional, casual, academic, etc.) and matches standard conventions for your content type. For a perfect style match, we recommend light editing to add your personal voice.' },
+      { question: 'How long should an introduction be?', answer: 'Introductions typically take up 10-15% of total content length. For a 1,000-word article, expect 100-150 words. You can specify your target length and the tool will adjust accordingly.' },
+      { question: 'Can I generate introductions for different content types?', answer: 'Yes, the tool handles blog posts, essays, how-to guides, listicles, product reviews, research reports, and more. Each type follows appropriate conventions and structures.' },
+      { question: 'What hook types are available?', answer: 'The tool supports various hook types including questions, statistics, stories, bold statements, and relatable scenarios. Each type works best for different content and audiences.' },
+      { question: 'How do I avoid my introduction sounding generic?', answer: 'The tool is designed to avoid clichés like "In today\'s world" or "Throughout history." Providing specific context about your unique angle and audience produces more tailored results.' },
+    ],
+  },
+
+  'text-expander': {
+    slug: 'text-expander',
+    name: 'Text Expander',
+    title: 'Free AI Text Expander',
+    description: 'Expand short sentences or paragraphs into more detailed, comprehensive content without losing the original meaning.',
+    metaDescription: 'Expand short sentences or paragraphs into more detailed, comprehensive content. Our free AI tool adds depth without changing your meaning...',
+    inputLabel: 'Text to expand...',
+    inputPlaceholder: 'Paste your short text here to expand it',
+    buttonText: 'Expand Text',
+    maxLength: 2048,
+    options: [
+      {
+        name: 'expansionLevel',
+        label: 'Expansion level',
+        choices: ['Light (1.5x)', 'Moderate (2x)', 'Substantial (3x)'],
+        default: 'Moderate (2x)',
+        type: 'select',
+      },
+      {
+        name: 'method',
+        label: 'Expansion method',
+        choices: ['Add examples', 'Add explanations', 'Add details', 'Balanced'],
+        default: 'Balanced',
+        type: 'select',
+      },
+      {
+        name: 'tone',
+        label: 'Tone',
+        choices: ['Formal', 'Casual', 'Academic', 'Professional'],
+        default: 'Professional',
+        type: 'select',
+      },
+    ],
+    systemPrompt: `You are an expert content writer specializing in expanding concise text into more detailed, comprehensive content while maintaining the original meaning and adding genuine value.
+## CORE RULES
+- Preserve the original meaning completely
+- Add substantive content, not filler or fluff
+- Maintain consistency in tone and style
+- Ensure additions are relevant and valuable
+- Never contradict or alter the original point
+## EXPANSION METHODS
+### IF METHOD = "Add examples"
+- Include concrete, relevant examples
+- Use real-world scenarios when appropriate
+- Make abstract concepts tangible
+### IF METHOD = "Add explanations"
+- Unpack complex ideas
+- Define key terms
+- Explain the "why" behind statements
+### IF METHOD = "Add details"
+- Include specific facts and figures
+- Add descriptive elements
+- Provide additional context
+### IF METHOD = "Balanced"
+- Combine examples, explanations, and details
+- Vary the expansion approach throughout
+- Create a natural, comprehensive result
+## EXPANSION LEVELS
+### IF LEVEL = "Light (1.5x)"
+- Add one supporting element per main idea
+- Keep additions concise
+- Maintain similar structure
+### IF LEVEL = "Moderate (2x)"
+- Add 2-3 supporting elements per main idea
+- Include transitional phrases
+- May add new paragraphs
+### IF LEVEL = "Substantial (3x)"
+- Comprehensive expansion with multiple supports
+- Add introduction/conclusion if appropriate
+- Create fully developed content
+## OUTPUT FORMAT
+Expansion Level: {{expansionLevel}}
+Method: {{method}}
+Tone: {{tone}}
+Output only the expanded text. No preamble.
+Self-check before output: Does every addition serve a purpose? Would removing any added sentence reduce the value? If not, trim it.`,
+    useCases: [
+      {
+        title: 'Content development and word count goals',
+        description: 'Writers who need to meet word count requirements without adding filler use the Text Expander to develop concise ideas into full content. The tool adds examples, explanations, and details that make content more valuable rather than just longer.',
+      },
+      {
+        title: 'Elaborating key points',
+        description: 'Professionals who have bullet points or outlines can expand them into full prose. Turn meeting notes into detailed reports, transform presentation outlines into full documents, or develop executive summaries into complete explanations.',
+      },
+      {
+        title: 'Academic writing and essay drafting',
+        description: 'Students can expand initial arguments into fully developed paragraphs with supporting evidence and analysis. The tool helps transform research notes and key points into well-structured academic writing.',
+      },
+    ],
+    faqs: [
+      { question: 'What is a text expander?', answer: 'A text expander takes brief or concise content and expands it into more detailed, comprehensive writing. Unlike simple word padding, the tool adds meaningful examples, explanations, and details that make the content more valuable.' },
+      { question: 'Is the text expander free?', answer: 'Yes, completely free with no sign-up required. Expand as much text as you need at no cost.' },
+      { question: 'How much can my text be expanded?', answer: 'You can choose light (1.5x), moderate (2x), or substantial (3x) expansion levels. The actual expansion depends on the original content—detail-rich text may expand more naturally than abstract content.' },
+      { question: 'Will the expansion add filler or fluff?', answer: 'The tool is designed to add substantive content, not filler. It focuses on examples, explanations, and details that make your writing more valuable and informative. However, always review and edit to ensure every addition serves your purpose.' },
+      { question: 'Can I control what type of content is added?', answer: 'Yes, you can specify expansion methods: add examples, add explanations, add details, or a balanced approach that combines all three.' },
+      { question: 'Will the original meaning stay intact?', answer: 'Preserving the original meaning is a core rule. The expanded content always reinforces and elaborates on your points, never changes or contradicts them.' },
+      { question: 'What types of content does this work for?', answer: 'The tool works for any prose-based text: essays, articles, reports, emails, business documents, academic writing, and more. It is not designed for bullet lists or structured data.' },
+      { question: 'What is the difference between expanding and paraphrasing?', answer: 'Paraphrasing rewrites existing content in different words while keeping similar length. Expanding adds new content to make writing longer and more comprehensive. Expanding creates more; paraphrasing restates what exists.' },
+    ],
+  },
 };
 
 export function getToolBySlug(slug: string): ToolConfig | undefined {

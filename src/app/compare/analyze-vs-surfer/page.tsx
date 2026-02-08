@@ -13,7 +13,7 @@ import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Analyze AI vs. Surfer: Feature Comparison',
-  description: 'Compare how Analyze AI and Surfer impact visibility, traffic, and conversions across AI engines.',
+  description: 'Compare how Analyze AI and Surfer impact visibility, traffic, and conversions across AI engines. Learn which platform goes beyond traditional SEO to track AI-driven sessions, attribute revenue, and surface the prompts that matter most.',
   alternates: {
     canonical: '/compare/analyze-vs-surfer',
   },

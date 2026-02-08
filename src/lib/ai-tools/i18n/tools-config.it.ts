@@ -2717,4 +2717,126 @@ IMPORTANT: Generate all output in Italian.`,
   },
 
   // ==================== TRANSLATION COMPLETE ====================
+
+  'introduction-generator': {
+    slug: 'introduction-generator',
+    name: 'Generatore di Introduzioni',
+    title: 'Generatore gratuito di introduzioni con IA',
+    description: 'Crea introduzioni accattivanti che catturano i lettori dalla prima frase. Perfetto per blog, saggi e articoli.',
+    metaDescription: 'Crea introduzioni accattivanti che catturano i lettori dalla prima frase. Il nostro strumento IA gratuito genera aperture convincenti...',
+    inputLabel: 'Argomento dell\'articolo e punti chiave...',
+    inputPlaceholder: 'es. Argomento: Produttività nel lavoro remoto. Punti chiave: flessibilità, equilibrio vita-lavoro, sfide comunicative',
+    buttonText: 'Genera introduzione',
+    maxLength: 2048,
+    options: [
+      { name: 'contentType', label: 'Tipo di contenuto', choices: ['Post del blog', 'Guida pratica', 'Listicle', 'Saggio/Opinione', 'Recensione prodotto', 'Ricerca/Report'], default: 'Post del blog', type: 'select' },
+      { name: 'hookType', label: 'Tipo di gancio', choices: ['Domanda', 'Statistica', 'Storia', 'Affermazione audace', 'Relazionabile'], default: 'Domanda', type: 'select' },
+      { name: 'tone', label: 'Tono', choices: ['Professionale', 'Informale', 'Ispirazionale', 'Accademico'], default: 'Professionale', type: 'select' },
+    ],
+    systemPrompt: `You are an expert content writer specializing in crafting compelling introductions that hook readers and set up the content effectively.
+## CORE RULES
+- Start with an attention-grabbing hook
+- Establish relevance to the reader within the first 2-3 sentences
+- Preview the value the content will deliver
+- Keep introductions proportional (10-15% of total content length)
+- Never start with "In today's world" or similar clichés
+## INTRODUCTION ARCHITECTURE
+1. Hook (first sentence): Grab attention immediately
+2. Context: Establish why this matters to the reader
+3. Problem/Opportunity: What challenge or benefit will be addressed
+4. Promise: What the reader will learn/gain
+5. Transition: Lead smoothly into the main content
+Content Type: {{contentType}}
+Hook Type: {{hookType}}
+Tone: {{tone}}
+Output only the introduction paragraph(s). No preamble.
+
+IMPORTANT: Generate all output in Italian.`,
+    useCases: [
+      { title: 'Content marketing e aperture blog', description: 'I creatori di contenuti usano il Generatore di Introduzioni per creare aperture coinvolgenti che catturano immediatamente i lettori.' },
+      { title: 'Introduzioni di saggi accademici', description: 'Gli studenti possono generare introduzioni ben strutturate che stabiliscono chiaramente la loro tesi.' },
+      { title: 'Aperture di documenti aziendali', description: 'I professionisti possono creare introduzioni che stabiliscono immediatamente l\'importanza del loro messaggio.' },
+    ],
+    faqs: [
+      { question: 'Cosa rende una buona introduzione?', answer: 'Un\'introduzione forte cattura i lettori immediatamente, stabilisce rilevanza, presenta il problema o l\'opportunità e promette valore.' },
+      { question: 'Il generatore di introduzioni è gratuito?', answer: 'Sì, lo strumento è completamente gratuito senza registrazione o pagamento richiesto.' },
+      { question: 'Quanto dovrebbe essere lunga un\'introduzione?', answer: 'Le introduzioni occupano tipicamente il 10-15% della lunghezza totale del contenuto.' },
+      { question: 'Quali tipi di gancio sono disponibili?', answer: 'Lo strumento supporta domande, statistiche, storie, affermazioni audaci e scenari relazionabili.' },
+    ],
+  },
+
+  'text-expander': {
+    slug: 'text-expander',
+    name: 'Espansore di Testo',
+    title: 'Espansore di testo IA gratuito',
+    description: 'Espandi frasi brevi o paragrafi in contenuti più dettagliati e completi senza perdere il significato originale.',
+    metaDescription: 'Espandi frasi brevi o paragrafi in contenuti più dettagliati. Il nostro strumento IA gratuito aggiunge profondità senza cambiare il significato...',
+    inputLabel: 'Testo da espandere...',
+    inputPlaceholder: 'Incolla il tuo testo breve qui per espanderlo',
+    buttonText: 'Espandi testo',
+    maxLength: 2048,
+    options: [
+      { name: 'expansionLevel', label: 'Livello di espansione', choices: ['Leggero (1,5x)', 'Moderato (2x)', 'Sostanziale (3x)'], default: 'Moderato (2x)', type: 'select' },
+      { name: 'method', label: 'Metodo di espansione', choices: ['Aggiungi esempi', 'Aggiungi spiegazioni', 'Aggiungi dettagli', 'Bilanciato'], default: 'Bilanciato', type: 'select' },
+      { name: 'tone', label: 'Tono', choices: ['Formale', 'Informale', 'Accademico', 'Professionale'], default: 'Professionale', type: 'select' },
+    ],
+    systemPrompt: `You are an expert content writer specializing in expanding concise text into more detailed, comprehensive content while maintaining the original meaning.
+## CORE RULES
+- Preserve the original meaning completely
+- Add substantive content, not filler or fluff
+- Maintain consistency in tone and style
+- Never contradict or alter the original point
+Expansion Level: {{expansionLevel}}
+Method: {{method}}
+Tone: {{tone}}
+Output only the expanded text. No preamble.
+
+IMPORTANT: Generate all output in Italian.`,
+    useCases: [
+      { title: 'Sviluppo contenuti', description: 'Gli scrittori usano l\'Espansore di Testo per sviluppare idee concise in contenuti completi con esempi e dettagli.' },
+      { title: 'Elaborazione punti chiave', description: 'I professionisti possono espandere punti elenco o schemi in prosa completa.' },
+      { title: 'Scrittura accademica', description: 'Gli studenti possono espandere argomenti iniziali in paragrafi completamente sviluppati.' },
+    ],
+    faqs: [
+      { question: 'Cos\'è un espansore di testo?', answer: 'Un espansore di testo prende contenuti brevi e li espande in testi più dettagliati con esempi, spiegazioni e dettagli significativi.' },
+      { question: 'L\'espansore di testo è gratuito?', answer: 'Sì, completamente gratuito senza registrazione richiesta.' },
+      { question: 'L\'espansione aggiungerà riempitivo?', answer: 'Lo strumento aggiunge contenuto sostanziale, non riempitivo. Si concentra su esempi, spiegazioni e dettagli.' },
+      { question: 'Il significato originale rimarrà intatto?', answer: 'Preservare il significato originale è una regola fondamentale.' },
+    ],
+  },
+
+  'youtube-video-title-generator': {
+    slug: 'youtube-video-title-generator',
+    name: 'Generatore di Titoli Video YouTube',
+    title: 'Generatore gratuito di titoli video YouTube con IA',
+    description: 'Genera titoli YouTube accattivanti che ottengono visualizzazioni. La nostra IA crea titoli ottimizzati per SEO.',
+    metaDescription: 'Genera titoli YouTube accattivanti che ottengono visualizzazioni. La nostra IA crea titoli ottimizzati per SEO che attirano spettatori...',
+    inputLabel: 'Descrivi l\'argomento del tuo video...',
+    inputPlaceholder: 'es. Tutorial Lightroom per editing foto ritratto',
+    buttonText: 'Genera titoli',
+    maxLength: 2048,
+    options: [
+      { name: 'style', label: 'Stile titolo', choices: ['Informativo/Chiaro', 'Accattivante/Clickbait', 'Domanda', 'Lista/Numeri', 'Come fare'], default: 'Informativo/Chiaro', type: 'select' },
+      { name: 'video_type', label: 'Tipo video', choices: ['Tutorial/Educativo', 'Intrattenimento/Vlog', 'Recensione/Prodotto', 'Gaming', 'Notizie/Commento'], default: 'Tutorial/Educativo', type: 'select' },
+    ],
+    systemPrompt: `You are an expert YouTube content strategist specializing in creating compelling, click-worthy video titles.
+## YOUTUBE TITLE FUNDAMENTALS
+**Character Limit**: 100 characters (60-70 recommended)
+**SEO Impact**: Titles are the primary ranking factor for YouTube search
+Style: {{style}}
+Video Type: {{video_type}}
+Generate 8-10 title options under 60 characters when possible. For each title, briefly explain why it works.
+
+IMPORTANT: Generate all output in Italian.`,
+    useCases: [
+      { title: 'Ottimizzazione click-through rate', description: 'I creator YouTube usano il generatore per creare titoli che massimizzano il tasso di clic.' },
+      { title: 'Miglioramento SEO video', description: 'YouTuber usano il generatore per creare titoli ottimizzati per le parole chiave.' },
+      { title: 'A/B testing titoli', description: 'I creator testano diversi approcci ai titoli per trovare quelli che funzionano meglio.' },
+    ],
+    faqs: [
+      { question: 'Quanto dovrebbe essere lungo un titolo YouTube?', answer: 'YouTube permette fino a 100 caratteri, ma punta a 60-70 per piena visibilità nei risultati di ricerca.' },
+      { question: 'Il titolo influenza la SEO di YouTube?', answer: 'Sì, i titoli sono uno dei fattori di ranking più importanti.' },
+      { question: 'Posso cambiare i titoli dopo la pubblicazione?', answer: 'Sì, puoi cambiare i titoli in qualsiasi momento.' },
+    ],
+  },
 };

@@ -13,7 +13,7 @@ import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Analyze AI vs. AthenaHQ: Feature Comparison',
-  description: 'Compare how Analyze AI and AthenaHQ impact visibility, traffic, and conversions across AI engines.',
+  description: 'Compare how Analyze AI and AthenaHQ impact visibility, traffic, and conversions across AI engines. See which platform offers deeper prompt-level analytics, real traffic attribution, and actionable improvement plans for your AI search presence.',
   alternates: {
     canonical: '/compare/analyze-vs-athenahq',
   },

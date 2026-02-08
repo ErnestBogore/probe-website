@@ -3949,7 +3949,7 @@ export function getAllBusinessNameGeneratorsFr(): BusinessNameGeneratorConfig[] 
 
 // Export function for getting a specific French generator by slug
 export function getBusinessNameGeneratorFr(slug: string): BusinessNameGeneratorConfig | undefined {
-  return businessNameGeneratorsFr[slug];
+  return Object.values(businessNameGeneratorsFr).find((tool) => tool.slug === slug);
 }
 
 // Export function for getting French generator slugs

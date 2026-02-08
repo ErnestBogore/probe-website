@@ -13,7 +13,7 @@ import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Analyze AI vs. Peec AI: Feature Comparison',
-  description: 'Compare how Analyze AI and Peec AI impact visibility, traffic, and conversions across AI engines.',
+  description: 'Compare how Analyze AI and Peec AI impact visibility, traffic, and conversions across AI engines. Find out which solution delivers real traffic attribution, competitor benchmarking, and step-by-step recommendations to win high-intent AI prompts.',
   alternates: {
     canonical: '/compare/analyze-vs-peec-ai',
   },

@@ -6728,7 +6728,7 @@ export function getAllBusinessNameGeneratorsDe(): BusinessNameGeneratorConfig[] 
 
 // Export function for getting a specific German generator by slug
 export function getBusinessNameGeneratorDe(slug: string): BusinessNameGeneratorConfig | undefined {
-  return businessNameGeneratorsDe[slug];
+  return Object.values(businessNameGeneratorsDe).find((tool) => tool.slug === slug);
 }
 
 // Export function for getting German generator slugs

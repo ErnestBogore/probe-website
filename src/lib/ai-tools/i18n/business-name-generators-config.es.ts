@@ -3820,7 +3820,7 @@ Generate names that are:
   name: 'Generador de Nombres para Heladerías',
   title: 'Generador IA Gratuito de Ideas de Nombres para Heladerías',
   description: 'Genera nombres dulces y memorables para heladerías, gelaterías y negocios de postres helados.',
-  metaDescription: 'Generador IA gratuito de nombres de empresas de Heladería',
+  metaDescription: 'Generador IA gratuito de nombres de empresas de Heladería. Prueba esta herramienta gratuita y otras herramientas gratuitas ahora en Analyze AI.',
   inputLabel: 'Describe tu negocio de helados...',
   inputPlaceholder: 'ej. Una gelatería artesanal que ofrece sabores únicos en una ubicación costera',
   buttonText: 'Generar Nombres',
@@ -3963,7 +3963,7 @@ For each name generated:
   name: 'Generador de Nombres para Negocios de Diseño de Interiores',
   title: 'Generador IA Gratuito de Ideas de Nombres para Diseño de Interiores',
   description: 'Genera nombres elegantes y estilosos para firmas de diseño de interiores, negocios de decoración del hogar y estudios de planificación de espacios.',
-  metaDescription: 'Generador IA gratuito de nombres de empresas de Diseño de Interiores',
+  metaDescription: 'Generador IA gratuito de nombres de empresas de Diseño de Interiores. Prueba esta herramienta gratuita y otras herramientas gratuitas ahora en Analyze AI.',
   inputLabel: 'Describe tu negocio de diseño de interiores...',
   inputPlaceholder: 'ej. Una firma de diseño de interiores residencial de lujo especializada en estética minimalista moderna',
   buttonText: 'Generar Nombres',
@@ -4106,7 +4106,7 @@ For each name generated:
   name: 'Generador de Nombres para Empresas de TI',
   title: 'Generador IA Gratuito de Ideas de Nombres para Empresas de TI',
   description: 'Genera nombres tecnológicos y profesionales para empresas de TI, servicios tecnológicos y negocios de soluciones digitales.',
-  metaDescription: 'Generador IA gratuito de nombres de empresas de TI',
+  metaDescription: 'Generador IA gratuito de nombres de empresas de TI. Prueba esta herramienta gratuita y otras herramientas gratuitas ahora en Analyze AI.',
   inputLabel: 'Describe tu negocio de TI...',
   inputPlaceholder: 'ej. Una empresa de servicios de TI gestionados que proporciona ciberseguridad y soluciones cloud para pequeñas empresas',
   buttonText: 'Generar Nombres',
@@ -4249,7 +4249,7 @@ For each name generated:
   name: 'Generador de Nombres para Joyerías',
   title: 'Generador IA Gratuito de Ideas de Nombres para Joyerías',
   description: 'Genera nombres elegantes y brillantes para joyerías, boutiques y joyeros finos.',
-  metaDescription: 'Generador IA gratuito de nombres de empresas de Joyería',
+  metaDescription: 'Generador IA gratuito de nombres de empresas de Joyería. Prueba esta herramienta gratuita y otras herramientas gratuitas ahora en Analyze AI.',
   inputLabel: 'Describe tu negocio de joyería...',
   inputPlaceholder: 'ej. Una joyería boutique especializada en anillos de compromiso personalizados y alianzas de boda',
   buttonText: 'Generar Nombres',
@@ -4392,7 +4392,7 @@ For each name generated:
   name: 'Generador de Nombres para Negocios de Brillo Labial',
   title: 'Generador IA Gratuito de Ideas de Nombres para Brillo Labial',
   description: 'Genera nombres atractivos y glamorosos para marcas de brillo labial, negocios de cosméticos y empresas de productos de belleza.',
-  metaDescription: 'Generador IA gratuito de nombres de empresas de Brillo Labial',
+  metaDescription: 'Generador IA gratuito de nombres de empresas de Brillo Labial. Prueba esta herramienta gratuita y otras herramientas gratuitas ahora en Analyze AI.',
   inputLabel: 'Describe tu negocio de brillo labial...',
   inputPlaceholder: 'ej. Una marca de brillo labial vegano dirigida a la Generación Z con colores atrevidos y trendy',
   buttonText: 'Generar Nombres',
@@ -4539,7 +4539,7 @@ For each name generated:
   name: 'Generador de Nombres para Empresas de Marketing',
   title: 'Generador IA Gratuito de Ideas de Nombres para Marketing',
   description: 'Genera nombres profesionales e innovadores para agencias de marketing, firmas de publicidad y negocios de servicios promocionales.',
-  metaDescription: 'Generador IA gratuito de nombres de empresas de Marketing',
+  metaDescription: 'Generador IA gratuito de nombres de empresas de Marketing. Prueba esta herramienta gratuita y otras herramientas gratuitas ahora en Analyze AI.',
   inputLabel: 'Describe tu negocio de marketing...',
   inputPlaceholder: 'ej. Una agencia de marketing digital especializada en redes sociales y marketing de contenidos para empresas B2B',
   buttonText: 'Generar Nombres',
@@ -4682,7 +4682,7 @@ For each name generated:
   name: 'Generador de Nombres para Negocios de Música',
   title: 'Generador IA Gratuito de Ideas de Nombres para Música',
   description: 'Genera nombres evocadores y expresivos para negocios de música, sellos discográficos, estudios y empresas relacionadas con la música.',
-  metaDescription: 'Generador IA gratuito de nombres de empresas de Música',
+  metaDescription: 'Generador IA gratuito de nombres de empresas de Música. Prueba esta herramienta gratuita y otras herramientas gratuitas ahora en Analyze AI.',
   inputLabel: 'Describe tu negocio de música...',
   inputPlaceholder: 'ej. Un estudio de producción musical especializado en hip-hop y R&B para artistas independientes',
   buttonText: 'Generar Nombres',
@@ -4825,7 +4825,7 @@ For each name generated:
   name: 'Generador de Nombres para Negocios de Perfumería',
   title: 'Generador IA Gratuito de Ideas de Nombres para Perfumería',
   description: 'Genera nombres elegantes y sensuales para marcas de perfumes, casas de fragancias y negocios basados en aromas.',
-  metaDescription: 'Generador IA gratuito de nombres de empresas de Perfumería',
+  metaDescription: 'Generador IA gratuito de nombres de empresas de Perfumería. Prueba esta herramienta gratuita y otras herramientas gratuitas ahora en Analyze AI.',
   inputLabel: 'Describe tu negocio de perfumería...',
   inputPlaceholder: 'ej. Una casa de perfumes artesanales de lujo que crea fragancias a medida con ingredientes naturales',
   buttonText: 'Generar Nombres',
@@ -4968,7 +4968,7 @@ For each name generated:
   name: 'Generador de Nombres para Negocios de Fotografía',
   title: 'Generador IA Gratuito de Ideas de Nombres para Fotografía',
   description: 'Genera nombres creativos y profesionales para negocios de fotografía, estudios y artistas visuales.',
-  metaDescription: 'Generador IA gratuito de nombres de empresas de Fotografía',
+  metaDescription: 'Generador IA gratuito de nombres de empresas de Fotografía. Prueba esta herramienta gratuita y otras herramientas gratuitas ahora en Analyze AI.',
   inputLabel: 'Describe tu negocio de fotografía...',
   inputPlaceholder: 'ej. Un estudio de fotografía de bodas y retratos especializado en imágenes espontáneas de estilo documental',
   buttonText: 'Generar Nombres',
@@ -5111,7 +5111,7 @@ For each name generated:
   name: 'Generador de Nombres para Imprentas',
   title: 'Generador IA Gratuito de Ideas de Nombres para Imprentas',
   description: 'Genera nombres profesionales y versátiles para imprentas, servicios de impresión y negocios de producción gráfica.',
-  metaDescription: 'Generador IA gratuito de nombres de empresas de Imprenta',
+  metaDescription: 'Generador IA gratuito de nombres de empresas de Imprenta. Prueba esta herramienta gratuita y otras herramientas gratuitas ahora en Analyze AI.',
   inputLabel: 'Describe tu negocio de imprenta...',
   inputPlaceholder: 'ej. Una imprenta comercial que ofrece impresión de gran formato, señalética y merchandising personalizado',
   buttonText: 'Generar Nombres',
@@ -6668,7 +6668,7 @@ export function getAllBusinessNameGeneratorsEs(): BusinessNameGeneratorConfig[] 
 
 // Export function for getting a specific Spanish generator by slug
 export function getBusinessNameGeneratorEs(slug: string): BusinessNameGeneratorConfig | undefined {
-  return businessNameGeneratorsEs[slug];
+  return Object.values(businessNameGeneratorsEs).find((tool) => tool.slug === slug);
 }
 
 // Export function for getting Spanish generator slugs

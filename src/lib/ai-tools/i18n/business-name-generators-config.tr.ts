@@ -9777,11 +9777,11 @@ export function getAllBusinessNameGeneratorsTr() {
 }
 
 export function getBusinessNameGeneratorTr(slug: string) {
-  return businessNameGeneratorsTr[slug];
+  return Object.values(businessNameGeneratorsTr).find((tool) => tool.slug === slug);
 }
 
 export function getBusinessNameGeneratorBySlugTr(slug: string) {
-  return businessNameGeneratorsTr[slug];
+  return Object.values(businessNameGeneratorsTr).find((tool) => tool.slug === slug);
 }
 
 export function getAllBusinessNameGeneratorSlugsTr() {

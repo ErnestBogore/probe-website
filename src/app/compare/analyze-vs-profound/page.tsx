@@ -13,7 +13,7 @@ import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Analyze AI vs. Profound: Feature Comparison',
-  description: 'Compare how Analyze AI and Profound impact visibility, traffic, and conversions across AI engines.',
+  description: 'Compare how Analyze AI and Profound impact visibility, traffic, and conversions across AI engines. Discover which tool gives you prompt-level brand monitoring, source-level citation analysis, and a concrete plan to improve your AI visibility.',
   alternates: {
     canonical: '/compare/analyze-vs-profound',
   },

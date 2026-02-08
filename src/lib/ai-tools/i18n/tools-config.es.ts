@@ -57,6 +57,7 @@ export const spanishToEnglishSlugMap: Record<string, string> = {
   'generador-de-descripciones-para-canales-de-youtube': 'youtube-channel-description-generator',
   'generador-de-descripciones-para-videos-de-youtube': 'youtube-video-description-generator',
   'generador-de-nombres-para-youtube': 'youtube-name-generator',
+  'generador-de-titulos-para-videos-de-youtube': 'youtube-video-title-generator',
 };
 
 // Helper functions
@@ -5270,6 +5271,35 @@ IMPORTANT: Generate all output in Spanish.`,
   },
 
   // ==================== END OF SPANISH TRANSLATION ====================
-  // All 45+ tools translated to Spanish (es)
-  // Translation complete!
+
+  'generador-de-titulos-para-videos-de-youtube': {
+    slug: 'generador-de-titulos-para-videos-de-youtube',
+    name: 'Generador de Títulos para Videos de YouTube',
+    title: 'Generador gratuito de títulos para videos de YouTube con IA',
+    description: 'Genera títulos de YouTube atractivos que obtienen visualizaciones. Nuestra IA crea títulos optimizados para SEO.',
+    metaDescription: 'Genera títulos de YouTube atractivos que obtienen visualizaciones. Nuestra IA crea títulos optimizados para SEO que atraen espectadores...',
+    inputLabel: 'Describe el tema de tu video...',
+    inputPlaceholder: 'ej. Tutorial de Lightroom para edición de fotos de retrato',
+    buttonText: 'Generar títulos',
+    maxLength: 2048,
+    options: [
+      { name: 'style', label: 'Estilo del título', choices: ['Informativo/Claro', 'Atractivo/Clickbait', 'Pregunta', 'Lista/Números', 'Cómo hacer'], default: 'Informativo/Claro', type: 'select' },
+      { name: 'video_type', label: 'Tipo de video', choices: ['Tutorial/Educativo', 'Entretenimiento/Vlog', 'Reseña/Producto', 'Gaming', 'Noticias/Comentario'], default: 'Tutorial/Educativo', type: 'select' },
+    ],
+    systemPrompt: `You are an expert YouTube content strategist specializing in creating compelling video titles.
+Style: {{style}}
+Video Type: {{video_type}}
+Generate 8-10 title options under 60 characters when possible. For each title, briefly explain why it works.
+
+IMPORTANT: Generate all output in Spanish.`,
+    useCases: [
+      { title: 'Optimización de tasa de clics', description: 'Los creadores de YouTube usan el generador para crear títulos que maximizan la tasa de clics.' },
+      { title: 'Mejora de SEO de video', description: 'Los YouTubers usan el generador para crear títulos optimizados para palabras clave.' },
+      { title: 'Pruebas A/B de títulos', description: 'Los creadores prueban diferentes enfoques de títulos para encontrar los mejores.' },
+    ],
+    faqs: [
+      { question: '¿Cuánto debe medir un título de YouTube?', answer: 'YouTube permite hasta 100 caracteres, pero apunta a 60-70 para visibilidad total en resultados de búsqueda.' },
+      { question: '¿El título afecta el SEO de YouTube?', answer: 'Sí, los títulos son uno de los factores de ranking más importantes.' },
+    ],
+  },
 };

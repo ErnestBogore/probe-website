@@ -9664,7 +9664,7 @@ export function getAllBusinessNameGeneratorsPt(): BusinessNameGeneratorConfig[] 
 
 // Export function for getting a specific Portuguese generator by slug
 export function getBusinessNameGeneratorPt(slug: string): BusinessNameGeneratorConfig | undefined {
-  return businessNameGeneratorsPt[slug];
+  return Object.values(businessNameGeneratorsPt).find((tool) => tool.slug === slug);
 }
 
 // Export function for getting Portuguese generator slugs

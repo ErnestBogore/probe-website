@@ -56,6 +56,8 @@ export const frenchToEnglishSlugMap: Record<string, string> = {
   'generateur-description-chaine-youtube': 'youtube-channel-description-generator',
   'generateur-description-video-youtube': 'youtube-video-description-generator',
   'generateur-titre-video-youtube': 'youtube-video-title-generator',
+  'generateur-introduction': 'introduction-generator',
+  'extenseur-de-texte': 'text-expander',
 };
 
 // Helper functions
@@ -4355,6 +4357,74 @@ IMPORTANT: Generate all output in French.`,
       { question: 'Cet outil peut-il rendre mon écriture plus formelle ou décontractée ?', answer: 'Oui, l\'ajustement du ton est une fonctionnalité clé. Vous pouvez transformer une écriture décontractée en langage professionnel pour les documents d\'affaires, ou rendre un texte formel plus conversationnel pour les réseaux sociaux et blogs.' },
       { question: 'En quoi est-ce différent de la vérification grammaticale ?', answer: 'Les correcteurs grammaticaux corrigent les erreurs dans le texte existant. Les outils de reformulation transforment la façon dont les idées sont exprimées, créant de nouvelles versions du contenu. Ils servent des objectifs différents mais peuvent être utilisés ensemble pour des résultats soignés.' },
       { question: 'Dois-je toujours accepter la version reformulée ?', answer: 'Non, relisez et éditez toujours. La reformulation par IA est un point de départ qui peut nécessiter un raffinement. Utilisez votre jugement pour vous assurer que la version finale reflète fidèlement votre voix, maintient l\'exactitude et correspond à votre contexte spécifique.' },
+    ],
+  },
+
+  'generateur-introduction': {
+    slug: 'generateur-introduction',
+    name: 'Générateur d\'Introductions',
+    title: 'Générateur gratuit d\'introductions avec IA',
+    description: 'Créez des introductions captivantes qui accrochent les lecteurs dès la première phrase. Parfait pour les blogs, essais et articles.',
+    metaDescription: 'Créez des introductions captivantes qui accrochent les lecteurs dès la première phrase. Notre outil IA gratuit génère des ouvertures convaincantes...',
+    inputLabel: 'Sujet de l\'article et points clés...',
+    inputPlaceholder: 'ex. Sujet : Productivité en télétravail. Points clés : flexibilité, équilibre vie-travail, défis de communication',
+    buttonText: 'Générer l\'introduction',
+    maxLength: 2048,
+    options: [
+      { name: 'contentType', label: 'Type de contenu', choices: ['Article de blog', 'Guide pratique', 'Listicle', 'Essai/Opinion', 'Avis produit', 'Recherche/Rapport'], default: 'Article de blog', type: 'select' },
+      { name: 'hookType', label: 'Type d\'accroche', choices: ['Question', 'Statistique', 'Histoire', 'Déclaration audacieuse', 'Relatable'], default: 'Question', type: 'select' },
+      { name: 'tone', label: 'Ton', choices: ['Professionnel', 'Décontracté', 'Inspirant', 'Académique'], default: 'Professionnel', type: 'select' },
+    ],
+    systemPrompt: `You are an expert content writer specializing in crafting compelling introductions that hook readers.
+Content Type: {{contentType}}
+Hook Type: {{hookType}}
+Tone: {{tone}}
+Output only the introduction paragraph(s). No preamble.
+
+IMPORTANT: Generate all output in French.`,
+    useCases: [
+      { title: 'Marketing de contenu et ouvertures de blog', description: 'Les créateurs de contenu utilisent le Générateur d\'Introductions pour créer des ouvertures engageantes qui accrochent immédiatement les lecteurs.' },
+      { title: 'Introductions d\'essais académiques', description: 'Les étudiants peuvent générer des introductions bien structurées qui établissent clairement leur thèse.' },
+      { title: 'Ouvertures de documents professionnels', description: 'Les professionnels peuvent créer des introductions qui établissent immédiatement l\'importance de leur message.' },
+    ],
+    faqs: [
+      { question: 'Qu\'est-ce qui fait une bonne introduction ?', answer: 'Une introduction forte accroche les lecteurs immédiatement, établit la pertinence, présente le problème ou l\'opportunité et promet de la valeur.' },
+      { question: 'Le générateur d\'introductions est-il gratuit ?', answer: 'Oui, l\'outil est entièrement gratuit sans inscription ni paiement requis.' },
+      { question: 'Quelle longueur doit avoir une introduction ?', answer: 'Les introductions occupent typiquement 10-15% de la longueur totale du contenu.' },
+    ],
+  },
+
+  'extenseur-de-texte': {
+    slug: 'extenseur-de-texte',
+    name: 'Extenseur de Texte',
+    title: 'Extenseur de texte IA gratuit',
+    description: 'Développez des phrases courtes ou des paragraphes en contenu plus détaillé et complet sans perdre le sens original.',
+    metaDescription: 'Développez des phrases courtes ou des paragraphes en contenu plus détaillé. Notre outil IA gratuit ajoute de la profondeur sans changer le sens...',
+    inputLabel: 'Texte à développer...',
+    inputPlaceholder: 'Collez votre texte court ici pour le développer',
+    buttonText: 'Développer le texte',
+    maxLength: 2048,
+    options: [
+      { name: 'expansionLevel', label: 'Niveau d\'expansion', choices: ['Léger (1,5x)', 'Modéré (2x)', 'Substantiel (3x)'], default: 'Modéré (2x)', type: 'select' },
+      { name: 'method', label: 'Méthode d\'expansion', choices: ['Ajouter des exemples', 'Ajouter des explications', 'Ajouter des détails', 'Équilibré'], default: 'Équilibré', type: 'select' },
+      { name: 'tone', label: 'Ton', choices: ['Formel', 'Décontracté', 'Académique', 'Professionnel'], default: 'Professionnel', type: 'select' },
+    ],
+    systemPrompt: `You are an expert content writer specializing in expanding concise text into more detailed content while maintaining the original meaning.
+Expansion Level: {{expansionLevel}}
+Method: {{method}}
+Tone: {{tone}}
+Output only the expanded text. No preamble.
+
+IMPORTANT: Generate all output in French.`,
+    useCases: [
+      { title: 'Développement de contenu', description: 'Les rédacteurs utilisent l\'Extenseur de Texte pour développer des idées concises en contenu complet avec exemples et détails.' },
+      { title: 'Élaboration de points clés', description: 'Les professionnels peuvent développer des points ou des plans en prose complète.' },
+      { title: 'Rédaction académique', description: 'Les étudiants peuvent développer des arguments initiaux en paragraphes complets avec preuves et analyse.' },
+    ],
+    faqs: [
+      { question: 'Qu\'est-ce qu\'un extenseur de texte ?', answer: 'Un extenseur de texte prend du contenu bref et le développe en texte plus détaillé avec des exemples, explications et détails significatifs.' },
+      { question: 'L\'extenseur de texte est-il gratuit ?', answer: 'Oui, entièrement gratuit sans inscription requise.' },
+      { question: 'Le sens original sera-t-il préservé ?', answer: 'Préserver le sens original est une règle fondamentale.' },
     ],
   },
 };

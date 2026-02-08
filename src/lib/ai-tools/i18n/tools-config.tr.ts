@@ -1574,7 +1574,7 @@ IMPORTANT: Generate all output in Turkish.`,
     name: 'Sosyal Medya Altyazı Oluşturucu',
     title: 'Ücretsiz AI Sosyal Medya Altyazı Oluşturucu',
     description: 'Beğeni, yorum ve paylaşım çeken ilgi çekici sosyal medya altyazıları oluşturun. AI\'mız Instagram, Facebook, Twitter ve daha fazlası için etkili gönderi metinleri yaratır.',
-    metaDescription: 'Beğeni, yorum ve paylaşım çeken sosyal medya altyazıları oluşturun.',
+    metaDescription: 'Beğeni, yorum ve paylaşım çeken sosyal medya altyazıları oluşturun. Bu ücretsiz aracı ve diğer ücretsiz araçları şimdi Analyze AI\'da deneyin.',
     inputLabel: 'Gönderi içeriğinizi tanımlayın...',
     inputPlaceholder: 'örn. Yeni ürün lansmanı fotoğrafı - açık hava tutkunları için sürdürülebilir su şişeleri',
     buttonText: 'Altyazı Oluştur',
@@ -1607,7 +1607,7 @@ IMPORTANT: Generate all output in Turkish.`,
     name: 'Instagram Altyazı Oluşturucu',
     title: 'Ücretsiz AI Instagram Altyazı Oluşturucu',
     description: 'Kaydırmayı durduran Instagram altyazıları anında oluşturun. AI\'mız Reels, carousel ve feed gönderileri için beğeni, yorum ve kaydetmeleri artıran altyazılar yaratır.',
-    metaDescription: 'Kaydırmayı durduran Instagram altyazıları oluşturun.',
+    metaDescription: 'Kaydırmayı durduran Instagram altyazıları oluşturun. Bu ücretsiz aracı ve diğer ücretsiz araçları şimdi Analyze AI\'da deneyin.',
     inputLabel: 'Gönderinizi veya görselinizi tanımlayın...',
     inputPlaceholder: 'örn. Daha iyi uyku alışkanlıkları için 5 ipucu içeren carousel gönderi',
     buttonText: 'Altyazı Oluştur',
@@ -1640,7 +1640,7 @@ IMPORTANT: Generate all output in Turkish.`,
     name: 'Sosyal Medya Hashtag Oluşturucu',
     title: 'Ücretsiz AI Sosyal Medya Hashtag Oluşturucu',
     description: 'Erişim ve etkileşiminizi artıran etkili hashtagler oluşturun. AI\'mız Instagram, TikTok, Twitter ve daha fazlası için stratejik hashtag setleri yaratır.',
-    metaDescription: 'Erişim ve etkileşiminizi artıran etkili hashtagler oluşturun.',
+    metaDescription: 'Erişim ve etkileşiminizi artıran etkili hashtagler oluşturun. Bu ücretsiz aracı ve diğer ücretsiz araçları şimdi Analyze AI\'da deneyin.',
     inputLabel: 'İçeriğinizi veya nişinizi tanımlayın...',
     inputPlaceholder: 'örn. Yoğun profesyoneller için vegan yemek hazırlama tarifleri',
     buttonText: 'Hashtag Oluştur',
@@ -1673,7 +1673,7 @@ IMPORTANT: Generate all output in Turkish.`,
     name: 'Instagram Hashtag Oluşturucu',
     title: 'Ücretsiz AI Instagram Hashtag Oluşturucu',
     description: 'Erişim ve etkileşiminizi artıran mükemmel Instagram hashtagleri oluşturun. AI\'mız içerik ve nişinize özel stratejik hashtag setleri yaratır.',
-    metaDescription: 'Erişim ve etkileşiminizi artıran mükemmel Instagram hashtagleri oluşturun.',
+    metaDescription: 'Erişim ve etkileşiminizi artıran mükemmel Instagram hashtagleri oluşturun. Bu ücretsiz aracı ve diğer ücretsiz araçları şimdi Analyze AI\'da deneyin.',
     inputLabel: 'Gönderinizi veya nişinizi tanımlayın...',
     inputPlaceholder: 'örn. Plajlar ve tapınakları içeren Bali seyahat fotoğrafçılığı',
     buttonText: 'Hashtag Oluştur',
@@ -1706,7 +1706,7 @@ IMPORTANT: Generate all output in Turkish.`,
     name: 'Sosyal Medya Kullanıcı Adı Oluşturucu',
     title: 'Ücretsiz AI Sosyal Medya Kullanıcı Adı Oluşturucu',
     description: 'Sosyal medya profilleriniz için benzersiz ve akılda kalıcı kullanıcı adları oluşturun. AI\'mız Instagram, TikTok, Twitter ve daha fazlasında çalışan kişiselleştirilmiş öneriler yaratır.',
-    metaDescription: 'Sosyal medya profilleriniz için benzersiz ve akılda kalıcı kullanıcı adları oluşturun.',
+    metaDescription: 'Sosyal medya profilleriniz için benzersiz ve akılda kalıcı kullanıcı adları oluşturun. Bu ücretsiz aracı ve diğer ücretsiz araçları şimdi Analyze AI\'da deneyin.',
     inputLabel: 'Kendinizi veya markanızı tanımlayın...',
     inputPlaceholder: 'örn. Yoga ve meditasyonda uzmanlaşmış Sarah adında fitness koçu',
     buttonText: 'Kullanıcı Adı Oluştur',
@@ -1739,7 +1739,7 @@ IMPORTANT: Generate all output in Turkish.`,
     name: 'Instagram İsim Oluşturucu',
     title: 'Ücretsiz AI Instagram İsim Oluşturucu',
     description: 'Öne çıkan benzersiz Instagram kullanıcı adları oluşturun. AI\'mız varlığınızı oluşturmanıza ve keşfedilmenize yardımcı olan akılda kalıcı, markaya uygun kullanıcı adları yaratır.',
-    metaDescription: 'Öne çıkan benzersiz Instagram kullanıcı adları oluşturun.',
+    metaDescription: 'Öne çıkan benzersiz Instagram kullanıcı adları oluşturun. Bu ücretsiz aracı ve diğer ücretsiz araçları şimdi Analyze AI\'da deneyin.',
     inputLabel: 'Kendinizi veya markanızı tanımlayın...',
     inputPlaceholder: 'örn. Sağlıklı tarifler paylaşan Emma adında yemek blogcusu',
     buttonText: 'İsim Oluştur',
@@ -1772,7 +1772,7 @@ IMPORTANT: Generate all output in Turkish.`,
     name: 'TikTok Hashtag Oluşturucu',
     title: 'Ücretsiz AI TikTok Hashtag Oluşturucu',
     description: 'Görünürlüğünüzü artıran trend TikTok hashtagleri oluşturun. AI\'mız videolarınızın For You sayfasına ulaşmasına yardımcı olan stratejik hashtag kombinasyonları yaratır.',
-    metaDescription: 'Görünürlüğünüzü artıran trend TikTok hashtagleri oluşturun.',
+    metaDescription: 'Görünürlüğünüzü artıran trend TikTok hashtagleri oluşturun. Bu ücretsiz aracı ve diğer ücretsiz araçları şimdi Analyze AI\'da deneyin.',
     inputLabel: 'TikTok videonuzu tanımlayın...',
     inputPlaceholder: 'örn. Kıyafet değişikliği içeren trend müzik kullanan dans videosu',
     buttonText: 'Hashtag Oluştur',
@@ -2289,6 +2289,105 @@ IMPORTANT: Generate all output in Turkish.`,
       { question: 'Bu araç yazmamı daha resmi veya rahat yapabilir mi?', answer: 'Evet, ton ayarı temel bir özelliktir. Rahat yazıyı iş belgeleri için profesyonel dile dönüştürebilir veya tersini yapabilirsiniz.' },
       { question: 'Bu dilbilgisi kontrolünden nasıl farklı?', answer: 'Dilbilgisi denetleyicileri mevcut metindeki hataları düzeltir. Yeniden ifade araçları fikirlerin nasıl ifade edildiğini dönüştürür.' },
       { question: 'Her zaman yeniden ifade edilmiş versiyonu kabul etmeli miyim?', answer: 'Hayır, her zaman gözden geçirin ve düzenleyin. AI yeniden ifadesi iyileştirme gerektirebilecek bir başlangıç noktasıdır.' },
+    ],
+  },
+
+  'introduction-generator': {
+    slug: 'introduction-generator',
+    name: 'Giriş Oluşturucu',
+    title: 'Ücretsiz AI Giriş Oluşturucu',
+    description: 'İlk cümleden okuyucuları yakalayan büyüleyici girişler oluşturun. Bloglar, denemeler ve makaleler için mükemmel.',
+    metaDescription: 'İlk cümleden okuyucuları yakalayan büyüleyici girişler oluşturun. Ücretsiz AI aracımız ikna edici açılışlar üretir...',
+    inputLabel: 'Makale konusu ve ana noktalar...',
+    inputPlaceholder: 'örn. Konu: Uzaktan çalışma verimliliği. Ana noktalar: esneklik, iş-yaşam dengesi, iletişim zorlukları',
+    buttonText: 'Giriş oluştur',
+    maxLength: 2048,
+    options: [
+      { name: 'contentType', label: 'İçerik türü', choices: ['Blog yazısı', 'Nasıl yapılır rehberi', 'Liste makalesi', 'Deneme/Görüş', 'Ürün incelemesi', 'Araştırma/Rapor'], default: 'Blog yazısı', type: 'select' },
+      { name: 'hookType', label: 'Kanca türü', choices: ['Soru', 'İstatistik', 'Hikaye', 'Cesur iddia', 'İlişkilendirilebilir'], default: 'Soru', type: 'select' },
+      { name: 'tone', label: 'Ton', choices: ['Profesyonel', 'Rahat', 'İlham verici', 'Akademik'], default: 'Profesyonel', type: 'select' },
+    ],
+    systemPrompt: `You are an expert content writer specializing in crafting compelling introductions that hook readers.
+Content Type: {{contentType}}
+Hook Type: {{hookType}}
+Tone: {{tone}}
+Output only the introduction paragraph(s). No preamble.
+
+IMPORTANT: Generate all output in Turkish.`,
+    useCases: [
+      { title: 'İçerik pazarlama ve blog açılışları', description: 'Makale başlatmakta zorlanan içerik oluşturucular, okuyucuları anında yakalayan çekici açılışlar oluşturmak için kullanır.' },
+      { title: 'Akademik deneme girişleri', description: 'Öğrenciler tezlerini net bir şekilde ortaya koyan yapılandırılmış girişler oluşturabilir.' },
+      { title: 'İş belgesi açılışları', description: 'Profesyoneller mesajlarının önemini anında ortaya koyan girişler oluşturabilir.' },
+    ],
+    faqs: [
+      { question: 'İyi bir giriş ne yapar?', answer: 'Güçlü bir giriş okuyucuları anında yakalar, ilgi kurar, sorunu veya fırsatı sunar ve değer vaat eder.' },
+      { question: 'Giriş oluşturucu ücretsiz mi?', answer: 'Evet, kayıt veya ödeme gerektirmeden tamamen ücretsiz.' },
+      { question: 'Bir giriş ne kadar uzun olmalı?', answer: 'Girişler tipik olarak toplam içerik uzunluğunun %10-15\'ini kaplar.' },
+    ],
+  },
+
+  'text-expander': {
+    slug: 'text-expander',
+    name: 'Metin Genişletici',
+    title: 'Ücretsiz AI Metin Genişletici',
+    description: 'Kısa cümleleri veya paragrafları orijinal anlamı kaybetmeden daha ayrıntılı, kapsamlı içeriğe genişletin.',
+    metaDescription: 'Kısa cümleleri veya paragrafları daha ayrıntılı içeriğe genişletin. Ücretsiz AI aracımız anlamınızı değiştirmeden derinlik ekler...',
+    inputLabel: 'Genişletilecek metin...',
+    inputPlaceholder: 'Genişletmek istediğiniz kısa metni buraya yapıştırın',
+    buttonText: 'Metni genişlet',
+    maxLength: 2048,
+    options: [
+      { name: 'expansionLevel', label: 'Genişletme seviyesi', choices: ['Hafif (1,5x)', 'Orta (2x)', 'Kapsamlı (3x)'], default: 'Orta (2x)', type: 'select' },
+      { name: 'method', label: 'Genişletme yöntemi', choices: ['Örnekler ekle', 'Açıklamalar ekle', 'Detaylar ekle', 'Dengeli'], default: 'Dengeli', type: 'select' },
+      { name: 'tone', label: 'Ton', choices: ['Resmi', 'Rahat', 'Akademik', 'Profesyonel'], default: 'Profesyonel', type: 'select' },
+    ],
+    systemPrompt: `You are an expert content writer specializing in expanding concise text into more detailed content while maintaining the original meaning.
+Expansion Level: {{expansionLevel}}
+Method: {{method}}
+Tone: {{tone}}
+Output only the expanded text. No preamble.
+
+IMPORTANT: Generate all output in Turkish.`,
+    useCases: [
+      { title: 'İçerik geliştirme', description: 'Yazarlar kısa fikirleri örnekler ve detaylarla tam içeriğe dönüştürmek için Metin Genişletici kullanır.' },
+      { title: 'Ana noktaları detaylandırma', description: 'Profesyoneller madde işaretlerini veya taslakları tam düzyazıya genişletebilir.' },
+      { title: 'Akademik yazım', description: 'Öğrenciler ilk argümanları kanıt ve analizle tam gelişmiş paragraflara genişletebilir.' },
+    ],
+    faqs: [
+      { question: 'Metin genişletici nedir?', answer: 'Kısa içeriği anlamlı örnekler, açıklamalar ve detaylarla daha ayrıntılı metne genişleten bir araçtır.' },
+      { question: 'Metin genişletici ücretsiz mi?', answer: 'Evet, kayıt gerektirmeden tamamen ücretsiz.' },
+      { question: 'Orijinal anlam korunacak mı?', answer: 'Orijinal anlamı korumak temel kuraldır.' },
+    ],
+  },
+
+  'youtube-video-title-generator': {
+    slug: 'youtube-video-title-generator',
+    name: 'YouTube Video Başlık Oluşturucu',
+    title: 'Ücretsiz AI YouTube Video Başlık Oluşturucu',
+    description: 'İzlenme alan tıklanabilir YouTube video başlıkları oluşturun. AI\'mız SEO optimize edilmiş başlıklar oluşturur.',
+    metaDescription: 'İzlenme alan YouTube video başlıkları oluşturun. AI\'mız SEO optimize edilmiş başlıklar oluşturur...',
+    inputLabel: 'Video konunuzu açıklayın...',
+    inputPlaceholder: 'örn. Portre fotoğraf düzenleme için Lightroom eğitimi',
+    buttonText: 'Başlık oluştur',
+    maxLength: 2048,
+    options: [
+      { name: 'style', label: 'Başlık stili', choices: ['Bilgilendirici/Net', 'Çekici/Clickbait', 'Soru', 'Liste/Sayılar', 'Nasıl yapılır'], default: 'Bilgilendirici/Net', type: 'select' },
+      { name: 'video_type', label: 'Video türü', choices: ['Eğitim/Öğretici', 'Eğlence/Vlog', 'İnceleme/Ürün', 'Oyun', 'Haber/Yorum'], default: 'Eğitim/Öğretici', type: 'select' },
+    ],
+    systemPrompt: `You are an expert YouTube content strategist specializing in creating compelling video titles.
+Style: {{style}}
+Video Type: {{video_type}}
+Generate 8-10 title options under 60 characters when possible. For each title, briefly explain why it works.
+
+IMPORTANT: Generate all output in Turkish.`,
+    useCases: [
+      { title: 'Tıklama oranı optimizasyonu', description: 'YouTube içerik oluşturucuları tıklama oranını maksimize eden başlıklar oluşturmak için kullanır.' },
+      { title: 'Video SEO iyileştirme', description: 'Anahtar kelime optimize edilmiş başlıklarla arama görünürlüğünü artırır.' },
+      { title: 'Başlık A/B testi', description: 'Farklı başlık yaklaşımlarını test ederek en iyisini bulur.' },
+    ],
+    faqs: [
+      { question: 'YouTube video başlığı ne kadar uzun olmalı?', answer: 'YouTube 100 karaktere kadar izin verir, ancak arama sonuçlarında tam görünürlük için 60-70 karakter hedefleyin.' },
+      { question: 'Başlık YouTube SEO\'yu etkiler mi?', answer: 'Evet, başlıklar en önemli sıralama faktörlerinden biridir.' },
     ],
   },
 };

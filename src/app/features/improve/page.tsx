@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Improve',
+  title: 'Improve | Analyze AI',
   description: "Find high-intent prompts you're losing, see why competitors win them, defend areas where you're slipping, and double down on...",
   alternates: {
     canonical: '/features/improve',

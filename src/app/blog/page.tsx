@@ -105,7 +105,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 export async function generateMetadata({ searchParams }: BlogPageProps) {
   const params = await searchParams;
   const currentPage = parseInt(params.page || '1', 10);
-  const pageTitle = currentPage > 1 ? `Blog - Page ${currentPage}` : 'Blog';
+  const pageTitle = currentPage > 1 ? `Blog - Page ${currentPage} | Analyze AI` : 'Blog | Analyze AI';
   
   return {
     title: pageTitle,

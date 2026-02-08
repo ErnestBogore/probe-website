@@ -42,15 +42,15 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '無料AIライティングツール',
-  description: '無料のAIライティングツールコレクションにアクセス：段落ジェネレーター、パラフレーズ、要約、文法チェッカーなど。登録不要。',
+  title: '無料AIライティングツール | Analyze AI',
+  description: '無料のAIライティングツールコレクションにアクセス：段落ジェネレーター、パラフレーズ、要約、文法チェッカーなど。登録不要。Analyze AIで今すぐこの無料ツールや他の無料ツールをお試しください。',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/ja',
     languages: generateToolsListingHreflangAlternates(),
   },
   openGraph: {
-    title: '無料AIライティングツール',
-    description: '無料のAIライティングツールコレクションにアクセス：段落ジェネレーター、パラフレーズ、要約、文法チェッカーなど。登録不要。',
+    title: '無料AIライティングツール | Analyze AI',
+    description: '無料のAIライティングツールコレクションにアクセス：段落ジェネレーター、パラフレーズ、要約、文法チェッカーなど。登録不要。Analyze AIで今すぐこの無料ツールや他の無料ツールをお試しください。',
     url: 'https://www.tryanalyze.ai/free-tools/ja',
     type: 'website',
     locale: 'ja_JP',
@@ -65,8 +65,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '無料AIライティングツール',
-    description: '無料のAIライティングツールコレクションにアクセス：段落ジェネレーター、パラフレーズ、要約、文法チェッカーなど。登録不要。',
+    title: '無料AIライティングツール | Analyze AI',
+    description: '無料のAIライティングツールコレクションにアクセス：段落ジェネレーター、パラフレーズ、要約、文法チェッカーなど。登録不要。Analyze AIで今すぐこの無料ツールや他の無料ツールをお試しください。',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },
 };

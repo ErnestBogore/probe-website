@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Govern',
+  title: 'Govern | Analyze AI',
   description: "Monitor how AI represents your brand. Catch risky claims, negative shifts in sentiment, and channel drops early — before they...",
   alternates: {
     canonical: '/features/govern',

@@ -4002,7 +4002,7 @@ export function getAllBusinessNameGeneratorsIt(): BusinessNameGeneratorConfig[] 
 
 // Export function for getting a specific Italian generator by slug
 export function getBusinessNameGeneratorIt(slug: string): BusinessNameGeneratorConfig | undefined {
-  return businessNameGeneratorsIt[slug];
+  return Object.values(businessNameGeneratorsIt).find((tool) => tool.slug === slug);
 }
 
 // Export function for getting Italian generator slugs

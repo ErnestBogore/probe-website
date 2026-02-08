@@ -11,7 +11,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Monitor',
+  title: 'Monitor | Analyze AI',
   description: "Track AI-driven traffic, conversions, and revenue. See which AI sources send you visitors, which pages they land on, and how AI is performing as a real channel.",
   alternates: {
     canonical: '/features/monitor',

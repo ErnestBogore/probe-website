@@ -1627,7 +1627,7 @@ IMPORTANT: Generate all output in German.`,
     name: 'Instagram-Bio-Generator',
     title: 'Kostenloser KI-Instagram-Bio-Generator',
     description: 'Erstellen Sie die perfekte Instagram-Bio, die Follower anzieht. 150 Zeichen, die zählen.',
-    metaDescription: 'Erstellen Sie die perfekte Instagram-Bio, die Follower anzieht. Optimiert für 150 Zeichen.',
+    metaDescription: 'Erstellen Sie die perfekte Instagram-Bio, die Follower anzieht. Optimiert für 150 Zeichen. Probieren Sie dieses kostenlose Tool und weitere kostenlose Tools jetzt auf Analyze AI aus.',
     inputLabel: 'Über sich erzählen...',
     inputPlaceholder: 'z.B. Reiseblogger und Fotograf aus Berlin',
     buttonText: 'Bio Generieren',
@@ -1825,7 +1825,7 @@ IMPORTANT: Generate all output in German.`,
     name: 'TikTok-Hashtag-Generator',
     title: 'Kostenloser KI-TikTok-Hashtag-Generator',
     description: 'Generieren Sie virale TikTok-Hashtags. Mix aus trending und Nischen-Tags für maximale Reichweite.',
-    metaDescription: 'Generieren Sie virale TikTok-Hashtags für maximale Reichweite auf der For You Page.',
+    metaDescription: 'Generieren Sie virale TikTok-Hashtags für maximale Reichweite auf der For You Page. Probieren Sie dieses kostenlose Tool und weitere kostenlose Tools jetzt auf Analyze AI aus.',
     inputLabel: 'Video-Thema...',
     inputPlaceholder: 'z.B. Kochtutorial für schnelle Rezepte',
     buttonText: 'Hashtags Generieren',
@@ -3841,4 +3841,168 @@ IMPORTANT: Generate all output in German.`,
   },
 
   // ==================== TRANSLATION COMPLETE ====================
+
+  'introduction-generator': {
+    slug: 'introduction-generator',
+    name: 'Einleitungsgenerator',
+    title: 'Kostenloser KI-Einleitungsgenerator',
+    description: 'Erstellen Sie fesselnde Einleitungen, die Leser vom ersten Satz an fesseln. Perfekt für Blogs, Essays und Artikel.',
+    metaDescription: 'Erstellen Sie fesselnde Einleitungen, die Leser vom ersten Satz an fesseln. Unser kostenloses KI-Tool generiert überzeugende Eröffnungen...',
+    inputLabel: 'Artikelthema und Kernpunkte...',
+    inputPlaceholder: 'z.B. Thema: Produktivität im Homeoffice. Kernpunkte: Flexibilität, Work-Life-Balance, Kommunikationsherausforderungen',
+    buttonText: 'Einleitung generieren',
+    maxLength: 2048,
+    options: [
+      { name: 'contentType', label: 'Inhaltstyp', choices: ['Blogbeitrag', 'Anleitung', 'Listicle', 'Essay/Meinung', 'Produktbewertung', 'Forschung/Bericht'], default: 'Blogbeitrag', type: 'select' },
+      { name: 'hookType', label: 'Hook-Typ', choices: ['Frage', 'Statistik', 'Geschichte', 'Mutige Aussage', 'Nachvollziehbar'], default: 'Frage', type: 'select' },
+      { name: 'tone', label: 'Tonfall', choices: ['Professionell', 'Locker', 'Inspirierend', 'Akademisch'], default: 'Professionell', type: 'select' },
+    ],
+    systemPrompt: `You are an expert content writer specializing in crafting compelling introductions that hook readers and set up the content effectively.
+## CORE RULES
+- Start with an attention-grabbing hook
+- Establish relevance to the reader within the first 2-3 sentences
+- Preview the value the content will deliver
+- Keep introductions proportional (10-15% of total content length)
+- Never start with "In today's world" or similar clichés
+## INTRODUCTION ARCHITECTURE
+1. Hook (first sentence): Grab attention immediately
+2. Context: Establish why this matters to the reader
+3. Problem/Opportunity: What challenge or benefit will be addressed
+4. Promise: What the reader will learn/gain
+5. Transition: Lead smoothly into the main content
+## HOOK TYPE APPROACHES
+### IF HOOK = "Frage" - Ask something the reader genuinely wonders about
+### IF HOOK = "Statistik" - Lead with a surprising or compelling number
+### IF HOOK = "Geschichte" - Start in media res, keep it brief but vivid
+### IF HOOK = "Mutige Aussage" - Challenge conventional wisdom, create curiosity
+### IF HOOK = "Nachvollziehbar" - Describe a common experience, use "you" language
+## CONTENT TYPE ADAPTATIONS
+### IF TYPE = "Blogbeitrag" - Conversational, promise practical value
+### IF TYPE = "Anleitung" - Focus on transformation/outcome
+### IF TYPE = "Listicle" - Tease variety and completeness
+### IF TYPE = "Essay/Meinung" - Establish thesis angle
+### IF TYPE = "Produktbewertung" - Address purchase decision context
+### IF TYPE = "Forschung/Bericht" - Lead with key finding
+## OUTPUT FORMAT
+Content Type: {{contentType}}
+Hook Type: {{hookType}}
+Tone: {{tone}}
+Output only the introduction paragraph(s). No preamble.
+
+IMPORTANT: Generate all output in German.`,
+    useCases: [
+      { title: 'Content-Marketing und Blog-Eröffnungen', description: 'Content-Ersteller, die Schwierigkeiten haben, Artikel zu beginnen, nutzen den Einleitungsgenerator, um ansprechende Eröffnungen zu erstellen, die Leser sofort fesseln.' },
+      { title: 'Akademische Essay-Einleitungen', description: 'Studierende, die Essays, Forschungsarbeiten oder Abschlussarbeiten schreiben, können gut strukturierte Einleitungen generieren, die ihre These klar etablieren.' },
+      { title: 'Geschäftsdokument-Eröffnungen', description: 'Fachleute, die Berichte, Vorschläge oder Präsentationen schreiben, können Einleitungen erstellen, die sofort die Wichtigkeit ihrer Botschaft etablieren.' },
+    ],
+    faqs: [
+      { question: 'Was macht eine gute Einleitung aus?', answer: 'Eine starke Einleitung fesselt Leser sofort, stellt Relevanz für ihre Situation her, präsentiert das Problem oder die Chance und verspricht Wert.' },
+      { question: 'Ist der Einleitungsgenerator kostenlos?', answer: 'Ja, das Tool ist völlig kostenlos ohne Anmeldung oder Zahlung erforderlich.' },
+      { question: 'Welche Informationen sollte ich bereitstellen?', answer: 'Geben Sie mindestens Ihr Thema und die Kernpunkte Ihres Inhalts an. Für beste Ergebnisse spezifizieren Sie auch den Inhaltstyp, den gewünschten Ton und den gewünschten Hook.' },
+      { question: 'Wie lang sollte eine Einleitung sein?', answer: 'Einleitungen nehmen typischerweise 10-15% der Gesamtlänge ein. Für einen 1.000-Wörter-Artikel erwarten Sie 100-150 Wörter.' },
+      { question: 'Welche Hook-Typen sind verfügbar?', answer: 'Das Tool unterstützt verschiedene Hook-Typen: Fragen, Statistiken, Geschichten, mutige Aussagen und nachvollziehbare Szenarien.' },
+    ],
+  },
+
+  'text-expander': {
+    slug: 'text-expander',
+    name: 'Texterweiterer',
+    title: 'Kostenloser KI-Texterweiterer',
+    description: 'Erweitern Sie kurze Sätze oder Absätze zu detaillierterem, umfassenderem Inhalt, ohne die ursprüngliche Bedeutung zu verlieren.',
+    metaDescription: 'Erweitern Sie kurze Sätze oder Absätze zu detaillierterem Inhalt. Unser kostenloses KI-Tool fügt Tiefe hinzu, ohne Ihre Bedeutung zu ändern...',
+    inputLabel: 'Text zum Erweitern...',
+    inputPlaceholder: 'Fügen Sie Ihren kurzen Text hier ein, um ihn zu erweitern',
+    buttonText: 'Text erweitern',
+    maxLength: 2048,
+    options: [
+      { name: 'expansionLevel', label: 'Erweiterungsstufe', choices: ['Leicht (1,5x)', 'Moderat (2x)', 'Umfangreich (3x)'], default: 'Moderat (2x)', type: 'select' },
+      { name: 'method', label: 'Erweiterungsmethode', choices: ['Beispiele hinzufügen', 'Erklärungen hinzufügen', 'Details hinzufügen', 'Ausgewogen'], default: 'Ausgewogen', type: 'select' },
+      { name: 'tone', label: 'Tonfall', choices: ['Formell', 'Locker', 'Akademisch', 'Professionell'], default: 'Professionell', type: 'select' },
+    ],
+    systemPrompt: `You are an expert content writer specializing in expanding concise text into more detailed, comprehensive content while maintaining the original meaning and adding genuine value.
+## CORE RULES
+- Preserve the original meaning completely
+- Add substantive content, not filler or fluff
+- Maintain consistency in tone and style
+- Ensure additions are relevant and valuable
+- Never contradict or alter the original point
+## EXPANSION METHODS
+### IF METHOD = "Beispiele hinzufügen" - Include concrete, relevant examples
+### IF METHOD = "Erklärungen hinzufügen" - Unpack complex ideas, define key terms
+### IF METHOD = "Details hinzufügen" - Include specific facts, add descriptive elements
+### IF METHOD = "Ausgewogen" - Combine examples, explanations, and details
+## EXPANSION LEVELS
+### IF LEVEL = "Leicht (1,5x)" - Add one supporting element per main idea
+### IF LEVEL = "Moderat (2x)" - Add 2-3 supporting elements per main idea
+### IF LEVEL = "Umfangreich (3x)" - Comprehensive expansion with multiple supports
+## OUTPUT FORMAT
+Expansion Level: {{expansionLevel}}
+Method: {{method}}
+Tone: {{tone}}
+Output only the expanded text. No preamble.
+
+IMPORTANT: Generate all output in German.`,
+    useCases: [
+      { title: 'Inhaltsentwicklung und Wortzahl-Ziele', description: 'Autoren, die Wortzahl-Anforderungen erfüllen müssen, nutzen den Texterweiterer, um knappe Ideen zu vollständigem Inhalt zu entwickeln.' },
+      { title: 'Ausarbeitung von Kernpunkten', description: 'Fachleute können Stichpunkte oder Gliederungen zu vollständiger Prosa erweitern.' },
+      { title: 'Akademisches Schreiben', description: 'Studierende können erste Argumente zu vollständig entwickelten Absätzen mit Belegen und Analyse erweitern.' },
+    ],
+    faqs: [
+      { question: 'Was ist ein Texterweiterer?', answer: 'Ein Texterweiterer nimmt kurzen Inhalt und erweitert ihn zu detaillierterem, umfassenderem Text mit bedeutungsvollen Beispielen, Erklärungen und Details.' },
+      { question: 'Ist der Texterweiterer kostenlos?', answer: 'Ja, völlig kostenlos ohne Anmeldung erforderlich.' },
+      { question: 'Wie stark kann mein Text erweitert werden?', answer: 'Sie können leichte (1,5x), moderate (2x) oder umfangreiche (3x) Erweiterungsstufen wählen.' },
+      { question: 'Wird die Erweiterung Füllmaterial hinzufügen?', answer: 'Das Tool ist darauf ausgelegt, substanziellen Inhalt hinzuzufügen, kein Füllmaterial. Es konzentriert sich auf Beispiele, Erklärungen und Details.' },
+      { question: 'Bleibt die ursprüngliche Bedeutung erhalten?', answer: 'Die Bewahrung der ursprünglichen Bedeutung ist eine Kernregel. Der erweiterte Inhalt verstärkt und elaboriert Ihre Punkte immer.' },
+    ],
+  },
+
+  'youtube-video-title-generator': {
+    slug: 'youtube-video-title-generator',
+    name: 'YouTube-Videotitel-Generator',
+    title: 'Kostenloser KI YouTube-Videotitel-Generator',
+    description: 'Generieren Sie klickstarke YouTube-Videotitel, die Aufrufe bringen. Unsere KI erstellt SEO-optimierte Titel, die Zuschauer anziehen.',
+    metaDescription: 'Generieren Sie klickstarke YouTube-Videotitel, die Aufrufe bringen. Unsere KI erstellt SEO-optimierte Titel für mehr Zuschauer...',
+    inputLabel: 'Beschreiben Sie Ihr Videothema...',
+    inputPlaceholder: 'z.B. Lightroom-Tutorial für Porträtfoto-Bearbeitung',
+    buttonText: 'Titel generieren',
+    maxLength: 2048,
+    options: [
+      { name: 'style', label: 'Titelstil', choices: ['Informativ/Klar', 'Catchy/Clickbait', 'Frage', 'Liste/Zahlen', 'Anleitung'], default: 'Informativ/Klar', type: 'select' },
+      { name: 'video_type', label: 'Videotyp', choices: ['Tutorial/Bildung', 'Unterhaltung/Vlog', 'Review/Produkt', 'Gaming', 'Nachrichten/Kommentar'], default: 'Tutorial/Bildung', type: 'select' },
+    ],
+    systemPrompt: `You are an expert YouTube content strategist specializing in creating compelling, click-worthy video titles.
+## YOUTUBE TITLE FUNDAMENTALS
+**Character Limit**: 100 characters (60-70 recommended for full visibility)
+**SEO Impact**: Titles are the primary ranking factor for YouTube search
+## EFFECTIVE TITLE PATTERNS
+### Pattern 1: How-To/Tutorial - "How to [Achieve Result] in [Timeframe]"
+### Pattern 2: List/Number-Based - "[Number] [Things] You Didn't Know About [Topic]"
+### Pattern 3: Question-Based - "Why Does [Thing] [Do Something]?"
+### Pattern 4: Curiosity/Hook - "I Tried [Thing] for [Time Period] - Here's What Happened"
+### Pattern 5: Direct/Clear - "[Topic] Explained in [Time]"
+## TITLE OPTIMIZATION TIPS
+1. Front-load keywords
+2. Create curiosity
+3. Be specific
+4. Use numbers
+5. Match search intent
+6. Avoid clickbait
+Style: {{style}}
+Video Type: {{video_type}}
+## OUTPUT FORMAT
+Generate 8-10 title options under 60 characters when possible. For each title, briefly explain why it works.
+
+IMPORTANT: Generate all output in German.`,
+    useCases: [
+      { title: 'Klickraten-Optimierung', description: 'YouTube-Creator nutzen den Videotitel-Generator, um Titel zu erstellen, die die Klickrate maximieren.' },
+      { title: 'Video-SEO-Verbesserung', description: 'YouTuber nutzen den Generator, um keyword-optimierte Titel für bessere Suchsichtbarkeit zu erstellen.' },
+      { title: 'A/B-Testing von Titeln', description: 'Creator testen verschiedene Titelansätze mit dem Generator, um herauszufinden, welche am besten bei ihrem Publikum ankommen.' },
+    ],
+    faqs: [
+      { question: 'Wie lang sollte ein YouTube-Videotitel sein?', answer: 'YouTube erlaubt bis zu 100 Zeichen, aber streben Sie 60-70 Zeichen an für volle Sichtbarkeit in Suchergebnissen.' },
+      { question: 'Wie erstelle ich eingängige YouTube-Titel?', answer: 'Verwenden Sie Power-Wörter, Zahlen, Fragen oder Neugier. Seien Sie spezifisch, was Zuschauer bekommen werden.' },
+      { question: 'Beeinflusst der Titel YouTube-SEO?', answer: 'Ja, Titel sind einer der wichtigsten Ranking-Faktoren. Setzen Sie Ihr Hauptkeyword in die ersten 3-4 Wörter.' },
+      { question: 'Kann ich YouTube-Titel nach der Veröffentlichung ändern?', answer: 'Ja, Sie können Titel jederzeit ändern. Häufige Änderungen können das Ranking vorübergehend beeinflussen.' },
+    ],
+  },
 };

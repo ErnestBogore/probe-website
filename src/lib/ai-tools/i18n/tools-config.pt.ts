@@ -3126,4 +3126,103 @@ IMPORTANT: Generate all output in Portuguese.`,
   },
 
   // ==================== TRANSLATION COMPLETE ====================
+
+  'introduction-generator': {
+    slug: 'introduction-generator',
+    name: 'Gerador de Introduções',
+    title: 'Gerador gratuito de introduções com IA',
+    description: 'Crie introduções cativantes que prendem os leitores desde a primeira frase. Perfeito para blogs, ensaios e artigos.',
+    metaDescription: 'Crie introduções cativantes que prendem os leitores desde a primeira frase. Nossa ferramenta IA gratuita gera aberturas convincentes...',
+    inputLabel: 'Tema do artigo e pontos-chave...',
+    inputPlaceholder: 'ex. Tema: Produtividade no trabalho remoto. Pontos-chave: flexibilidade, equilíbrio vida-trabalho, desafios de comunicação',
+    buttonText: 'Gerar introdução',
+    maxLength: 2048,
+    options: [
+      { name: 'contentType', label: 'Tipo de conteúdo', choices: ['Post de blog', 'Guia prático', 'Listicle', 'Ensaio/Opinião', 'Avaliação de produto', 'Pesquisa/Relatório'], default: 'Post de blog', type: 'select' },
+      { name: 'hookType', label: 'Tipo de gancho', choices: ['Pergunta', 'Estatística', 'História', 'Declaração ousada', 'Relacionável'], default: 'Pergunta', type: 'select' },
+      { name: 'tone', label: 'Tom', choices: ['Profissional', 'Casual', 'Inspirador', 'Acadêmico'], default: 'Profissional', type: 'select' },
+    ],
+    systemPrompt: `You are an expert content writer specializing in crafting compelling introductions that hook readers.
+Content Type: {{contentType}}
+Hook Type: {{hookType}}
+Tone: {{tone}}
+Output only the introduction paragraph(s). No preamble.
+
+IMPORTANT: Generate all output in Portuguese.`,
+    useCases: [
+      { title: 'Marketing de conteúdo e aberturas de blog', description: 'Criadores de conteúdo usam o Gerador de Introduções para criar aberturas envolventes que prendem os leitores imediatamente.' },
+      { title: 'Introduções de ensaios acadêmicos', description: 'Estudantes podem gerar introduções bem estruturadas que estabelecem claramente sua tese.' },
+      { title: 'Aberturas de documentos empresariais', description: 'Profissionais podem criar introduções que estabelecem imediatamente a importância de sua mensagem.' },
+    ],
+    faqs: [
+      { question: 'O que faz uma boa introdução?', answer: 'Uma introdução forte prende os leitores imediatamente, estabelece relevância, apresenta o problema ou oportunidade e promete valor.' },
+      { question: 'O gerador de introduções é gratuito?', answer: 'Sim, completamente gratuito sem cadastro ou pagamento necessário.' },
+      { question: 'Qual deve ser o tamanho de uma introdução?', answer: 'Introduções tipicamente ocupam 10-15% do comprimento total do conteúdo.' },
+    ],
+  },
+
+  'text-expander': {
+    slug: 'text-expander',
+    name: 'Expansor de Texto',
+    title: 'Expansor de texto IA gratuito',
+    description: 'Expanda frases curtas ou parágrafos em conteúdo mais detalhado e abrangente sem perder o significado original.',
+    metaDescription: 'Expanda frases curtas ou parágrafos em conteúdo mais detalhado. Nossa ferramenta IA gratuita adiciona profundidade sem mudar o significado...',
+    inputLabel: 'Texto para expandir...',
+    inputPlaceholder: 'Cole seu texto curto aqui para expandir',
+    buttonText: 'Expandir texto',
+    maxLength: 2048,
+    options: [
+      { name: 'expansionLevel', label: 'Nível de expansão', choices: ['Leve (1,5x)', 'Moderado (2x)', 'Substancial (3x)'], default: 'Moderado (2x)', type: 'select' },
+      { name: 'method', label: 'Método de expansão', choices: ['Adicionar exemplos', 'Adicionar explicações', 'Adicionar detalhes', 'Equilibrado'], default: 'Equilibrado', type: 'select' },
+      { name: 'tone', label: 'Tom', choices: ['Formal', 'Casual', 'Acadêmico', 'Profissional'], default: 'Profissional', type: 'select' },
+    ],
+    systemPrompt: `You are an expert content writer specializing in expanding concise text into more detailed content while maintaining the original meaning.
+Expansion Level: {{expansionLevel}}
+Method: {{method}}
+Tone: {{tone}}
+Output only the expanded text. No preamble.
+
+IMPORTANT: Generate all output in Portuguese.`,
+    useCases: [
+      { title: 'Desenvolvimento de conteúdo', description: 'Escritores usam o Expansor de Texto para desenvolver ideias concisas em conteúdo completo com exemplos e detalhes.' },
+      { title: 'Elaboração de pontos-chave', description: 'Profissionais podem expandir tópicos ou esboços em prosa completa.' },
+      { title: 'Escrita acadêmica', description: 'Estudantes podem expandir argumentos iniciais em parágrafos completamente desenvolvidos.' },
+    ],
+    faqs: [
+      { question: 'O que é um expansor de texto?', answer: 'Um expansor de texto pega conteúdo breve e o expande em texto mais detalhado com exemplos, explicações e detalhes significativos.' },
+      { question: 'O expansor de texto é gratuito?', answer: 'Sim, completamente gratuito sem cadastro necessário.' },
+      { question: 'O significado original será mantido?', answer: 'Preservar o significado original é uma regra fundamental.' },
+    ],
+  },
+
+  'youtube-video-title-generator': {
+    slug: 'youtube-video-title-generator',
+    name: 'Gerador de Títulos de Vídeo YouTube',
+    title: 'Gerador gratuito de títulos de vídeo YouTube com IA',
+    description: 'Gere títulos YouTube atraentes que obtêm visualizações. Nossa IA cria títulos otimizados para SEO.',
+    metaDescription: 'Gere títulos YouTube atraentes que obtêm visualizações. Nossa IA cria títulos otimizados para SEO que atraem espectadores...',
+    inputLabel: 'Descreva o tema do seu vídeo...',
+    inputPlaceholder: 'ex. Tutorial Lightroom para edição de fotos retrato',
+    buttonText: 'Gerar títulos',
+    maxLength: 2048,
+    options: [
+      { name: 'style', label: 'Estilo do título', choices: ['Informativo/Claro', 'Atraente/Clickbait', 'Pergunta', 'Lista/Números', 'Como fazer'], default: 'Informativo/Claro', type: 'select' },
+      { name: 'video_type', label: 'Tipo de vídeo', choices: ['Tutorial/Educativo', 'Entretenimento/Vlog', 'Avaliação/Produto', 'Gaming', 'Notícias/Comentário'], default: 'Tutorial/Educativo', type: 'select' },
+    ],
+    systemPrompt: `You are an expert YouTube content strategist specializing in creating compelling video titles.
+Style: {{style}}
+Video Type: {{video_type}}
+Generate 8-10 title options under 60 characters when possible. For each title, briefly explain why it works.
+
+IMPORTANT: Generate all output in Portuguese.`,
+    useCases: [
+      { title: 'Otimização de taxa de cliques', description: 'Criadores YouTube usam o gerador para criar títulos que maximizam a taxa de cliques.' },
+      { title: 'Melhoria de SEO de vídeo', description: 'YouTubers usam o gerador para criar títulos otimizados para palavras-chave.' },
+      { title: 'Teste A/B de títulos', description: 'Criadores testam diferentes abordagens de títulos para encontrar as melhores.' },
+    ],
+    faqs: [
+      { question: 'Qual deve ser o tamanho de um título YouTube?', answer: 'YouTube permite até 100 caracteres, mas mire em 60-70 para visibilidade total nos resultados de busca.' },
+      { question: 'O título afeta o SEO do YouTube?', answer: 'Sim, títulos são um dos fatores de ranking mais importantes.' },
+    ],
+  },
 };

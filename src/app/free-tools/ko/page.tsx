@@ -42,15 +42,15 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '무료 AI 글쓰기 도구',
-  description: '무료 AI 글쓰기 도구 컬렉션에 액세스하세요: 단락 생성기, 패러프레이징, 요약, 문법 검사기 등. 가입 필요 없음.',
+  title: '무료 AI 글쓰기 도구 | Analyze AI',
+  description: '무료 AI 글쓰기 도구 컬렉션에 액세스하세요: 단락 생성기, 패러프레이징, 요약, 문법 검사기 등. 가입 필요 없음. 지금 Analyze AI에서 이 무료 도구와 다른 무료 도구를 사용해 보세요.',
   alternates: {
     canonical: 'https://www.tryanalyze.ai/free-tools/ko',
     languages: generateToolsListingHreflangAlternates(),
   },
   openGraph: {
-    title: '무료 AI 글쓰기 도구',
-    description: '무료 AI 글쓰기 도구 컬렉션에 액세스하세요: 단락 생성기, 패러프레이징, 요약, 문법 검사기 등. 가입 필요 없음.',
+    title: '무료 AI 글쓰기 도구 | Analyze AI',
+    description: '무료 AI 글쓰기 도구 컬렉션에 액세스하세요: 단락 생성기, 패러프레이징, 요약, 문법 검사기 등. 가입 필요 없음. 지금 Analyze AI에서 이 무료 도구와 다른 무료 도구를 사용해 보세요.',
     url: 'https://www.tryanalyze.ai/free-tools/ko',
     type: 'website',
     locale: 'ko_KR',
@@ -65,8 +65,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '무료 AI 글쓰기 도구',
-    description: '무료 AI 글쓰기 도구 컬렉션에 액세스하세요: 단락 생성기, 패러프레이징, 요약, 문법 검사기 등. 가입 필요 없음.',
+    title: '무료 AI 글쓰기 도구 | Analyze AI',
+    description: '무료 AI 글쓰기 도구 컬렉션에 액세스하세요: 단락 생성기, 패러프레이징, 요약, 문법 검사기 등. 가입 필요 없음. 지금 Analyze AI에서 이 무료 도구와 다른 무료 도구를 사용해 보세요.',
     images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
   },
 };
