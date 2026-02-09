@@ -12,8 +12,8 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Best Deepseek Visibility Tracking Tool for Brands',
-  description: 'Track brand and website visibility within Deepseek answers. Monitor mentions, links, get real traffic data and competitors, and review actual answers.',
+  title: 'Monitor Your Brand, Traffic, And Conversion From DeepSeek',
+  description: 'Monitor how DeepSeek recommends, mentions, and links to your brand. Get real traffic data, competitor comparisons, and actionable insights from AI-generated answers.',
   alternates: {
     canonical: '/use-cases/deepseek',
   },
