@@ -62,7 +62,7 @@ export const seoTools: Record<string, SeoToolConfig> = {
       {
         title: 'Evaluate Keyword-Level Competitiveness for Content Prioritization',
         description: 'The results table surfaces each keyword alongside its monthly search Volume, Keyword Difficulty (KD) score, Cost Per Click (CPC), and Competition index. This multi-metric view allows you to sort and filter for the sweet spot: high-volume, low-difficulty keywords with meaningful commercial intent. PPC managers can use the CPC column to estimate ad spend, while SEO practitioners can use the KD score to decide which keywords to target with long-form content versus which ones need a backlink-first strategy.',
-        image: '/Keyword Generator/See any keyword\'s competitive landscape from kyword difficulty to cpc.png',
+        image: '/Keyword Generator/See any keywords competitive landscape from kyword difficulty to cpc.png',
       },
       {
         title: 'Mine Semantically Related Keywords to Build Topical Authority',
@@ -173,17 +173,17 @@ export const seoTools: Record<string, SeoToolConfig> = {
       {
         title: 'Get a 360-Degree Competitive Snapshot of Any Keyword',
         description: 'The results dashboard shows three critical metrics side by side: Keyword Difficulty (e.g., 58 "Hard"), Search Volume (e.g., 1,900/month), and CPC (e.g., $32.40). This three-metric view gives you the complete picture in one glance. A keyword with a high KD but also high CPC might still be worth pursuing with a long-term authority-building strategy because the commercial intent justifies the effort. Conversely, a low-KD keyword with zero CPC may drive traffic but not revenue. Use this dashboard to make data-driven editorial decisions.',
-        image: '/keyword difficulty checker/see the keyword\'s 360 competitiveness with cpc.png',
+        image: '/keyword difficulty checker/see the keywords 360 competitiveness with cpc.png',
       },
       {
         title: 'Understand What a Difficulty Score Actually Means',
         description: 'The KD gauge provides a visual, intuitive representation of ranking difficulty. The score runs from 0 to 100 with color-coded severity: green (Easy, 0–20), yellow (Medium, 21–40), orange (Hard, 41–60), and red (Very Hard, 61–100). This visualization is especially useful when presenting keyword research to stakeholders or clients who don\'t work in SEO daily and need a quick, visual answer to "can we rank for this?"',
-        image: '/keyword difficulty checker/see the keyword\'s actual difficulty.png',
+        image: '/keyword difficulty checker/see the keywords actual difficulty.png',
       },
       {
         title: 'Validate Search Demand Before Investing in Content',
         description: 'Search volume is the foundation of all keyword targeting decisions. This card isolates the monthly search volume metric, letting you confirm that enough people are actively searching for this term to justify creating content. A common mistake in SEO is targeting keywords with zero or negligible volume simply because they seem relevant. This quick check prevents that — and when combined with the KD score, tells you whether the opportunity is both real and achievable.',
-        image: '/keyword difficulty checker/see the keyword\'s actual search volume.png',
+        image: '/keyword difficulty checker/see the keywords actual search volume.png',
       },
     ],
     faqs: [
@@ -267,7 +267,7 @@ export const seoTools: Record<string, SeoToolConfig> = {
       {
         title: 'Understand SERP Position Distribution Across All Keywords',
         description: 'This breakdown shows how many keywords a site ranks for across each SERP position range: #1, #2–3, #4–10, #11–20, and so on. This distribution tells a deeper story than a single authority number. A site with thousands of #1 rankings has dominant authority. A site with most keywords in positions #21–50 has emerging potential but hasn\'t broken through to page one yet. Use this to assess your own site\'s growth trajectory and to identify competitors whose rankings you can realistically challenge.',
-        image: '/Website authority checker/See any website\'s keywords ranking.png',
+        image: '/Website authority checker/See any websites keywords ranking.png',
       },
       {
         title: 'Evaluate a Domain\'s Traffic and Ranking Scale',
@@ -397,7 +397,7 @@ export const seoTools: Record<string, SeoToolConfig> = {
       {
         title: 'Track Your Brand\'s Position for Target Keywords',
         description: 'The detailed results table shows Title, Domain, and full URL for each ranking position. Scroll through to find whether your site (or your competitor\'s site) appears in the results. Use this to verify rank tracker data, spot check critical keywords before client meetings, or confirm that a newly published page has entered the SERP.',
-        image: '/SERP Checker/See your brand\'s ranking for any keyword on the SERP.png',
+        image: '/SERP Checker/See your brands ranking for any keyword on the SERP.png',
       },
     ],
     faqs: [
@@ -506,7 +506,7 @@ export const seoTools: Record<string, SeoToolConfig> = {
       {
         title: 'Check Your Website\'s Rankings on Any Country\'s SERP',
         description: 'Knowing where you rank is the scoreboard of SEO. Enter your domain, optionally filter by a specific keyword, select your country, and see exactly where your site appears across Google\'s results. The keyword filter is especially powerful — instead of sifting through hundreds of rankings, you can instantly check a specific target term. International brands and multi-market agencies use the country selector to track rankings separately for each market they operate in.',
-        image: '/Rank checker/Check the rank of your website on any country\'s SERP.png',
+        image: '/Rank checker/Check the rank of your website on any countrys SERP.png',
       },
       {
         title: 'Spy on Competitor Rankings Across Countries',
@@ -516,7 +516,7 @@ export const seoTools: Record<string, SeoToolConfig> = {
       {
         title: 'Analyze Keyword-Level Content Performance',
         description: 'The results table shows every ranking keyword alongside its Position, Search Volume, CPC, estimated Traffic, and the specific URL that ranks. This page-level view lets you identify your best-performing content (pages ranking for multiple high-volume keywords) and your underperformers (pages ranking for low-volume terms or stuck on page 2). Cross-reference the URL column with your content strategy — if a page you invested heavily in isn\'t ranking well, it may need content updates, additional internal links, or targeted backlinks.',
-        image: '/Rank checker/See your website\'s content performance.png',
+        image: '/Rank checker/See your websites content performance.png',
       },
       {
         title: 'Understand Your Site\'s Overall Ranking Competitiveness',
@@ -825,7 +825,7 @@ export const seoTools: Record<string, SeoToolConfig> = {
       {
         title: 'Evaluate Bing\'s Unique Volume and Keyword Density',
         description: 'The summary dashboard reveals the total number of keyword ideas and their average volume on Bing. A seed keyword generating over 1,000 related terms means there is a deep, semantically rich topic cluster available on Bing\'s platform. This density metric helps you decide if Bing optimization is worth the effort for your niche. For B2B software keywords, enterprise tool queries, and professional services, Bing often delivers a surprising volume of searchers who are higher-intent and less expensive to convert.',
-        image: '/Bing keyword tool/See a keyword\'s volume and semantic density on Bing.png',
+        image: '/Bing keyword tool/See a keywords volume and semantic density on Bing.png',
       },
       {
         title: 'Compare Organic and Paid Competitiveness on Bing',
@@ -914,7 +914,7 @@ export const seoTools: Record<string, SeoToolConfig> = {
       {
         title: 'Estimate Any Website\'s Search Traffic Instantly',
         description: 'Before entering any market, you need to know how much search traffic your competitors are capturing. Enter any domain into the traffic checker and get an instant estimate of their organic and paid search performance. Whether you\'re evaluating a competitor, researching a potential acquisition, vetting an advertising partner, or analyzing a client\'s current performance, this tool gives you the traffic intelligence that used to require expensive enterprise subscriptions. It\'s the fastest way to answer the question: "How much search traffic does this site actually get?"',
-        image: '/website traffic checker/check any website\'s traffic.png',
+        image: '/website traffic checker/check any websites traffic.png',
       },
       {
         title: 'See Total Keyword Rankings and Traffic Monetary Value',
@@ -1014,7 +1014,7 @@ export const seoTools: Record<string, SeoToolConfig> = {
       {
         title: 'Monitor Your Technical SEO Score and Critical Issues',
         description: 'Beyond broken links, the tool returns a Page Score (0–100) and the total number of Issues Found. A Page Score of 100 with 0 issues means the page is technically healthy. Anything below 80 signals problems that need attention. This scoring system gives you a quick pass/fail metric for any page on your site, making it easy to prioritize which pages need immediate technical SEO fixes versus which ones are performing well. Use it to benchmark your pages against competitors — if their Page Score is higher, their technical foundation is stronger.',
-        image: '/Broken link checker/See your website\'s technical seo score + number of critical seo issues.png',
+        image: '/Broken link checker/See your websites technical seo score + number of critical seo issues.png',
       },
       {
         title: 'Analyze Internal and External Link Distribution',
@@ -1103,7 +1103,7 @@ export const seoTools: Record<string, SeoToolConfig> = {
       {
         title: 'Audit Any Website\'s Visibility in AI-Powered Search',
         description: 'AI Overviews, ChatGPT, Perplexity, and Gemini are reshaping how users find information — and most websites have no idea how they\'re performing in this new landscape. Enter any domain, click "Check Visibility," and get a comprehensive audit of how the site appears in AI search results. This is the first step in AI Engine Optimization (AEO), the emerging discipline that sits alongside traditional SEO. Marketing teams, brand managers, and SEO professionals use this to understand their exposure to AI-driven search disruption.',
-        image: '/ai visibility checker/check any website\'s visibility in llms.png',
+        image: '/ai visibility checker/check any websites visibility in llms.png',
       },
       {
         title: 'Analyze AI Overview Keyword Distribution and Positioning',
