@@ -7,27 +7,25 @@ import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/schema'
 export function SharedLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <head>
-        {/* DNS prefetch for 3rd-party origins */}
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://scripts.simpleanalyticscdn.com" />
-        <link rel="dns-prefetch" href="https://www.clarity.ms" />
-        <link rel="dns-prefetch" href="https://widget.intercom.io" />
-        <link rel="dns-prefetch" href="https://cdn.convertbox.com" />
-        {/* Sitewide Structured Data: Organization + WebSite */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateOrganizationSchema())
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateWebsiteSchema())
-          }}
-        />
-      </head>
+      {/* DNS prefetch for 3rd-party origins */}
+      <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+      <link rel="dns-prefetch" href="https://scripts.simpleanalyticscdn.com" />
+      <link rel="dns-prefetch" href="https://www.clarity.ms" />
+      <link rel="dns-prefetch" href="https://widget.intercom.io" />
+      <link rel="dns-prefetch" href="https://cdn.convertbox.com" />
+      {/* Sitewide Structured Data: Organization + WebSite */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateOrganizationSchema())
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateWebsiteSchema())
+        }}
+      />
       <Navbar />
       {children}
       <Footer />
