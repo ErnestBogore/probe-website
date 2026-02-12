@@ -39,12 +39,23 @@ export type SeoToolResultType =
 
 export type SeoToolCategory = 'keyword-research' | 'link-building' | 'serp-ranking' | 'other';
 
+export type SeoToolIconName =
+  | 'Search'
+  | 'BarChart3'
+  | 'Globe'
+  | 'Link2'
+  | 'TrendingUp'
+  | 'Youtube'
+  | 'ShoppingBag'
+  | 'Sparkles';
+
 export interface SeoToolConfig {
   slug: string;
   name: string;
   title: string;
   description: string;
   metaDescription: string;
+  iconName: SeoToolIconName;
   category: SeoToolCategory;
 
   // Form configuration

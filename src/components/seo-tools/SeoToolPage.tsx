@@ -5,10 +5,31 @@ import { SeoToolForm } from './SeoToolForm';
 import { SeoToolResults, SeoToolResultData } from './SeoToolResults';
 import { HeroCta } from '@/components/marketing/hero-cta';
 import { FaqHomepage } from '@/components/marketing/faq-homepage';
-import { SeoToolConfig } from '@/lib/seo-tools/seo-tools-config.types';
+import { SeoToolConfig, SeoToolIconName } from '@/lib/seo-tools/seo-tools-config.types';
 import { SeoRelatedToolData } from '@/lib/seo-tools/seo-related-tools-utils';
 import Link from 'next/link';
 import Image from 'next/image';
+import {
+  Search,
+  BarChart3,
+  Globe,
+  Link2,
+  TrendingUp,
+  Youtube,
+  ShoppingBag,
+  Sparkles,
+} from 'lucide-react';
+
+const seoToolIconMap: Record<SeoToolIconName, React.ComponentType<{ className?: string }>> = {
+  Search,
+  BarChart3,
+  Globe,
+  Link2,
+  TrendingUp,
+  Youtube,
+  ShoppingBag,
+  Sparkles,
+};
 
 interface SeoToolPageProps {
   tool: SeoToolConfig;
@@ -247,23 +268,29 @@ export function SeoToolPage({ tool, locale, relatedTools }: SeoToolPageProps) {
                 {t.relatedToolsHeading}
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {relatedTools.map((rt) => (
-                <Link
-                  key={rt.slug}
-                  href={locale ? `/free-tools/${locale}/${rt.slug}` : `/free-tools/${rt.slug}`}
-                  className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
-                >
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
-                      {rt.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 line-clamp-2">
-                      {rt.description}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {relatedTools.map((rt) => {
+                const Icon = seoToolIconMap[rt.iconName] || Search;
+                return (
+                  <Link
+                    key={rt.slug}
+                    href={locale ? `/free-tools/${locale}/${rt.slug}` : `/free-tools/${rt.slug}`}
+                    className="group flex gap-4 p-5 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-11 h-11 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                      <Icon className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="text-base font-semibold text-gray-900 mb-0.5 group-hover:text-purple-600 transition-colors">
+                        {rt.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 line-clamp-2">
+                        {rt.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
