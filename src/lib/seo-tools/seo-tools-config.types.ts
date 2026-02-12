@@ -16,6 +16,7 @@ export interface TableColumnDef {
 export interface UseCase {
   title: string;
   description: string;
+  image?: string;
 }
 
 export interface FAQ {

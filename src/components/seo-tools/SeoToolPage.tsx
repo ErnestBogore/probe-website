@@ -8,6 +8,7 @@ import { FaqHomepage } from '@/components/marketing/faq-homepage';
 import { SeoToolConfig } from '@/lib/seo-tools/seo-tools-config.types';
 import { SeoRelatedToolData } from '@/lib/seo-tools/seo-related-tools-utils';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface SeoToolPageProps {
   tool: SeoToolConfig;
@@ -194,11 +195,29 @@ export function SeoToolPage({ tool, locale, relatedTools }: SeoToolPageProps) {
                 {t.useCasesHeading}
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="flex flex-col gap-16 max-w-5xl mx-auto">
               {tool.useCases.map((uc, idx) => (
-                <div key={idx} className="bg-white rounded-xl border border-gray-200 p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{uc.title}</h3>
-                  <p className="text-gray-600 text-sm">{uc.description}</p>
+                <div
+                  key={idx}
+                  className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}
+                >
+                  {uc.image && (
+                    <div className="w-full md:w-1/2 flex-shrink-0">
+                      <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                        <Image
+                          src={uc.image}
+                          alt={uc.title}
+                          width={800}
+                          height={500}
+                          className="w-full h-auto"
+                        />
+                      </div>
+                    </div>
+                  )}
+                  <div className={uc.image ? 'w-full md:w-1/2' : 'w-full'}>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">{uc.title}</h3>
+                    <p className="text-gray-600 text-base leading-relaxed">{uc.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
