@@ -331,6 +331,98 @@ export default function FreeToolsPage() {
         </div>
       </section>
 
+      {/* AI SEO & Analysis Tools Section */}
+      <section className="py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative flex items-center justify-center mb-10">
+            <DashedLine className="text-muted-foreground" />
+            <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+              AI SEO & ANALYSIS
+            </span>
+          </div>
+
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
+              AI SEO & Analysis Tools
+            </h2>
+            <p className="text-gray-600">
+              Analyze AI your website&apos;s AI readiness and optimize for AI search engines.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {standaloneTools.map((tool) => {
+              const Icon = tool.icon;
+              return (
+                <Link
+                  key={tool.slug}
+                  href={`/free-tools/${tool.slug}`}
+                  className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+                >
+                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                    <Icon className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 line-clamp-2">
+                      {tool.description}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Data Tools Section */}
+      <section className="py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative flex items-center justify-center mb-10">
+            <DashedLine className="text-muted-foreground" />
+            <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+              FREE SEO TOOLS
+            </span>
+          </div>
+
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
+              Free SEO Tools
+            </h2>
+            <p className="text-gray-600">
+              Research keywords, analyze backlinks, check rankings, and audit websites with real-time SEO data.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {getAllSeoTools().map((tool) => {
+              const Icon = seoToolIcons[tool.slug] || Search;
+              return (
+                <Link
+                  key={tool.slug}
+                  href={`/free-tools/${tool.slug}`}
+                  className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+                >
+                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                    <Icon className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 line-clamp-2">
+                      {tool.description}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Writing Tools Section */}
       <section id="writing-tools" className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -606,98 +698,47 @@ export default function FreeToolsPage() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* SEO Data Tools Section */}
-      <section className="py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative flex items-center justify-center mb-10">
-            <DashedLine className="text-muted-foreground" />
-            <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
-              FREE SEO TOOLS
-            </span>
-          </div>
-
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
-              Free SEO Tools
-            </h2>
-            <p className="text-gray-600">
-              Research keywords, analyze backlinks, check rankings, and audit websites with real-time SEO data.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {getAllSeoTools().map((tool) => {
-              const Icon = seoToolIcons[tool.slug] || Search;
-              return (
-                <Link
-                  key={tool.slug}
-                  href={`/free-tools/${tool.slug}`}
-                  className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
-                    <Icon className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
-                      {tool.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 line-clamp-2">
-                      {tool.description}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* AI SEO & Analysis Tools Section */}
-      <section className="py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative flex items-center justify-center mb-10">
-            <DashedLine className="text-muted-foreground" />
-            <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
-              AI SEO & ANALYSIS
-            </span>
-          </div>
-
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
-              AI SEO & Analysis Tools
-            </h2>
-            <p className="text-gray-600">
-              Analyze AI your website&apos;s AI readiness and optimize for AI search engines.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {standaloneTools.map((tool) => {
-              const Icon = tool.icon;
-              return (
-                <Link
-                  key={tool.slug}
-                  href={`/free-tools/${tool.slug}`}
-                  className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
-                    <Icon className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
-                      {tool.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 line-clamp-2">
-                      {tool.description}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+          {/* All Business Name Generators by Language */}
+          {[
+            { lang: 'English', flag: '🇺🇸', generators: enGenerators, prefix: '/free-tools/business-name-generator' },
+            { lang: 'Deutsch', flag: '🇩🇪', generators: deGenerators, prefix: '/free-tools/de/business-name-generator' },
+            { lang: 'Español', flag: '🇪🇸', generators: esGenerators, prefix: '/free-tools/es/business-name-generator' },
+            { lang: 'Français', flag: '🇫🇷', generators: frGenerators, prefix: '/free-tools/fr/business-name-generator' },
+            { lang: 'Italiano', flag: '🇮🇹', generators: itGenerators, prefix: '/free-tools/it/business-name-generator' },
+            { lang: '日本語', flag: '🇯🇵', generators: jaGenerators, prefix: '/free-tools/ja/business-name-generator' },
+            { lang: '한국어', flag: '🇰🇷', generators: koGenerators, prefix: '/free-tools/ko/business-name-generator' },
+            { lang: 'Português', flag: '🇧🇷', generators: ptGenerators, prefix: '/free-tools/pt/business-name-generator' },
+            { lang: 'Türkçe', flag: '🇹🇷', generators: trGenerators, prefix: '/free-tools/tr/business-name-generator' },
+            { lang: '中文', flag: '🇨🇳', generators: zhGenerators, prefix: '/free-tools/zh/business-name-generator' },
+          ].map((langGroup) => (
+            <div key={langGroup.lang} className="mt-12">
+              <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
+                <span>{langGroup.flag}</span> {langGroup.lang}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {langGroup.generators.map((generator) => (
+                  <Link
+                    key={generator.slug}
+                    href={`${langGroup.prefix}/${generator.slug}`}
+                    className="group flex gap-3 p-4 bg-white rounded-lg border border-gray-200 hover:border-purple-300 hover:shadow-md transition-all duration-200"
+                  >
+                    <div className="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                      <Briefcase className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className="text-sm font-semibold text-gray-900 group-hover:text-purple-600 transition-colors truncate">
+                        {generator.title}
+                      </h4>
+                      <p className="text-xs text-gray-600 line-clamp-1">
+                        {generator.metaDescription}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

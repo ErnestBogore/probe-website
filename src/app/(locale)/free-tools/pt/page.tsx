@@ -273,7 +273,7 @@ export default function FreeToolsPtPage() {
   const youtube = getToolsByCategory(youtubeToolSlugs);
 
   // Get 5 business name generators for this language
-  const businessNameGenerators = getAllBusinessNameGeneratorsPt().slice(0, 5);
+  const businessNameGenerators = getAllBusinessNameGeneratorsPt();
 
   return (
     <main className="bg-gray-100">
@@ -347,6 +347,9 @@ export default function FreeToolsPtPage() {
           </div>
         </div>
       </section>
+
+      {/* SEO Tools Section */}
+      <SeoToolsSection />
 
       {/* Writing Tools Section */}
       {writing.length > 0 && (
@@ -635,9 +638,6 @@ export default function FreeToolsPtPage() {
           </div>
         </section>
       )}
-
-      {/* SEO Tools Section */}
-      <SeoToolsSection />
 
       {/* Business Name Ideas Section */}
       {businessNameGenerators.length > 0 && (

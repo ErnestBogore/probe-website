@@ -274,7 +274,7 @@ export default function FreeToolsDePage() {
   const youtube = getToolsByCategory(youtubeToolSlugs);
 
   // Get 5 business name generators for this language
-  const businessNameGenerators = getAllBusinessNameGeneratorsDe().slice(0, 5);
+  const businessNameGenerators = getAllBusinessNameGeneratorsDe();
 
   return (
     <main className="bg-gray-100">
@@ -348,6 +348,9 @@ export default function FreeToolsDePage() {
           </div>
         </div>
       </section>
+
+      {/* SEO Tools Section */}
+      <SeoToolsSection />
 
       {/* Writing Tools Section */}
       {writing.length > 0 && (
@@ -636,9 +639,6 @@ export default function FreeToolsDePage() {
           </div>
         </section>
       )}
-
-      {/* SEO Tools Section */}
-      <SeoToolsSection />
 
       {/* Business Name Ideas Section */}
       {businessNameGenerators.length > 0 && (
