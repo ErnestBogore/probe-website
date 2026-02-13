@@ -275,7 +275,7 @@ export const seoToolsTr: Record<string, SeoToolConfig> = {
       {
         title: 'Bir alan adının trafik ve sıralama ölçeğini değerlendirin',
         description: 'Metrik panosu Organik Trafik, toplam Sıralanan Anahtar Kelimeler ve 1-10 Pozisyonlarındaki Anahtar Kelimeleri gösterir. Bu sayılar, otorite puanını performans verileriyle bağlamsallaştırır. Bu çoklu metrik görünümü, tek metrikli karar vermeyi önler ve tam rekabet resmini sunar.',
-        image: '/Website authority checker/See other details as traffick, rankings, positions.png',
+        image: '/Website authority checker/See other details as traffick rankings positions.png',
       },
       {
         title: 'Ciddiyet derecelendirmesiyle gerçek otorite puanını görün',
@@ -969,7 +969,7 @@ export const seoToolsTr: Record<string, SeoToolConfig> = {
       {
         title: 'Anahtar kelime hareket trendlerini takip edin: Yükselen, Düşen, Yeni, Kaybedilen',
         description: 'Sıralama trendleri tablosu, İlk 3\'teki Anahtar Kelimeler, İlk 10\'daki Anahtar Kelimeler, Yeni Anahtar Kelimeler, İyileşen Sıralamalar, Kötüleşen Sıralamalar ve Kaybedilen Sıralamaları döker. Bu, SEO performansının nabzıdır. "İyileşen" "Kötüleşen"i aşıyorsa, web sitesinin SEO\'su çalışıyordur. "Kaybedilen" yüksekse, bir şeyler yanlış gitmiştir — muhtemelen bir algoritma güncellemesi, içerik eskimesi veya rakipler onları geçmiştir. Ajanslar, aylık raporlarda müşterilere SEO yatırımlarının ilerleme ivmesi oluşturup oluşturmadığını göstermek için bu verileri sunar.',
-        image: '/website traffic checker/see keywords in tops, declining and improved keywords.png',
+        image: '/website traffic checker/see keywords in tops declining and improved keywords.png',
       },
       {
         title: 'Organik ve ücretli trafik stratejisini karşılaştırın',
@@ -1065,7 +1065,7 @@ export const seoToolsTr: Record<string, SeoToolConfig> = {
       {
         title: 'İç ve dış bağlantı dağılımını analiz edin',
         description: 'Araç, İç Bağlantıları (aynı alan adındaki diğer sayfalara olan bağlantılar) ve Dış Bağlantıları (diğer web sitelerine olan bağlantılar) sayar ve kategorize eder. Bu veriler iki nedenden dolayı kritiktir: (1) İç bağlantı dağılımı, arama motorlarının web sitenizi taramasını ve dizine almasını etkiler ve (2) dış bağlantıların kalitesi sayfanızın güvenilirliğini etkiler.',
-        image: '/Broken link checker/See internal links from a page, external links.png',
+        image: '/Broken link checker/See internal links from a page external links.png',
       },
       {
         title: 'Belirli teknik sorunları belirleyin ve önceliklendirin',

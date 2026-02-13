@@ -275,7 +275,7 @@ export const seoToolsEs: Record<string, SeoToolConfig> = {
       {
         title: 'Evalúa el tráfico y la escala de posicionamiento de un dominio',
         description: 'El panel de métricas muestra Tráfico Orgánico, Total de Keywords Posicionadas y Keywords en Posiciones 1–10. Estos números contextualizan la puntuación de autoridad con datos de rendimiento. Esta vista multi-métrica previene la toma de decisiones basada en una sola métrica y te da el panorama competitivo completo.',
-        image: '/Website authority checker/See other details as traffick, rankings, positions.png',
+        image: '/Website authority checker/See other details as traffick rankings positions.png',
       },
       {
         title: 'Consulta la puntuación de autoridad real con clasificación de severidad',
@@ -969,7 +969,7 @@ export const seoToolsEs: Record<string, SeoToolConfig> = {
       {
         title: 'Rastrea tendencias de movimiento de keywords: Subiendo, Bajando, Nuevas, Perdidas',
         description: 'La tabla de tendencias de posicionamiento desglosa Keywords en Top 3, Keywords en Top 10, Keywords Nuevas, Posicionamientos Mejorados, Posicionamientos Empeorados y Posicionamientos Perdidos. Este es el pulso del rendimiento SEO. Si "Mejorados" supera a "Empeorados", el SEO del sitio está funcionando. Si "Perdidos" es alto, algo salió mal — posiblemente una actualización de algoritmo, deterioro de contenido o los competidores los superaron. Las agencias presentan estos datos en informes mensuales para mostrar a los clientes si su inversión en SEO está generando impulso positivo.',
-        image: '/website traffic checker/see keywords in tops, declining and improved keywords.png',
+        image: '/website traffic checker/see keywords in tops declining and improved keywords.png',
       },
       {
         title: 'Compara la estrategia de tráfico orgánico vs. de pago',
@@ -1065,7 +1065,7 @@ export const seoToolsEs: Record<string, SeoToolConfig> = {
       {
         title: 'Analiza la distribución de enlaces internos y externos',
         description: 'La herramienta cuenta y categoriza los Enlaces Internos (enlaces a otras páginas del mismo dominio) y los Enlaces Externos (enlaces a otros sitios web). Estos datos son críticos por dos razones: (1) La distribución de enlaces internos afecta cómo los motores de búsqueda rastrean e indexan tu sitio, y (2) la calidad de los enlaces externos afecta la confiabilidad de tu página.',
-        image: '/Broken link checker/See internal links from a page, external links.png',
+        image: '/Broken link checker/See internal links from a page external links.png',
       },
       {
         title: 'Identifica y prioriza problemas técnicos específicos para corregir',

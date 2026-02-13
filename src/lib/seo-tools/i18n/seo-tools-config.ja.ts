@@ -275,7 +275,7 @@ export const seoToolsJa: Record<string, SeoToolConfig> = {
       {
         title: 'ドメインのトラフィックとランキング規模を評価する',
         description: 'メトリクスダッシュボードはオーガニックトラフィック、ランキングキーワード総数、ポジション1〜10のキーワードを表示します。これらの数値はオーソリティスコアにパフォーマンスデータのコンテキストを提供します。このマルチメトリクスビューは単一メトリクスでの意思決定を防ぎ、完全な競合全体像を提供します。',
-        image: '/Website authority checker/See other details as traffick, rankings, positions.png',
+        image: '/Website authority checker/See other details as traffick rankings positions.png',
       },
       {
         title: '重大度評価付きの実際のオーソリティスコアを確認する',
@@ -969,7 +969,7 @@ export const seoToolsJa: Record<string, SeoToolConfig> = {
       {
         title: 'キーワード変動トレンドを追跡：上昇、下降、新規、喪失',
         description: 'ランキングトレンドテーブルはトップ3のキーワード、トップ10のキーワード、新規キーワード、改善したランキング、低下したランキング、失われたランキングを分解します。これはSEOパフォーマンスの脈拍です。「改善」が「低下」を上回っている場合、そのウェブサイトのSEOは機能しています。「喪失」が多い場合、何かがうまくいっていません — アルゴリズムアップデート、コンテンツの劣化、または競合に追い抜かれた可能性があります。エージェンシーはこのデータを月次レポートに提示して、SEO投資が前進の勢いを生んでいるかどうかをクライアントに示します。',
-        image: '/website traffic checker/see keywords in tops, declining and improved keywords.png',
+        image: '/website traffic checker/see keywords in tops declining and improved keywords.png',
       },
       {
         title: 'オーガニック vs. 有料トラフィック戦略を比較する',
@@ -1065,7 +1065,7 @@ export const seoToolsJa: Record<string, SeoToolConfig> = {
       {
         title: '内部リンクと外部リンクの分布を分析する',
         description: 'ツールは内部リンク（同じドメインの他のページへのリンク）と外部リンク（他のウェブサイトへのリンク）をカウントし分類します。このデータは2つの理由で重要です：(1) 内部リンクの分布は検索エンジンがウェブサイトをクロールしインデックスする方法に影響し、(2) 外部リンクの質はページの信頼性に影響します。',
-        image: '/Broken link checker/See internal links from a page, external links.png',
+        image: '/Broken link checker/See internal links from a page external links.png',
       },
       {
         title: '特定のテクニカル問題を特定し優先順位を付ける',

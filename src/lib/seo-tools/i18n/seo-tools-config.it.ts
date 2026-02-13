@@ -275,7 +275,7 @@ export const seoToolsIt: Record<string, SeoToolConfig> = {
       {
         title: 'Valuta traffico e ampiezza dei posizionamenti di un dominio',
         description: 'La dashboard delle metriche mostra Traffico Organico, Keyword Totali Posizionate e Keyword nelle Posizioni 1-10. Questi numeri contestualizzano il punteggio di autorita con dati reali sulle performance. Un dominio puo avere un punteggio di autorita elevato ma traffico basso (il che significa che il suo profilo di backlink e forte ma la strategia di contenuti e debole), oppure un\'autorita moderata con traffico impressionante (il che significa che la strategia di contenuti supera il profilo di link). Questa vista multi-metrica previene decisioni basate su una singola metrica e ti offre il quadro competitivo completo.',
-        image: '/Website authority checker/See other details as traffick, rankings, positions.png',
+        image: '/Website authority checker/See other details as traffick rankings positions.png',
       },
       {
         title: 'Visualizza il punteggio di autorita reale con classificazione di severita',
@@ -969,7 +969,7 @@ export const seoToolsIt: Record<string, SeoToolConfig> = {
       {
         title: 'Monitorare le tendenze di movimento keyword: In Salita, In Discesa, Nuove, Perse',
         description: 'La tabella delle tendenze di posizionamento suddivide le keyword in Top 3, Keyword in Top 10, Nuove Keyword, Posizionamenti Migliorati, Posizionamenti Peggiorati e Posizionamenti Persi. Questo è il polso delle prestazioni SEO. Se "Migliorati" supera "Peggiorati", la SEO del sito funziona. Se "Persi" è alto, qualcosa è andato storto — forse un aggiornamento dell\'algoritmo, decadimento dei contenuti o i concorrenti li hanno superati. Le agenzie presentano questi dati nei report mensili per mostrare ai clienti se il loro investimento SEO sta generando slancio.',
-        image: '/website traffic checker/see keywords in tops, declining and improved keywords.png',
+        image: '/website traffic checker/see keywords in tops declining and improved keywords.png',
       },
       {
         title: 'Confrontare la strategia di traffico organico vs. a pagamento',
@@ -1065,7 +1065,7 @@ export const seoToolsIt: Record<string, SeoToolConfig> = {
       {
         title: 'Analizzare la distribuzione dei link interni ed esterni',
         description: 'Lo strumento conta e categorizza Link Interni (link ad altre pagine dello stesso dominio) e Link Esterni (link ad altri siti). Questi dati sono critici per due ragioni: (1) la distribuzione dei link interni influenza come i motori di ricerca scansionano e indicizzano il tuo sito, e (2) la qualità dei link esterni influenza l\'affidabilità della tua pagina.',
-        image: '/Broken link checker/See internal links from a page, external links.png',
+        image: '/Broken link checker/See internal links from a page external links.png',
       },
       {
         title: 'Identificare e prioritizzare problemi tecnici specifici',

@@ -275,7 +275,7 @@ export const seoToolsKo: Record<string, SeoToolConfig> = {
       {
         title: '도메인의 트래픽 및 랭킹 범위 평가',
         description: '지표 대시보드는 자연 트래픽, 총 랭킹 키워드, 1~10위 포지션의 키워드를 표시합니다. 이 수치는 권위 점수에 성과 데이터로 맥락을 부여합니다. 이 다중 지표 보기는 단일 지표 의사 결정을 방지하고 완전한 경쟁 그림을 제공합니다.',
-        image: '/Website authority checker/See other details as traffick, rankings, positions.png',
+        image: '/Website authority checker/See other details as traffick rankings positions.png',
       },
       {
         title: '심각도 등급이 포함된 실제 권위 점수 확인',
@@ -969,7 +969,7 @@ export const seoToolsKo: Record<string, SeoToolConfig> = {
       {
         title: '키워드 변동 트렌드 추적: 상승, 하락, 신규, 이탈',
         description: '랭킹 트렌드 테이블은 상위 3위 키워드, 상위 10위 키워드, 신규 키워드, 순위 상승, 순위 하락, 이탈 키워드를 분류합니다. 이것은 SEO 성과의 맥박입니다. "순위 상승"이 "순위 하락"을 초과하면 웹사이트의 SEO가 효과를 발휘하고 있는 것입니다. "이탈"이 높다면 무언가 잘못된 것입니다 — 알고리즘 업데이트, 콘텐츠 노후화, 또는 경쟁사에 추월당한 것일 수 있습니다. 에이전시들은 이 데이터를 월간 보고서에 포함하여 고객에게 SEO 투자가 전진 모멘텀을 생성하고 있는지 보여줍니다.',
-        image: '/website traffic checker/see keywords in tops, declining and improved keywords.png',
+        image: '/website traffic checker/see keywords in tops declining and improved keywords.png',
       },
       {
         title: '자연 트래픽 vs. 유료 트래픽 전략 비교',
@@ -1065,7 +1065,7 @@ export const seoToolsKo: Record<string, SeoToolConfig> = {
       {
         title: '내부 및 외부 링크 분포 분석',
         description: '도구는 내부 링크(동일 도메인의 다른 페이지로 연결되는 링크)와 외부 링크(다른 웹사이트로 연결되는 링크)를 세고 분류합니다. 이 데이터는 두 가지 이유로 중요합니다: (1) 내부 링크 분포는 검색 엔진이 웹사이트를 크롤링하고 인덱싱하는 방식에 영향을 미치며, (2) 외부 링크의 품질은 페이지의 신뢰성에 영향을 미칩니다.',
-        image: '/Broken link checker/See internal links from a page, external links.png',
+        image: '/Broken link checker/See internal links from a page external links.png',
       },
       {
         title: '특정 기술적 문제 식별 및 우선순위 지정',

@@ -275,7 +275,7 @@ export const seoToolsDe: Record<string, SeoToolConfig> = {
       {
         title: 'Bewerten Sie Traffic und Ranking-Umfang einer Domain',
         description: 'Das Metriken-Dashboard zeigt organischen Traffic, Gesamt-gerankte Keywords und Keywords in Positionen 1–10. Diese Zahlen kontextualisieren den Autoritätswert mit Performance-Daten. Eine Domain kann einen hohen Autoritätswert, aber niedrigen Traffic haben (was bedeutet, dass ihr Backlink-Profil stark ist, aber ihre Content-Strategie schwach), oder moderate Autorität mit beeindruckendem Traffic (was bedeutet, dass ihre Content-Strategie ihr Linkprofil übertrifft). Diese Multi-Metriken-Ansicht verhindert Einzelmetriken-Entscheidungsfindung und gibt Ihnen das vollständige Wettbewerbsbild.',
-        image: '/Website authority checker/See other details as traffick, rankings, positions.png',
+        image: '/Website authority checker/See other details as traffick rankings positions.png',
       },
       {
         title: 'Sehen Sie den tatsächlichen Autoritätswert mit Schweregrad-Einstufung',
@@ -969,7 +969,7 @@ export const seoToolsDe: Record<string, SeoToolConfig> = {
       {
         title: 'Keyword-Bewegungstrends verfolgen: Steigend, Fallend, Neu, Verloren',
         description: 'Die Ranking-Trends-Tabelle schlüsselt Keywords in Top 3, Keywords in Top 10, Neue Keywords, Verbesserte Rankings, Verschlechterte Rankings und Verlorene Rankings auf. Dies ist der Puls der SEO-Performance. Wenn „Verbessert" „Verschlechtert" übersteigt, funktioniert die SEO der Website. Wenn „Verloren" hoch ist, ist etwas schiefgegangen — möglicherweise ein Algorithmus-Update, Content-Verfall oder Konkurrenten haben sie überholt. Agenturen präsentieren diese Daten in monatlichen Berichten, um Kunden zu zeigen, ob ihre SEO-Investition Vorwärtsmomentum generiert.',
-        image: '/website traffic checker/see keywords in tops, declining and improved keywords.png',
+        image: '/website traffic checker/see keywords in tops declining and improved keywords.png',
       },
       {
         title: 'Organischen vs. bezahlten Traffic-Strategie vergleichen',
@@ -1065,7 +1065,7 @@ export const seoToolsDe: Record<string, SeoToolConfig> = {
       {
         title: 'Interne und externe Link-Verteilung analysieren',
         description: 'Das Tool zählt und kategorisiert Interne Links (Links zu anderen Seiten derselben Domain) und Externe Links (Links zu anderen Websites). Diese Daten sind aus zwei Gründen kritisch: (1) Die interne Link-Verteilung beeinflusst, wie Suchmaschinen Ihre Website crawlen und indexieren, und (2) die Qualität externer Links beeinflusst die Vertrauenswürdigkeit Ihrer Seite.',
-        image: '/Broken link checker/See internal links from a page, external links.png',
+        image: '/Broken link checker/See internal links from a page external links.png',
       },
       {
         title: 'Spezifische technische Probleme identifizieren und priorisieren',

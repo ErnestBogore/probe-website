@@ -275,7 +275,7 @@ export const seoToolsZh: Record<string, SeoToolConfig> = {
       {
         title: '评估域名的流量和排名规模',
         description: '指标仪表板显示自然流量、已排名关键词总数和排名1-10的关键词。这些数字用性能数据为权威评分提供了背景。这种多指标视图可以防止基于单一指标的决策，为您提供完整的竞争全貌。',
-        image: '/Website authority checker/See other details as traffick, rankings, positions.png',
+        image: '/Website authority checker/See other details as traffick rankings positions.png',
       },
       {
         title: '查看带有严重程度分级的实际权威评分',
@@ -969,7 +969,7 @@ export const seoToolsZh: Record<string, SeoToolConfig> = {
       {
         title: '追踪关键词变动趋势：上升、下降、新增、丢失',
         description: '排名趋势表分解了前3名关键词、前10名关键词、新增关键词、排名提升的关键词、排名下降的关键词和丢失的关键词。这是SEO表现的脉搏。如果"提升"超过"下降"，网站的SEO是有效的。如果"丢失"很高，说明出了问题——可能是算法更新、内容衰退或竞争对手超越。代理机构在月度报告中展示这些数据，向客户证明他们的SEO投资是否在产生前进动力。',
-        image: '/website traffic checker/see keywords in tops, declining and improved keywords.png',
+        image: '/website traffic checker/see keywords in tops declining and improved keywords.png',
       },
       {
         title: '对比自然流量与付费流量策略',
@@ -1065,7 +1065,7 @@ export const seoToolsZh: Record<string, SeoToolConfig> = {
       {
         title: '分析内部和外部链接分布',
         description: '该工具计数并分类内部链接（指向同一域名其他页面的链接）和外部链接（指向其他网站的链接）。这些数据至关重要，原因有二：(1) 内部链接分布影响搜索引擎如何抓取和索引您的网站，(2) 外部链接质量影响您页面的可信度。',
-        image: '/Broken link checker/See internal links from a page, external links.png',
+        image: '/Broken link checker/See internal links from a page external links.png',
       },
       {
         title: '识别和优先处理特定技术问题',

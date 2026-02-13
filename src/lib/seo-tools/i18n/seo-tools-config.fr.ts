@@ -275,7 +275,7 @@ export const seoToolsFr: Record<string, SeoToolConfig> = {
       {
         title: 'Evaluez le trafic et l\'envergure de classement d\'un domaine',
         description: 'Le tableau de bord des metriques affiche le trafic organique, le nombre total de mots-cles classes et les mots-cles en positions 1-10. Ces chiffres contextualisent le score d\'autorite avec des donnees de performance. Cette vue multi-metriques empeche les decisions basees sur une seule metrique et vous donne une image concurrentielle complete.',
-        image: '/Website authority checker/See other details as traffick, rankings, positions.png',
+        image: '/Website authority checker/See other details as traffick rankings positions.png',
       },
       {
         title: 'Consultez le score d\'autorite reel avec une echelle de gravite',
@@ -969,7 +969,7 @@ export const seoToolsFr: Record<string, SeoToolConfig> = {
       {
         title: 'Suivez les tendances de mouvement des mots-cles : en hausse, en baisse, nouveaux, perdus',
         description: 'Le tableau des tendances de classement ventile les mots-cles dans le top 3, les mots-cles dans le top 10, les nouveaux mots-cles, les classements ameliores, les classements en baisse et les classements perdus. C\'est le pouls de la performance SEO. Si « Ameliore » depasse « En baisse », le SEO du site fonctionne. Si « Perdu » est eleve, quelque chose s\'est mal passe — peut-etre une mise a jour d\'algorithme, la degradation du contenu ou les concurrents les ont depasses. Les agences presentent ces donnees dans des rapports mensuels pour montrer aux clients si leur investissement SEO genere un elan positif.',
-        image: '/website traffic checker/see keywords in tops, declining and improved keywords.png',
+        image: '/website traffic checker/see keywords in tops declining and improved keywords.png',
       },
       {
         title: 'Comparez la strategie de trafic organique vs. payant',
@@ -1065,7 +1065,7 @@ export const seoToolsFr: Record<string, SeoToolConfig> = {
       {
         title: 'Analysez la distribution des liens internes et externes',
         description: 'L\'outil compte et categorise les liens internes (liens vers d\'autres pages du meme domaine) et les liens externes (liens vers d\'autres sites web). Ces donnees sont critiques pour deux raisons : (1) la distribution des liens internes affecte la facon dont les moteurs de recherche explorent et indexent votre site, et (2) la qualite des liens externes affecte la fiabilite de votre page.',
-        image: '/Broken link checker/See internal links from a page, external links.png',
+        image: '/Broken link checker/See internal links from a page external links.png',
       },
       {
         title: 'Identifiez et priorisez les problemes techniques specifiques a corriger',

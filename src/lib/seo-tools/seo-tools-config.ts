@@ -275,7 +275,7 @@ export const seoTools: Record<string, SeoToolConfig> = {
       {
         title: 'Evaluate a Domain\'s Traffic and Ranking Scale',
         description: 'The metrics dashboard shows Organic Traffic, total Ranked Keywords, and Keywords in Positions 1–10. These numbers contextualize the authority score with performance data. A domain can have a high authority score but low traffic (meaning its backlink profile is strong but its content strategy is weak), or moderate authority with impressive traffic (meaning its content strategy outperforms its link profile). This multi-metric view prevents single-metric decision-making and gives you the full competitive picture.',
-        image: '/Website authority checker/See other details as traffick, rankings, positions.png',
+        image: '/Website authority checker/See other details as traffick rankings positions.png',
       },
       {
         title: 'See the Actual Authority Score with Severity Grading',
@@ -933,7 +933,7 @@ export const seoTools: Record<string, SeoToolConfig> = {
       {
         title: 'Track Keyword Movement Trends: Rising, Falling, New, Lost',
         description: 'The ranking trends table breaks down Keywords in Top 3, Keywords in Top 10, New Keywords, Improved Rankings, Declined Rankings, and Lost Rankings. This is the pulse of SEO performance. If "Improved" outnumbers "Declined," the site\'s SEO is working. If "Lost" is high, something went wrong — possibly an algorithm update hit, content decay, or competitors overtook them. Agencies present this data in monthly reports to show clients whether their SEO investment is generating forward momentum.',
-        image: '/website traffic checker/see keywords in tops, declining and improved keywords.png',
+        image: '/website traffic checker/see keywords in tops declining and improved keywords.png',
       },
       {
         title: 'Compare Organic vs. Paid Traffic Strategy',
@@ -1029,7 +1029,7 @@ export const seoTools: Record<string, SeoToolConfig> = {
       {
         title: 'Analyze Internal and External Link Distribution',
         description: 'The tool counts and categorizes Internal Links (links pointing to other pages on the same domain) and External Links (links pointing to other websites). This data is critical for two reasons: (1) Internal link distribution affects how search engines crawl and index your site — pages with too few internal links get crawled less frequently, and (2) External link quality affects your page\'s trustworthiness — linking out to authoritative sources signals content quality, while links to spammy sites can harm your SEO.',
-        image: '/Broken link checker/See internal links from a page, external links.png',
+        image: '/Broken link checker/See internal links from a page external links.png',
       },
       {
         title: 'Identify and Prioritize Specific Technical Issues to Fix',
