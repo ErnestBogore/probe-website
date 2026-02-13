@@ -1,5 +1,7 @@
 'use client';
 
+import { translateMetricLabel } from '@/lib/seo-tools/metric-label-translations';
+
 interface SerpItem {
   position: number;
   title: string;
@@ -11,15 +13,16 @@ interface SerpItem {
 interface SerpPreviewProps {
   items: SerpItem[];
   keyword: string;
+  locale?: string;
 }
 
-export function SerpPreview({ items, keyword }: SerpPreviewProps) {
+export function SerpPreview({ items, keyword, locale }: SerpPreviewProps) {
   if (!items || items.length === 0) return null;
 
   return (
     <div className="space-y-4">
       <h3 className="text-sm font-medium text-gray-500">
-        Google results for <span className="font-semibold text-gray-900">&ldquo;{keyword}&rdquo;</span>
+        {translateMetricLabel('Google results for', locale)} <span className="font-semibold text-gray-900">&ldquo;{keyword}&rdquo;</span>
       </h3>
       <div className="space-y-3">
         {items.map((item) => (

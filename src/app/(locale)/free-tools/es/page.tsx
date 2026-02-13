@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { getAllToolsEs } from '@/lib/ai-tools/i18n/tools-config.es';
 import { generateToolsListingHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { getAllBusinessNameGeneratorsEs } from '@/lib/ai-tools/i18n/business-name-generators-config.es';
+import { getAllSeoToolsEs } from '@/lib/seo-tools/i18n/seo-tools-config.es';
+import { SeoToolIconName } from '@/lib/seo-tools/seo-tools-config.types';
 import { DashedLine } from '@/components/dashed-line';
 import { Button } from '@/components/ui/button';
 import { HeroCta } from '@/components/marketing/hero-cta';
@@ -39,6 +41,9 @@ import {
   MessageSquare,
   Users,
   Repeat,
+  BarChart3,
+  Link2,
+  TrendingUp,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -193,6 +198,69 @@ const youtubeToolSlugs = [
   'generador-de-descripciones-para-videos-de-youtube',
   'generador-de-nombres-para-youtube'
 ];
+
+const seoToolIconMap: Record<SeoToolIconName, React.ComponentType<{ className?: string }>> = {
+  Search,
+  BarChart3,
+  Globe,
+  Link2,
+  TrendingUp,
+  Youtube,
+  ShoppingBag,
+  Sparkles,
+};
+
+function SeoToolsSection() {
+  const seoTools = getAllSeoToolsEs();
+  if (seoTools.length === 0) return null;
+
+  return (
+    <section className="py-16 lg:py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative flex items-center justify-center mb-10">
+          <DashedLine className="text-muted-foreground" />
+          <span className="bg-gray-100 text-muted-foreground absolute px-4 font-mono text-sm font-medium tracking-wide max-md:hidden">
+            HERRAMIENTAS SEO
+          </span>
+        </div>
+
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl tracking-tight md:text-4xl text-gray-900 mb-4">
+            Herramientas SEO
+          </h2>
+          <p className="text-gray-600">
+            Analiza palabras clave, verifica rankings, monitorea backlinks y optimiza tu rendimiento en buscadores con herramientas SEO basadas en datos.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {seoTools.map((tool) => {
+            const Icon = seoToolIconMap[tool.iconName] || Search;
+            return (
+              <Link
+                key={tool.slug}
+                href={`/free-tools/es/${tool.slug}`}
+                className="group flex gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-200"
+              >
+                <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                  <Icon className="w-6 h-6 text-purple-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                    {tool.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 line-clamp-2">
+                    {tool.description}
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function FreeToolsEsPage() {
   const allTools = getAllToolsEs();
@@ -571,6 +639,9 @@ export default function FreeToolsEsPage() {
           </div>
         </section>
       )}
+
+      {/* SEO Tools Section */}
+      <SeoToolsSection />
 
       {/* Business Name Ideas Section */}
       {businessNameGenerators.length > 0 && (

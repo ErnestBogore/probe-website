@@ -52,6 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: activeTool.metaDescription,
       url: `https://www.tryanalyze.ai/free-tools/${activeTool.slug}`,
       type: 'website',
+      locale: 'en_US',
       images: [
         {
           url: 'https://www.tryanalyze.ai/og-free-ai-marketing-tools.png',

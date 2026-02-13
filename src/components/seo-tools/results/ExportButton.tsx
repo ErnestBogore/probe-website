@@ -1,14 +1,16 @@
 'use client';
 
 import { Download } from 'lucide-react';
+import { translateMetricLabel } from '@/lib/seo-tools/metric-label-translations';
 
 interface ExportButtonProps {
   data: Record<string, unknown>[];
   columns: { key: string; label: string }[];
   filename?: string;
+  locale?: string;
 }
 
-export function ExportButton({ data, columns, filename = 'seo-data' }: ExportButtonProps) {
+export function ExportButton({ data, columns, filename = 'seo-data', locale }: ExportButtonProps) {
   const handleExport = () => {
     if (data.length === 0) return;
 
@@ -46,7 +48,7 @@ export function ExportButton({ data, columns, filename = 'seo-data' }: ExportBut
       className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
     >
       <Download className="w-4 h-4" />
-      Export CSV
+      {translateMetricLabel('Export CSV', locale)}
     </button>
   );
 }

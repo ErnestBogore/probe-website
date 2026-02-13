@@ -1,5 +1,6 @@
 import { getDataForSeoClient, DataForSeoError } from '@/lib/seo-tools/dataforseo-client';
 import { checkRateLimit, getClientIp } from '@/lib/seo-tools/rate-limiter';
+import { getLanguageCodeForCountry } from '@/lib/seo-tools/country-language-map';
 
 export const runtime = 'edge';
 
@@ -77,13 +78,14 @@ export async function POST(req: Request) {
     }
 
     const locationCode = Number(options?.country) || 2840;
+    const languageCode = getLanguageCodeForCountry(locationCode);
     const client = getDataForSeoClient();
 
     // Build filters if a keyword is specified
     const requestBody: Record<string, unknown> = {
       target: domain,
       location_code: locationCode,
-      language_code: 'en',
+      language_code: languageCode,
       limit: 50,
       order_by: ['ranked_serp_element.serp_item.rank_group,asc'],
     };

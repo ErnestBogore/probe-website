@@ -1,5 +1,6 @@
 import { getDataForSeoClient, DataForSeoError } from '@/lib/seo-tools/dataforseo-client';
 import { checkRateLimit, getClientIp } from '@/lib/seo-tools/rate-limiter';
+import { getLanguageCodeForCountry } from '@/lib/seo-tools/country-language-map';
 
 export const runtime = 'edge';
 
@@ -49,6 +50,7 @@ export async function POST(req: Request) {
     }
 
     const locationCode = Number(options?.country) || 2840;
+    const languageCode = getLanguageCodeForCountry(locationCode);
     const client = getDataForSeoClient();
 
     const response = await client.post<SerpResult>(
@@ -56,7 +58,7 @@ export async function POST(req: Request) {
       [{
         keyword: input,
         location_code: locationCode,
-        language_code: 'en',
+        language_code: languageCode,
         depth: 10,
       }]
     );

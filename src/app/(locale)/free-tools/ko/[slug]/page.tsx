@@ -4,6 +4,11 @@ import { getToolBySlugKo, getAllToolsKo, getEnglishSlugKo } from '@/lib/ai-tools
 import { generateToolHreflangAlternates } from '@/lib/ai-tools/hreflang-utils';
 import { ToolPage } from '@/components/ai-tools/ToolPage';
 import { computeRelatedTools } from '@/lib/ai-tools/related-tools-utils';
+import { getSeoToolBySlugKo, getAllSeoToolSlugsKo } from '@/lib/seo-tools/i18n/seo-tools-config.ko';
+import { generateSeoToolHreflangAlternates } from '@/lib/seo-tools/seo-hreflang-utils';
+import { SeoToolPage } from '@/components/seo-tools/SeoToolPage';
+import { computeSeoRelatedTools } from '@/lib/seo-tools/seo-related-tools-utils';
+import { generateWebApplicationSchema, generateFAQPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 function generateToolFAQSchema(tool: { title: string; slug: string; faqs: { question: string; answer: string }[] }) {
   return {
@@ -35,33 +40,42 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const tools = getAllToolsKo();
-  return tools.map((tool) => ({
-    slug: tool.slug,
-  }));
+  const aiTools = getAllToolsKo();
+  const seoToolSlugs = getAllSeoToolSlugsKo();
+  return [
+    ...aiTools.map((tool) => ({ slug: tool.slug })),
+    ...seoToolSlugs.map((slug) => ({ slug })),
+  ];
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const tool = getToolBySlugKo(slug);
+  const seoTool = getSeoToolBySlugKo(slug);
 
-  if (!tool) {
+  const activeTool = tool || seoTool;
+
+  if (!activeTool) {
     return {
       title: '도구를 찾을 수 없습니다',
     };
   }
 
+  const hreflangAlternates = seoTool
+    ? generateSeoToolHreflangAlternates(activeTool.slug)
+    : generateToolHreflangAlternates(getEnglishSlugKo(activeTool.slug) ?? activeTool.slug, 'tool');
+
   return {
-    title: `${tool.title}`,
-    description: tool.metaDescription,
+    title: `${activeTool.title}`,
+    description: activeTool.metaDescription,
     alternates: {
-      canonical: `https://www.tryanalyze.ai/free-tools/ko/${tool.slug}`,
-      languages: generateToolHreflangAlternates(getEnglishSlugKo(tool.slug), 'tool'),
+      canonical: `https://www.tryanalyze.ai/free-tools/ko/${activeTool.slug}`,
+      languages: hreflangAlternates,
     },
     openGraph: {
-      title: `${tool.title}`,
-      description: tool.metaDescription,
-      url: `https://www.tryanalyze.ai/free-tools/ko/${tool.slug}`,
+      title: `${activeTool.title}`,
+      description: activeTool.metaDescription,
+      url: `https://www.tryanalyze.ai/free-tools/ko/${activeTool.slug}`,
       type: 'website',
       locale: 'ko_KR',
       images: [
@@ -69,14 +83,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           url: 'https://www.tryanalyze.ai/og-free-ai-marketing-tools.png',
           width: 1200,
           height: 630,
-          alt: `${tool.title}`,
+          alt: `${activeTool.title}`,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${tool.title}`,
-      description: tool.metaDescription,
+      title: `${activeTool.title}`,
+      description: activeTool.metaDescription,
       images: ['https://www.tryanalyze.ai/og-free-ai-marketing-tools.png'],
     },
   };
@@ -85,14 +99,39 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function KoreanToolPage({ params }: PageProps) {
   const { slug } = await params;
   const tool = getToolBySlugKo(slug);
+  const seoTool = getSeoToolBySlugKo(slug);
 
-  if (!tool) {
+  if (!tool && !seoTool) {
     notFound();
   }
 
-  const structuredData = generateToolFAQSchema(tool);
-  
-  // Get the English slug for API calls (Korean uses English slugs, so it's the same)
+  // SEO Data Tool rendering path
+  if (seoTool) {
+    const faqSchema = generateFAQPageSchema(seoTool.faqs);
+    const breadcrumbSchema = generateBreadcrumbSchema([
+      { name: '홈', href: '/' },
+      { name: '무료 도구', href: '/free-tools/ko' },
+      { name: seoTool.name, href: `/free-tools/ko/${seoTool.slug}` },
+    ]);
+    const webAppSchema = generateWebApplicationSchema({
+      name: seoTool.title,
+      description: seoTool.metaDescription,
+      url: `https://www.tryanalyze.ai/free-tools/ko/${seoTool.slug}`,
+      applicationCategory: 'SEOApplication',
+    });
+
+    return (
+      <>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+        {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+        <SeoToolPage tool={seoTool} locale="ko" relatedTools={computeSeoRelatedTools(slug, 'ko')} />
+      </>
+    );
+  }
+
+  // AI Tool rendering path (existing)
+  const structuredData = generateToolFAQSchema(tool!);
   const englishSlug = getEnglishSlugKo(slug);
 
   return (
@@ -103,7 +142,7 @@ export default async function KoreanToolPage({ params }: PageProps) {
           __html: JSON.stringify(structuredData)
         }}
       />
-      <ToolPage tool={tool} locale="ko" englishSlug={englishSlug} relatedTools={computeRelatedTools(getAllToolsKo(), slug)} />
+      <ToolPage tool={tool!} locale="ko" englishSlug={englishSlug} relatedTools={computeRelatedTools(getAllToolsKo(), slug)} />
     </>
   );
 }

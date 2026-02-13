@@ -3,14 +3,16 @@
 import { useState } from 'react';
 import { SeoToolConfig } from '@/lib/seo-tools/seo-tools-config.types';
 import { Search, Loader2 } from 'lucide-react';
+import { translateMetricLabel } from '@/lib/seo-tools/metric-label-translations';
 
 interface SeoToolFormProps {
   tool: SeoToolConfig;
   onSubmit: (input: string, options: Record<string, string>, secondaryInput?: string) => void;
   isLoading: boolean;
+  locale?: string;
 }
 
-export function SeoToolForm({ tool, onSubmit, isLoading }: SeoToolFormProps) {
+export function SeoToolForm({ tool, onSubmit, isLoading, locale }: SeoToolFormProps) {
   const [input, setInput] = useState('');
   const [secondaryInput, setSecondaryInput] = useState('');
   const [options, setOptions] = useState<Record<string, string>>(() => {
@@ -107,7 +109,7 @@ export function SeoToolForm({ tool, onSubmit, isLoading }: SeoToolFormProps) {
         {isLoading ? (
           <>
             <Loader2 className="w-5 h-5 animate-spin" />
-            <span>Analyzing...</span>
+            <span>{translateMetricLabel('Analyzing...', locale)}</span>
           </>
         ) : (
           <span>{tool.buttonText}</span>

@@ -1,8 +1,11 @@
 'use client';
 
+import { translateMetricLabel } from '@/lib/seo-tools/metric-label-translations';
+
 interface KeywordDifficultyGaugeProps {
   score: number;
   keyword: string;
+  locale?: string;
 }
 
 function getDifficultyColor(score: number): string {
@@ -21,9 +24,9 @@ function getDifficultyLabel(score: number): string {
   return 'Very Hard';
 }
 
-export function KeywordDifficultyGauge({ score, keyword }: KeywordDifficultyGaugeProps) {
+export function KeywordDifficultyGauge({ score, keyword, locale }: KeywordDifficultyGaugeProps) {
   const color = getDifficultyColor(score);
-  const label = getDifficultyLabel(score);
+  const label = translateMetricLabel(getDifficultyLabel(score), locale);
 
   // SVG semicircle gauge
   const radius = 80;
@@ -32,7 +35,7 @@ export function KeywordDifficultyGauge({ score, keyword }: KeywordDifficultyGaug
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col items-center">
-      <h3 className="text-sm font-medium text-gray-500 mb-4">Keyword Difficulty</h3>
+      <h3 className="text-sm font-medium text-gray-500 mb-4">{translateMetricLabel('Keyword Difficulty', locale)}</h3>
       <div className="relative w-48 h-28">
         <svg viewBox="0 0 200 110" className="w-full h-full">
           {/* Background arc */}

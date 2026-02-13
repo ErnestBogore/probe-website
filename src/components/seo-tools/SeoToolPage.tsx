@@ -193,12 +193,14 @@ export function SeoToolPage({ tool, locale, relatedTools }: SeoToolPageProps) {
               tool={tool}
               onSubmit={handleSubmit}
               isLoading={isLoading}
+              locale={locale}
             />
             <SeoToolResults
               tool={tool}
               data={resultData}
               isLoading={isLoading}
               error={error}
+              locale={locale}
             />
           </div>
         </div>

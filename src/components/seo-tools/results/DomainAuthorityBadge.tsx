@@ -1,9 +1,12 @@
 'use client';
 
+import { translateMetricLabel } from '@/lib/seo-tools/metric-label-translations';
+
 interface DomainAuthorityBadgeProps {
   rank: number;
   domain: string;
   label?: string;
+  locale?: string;
 }
 
 function getScoreColor(score: number): string {
@@ -22,10 +25,10 @@ function getScoreLabel(score: number): string {
   return 'Low';
 }
 
-export function DomainAuthorityBadge({ rank, domain, label: customLabel }: DomainAuthorityBadgeProps) {
+export function DomainAuthorityBadge({ rank, domain, label: customLabel, locale }: DomainAuthorityBadgeProps) {
   const color = getScoreColor(rank);
-  const label = getScoreLabel(rank);
-  const heading = customLabel || 'Domain Score';
+  const label = translateMetricLabel(getScoreLabel(rank), locale);
+  const heading = translateMetricLabel(customLabel || 'Domain Score', locale);
 
   // SVG semicircle gauge (same style as KD gauge)
   const radius = 80;

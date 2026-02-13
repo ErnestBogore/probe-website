@@ -5,16 +5,18 @@ import { ChevronUp, ChevronDown } from 'lucide-react';
 import { TableColumnDef } from '@/lib/seo-tools/seo-tools-config.types';
 import { getDifficultyBadgeColor } from './KeywordDifficultyGauge';
 import { ExportButton } from './ExportButton';
+import { translateMetricLabel } from '@/lib/seo-tools/metric-label-translations';
 
 interface SeoDataTableProps {
   data: Record<string, unknown>[];
   columns: TableColumnDef[];
   filename?: string;
+  locale?: string;
 }
 
 type SortDir = 'asc' | 'desc';
 
-export function SeoDataTable({ data, columns, filename }: SeoDataTableProps) {
+export function SeoDataTable({ data, columns, filename, locale }: SeoDataTableProps) {
   const [sortKey, setSortKey] = useState<string | null>(null);
   const [sortDir, setSortDir] = useState<SortDir>('desc');
   const [page, setPage] = useState(0);
@@ -93,8 +95,8 @@ export function SeoDataTable({ data, columns, filename }: SeoDataTableProps) {
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <p className="text-sm text-gray-500">{data.length} results</p>
-        <ExportButton data={data} columns={columns} filename={filename} />
+        <p className="text-sm text-gray-500">{data.length} {translateMetricLabel('results', locale)}</p>
+        <ExportButton data={data} columns={columns} filename={filename} locale={locale} />
       </div>
 
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
@@ -140,7 +142,7 @@ export function SeoDataTable({ data, columns, filename }: SeoDataTableProps) {
         {totalPages > 1 && (
           <div className="flex items-center justify-between px-4 py-3 border-t border-gray-200 bg-gray-50">
             <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500">Rows per page:</span>
+              <span className="text-sm text-gray-500">{translateMetricLabel('Rows per page:', locale)}</span>
               <select
                 value={pageSize}
                 onChange={(e) => { setPageSize(Number(e.target.value)); setPage(0); }}
@@ -160,14 +162,14 @@ export function SeoDataTable({ data, columns, filename }: SeoDataTableProps) {
                 disabled={page === 0}
                 className="px-2 py-1 text-sm border border-gray-300 rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100"
               >
-                Prev
+                {translateMetricLabel('Prev', locale)}
               </button>
               <button
                 onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))}
                 disabled={page >= totalPages - 1}
                 className="px-2 py-1 text-sm border border-gray-300 rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100"
               >
-                Next
+                {translateMetricLabel('Next', locale)}
               </button>
             </div>
           </div>
