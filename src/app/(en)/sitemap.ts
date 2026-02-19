@@ -36,37 +36,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/features/monitor`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/features/discover`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/features/govern`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/features/improve`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/pricing`,
@@ -78,31 +78,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/case-study`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/free-tools/ai-website-audit-tool`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/free-tools/llm-txt-generator-tool`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/free-tools/perplexity-ai-alternative`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/prompts`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/talk-to-a-human`,
@@ -115,171 +115,171 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/use-cases/chatgpt`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/use-cases/google-ai-mode`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/use-cases/gemini`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/use-cases/claude`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/use-cases/microsoft-copilot`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/use-cases/perplexity-ai`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/use-cases/meta-ai`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/use-cases/deepseek`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     // Compare Pages - Competitor Comparison Pages
     {
       url: `${baseUrl}/compare/analyze-vs-ahrefs-brand-radar`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/compare/analyze-vs-hubspot-ai-search-grader`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/compare/analyze-vs-google-looker-studio`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/compare/analyze-vs-semrush-ai-toolkit`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/compare/analyze-vs-writesonic-geo`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/compare/analyze-vs-athenahq`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/compare/analyze-vs-profound`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/compare/analyze-vs-peec-ai`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/compare/analyze-vs-surfer`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/compare/analyze-vs-gsc`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     // Free Tools Index Page
     {
       url: `${baseUrl}/free-tools`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/free-tools/fr`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/free-tools/de`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/free-tools/es`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/free-tools/pt`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/free-tools/it`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/free-tools/ja`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/free-tools/zh`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/free-tools/ko`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/free-tools/tr`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
   ];
 
@@ -289,7 +289,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate French free tools pages
@@ -298,7 +298,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/fr/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate German free tools pages
@@ -307,7 +307,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/de/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Spanish free tools pages
@@ -316,7 +316,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/es/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Portuguese free tools pages
@@ -325,7 +325,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/pt/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Italian free tools pages
@@ -334,7 +334,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/it/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Japanese free tools pages
@@ -343,7 +343,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/ja/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Chinese free tools pages
@@ -352,7 +352,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/zh/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Korean free tools pages
@@ -361,7 +361,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/ko/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Turkish free tools pages
@@ -370,7 +370,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/tr/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate business name generator pages
@@ -379,7 +379,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/business-name-generator/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Chinese business name generator pages
@@ -388,7 +388,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/zh/business-name-generator/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Korean business name generator pages
@@ -397,7 +397,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/ko/business-name-generator/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Turkish business name generator pages
@@ -406,7 +406,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/tr/business-name-generator/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate German business name generator pages
@@ -415,7 +415,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/de/business-name-generator/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Spanish business name generator pages
@@ -424,7 +424,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/es/business-name-generator/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate French business name generator pages
@@ -433,7 +433,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/fr/business-name-generator/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Italian business name generator pages
@@ -442,7 +442,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/it/business-name-generator/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Japanese business name generator pages
@@ -451,7 +451,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/ja/business-name-generator/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   // Generate Portuguese business name generator pages
@@ -460,7 +460,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/free-tools/pt/business-name-generator/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9,
   }));
 
   try {
@@ -480,7 +480,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/blog/${post.slug}`,
       lastModified: new Date(post._updatedAt || post._publishedAt || new Date()),
       changeFrequency: 'daily' as const,
-      priority: 0.8,
+      priority: 0.9,
     }));
 
     // Generate case study entries
@@ -488,7 +488,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/case-study/${post.slug}`,
       lastModified: new Date(post._updatedAt || post._publishedAt || new Date()),
       changeFrequency: 'daily' as const,
-      priority: 0.8,
+      priority: 0.9,
     }));
 
     // Generate prompt category entries
@@ -496,7 +496,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/prompts/${category.slugCategory}`,
       lastModified: new Date(), // Categories don't have a specific updated date
       changeFrequency: 'daily' as const,
-      priority: 0.7,
+      priority: 0.9,
     }));
 
     // Generate individual prompt entries
@@ -506,7 +506,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: `${baseUrl}/prompts/${prompt.category.slugCategory}/${prompt.slug}`,
         lastModified: new Date(prompt._updatedAt || new Date()),
         changeFrequency: 'weekly' as const,
-        priority: 0.6,
+        priority: 0.9,
       }));
 
     return [...staticPages, ...freeToolPages, ...freeToolPagesFr, ...freeToolPagesDe, ...freeToolPagesEs, ...freeToolPagesPt, ...freeToolPagesIt, ...freeToolPagesJa, ...freeToolPagesZh, ...freeToolPagesKo, ...freeToolPagesTr, ...businessNameGeneratorPages, ...businessNameGeneratorPagesZh, ...businessNameGeneratorPagesKo, ...businessNameGeneratorPagesTr, ...businessNameGeneratorPagesDe, ...businessNameGeneratorPagesEs, ...businessNameGeneratorPagesFr, ...businessNameGeneratorPagesIt, ...businessNameGeneratorPagesJa, ...businessNameGeneratorPagesPt, ...blogPages, ...caseStudyPages, ...promptCategoryPages, ...promptPages];
