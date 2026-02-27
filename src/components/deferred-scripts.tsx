@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 /**
- * Defers heavy 3rd-party scripts (Intercom, ConvertBox) until either:
+ * Defers heavy 3rd-party scripts (Intercom) until either:
  * - 10 seconds after page load, OR
  * - First user interaction (scroll, click, touchstart, keydown)
  *
@@ -23,14 +23,6 @@ export function DeferredScripts() {
       window.removeEventListener("click", loadScripts);
       window.removeEventListener("touchstart", loadScripts);
       window.removeEventListener("keydown", loadScripts);
-
-      // --- ConvertBox ---
-      const cb = document.createElement("script");
-      cb.src = "https://cdn.convertbox.com/convertbox/js/embed.js";
-      cb.id = "app-convertbox-script";
-      cb.async = true;
-      cb.dataset.uuid = "92151c5c-e8df-44b8-9c8e-96097edc1184";
-      document.head.appendChild(cb);
 
       // --- Intercom ---
       (window as any).intercomSettings = {

@@ -12,7 +12,6 @@ export function SharedLayout({ children }: { children: React.ReactNode }) {
       <link rel="dns-prefetch" href="https://scripts.simpleanalyticscdn.com" />
       <link rel="dns-prefetch" href="https://www.clarity.ms" />
       <link rel="dns-prefetch" href="https://widget.intercom.io" />
-      <link rel="dns-prefetch" href="https://cdn.convertbox.com" />
       {/* Sitewide Structured Data: Organization + WebSite */}
       <script
         type="application/ld+json"
@@ -72,7 +71,7 @@ po('settings', 'assets_host', 'https://assets.partnero.com');
 po('program', 'TY8NQLFA', 'load');`}
       </Script>
 
-      {/* Intercom + ConvertBox — deferred until user interaction or 10s idle */}
+      {/* Intercom — deferred until user interaction or 10s idle */}
       <DeferredScripts />
     </>
   );
