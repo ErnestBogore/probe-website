@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
         source: '/:path*',
         headers: [
           {
-            key: 'Content-Security-Policy-Report-Only',
+            key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleapis.com https://*.gstatic.com https://*.hubspot.com https://*.hsforms.com https://*.hs-scripts.com https://*.hs-analytics.net https://*.hscollectedforms.net https://*.usemessages.com https://*.hs-banner.com https://js.hsadspixel.net https://js.hs-analytics.net https://js.usemessages.com https://js.hscollectedforms.net https://*.cloudflareinsights.com https://static.cloudflareinsights.com",
