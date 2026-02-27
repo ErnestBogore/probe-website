@@ -1,6 +1,11 @@
+import Script from "next/script";
 import { Navbar } from "@/components/marketing/navbar";
 import { Footer } from "@/components/marketing/footer";
+import { DeferredScripts } from "@/components/deferred-scripts";
+import { ScriptAllowlistGuard } from "@/components/security/script-allowlist-guard";
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/schema';
+
+const ENABLE_THIRD_PARTY_SCRIPTS = process.env.NEXT_PUBLIC_ENABLE_THIRD_PARTY_SCRIPTS !== "false";
 
 export function SharedLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,7 +30,56 @@ export function SharedLayout({ children }: { children: React.ReactNode }) {
       {children}
       <Footer />
 
-      {/* Emergency containment: third-party scripts temporarily disabled */}
+      <ScriptAllowlistGuard />
+
+      {ENABLE_THIRD_PARTY_SCRIPTS && (
+        <>
+          {/* Google Analytics — deferred to after page load */}
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-S5FYJJYT0H"
+            strategy="lazyOnload"
+          />
+          <Script id="ga-init" strategy="lazyOnload">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-S5FYJJYT0H');
+            `}
+          </Script>
+
+          {/* Simple Analytics — deferred to after page load */}
+          <Script
+            src="https://scripts.simpleanalyticscdn.com/latest.js"
+            strategy="lazyOnload"
+          />
+
+          {/* Microsoft Clarity — deferred to after page load */}
+          <Script id="clarity-init" strategy="lazyOnload">
+            {`
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "unwbdjoriw");
+            `}
+          </Script>
+
+          {/* PartneroJS — deferred to after page load */}
+          <Script id="partnero-init" strategy="lazyOnload">
+            {`(function(p,t,n,e,r,o){ p['__partnerObject']=r;function f(){
+var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+f.q=f.q||[];p[r]=p[r]||f.bind(f.q);p[r].q=p[r].q||f.q;o=t.createElement(n);
+var _=t.getElementsByTagName(n)[0];o.async=1;o.src=e+'?v'+(~~(new Date().getTime()/1e6));
+_.parentNode.insertBefore(o,_);})(window, document, 'script', 'https://app.partnero.com/js/universal.js', 'po');
+po('settings', 'assets_host', 'https://assets.partnero.com');
+po('program', 'TY8NQLFA', 'load');`}
+          </Script>
+
+          {/* Intercom — deferred until user interaction or 10s idle */}
+          <DeferredScripts />
+        </>
+      )}
     </>
   );
 }
