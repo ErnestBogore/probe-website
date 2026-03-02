@@ -48,11 +48,8 @@ export function SharedLayout({ children }: { children: React.ReactNode }) {
             `}
           </Script>
 
-          {/* Simple Analytics — deferred to after page load */}
-          <Script
-            src="https://scripts.simpleanalyticscdn.com/latest.js"
-            strategy="lazyOnload"
-          />
+          {/* Simple Analytics — loads after hydration (default afterInteractive strategy) */}
+          <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
 
           {/* Microsoft Clarity — deferred to after page load */}
           <Script id="clarity-init" strategy="lazyOnload">
