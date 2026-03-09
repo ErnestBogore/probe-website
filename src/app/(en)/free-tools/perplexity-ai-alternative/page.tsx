@@ -74,7 +74,7 @@ const faqItems = [
 export default function PerplexityAlternativePage() {
   return (
     <div className="space-y-16 pb-16">
-      <div className="flex flex-col h-[calc(100vh-64px)]">
+      <div className="flex flex-col h-[calc(100vh-64px)] mt-20">
         <iframe 
           src="https://search-anything-lovat.vercel.app/" 
           className="flex-grow w-full border-0"
