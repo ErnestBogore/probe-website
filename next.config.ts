@@ -27,7 +27,7 @@ const nextConfig: NextConfig = {
               "img-src 'self' data: blob: https://*.datocms-assets.com https://*.googleusercontent.com https://*.google-analytics.com https://*.googletagmanager.com https://deifkwefumgah.cloudfront.net https://*.hubspot.com https://*.hsforms.com https://*.hs-analytics.net https://*.simpleanalyticscdn.com https://*.intercomcdn.com https://*.intercom.io https://*.clarity.ms",
               "font-src 'self' https://fonts.gstatic.com https://js.intercomcdn.com https://*.clarity.ms",
               "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.hubspot.com https://*.hsforms.com https://*.hs-analytics.net https://*.hscollectedforms.net https://*.datocms-assets.com https://*.datocms.com https://*.cloudflareinsights.com https://*.simpleanalyticscdn.com https://*.clarity.ms https://app.partnero.com https://assets.partnero.com https://api-iam.intercom.io https://*.intercom.io https://*.intercomcdn.com wss://*.intercom.io https://*.tidycal.com https://asset-tidycal.b-cdn.net",
-              "frame-src 'self' https://*.hubspot.com https://*.hsforms.com https://*.youtube.com https://*.youtube-nocookie.com https://*.intercom.io https://*.vercel.app https://*.tidycal.com",
+              "frame-src 'self' https://*.hubspot.com https://*.hsforms.com https://*.youtube.com https://*.youtube-nocookie.com https://*.intercom.io https://*.vercel.app https://*.tidycal.com https://tidycal.com",
               "media-src 'self'",
               "object-src 'none'",
               "base-uri 'self'",
